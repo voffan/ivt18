@@ -4,8 +4,7 @@
 
 <Workspace>
 	<Local Expanded="Yes">
-		<Model Expanded="Yes" ID="{AD11CE51-A7AB-4141-95EA-EB15B6FC6717}" Loaded="No" Name="fabric" Type="{DABA1E0A-0922-4B05-B7F0-B0BD7A73FD33}" URL="../se/fabric.rqm"/>
-		<Model Expanded="Yes" ID="{AD11CE51-A7AB-4141-95EA-EB15B6FC6717}" Name="fabric" Selected="Yes" Type="{DABA1E0A-0922-4B05-B7F0-B0BD7A73FD33}" URL="fabric.rqm"/>
+		<Model Expanded="Yes" ID="{AD11CE51-A7AB-4141-95EA-EB15B6FC6717}" Name="fabric" Type="{DABA1E0A-0922-4B05-B7F0-B0BD7A73FD33}" URL="fabric.rqm"/>
 	</Local>
 	<BrowserModule Name="Repository"/>
 </Workspace>
