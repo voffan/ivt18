@@ -5,7 +5,6 @@
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
 
 <o:RootObject Id="o1">
-<a:SessionID>00000000-0000-0000-0000-000000000000</a:SessionID>
 <c:Children>
 <o:Model Id="o2">
 <a:ObjectID>EC9FED80-4272-4A9A-B031-F30B4BCB3E29</a:ObjectID>
@@ -34,7 +33,6 @@ EnableTrans=No
 UseTerm=No
 EnableRequirements=No
 EnableFullShortcut=Yes
-SynchroCode=Yes
 Text Font=Microsoft Sans Serif,10,
 Text Color=0 0 0
 Title Font 1=Microsoft Sans Serif,16,B
@@ -311,7 +309,6 @@ DefaultChar=
 Script=
 ConvTable=
 ConvTablePath=%_HOME%\Resource Files\Conversion Tables</a:ModelOptionsText>
-<a:RepositoryFilename>C:\Users\Слава\ivt18\trebovaniya1.rqm</a:RepositoryFilename>
 <c:DocumentViews>
 <o:RequirementsDocumentView Id="o3">
 <a:ObjectID>858FD58C-2E03-4D0C-9E1E-22623435F385</a:ObjectID>
@@ -371,8 +368,6 @@ ExtendedObject_SymbolLayout=&lt;Form&gt;[CRLF] &lt;StandardAttribute Name=&quot;
 ELnkShowStrn=Yes
 ELnkShowName=Yes
 ExtendedLink_SymbolLayout=&lt;Form&gt;[CRLF] &lt;Form Name=&quot;Center&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Stereotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF]  &lt;StandardAttribute Name=&quot;Name&quot; Attribute=&quot;DisplayName&quot; Prefix=&quot;&quot; Suffix=&quot;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Source&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Destination&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF]&lt;/Form&gt;
-ExtDpdShowStrn=Yes
-ExtendedDependency_SymbolLayout=&lt;Form&gt;[CRLF] &lt;Form Name=&quot;Center&quot; &gt;[CRLF]  &lt;StandardAttribute Name=&quot;Stereotype&quot; Attribute=&quot;Stereotype&quot; Prefix=&quot;&amp;lt;&amp;lt;&quot; Suffix=&quot;&amp;gt;&amp;gt;&quot; Caption=&quot;&quot; Mandatory=&quot;No&quot; /&gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Source&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF] &lt;Form Name=&quot;Destination&quot; &gt;[CRLF] &lt;/Form&gt;[CRLF]&lt;/Form&gt;
 FileObject.Stereotype=No
 FileObject.DisplayName=Yes
 FileObject.LocationOrName=No
