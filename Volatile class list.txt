@@ -1,0 +1,7 @@
+School
+Class
+SubGroup
+Student
+Staff
+Course
+StudyYear
