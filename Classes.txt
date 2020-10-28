@@ -1,0 +1,18 @@
+﻿Полный список классов:
+Employee
+Factory
+Plan
+Product
+ProductionLine
+ProductOperation
+Shift
+Storage
+
+Список классов, меняющих свое состояние:
+Employee
+Plan
+Product
+ProductionLine
+ProductOperation
+Shift
+Storage
