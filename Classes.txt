@@ -11,8 +11,5 @@ Storage
 Список классов, меняющих свое состояние:
 Employee
 Plan
-Product
 ProductionLine
-ProductOperation
-Shift
 Storage
