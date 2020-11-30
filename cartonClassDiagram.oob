@@ -1608,7 +1608,7 @@ Association.RoleBOrdering 1</a:SymbolContent>
 <o:AssociationSymbol Id="o16">
 <a:CreationDate>1603005085</a:CreationDate>
 <a:ModificationDate>1603848487</a:ModificationDate>
-<a:Rect>((2828,-20840), (18067,12046))</a:Rect>
+<a:Rect>((2828,-20840), (18067,12044))</a:Rect>
 <a:ListOfPoints>((18030,-20840),(18030,11089),(2828,11089))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
