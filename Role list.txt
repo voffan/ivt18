@@ -1,0 +1,13 @@
+Алиев Бек
+	ReportCard
+	StudyYear
+	CheckPoint
+	Course
+Глушков Валерий
+	School
+	Class
+	Student
+Крылатов Айаан
+	Staff
+	SubGroup
+	Subject
