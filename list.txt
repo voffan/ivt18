@@ -1,7 +1,7 @@
-Классы:
-Амбросьева В. - Exposition, Current location, Gallery
+﻿Классы:
+Амбросьева В. - Exposition, Gallery
 Лимонов В. - Employee, Position
-Виниченко В. - Journal, FromToPlace
+Виниченко В. - Journal, Place
 Горохова А. - Picture, Artist, Genre
 
 Роли:
