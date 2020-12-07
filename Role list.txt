@@ -3,11 +3,16 @@
 	StudyYear
 	CheckPoint
 	Course
+	Завуч
 Глушков Валерий
 	School
 	Class
 	Student
+	Классный руководитель
+	Ученик
 Крылатов Айаан
 	Staff
 	SubGroup
 	Subject
+	Администартор
+	
