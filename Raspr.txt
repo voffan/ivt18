@@ -1,0 +1,4 @@
+Семенов А: Computer; Processor; Graphics card
+Максимов М: Journal; Disc drive; Status
+Михайлов А: Employee; Hard drive; Motherboard
+Михайлов Г: Peripheral;Memory;Power supply
