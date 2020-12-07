@@ -13,3 +13,23 @@
 1. План работ на месяц,
 2. Фактическое выполнение плана,
 3. Сравнительный анализ выполнения плана.
+
+Список классов:
+    1:
+        Employee
+        Position
+        Status
+        Shift
+        Daily prod
+    2:
+        Product
+        Plan
+        Planned
+    3:
+        ProductRemain
+        Storage
+        Department
+        ProductionLine
+    4:
+        ProductOperation
+        Factory
