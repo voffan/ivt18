@@ -1,0 +1,11 @@
+Классы:
+Амбросьева В. - Exposition, Current location, Gallery
+Лимонов В. - Employee, Position
+Виниченко В. - Journal, FromToPlace
+Горохова А. - Picture, Artist, Genre
+
+Роли:
+Амбросьева В. - Менеджер
+Лимонов В. - Администратор
+Виниченко В. - Директор
+Горохова А. - Реставратор
