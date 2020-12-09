@@ -14,22 +14,22 @@
 2. Фактическое выполнение плана,
 3. Сравнительный анализ выполнения плана.
 
-Список классов:
-    1:
-        Employee
+Список классов и use case:
+    1: Павлов
+        Employee {auth, add/edit user}
         Position
         Status
-        Shift
-        Daily prod
-    2:
+    2: Мухин
         Product
-        Plan
+        Plan {create/edit/export plan, create/export analysus, send plan, get plans list, approve completion, apply plan}
         Planned
-    3:
+    3: Устинов
         ProductRemain
-        Storage
+        Storage {send/receive product}
         Department
         ProductionLine
-    4:
+    4: Эверстов
         ProductOperation
         Factory
+        Shift {create/edit shift report, create explaining}
+        Daily prod
