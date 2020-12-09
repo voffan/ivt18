@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace grades
 {
-    public class Class
+    public class Group
     {
         private int year;
         private char letter;

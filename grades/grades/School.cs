@@ -12,7 +12,7 @@ namespace grades {
         private String email;
         private int phonenumber;
 
-        public System.Collections.ArrayList class;
+        public System.Collections.ArrayList group;
 
         /// <summary>
         /// Property for collection of Class
@@ -21,14 +21,14 @@ namespace grades {
         public System.Collections.ArrayList Class
         {
             get {
-                if (class == null) class = new System.Collections.ArrayList();
-                return class;
+                if (group == null) group = new System.Collections.ArrayList();
+                return group;
             }
             set {
-                RemoveAllClass();
+                RemoveAllGroup();
                 if (value != null) {
-                    foreach(Class oClass in value)
-                    AddClass(oClass);
+                    foreach(Group oGroup in value)
+                    AddGroup(oGroup);
                 }
             }
         }
@@ -37,27 +37,27 @@ namespace grades {
         /// Add a new Class in the collection
         /// </summary>
         /// <pdGenerated>Default Add</pdGenerated>
-        public void AddClass(Class newClass) {
-            if (newClass == null) return;
-            if (this.class == null) this.class = new System.Collections.ArrayList();
-            if (!this.class.Contains(newClass)) this.class.Add(newClass);
+        public void AddGroup(Group newGroup) {
+            if (newGroup == null) return;
+            if (this.group == null) this.group = new System.Collections.ArrayList();
+            if (!this.group.Contains(newGroup)) this.group.Add(newGroup);
         }
 
         /// <summary>
         /// Remove an existing Class from the collection
         /// </summary>
         /// <pdGenerated>Default Remove</pdGenerated>
-        public void RemoveClass(Class oldClass) {
-            if (oldClass == null) return;
-            if (this.class != null) if (this.class.Contains(oldClass)) this.class.Remove(oldClass);
+        public void RemoveGroup(Group oldGroup) {
+            if (oldGroup == null) return;
+            if (this.group != null) if (this.group.Contains(oldGroup)) this.group.Remove(oldGroup);
         }
 
         /// <summary>
         /// Remove all instances of Class from the collection
         /// </summary>
         /// <pdGenerated>Default removeAll</pdGenerated>
-        public void RemoveAllClass() {
-            if (class != null) class.Clear();
+        public void RemoveAllGroup() {
+            if (group != null) group.Clear();
         }
 
         public System.Collections.ArrayList staff;
