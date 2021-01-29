@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace grades
 {
     public class Course
     {
         private Subject subject;
-        private Class class;
-        private SubGroup group;
+        private Group group;
+        private SubGroup subGroup;
         private Staff teacher;
     }
 }

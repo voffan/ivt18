@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace grades {
 
@@ -18,7 +21,7 @@ namespace grades {
         /// Property for collection of Class
         /// </summary>
         /// <pdGenerated>Default opposite class collection property</pdGenerated>
-        public System.Collections.ArrayList Class
+        public System.Collections.ArrayList Group
         {
             get {
                 if (group == null) group = new System.Collections.ArrayList();
