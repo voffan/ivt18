@@ -1,2 +1,6 @@
 *.oob
 *.rqb
+bin
+vs
+obj
+packages
