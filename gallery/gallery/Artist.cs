@@ -11,6 +11,7 @@ namespace gallery
 {
     class Artist
     {
+        [Key]
         public int ArtistId { get; set; }
         public string FullName{ get; set; }
         public DateTime BirthYear{ get; set; }
