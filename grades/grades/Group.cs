@@ -11,9 +11,14 @@ namespace grades
 {
     public class Group
     {
-        private int year;
-        private char letter;
-        private int school;
+        [Key]
+        public int groupId { get; set; }
+        public int year { get; set; }
+        public char letter { get; set; }
+
+        [ForeignKey("schoolId")]
+        public int schoolId { get; set; }
+        public int school { get; set; }
 
         public System.Collections.ArrayList student;
 
@@ -76,23 +81,9 @@ namespace grades
             if (student != null)
                 student.Clear();
         }
-        public Staff curator;
 
-        /// <summary>
-        /// Property for Staff
-        /// </summary>
-        /// <pdGenerated>Default opposite class property</pdGenerated>
-        public Staff Curator
-        {
-            get
-            {
-                return curator;
-            }
-            set
-            {
-                this.curator = value;
-            }
-        }
-
+        [ForeignKey("staffId")]
+        public int staffId { get; set; }
+        public Staff curator { get; set; }
     }
 }

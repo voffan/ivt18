@@ -11,6 +11,8 @@ namespace grades
 {
     public class Staff
     {
+        [Key]
+        public int staffId { get; set; }
         private String fullname;
         private String role;
         private int phonenumber;

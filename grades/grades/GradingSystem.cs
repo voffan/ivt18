@@ -9,12 +9,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace grades
 {
-    public class Student
+    class GradingSystem
     {
         [Key]
-        public int studentId { get; set; }
-        public String fullname { get; set; }
-        public int phonenumber { get; set; }
-        public String homeadress { get; set; }
+        public int gradingSystemId { get; set; }
+        public int maxGrade { get; set; }
+        public int minGrade { get; set; }
     }
 }

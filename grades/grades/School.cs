@@ -10,10 +10,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace grades {
 
     class School {
-        private String name;
-        private String adress;
-        private String email;
-        private int phonenumber;
+        [Key]
+        public int schoolId { get; set; }
+        public String name { get; set; }
+        public String adress { get; set; }
+        public String email { get; set; }
+        public int phonenumber { get; set; }
 
         public System.Collections.ArrayList group;
 
@@ -112,6 +114,12 @@ namespace grades {
             if (staff != null) staff.Clear();
         }
 
-        public Staff headteacher;
+        [ForeignKey("staffId")]
+        public int staffId { get; set; }
+        public Staff headteacher { get; set; }
+
+        [ForeignKey("gradingSystemId")]
+        public int gradingSystemId { get; set; }
+        public GradingSystem gradingSystem { get; set; }
     }
 }
