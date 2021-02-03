@@ -11,9 +11,13 @@ namespace grades
 {
     public class ReportCard
     {
-        private int estimate;
+        [Key]
+        public int ReportCardId { get; set; }
+        public int estimate { get; set; }
 
-        public Student student;
+        [ForeignKey("StudentId")]
+        public int StudentId { get; set; }
+        public Student student { get; set; }
 
         /// <summary>
         /// Property for Student
@@ -30,7 +34,10 @@ namespace grades
                 this.student = value;
             }
         }
-        public Course course;
+
+        [ForeignKey("CourseId")]
+        public int CourseId { get; set; }
+        public Course course { get; set; }
 
         /// <summary>
         /// Property for Course
@@ -47,7 +54,10 @@ namespace grades
                 this.course = value;
             }
         }
-        public CheckPoint checkPoint;
+
+        [ForeignKey("CheckPointId")]
+        public int CheckPointId { get; set; }
+        public CheckPoint checkPoint { get; set; }
 
         /// <summary>
         /// Property for CheckPoint
@@ -64,7 +74,10 @@ namespace grades
                 this.checkPoint = value;
             }
         }
-        public StudyYear studyYear;
+
+        [ForeignKey("StudyYearId")]
+        public int StudyYearId { get; set; }
+        public StudyYear studyYear { get; set; }
 
         /// <summary>
         /// Property for StudyYear

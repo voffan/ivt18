@@ -11,6 +11,8 @@ namespace grades
 {
     public class CheckPoint
     {
-        private String name;
+        [Key]
+        public int CheckPointId { get; set; }
+        public String name { get; set; }
     }
 }
