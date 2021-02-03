@@ -9,10 +9,10 @@ using System.ComponentModel;
 
 namespace gallery
 {
-    class Genre
+    class Place
     {
         [Key]
-        public int GenreId { get; set; }
+        public int PlaceId { get; set; }
         public string Name { get; set; }
     }
 }
