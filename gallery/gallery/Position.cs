@@ -5,18 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel;
+using System.Data.Entity.Core;
 
 namespace gallery
 {
-    class Gallery
+    class Position
     {
+        [Key]
+        public int PositionId { get; set; }
         public string Name { get; set; }
-        public string Address { get; set; }
-        public int Phone { get; set; }
-
-        [ForeignKey("PictureId")]
-        public int PictureId { get; set; }
-        public Picture Picture { get; set; }
     }
+
 }

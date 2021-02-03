@@ -18,12 +18,10 @@ namespace gallery
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
 
-        [ForeignKey("PlaceId")]
-        public int PlaceId { get; set; }
-        public Place Place { get; set; }
+        public string Place { get; set; }
 
         [ForeignKey("PictureId")]
-        public int[] PictureId { get; set; }
+        public int PictureId { get; set; }
         public Picture Picture { get; set; }
 
         public Gallery gallery { get; set; }
