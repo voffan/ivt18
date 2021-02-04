@@ -24,6 +24,5 @@ namespace gallery
         public int PictureId { get; set; }
         public Picture Picture { get; set; }
 
-        public Gallery gallery { get; set; }
     }
 }

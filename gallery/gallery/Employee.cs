@@ -18,7 +18,7 @@ namespace gallery
         public string Password { get; set; }
         public int Phone { get; set; }
 
-        [ForeignKey ("Position")]
+        [ForeignKey ("PositionId")]
         public int PositionId { get; set; }
         public Position Position { get; set; }
 
