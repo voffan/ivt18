@@ -11,6 +11,8 @@ namespace grades
 {
     public class SubGroup
     {
+        [Key ]
+        public int SubGroupId{get;set;}
         private String name;
         private Group group;
         private Subject subject;

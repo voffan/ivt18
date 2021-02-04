@@ -11,6 +11,8 @@ namespace grades
 {
     public class Subject
     {
+        [Key]
+        public int SubjectId;
         private String name;
     }
 }

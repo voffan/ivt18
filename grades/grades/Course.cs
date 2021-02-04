@@ -11,6 +11,8 @@ namespace grades
 {
     public class Course
     {
+        [Key]
+        public int gradesId;
         private Subject subject;
         private Group group;
         private SubGroup subGroup;
