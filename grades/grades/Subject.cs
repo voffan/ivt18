@@ -12,7 +12,7 @@ namespace grades
     public class Subject
     {
         [Key]
-        public int SubjectId;
+        public int subjectId;
         private String name;
     }
 }
