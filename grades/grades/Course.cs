@@ -12,13 +12,13 @@ namespace grades
     public class Course
     {
         [Key]
-        public int gradesId;
+        public int gradesId { get; set; }
         [ForeignKey("subjectId")]
-        private Subject subject;
+        public Subject subject { get; set; }
         [ForeignKey("groupId")]
-        private Group group;
-        private SubGroup subGroup;
+        public Group group { get; set; }
+        public SubGroup subGroup { get; set; }
         [ForeignKey("staffId")]
-        private Staff teacher;
+        public Staff teacher { get; set; }
     }
 }

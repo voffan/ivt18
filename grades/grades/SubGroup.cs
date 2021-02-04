@@ -14,11 +14,11 @@ namespace grades
         [Key ]
         public int subgroupId{get;set;}
         [ForeignKey("studentId")]
-        private String name;
+        public String name { get; set; }
         [ForeignKey("groupId")]
-        private Group group;
+        public Group group { get; set; }
         [ForeignKey("subjectId")]
-        private Subject subject;
+        public Subject subject { get; set; }
 
         public System.Collections.ArrayList student;
 
