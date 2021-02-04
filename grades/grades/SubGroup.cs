@@ -12,9 +12,12 @@ namespace grades
     public class SubGroup
     {
         [Key ]
-        public int SubGroupId{get;set;}
+        public int subgroupId{get;set;}
+        [ForeignKey("studentId")]
         private String name;
+        [ForeignKey("groupId")]
         private Group group;
+        [ForeignKey("subjectId")]
         private Subject subject;
 
         public System.Collections.ArrayList student;
