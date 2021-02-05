@@ -17,12 +17,14 @@ namespace gallery
         public string Login { get; set; }
         public string Password { get; set; }
         public int Phone { get; set; }
-
-        [ForeignKey ("PositionId")]
+       
         public int PositionId { get; set; }
+        [ForeignKey("PositionId")]
         public Position Position { get; set; }
 
-        public Gallery gallery { get; set; }
+        public int GalleryId { get; set; }
+        [ForeignKey("GalleryId")]
+        public Gallery Gallery { get; set; }
     }
 
 }

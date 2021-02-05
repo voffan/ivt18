@@ -15,8 +15,6 @@ namespace gallery
         public string Address { get; set; }
         public int Phone { get; set; }
 
-        [ForeignKey("PictureId")]
-        public int PictureId { get; set; }
-        public Picture Picture { get; set; }
+        public List<Picture> Pictures { get; set; }
     }
 }

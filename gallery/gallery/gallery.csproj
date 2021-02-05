@@ -60,6 +60,7 @@
     <Compile Include="Artist.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="Expo.cs" />
+    <Compile Include="ExpoPicture.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

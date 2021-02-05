@@ -20,9 +20,7 @@ namespace gallery
 
         public string Place { get; set; }
 
-        [ForeignKey("PictureId")]
-        public int PictureId { get; set; }
-        public Picture Picture { get; set; }
+        public List<ExpoPicture> ExpoPictures { get; set; }
 
     }
 }

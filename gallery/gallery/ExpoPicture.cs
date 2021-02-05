@@ -5,17 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel;
 
 namespace gallery
 {
-    class Journal
+    class ExpoPicture
     {
         [Key]
-        public int JournalId { get; set; }
-        public DateTime Date { get; set; }
-        public Place From { get; set; } 
-        public Place To { get; set; }
+        public int ExpoPictureId { get; set; }
 
         public int PictureId { get; set; }
         [ForeignKey("PictureId")]
@@ -24,9 +20,5 @@ namespace gallery
         public int ExpoId { get; set; }
         [ForeignKey("ExpoId")]
         public Expo Expo { get; set; }
-   
-        public int EmployeeId { get; set; }
-        [ForeignKey("EmployeeId")]
-        public Employee Employee { get; set; }
     }
 }

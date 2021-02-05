@@ -17,16 +17,20 @@ namespace gallery
         public float Price { get; set; }
         public int Year { get; set; }
 
-        [ForeignKey("ArtistId")]
         public int ArtistId { get; set; }
+        [ForeignKey("ArtistId")]
         public Artist Artist { get; set; }
 
-        [ForeignKey("GenreId")]
         public int GenreId { get; set; }
+        [ForeignKey("GenreId")]
         public Genre Genre{ get; set; }
 
-        [ForeignKey("PlaceId")]
         public int PlaceId { get; set; }
+        [ForeignKey("PlaceId")]
         public Place Place { get; set; }
+
+        public int GalleryId { get; set; }
+        [ForeignKey("GalleryId")]
+        public Gallery Gallery { get; set; }
     }
 }
