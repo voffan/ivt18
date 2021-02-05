@@ -15,8 +15,9 @@ namespace grades
         public int ReportCardId { get; set; }
         public int estimate { get; set; }
 
-        [ForeignKey("StudentId")]
         public int StudentId { get; set; }
+        [ForeignKey("StudentId")]
+
         public Student student { get; set; }
 
         /// <summary>
@@ -35,8 +36,9 @@ namespace grades
             }
         }
 
-        [ForeignKey("CourseId")]
         public int CourseId { get; set; }
+        [ForeignKey("CourseId")]
+      
         public Course course { get; set; }
 
         /// <summary>
@@ -55,8 +57,8 @@ namespace grades
             }
         }
 
-        [ForeignKey("CheckPointId")]
         public int CheckPointId { get; set; }
+        [ForeignKey("CheckPointId")]
         public CheckPoint checkPoint { get; set; }
 
         /// <summary>
@@ -75,8 +77,8 @@ namespace grades
             }
         }
 
-        [ForeignKey("StudyYearId")]
         public int StudyYearId { get; set; }
+        [ForeignKey("StudyYearId")]
         public StudyYear studyYear { get; set; }
 
         /// <summary>

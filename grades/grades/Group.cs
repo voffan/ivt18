@@ -16,8 +16,8 @@ namespace grades
         public int year { get; set; }
         public char letter { get; set; }
 
-        [ForeignKey("schoolId")]
         public int schoolId { get; set; }
+        [ForeignKey("schoolId")]
         public int school { get; set; }
 
         public System.Collections.ArrayList student;
@@ -82,8 +82,8 @@ namespace grades
                 student.Clear();
         }
 
-        [ForeignKey("staffId")]
         public int staffId { get; set; }
+        [ForeignKey("staffId")]
         public Staff curator { get; set; }
     }
 }
