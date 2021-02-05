@@ -12,8 +12,9 @@ namespace grades
     public class Course
     {
         [Key]
-        public int gradesId { get; set; }
+        public int courseId { get; set; }
 
+        public int subjectId { get; set; }
         [ForeignKey("subjectId")]
         public Subject subject { get; set; }
 

@@ -114,12 +114,14 @@ namespace grades {
             if (staff != null) staff.Clear();
         }
 
-        [ForeignKey("staffId")]
         public int staffId { get; set; }
+        [ForeignKey("staffId")]
+
         public Staff headteacher { get; set; }
 
-        [ForeignKey("gradingSystemId")]
         public int gradingSystemId { get; set; }
+        [ForeignKey("gradingSystemId")]
+
         public GradingSystem gradingSystem { get; set; }
     }
 }
