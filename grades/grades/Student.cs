@@ -16,5 +16,9 @@ namespace grades
         public String fullname { get; set; }
         public int phonenumber { get; set; }
         public String homeadress { get; set; }
+
+        public int GroupId{get;set;}
+        [ForeignKey("GroupId")]
+        public Group Group{get;set;}
     }
 }

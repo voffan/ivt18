@@ -12,38 +12,15 @@ namespace grades
     public class Group
     {
         [Key]
-        public int groupId { get; set; }
-        public int year { get; set; }
-        public char letter { get; set; }
+        public int GroupId { get; set; }
+        public int Year { get; set; }
+        public char Letter { get; set; }
 
-        public int schoolId { get; set; }
-        [ForeignKey("schoolId")]
-        public int school { get; set; }
+        public int SchoolId { get; set; }
+        [ForeignKey("SchoolId")]
+        public School School { get; set; }
 
-        public System.Collections.ArrayList student;
-
-        /// <summary>
-        /// Property for collection of Student
-        /// </summary>
-        /// <pdGenerated>Default opposite class collection property</pdGenerated>
-        public System.Collections.ArrayList Student
-        {
-            get
-            {
-                if (student == null)
-                    student = new System.Collections.ArrayList();
-                return student;
-            }
-            set
-            {
-                RemoveAllStudent();
-                if (value != null)
-                {
-                    foreach (Student oStudent in value)
-                        AddStudent(oStudent);
-                }
-            }
-        }
+        public List<Student> Students {get;set;}
 
         /// <summary>
         /// Add a new Student in the collection
