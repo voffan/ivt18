@@ -3,14 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace grades
 {
     public class ReportCard
     {
-        private int estimate;
+        [Key]
+        public int ReportCardId { get; set; }
+        public int estimate { get; set; }
 
-        public Student student;
+        public int StudentId { get; set; }
+        [ForeignKey("StudentId")]
+
+        public Student student { get; set; }
 
         /// <summary>
         /// Property for Student
@@ -27,7 +35,11 @@ namespace grades
                 this.student = value;
             }
         }
-        public Course course;
+
+        public int CourseId { get; set; }
+        [ForeignKey("CourseId")]
+      
+        public Course course { get; set; }
 
         /// <summary>
         /// Property for Course
@@ -44,7 +56,10 @@ namespace grades
                 this.course = value;
             }
         }
-        public CheckPoint checkPoint;
+
+        public int CheckPointId { get; set; }
+        [ForeignKey("CheckPointId")]
+        public CheckPoint checkPoint { get; set; }
 
         /// <summary>
         /// Property for CheckPoint
@@ -61,7 +76,10 @@ namespace grades
                 this.checkPoint = value;
             }
         }
-        public StudyYear studyYear;
+
+        public int StudyYearId { get; set; }
+        [ForeignKey("StudyYearId")]
+        public StudyYear studyYear { get; set; }
 
         /// <summary>
         /// Property for StudyYear

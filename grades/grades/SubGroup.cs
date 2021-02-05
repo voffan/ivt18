@@ -3,14 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace grades
 {
     public class SubGroup
     {
-        private String name;
-        private Class class;
-        private Subject subject;
+        [Key ]
+        public int subgroupId{get;set;}
+        [ForeignKey("studentId")]
+        public int studentId { get; set; }
+        public String name { get; set; }
+        public int groupId { get; set; }
+        [ForeignKey("groupId")]
+        public Group group { get; set; }
+        public int subjectId { get; set; }
+        [ForeignKey("subjectId")]
+        public Subject subject { get; set; }
 
         public System.Collections.ArrayList student;
 
@@ -74,3 +85,4 @@ namespace grades
                 student.Clear();
         }
     }
+}

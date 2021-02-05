@@ -1,0 +1,14 @@
+C:\Users\nomia\ivt18\grades\grades\bin\Debug\grades.exe.config
+C:\Users\nomia\ivt18\grades\grades\bin\Debug\grades.exe
+C:\Users\nomia\ivt18\grades\grades\bin\Debug\grades.pdb
+C:\Users\nomia\ivt18\grades\grades\bin\Debug\EntityFramework.dll
+C:\Users\nomia\ivt18\grades\grades\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\nomia\ivt18\grades\grades\bin\Debug\EntityFramework.xml
+C:\Users\nomia\ivt18\grades\grades\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\nomia\ivt18\grades\grades\obj\Debug\grades.csprojAssemblyReference.cache
+C:\Users\nomia\ivt18\grades\grades\obj\Debug\grades.Properties.Resources.resources
+C:\Users\nomia\ivt18\grades\grades\obj\Debug\grades.csproj.GenerateResource.cache
+C:\Users\nomia\ivt18\grades\grades\obj\Debug\grades.csproj.CoreCompileInputs.cache
+C:\Users\nomia\ivt18\grades\grades\obj\Debug\grades.csproj.CopyComplete
+C:\Users\nomia\ivt18\grades\grades\obj\Debug\grades.exe
+C:\Users\nomia\ivt18\grades\grades\obj\Debug\grades.pdb
