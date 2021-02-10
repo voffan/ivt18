@@ -11,9 +11,14 @@ namespace carton
 {
     public class ProductionLine
     {
-        public string name;
+        public string name { get; set; }
 
-        public Department department;
-        public Shift[] shifts;
+        public string departmentName { get; set; }
+        [ForeignKey("departmentName")]
+        public Department department { get; set; }
+
+        public string beginShifts { get; set; }
+        [ForeignKey("beginShifts")]
+        public Shift[] shifts { get; set; }
     }
 }

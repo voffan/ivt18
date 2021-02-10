@@ -11,8 +11,10 @@ namespace carton
 {
     public class ProductRemain
     {
-        public int remainings;
-
-        public Product product;
+        public int remainings { get; set; }
+        
+        public string productName { get; set; }
+        [ForeignKey("productName")]
+        public Product product { get; set; }
     }
 }

@@ -11,7 +11,7 @@ namespace carton
 {
     public class Department
     {
-        public string name;
-        public int type; //0 - storage, 1 - production_line
+        public string name { get; set; }
+        public int type { get; set; } //0 - storage, 1 - production_line
     }
 }
