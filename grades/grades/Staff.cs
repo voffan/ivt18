@@ -17,5 +17,7 @@ namespace grades
         public String role { get; set; }
         public String phonenumber { get; set; }
         public String homeadress { get; set; }
+
+        public Student student { get; set; }
     }
 }
