@@ -12,23 +12,23 @@ namespace grades
     public class Course
     {
         [Key]
-        public int courseId { get; set; }
+        public int CourseId { get; set; }
 
-        public int subjectId { get; set; }
-        [ForeignKey("subjectId")]
-        public Subject subject { get; set; }
+        public int SubjectId { get; set; }
+        [ForeignKey("SubjectId")]
+        public Subject Subject { get; set; }
 
-        public int groupId { get; set; }
-        [ForeignKey("groupId")]
-        public Group group { get; set; }
+        public int GroupId { get; set; }
+        [ForeignKey("GroupId")]
+        public Group Group { get; set; }
 
-        public int subgroupId { get; set; }
-        [ForeignKey("subgroupId")]
-        public SubGroup subGroup { get; set; }
+        public int SubgroupId { get; set; }
+        [ForeignKey("SubgroupId")]
+        public SubGroup SubGroup { get; set; }
 
        
-        public int staffId { get; set; }
-        [ForeignKey("staffId")]
-        public Staff teacher { get; set; }
+        public int StaffId { get; set; }
+        [ForeignKey("StaffId")]
+        public Staff Teacher { get; set; }
     }
 }

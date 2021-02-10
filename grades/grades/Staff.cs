@@ -12,12 +12,16 @@ namespace grades
     public class Staff
     {
         [Key]
-        public int staffId { get; set; }
-        public String fullname { get; set; }
-        public String role { get; set; }
-        public String phonenumber { get; set; }
-        public String homeadress { get; set; }
+        public int StaffId { get; set; }
+        public String Fullname { get; set; }
 
-        public Student student { get; set; }
+        public string Role { get; set; }
+        [ForeignKey("Role")]
+        public Position Position{ get; set; }
+      
+        public String Phonenumber { get; set; }
+        public String Homeadress { get; set; }
+
+        public Student Student { get; set; }
     }
 }

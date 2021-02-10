@@ -12,18 +12,18 @@ namespace grades
     public class SubGroup
     {
         [Key ]
-        public int subgroupId{get;set;}
+        public int SubgroupId{get;set;}
 
-        public int studentId { get; set;} 
-        [ForeignKey("studentId")]
+        public int StudentId { get; set;} 
+        [ForeignKey("StudentId")]
 
-        public String name { get; set; }
-        public int groupId { get; set; }
-        [ForeignKey("groupId")]
-        public Group group { get; set; }
-        public int subjectId { get; set; }
-        [ForeignKey("subjectId")]
-        public Subject subject { get; set; }
+        public String Name { get; set; }
+        public int GroupId { get; set; }
+        [ForeignKey("GroupId")]
+        public Group Group { get; set; }
+        public int SubjectId { get; set; }
+        [ForeignKey("SubjectId")]
+        public Subject Subject { get; set; }
 
         public List<StudentSubGroup> Student { get; set; }
 
