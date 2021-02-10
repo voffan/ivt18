@@ -9,119 +9,27 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace grades {
 
-    class School {
+    public class School {
         [Key]
-        public int schoolId { get; set; }
-        public String name { get; set; }
-        public String adress { get; set; }
-        public String email { get; set; }
-        public int phonenumber { get; set; }
+        public int SchoolId { get; set; }
+        public String Name { get; set; }
+        public String Adress { get; set; }
+        public String Email { get; set; }
+        public String Phonenumber { get; set; }
 
-        public System.Collections.ArrayList group;
+        public int GroupId { get; set; }
+        [ForeignKey("GroupId")]
+        public List<Group> Group { get; set; }
 
-        /// <summary>
-        /// Property for collection of Class
-        /// </summary>
-        /// <pdGenerated>Default opposite class collection property</pdGenerated>
-        public System.Collections.ArrayList Group
-        {
-            get {
-                if (group == null) group = new System.Collections.ArrayList();
-                return group;
-            }
-            set {
-                RemoveAllGroup();
-                if (value != null) {
-                    foreach(Group oGroup in value)
-                    AddGroup(oGroup);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Add a new Class in the collection
-        /// </summary>
-        /// <pdGenerated>Default Add</pdGenerated>
-        public void AddGroup(Group newGroup) {
-            if (newGroup == null) return;
-            if (this.group == null) this.group = new System.Collections.ArrayList();
-            if (!this.group.Contains(newGroup)) this.group.Add(newGroup);
-        }
-
-        /// <summary>
-        /// Remove an existing Class from the collection
-        /// </summary>
-        /// <pdGenerated>Default Remove</pdGenerated>
-        public void RemoveGroup(Group oldGroup) {
-            if (oldGroup == null) return;
-            if (this.group != null) if (this.group.Contains(oldGroup)) this.group.Remove(oldGroup);
-        }
-
-        /// <summary>
-        /// Remove all instances of Class from the collection
-        /// </summary>
-        /// <pdGenerated>Default removeAll</pdGenerated>
-        public void RemoveAllGroup() {
-            if (group != null) group.Clear();
-        }
-
-        public System.Collections.ArrayList staff;
-
-        /// <summary>
-        /// Property for collection of Staff
-        /// </summary>
-        /// <pdGenerated>Default opposite class collection property</pdGenerated>
-        public System.Collections.ArrayList Staff
-
-        {
-            get {
-                if (staff == null) staff = new System.Collections.ArrayList();
-                return staff;
-            }
-            set {
-                RemoveAllStaff();
-                if (value != null) {
-                    foreach(Staff oStaff in value)
-                    AddStaff(oStaff);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Add a new Staff in the collection
-        /// </summary>
-        /// <pdGenerated>Default Add</pdGenerated>
-        public void AddStaff(Staff newStaff) {
-            if (newStaff == null) return;
-            if (this.staff == null) this.staff = new System.Collections.ArrayList();
-            if (!this.staff.Contains(newStaff)) this.staff.Add(newStaff);
-        }
-
-        /// <summary>
-        /// Remove an existing Staff from the collection
-        /// </summary>
-        /// <pdGenerated>Default Remove</pdGenerated>
-        public void RemoveStaff(Staff oldStaff) {
-            if (oldStaff == null) return;
-            if (this.staff != null) if (this.staff.Contains(oldStaff)) this.staff.Remove(oldStaff);
-        }
-
-        /// <summary>
-        /// Remove all instances of Staff from the collection
-        /// </summary>
-        /// <pdGenerated>Default removeAll</pdGenerated>
-        public void RemoveAllStaff() {
-            if (staff != null) staff.Clear();
-        }
-
-        public int staffId { get; set; }
+        public int StaffId { get; set; }
         [ForeignKey("staffId")]
+        public List<Staff> Staff { get; set; }
 
-        public Staff headteacher { get; set; }
+        public Staff Headteacher { get; set; }
 
-        public int gradingSystemId { get; set; }
+        public int GradingSystemId { get; set; }
         [ForeignKey("gradingSystemId")]
 
-        public GradingSystem gradingSystem { get; set; }
+        public GradingSystem GradingSystem { get; set; }
     }
 }

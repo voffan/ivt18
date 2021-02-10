@@ -12,13 +12,21 @@ namespace grades
     public class Student
     {
         [Key]
-        public int studentId { get; set; }
-        public String fullname { get; set; }
-        public int phonenumber { get; set; }
-        public String homeadress { get; set; }
+        public int StudentId { get; set; }
+        public String Fullname { get; set; }
+        public int Phonenumber { get; set; }
+        public String Homeadress { get; set; }
 
         public int GroupId{get;set;}
         [ForeignKey("GroupId")]
         public Group Group{get;set;}
+
+        public int SubGroupId { get; set; }
+        [ForeignKey("Id")]
+        public List<StudentSubGroup> SubGroups { get; set; }
+
+        public int ReportCardId { get; set; }
+        [ForeignKey("ReportCardId")]
+        public List<ReportCard> ReportCards { get; set; }
     }
 }

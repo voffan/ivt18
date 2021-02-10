@@ -73,6 +73,7 @@
     <Compile Include="School.cs" />
     <Compile Include="Staff.cs" />
     <Compile Include="Student.cs" />
+    <Compile Include="StudentSubGroup.cs" />
     <Compile Include="StudyYear.cs" />
     <Compile Include="SubGroup.cs" />
     <Compile Include="Subject.cs" />

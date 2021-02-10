@@ -15,7 +15,7 @@ namespace grades
         public int staffId { get; set; }
         public String fullname { get; set; }
         public String role { get; set; }
-        public int phonenumber { get; set; }
+        public String phonenumber { get; set; }
         public String homeadress { get; set; }
     }
 }
