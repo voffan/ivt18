@@ -16,6 +16,8 @@ namespace carton
         public int ProductId { get; set; }
 
         [ForeignKey("ProductId")]
-        Product product { get; set; }
+        public Product product { get; set; }
+
+        public ICollection<Product> products { get; set; }
     }
 }
