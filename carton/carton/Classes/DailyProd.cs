@@ -11,8 +11,10 @@ namespace carton
 {
     public class DailyProd
     {
-        public int daily_prod;
+        public int daily_prod { get; set; }
 
-        public Product product;
+        public string name { get; set; }
+        [ForeignKey("name")]
+        public Product product { get; set; }
     }
 }

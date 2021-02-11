@@ -11,14 +11,25 @@ namespace carton
 {
     public class Factory
     {
-        public string name;
-        public string address;
-        public string INN;
-        public string contact_phone;
+        public string name { get; set; }
+        public string address { get; set; }
+        public string INN { get; set; }
+        public string contact_phone { get; set; }
 
-        public ProductionLine[] productionLines;
-        public Storage[] storages;
-        public Employee[] employees;
-        public Employee director; //TO-DO delete?
+        public string[] prod_line_name { get; set; }
+        [ForeignKey("prod_line_name")]
+        public ProductionLine[] productionLines { get; set; }
+
+        public string[] stor_name { get; set; }
+        [ForeignKey("stor_name")]
+        public Storage[] storages { get; set; }
+
+        public string[] employeeNames { get; set; }
+        [ForeignKey("employeeNames")]
+        public Employee[] employees { get; set; }
+
+        public string directorName { get; set; }
+        [ForeignKey("directorName")]
+        public Employee director { get; set; } //TO-DO delete?
     }
 }

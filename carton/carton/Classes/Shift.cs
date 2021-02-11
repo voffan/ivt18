@@ -11,11 +11,16 @@ namespace carton
 {
     public class Shift
     {
-        public string begin_date; //TO-DO string
-        public int end_date;
-        public string explaining;
+        public string begin_date { get; set; } //TO-DO string
+        public int end_date { get; set; }
+        public string explaining { get; set; }
 
-        public DailyProd daily_prod;
-        public Employee foreman;
+        public string name { get; set; }
+        [ForeignKey("name")]
+        public DailyProd daily_prod { get; set; }
+
+        public string employeeName { get; set; }
+        [ForeignKey("employeeName")]
+        public Employee foreman { get; set; }
     }
 }
