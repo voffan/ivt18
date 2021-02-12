@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel;
 
 namespace PE1
 {
     class Division
     {
+        [ForeignKey("Name")]
+        public string Name { get; set; }
     }
 }
