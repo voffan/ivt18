@@ -12,6 +12,7 @@ namespace WindowsFormsApp1
     public class Employee
     {
         public string name { get; set; }
+	[ForeignKey("name")]
         public string position { get; set; }
 		public string e-mail { get; set; }
 		public int phone { get; set; }

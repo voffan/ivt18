@@ -12,6 +12,7 @@ namespace WindowsFormsApp1
     public class Competition
     {
         public string name { get; set; }
+	[ForeignKey("name")]
         public string openDate { get; set; } 
 		public string closeDate { get; set; } 
 		public string place { get; set; }

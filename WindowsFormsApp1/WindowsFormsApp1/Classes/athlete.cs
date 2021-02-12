@@ -12,8 +12,10 @@ namespace WindowsFormsApp1
     public class athlete
     {
         public string name { get; set; }
+	[ForeignKey("name")]
         public string email { get; set; } 
 		public string sport { get; set; } //SportType?
+		[ForeignKey("sport")]
 		public string birthday { get; set; }
 		public double height { get; set; }
 		public double weight { get; set; }
