@@ -12,6 +12,7 @@ namespace carton
     public class Product
     {
         [Key]
-        public string name;
+        public int Id { get; set; }
+        public string Name { get; set; };
     }
 }

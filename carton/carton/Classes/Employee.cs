@@ -16,5 +16,9 @@ namespace carton
         public Status status;
         public string contact_phone;
         public string address;
+
+        public int? StorageId { get; set; }
+        [ForeignKey("StorageId")]
+        public Storage? Storage { get; set; }
     }
 }

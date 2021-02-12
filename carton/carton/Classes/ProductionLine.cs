@@ -20,5 +20,7 @@ namespace carton
         public string beginShifts { get; set; }
         [ForeignKey("beginShifts")]
         public Shift[] shifts { get; set; }
+
+        public List<ProductPL> ProductOperations { get; set; }
     }
 }
