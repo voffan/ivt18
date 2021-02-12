@@ -9,6 +9,7 @@ using System.ComponentModel;
 
 namespace PE1
 {
+    public enum BugStatus{New, Closed}
     class Bug
     {
         [Key]
@@ -17,7 +18,11 @@ namespace PE1
         public int Description { get; set; }
         public int LastFixedDate { get; set; }
         public int AddedDate { get; set; }
-        public int Status { get; set; }
+        public BugStatus Status { get; set; }
+
+        public int AuthorId { get; set; }
+        [ForeignKey("AuthorId")]
+        public Employee Author { get; set; }
 
         public int FixId { get; set; }
         [ForeignKey("FixId")]
