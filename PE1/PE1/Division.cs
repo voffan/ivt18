@@ -13,5 +13,14 @@ namespace PE1
     {
         [ForeignKey("Name")]
         public string Name { get; set; }
+
+
+        public int EmployeeId { get; set; }
+        [ForeignKey("EmployeeId")]
+        public ICollection<Employee> Employees { get; set; }
+
+        public int BugId { get; set; }
+        [ForeignKey("BugId")]
+        public ICollection<Bug> Bugs { get; set; }
     }
 }

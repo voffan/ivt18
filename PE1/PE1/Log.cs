@@ -13,9 +13,12 @@ namespace PE1
     {
         [Key]
         public int LogId { get; set; }
+
         public String Procedure { get; set; }
         public String User { get; set; }
         public String Fixes { get; set; }
         public String DescriptionOfFix { get; set; }
         public DateTime Date { get; set; }
+
     }
+}

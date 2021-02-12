@@ -13,10 +13,12 @@ namespace PE1
     {
         [Key]
         public int FixId { get; set; }
-
-        [ForeignKey("Description")]
         public string Description { get; set; }
         public int Rank { get; set; }
         DateTime Date = DateTime.Now;
+
+        public int BugId { get; set; }
+        [ForeignKey("BugId")]
+        public Bug Bug { get; set; }
     }
 }

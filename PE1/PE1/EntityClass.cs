@@ -18,7 +18,7 @@ namespace PE1
             public int TryClassId { get; set; }
             public string Email { get; set; }
             //public string Address? { get; set; }
-            public Status Status { get; set; }
+            //public Status Status { get; set; }
             
             public ICollection<ChildClass> ChildClasses { get; set; }
             }

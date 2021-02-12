@@ -19,13 +19,13 @@ namespace PE1
         public int AddedDate { get; set; }
         public int Status { get; set; }
 
-        [ForeignKey("FixId")]
         public int FixId { get; set; }
-        public Fix Fix { get; set; }
+        [ForeignKey("FixId")]
+        public ICollection<Fix> Fixes { get; set; }
 
-        [ForeignKey("CommentId")]
         public int CommentId { get; set; }
-        public Comment Comment { get; set; }
+        [ForeignKey("CommentId")]
+        public ICollection<Comment> Comments { get; set; }
 
     }
 }

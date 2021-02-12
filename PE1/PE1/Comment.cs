@@ -14,8 +14,11 @@ namespace PE1
         [Key]
         public int CommentsId { get; set; }
         public DateTime Date { get; set; }
-        public String Annotations { get; set; }
-        public String User { get; set; }
+        public string Annotations { get; set; }
+        public string User { get; set; }
 
+        public int? BugId { get; set; }
+        [ForeignKey("BugId")]
+        public ICollection<Bug> Bugs { get; set; }
     }
 }
