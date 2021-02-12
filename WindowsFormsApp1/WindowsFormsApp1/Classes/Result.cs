@@ -15,6 +15,9 @@ namespace WindowsFormsApp1
         public string category { get; set; } 
 		public string points { get; set; } 
 		public string place { get; set; } 
-		
+
+		public int CompetitionId { get; set; }
+		[ForeignKey("CompetitionId")]
+		public Competition Competition { get; set; }
     }
 }

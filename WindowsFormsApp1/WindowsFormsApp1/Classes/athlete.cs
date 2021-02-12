@@ -9,17 +9,16 @@ using System.ComponentModel;
 
 namespace WindowsFormsApp1
 {
-    public class athlete
+	public enum Sex { Male, Female }
+    public class Athlete: Person
     {
-        public string name { get; set; }
-	[ForeignKey("name")]
-        public string email { get; set; } 
-		public string sport { get; set; } //SportType?
-		[ForeignKey("sport")]
-		public string birthday { get; set; }
-		public double height { get; set; }
-		public double weight { get; set; }
-		public string sex { get; set; }
+        public int SportTypeId { get; set; }
+		[ForeignKey("SportTypeId")]
+		public SportType Sport { get; set; } //SportType?
+		public DateTime Birthday { get; set; }
+		public double Height { get; set; }
+		public double Weight { get; set; }
+		public Sex Sex { get; set; }
 		
     }
 }
