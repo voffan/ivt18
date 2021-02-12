@@ -14,14 +14,19 @@ namespace gallery
         [Key]
         public int JournalId { get; set; }
         public DateTime Date { get; set; }
-        public Place From { get; set; } 
+
+        // мб неправильно
+        public int? PlaceId { get; set; }  
+        [ForeignKey("PlaceId")]
+        public Place From { get; set; }
         public Place To { get; set; }
+        // ---
 
         public int PictureId { get; set; }
         [ForeignKey("PictureId")]
         public Picture Picture { get; set; }
 
-        public int ExpoId { get; set; }
+        public int? ExpoId { get; set; }
         [ForeignKey("ExpoId")]
         public Expo Expo { get; set; }
    

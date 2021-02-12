@@ -16,5 +16,7 @@ namespace gallery
         public int Phone { get; set; }
 
         public List<Picture> Pictures { get; set; }
+
+        public List<Employee> Employees { get; set; }
     }
 }
