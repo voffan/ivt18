@@ -17,19 +17,14 @@ namespace grades {
         public String Email { get; set; }
         public String Phonenumber { get; set; }
 
-        public int GroupId { get; set; }
-        [ForeignKey("GroupId")]
         public List<Group> Group { get; set; }
 
-        public int StaffId { get; set; }
-        [ForeignKey("staffId")]
         public List<Staff> Staff { get; set; }
 
         public Staff Headteacher { get; set; }
 
         public int GradingSystemId { get; set; }
         [ForeignKey("gradingSystemId")]
-
         public GradingSystem GradingSystem { get; set; }
     }
 }

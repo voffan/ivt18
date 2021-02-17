@@ -15,8 +15,8 @@ namespace grades
         public int StaffId { get; set; }
         public String Fullname { get; set; }
 
-        public string Role { get; set; }
-        [ForeignKey("Role")]
+        public string PositionId { get; set; }
+        [ForeignKey("PositionId")]
         public Position Position{ get; set; }
       
         public String Phonenumber { get; set; }
