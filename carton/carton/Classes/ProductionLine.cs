@@ -22,5 +22,6 @@ namespace carton
         public Shift[] shifts { get; set; }
 
         public List<ProductPL> ProductOperations { get; set; }
+        public List<Plan> plans { get; set; }
     }
 }

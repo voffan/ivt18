@@ -13,6 +13,13 @@ namespace carton
     {
         [Key]
         public int Id { get; set; }
-        public string Name { get; set; };
+        private string Name { get; set; }
+
+        public List<Planned> planneds { get; set; }
+        public List<ProductRemain> productRemains { get; set; }
+
+        public int shiftId { get; set; }
+        [ForeignKey("shiftId")]
+        public DailyProd? dailyProd { get; set; } //nullable error
     }
 }

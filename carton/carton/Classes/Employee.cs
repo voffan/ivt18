@@ -19,6 +19,6 @@ namespace carton
 
         public int? StorageId { get; set; }
         [ForeignKey("StorageId")]
-        public Storage? Storage { get; set; }
+        public Storage? Storage { get; set; } //nullable error
     }
 }

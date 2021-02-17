@@ -12,6 +12,7 @@ namespace carton
     public class Department
     {
         public string name { get; set; }
+        //enum type
         public int type { get; set; } //0 - storage, 1 - production_line
     }
 }

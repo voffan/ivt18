@@ -12,12 +12,15 @@ namespace carton
     public class Plan
     {
         [Key]
-        public string name { get; set; }
-        public string date { get; set; }
-        public string prodLineName { get; set; }
-        [ForeignKey("name")]
-        public Planned planned { get; set; }
-        [ForeignKey("prodLineName")]
-        public ProductionLine Production_line { get; set; }
+        public int id { get; set; }
+        private string name { get; set; }
+        private DateTime date { get; set; }
+        public List<Plan> plans { get; set; }
+        
+        public List<Planned> planneds { get; set; }
+        public int prodLineId { get; set; }
+        [ForeignKey("prodLineId")]
+        public ProductionLine productionLine { get; set; }
+
     }
 }

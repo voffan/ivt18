@@ -11,13 +11,12 @@ namespace carton
 {
     public class Planned
     {
-        public int plan_production { get; set; }
-        public bool complete { get; set; }
-        public int ProductId { get; set; }
-
-        [ForeignKey("ProductId")]
-        public Product product { get; set; }
-
-        public ICollection<Product> products { get; set; }
+        [Key]
+        public int id { get; set; }
+        private int plan_production { get; set; }
+        private bool complete { get; set; }
+        
+        public List<Product> products { get; set; }
+        public List<Plan> plans { get; set; }
     }
 }

@@ -20,7 +20,7 @@ namespace carton
         public int amount { get; set; }
         public Department source { get; set; }
         public Department destination { get; set; }
-        public Date Date { get; set; } //TO-DO string
+        public DateTime Date { get; set; } //TO-DO string
 
         public List<ProductPL> Production_line { get; set; }
 
