@@ -16,7 +16,8 @@ namespace grades
 
         public int SubGroupId { get; set; }
         [ForeignKey("SubGroupId")]
-        public SubGroup SubGroup { get; set; }
+        public Group SubGroup { get; set; }
+
 
         public int StudentId { get; set; }
         [ForeignKey("StudentId")]

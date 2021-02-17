@@ -26,5 +26,6 @@ namespace grades
         public Subject Subject { get; set; }
 
         public List<StudentSubGroup> Students { get; set; }
+
     }
 }
