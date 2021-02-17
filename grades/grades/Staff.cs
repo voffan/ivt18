@@ -18,9 +18,6 @@ namespace grades
 
         public int PositionId { get; set; }
         [ForeignKey("PositionId")]
-
-        public string Role { get; set; }
-
         public Position Position{ get; set; }
       
         public String Phonenumber { get; set; }
