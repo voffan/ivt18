@@ -1,6 +1,6 @@
-./Requirements/Grades.rqb
-./Requirements/Workspace.sws
-./grades/packages
-./grades/grades/bin
-./grades/grades/obj
-README.md
+*.oob
+*.rqb
+bin
+vs
+obj
+packages

@@ -12,7 +12,7 @@ namespace grades
     public class SubGroup
     {
         [Key ]
-        public int SubgroupId{get;set;}
+        public int SubGroupId{get;set;}
 
         public int StudentId { get; set;} 
         [ForeignKey("StudentId")]
@@ -25,13 +25,7 @@ namespace grades
         [ForeignKey("SubjectId")]
         public Subject Subject { get; set; }
 
-        public List<StudentSubGroup> Student { get; set; }
+        public virtual List<StudentSubGroup> Students { get; set; }
 
-        StudentSubGroup studentsubgroup = new StudentSubGroup();
-
-    
-
-        
-       
     }
 }

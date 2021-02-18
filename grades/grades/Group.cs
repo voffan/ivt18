@@ -20,9 +20,7 @@ namespace grades
         [ForeignKey("SchoolId")]
         public School School { get; set; }
 
-        public int StudentlId { get; set; }
-        [ForeignKey("StudentId")]
-        public List<Student> Students {get;set;}
+        public virtual List<Student> Students {get;set;}
 
         public int StaffId { get; set; }
         [ForeignKey("staffId")]

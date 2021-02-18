@@ -11,7 +11,11 @@ namespace grades
    public class Position
     {
         [Key]
-        public string Role { get; set; }
+
+        public int PositionId { get; set; }
+
+        public string name { get; set; }
+
 
   //      public Staff Staff { get; set; }  ?
     }
