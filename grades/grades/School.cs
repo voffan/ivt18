@@ -15,7 +15,7 @@ namespace grades {
         public String Name { get; set; }
         public String Adress { get; set; }
         public String Email { get; set; }
-        public String Phonenumber { get; set; }
+        public String PhoneNumber { get; set; }
 
         public virtual List<Group> Group { get; set; }
 

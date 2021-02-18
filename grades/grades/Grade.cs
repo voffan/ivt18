@@ -12,10 +12,11 @@ namespace grades
     {
         [Key]
         public int GradeId { get; set; }
-        [ForeignKey("GradeId")]
+
+        public String Value { get; set; }
         
         public GradingSystem GradingSystemId { get; set; }
-        [ForeignKey("StudentId")]
+        [ForeignKey("GradingSystemId")]
         public GradingSystem GradingSystem { get; set; }
     }
 }

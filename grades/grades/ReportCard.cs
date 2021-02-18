@@ -13,36 +13,26 @@ namespace grades
     {
         [Key]
         public int ReportCardId { get; set; }
-
         
-        public int GradeId { get; set; }
-        [ForeignKey("GradeID")]
-        public Grade Grade { get; set; }
-
+        //public int GradeId { get; set; }
+        //[ForeignKey("GradeId")]
+        //public Grade Grade { get; set; }
+        public virtual List<Grade> Grades { get; set; }
 
         public int StudentId { get; set; }
         [ForeignKey("StudentId")]
         public Student Student { get; set; }
 
-
-
         public int CourseId { get; set; }
         [ForeignKey("CourseId")]
-      
         public Course Course { get; set; }
-
 
         public int CheckPointId { get; set; }
         [ForeignKey("CheckPointId")]
         public CheckPoint CheckPoint { get; set; }
 
-
-
         public int StudyYearId { get; set; }
         [ForeignKey("StudyYearId")]
         public StudyYear StudyYear { get; set; }
-
-
-        public virtual List<Student> Students { get; set; }
     }
 }

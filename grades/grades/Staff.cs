@@ -13,15 +13,15 @@ namespace grades
     {
         [Key]
         public int StaffId { get; set; }
-        public String Fullname { get; set; }
+        public String FullName { get; set; }
 
 
         public int PositionId { get; set; }
         [ForeignKey("PositionId")]
         public Position Position{ get; set; }
       
-        public String Phonenumber { get; set; }
-        public String Homeadress { get; set; }
+        public String PhoneNumber { get; set; }
+        public String HomeAddress { get; set; }
 
         public School School { get; set; }
     }

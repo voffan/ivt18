@@ -13,7 +13,8 @@ namespace grades
     {
         [Key]
         public int StudyYearId { get; set; }
-        public DateTime firstyear { get; set; }
-        public DateTime secondyear { get; set; }
+
+        public DateTime FirstYear { get; set; }
+        public DateTime SecondYear { get; set; }
     }
 }
