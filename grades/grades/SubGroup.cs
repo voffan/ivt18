@@ -25,6 +25,7 @@ namespace grades
         [ForeignKey("SubjectId")]
         public Subject Subject { get; set; }
 
-        public List<StudentSubGroup> Students { get; set; }
+        public virtual List<StudentSubGroup> Students { get; set; }
+
     }
 }

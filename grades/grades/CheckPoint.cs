@@ -14,5 +14,6 @@ namespace grades
         [Key]
         public int CheckPointId { get; set; }
         public String name { get; set; }
+
     }
 }

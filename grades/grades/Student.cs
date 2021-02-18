@@ -21,8 +21,8 @@ namespace grades
         [ForeignKey("GroupId")]
         public Group Group{get;set;}
 
-        public List<StudentSubGroup> SubGroups { get; set; }
+        public virtual List<StudentSubGroup> SubGroups { get; set; }
 
-        public List<ReportCard> ReportCards { get; set; }
+        public virtual List<ReportCard> ReportCards { get; set; }
     }
 }

@@ -17,85 +17,39 @@ namespace grades
 
         public int StudentId { get; set; }
         [ForeignKey("StudentId")]
+        public Student Student { get; set; }
+<<<<<<< HEAD
+=======
+>>>>>>> 0c051af2a8fb2e4da65ea215dc7917a685a80e6b
 
-        public Student student { get; set; }
-
-        /// <summary>
-        /// Property for Student
-        /// </summary>
-        /// <pdGenerated>Default opposite class property</pdGenerated>
-        public Student Student
-        {
-            get
-            {
-                return student;
-            }
-            set
-            {
-                this.student = value;
-            }
-        }
 
         public int CourseId { get; set; }
         [ForeignKey("CourseId")]
       
-        public Course course { get; set; }
+        public Course Course { get; set; }
 
-        /// <summary>
-        /// Property for Course
-        /// </summary>
-        /// <pdGenerated>Default opposite class property</pdGenerated>
-        public Course Course
-        {
-            get
-            {
-                return course;
-            }
-            set
-            {
-                this.course = value;
-            }
-        }
+<<<<<<< HEAD
+=======
+       
+>>>>>>> 0c051af2a8fb2e4da65ea215dc7917a685a80e6b
 
         public int CheckPointId { get; set; }
         [ForeignKey("CheckPointId")]
-        public CheckPoint checkPoint { get; set; }
+        public CheckPoint CheckPoint { get; set; }
 
-        /// <summary>
-        /// Property for CheckPoint
-        /// </summary>
-        /// <pdGenerated>Default opposite class property</pdGenerated>
-        public CheckPoint CheckPoint
-        {
-            get
-            {
-                return checkPoint;
-            }
-            set
-            {
-                this.checkPoint = value;
-            }
-        }
+<<<<<<< HEAD
+=======
+       
+>>>>>>> 0c051af2a8fb2e4da65ea215dc7917a685a80e6b
 
         public int StudyYearId { get; set; }
         [ForeignKey("StudyYearId")]
-        public StudyYear studyYear { get; set; }
+        public StudyYear StudyYear { get; set; }
 
-        /// <summary>
-        /// Property for StudyYear
-        /// </summary>
-        /// <pdGenerated>Default opposite class property</pdGenerated>
-        public StudyYear StudyYear
-        {
-            get
-            {
-                return studyYear;
-            }
-            set
-            {
-                this.studyYear = value;
-            }
-        }
+<<<<<<< HEAD
+=======
+       
+>>>>>>> 0c051af2a8fb2e4da65ea215dc7917a685a80e6b
 
     }
 }
