@@ -11,18 +11,19 @@ namespace carton
 {
     public class Storage
     {
-        public string name { get; set; }
+        [Key]
+        public int Id { get; set; }
 
-        public string departmentName { get; set; }
-        [ForeignKey("departmentName")]
-        public Department department { get; set; }
+        public string Name { get; set; }
 
-        public int productRemaining { get; set; }
-        [ForeignKey("productRemaining")]
-        public ProductRemain product_remain { get; set; }
+        public string DepartmentName { get; set; }
+        [ForeignKey("DepartmentName")]
+        public Department Department { get; set; }
 
-        public string[] employeeNames { get; set; }
-        [ForeignKey("employeeNames")]
-        public Employee[] employees { get; set; }
+        public int ProductRemaining { get; set; }
+        [ForeignKey("ProductRemaining")]
+        public ProductRemain ProductRemain { get; set; }
+
+        public virtual List<Employee> Employees { get; set; }
     }
 }

@@ -9,10 +9,14 @@ using System.ComponentModel;
 
 namespace carton
 {
+    public enum DepType { Storage, ProductionLine }
+
     public class Department
     {
-        public string name { get; set; }
-        //enum type
-        public int type { get; set; } //0 - storage, 1 - production_line
+        [Key]
+        public int Id { get; set; }
+        public string Name { get; set; }
+        
+        public DepType Type { get; set; }
     }
 }
