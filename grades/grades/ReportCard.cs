@@ -17,13 +17,7 @@ namespace grades
 
         public int StudentId { get; set; }
         [ForeignKey("StudentId")]
-
         public Student student { get; set; }
-
-        /// <summary>
-        /// Property for Student
-        /// </summary>
-        /// <pdGenerated>Default opposite class property</pdGenerated>
         public Student Student
         {
             get
@@ -36,15 +30,12 @@ namespace grades
             }
         }
 
+
         public int CourseId { get; set; }
         [ForeignKey("CourseId")]
       
         public Course course { get; set; }
 
-        /// <summary>
-        /// Property for Course
-        /// </summary>
-        /// <pdGenerated>Default opposite class property</pdGenerated>
         public Course Course
         {
             get
@@ -61,10 +52,6 @@ namespace grades
         [ForeignKey("CheckPointId")]
         public CheckPoint checkPoint { get; set; }
 
-        /// <summary>
-        /// Property for CheckPoint
-        /// </summary>
-        /// <pdGenerated>Default opposite class property</pdGenerated>
         public CheckPoint CheckPoint
         {
             get
@@ -81,10 +68,7 @@ namespace grades
         [ForeignKey("StudyYearId")]
         public StudyYear studyYear { get; set; }
 
-        /// <summary>
-        /// Property for StudyYear
-        /// </summary>
-        /// <pdGenerated>Default opposite class property</pdGenerated>
+
         public StudyYear StudyYear
         {
             get
