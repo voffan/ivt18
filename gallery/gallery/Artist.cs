@@ -16,5 +16,7 @@ namespace gallery
         public string FullName{ get; set; }
         public DateTime BirthYear{ get; set; }
         public DateTime DeathYear { get; set; }
+
+        public virtual List<Picture> Pictures { get; set; }
     }
 }

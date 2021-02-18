@@ -14,5 +14,7 @@ namespace gallery
         [Key]
         public int GenreId { get; set; }
         public string Name { get; set; }
+
+        public virtual List<Picture> Pictures { get; set; }
     }
 }

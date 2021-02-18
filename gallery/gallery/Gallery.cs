@@ -15,8 +15,8 @@ namespace gallery
         public string Address { get; set; }
         public int Phone { get; set; }
 
-        public List<Picture> Pictures { get; set; }
+        public virtual List<Picture> Pictures { get; set; }
 
-        public List<Employee> Employees { get; set; }
+        public virtual List<Employee> Employees { get; set; }
     }
 }

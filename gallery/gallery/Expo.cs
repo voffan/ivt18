@@ -20,7 +20,7 @@ namespace gallery
 
         public string Place { get; set; }
 
-        public List<ExpoPicture> ExpoPictures { get; set; }
+        public virtual List<ExpoPicture> ExpoPictures { get; set; }
 
     }
 }

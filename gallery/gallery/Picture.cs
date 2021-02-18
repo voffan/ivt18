@@ -32,5 +32,9 @@ namespace gallery
         public int GalleryId { get; set; }
         [ForeignKey("GalleryId")]
         public Gallery Gallery { get; set; }
+
+        public virtual List<ExpoPicture> ExpoPictures { get; set; }
+
+        public virtual List<Journal> Journal { get; set; }
     }
 }

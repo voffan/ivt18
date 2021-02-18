@@ -14,5 +14,7 @@ namespace gallery
         [Key]
         public int PlaceId { get; set; }
         public string Name { get; set; }
+
+        public virtual List<Picture> Pictures { get; set; }
     }
 }
