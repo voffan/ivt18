@@ -40,6 +40,6 @@ namespace grades
         public StudyYear StudyYear { get; set; }
 
 
-        public virtual List<StudentSubGroup> Students { get; set; }
+        public virtual List<ReportCard> Students { get; set; }
     }
 }
