@@ -20,9 +20,7 @@ namespace grades
         public int StudentId { get; set; }
         [ForeignKey("StudentId")]
         public Student Student { get; set; }
-<<<<<<< HEAD
-=======
->>>>>>> 0c051af2a8fb2e4da65ea215dc7917a685a80e6b
+
 
 
         public int CourseId { get; set; }
@@ -30,28 +28,18 @@ namespace grades
       
         public Course Course { get; set; }
 
-<<<<<<< HEAD
-=======
-       
->>>>>>> 0c051af2a8fb2e4da65ea215dc7917a685a80e6b
 
         public int CheckPointId { get; set; }
         [ForeignKey("CheckPointId")]
         public CheckPoint CheckPoint { get; set; }
 
-<<<<<<< HEAD
-=======
-       
->>>>>>> 0c051af2a8fb2e4da65ea215dc7917a685a80e6b
+
 
         public int StudyYearId { get; set; }
         [ForeignKey("StudyYearId")]
         public StudyYear StudyYear { get; set; }
 
-<<<<<<< HEAD
-=======
-       
->>>>>>> 0c051af2a8fb2e4da65ea215dc7917a685a80e6b
+
         public virtual List<StudentSubGroup> Students { get; set; }
     }
 }

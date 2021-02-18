@@ -12,7 +12,7 @@ namespace grades
     {
         [Key]
         public int GradeId { get; set; }
-        public int GradingSystemId { get; set; }
+        public GradingSystem GradingSystemId { get; set; }
         [ForeignKey("StudentId")]
         public GradingSystem GradingSystem { get; set; }
     }
