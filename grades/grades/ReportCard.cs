@@ -13,7 +13,9 @@ namespace grades
     {
         [Key]
         public int ReportCardId { get; set; }
-        public int estimate { get; set; }
+        public int Grade { get; set; }
+        [ForeignKey("GradeID")]
+        
 
         public int StudentId { get; set; }
         [ForeignKey("StudentId")]
@@ -50,6 +52,6 @@ namespace grades
 =======
        
 >>>>>>> 0c051af2a8fb2e4da65ea215dc7917a685a80e6b
-
+        public virtual List<StudentSubGroup> Students { get; set; }
     }
 }
