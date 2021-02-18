@@ -24,78 +24,26 @@ namespace grades
         /// Property for Student
         /// </summary>
         /// <pdGenerated>Default opposite class property</pdGenerated>
-        public Student Student
-        {
-            get
-            {
-                return student;
-            }
-            set
-            {
-                this.student = value;
-            }
-        }
+       
 
         public int CourseId { get; set; }
         [ForeignKey("CourseId")]
       
         public Course course { get; set; }
 
-        /// <summary>
-        /// Property for Course
-        /// </summary>
-        /// <pdGenerated>Default opposite class property</pdGenerated>
-        public Course Course
-        {
-            get
-            {
-                return course;
-            }
-            set
-            {
-                this.course = value;
-            }
-        }
+       
 
         public int CheckPointId { get; set; }
         [ForeignKey("CheckPointId")]
         public CheckPoint checkPoint { get; set; }
 
-        /// <summary>
-        /// Property for CheckPoint
-        /// </summary>
-        /// <pdGenerated>Default opposite class property</pdGenerated>
-        public CheckPoint CheckPoint
-        {
-            get
-            {
-                return checkPoint;
-            }
-            set
-            {
-                this.checkPoint = value;
-            }
-        }
+       
 
         public int StudyYearId { get; set; }
         [ForeignKey("StudyYearId")]
         public StudyYear studyYear { get; set; }
 
-        /// <summary>
-        /// Property for StudyYear
-        /// </summary>
-        /// <pdGenerated>Default opposite class property</pdGenerated>
-        public StudyYear StudyYear
-        {
-            get
-            {
-                return studyYear;
-            }
-            set
-            {
-                this.studyYear = value;
-            }
-        }
+       
 
     }
 }
