@@ -14,7 +14,7 @@ namespace grades
         [Key]
         public int StudentId { get; set; }
         public String Fullname { get; set; }
-        public int Phonenumber { get; set; }
+        public String Phonenumber { get; set; }
         public String Homeadress { get; set; }
 
         public int GroupId{get;set;}

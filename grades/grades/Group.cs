@@ -23,7 +23,7 @@ namespace grades
         public List<Student> Students {get;set;}
 
         public int StaffId { get; set; }
-        [ForeignKey("staffId")]
+        [ForeignKey("StaffId")]
         public Staff Curator { get; set; }
     }
 }

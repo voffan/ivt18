@@ -1,6 +1,6 @@
 *.oob
 *.rqb
 bin
-vs
+.vs
 obj
 packages
