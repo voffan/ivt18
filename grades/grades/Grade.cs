@@ -8,10 +8,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace grades
 {
-    class Grade
+    public class Grade
     {
         [Key]
         public int GradeId { get; set; }
+        [ForeignKey("GradeId")]
+        
         public GradingSystem GradingSystemId { get; set; }
         [ForeignKey("StudentId")]
         public GradingSystem GradingSystem { get; set; }
