@@ -20,11 +20,11 @@ namespace PE1
         public int AddedDate { get; set; }
         public int Status { get; set; }
 
-        public ICollection<Fix> Fixes { get; set; }
+        public int EmplyeeId { get; set; }
+        public Emplyee Employee { get; set; }
 
-        public int CommentId { get; set; }
-        [ForeignKey("CommentId")]
-        public ICollection<Comment> Comments { get; set; }
+        public virtual ICollection<Fix> Fixes { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
 
     }
 }

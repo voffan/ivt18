@@ -16,20 +16,14 @@ namespace PE1
         public string Name { get; set; }
         public string Login { get; set; }
 
+        public int PositionId { get; set; }
+        [ForeignKey("PositionId")]
         public Position Position { get; set; }
 
         public StatusEmployee Status { get; set; }
 
-        public int LogId { get; set; }
-        [ForeignKey("LogId")]
-        public ICollection<Log> Logs { get; set; }
-
-        public int BugId { get; set; }
-        [ForeignKey("BugId")]
-        public ICollection<Bug> Bugs { get; set; }
-
-        public int FixId { get; set; }
-        [ForeignKey("FixId")]
-        public Fix Fix { get; set; }
+        public virtual ICollection<Log> Logs { get; set; }
+        public virtual ICollection<Bug> Bugs { get; set; }
+        public virtual ICollection<Fix> Fixes { get; set; }
     }
 }

@@ -17,8 +17,8 @@ namespace PE1
         public string Annotations { get; set; }
         public string User { get; set; }
 
-        public int? BugId { get; set; }
+        public int BugId { get; set; }
         [ForeignKey("BugId")]
-        public ICollection<Bug> Bugs { get; set; }
+        public Bug Bug { get; set; }
     }
 }

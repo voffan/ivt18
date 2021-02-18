@@ -21,5 +21,9 @@ namespace PE1
         public int BugId { get; set; }
         [ForeignKey("BugId")]
         public Bug Bug { get; set; }
+
+        public int EmployeeId { get; set; }
+        [ForeignKey("EmployeeId")]
+        public Employee Employee { get; set; }
     }
 }
