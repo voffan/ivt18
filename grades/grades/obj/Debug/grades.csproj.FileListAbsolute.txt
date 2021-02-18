@@ -12,3 +12,17 @@ C:\Users\nomia\ivt18\grades\grades\obj\Debug\grades.csproj.CoreCompileInputs.cac
 C:\Users\nomia\ivt18\grades\grades\obj\Debug\grades.csproj.CopyComplete
 C:\Users\nomia\ivt18\grades\grades\obj\Debug\grades.exe
 C:\Users\nomia\ivt18\grades\grades\obj\Debug\grades.pdb
+S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\bin\Debug\grades.exe.config
+S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\bin\Debug\grades.exe
+S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\bin\Debug\grades.pdb
+S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\bin\Debug\EntityFramework.dll
+S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\bin\Debug\EntityFramework.SqlServer.dll
+S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\bin\Debug\EntityFramework.xml
+S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\bin\Debug\EntityFramework.SqlServer.xml
+S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\obj\Debug\grades.csprojAssemblyReference.cache
+S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\obj\Debug\grades.Properties.Resources.resources
+S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\obj\Debug\grades.csproj.GenerateResource.cache
+S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\obj\Debug\grades.csproj.CopyComplete
+S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\obj\Debug\grades.exe
+S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\obj\Debug\grades.pdb
+S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\obj\Debug\grades.Migrations.test.resources

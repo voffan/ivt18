@@ -23,8 +23,6 @@ namespace grades {
 
         public Staff Headteacher { get; set; }
 
-        public int GradingSystemId { get; set; }
-        [ForeignKey("GradingSystemId")]
-        public GradingSystem GradingSystem { get; set; }
+        public virtual GradingSystem GradingSystem { get; set; }
     }
 }

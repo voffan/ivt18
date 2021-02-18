@@ -15,7 +15,7 @@ namespace grades
 
         public String Value { get; set; }
         
-        public GradingSystem GradingSystemId { get; set; }
+        public int GradingSystemId { get; set; }
         [ForeignKey("GradingSystemId")]
         public GradingSystem GradingSystem { get; set; }
     }

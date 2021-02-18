@@ -11,11 +11,11 @@ namespace grades
 {
     public class GradingSystem
     {
-        [Key]
+        [ForeignKey("School")]
         public int GradingSystemId { get; set; }
         public int MaxGrade { get; set; }
         public int MinGrade { get; set; }
 
-        public School School { get; set; }
+        public virtual School School { get; set; }
     }
 }

@@ -10,7 +10,7 @@ namespace grades
 {
     class Context : DbContext
     {
-        public Context() : base() { }
+        public Context() : base("ConnStr") { }
 
        //public DbSet<CheckPoint> CheckPoints { get; set; }
         public DbSet<Course> Courses { get; set; }

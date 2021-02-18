@@ -22,7 +22,7 @@ namespace grades
 
         public virtual List<Student> Students {get;set;}
 
-        public int StaffId { get; set; }
+        public int? StaffId { get; set; }
         [ForeignKey("StaffId")]
         public Staff Curator { get; set; }
     }
