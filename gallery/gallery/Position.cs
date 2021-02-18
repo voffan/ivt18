@@ -14,6 +14,8 @@ namespace gallery
         [Key]
         public int PositionId { get; set; }
         public string Name { get; set; }
+
+        public virtual List<Employee> Employees { get; set; }
     }
 
 }
