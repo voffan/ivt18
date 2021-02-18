@@ -9,18 +9,20 @@ using System.ComponentModel;
 
 namespace carton
 {
+    public enum PlanStatus { New, Approved }
+
     public class Plan
     {
         [Key]
-        public int id { get; set; }
-        private string name { get; set; }
-        private DateTime date { get; set; }
-        public List<Plan> plans { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public DateTime Date { get; set; }
+        public PlanStatus Status { get; set; }
         
-        public List<Planned> planneds { get; set; }
-        public int prodLineId { get; set; }
+        public List<Planned> Planneds { get; set; }
+        public int ProdLineId { get; set; }
         [ForeignKey("prodLineId")]
-        public ProductionLine productionLine { get; set; }
+        public ProductionLine ProductionLine { get; set; }
 
     }
 }

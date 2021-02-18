@@ -17,11 +17,11 @@ namespace carton
         [ForeignKey("departmentName")]
         public Department department { get; set; }
 
-        public string beginShifts { get; set; }
+        public string BeginShifts { get; set; }
         [ForeignKey("beginShifts")]
-        public Shift[] shifts { get; set; }
+        public Shift[] Shifts { get; set; }
 
         public List<ProductPL> ProductOperations { get; set; }
-        public List<Plan> plans { get; set; }
+        public List<Plan> Plans { get; set; }
     }
 }
