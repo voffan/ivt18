@@ -9,11 +9,13 @@ using System.ComponentModel;
 
 namespace PE1
 {
+    //обычно делают в отдельной базе (txt)
     class Log
     {
         [Key]
         public int LogId { get; set; }
 
+        //отдельный класс для процедур
         public String Procedure { get; set; }
         public String User { get; set; }
         public String Fixes { get; set; }

@@ -11,6 +11,7 @@ namespace PE1
 {
     class Division
     {
+        //id вместо Name
         [ForeignKey("Name")]
         public string Name { get; set; }
 
@@ -19,8 +20,8 @@ namespace PE1
         [ForeignKey("EmployeeId")]
         public ICollection<Employee> Employees { get; set; }
 
-        public int BugId { get; set; }
-        [ForeignKey("BugId")]
         public ICollection<Bug> Bugs { get; set; }
+
+        //Если много ко многим, то должен быть объединяющий класс
     }
 }
