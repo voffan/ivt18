@@ -9,17 +9,19 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace grades
 {
+    public enum CheckPoint{
+
+    }
     public class ReportCard
     {
         [Key]
         public int ReportCardId { get; set; }
-        
-        //public int GradeId { get; set; }
-        //[ForeignKey("GradeId")]
-        //public Grade Grade { get; set; }
-        public virtual List<Grade> Grades { get; set; }
 
-        public int? StudentId { get; set; }
+        public int GradeId { get; set; }
+        [ForeignKey("GradeId")]
+        public Grade Grade { get; set; }
+
+        public int StudentId { get; set; }
         [ForeignKey("StudentId")]
         public Student Student { get; set; }
 
@@ -27,8 +29,6 @@ namespace grades
         [ForeignKey("CourseId")]
         public Course Course { get; set; }
 
-        public int CheckPointId { get; set; }
-        [ForeignKey("CheckPointId")]
         public CheckPoint CheckPoint { get; set; }
 
         public int StudyYearId { get; set; }

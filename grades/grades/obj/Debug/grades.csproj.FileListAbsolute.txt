@@ -26,3 +26,6 @@ S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grad
 S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\obj\Debug\grades.exe
 S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\obj\Debug\grades.pdb
 S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\obj\Debug\grades.Migrations.test.resources
+S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\obj\Debug\grades.Migrations.test1.resources
+S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\obj\Debug\grades.Migrations.test2.resources
+S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\obj\Debug\grades.Migrations.test3.resources

@@ -23,6 +23,8 @@ namespace grades
         public String PhoneNumber { get; set; }
         public String HomeAddress { get; set; }
 
+        public int? SchoolId { get; set; }
+        [ForeignKey("SchoolId")]
         public School School { get; set; }
     }
 }

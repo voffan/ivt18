@@ -12,9 +12,8 @@ namespace grades
     {
         public Context() : base("ConnStr") { }
 
-       //public DbSet<CheckPoint> CheckPoints { get; set; }
         public DbSet<Course> Courses { get; set; }
-        //public DbSet<Grade> Grades { get; set; }
+        public DbSet<Grade> Grades { get; set; }
         public DbSet<GradingSystem> GradingSystems { get; set; }
         public DbSet<Group> Groups { get; set; }
         public DbSet<Position> Postitions { get; set; }
@@ -27,4 +26,6 @@ namespace grades
         public DbSet<SubGroup> SubGroups { get; set; }
         public DbSet<Subject> Subjects { get; set; }
     }
+
 }
+
