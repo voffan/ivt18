@@ -15,10 +15,12 @@ namespace gallery
         public int JournalId { get; set; }
         public DateTime Date { get; set; }
 
-        public int? PlaceId { get; set; }  
-        [ForeignKey("PlaceId")]
+        public int? PlaceFromId { get; set; }  
+        [ForeignKey("PlaceFromId")]
         public Place From { get; set; }
 
+        public int? PlaceToId { get; set; }  
+        [ForeignKey("PlaceToId")]
         public Place To { get; set; }
 
         public int PictureId { get; set; }
