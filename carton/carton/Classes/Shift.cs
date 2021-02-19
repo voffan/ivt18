@@ -6,21 +6,25 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel;
+using System.Data.Entity.Spatial;
 
 namespace carton
 {
     public class Shift
     {
-        public string begin_date { get; set; } //TO-DO string
-        public int end_date { get; set; }
-        public string explaining { get; set; }
+        [Key]
+        public int Id { get; set; }
 
-        public string name { get; set; }
-        [ForeignKey("name")]
-        public DailyProd daily_prod { get; set; }
+        public DateTime BeginDate { get; set; }
+        public int EndDate { get; set; }
+        public string Explaining { get; set; }
 
-        public string employeeName { get; set; }
-        [ForeignKey("employeeName")]
-        public Employee foreman { get; set; }
+        public int DailyProdId { get; set; }
+        [ForeignKey("DailyProdId")]
+        public DailyProd DailyProd { get; set; }
+
+        public int EmployeeId { get; set; }
+        [ForeignKey("EmployeeId")]
+        public Employee Foreman { get; set; }
     }
 }

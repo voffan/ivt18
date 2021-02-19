@@ -10,14 +10,16 @@ using System.Data.Entity.Spatial;
 
 namespace carton
 {
-    public class DailyProd
+    public class StoragePO
     {
         [Key]
         public int Id { get; set; }
-        public int Production { get; set; }
+        public int ProductOperationId { get; set; }
+        [ForeignKey("ProductOperationId")]
+        public ProductOperation ProductOperation { get; set; }
 
-        public int ProductId { get; set; }
-        [ForeignKey("ProductId")]
-        public Product Product { get; set; }
+        public int StorageId { get; set; }
+        [ForeignKey("StorageId")]
+        public Storage ProductionLine { get; set; }
     }
 }

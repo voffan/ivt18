@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel;
+using System.Data.Entity.Spatial;
 
 namespace carton
 {
@@ -13,20 +14,22 @@ namespace carton
     {
         [Key]
         public int Id { get; set; }
-        public int ProductId { get; set; }
-        [ForeignKey("ProductId")]
-        public Product Product { get; set; }
 
-        public int amount { get; set; }
-        public Department source { get; set; }
-        public Department destination { get; set; }
-        public DateTime Date { get; set; } //TO-DO string
+        public virtual List<Product> Products { get; set; }
+        public int Amount { get; set; }
+        public int SourceId { get; set; }
+        [ForeignKey("SourceId")]
+        public Department Source { get; set; }
 
-        public List<ProductPL> Production_line { get; set; }
+        public int DestinationId { get; set; }
+        [ForeignKey("DestinationId")]
+        public Department Destination { get; set; }
 
-        public string[] stor_names { get; set; }
-        [ForeignKey("stor_names")]
-        public Storage[] storage { get; set; }
+        public DateTime Date { get; set; }
+
+        public virtual List<ProductPL> ProductionLine { get; set; }
+
+        public virtual List<StoragePO> Storages { get; set; }
 
         public int EmployeeId { get; set; }
         [ForeignKey("EmployeeId")]

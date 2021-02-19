@@ -6,30 +6,29 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel;
+using System.Data.Entity.Spatial;
 
 namespace carton
 {
     public class Factory
     {
-        public string name { get; set; }
-        public string address { get; set; }
+        [Key]
+        public int Id;
+
+        public string Name { get; set; }
+        public string Address { get; set; }
         public string INN { get; set; }
-        public string contact_phone { get; set; }
+        public string ContactPhone { get; set; }
 
-        public string[] prod_line_name { get; set; }
-        [ForeignKey("prod_line_name")]
-        public ProductionLine[] productionLines { get; set; }
+        public virtual List<ProductionLine> ProductionLines { get; set; }
 
-        public string[] stor_name { get; set; }
-        [ForeignKey("stor_name")]
-        public Storage[] storages { get; set; }
+        public virtual List<Storage> Storages { get; set; }
 
-        public string[] employeeNames { get; set; }
-        [ForeignKey("employeeNames")]
-        public Employee[] employees { get; set; }
+        public virtual List<Employee> Employees { get; set; }
 
-        public string directorName { get; set; }
-        [ForeignKey("directorName")]
-        public Employee director { get; set; } //TO-DO delete?
+        //2 links?
+        public string DirectorId { get; set; }
+        [ForeignKey("DirectorId")]
+        public Employee Director { get; set; }
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel;
+using System.Data.Entity.Spatial;
 
 namespace carton
 {
@@ -21,7 +22,7 @@ namespace carton
         
         public List<Planned> Planneds { get; set; }
         public int ProdLineId { get; set; }
-        [ForeignKey("prodLineId")]
+        [ForeignKey("ProdLineId")]
         public ProductionLine ProductionLine { get; set; }
 
     }

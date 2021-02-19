@@ -60,6 +60,8 @@
     <Compile Include="Classes\Department.cs" />
     <Compile Include="Classes\Employee.cs" />
     <Compile Include="Classes\ProductPL.cs" />
+    <Compile Include="Classes\StoragePO.cs" />
+    <Compile Include="Context.cs" />
     <Compile Include="Example.cs" />
     <Compile Include="Classes\Factory.cs" />
     <Compile Include="Form1.cs">

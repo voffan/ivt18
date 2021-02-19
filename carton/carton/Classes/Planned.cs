@@ -6,17 +6,26 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel;
+using System.Data.Entity.Spatial;
 
 namespace carton
 {
     public class Planned
     {
         [Key]
-        public int id { get; set; }
-        private int plan_production { get; set; }
-        private bool complete { get; set; }
+        public int Id { get; set; }
+        public int PlanProduction { get; set; }
+        public bool Complete { get; set; }
         
-        public List<Product> products { get; set; }
-        public List<Plan> plans { get; set; }
+        public int PlanId { get; set; }
+        [ForeignKey("PlanId")]
+        public Plan Plan { get; set; }
+
+        public int ProductId { get; set; }
+        [ForeignKey("ProductId")]
+        public Product Product { get; set; }
+
+        //public List<Product> Products { get; set; }
+        //public List<Plan> Plans { get; set; }
     }
 }
