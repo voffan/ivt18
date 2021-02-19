@@ -14,17 +14,21 @@ namespace PE1
     {
         [Key]
         public int BugId { get; set; }
-        public int Type { get; set; }
-        public int Description { get; set; }
-        public int LastFixedDate { get; set; }
-        public int AddedDate { get; set; }
-        public int Status { get; set; }
+        public BugType BugType { get; set; }
+        public string Description { get; set; }
+        public DateTime LastFixedDate { get; set; }
+        public DateTime AddedDate { get; set; }
+        public Status Status { get; set; }
+
+        public ICollection<Fix> Fixes { get; set; }
 
         public int EmplyeeId { get; set; }
-        public Emplyee Employee { get; set; }
+        [ForeignKey("EmployeeId")]
+        public Employee Employee { get; set; }
 
-        public virtual ICollection<Fix> Fixes { get; set; }
-        public virtual ICollection<Comment> Comments { get; set; }
+        public int? CommentId { get; set; }
+        [ForeignKey("CommentId")]
+        public ICollection<Comment> Comments { get; set; }
 
     }
 }

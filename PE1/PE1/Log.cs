@@ -15,11 +15,18 @@ namespace PE1
         [Key]
         public int LogId { get; set; }
 
-        //отдельный класс для процедур
-        public String Procedure { get; set; }
-        public String User { get; set; }
-        public String Fixes { get; set; }
-        public String DescriptionOfFix { get; set; }
+        public int ProcedureId { get; set; }
+        [ForeignKey("ProcedureId")]
+        public Procedure Procedure { get; set; }
+
+        public int EmplyeeId { get; set; }
+        [ForeignKey("EmployeeId")]
+        public Employee Employee { get; set; }
+
+        public int FixId { get; set; }
+        [ForeignKey("FixId")]
+        public Fix Fix { get; set; }
+
         public DateTime Date { get; set; }
 
     }

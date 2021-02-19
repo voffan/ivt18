@@ -15,8 +15,7 @@ namespace PE1
         public int FixId { get; set; }
         public string Description { get; set; }
         public int Rank { get; set; }
-        //getset?
-        public DateTime Date = DateTime.Now;
+        public DateTime Date { get; set; }
 
         public int BugId { get; set; }
         [ForeignKey("BugId")]
