@@ -9,12 +9,9 @@ using System.ComponentModel;
 
 namespace WindowsFormsApp1
 {
-    public class SportCategory
+    public class City
     {
-		public int SportCategoryID { get; set; }
-        public string Name { get; set; }
-        public string Position { get; set; } 
-		public string Regulation { get; set; }
+        public string City { get; set; }
 		
     }
 }

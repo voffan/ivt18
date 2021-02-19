@@ -14,7 +14,7 @@ namespace WindowsFormsApp1
     {
         public int SportTypeId { get; set; }
 		[ForeignKey("SportTypeId")]
-		public SportType Sport { get; set; } //SportType?
+		public SportType Sport { get; set; } 
 		public DateTime Birthday { get; set; }
 		public double Height { get; set; }
 		public double Weight { get; set; }

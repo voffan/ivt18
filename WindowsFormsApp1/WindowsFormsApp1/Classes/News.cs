@@ -11,9 +11,9 @@ namespace WindowsFormsApp1
 {
     public class News
     {
-        public string heading { get; set; }
-        public string description { get; set; } 
-		public string date { get; set; } 
+        public string Heading { get; set; }
+        public string Description { get; set; } 
+		public DateTime Date { get; set; } 
 		
     }
 }

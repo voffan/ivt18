@@ -11,10 +11,11 @@ namespace WindowsFormsApp1
 {
     public class Result
     {
-        public string sporttype { get; set; }
-        public string category { get; set; } 
-		public string points { get; set; } 
-		public string place { get; set; } 
+        public SportType Sport { get; set; } 
+        public SportCategory category { get; set; } 
+		[ForeignKey("SportCategoryID")]
+		public double points { get; set; } 
+		public int place { get; set; } 
 
 		public int CompetitionId { get; set; }
 		[ForeignKey("CompetitionId")]

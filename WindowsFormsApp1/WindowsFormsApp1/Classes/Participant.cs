@@ -12,7 +12,7 @@ namespace WindowsFormsApp1
     public class Participant
     {
         public string sporttype { get; set; }
-	[ForeignKey("sporttype")]
+		[ForeignKey("sporttype")]
 		public string category { get; set; }
 		
     }

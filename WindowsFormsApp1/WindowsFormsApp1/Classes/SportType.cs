@@ -11,7 +11,7 @@ namespace WindowsFormsApp1
 {
     public class SportType
     {
-        public string name { get; set; }
+        public string sporttype { get; set; }
 		
     }
 }
