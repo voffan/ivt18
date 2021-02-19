@@ -9,7 +9,6 @@ using System.ComponentModel;
 
 namespace PE1
 {
-    public enum BugStatus {New, Closed}
     class Bug
     {
         [Key]
@@ -20,15 +19,12 @@ namespace PE1
         public DateTime AddedDate { get; set; }
         public Status Status { get; set; }
 
-        public ICollection<Fix> Fixes { get; set; }
+        public virtual ICollection<Fix> Fixes { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
 
         public int EmplyeeId { get; set; }
         [ForeignKey("EmployeeId")]
         public Employee Employee { get; set; }
-
-        public int? CommentId { get; set; }
-        [ForeignKey("CommentId")]
-        public ICollection<Comment> Comments { get; set; }
 
     }
 }

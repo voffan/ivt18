@@ -12,15 +12,12 @@ namespace PE1
     class Division
     {
         //id вместо Name
-        [ForeignKey("Name")]
+        [Key]
         public string Name { get; set; }
 
 
-        public int EmployeeId { get; set; }
-        [ForeignKey("EmployeeId")]
-        public ICollection<Employee> Employees { get; set; }
-
-        public ICollection<Bug> Bugs { get; set; }
+        public virtual ICollection<Employee> Employees { get; set; }
+        public virtual ICollection<Bug> Bugs { get; set; }
 
         //Если много ко многим, то должен быть объединяющий класс
     }
