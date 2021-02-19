@@ -20,8 +20,11 @@ namespace carton
         [ForeignKey("DepartmentName")]
         public Department Department { get; set; }
 
-        public virtual List<Shift> Shifts { get; set; }
+        public int FactoryId { get; set; }
+        [ForeignKey("FactoryId")]
+        public Factory Factory { get; set; }
 
+        public virtual List<Shift> Shifts { get; set; }
         public virtual List<ProductPL> ProductOperations { get; set; }
         public virtual List<Plan> Plans { get; set; }
     }

@@ -13,17 +13,17 @@ namespace carton
     {
         [Key]
         public int Id { get; set; }
-
         public string Name { get; set; }
+
+        public int FactoryId { get; set; }
+        [ForeignKey("FactoryId")]
+        public Factory Factory { get; set; }
 
         public string DepartmentName { get; set; }
         [ForeignKey("DepartmentName")]
         public Department Department { get; set; }
 
-        public int ProductRemaining { get; set; }
-        [ForeignKey("ProductRemaining")]
-        public ProductRemain ProductRemain { get; set; }
-
+        public virtual List<ProductRemain> ProductRemain { get; set; }
         public virtual List<Employee> Employees { get; set; }
     }
 }

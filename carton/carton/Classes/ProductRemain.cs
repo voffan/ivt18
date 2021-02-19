@@ -16,8 +16,7 @@ namespace carton
 
         public int Remainings { get; set; }
         
-        public string ProductName { get; set; }
-        [ForeignKey("ProductName")]
-        public Product Product { get; set; }
+        public virtual List<Product> Products { get; set; }
+        public virtual List<Storage> Storages { get; set; }
     }
 }
