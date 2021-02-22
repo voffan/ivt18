@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Artist.cs" />
+    <Compile Include="Context.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="Expo.cs" />
     <Compile Include="ExpoPicture.cs" />
@@ -68,13 +69,26 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Gallery.cs" />
+    <Compile Include="GalleryDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GalleryDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Genre.cs" />
     <Compile Include="Journal.cs" />
+    <Compile Include="Migrations\202102221142111_try1.cs" />
+    <Compile Include="Migrations\202102221142111_try1.designer.cs">
+      <DependentUpon>202102221142111_try1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Picture.cs" />
     <Compile Include="Place.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Migrations\202102221142111_try1.resx">
+      <DependentUpon>202102221142111_try1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -85,6 +99,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="GalleryDBDataSet.xsc">
+      <DependentUpon>GalleryDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GalleryDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GalleryDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GalleryDBDataSet.xss">
+      <DependentUpon>GalleryDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

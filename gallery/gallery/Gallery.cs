@@ -11,6 +11,8 @@ namespace gallery
 {
     class Gallery
     {
+        [Key]
+        public int GalleryId { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
         public int Phone { get; set; }
