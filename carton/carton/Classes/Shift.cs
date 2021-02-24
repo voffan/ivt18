@@ -19,9 +19,7 @@ namespace carton
         public int EndDate { get; set; }
         public string Explaining { get; set; }
 
-        public int DailyProdId { get; set; }
-        [ForeignKey("DailyProdId")]
-        public DailyProd DailyProd { get; set; }
+        public virtual List<DailyProd> DailyProds { get; set; }
 
         public int EmployeeId { get; set; }
         [ForeignKey("EmployeeId")]

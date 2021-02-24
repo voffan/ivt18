@@ -17,12 +17,12 @@ namespace carton
 
         public string FullName { get; set; }
 
-        public string PositionName { get; set; }
-        [ForeignKey("PositionName")]
+        public int PositionId { get; set; }
+        [ForeignKey("PositionId")]
         public Position Position { get; set; }
 
-        public string StatusName { get; set; }
-        [ForeignKey("StatusName")]
+        public int StatusId { get; set; }
+        [ForeignKey("StatusId")]
         public Status Status { get; set; }
 
         public string ContactPhone { get; set; }

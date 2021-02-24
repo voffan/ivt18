@@ -20,8 +20,8 @@ namespace carton
         [ForeignKey("FactoryId")]
         public Factory Factory { get; set; }
 
-        public string DepartmentName { get; set; }
-        [ForeignKey("DepartmentName")]
+        public int DepartmentId { get; set; }
+        [ForeignKey("DepartmentId")]
         public Department Department { get; set; }
 
         public virtual List<ProductRemain> ProductRemain { get; set; }

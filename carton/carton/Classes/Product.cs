@@ -19,8 +19,8 @@ namespace carton
         public List<Planned> Planneds { get; set; }
         public List<ProductRemain> ProductRemains { get; set; }
 
-        public int? ShiftId { get; set; }
-        [ForeignKey("ShiftId")]
+        public int DProdId { get; set; }
+        [ForeignKey("DProdId")]
         public DailyProd DailyProd { get; set; }
     }
 }

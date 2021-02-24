@@ -19,5 +19,9 @@ namespace carton
         public int ProductId { get; set; }
         [ForeignKey("ProductId")]
         public Product Product { get; set; }
+
+        public int ShiftId { get; set; }
+        [ForeignKey("ShiftId")]
+        public Shift Shift { get; set; }
     }
 }

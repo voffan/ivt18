@@ -13,7 +13,7 @@ namespace carton
     public class Factory
     {
         [Key]
-        public int Id;
+        public int Id { get; set; }
 
         public string Name { get; set; }
         public string Address { get; set; }
@@ -27,8 +27,10 @@ namespace carton
         public virtual List<Employee> Employees { get; set; }
 
         //2 links?
+        /*
         public string DirectorId { get; set; }
         [ForeignKey("DirectorId")]
         public Employee Director { get; set; }
+        */
     }
 }

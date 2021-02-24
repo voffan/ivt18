@@ -17,8 +17,8 @@ namespace carton
 
         public string Name { get; set; }
 
-        public string DepartmentName { get; set; }
-        [ForeignKey("DepartmentName")]
+        public int DepartmentId { get; set; }
+        [ForeignKey("DepartmentId")]
         public Department Department { get; set; }
 
         public int FactoryId { get; set; }

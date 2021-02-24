@@ -13,6 +13,7 @@ namespace carton
     public class Position
     {
         [Key]
-        public string position;
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }
