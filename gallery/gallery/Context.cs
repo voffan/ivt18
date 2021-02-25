@@ -10,7 +10,7 @@ namespace gallery
 {
     class Context : DbContext
     {
-        public Context() : base("conStr") { }
+        public Context() : base("ConStr") { }
 
         public DbSet<Picture> Pictures { get; set; }
 
