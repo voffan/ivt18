@@ -16,6 +16,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -28,7 +29,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -84,16 +84,16 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Gallery.cs" />
-    <Compile Include="GalleryDBaseDataSet.Designer.cs">
+    <Compile Include="GalleryDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GalleryDBaseDataSet.xsd</DependentUpon>
+      <DependentUpon>GalleryDBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Genre.cs" />
     <Compile Include="Journal.cs" />
-    <Compile Include="Migrations\202102250338362_try0.cs" />
-    <Compile Include="Migrations\202102250338362_try0.designer.cs">
-      <DependentUpon>202102250338362_try0.cs</DependentUpon>
+    <Compile Include="Migrations\202102260039576_test1.cs" />
+    <Compile Include="Migrations\202102260039576_test1.designer.cs">
+      <DependentUpon>202102260039576_test1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Picture.cs" />
@@ -101,8 +101,8 @@
     <Compile Include="Position.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Migrations\202102250338362_try0.resx">
-      <DependentUpon>202102250338362_try0.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202102260039576_test1.resx">
+      <DependentUpon>202102260039576_test1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -114,16 +114,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="GalleryDBaseDataSet.xsc">
-      <DependentUpon>GalleryDBaseDataSet.xsd</DependentUpon>
+    <None Include="GalleryDBDataSet.xsc">
+      <DependentUpon>GalleryDBDataSet.xsd</DependentUpon>
     </None>
-    <None Include="GalleryDBaseDataSet.xsd">
+    <None Include="GalleryDBDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GalleryDBaseDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>GalleryDBDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="GalleryDBaseDataSet.xss">
-      <DependentUpon>GalleryDBaseDataSet.xsd</DependentUpon>
+    <None Include="GalleryDBDataSet.xss">
+      <DependentUpon>GalleryDBDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -152,12 +152,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="GalleryDBase.mdf">
+    <Content Include="GalleryDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="GalleryDBase_log.ldf">
+    <Content Include="GalleryDB_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>GalleryDBase.mdf</DependentUpon>
+      <DependentUpon>GalleryDB.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

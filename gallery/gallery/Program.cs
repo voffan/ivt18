@@ -14,9 +14,12 @@ namespace gallery
         [STAThread]
         static void Main()
         {
+            var myContext = new Context();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+
+
         }
     }
 }
