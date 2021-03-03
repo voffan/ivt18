@@ -10,7 +10,7 @@ namespace Computers
 {
     public class DatabaseContext : DbContext
     {
-        public DatabaseContext() : base("DbConnectionString Test")
+        public DatabaseContext() : base("DbConnectionString Mikhailov")
         {}
         public DbSet<Status> Statuses { get; set; }
         public DbSet<DeviceType> DeviceTypes { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Computers.Models
 {
-    public class Device
+    abstract public class Device
     {
         public string Name { get; set; }
         public DeviceType DeviceType { get; set; }
