@@ -10,10 +10,12 @@ using System.Data.Entity.Spatial;
 
 namespace carton
 {
+    public enum PosType { Director, Economist, SysAdmin, StorageEmployee, Foreman }
+
     public class Position
     {
         [Key]
         public int Id { get; set; }
-        public string Name { get; set; }
+        public PosType Role { get; set; }
     }
 }

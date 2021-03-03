@@ -10,10 +10,12 @@ using System.Data.Entity.Spatial;
 
 namespace carton
 {
+    public enum StatusType { Working, Absent}
+
     public class Status
     {
         [Key]
         public int Id { get; set; }
-        public string Name { get; set; }
+        public StatusType Attendance { get; set; }
     }
 }
