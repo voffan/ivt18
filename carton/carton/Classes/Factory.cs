@@ -27,10 +27,10 @@ namespace carton
         public virtual List<Employee> Employees { get; set; }
 
         //2 links?
-        /*
-        public string DirectorId { get; set; }
+        
+        public int DirectorId { get; set; }
         [ForeignKey("DirectorId")]
         public Employee Director { get; set; }
-        */
+        
     }
 }

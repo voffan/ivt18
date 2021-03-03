@@ -32,14 +32,17 @@ namespace carton
         public Storage Storage { get; set; }
 
         //2 links?
-        public int FactoryId { get; set; }
+        public int? FactoryId { get; set; }
         [ForeignKey("FactoryId")]
         public Factory Factory { get; set; }
 
         //public virtual List<Factory> Factory { get; set; }
 
-        public virtual List<ProductOperation> ProductOperations { get; set; }
-        public virtual List<Shift> Foremen { get; set; }
+        // nullable reference type fix
+#nullable enable
+        public virtual List<ProductOperation>? ProductOperations { get; set; }
+        public virtual List<Shift>? Shifts { get; set; }
+#nullable disable
 
     }
 }
