@@ -12,10 +12,22 @@ namespace carton
     {
         public Context() : base("CartonConnStr") { }
 
+        public DbSet<DailyProd> DailyProds { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Factory> Factories { get; set; }
         public DbSet<Plan> Plans { get; set; }
-        public DbSet<Product> Products { get; set; }
         public DbSet<Planned> Planneds { get; set; }
+        public DbSet<Position> Positions { get; set; }
+        public DbSet<Product> Products { get; set; }
         public DbSet<ProductionLine> ProductionLines { get; set; }
+        public DbSet<ProductOperation> ProductOperations { get; set; }
+        public DbSet<ProductRemain> ProductRemains { get; set; }
+        public DbSet<Shift> Shifts { get; set; }
+        public DbSet<Status> Statuses { get; set; }
+        public DbSet<Storage> Storages { get; set; }
+        public DbSet<ProductPL> ProductPLs { get; set; }
+        public DbSet<StoragePO> StoragePOs { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

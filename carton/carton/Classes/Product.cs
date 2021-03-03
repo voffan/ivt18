@@ -16,11 +16,10 @@ namespace carton
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public List<Planned> Planneds { get; set; }
-        public List<ProductRemain> ProductRemains { get; set; }
+        public virtual List<Planned> Planneds { get; set; }
+        public virtual List<ProductRemain> ProductRemains { get; set; }
 
-        public int DProdId { get; set; }
-        [ForeignKey("DProdId")]
-        public DailyProd DailyProd { get; set; }
+        public virtual List<DailyProd> DailyProds { get; set; }
+
     }
 }
