@@ -25,7 +25,7 @@ namespace gallery
         private void PictureListForm_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "galleryDBDataSet1.Picture". При необходимости она может быть перемещена или удалена.
-            //this.pictureTableAdapter.Fill(this.galleryDBDataSet1.Picture);
+            this.pictureTableAdapter.Fill(this.galleryDBDataSet1.Picture);
 
         }
 
