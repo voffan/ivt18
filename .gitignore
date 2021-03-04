@@ -1,4 +1,8 @@
-bin
+*.dll
+*.exe
+*.config
+*.xml
+*.pdb
 vs
 obj
 
