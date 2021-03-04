@@ -77,11 +77,17 @@
     <Compile Include="Employee.cs" />
     <Compile Include="Expo.cs" />
     <Compile Include="ExpoPicture.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="MainPageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MainPageForm.Designer.cs">
+      <DependentUpon>MainPageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddPictureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPictureForm.Designer.cs">
+      <DependentUpon>AddPictureForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Gallery.cs" />
     <Compile Include="GalleryDBDataSet.Designer.cs">
@@ -97,12 +103,36 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Picture.cs" />
+    <Compile Include="PictureListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PictureListForm.Designer.cs">
+      <DependentUpon>PictureListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Place.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ExpoListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExpoListForm.Designer.cs">
+      <DependentUpon>ExpoListForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ExpoListForm.resx">
+      <DependentUpon>ExpoListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainPageForm.resx">
+      <DependentUpon>MainPageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddPictureForm.resx">
+      <DependentUpon>AddPictureForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102260039576_test1.resx">
       <DependentUpon>202102260039576_test1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PictureListForm.resx">
+      <DependentUpon>PictureListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
