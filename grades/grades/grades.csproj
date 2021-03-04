@@ -83,6 +83,10 @@
     <Compile Include="Migrations\202102190421244_test3.designer.cs">
       <DependentUpon>202102190421244_test3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202102260315543_test4.cs" />
+    <Compile Include="Migrations\202102260315543_test4.designer.cs">
+      <DependentUpon>202102260315543_test4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="Program.cs" />
@@ -106,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102190421244_test3.resx">
       <DependentUpon>202102190421244_test3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102260315543_test4.resx">
+      <DependentUpon>202102260315543_test4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
