@@ -74,8 +74,8 @@
                         FactoryId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Department", t => t.DepartmentId, cascadeDelete: true)
                 .ForeignKey("dbo.Factory", t => t.FactoryId, cascadeDelete: true)
+                .ForeignKey("dbo.Department", t => t.DepartmentId, cascadeDelete: true)
                 .Index(t => t.DepartmentId)
                 .Index(t => t.FactoryId);
             
@@ -90,16 +90,29 @@
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.Factory",
+                "dbo.ProductOperation",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        Address = c.String(),
-                        INN = c.String(),
-                        ContactPhone = c.String(),
+                        Amount = c.Int(nullable: false),
+                        SourceId = c.Int(),
+                        DestinationId = c.Int(),
+                        Date = c.DateTime(nullable: false),
+                        EmployeeId = c.Int(nullable: false),
+                        Department_Id = c.Int(),
+                        Department_Id1 = c.Int(),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Department", t => t.DestinationId)
+                .ForeignKey("dbo.Employee", t => t.EmployeeId, cascadeDelete: true)
+                .ForeignKey("dbo.Department", t => t.SourceId)
+                .ForeignKey("dbo.Department", t => t.Department_Id)
+                .ForeignKey("dbo.Department", t => t.Department_Id1)
+                .Index(t => t.SourceId)
+                .Index(t => t.DestinationId)
+                .Index(t => t.EmployeeId)
+                .Index(t => t.Department_Id)
+                .Index(t => t.Department_Id1);
             
             CreateTable(
                 "dbo.Employee",
@@ -112,90 +125,35 @@
                         ContactPhone = c.String(),
                         Address = c.String(),
                         StorageId = c.Int(),
-                        FactoryId = c.Int(nullable: false),
+                        FactoryId = c.Int(),
+                        Factory_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Factory", t => t.FactoryId, cascadeDelete: true)
-                .ForeignKey("dbo.Position", t => t.PositionId, cascadeDelete: true)
+                .ForeignKey("dbo.Factory", t => t.Factory_Id)
                 .ForeignKey("dbo.Storage", t => t.StorageId)
+                .ForeignKey("dbo.Factory", t => t.FactoryId)
+                .ForeignKey("dbo.Position", t => t.PositionId, cascadeDelete: true)
                 .ForeignKey("dbo.Status", t => t.StatusId, cascadeDelete: true)
                 .Index(t => t.PositionId)
                 .Index(t => t.StatusId)
                 .Index(t => t.StorageId)
-                .Index(t => t.FactoryId);
+                .Index(t => t.FactoryId)
+                .Index(t => t.Factory_Id);
             
             CreateTable(
-                "dbo.Shift",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        BeginDate = c.DateTime(nullable: false),
-                        EndDate = c.Int(nullable: false),
-                        Explaining = c.String(),
-                        EmployeeId = c.Int(nullable: false),
-                        ProductionLine_Id = c.Int(),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Employee", t => t.EmployeeId, cascadeDelete: true)
-                .ForeignKey("dbo.ProductionLine", t => t.ProductionLine_Id)
-                .Index(t => t.EmployeeId)
-                .Index(t => t.ProductionLine_Id);
-            
-            CreateTable(
-                "dbo.Position",
+                "dbo.Factory",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
-                    })
-                .PrimaryKey(t => t.Id);
-            
-            CreateTable(
-                "dbo.ProductOperation",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Amount = c.Int(nullable: false),
-                        SourceId = c.Int(nullable: false),
-                        DestinationId = c.Int(nullable: false),
-                        Date = c.DateTime(nullable: false),
-                        EmployeeId = c.Int(nullable: false),
+                        Address = c.String(),
+                        INN = c.String(),
+                        ContactPhone = c.String(),
+                        DirectorId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Department", t => t.DestinationId, cascadeDelete: true)
-                .ForeignKey("dbo.Employee", t => t.EmployeeId, cascadeDelete: true)
-                .ForeignKey("dbo.Department", t => t.SourceId, cascadeDelete: true)
-                .Index(t => t.SourceId)
-                .Index(t => t.DestinationId)
-                .Index(t => t.EmployeeId);
-            
-            CreateTable(
-                "dbo.ProductPL",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        ProductOperationId = c.Int(nullable: false),
-                        ProductionLineId = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.ProductionLine", t => t.ProductionLineId, cascadeDelete: true)
-                .ForeignKey("dbo.ProductOperation", t => t.ProductOperationId, cascadeDelete: true)
-                .Index(t => t.ProductOperationId)
-                .Index(t => t.ProductionLineId);
-            
-            CreateTable(
-                "dbo.StoragePO",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        ProductOperationId = c.Int(nullable: false),
-                        StorageId = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Storage", t => t.StorageId, cascadeDelete: true)
-                .ForeignKey("dbo.ProductOperation", t => t.ProductOperationId, cascadeDelete: true)
-                .Index(t => t.ProductOperationId)
-                .Index(t => t.StorageId);
+                .ForeignKey("dbo.Employee", t => t.DirectorId, cascadeDelete: true)
+                .Index(t => t.DirectorId);
             
             CreateTable(
                 "dbo.Storage",
@@ -228,13 +186,73 @@
                 .Index(t => t.ProductId);
             
             CreateTable(
+                "dbo.Position",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Role = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Shift",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        BeginDate = c.DateTime(nullable: false),
+                        EndDate = c.Int(nullable: false),
+                        Explaining = c.String(),
+                        EmployeeId = c.Int(nullable: false),
+                        ProductionLine_Id = c.Int(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Employee", t => t.EmployeeId, cascadeDelete: true)
+                .ForeignKey("dbo.ProductionLine", t => t.ProductionLine_Id)
+                .Index(t => t.EmployeeId)
+                .Index(t => t.ProductionLine_Id);
+            
+            CreateTable(
                 "dbo.Status",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
+                        Attendance = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.ProductPL",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        ProductOperationId = c.Int(nullable: false),
+                        ProductionLineId = c.Int(nullable: false),
+                        ProductOperation_Id = c.Int(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.ProductionLine", t => t.ProductionLineId, cascadeDelete: true)
+                .ForeignKey("dbo.ProductOperation", t => t.ProductOperationId)
+                .ForeignKey("dbo.ProductOperation", t => t.ProductOperation_Id)
+                .Index(t => t.ProductOperationId)
+                .Index(t => t.ProductionLineId)
+                .Index(t => t.ProductOperation_Id);
+            
+            CreateTable(
+                "dbo.StoragePO",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        ProductOperationId = c.Int(nullable: false),
+                        StorageId = c.Int(nullable: false),
+                        ProductOperation_Id = c.Int(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Storage", t => t.StorageId, cascadeDelete: true)
+                .ForeignKey("dbo.ProductOperation", t => t.ProductOperationId)
+                .ForeignKey("dbo.ProductOperation", t => t.ProductOperation_Id)
+                .Index(t => t.ProductOperationId)
+                .Index(t => t.StorageId)
+                .Index(t => t.ProductOperation_Id);
             
         }
         
@@ -243,45 +261,57 @@
             DropForeignKey("dbo.Planned", "ProductId", "dbo.Product");
             DropForeignKey("dbo.Shift", "ProductionLine_Id", "dbo.ProductionLine");
             DropForeignKey("dbo.Plan", "ProdLineId", "dbo.ProductionLine");
-            DropForeignKey("dbo.ProductionLine", "FactoryId", "dbo.Factory");
-            DropForeignKey("dbo.Employee", "StatusId", "dbo.Status");
+            DropForeignKey("dbo.ProductionLine", "DepartmentId", "dbo.Department");
+            DropForeignKey("dbo.ProductOperation", "Department_Id1", "dbo.Department");
+            DropForeignKey("dbo.ProductOperation", "Department_Id", "dbo.Department");
+            DropForeignKey("dbo.StoragePO", "ProductOperation_Id", "dbo.ProductOperation");
             DropForeignKey("dbo.StoragePO", "ProductOperationId", "dbo.ProductOperation");
             DropForeignKey("dbo.StoragePO", "StorageId", "dbo.Storage");
+            DropForeignKey("dbo.ProductOperation", "SourceId", "dbo.Department");
+            DropForeignKey("dbo.Product", "ProductOperation_Id", "dbo.ProductOperation");
+            DropForeignKey("dbo.ProductPL", "ProductOperation_Id", "dbo.ProductOperation");
+            DropForeignKey("dbo.ProductPL", "ProductOperationId", "dbo.ProductOperation");
+            DropForeignKey("dbo.ProductPL", "ProductionLineId", "dbo.ProductionLine");
+            DropForeignKey("dbo.Employee", "StatusId", "dbo.Status");
+            DropForeignKey("dbo.Shift", "EmployeeId", "dbo.Employee");
+            DropForeignKey("dbo.DailyProd", "ShiftId", "dbo.Shift");
+            DropForeignKey("dbo.ProductOperation", "EmployeeId", "dbo.Employee");
+            DropForeignKey("dbo.Employee", "PositionId", "dbo.Position");
+            DropForeignKey("dbo.Employee", "FactoryId", "dbo.Factory");
             DropForeignKey("dbo.ProductRemain", "StorageId", "dbo.Storage");
             DropForeignKey("dbo.ProductRemain", "ProductId", "dbo.Product");
             DropForeignKey("dbo.Storage", "FactoryId", "dbo.Factory");
             DropForeignKey("dbo.Employee", "StorageId", "dbo.Storage");
             DropForeignKey("dbo.Storage", "DepartmentId", "dbo.Department");
-            DropForeignKey("dbo.ProductOperation", "SourceId", "dbo.Department");
-            DropForeignKey("dbo.Product", "ProductOperation_Id", "dbo.ProductOperation");
-            DropForeignKey("dbo.ProductPL", "ProductOperationId", "dbo.ProductOperation");
-            DropForeignKey("dbo.ProductPL", "ProductionLineId", "dbo.ProductionLine");
-            DropForeignKey("dbo.ProductOperation", "EmployeeId", "dbo.Employee");
+            DropForeignKey("dbo.ProductionLine", "FactoryId", "dbo.Factory");
+            DropForeignKey("dbo.Employee", "Factory_Id", "dbo.Factory");
+            DropForeignKey("dbo.Factory", "DirectorId", "dbo.Employee");
             DropForeignKey("dbo.ProductOperation", "DestinationId", "dbo.Department");
-            DropForeignKey("dbo.Employee", "PositionId", "dbo.Position");
-            DropForeignKey("dbo.Shift", "EmployeeId", "dbo.Employee");
-            DropForeignKey("dbo.DailyProd", "ShiftId", "dbo.Shift");
-            DropForeignKey("dbo.Employee", "FactoryId", "dbo.Factory");
-            DropForeignKey("dbo.ProductionLine", "DepartmentId", "dbo.Department");
             DropForeignKey("dbo.Planned", "PlanId", "dbo.Plan");
             DropForeignKey("dbo.DailyProd", "ProductId", "dbo.Product");
+            DropIndex("dbo.StoragePO", new[] { "ProductOperation_Id" });
+            DropIndex("dbo.StoragePO", new[] { "StorageId" });
+            DropIndex("dbo.StoragePO", new[] { "ProductOperationId" });
+            DropIndex("dbo.ProductPL", new[] { "ProductOperation_Id" });
+            DropIndex("dbo.ProductPL", new[] { "ProductionLineId" });
+            DropIndex("dbo.ProductPL", new[] { "ProductOperationId" });
+            DropIndex("dbo.Shift", new[] { "ProductionLine_Id" });
+            DropIndex("dbo.Shift", new[] { "EmployeeId" });
             DropIndex("dbo.ProductRemain", new[] { "ProductId" });
             DropIndex("dbo.ProductRemain", new[] { "StorageId" });
             DropIndex("dbo.Storage", new[] { "DepartmentId" });
             DropIndex("dbo.Storage", new[] { "FactoryId" });
-            DropIndex("dbo.StoragePO", new[] { "StorageId" });
-            DropIndex("dbo.StoragePO", new[] { "ProductOperationId" });
-            DropIndex("dbo.ProductPL", new[] { "ProductionLineId" });
-            DropIndex("dbo.ProductPL", new[] { "ProductOperationId" });
-            DropIndex("dbo.ProductOperation", new[] { "EmployeeId" });
-            DropIndex("dbo.ProductOperation", new[] { "DestinationId" });
-            DropIndex("dbo.ProductOperation", new[] { "SourceId" });
-            DropIndex("dbo.Shift", new[] { "ProductionLine_Id" });
-            DropIndex("dbo.Shift", new[] { "EmployeeId" });
+            DropIndex("dbo.Factory", new[] { "DirectorId" });
+            DropIndex("dbo.Employee", new[] { "Factory_Id" });
             DropIndex("dbo.Employee", new[] { "FactoryId" });
             DropIndex("dbo.Employee", new[] { "StorageId" });
             DropIndex("dbo.Employee", new[] { "StatusId" });
             DropIndex("dbo.Employee", new[] { "PositionId" });
+            DropIndex("dbo.ProductOperation", new[] { "Department_Id1" });
+            DropIndex("dbo.ProductOperation", new[] { "Department_Id" });
+            DropIndex("dbo.ProductOperation", new[] { "EmployeeId" });
+            DropIndex("dbo.ProductOperation", new[] { "DestinationId" });
+            DropIndex("dbo.ProductOperation", new[] { "SourceId" });
             DropIndex("dbo.ProductionLine", new[] { "FactoryId" });
             DropIndex("dbo.ProductionLine", new[] { "DepartmentId" });
             DropIndex("dbo.Plan", new[] { "ProdLineId" });
@@ -290,16 +320,16 @@
             DropIndex("dbo.Product", new[] { "ProductOperation_Id" });
             DropIndex("dbo.DailyProd", new[] { "ShiftId" });
             DropIndex("dbo.DailyProd", new[] { "ProductId" });
-            DropTable("dbo.Status");
-            DropTable("dbo.ProductRemain");
-            DropTable("dbo.Storage");
             DropTable("dbo.StoragePO");
             DropTable("dbo.ProductPL");
-            DropTable("dbo.ProductOperation");
-            DropTable("dbo.Position");
+            DropTable("dbo.Status");
             DropTable("dbo.Shift");
-            DropTable("dbo.Employee");
+            DropTable("dbo.Position");
+            DropTable("dbo.ProductRemain");
+            DropTable("dbo.Storage");
             DropTable("dbo.Factory");
+            DropTable("dbo.Employee");
+            DropTable("dbo.ProductOperation");
             DropTable("dbo.Department");
             DropTable("dbo.ProductionLine");
             DropTable("dbo.Plan");

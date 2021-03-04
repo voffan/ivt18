@@ -32,6 +32,30 @@ namespace carton
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
+            modelBuilder.Entity<ProductOperation>()
+            .HasOptional<Department>(s => s.Source)
+            .WithMany()
+            .HasForeignKey(s => s.SourceId)
+            .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<ProductOperation>()
+            .HasOptional<Department>(s => s.Destination)
+            .WithMany()
+            .HasForeignKey(s => s.DestinationId)
+            .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<ProductPL>()
+            .HasRequired(s => s.ProductOperation)
+            .WithMany()
+            .HasForeignKey(s => s.ProductOperationId)
+            .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<StoragePO>()
+            .HasRequired(s => s.ProductOperation)
+            .WithMany()
+            .HasForeignKey(s => s.ProductOperationId)
+            .WillCascadeOnDelete(false);
         }
     }
 }

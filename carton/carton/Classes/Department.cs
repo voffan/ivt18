@@ -19,5 +19,8 @@ namespace carton
         public string Name { get; set; }
         
         public DepType Type { get; set; }
+
+        public virtual List<ProductOperation> Sources { get; set; }
+        public virtual List<ProductOperation> Destinations { get; set; }
     }
 }

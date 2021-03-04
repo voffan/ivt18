@@ -39,10 +39,9 @@ namespace carton
         //public virtual List<Factory> Factory { get; set; }
 
         // nullable reference type fix
-#nullable enable
-        public virtual List<ProductOperation>? ProductOperations { get; set; }
-        public virtual List<Shift>? Shifts { get; set; }
-#nullable disable
+        public virtual List<ProductOperation> ProductOperations { get; set; }
+        public virtual List<Shift> Shifts { get; set; }
+
 
     }
 }
