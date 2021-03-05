@@ -11,6 +11,8 @@ namespace WindowsFormsApp1
 {
     public class Position
     {
+    	[Key]
+    	public int Id { get; set; }
         public string TheStreet { get; set; }
 		
     }

@@ -11,6 +11,8 @@ namespace WindowsFormsApp1
 {
     public class News
     {	
+    	[Key]
+        public int Id { get; set; }
     	[StringLength(250)]
         public string Heading { get; set; }
         public string Description { get; set; } 

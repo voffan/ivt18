@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
     {	
 		[ForeignKey("SportTypeID")]
 		public int SportTypeID { get; set; }
-        public string SportType { get; set; }
-		
+		[StringLength(250)]
+        public string SportType { get; set; }		
     }
 }

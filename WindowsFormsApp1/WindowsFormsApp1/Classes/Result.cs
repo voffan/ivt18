@@ -11,12 +11,17 @@ namespace WindowsFormsApp1
 {
     public class Result
     {
-        public SportType Sport { get; set; } 
-        public SportCategory Category { get; set; } 
-		[ForeignKey("SportCategoryID")]
+    	[Key]
+        public int Id { get; set; }
+
+        public int ParticipantId { get; set; }
+		[ForeignKey("ParticipantId")]
+		public Participant Participant { get; set; }
+
 		public double Points { get; set; } 
 		public int Place { get; set; } 
 
+		//??????? подумать нужен ли????????
 		public int CompetitionId { get; set; }
 		[ForeignKey("CompetitionId")]
 		public Competition Competition { get; set; }
