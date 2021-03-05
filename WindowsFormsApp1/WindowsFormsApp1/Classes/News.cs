@@ -10,7 +10,8 @@ using System.ComponentModel;
 namespace WindowsFormsApp1
 {
     public class News
-    {
+    {	
+    	[StringLength(250)]
         public string Heading { get; set; }
         public string Description { get; set; } 
 		public DateTime Date { get; set; } 

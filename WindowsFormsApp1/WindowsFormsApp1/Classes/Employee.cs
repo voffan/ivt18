@@ -10,9 +10,10 @@ using System.ComponentModel;
 namespace WindowsFormsApp1
 {
     public class Employee
-    {
+    {	
+		[ForeignKey("idEmploye")]
+        public int idEmploye { get; set; }
         public string Name { get; set; }
-		[ForeignKey("Name")]
         public string Position { get; set; }
 		public string E-mail { get; set; }
 		public int Phone { get; set; }

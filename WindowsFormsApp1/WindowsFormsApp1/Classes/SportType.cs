@@ -10,8 +10,10 @@ using System.ComponentModel;
 namespace WindowsFormsApp1
 {
     public class SportType
-    {
-        public string sporttype { get; set; }
+    {	
+		[ForeignKey("SportTypeID")]
+		public int SportTypeID { get; set; }
+        public string SportType { get; set; }
 		
     }
 }

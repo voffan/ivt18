@@ -11,9 +11,10 @@ namespace WindowsFormsApp1
 {
     public class Participant
     {
-        public string sporttype { get; set; }
-		[ForeignKey("sporttype")]
-		public string category { get; set; }
+        public string SportType { get; set; }
+		[ForeignKey("SortType")]
+    	[StringLength(250)]
+		public string Category { get; set; }
 		
     }
 }

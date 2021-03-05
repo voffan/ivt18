@@ -11,6 +11,8 @@ namespace WindowsFormsApp1
 {
     public class Competition
     {
+		[ForeignKey("idCompetition")]
+		public int idCompetition { get; set; }
         public string Name { get; set; }
 		[ForeignKey("Name")]
         public DateTime OpenDate { get; set; } 
