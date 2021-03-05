@@ -11,6 +11,8 @@ namespace WindowsFormsApp1
 {
     public class City
     {
+    	[Key]
+    	public int Id { get; set; }
         public string City { get; set; }
 		
     }
