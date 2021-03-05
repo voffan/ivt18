@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class ContextFix : DbMigration
+    public partial class reboot : DbMigration
     {
         public override void Up()
         {

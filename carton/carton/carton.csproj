@@ -79,9 +79,9 @@
     <Compile Include="Classes\ProductionLine.cs" />
     <Compile Include="Classes\ProductOperation.cs" />
     <Compile Include="Classes\ProductRemain.cs" />
-    <Compile Include="Migrations\202102260344242_ContextFix.cs" />
-    <Compile Include="Migrations\202102260344242_ContextFix.designer.cs">
-      <DependentUpon>202102260344242_ContextFix.cs</DependentUpon>
+    <Compile Include="Migrations\202103050344358_reboot.cs" />
+    <Compile Include="Migrations\202103050344358_reboot.designer.cs">
+      <DependentUpon>202103050344358_reboot.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -89,8 +89,8 @@
     <Compile Include="Classes\Shift.cs" />
     <Compile Include="Classes\Status.cs" />
     <Compile Include="Classes\Storage.cs" />
-    <EmbeddedResource Include="Migrations\202102260344242_ContextFix.resx">
-      <DependentUpon>202102260344242_ContextFix.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202103050344358_reboot.resx">
+      <DependentUpon>202103050344358_reboot.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

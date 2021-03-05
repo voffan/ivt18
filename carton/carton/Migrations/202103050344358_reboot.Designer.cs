@@ -7,13 +7,13 @@ namespace carton.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class ContextFix : IMigrationMetadata
+    public sealed partial class reboot : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ContextFix));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(reboot));
         
         string IMigrationMetadata.Id
         {
-            get { return "202102260344242_ContextFix"; }
+            get { return "202103050344358_reboot"; }
         }
         
         string IMigrationMetadata.Source
