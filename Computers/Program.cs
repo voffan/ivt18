@@ -1,4 +1,6 @@
 ﻿using Computers.Models;
+using Computers.Modules.Login;
+using Computers.Modules.Welcome;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,13 +19,13 @@ namespace Computers
         {
             using (var context = new DatabaseContext())
             {
-                var status1 = new Status() { Name = "Работает" };
-                context.Statuses.Add(status1);
+                //var status1 = new Status() { Name = "Работает" };
+                //context.Statuses.Add(status1);
                 context.SaveChanges();
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new LoginBuilder().Build());
         }
     }
 }
