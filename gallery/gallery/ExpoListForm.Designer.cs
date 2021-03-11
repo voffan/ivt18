@@ -31,17 +31,17 @@ namespace gallery
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.galleryDBDataSet = new gallery.GalleryDBDataSet();
-            this.expoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.expoTableAdapter = new gallery.GalleryDBDataSetTableAdapters.ExpoTableAdapter();
             this.expoIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.placeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.expoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.galleryDBDataSet = new gallery.GalleryDBDataSet();
+            this.expoTableAdapter = new gallery.GalleryDBDataSetTableAdapters.ExpoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.galleryDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.expoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.galleryDBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -59,20 +59,7 @@ namespace gallery
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(545, 150);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // galleryDBDataSet
-            // 
-            this.galleryDBDataSet.DataSetName = "GalleryDBDataSet";
-            this.galleryDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // expoBindingSource
-            // 
-            this.expoBindingSource.DataMember = "Expo";
-            this.expoBindingSource.DataSource = this.galleryDBDataSet;
-            // 
-            // expoTableAdapter
-            // 
-            this.expoTableAdapter.ClearBeforeFill = true;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // expoIdDataGridViewTextBoxColumn
             // 
@@ -105,6 +92,20 @@ namespace gallery
             this.placeDataGridViewTextBoxColumn.HeaderText = "Place";
             this.placeDataGridViewTextBoxColumn.Name = "placeDataGridViewTextBoxColumn";
             // 
+            // expoBindingSource
+            // 
+            this.expoBindingSource.DataMember = "Expo";
+            this.expoBindingSource.DataSource = this.galleryDBDataSet;
+            // 
+            // galleryDBDataSet
+            // 
+            this.galleryDBDataSet.DataSetName = "GalleryDBDataSet";
+            this.galleryDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // expoTableAdapter
+            // 
+            this.expoTableAdapter.ClearBeforeFill = true;
+            // 
             // ExpoListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -115,8 +116,8 @@ namespace gallery
             this.Text = "Список экспозиций";
             this.Load += new System.EventHandler(this.ExpoListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.galleryDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.expoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.galleryDBDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

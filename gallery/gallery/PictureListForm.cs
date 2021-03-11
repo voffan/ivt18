@@ -34,5 +34,10 @@ namespace gallery
             ExpoListForm expoListForm = new ExpoListForm();
             expoListForm.Show();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

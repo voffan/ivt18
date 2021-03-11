@@ -34,8 +34,6 @@ namespace gallery
             this.button2 = new System.Windows.Forms.Button();
             this.galleryDBDataSet1 = new gallery.GalleryDBDataSet();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pictureBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pictureTableAdapter = new gallery.GalleryDBDataSetTableAdapters.PictureTableAdapter();
             this.pictureIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +42,8 @@ namespace gallery
             this.genreIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.placeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.galleryIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pictureTableAdapter = new gallery.GalleryDBDataSetTableAdapters.PictureTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.galleryDBDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBindingSource)).BeginInit();
@@ -92,15 +92,7 @@ namespace gallery
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(730, 150);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // pictureBindingSource
-            // 
-            this.pictureBindingSource.DataMember = "Picture";
-            this.pictureBindingSource.DataSource = this.galleryDBDataSet1;
-            // 
-            // pictureTableAdapter
-            // 
-            this.pictureTableAdapter.ClearBeforeFill = true;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // pictureIdDataGridViewTextBoxColumn
             // 
@@ -150,6 +142,15 @@ namespace gallery
             this.galleryIdDataGridViewTextBoxColumn.DataPropertyName = "GalleryId";
             this.galleryIdDataGridViewTextBoxColumn.HeaderText = "GalleryId";
             this.galleryIdDataGridViewTextBoxColumn.Name = "galleryIdDataGridViewTextBoxColumn";
+            // 
+            // pictureBindingSource
+            // 
+            this.pictureBindingSource.DataMember = "Picture";
+            this.pictureBindingSource.DataSource = this.galleryDBDataSet1;
+            // 
+            // pictureTableAdapter
+            // 
+            this.pictureTableAdapter.ClearBeforeFill = true;
             // 
             // PictureListForm
             // 

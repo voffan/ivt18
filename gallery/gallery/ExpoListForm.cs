@@ -23,5 +23,10 @@ namespace gallery
             //this.expoTableAdapter.Fill(this.galleryDBDataSet.Expo);
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

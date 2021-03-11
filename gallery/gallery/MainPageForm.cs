@@ -22,5 +22,11 @@ namespace gallery
             PictureListForm pictureListForm = new PictureListForm();
             pictureListForm.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            EmployeeListForm employeeListForm = new EmployeeListForm();
+            employeeListForm.Show();
+        }
     }
 }
