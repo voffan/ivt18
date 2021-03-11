@@ -6,13 +6,24 @@ using System.Threading.Tasks;
 
 namespace Computers.Modules.Login
 {
-    interface ILoginInteractor
+    public interface ILoginInteractor
     {
         ILoginPresenter Presenter { get; set; }
+        void Validate(string email, string password);
+        void Login(string email, string password);
     }
 
-    sealed class LoginInteractor : ILoginInteractor
+    public class LoginInteractor : ILoginInteractor
     {
         public ILoginPresenter Presenter { get; set; }
+
+        void ILoginInteractor.Validate(string email, string password)
+        {
+            // TODO: Проверка
+        }
+        void ILoginInteractor.Login(string email, string password)
+        {
+            // TODO: Авторизовать
+        }
     }
 }
