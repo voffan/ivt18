@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,27 +10,30 @@ namespace Computers.Modules.Login
 {
     public interface ILoginView
     {
-        Form Self { get; }
         ILoginInteractor Interactor { get; set; }
     }
-    public partial class LoginView : Form, ILoginView
+    public class LoginView : View, ILoginView
     {
+        public ILoginInteractor Interactor { get; set; }
+
         private readonly Panel panel = new Panel();
         private readonly TextBox emailTextField = new TextBox();
         private readonly TextBox passwordTextField = new TextBox();
         private readonly Label emailLabel = new Label();
         private readonly Label passwordLabel = new Label();
         private readonly Button submitButton = new Button();
-        public LoginView()
+
+        public override void SetupView()
         {
-            InitializeComponent();
+            base.SetupView();
+            this.Text = "Авторизация";
         }
 
-        public Form Self => this;
-
-        private void LoginView_Load(object sender, EventArgs e)
+        public override void ViewDidLoad(object sender, EventArgs e)
         {
+            base.ViewDidLoad(sender, e);
             emailLabel.Text = "E-mail";
+            
             passwordLabel.Text = "Пароль";
             passwordTextField.PasswordChar = '*';
 
@@ -45,14 +46,13 @@ namespace Computers.Modules.Login
             panel.Controls.Add(passwordTextField);
             panel.Controls.Add(passwordLabel);
             panel.Controls.Add(submitButton);
+            
             Controls.Add(panel);
-
-            SetupLayout(this, null);
-            SizeChanged += SetupLayout;
         }
 
-        private void SetupLayout(object sender, EventArgs e)
+        public override void SetupLayout(object sender, EventArgs e)
         {
+            base.SetupLayout(sender, e);
             panel.Size = new Size(200, 155);
             panel.Location = new Point(ClientSize.Width / 2 - panel.Size.Width / 2, ClientSize.Height / 2 - panel.Size.Height / 2);
 
@@ -77,7 +77,5 @@ namespace Computers.Modules.Login
             Interactor.Validate(emailTextField.Text, passwordTextField.Text); // TODO: Возможно проверять во время ввода
             Interactor.Login(emailTextField.Text, passwordTextField.Text);
         }
-
-        public ILoginInteractor Interactor { get; set; }
     }
 }

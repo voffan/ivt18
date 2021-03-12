@@ -13,6 +13,7 @@ namespace Computers.Modules.Welcome
         void NavigateToLoginView();
         void NavigateToRegisterView();
     }
+
     public class WelcomeInteractor : IWelcomeInteractor
     {
         public IWelcomePresenter Presenter { get; set; }

@@ -9,22 +9,17 @@ namespace Computers.Modules.Login
 {
     public class LoginBuilder
     {
-        private readonly ILoginPresenter LoginPresenter;
-        private readonly ILoginInteractor LoginInteractor;
-        private readonly ILoginView LoginView;
-        public LoginBuilder()
-        {
-            this.LoginPresenter = new LoginPresenter();
-            this.LoginInteractor = new LoginInteractor();
-            this.LoginView = new LoginView();
-        }
-
         public Form Build()
         {
-            LoginView.Interactor = LoginInteractor;
-            LoginInteractor.Presenter = LoginPresenter;
-            LoginPresenter.View = LoginView;
-            return this.LoginView.Self;
+            var Presenter = new LoginPresenter();
+            var Interactor = new LoginInteractor();
+            var View = new LoginView();
+           
+            Presenter.View = View;
+            Interactor.Presenter = Presenter;
+            View.Interactor = Interactor;
+            
+            return View;
         }
     }
 }
