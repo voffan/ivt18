@@ -99,6 +99,12 @@
     <Compile Include="StudyYear.cs" />
     <Compile Include="SubGroup.cs" />
     <Compile Include="Subject.cs" />
+    <Compile Include="UserSignIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserSignIn.Designer.cs">
+      <DependentUpon>UserSignIn.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Migrations\202102181230121_test.resx">
       <DependentUpon>202102181230121_test.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +129,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserSignIn.resx">
+      <DependentUpon>UserSignIn.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
