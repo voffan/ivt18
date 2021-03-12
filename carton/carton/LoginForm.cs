@@ -18,6 +18,16 @@ namespace carton.Classes
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.passwordEntry.PasswordChar = '*';
+        }
+
+        private void buttonLoginProceed_Click(object sender, EventArgs e)
+        {
+            if (this.loginEntry.Text.Equals("sysadmin") && this.passwordEntry.Text.Equals("1234"))
+            {
+                SysAdminForm f = new SysAdminForm();
+                f.Show();
+            }
         }
     }
 }

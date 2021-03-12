@@ -29,25 +29,15 @@ namespace carton.Classes
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureLoginForm = new System.Windows.Forms.PictureBox();
             this.labelLogin = new System.Windows.Forms.Label();
             this.labelPassword = new System.Windows.Forms.Label();
             this.labelInvite = new System.Windows.Forms.Label();
             this.buttonLoginProceed = new System.Windows.Forms.Button();
             this.loginEntry = new System.Windows.Forms.TextBox();
             this.passwordEntry = new System.Windows.Forms.TextBox();
+            this.pictureLoginForm = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLoginForm)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureLoginForm
-            // 
-            this.pictureLoginForm.Image = global::carton.Properties.Resources.loginform;
-            this.pictureLoginForm.Location = new System.Drawing.Point(0, 0);
-            this.pictureLoginForm.Name = "pictureLoginForm";
-            this.pictureLoginForm.Size = new System.Drawing.Size(337, 194);
-            this.pictureLoginForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureLoginForm.TabIndex = 0;
-            this.pictureLoginForm.TabStop = false;
             // 
             // labelLogin
             // 
@@ -86,6 +76,7 @@ namespace carton.Classes
             this.buttonLoginProceed.TabIndex = 4;
             this.buttonLoginProceed.Text = "Принять";
             this.buttonLoginProceed.UseVisualStyleBackColor = true;
+            this.buttonLoginProceed.Click += new System.EventHandler(this.buttonLoginProceed_Click);
             // 
             // loginEntry
             // 
@@ -101,8 +92,19 @@ namespace carton.Classes
             this.passwordEntry.Size = new System.Drawing.Size(136, 20);
             this.passwordEntry.TabIndex = 6;
             // 
+            // pictureLoginForm
+            // 
+            this.pictureLoginForm.Image = global::carton.Properties.Resources.loginform;
+            this.pictureLoginForm.Location = new System.Drawing.Point(0, 0);
+            this.pictureLoginForm.Name = "pictureLoginForm";
+            this.pictureLoginForm.Size = new System.Drawing.Size(337, 194);
+            this.pictureLoginForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureLoginForm.TabIndex = 0;
+            this.pictureLoginForm.TabStop = false;
+            // 
             // LoginForm
             // 
+            this.AcceptButton = this.buttonLoginProceed;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(335, 401);
