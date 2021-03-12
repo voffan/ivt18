@@ -12,6 +12,8 @@ namespace gallery
 {
     public partial class MainPageForm : Form
     {
+        private Context c = new Context;
+
         public MainPageForm()
         {
             InitializeComponent();
@@ -20,6 +22,7 @@ namespace gallery
         private void button1_Click(object sender, EventArgs e)
         {
             PictureListForm pictureListForm = new PictureListForm();
+            pictureListForm.C = c;
             pictureListForm.Show();
         }
 

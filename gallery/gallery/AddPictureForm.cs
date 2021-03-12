@@ -12,6 +12,8 @@ namespace gallery
 {
     public partial class AddPictureForm : Form
     {
+        public Context C { get; set; }
+
         public AddPictureForm()
         {
             InitializeComponent();
@@ -20,6 +22,16 @@ namespace gallery
         private void button1_Click(object sender, EventArgs e)
         {
            // Добавить картину в бд
+            try
+            {
+                PictureLogic.AddPicture(C, textBox1.Text,...);
+                this.Close();
+            }
+            catch(Exception e)
+            {
+                ShowMessage("...");
+            }
+            
         }
     }
 }

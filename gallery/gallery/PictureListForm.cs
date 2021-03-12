@@ -12,6 +12,8 @@ namespace gallery
 {
     public partial class PictureListForm : Form
     {
+        public Context C { get; set; }
+
         public PictureListForm()
         {
             InitializeComponent();
@@ -20,13 +22,15 @@ namespace gallery
         private void button1_Click(object sender, EventArgs e)
         {
             AddPictureForm addPictureForm = new AddPictureForm();
+            addPictureForm.C = C;
+            addPictureForm.Show();
         }
 
         private void PictureListForm_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "galleryDBDataSet1.Picture". При необходимости она может быть перемещена или удалена.
-            this.pictureTableAdapter.Fill(this.galleryDBDataSet1.Picture);
-
+            //this.pictureTableAdapter.Fill(this.galleryDBDataSet1.Picture);
+            dataGridView1.DataSource = C.Pictures.ToList()
         }
 
         private void button2_Click(object sender, EventArgs e)

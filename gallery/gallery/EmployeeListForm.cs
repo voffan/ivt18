@@ -17,12 +17,14 @@ namespace gallery
             InitializeComponent();
         }
 
+        public Context C { get; set; }
+
         private void employeeBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
+            /*this.Validate();
             this.employeeBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.galleryDBDataSet1);
-
+            this.tableAdapterManager.UpdateAll(this.galleryDBDataSet1);*/
+            
         }
 
         private void employeeDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
