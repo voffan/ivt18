@@ -9,7 +9,7 @@ using System.ComponentModel;
 
 namespace gallery
 {
-    class Picture
+    public class Picture
     {
         [Key]
         public int PictureId { get; set; }

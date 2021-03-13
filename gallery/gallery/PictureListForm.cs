@@ -30,12 +30,13 @@ namespace gallery
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "galleryDBDataSet1.Picture". При необходимости она может быть перемещена или удалена.
             //this.pictureTableAdapter.Fill(this.galleryDBDataSet1.Picture);
-            dataGridView1.DataSource = C.Pictures.ToList()
+            dataGridView1.DataSource = C.Pictures.ToList();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             ExpoListForm expoListForm = new ExpoListForm();
+            expoListForm.C = C;
             expoListForm.Show();
         }
 

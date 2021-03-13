@@ -12,7 +12,7 @@ namespace gallery
 {
     public partial class MainPageForm : Form
     {
-        private Context c = new Context;
+        private Context c = new Context();
 
         public MainPageForm()
         {
@@ -29,6 +29,7 @@ namespace gallery
         private void button2_Click(object sender, EventArgs e)
         {
             EmployeeListForm employeeListForm = new EmployeeListForm();
+            employeeListForm.C = c;
             employeeListForm.Show();
         }
     }

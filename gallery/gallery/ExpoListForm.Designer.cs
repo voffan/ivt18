@@ -29,109 +29,74 @@ namespace gallery
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.expoIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.placeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.expoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.galleryDBDataSet = new gallery.GalleryDBDataSet();
-            this.expoTableAdapter = new gallery.GalleryDBDataSetTableAdapters.ExpoTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.expoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.galleryDBDataSet)).BeginInit();
+            this.listExpoBox = new System.Windows.Forms.ListBox();
+            this.addExpoButton = new System.Windows.Forms.Button();
+            this.deleteExpoButton = new System.Windows.Forms.Button();
+            this.editExpoButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // listExpoBox
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.expoIdDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.startDateDataGridViewTextBoxColumn,
-            this.endDateDataGridViewTextBoxColumn,
-            this.placeDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.expoBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(140, 172);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(545, 150);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.listExpoBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listExpoBox.FormattingEnabled = true;
+            this.listExpoBox.ItemHeight = 20;
+            this.listExpoBox.Location = new System.Drawing.Point(34, 31);
+            this.listExpoBox.Name = "listExpoBox";
+            this.listExpoBox.Size = new System.Drawing.Size(693, 484);
+            this.listExpoBox.TabIndex = 0;
+            this.listExpoBox.SelectedIndexChanged += new System.EventHandler(this.listExpoBox_SelectedIndexChanged);
+            this.listExpoBox.DoubleClick += new System.EventHandler(this.listExpoBox_DoubleClick);
             // 
-            // expoIdDataGridViewTextBoxColumn
+            // addExpoButton
             // 
-            this.expoIdDataGridViewTextBoxColumn.DataPropertyName = "ExpoId";
-            this.expoIdDataGridViewTextBoxColumn.HeaderText = "ExpoId";
-            this.expoIdDataGridViewTextBoxColumn.Name = "expoIdDataGridViewTextBoxColumn";
-            this.expoIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.addExpoButton.Location = new System.Drawing.Point(687, 542);
+            this.addExpoButton.Name = "addExpoButton";
+            this.addExpoButton.Size = new System.Drawing.Size(40, 33);
+            this.addExpoButton.TabIndex = 1;
+            this.addExpoButton.Text = "+";
+            this.addExpoButton.UseVisualStyleBackColor = true;
+            this.addExpoButton.Click += new System.EventHandler(this.addExpoButton_Click);
             // 
-            // nameDataGridViewTextBoxColumn
+            // deleteExpoButton
             // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.deleteExpoButton.Location = new System.Drawing.Point(34, 542);
+            this.deleteExpoButton.Name = "deleteExpoButton";
+            this.deleteExpoButton.Size = new System.Drawing.Size(67, 33);
+            this.deleteExpoButton.TabIndex = 2;
+            this.deleteExpoButton.Text = "мусорка";
+            this.deleteExpoButton.UseVisualStyleBackColor = true;
+            this.deleteExpoButton.Click += new System.EventHandler(this.deleteExpoButton_Click);
             // 
-            // startDateDataGridViewTextBoxColumn
+            // editExpoButton
             // 
-            this.startDateDataGridViewTextBoxColumn.DataPropertyName = "StartDate";
-            this.startDateDataGridViewTextBoxColumn.HeaderText = "StartDate";
-            this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
-            // 
-            // endDateDataGridViewTextBoxColumn
-            // 
-            this.endDateDataGridViewTextBoxColumn.DataPropertyName = "EndDate";
-            this.endDateDataGridViewTextBoxColumn.HeaderText = "EndDate";
-            this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
-            // 
-            // placeDataGridViewTextBoxColumn
-            // 
-            this.placeDataGridViewTextBoxColumn.DataPropertyName = "Place";
-            this.placeDataGridViewTextBoxColumn.HeaderText = "Place";
-            this.placeDataGridViewTextBoxColumn.Name = "placeDataGridViewTextBoxColumn";
-            // 
-            // expoBindingSource
-            // 
-            this.expoBindingSource.DataMember = "Expo";
-            this.expoBindingSource.DataSource = this.galleryDBDataSet;
-            // 
-            // galleryDBDataSet
-            // 
-            this.galleryDBDataSet.DataSetName = "GalleryDBDataSet";
-            this.galleryDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // expoTableAdapter
-            // 
-            this.expoTableAdapter.ClearBeforeFill = true;
+            this.editExpoButton.Location = new System.Drawing.Point(568, 542);
+            this.editExpoButton.Name = "editExpoButton";
+            this.editExpoButton.Size = new System.Drawing.Size(70, 33);
+            this.editExpoButton.TabIndex = 3;
+            this.editExpoButton.Text = "карандаш";
+            this.editExpoButton.UseVisualStyleBackColor = true;
+            this.editExpoButton.Click += new System.EventHandler(this.editExpoButton_Click);
             // 
             // ExpoListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(800, 671);
+            this.Controls.Add(this.editExpoButton);
+            this.Controls.Add(this.deleteExpoButton);
+            this.Controls.Add(this.addExpoButton);
+            this.Controls.Add(this.listExpoBox);
             this.Name = "ExpoListForm";
             this.Text = "Список экспозиций";
             this.Load += new System.EventHandler(this.ExpoListForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.expoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.galleryDBDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private GalleryDBDataSet galleryDBDataSet;
-        private System.Windows.Forms.BindingSource expoBindingSource;
-        private GalleryDBDataSetTableAdapters.ExpoTableAdapter expoTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn expoIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn startDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn endDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn placeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ListBox listExpoBox;
+        private System.Windows.Forms.Button addExpoButton;
+        private System.Windows.Forms.Button deleteExpoButton;
+        private System.Windows.Forms.Button editExpoButton;
     }
 }

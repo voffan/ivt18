@@ -9,7 +9,7 @@ using System.Data.Entity.Core;
 
 namespace gallery
 {
-    class Position
+    public class Position
     {
         [Key]
         public int PositionId { get; set; }

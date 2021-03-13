@@ -8,7 +8,7 @@ using System.Data.Entity;
 
 namespace gallery
 {
-    class Context : DbContext
+    public class Context : DbContext
     {
         public Context() : base("ConStr") { }
 
@@ -29,6 +29,8 @@ namespace gallery
         public DbSet<Expo> Expos { get; set; }
 
         public DbSet<Place> Places { get; set; }
+
+        public DbSet<ExpoPicture> ExpoPictures { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

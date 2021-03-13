@@ -9,7 +9,7 @@ using System.Data.Entity.Core;
 
 namespace gallery
 {
-    class Expo
+    public class Expo
     {           
         [Key]
         public int ExpoId { get; set; }

@@ -24,12 +24,12 @@ namespace gallery
            // Добавить картину в бд
             try
             {
-                PictureLogic.AddPicture(C, textBox1.Text,...);
+                //PictureLogic.AddPicture(C, textBox1.Text);
                 this.Close();
             }
-            catch(Exception e)
+            catch(Exception ex)
             {
-                ShowMessage("...");
+                //ShowMessage("...");
             }
             
         }
