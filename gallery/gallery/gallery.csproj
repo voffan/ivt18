@@ -151,8 +151,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddExpoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddExpoForm.Designer.cs">
+      <DependentUpon>AddExpoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Artist.cs" />
     <Compile Include="Context.cs" />
+    <Compile Include="EditExpoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditExpoForm.Designer.cs">
+      <DependentUpon>EditExpoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Employee.cs" />
     <Compile Include="Expo.cs" />
     <Compile Include="ExpoLogic.cs" />
@@ -225,6 +237,12 @@
     <Compile Include="ExpoListForm.Designer.cs">
       <DependentUpon>ExpoListForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddExpoForm.resx">
+      <DependentUpon>AddExpoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditExpoForm.resx">
+      <DependentUpon>EditExpoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmployeeListForm.resx">
       <DependentUpon>EmployeeListForm.cs</DependentUpon>
     </EmbeddedResource>

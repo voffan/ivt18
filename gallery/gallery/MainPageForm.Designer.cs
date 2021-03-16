@@ -35,7 +35,7 @@ namespace gallery
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(200, 152);
+            this.button1.Location = new System.Drawing.Point(139, 128);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(147, 23);
             this.button1.TabIndex = 0;
@@ -45,7 +45,7 @@ namespace gallery
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(453, 152);
+            this.button2.Location = new System.Drawing.Point(479, 128);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(138, 23);
             this.button2.TabIndex = 1;

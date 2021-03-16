@@ -10,18 +10,22 @@ using System.Windows.Forms;
 
 namespace gallery
 {
-    public partial class ExpoViewForm : Form
+    public partial class AddExpoForm : Form
     {
         public Context C { get; set; }
-        public int id;
-        public ExpoViewForm()
+        public AddExpoForm()
         {
             InitializeComponent();
         }
 
-        private void ExpoViewForm_Load(object sender, EventArgs e)
+        private void AddExpoForm_Load(object sender, EventArgs e)
         {
-            ExpoLogic.ViewExpo(id, expoInfoLabel, C);     
+
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            ExpoLogic.AddExpo(this, nameBox.Text, startDatePicker.Value, endDatePicker.Value, placeBox.Text, C);
         }
     }
 }
