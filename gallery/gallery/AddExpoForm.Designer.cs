@@ -37,6 +37,8 @@ namespace gallery
             this.addButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.picturesBox = new System.Windows.Forms.ListBox();
+            this.expoPicturesBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // label1
@@ -81,7 +83,7 @@ namespace gallery
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(177, 295);
+            this.addButton.Location = new System.Drawing.Point(691, 526);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(75, 23);
             this.addButton.TabIndex = 5;
@@ -107,11 +109,29 @@ namespace gallery
             this.label3.TabIndex = 7;
             this.label3.Text = "Город";
             // 
+            // picturesBox
+            // 
+            this.picturesBox.FormattingEnabled = true;
+            this.picturesBox.Location = new System.Drawing.Point(99, 298);
+            this.picturesBox.Name = "picturesBox";
+            this.picturesBox.Size = new System.Drawing.Size(254, 251);
+            this.picturesBox.TabIndex = 8;
+            // 
+            // expoPicturesBox
+            // 
+            this.expoPicturesBox.FormattingEnabled = true;
+            this.expoPicturesBox.Location = new System.Drawing.Point(410, 298);
+            this.expoPicturesBox.Name = "expoPicturesBox";
+            this.expoPicturesBox.Size = new System.Drawing.Size(254, 251);
+            this.expoPicturesBox.TabIndex = 9;
+            // 
             // AddExpoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 604);
+            this.Controls.Add(this.expoPicturesBox);
+            this.Controls.Add(this.picturesBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.addButton);
@@ -138,5 +158,7 @@ namespace gallery
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ListBox picturesBox;
+        private System.Windows.Forms.ListBox expoPicturesBox;
     }
 }
