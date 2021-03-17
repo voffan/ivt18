@@ -84,7 +84,7 @@ namespace gallery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 749);
+            this.ClientSize = new System.Drawing.Size(800, 823);
             this.Controls.Add(this.editExpoButton);
             this.Controls.Add(this.deleteExpoButton);
             this.Controls.Add(this.addExpoButton);

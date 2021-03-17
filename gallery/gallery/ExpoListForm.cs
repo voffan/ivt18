@@ -13,7 +13,7 @@ namespace gallery
     public partial class ExpoListForm : Form
     {
         public Context C { get; set; }
-        public int id;
+        public int id = 1;
         public ExpoListForm()
         {
             InitializeComponent();
@@ -57,7 +57,10 @@ namespace gallery
 
         private void deleteExpoButton_Click(object sender, EventArgs e)
         {
-
+            // ExpoDeleteForm expoDeleteForm = new ExpoDeleteForm();
+            // expoDeleteForm.C = C;
+            // expoDeleteForm.id = id;
+            // expoDeleteForm.Show(); <-- (ExpoLogic.deleteExpo(id, C);)
         }
     }
 }
