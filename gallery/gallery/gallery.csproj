@@ -227,6 +227,7 @@
     <Compile Include="PictureListForm.Designer.cs">
       <DependentUpon>PictureListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PictureLogic.cs" />
     <Compile Include="Place.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="Program.cs" />

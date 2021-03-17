@@ -21,17 +21,24 @@ namespace gallery
 
         private void button1_Click(object sender, EventArgs e)
         {
-           // Добавить картину в бд
             try
             {
-                //PictureLogic.AddPicture(C, textBox1.Text);
+                PictureLogic.AddPicture(C, textBox1.Text, Convert.ToSingle(textBox2.Text), Convert.ToInt32(textBox3.Text), comboBox1.SelectedItem.ToString(), comboBox2.SelectedItem.ToString(), comboBox3.SelectedItem.ToString(), comboBox4.SelectedItem.ToString());
                 this.Close();
             }
-            catch(Exception ex)
+            catch
             {
-                //ShowMessage("...");
+                MessageBox.Show("Ошибка! Проверьте правильность введенных данных");
             }
             
+        }
+
+        private void AddPictureForm_Load(object sender, EventArgs e)
+        {
+            comboBox1.Items.AddRange(C.Artists.Select(c => c.FullName).ToArray());
+            comboBox2.Items.AddRange(C.Genres.Select(c => c.Name).ToArray());
+            comboBox3.Items.AddRange(C.Places.Select(c => c.Name).ToArray());
+            comboBox4.Items.AddRange(C.Galleries.Select(c => c.Name).ToArray());
         }
     }
 }
