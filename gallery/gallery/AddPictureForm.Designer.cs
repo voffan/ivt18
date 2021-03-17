@@ -189,7 +189,7 @@ namespace gallery
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(318, 9);
+            this.label1.Location = new System.Drawing.Point(317, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(154, 17);
             this.label1.TabIndex = 29;
@@ -197,7 +197,7 @@ namespace gallery
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(20, 6);
+            this.button2.Location = new System.Drawing.Point(12, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 28;
