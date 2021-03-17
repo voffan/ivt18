@@ -24,11 +24,14 @@ namespace gallery
             try
             {
                 PictureLogic.AddPicture(C, textBox1.Text, Convert.ToSingle(textBox2.Text), Convert.ToInt32(textBox3.Text), comboBox1.SelectedItem.ToString(), comboBox2.SelectedItem.ToString(), comboBox3.SelectedItem.ToString(), comboBox4.SelectedItem.ToString());
+                PictureListForm pictureListForm = new PictureListForm();
+                pictureListForm.C = C;
+                pictureListForm.Show();
                 this.Close();
             }
             catch
             {
-                MessageBox.Show("Ошибка! Проверьте правильность введенных данных");
+                MessageBox.Show("Ошибка!");
             }
             
         }

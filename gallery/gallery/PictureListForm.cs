@@ -46,6 +46,7 @@ namespace gallery
             AddPictureForm addPictureForm = new AddPictureForm();
             addPictureForm.C = C;
             addPictureForm.Show();
+            this.Close();
         }
 
     }
