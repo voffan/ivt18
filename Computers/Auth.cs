@@ -54,7 +54,8 @@ namespace Computers
             {
                 UserCredential userCredentials = await client.CreateUserWithEmailAndPasswordAsync(email, password, name);
                 user = userCredentials.User;
-            } catch (FirebaseAuthException e)
+            } 
+            catch (FirebaseAuthException e)
             {
                 return e;
             }
@@ -67,7 +68,8 @@ namespace Computers
             {
                 UserCredential userCredentials = await client.SignInWithEmailAndPasswordAsync(email, password);
                 user = userCredentials.User;
-            } catch (FirebaseAuthException e)
+            } 
+            catch (FirebaseAuthException e)
             {
                 return e;
             }

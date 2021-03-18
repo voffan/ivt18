@@ -14,6 +14,7 @@ namespace Computers.Modules.Login
         void ShowValidationError(string message);
         void ShowAuthError(string message);
     }
+
     public class LoginView : View, ILoginView
     {
         public ILoginInteractor Interactor { get; set; }

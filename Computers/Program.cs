@@ -17,7 +17,6 @@ namespace Computers
         {
             using (var context = new DatabaseContext())
             {
-                // Сделать что нибудь
                 context.SaveChanges();
             }
             Application.EnableVisualStyles();

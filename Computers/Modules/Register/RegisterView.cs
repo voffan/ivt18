@@ -14,6 +14,7 @@ namespace Computers.Modules.Register
         void ShowValidationError(string message);
         void ShowRegisterError(string message);
     }
+
     class RegisterView : View, IRegisterView
     {
         public IRegisterInteractor Interactor { get; set; }
@@ -109,6 +110,7 @@ namespace Computers.Modules.Register
         {
             Interactor.Validate(emailTextField.Text, passwordTextField.Text);
         }
+
         private void SubmitButtonPressed(object sender, EventArgs e)
         {
             submitButton.Enabled = false;
