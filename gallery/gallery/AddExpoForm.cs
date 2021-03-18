@@ -25,7 +25,11 @@ namespace gallery
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            ExpoLogic.AddExpo(this, nameBox.Text, startDatePicker.Value, endDatePicker.Value, placeBox.Text, C);
+            try{
+                ExpoLogic.AddExpo(this, nameBox.Text, startDatePicker.Value, endDatePicker.Value, placeBox.Text, C);
+            }catch(Exception as e){
+                MessageBox.Show(e.toString());
+            }
         }
     }
 }

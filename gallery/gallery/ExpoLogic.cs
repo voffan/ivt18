@@ -19,13 +19,12 @@ namespace gallery
             return false;
         }
 
-        static public bool AddExpo(Form f, string name, DateTime start, DateTime end, string place, Context C)
+        static public void AddExpo(Form f, string name, DateTime start, DateTime end, string place, Context C)
         {
             var ex = C.Expos.Where(c => c.Name == name).FirstOrDefault();
             if (ex != null)
             {
-                MessageBox.Show("Выставка уже существует!");
-                return false;
+                raise Exception("Expo already exists!");
             }
 
             Expo expo = new Expo
@@ -41,7 +40,6 @@ namespace gallery
             C.SaveChanges();
 
             f.Close();
-            return true;
         }
 
         static public int getId(string s, Context C)
@@ -57,7 +55,7 @@ namespace gallery
 
         }
 
-        static public bool updatePicturesList(ListBox lb1, ListBox lb2, int id, Context C)
+        static public Array updatePicturesList(ListBox lb1, ListBox lb2, int id, Context C)
         {
             lb1.Items.Clear();
             lb1.Items.AddRange(C.Pictures.Select(c => c.Name).ToArray());
