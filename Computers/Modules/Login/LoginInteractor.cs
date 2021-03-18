@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Computers.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ namespace Computers.Modules.Login
     {
         ILoginPresenter Presenter { get; set; }
         void Validate(string email, string password);
-        void Login(string email, string password);
+        Task Login(string email, string password);
     }
 
     public class LoginInteractor : ILoginInteractor
@@ -19,11 +20,18 @@ namespace Computers.Modules.Login
 
         void ILoginInteractor.Validate(string email, string password)
         {
-            // TODO: Проверка
+            Presenter.PresentValidationError(email.IsValidEmail(), password.IsValidPassword());
         }
-        void ILoginInteractor.Login(string email, string password)
+        async Task ILoginInteractor.Login(string email, string password)
         {
-            // TODO: Авторизовать
+            var exception = await Auth.Shared.SignInAsync(email, password);
+            if (exception == null)
+            {
+                Console.WriteLine("LOGIN SUCCESS");
+            } else
+            {
+                Presenter.PresentAuthError(exception);
+            }
         }
     }
 }

@@ -1,24 +1,23 @@
-﻿using Computers.Modules.Login;
+﻿using Firebase.Auth;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Firebase.Auth;
 
-namespace Computers.Modules
+namespace Computers.Modules.Register
 {
-    public interface ILoginPresenter
+    public interface IRegisterPresenter
     {
-        ILoginView View { get; set; }
-        void PresentAuthError(FirebaseAuthException e);
+        IRegisterView View { get; set; }
+        void PresentRegisterError(FirebaseAuthException e);
         void PresentValidationError(bool isValidEmail, bool isValidPassword);
     }
-    public class LoginPresenter : ILoginPresenter
+    class RegisterPresenter : IRegisterPresenter
     {
-        public ILoginView View { get; set; }
+        public IRegisterView View { get; set; }
 
-        public void PresentAuthError(FirebaseAuthException e)
+        public void PresentRegisterError(FirebaseAuthException e)
         {
             string localizedReason = "Ошибка";
             switch (e.Reason)
@@ -35,8 +34,14 @@ namespace Computers.Modules
                 case AuthErrorReason.TooManyAttemptsTryLater:
                     localizedReason = "Слишком много попыток. Повторите позже.";
                     break;
+                case AuthErrorReason.WeakPassword:
+                    localizedReason = "Слишком простой пароль";
+                    break;
+                case AuthErrorReason.SystemError:
+                    localizedReason = "Что то пошло не так";
+                    break;
             }
-            View.ShowAuthError(localizedReason);
+            View.ShowRegisterError(localizedReason);
         }
 
         public void PresentValidationError(bool isValidEmail, bool isValidPassword)

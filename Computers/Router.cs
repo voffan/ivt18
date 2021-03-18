@@ -7,9 +7,9 @@ using System.Windows.Forms;
 
 namespace Computers
 {
-    class Router : ApplicationContext
+    public sealed class Router : ApplicationContext
     {
-        protected bool exitAppOnClose;
+        bool exitAppOnClose;
         public Form CurrentForm
         {
             get { return MainForm; }
@@ -40,11 +40,6 @@ namespace Computers
                 }
                 return instance;
             }
-        }
-
-        public void Show(Form form)
-        {
-            CurrentForm = form;
         }
 
         protected override void OnMainFormClosed(object sender, EventArgs e)
