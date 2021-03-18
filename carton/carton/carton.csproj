@@ -95,6 +95,12 @@
     <Compile Include="Classes\Shift.cs" />
     <Compile Include="Classes\Status.cs" />
     <Compile Include="Classes\Storage.cs" />
+    <Compile Include="StorageEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StorageEmp.Designer.cs">
+      <DependentUpon>StorageEmp.cs</DependentUpon>
+    </Compile>
     <Compile Include="SysAdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
