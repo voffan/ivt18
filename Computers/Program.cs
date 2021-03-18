@@ -1,4 +1,5 @@
 ﻿using Computers.Models;
+using Computers.Modules.Home;
 using Computers.Modules.Login;
 using Computers.Modules.Welcome;
 using System;
@@ -21,7 +22,16 @@ namespace Computers
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Router.Shared.CurrentForm = new WelcomeBuilder().Build();
+            
+            if (Auth.Shared.SignedIn)
+            {
+                Router.Shared.CurrentForm = new HomeBuilder().Build();
+            }
+            else
+            {
+                Router.Shared.CurrentForm = new WelcomeBuilder().Build();
+            }
+            
             Application.Run();
         }
     }

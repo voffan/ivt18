@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace Computers.Modules.Home
 {
-    class HomePresenter
+    public interface IHomePresenter
     {
+        IHomeView View { get; set; }
+        void PresentPeripherals();
+    }
+
+    class HomePresenter : IHomePresenter
+    {
+        public IHomeView View { get; set; }
+
+        public void PresentPeripherals()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

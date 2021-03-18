@@ -1,4 +1,6 @@
-﻿using Computers.Utils;
+﻿using Computers.Modules.Home;
+using Computers.Modules.Welcome;
+using Computers.Utils;
 using Firebase.Auth;
 using System;
 using System.Collections.Generic;
@@ -13,6 +15,7 @@ namespace Computers.Modules.Register
         IRegisterPresenter Presenter { get; set; }
         void Validate(string email, string password);
         Task Register(string email, string password, string username);
+        void NavigateBack();
     }
     class RegisterInteractor : IRegisterInteractor
     {
@@ -25,12 +28,12 @@ namespace Computers.Modules.Register
             {
                 if (Auth.Shared.SignedIn)
                 {
-                    Console.WriteLine("REGISTER SUCCESS");
+                    Router.Shared.CurrentForm = new HomeBuilder().Build();
                 } 
                 else
                 {
-                    var systemError = new FirebaseAuthException("", AuthErrorReason.SystemError);
-                    Presenter.PresentRegisterError(systemError);
+                    var systemException = new FirebaseAuthException("", AuthErrorReason.SystemError);
+                    Presenter.PresentRegisterError(systemException);
                 }
             } 
             else
@@ -42,6 +45,11 @@ namespace Computers.Modules.Register
         public void Validate(string email, string password)
         {
             Presenter.PresentValidationError(email.IsValidEmail(), password.IsValidPassword());
+        }
+
+        public void NavigateBack()
+        {
+            Router.Shared.CurrentForm = new WelcomeBuilder().Build();
         }
     }
 }

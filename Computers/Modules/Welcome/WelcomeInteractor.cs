@@ -1,4 +1,5 @@
 ﻿using Computers.Modules.Login;
+using Computers.Modules.Register;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +26,7 @@ namespace Computers.Modules.Welcome
 
         void IWelcomeInteractor.NavigateToRegisterView()
         {
-            // TODO: Переход к регистрации
+            Router.Shared.CurrentForm = new RegisterBuilder().Build();
         }
     }
 }

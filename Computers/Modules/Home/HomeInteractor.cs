@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace Computers.Modules.Home
 {
-    class HomeInteractor
+    public interface IHomeInteractor
     {
+        IHomePresenter Presenter { get; set; }
+        void LoadPeripherals();
+    }
+
+    class HomeInteractor : IHomeInteractor
+    {
+        public IHomePresenter Presenter { get; set; }
+
+        public void LoadPeripherals()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

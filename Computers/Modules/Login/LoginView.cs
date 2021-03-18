@@ -23,8 +23,9 @@ namespace Computers.Modules.Login
         private readonly TextBox passwordTextField = new TextBox();
         private readonly Label emailLabel = new Label();
         private readonly Label passwordLabel = new Label();
-        private readonly Button submitButton = new Button();
         private readonly Label errorLabel = new Label();
+        private readonly Button submitButton = new Button();
+        private readonly Button backButton = new Button();
 
         public override void SetupView()
         {
@@ -36,26 +37,31 @@ namespace Computers.Modules.Login
         {
             base.ViewDidLoad(sender, e);
             emailLabel.Text = "E-mail";
-            emailLabel.TextChanged += EmailPasswordChanged;
+            emailTextField.TextChanged += EmailPasswordChanged;
             
             passwordLabel.Text = "Пароль";
             passwordTextField.PasswordChar = '*';
-            // passwordLabel.TextChanged += EmailPasswordChanged;
+            passwordTextField.KeyDown += new KeyEventHandler(EnterClicked);
+            passwordTextField.TextChanged += EmailPasswordChanged;
 
             submitButton.Text = "Войти";
             submitButton.Click += SubmitButtonPressed;
-            // submitButton.Enabled = false;
+            submitButton.Enabled = false;
 
             errorLabel.ForeColor = Color.Red;
 
+            backButton.Text = "Назад";
+            backButton.Click += BackButtonPressed;
+
             panel.BorderStyle = BorderStyle.FixedSingle;
             panel.Controls.Add(emailLabel);
-            panel.Controls.Add(emailTextField);
-            panel.Controls.Add(passwordTextField);
+            panel.Controls.Add(emailTextField);         
             panel.Controls.Add(passwordLabel);
-            panel.Controls.Add(submitButton);
+            panel.Controls.Add(passwordTextField);
             panel.Controls.Add(errorLabel);
-            
+            panel.Controls.Add(submitButton);
+            panel.Controls.Add(backButton);
+
             Controls.Add(panel);
         }
 
@@ -82,16 +88,19 @@ namespace Computers.Modules.Login
 
             submitButton.Size = new Size(80, 25);
             submitButton.Location = new Point(110, 130);
+
+            backButton.Size = new Size(80, 25);
+            backButton.Location = new Point(10, 130);
         }
 
         private void EmailPasswordChanged(object sender, EventArgs e)
         {
-            Console.WriteLine("Changed");
-            // Interactor.Validate(emailTextField.Text, passwordTextField.Text);
+            Interactor.Validate(emailTextField.Text, passwordTextField.Text);
         }
         private void SubmitButtonPressed(object sender, EventArgs e)
         {
             submitButton.Enabled = false;
+            backButton.Enabled = false;
             Interactor.Login(emailTextField.Text, passwordTextField.Text);
         }
 
@@ -99,12 +108,28 @@ namespace Computers.Modules.Login
         {
             errorLabel.Text = message;
             submitButton.Enabled = true;
+            backButton.Enabled = true;
         }
 
         public void ShowValidationError(string message)
         {
             errorLabel.Text = message;
             submitButton.Enabled = message == null;
+            backButton.Enabled = true;
+        }
+
+        private void BackButtonPressed(object sender, EventArgs e)
+        {
+            Interactor.NavigateBack();
+        }
+
+        private void EnterClicked(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return && submitButton.Enabled)
+            {
+                e.Handled = true;
+                SubmitButtonPressed(null, null);
+            }
         }
     }
 }

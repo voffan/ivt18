@@ -17,9 +17,7 @@ namespace Computers.Utils
         }
         public static bool IsValidPassword(this string password)
         {
-            string pattern = @"^{6,}$";
-            var regex = new Regex(pattern, RegexOptions.None);
-            return regex.IsMatch(password);
+            return password.Length > 5;
         }
     }
 }

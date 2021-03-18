@@ -99,6 +99,10 @@
     <Compile Include="Models\PowerSupply.cs" />
     <Compile Include="Models\Processor.cs" />
     <Compile Include="Models\Status.cs" />
+    <Compile Include="Modules\Home\HomeBuilder.cs" />
+    <Compile Include="Modules\Home\HomeInteractor.cs" />
+    <Compile Include="Modules\Home\HomePresenter.cs" />
+    <Compile Include="Modules\Home\HomeView.cs" />
     <Compile Include="Modules\Login\LoginPresenter.cs" />
     <Compile Include="Modules\Login\LoginBuilder.cs" />
     <Compile Include="Modules\Login\LoginInteractor.cs" />

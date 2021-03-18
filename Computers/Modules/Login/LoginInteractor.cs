@@ -1,4 +1,7 @@
-﻿using Computers.Utils;
+﻿using Computers.Modules.Home;
+using Computers.Modules.Welcome;
+using Computers.Utils;
+using Firebase.Auth;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +15,7 @@ namespace Computers.Modules.Login
         ILoginPresenter Presenter { get; set; }
         void Validate(string email, string password);
         Task Login(string email, string password);
+        void NavigateBack();
     }
 
     public class LoginInteractor : ILoginInteractor
@@ -27,11 +31,25 @@ namespace Computers.Modules.Login
             var exception = await Auth.Shared.SignInAsync(email, password);
             if (exception == null)
             {
-                Console.WriteLine("LOGIN SUCCESS");
-            } else
+                if (Auth.Shared.SignedIn)
+                {
+                    Router.Shared.CurrentForm = new HomeBuilder().Build();
+                }
+                else
+                {
+                    var systemException = new FirebaseAuthException("", AuthErrorReason.SystemError);
+                    Presenter.PresentAuthError(systemException);
+                }
+            }
+            else
             {
                 Presenter.PresentAuthError(exception);
             }
+        }
+
+        public void NavigateBack()
+        {
+            Router.Shared.CurrentForm = new WelcomeBuilder().Build();
         }
     }
 }
