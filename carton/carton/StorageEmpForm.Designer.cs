@@ -1,6 +1,6 @@
 ﻿namespace carton
 {
-    partial class StorageEmp
+    partial class StorageEmpForm
     {
         /// <summary>
         /// Required designer variable.

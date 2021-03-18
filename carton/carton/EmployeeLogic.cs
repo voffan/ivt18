@@ -10,10 +10,17 @@ namespace carton
 {
     public class EmployeeLogic
     {
-    	public static bool LoginEmployee(Context c, string login, string password)
+    	public static int LoginEmployee(Context c, string login, string password)
     	{
-    		if (login.Equals("sysadmin") and password.Equals("1234")) return true;
-    		else false;
+    		if (login.Equals("sysadmin") && password.Equals("1234")) 
+                return 1;
+            if (login.Equals("vasya") && password.Equals("123321"))
+                return 2;
+    		return -1;
     	}
+
+        //edit password
+
+        //edit login
 	}
 }

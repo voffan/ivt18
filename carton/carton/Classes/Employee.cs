@@ -15,7 +15,12 @@ namespace carton
         [Key]
         public int Id { get; set; }
 
-        public string FullName { get; set; }
+        public string Surname { get; set; }
+        public string Name { get; set; }
+        public string Fathername { get; set; }
+
+        public string Login { get; set; }
+        public string Password { get; set; }
 
         public int PositionId { get; set; }
         [ForeignKey("PositionId")]

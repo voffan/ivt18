@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace carton
 {
-    public partial class StorageEmp : Form
+    public partial class StorageEmpForm : Form
     {
-        public StorageEmp()
+        public StorageEmpForm()
         {
             InitializeComponent();
         }
