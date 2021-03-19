@@ -8,7 +8,7 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace grades
 {
-    class Context : DbContext
+    public class Context : DbContext
     {
         public Context() : base("ConnStr") { }
 
@@ -16,9 +16,10 @@ namespace grades
         public DbSet<Grade> Grades { get; set; }
         public DbSet<GradingSystem> GradingSystems { get; set; }
         public DbSet<Group> Groups { get; set; }
-        public DbSet<Position> Postitions { get; set; }
+        public DbSet<Position> Positions { get; set; }
         public DbSet<ReportCard> ReportCards { get; set; }
         public DbSet<School> School { get; set; }
+        public DbSet<Person> Persons { get; set; }
         public DbSet<Staff> Staff { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<StudentSubGroup> StudentSubGroups { get; set; }

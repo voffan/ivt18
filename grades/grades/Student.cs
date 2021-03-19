@@ -9,14 +9,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace grades
 {
-    public class Student
+    public class Student : Person
     {
-        [Key]
-        public int StudentId { get; set; }
-        public String FullName { get; set; }
-        public String PhoneNumber { get; set; }
-        public String HomeAddress { get; set; }
-
         public int? GroupId { get; set; }
         [ForeignKey("GroupId")]
         public Group Group { get; set; }

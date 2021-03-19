@@ -12,6 +12,7 @@ namespace grades
 {
     public partial class Form1 : Form
     {
+        private Context ctx = new Context();
         public Form1()
         {
             InitializeComponent();

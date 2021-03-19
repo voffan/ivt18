@@ -1,0 +1,220 @@
+﻿namespace grades
+{
+    partial class AddUser
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.personFirstNameBox = new System.Windows.Forms.TextBox();
+            this.personSurNameBox = new System.Windows.Forms.TextBox();
+            this.personMiddleNameBox = new System.Windows.Forms.TextBox();
+            this.personPhoneNumberBox = new System.Windows.Forms.TextBox();
+            this.personHomeAddressBox = new System.Windows.Forms.TextBox();
+            this.cancelAddingUser = new System.Windows.Forms.Button();
+            this.applyAddingUser = new System.Windows.Forms.Button();
+            this.positionList = new System.Windows.Forms.ComboBox();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(173, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Введите следующие параметры:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(18, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Имя:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 68);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Фамилия:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(18, 95);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Отчество:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(18, 143);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Роль:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(20, 202);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(106, 13);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Контактный номер:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(24, 259);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(98, 13);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Домашний адрес:";
+            // 
+            // personFirstNameBox
+            // 
+            this.personFirstNameBox.Location = new System.Drawing.Point(132, 38);
+            this.personFirstNameBox.Name = "personFirstNameBox";
+            this.personFirstNameBox.Size = new System.Drawing.Size(260, 20);
+            this.personFirstNameBox.TabIndex = 7;
+            // 
+            // personSurNameBox
+            // 
+            this.personSurNameBox.Location = new System.Drawing.Point(132, 65);
+            this.personSurNameBox.Name = "personSurNameBox";
+            this.personSurNameBox.Size = new System.Drawing.Size(260, 20);
+            this.personSurNameBox.TabIndex = 8;
+            // 
+            // personMiddleNameBox
+            // 
+            this.personMiddleNameBox.Location = new System.Drawing.Point(132, 92);
+            this.personMiddleNameBox.Name = "personMiddleNameBox";
+            this.personMiddleNameBox.Size = new System.Drawing.Size(260, 20);
+            this.personMiddleNameBox.TabIndex = 9;
+            // 
+            // personPhoneNumberBox
+            // 
+            this.personPhoneNumberBox.Location = new System.Drawing.Point(132, 199);
+            this.personPhoneNumberBox.Name = "personPhoneNumberBox";
+            this.personPhoneNumberBox.Size = new System.Drawing.Size(260, 20);
+            this.personPhoneNumberBox.TabIndex = 10;
+            // 
+            // personHomeAddressBox
+            // 
+            this.personHomeAddressBox.Location = new System.Drawing.Point(132, 256);
+            this.personHomeAddressBox.Name = "personHomeAddressBox";
+            this.personHomeAddressBox.Size = new System.Drawing.Size(260, 20);
+            this.personHomeAddressBox.TabIndex = 11;
+            // 
+            // cancelAddingUser
+            // 
+            this.cancelAddingUser.Location = new System.Drawing.Point(316, 292);
+            this.cancelAddingUser.Name = "cancelAddingUser";
+            this.cancelAddingUser.Size = new System.Drawing.Size(75, 23);
+            this.cancelAddingUser.TabIndex = 13;
+            this.cancelAddingUser.Text = "Отмена";
+            this.cancelAddingUser.UseVisualStyleBackColor = true;
+            this.cancelAddingUser.Click += new System.EventHandler(this.cancelAddingUser_Click);
+            // 
+            // applyAddingUser
+            // 
+            this.applyAddingUser.Location = new System.Drawing.Point(235, 292);
+            this.applyAddingUser.Name = "applyAddingUser";
+            this.applyAddingUser.Size = new System.Drawing.Size(75, 23);
+            this.applyAddingUser.TabIndex = 14;
+            this.applyAddingUser.Text = "Применить";
+            this.applyAddingUser.UseVisualStyleBackColor = true;
+            this.applyAddingUser.Click += new System.EventHandler(this.applyAddingUser_Click);
+            // 
+            // positionList
+            // 
+            this.positionList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.positionList.FormattingEnabled = true;
+            this.positionList.Location = new System.Drawing.Point(132, 143);
+            this.positionList.Name = "positionList";
+            this.positionList.Size = new System.Drawing.Size(259, 21);
+            this.positionList.TabIndex = 15;
+            // 
+            // AddUser
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(404, 325);
+            this.Controls.Add(this.positionList);
+            this.Controls.Add(this.applyAddingUser);
+            this.Controls.Add(this.cancelAddingUser);
+            this.Controls.Add(this.personHomeAddressBox);
+            this.Controls.Add(this.personPhoneNumberBox);
+            this.Controls.Add(this.personMiddleNameBox);
+            this.Controls.Add(this.personSurNameBox);
+            this.Controls.Add(this.personFirstNameBox);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Name = "AddUser";
+            this.Text = "AddUser";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox personFirstNameBox;
+        private System.Windows.Forms.TextBox personSurNameBox;
+        private System.Windows.Forms.TextBox personMiddleNameBox;
+        private System.Windows.Forms.TextBox personPhoneNumberBox;
+        private System.Windows.Forms.TextBox personHomeAddressBox;
+        private System.Windows.Forms.Button cancelAddingUser;
+        private System.Windows.Forms.Button applyAddingUser;
+        private System.Windows.Forms.ComboBox positionList;
+    }
+}
