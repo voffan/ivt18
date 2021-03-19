@@ -30,3 +30,4 @@ S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grad
 S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\obj\Debug\grades.csproj.CoreCompileInputs.cache
 S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\obj\Debug\grades.Migrations.test.resources
 S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\obj\Debug\grades.Migrations.test2.resources
+S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\obj\Debug\grades.UserSignIn.resources

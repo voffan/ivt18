@@ -120,6 +120,12 @@
     <EmbeddedResource Include="AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="UserSignIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserSignIn.Designer.cs">
+      <DependentUpon>UserSignIn.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Migrations\202103171529115_test.resx">
       <DependentUpon>202103171529115_test.cs</DependentUpon>
     </EmbeddedResource>
@@ -137,6 +143,9 @@
     </Compile>
     <EmbeddedResource Include="UserList.resx">
       <DependentUpon>UserList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserSignIn.resx">
+      <DependentUpon>UserSignIn.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
