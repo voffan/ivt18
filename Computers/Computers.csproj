@@ -148,6 +148,12 @@
     <Compile Include="Modules\Login\LoginView.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modules\Manufacturer\ManufacturerBuilder.cs" />
+    <Compile Include="Modules\Manufacturer\ManufacturerInteractor.cs" />
+    <Compile Include="Modules\Manufacturer\ManufacturerPresenter.cs" />
+    <Compile Include="Modules\Manufacturer\ManufacturerView.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modules\Register\RegisterBuilder.cs" />
     <Compile Include="Modules\Register\RegisterInteractor.cs" />
     <Compile Include="Modules\Register\RegisterPresenter.cs" />
@@ -165,6 +171,7 @@
     <Compile Include="Router.cs" />
     <Compile Include="Utils\DateColumnAttribute.cs" />
     <Compile Include="Utils\Enums.cs" />
+    <Compile Include="Utils\Interfaces.cs" />
     <Compile Include="Utils\Validators.cs" />
     <Compile Include="View.cs">
       <SubType>Form</SubType>

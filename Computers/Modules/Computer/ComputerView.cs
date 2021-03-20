@@ -16,7 +16,24 @@ namespace Computers.Modules.Computer
     class ComputerView : View, IComputerView
     {
         public IComputerInteractor Interactor { get; set; }
-        
+
+        private Models.Computer computer;
+        private Utils.WindowMode windowMode;
+
+        public ComputerView(IComputerInteractor Interactor) : base()
+        {
+            this.Interactor = Interactor;
+            Interactor.Computer = new Models.Computer();
+            windowMode = Utils.WindowMode.Create;
+        }
+        public ComputerView(IComputerInteractor Interactor, Models.Computer computer) : base()
+        {
+            this.Interactor = Interactor;
+            this.computer = computer;
+            Interactor.Computer = computer;
+            windowMode = Utils.WindowMode.Edit;
+        }
+
         private readonly Panel panel = new Panel();
 
         private readonly Label itemNoLabel = new Label();
@@ -77,7 +94,12 @@ namespace Computers.Modules.Computer
             addGraphicCardButton.Text = "Добавить";
 
             totalPriceValueLabel.Text = "242394";
+
             panel.BorderStyle = BorderStyle.FixedSingle;
+            addPowerSupplyButton.Click += AddPowerSupplyButtonClicked;
+            addMemoryButton.Click += AddMemoryButtonClicked;
+            addHardDriveButton.Click += AddHardDriveButtonClicked;
+            addGraphicCardButton.Click += AddGraphicCardButtonClicked;
 
             panel.Controls.Add(itemNoLabel);
             panel.Controls.Add(itemNoTextField);
@@ -197,6 +219,26 @@ namespace Computers.Modules.Computer
 
             graphicCardsListBox.Size = listBoxSize;
             graphicCardsListBox.Location = new Point(310, 300);
+        }
+
+        private void AddPowerSupplyButtonClicked(object sender, EventArgs e)
+        {
+            Interactor.AddPowerSupply();
+        }
+
+        private void AddHardDriveButtonClicked(object sender, EventArgs e)
+        {
+            Interactor.AddHardDrive();
+        }
+
+        private void AddMemoryButtonClicked(object sender, EventArgs e)
+        {
+            Interactor.AddMemory();
+        }
+
+        private void AddGraphicCardButtonClicked(object sender, EventArgs e)
+        {
+            Interactor.AddGraphicCard();
         }
     }
 }

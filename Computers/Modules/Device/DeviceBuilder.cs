@@ -23,6 +23,20 @@ namespace Computers.Modules.Device
             return View;
         }
 
+        // Форма создания девайса для компьютера
+        public Form Build(Utils.DeviceType deviceType, Models.Computer computer)
+        {
+            var Presenter = new DevicePresenter();
+            var Interactor = new DeviceInteractor();
+            var View = new DeviceView(deviceType, computer);
+
+            Presenter.View = View;
+            Interactor.Presenter = Presenter;
+            View.Interactor = Interactor;
+
+            return View;
+        }
+
         // Форма редактирования девайса
         public Form Build(Models.Device device)
         {

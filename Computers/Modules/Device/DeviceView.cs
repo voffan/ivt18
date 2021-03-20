@@ -20,12 +20,22 @@ namespace Computers.Modules.Device
         private readonly Utils.DeviceType deviceType;      
         private readonly Utils.WindowMode windowMode;
         private readonly Models.Device device;
+        private readonly Models.Computer computer;
 
         // Создание нового девайса указанного типа
         public DeviceView(Utils.DeviceType deviceType) : base()
         {
             this.deviceType = deviceType;
             this.windowMode = Utils.WindowMode.Create;
+        }
+
+        // Создание нового девайса указанного типа с присвоением компьютеру
+        public DeviceView(Utils.DeviceType deviceType, Models.Computer computer) : base()
+        {
+            this.deviceType = deviceType;
+            this.computer = computer;
+            this.windowMode = Utils.WindowMode.CreateWithAssign;
+            SetupViewText();
         }
 
         // Редактирование девайса
@@ -44,6 +54,7 @@ namespace Computers.Modules.Device
 
         private readonly TextBox nameTextBox = new TextBox();
         private readonly ComboBox manufacturerComboBox = new ComboBox();
+        private readonly Button addManufacturerButton = new Button();
         private readonly NumericUpDown priceNumericBox = new NumericUpDown();
         private readonly ComboBox statusComboBox = new ComboBox();
 
@@ -57,7 +68,6 @@ namespace Computers.Modules.Device
         public override void SetupView()
         {
             base.SetupView();
-            SetupViewText();
         }
 
         public override void ViewDidLoad(object sender, EventArgs e)
@@ -70,12 +80,15 @@ namespace Computers.Modules.Device
             statusLabel.Text = "Статус";
 
             panel.BorderStyle = BorderStyle.FixedSingle;
+            addManufacturerButton.Text = "Добавить";
+            addManufacturerButton.Click += AddManufacturerButtonClicked;
             priceNumericBox.Maximum = 3000000;
             priceNumericBox.Minimum = 0;
 
             panel.Controls.Add(nameLabel);
             panel.Controls.Add(nameTextBox);
             panel.Controls.Add(manufacturerLabel);
+            panel.Controls.Add(addManufacturerButton);
             panel.Controls.Add(manufacturerComboBox);
             panel.Controls.Add(priceLabel);
             panel.Controls.Add(priceNumericBox);
@@ -95,6 +108,8 @@ namespace Computers.Modules.Device
             panel.Location = new Point(ClientSize.Width / 2 - panel.Size.Width / 2, ClientSize.Height / 2 - panel.Size.Height / 2);
 
             Size labelSize = new Size(280, 20);
+            Size rowLabelSize = new Size(200, 20);
+            Size rowButtonSize = new Size(70, 20);
 
             nameLabel.Size = labelSize;
             nameLabel.Location = new Point(10, 10);
@@ -102,8 +117,11 @@ namespace Computers.Modules.Device
             nameTextBox.Size = labelSize;
             nameTextBox.Location = new Point(10, 30);
 
-            manufacturerLabel.Size = labelSize;
+            manufacturerLabel.Size = rowLabelSize;
             manufacturerLabel.Location = new Point(10, 60);
+
+            addManufacturerButton.Size = rowButtonSize;
+            addManufacturerButton.Location = new Point(220, 55);
 
             manufacturerComboBox.Size = labelSize;
             manufacturerComboBox.Location = new Point(10, 80);
@@ -121,6 +139,11 @@ namespace Computers.Modules.Device
             statusComboBox.Location = new Point(10, 180);
 
             SetupUniqueFieldsLayout(labelSize);
+        }
+
+        private void AddManufacturerButtonClicked(object sender, EventArgs e)
+        {
+            Interactor.AddManufacturer();
         }
 
         private void SetupUniqueFields()
@@ -205,6 +228,34 @@ namespace Computers.Modules.Device
         private void SetupViewText()
         {
             if (windowMode == Utils.WindowMode.Create)
+            {
+                switch (deviceType)
+                {
+                    case Utils.DeviceType.Processor:
+                        Text = "Создание процессора";
+                        break;
+                    case Utils.DeviceType.PowerSupply:
+                        Text = "Создание элемента питания";
+                        break;
+                    case Utils.DeviceType.Motherboard:
+                        Text = "Создание мат. платы";
+                        break;
+                    case Utils.DeviceType.Memory:
+                        Text = "Создание оперативной памяти";
+                        break;
+                    case Utils.DeviceType.HardDrive:
+                        Text = "Создание накопителя данных";
+                        break;
+                    case Utils.DeviceType.GraphicCard:
+                        Text = "Создание видеокарты";
+                        break;
+                    case Utils.DeviceType.None:
+                        Text = "Создание девайса";
+                        break;
+                    default: break;
+                }
+            }
+            if (windowMode == Utils.WindowMode.CreateWithAssign)
             {
                 switch (deviceType)
                 {

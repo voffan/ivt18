@@ -3,6 +3,7 @@ using Computers.Modules.Computer;
 using Computers.Modules.Device;
 using Computers.Modules.Home;
 using Computers.Modules.Login;
+using Computers.Modules.Manufacturer;
 using Computers.Modules.Welcome;
 using System;
 using System.Collections.Generic;
@@ -34,7 +35,9 @@ namespace Computers
             }
 
 #if DEBUG
-            Router.Shared.CurrentForm = new DeviceBuilder().Build(Utils.DeviceType.PowerSupply);
+            // Router.Shared.CurrentForm = new DeviceBuilder().Build(Utils.DeviceType.PowerSupply);
+            Router.Shared.CurrentForm = new ComputerBuilder().Build();
+            // Router.Shared.CurrentForm = new ManufacturerBuilder().Build();
 #endif
             Application.Run();
         }
