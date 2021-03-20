@@ -3,28 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace gallery
 {
     class ExpoLogic
     {
-        static public bool ViewExpo(int id, Label elem, Context C)
+        static List<ExpoPicture> expPics;
+        static public Expo ViewExpo(int id,Context C)
         {
             var expo = C.Expos.Where(c => c.ExpoId == id).FirstOrDefault();
-
-            elem.Text = expo.Name + "\n\nМесто проведения: " + expo.Place + "\n\nВремя проведения: " + expo.StartDate + "  -  " + expo.EndDate;
-
-            if (elem != null) return true;
-            return false;
+            return expo;
         }
 
-        static public void AddExpo(Form f, string name, DateTime start, DateTime end, string place, Context C)
+        static public void AddExpo(string name, DateTime start, DateTime end, string place, Context C)
         {
-            var ex = C.Expos.Where(c => c.Name == name).FirstOrDefault();
-            if (ex != null)
+            var e = C.Expos.Where(c => c.Name == name).FirstOrDefault();
+            if (e != null)
             {
-                raise Exception("Expo already exists!");
+                throw new InvalidOperationException("Exposition already exists!");
             }
 
             Expo expo = new Expo
@@ -39,7 +35,6 @@ namespace gallery
             C.Expos.Add(expo);
             C.SaveChanges();
 
-            f.Close();
         }
 
         static public int getId(string s, Context C)
@@ -52,44 +47,58 @@ namespace gallery
         {
             return C.Expos.Where(c => c.ExpoId == id)
                 .FirstOrDefault();
-
         }
 
-        static public Array updatePicturesList(ListBox lb1, ListBox lb2, int id, Context C)
+        static public string[] updateExpoPicturesList(int id, Context C)
         {
-            lb1.Items.Clear();
-            lb1.Items.AddRange(C.Pictures.Select(c => c.Name).ToArray());
-            var expoPictures =
-                from pic in C.Pictures 
-                join expPic in C.ExpoPictures on pic.PictureId equals expPic.PictureId
-                where expPic.ExpoId == id
-                select pic.Name;
+            var expoPictures = C.ExpoPictures.Where(c => c.ExpoId == id)
+                .Select(c => c.Picture.Name + ", автор - " + c.Picture.Artist.FullName);
 
-            lb2.Items.Clear();
-            lb2.Items.AddRange(expoPictures.ToArray());
+           return expoPictures.ToArray();
+        }
 
-           return true;
+        static public string[] updatePicturesList(Context C)
+        {
+            var pictures = C.Pictures.Select(c => c.Name + ", автор - " + c.Artist.FullName);
+
+            return pictures.ToArray();
         }
 
         static public void sendToExpo(string p1, int id, Context C)
         {
-            int picId = C.Pictures.Where(c => c.Name == p1)
-               .Select(c => c.PictureId).FirstOrDefault();
 
-            var ex = C.ExpoPictures.Where(c => c.PictureId == picId && c.ExpoId == id).FirstOrDefault();
+            var ex = C.ExpoPictures.Where(c => c.Picture.Name + ", автор - " + c.Picture.Artist.FullName == p1 && c.ExpoId == id).FirstOrDefault();           
 
             if (ex == null)
             {
-                var expPic = new ExpoPicture // в обязанности кнопки
+                expPics.Add(new ExpoPicture // i dont know what to do
                 {
                     ExpoId = id,
-                    PictureId = picId
-                };
+                    PictureId = ex.PictureId
+                }
+                );
+                
+            }     
+        }
 
-                C.ExpoPictures.Add(expPic); 
-                C.SaveChanges();
-            }
-          
+        static public void sendToStorage(string p1, int id, Context C)
+        {
+            int picId = C.Pictures.Where(c => c.Name == p1)
+               .Select(c => c.PictureId).FirstOrDefault();
+
+            var ex = C.ExpoPictures.Where(c => c.Picture.Name == p1 && c.ExpoId == id).FirstOrDefault();
+
+            C.ExpoPictures.Remove(ex);
+            C.SaveChanges();
+           
+
+        }
+
+        static void Apply(Context C)
+        {
+            C.ExpoPictures.AddRange(expPics);
+            expPics.Clear();
+            C.SaveChanges();
         }
     }
 }

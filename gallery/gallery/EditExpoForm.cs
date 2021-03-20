@@ -23,22 +23,44 @@ namespace gallery
         void picturesBox_DoubleClick(object sender, EventArgs e)
         {
             ExpoLogic.sendToExpo(picturesBox.SelectedItem.ToString(), id, C);
-            ExpoLogic.updatePicturesList(picturesBox, expoPicturesBox, id, C);
+            updatePicturesList();
+
         }
         void expoPicturesBox_DoubleClick(object sender, EventArgs e)
         {
-            ExpoLogic.updatePicturesList(picturesBox, expoPicturesBox, id, C);
+            //ExpoLogic.sendToStorage(expoPicturesBox.SelectedItem.ToString(), id, C);
+            updateExpoPicturesList();
         }
 
         private void EditExpoForm_Load(object sender, EventArgs e)
-        {
-            ExpoLogic.updatePicturesList(picturesBox, expoPicturesBox, id, C);
+        {           
             var expo = ExpoLogic.oldData(id, C);
+
             nameBox.Text = expo.Name;
             placeBox.Text = expo.Place;
             startDatePicker.Value = expo.StartDate;
             endDatePicker.Value = expo.EndDate;
 
+            updatePicturesList();
+            updateExpoPicturesList();
+        }
+
+        void updatePicturesList()
+        {
+            picturesBox.Items.Clear();
+
+            var upData = ExpoLogic.updatePicturesList(C);
+
+            picturesBox.Items.AddRange(upData);
+        }
+
+        void updateExpoPicturesList()
+        {
+            expoPicturesBox.Items.Clear();
+
+            var upData = ExpoLogic.updateExpoPicturesList(id, C);
+
+            expoPicturesBox.Items.AddRange(upData);
         }
     }
 }

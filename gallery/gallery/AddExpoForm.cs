@@ -26,9 +26,9 @@ namespace gallery
         private void addButton_Click(object sender, EventArgs e)
         {
             try{
-                ExpoLogic.AddExpo(this, nameBox.Text, startDatePicker.Value, endDatePicker.Value, placeBox.Text, C);
-            }catch(Exception as e){
-                MessageBox.Show(e.toString());
+                ExpoLogic.AddExpo(nameBox.Text, startDatePicker.Value, endDatePicker.Value, placeBox.Text, C);
+            }catch(Exception ex){
+                MessageBox.Show(ex.ToString());
             }
         }
     }

@@ -21,7 +21,8 @@ namespace gallery
 
         private void ExpoViewForm_Load(object sender, EventArgs e)
         {
-            ExpoLogic.ViewExpo(id, expoInfoLabel, C);     
+            var expo = ExpoLogic.ViewExpo(id, C);
+            expoInfoLabel.Text = expo.Name + "\n\nМесто проведения: " + expo.Place + "\n\nВремя проведения: " + expo.StartDate + "  -  " + expo.EndDate; ;
         }
     }
 }
