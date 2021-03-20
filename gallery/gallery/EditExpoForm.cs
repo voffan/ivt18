@@ -19,21 +19,8 @@ namespace gallery
             InitializeComponent();
             
         }
-
-        void picturesBox_DoubleClick(object sender, EventArgs e)
-        {
-            ExpoLogic.sendToExpo(picturesBox.SelectedItem.ToString(), id, C);
-            updatePicturesList();
-
-        }
-        void expoPicturesBox_DoubleClick(object sender, EventArgs e)
-        {
-            //ExpoLogic.sendToStorage(expoPicturesBox.SelectedItem.ToString(), id, C);
-            updateExpoPicturesList();
-        }
-
         private void EditExpoForm_Load(object sender, EventArgs e)
-        {           
+        {
             var expo = ExpoLogic.oldData(id, C);
 
             nameBox.Text = expo.Name;
@@ -42,6 +29,19 @@ namespace gallery
             endDatePicker.Value = expo.EndDate;
 
             updatePicturesList();
+            updateExpoPicturesList();
+        }
+
+        void picturesBox_DoubleClick(object sender, EventArgs e)
+        {
+            ExpoLogic.sendToExpo(picturesBox.SelectedItem.ToString(), id, C);
+            updatePicturesList();
+            updateExpoPicturesList();
+
+        }
+        void expoPicturesBox_DoubleClick(object sender, EventArgs e)
+        {
+            ExpoLogic.sendToStorage(expoPicturesBox.SelectedItem.ToString(), id, C);
             updateExpoPicturesList();
         }
 

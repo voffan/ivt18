@@ -8,7 +8,6 @@ namespace gallery
 {
     class ExpoLogic
     {
-        static List<ExpoPicture> expPics;
         static public Expo ViewExpo(int id,Context C)
         {
             var expo = C.Expos.Where(c => c.ExpoId == id).FirstOrDefault();
@@ -66,27 +65,28 @@ namespace gallery
 
         static public void sendToExpo(string p1, int id, Context C)
         {
+            int pId = C.ExpoPictures.Where(c => c.Picture.Name + ", автор - " + c.Picture.Artist.FullName == p1).FirstOrDefault().PictureId;
 
-            var ex = C.ExpoPictures.Where(c => c.Picture.Name + ", автор - " + c.Picture.Artist.FullName == p1 && c.ExpoId == id).FirstOrDefault();           
+            var ex = C.ExpoPictures.Where(c => c.PictureId == pId && c.ExpoId == id).FirstOrDefault();           
 
             if (ex == null)
             {
-                expPics.Add(new ExpoPicture // i dont know what to do
+                C.ExpoPictures.Add(new ExpoPicture // i dont know what to do
                 {
                     ExpoId = id,
-                    PictureId = ex.PictureId
+                    PictureId = pId
                 }
                 );
-                
+                C.SaveChanges();
             }     
         }
 
         static public void sendToStorage(string p1, int id, Context C)
         {
-            int picId = C.Pictures.Where(c => c.Name == p1)
+            int pId = C.Pictures.Where(c => c.Name + ", автор - " + c.Artist.FullName == p1)
                .Select(c => c.PictureId).FirstOrDefault();
 
-            var ex = C.ExpoPictures.Where(c => c.Picture.Name == p1 && c.ExpoId == id).FirstOrDefault();
+            var ex = C.ExpoPictures.Where(c => c.PictureId == pId && c.ExpoId == id).FirstOrDefault();
 
             C.ExpoPictures.Remove(ex);
             C.SaveChanges();
@@ -96,8 +96,6 @@ namespace gallery
 
         static void Apply(Context C)
         {
-            C.ExpoPictures.AddRange(expPics);
-            expPics.Clear();
             C.SaveChanges();
         }
     }
