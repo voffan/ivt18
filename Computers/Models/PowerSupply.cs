@@ -8,13 +8,10 @@ namespace Computers.Models
 {
     public class PowerSupply : Device
     {
-        public PowerSupply()
-        {
-            this.Computers = new HashSet<Computer>();
-        }
+        public PowerSupply() {}
         public int Id { get; set; }
         public int Power { get; set; }
         public int Price { get; set; }
-        public virtual ICollection<Computer> Computers { get; set; }
+        public Computer Computer { get; set; }
     }
 }

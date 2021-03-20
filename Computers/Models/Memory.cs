@@ -8,13 +8,10 @@ namespace Computers.Models
 {
     public class Memory : Device
     {
-        public Memory()
-        {
-            this.Computers = new HashSet<Computer>();
-        }
+        public Memory() {}
         public int Id { get; set; }
         public int Amount { get; set; }
         public int Price { get; set; }
-        public virtual ICollection<Computer> Computers { get; set; }
+        public Computer Computer { get; set; }
     }
 }

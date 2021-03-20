@@ -1,4 +1,5 @@
 ﻿using Computers.Models;
+using Computers.Modules.Computer;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -12,17 +13,28 @@ namespace Computers.Modules.Home
     {
         IHomePresenter Presenter { get; set; }
         Task LoadPeripherals();
+        void AddComputer();
     }
 
     class HomeInteractor : IHomeInteractor
     {
-        public IHomePresenter Presenter { get; set; }
+        public IHomePresenter Presenter { get; set; }        
 
         public async Task LoadPeripherals()
         {
-            var context = new DatabaseContext();
-            var result = await context.Peripherals.ToListAsync();
-            Presenter.PresentPeripherals(result);
+            Console.WriteLine("Context start");
+            using (var context = new DatabaseContext())
+            {
+                List<Peripheral> peripherals = context.Peripherals.ToList();
+                context.SaveChanges();
+                Console.WriteLine("Context end");
+                Presenter.PresentPeripherals(peripherals);
+            }
+        }
+
+        public void AddComputer()
+        {
+            Router.Shared.CurrentForm = new ComputerBuilder().Build();
         }
     }
 }

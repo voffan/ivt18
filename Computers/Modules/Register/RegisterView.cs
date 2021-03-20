@@ -26,8 +26,8 @@ namespace Computers.Modules.Register
         private readonly Label nameLabel = new Label();
         private readonly Label emailLabel = new Label();
         private readonly Label passwordLabel = new Label();
-        private readonly Button submitButton = new Button();
         private readonly Label errorLabel = new Label();
+        private readonly Button submitButton = new Button();
         private readonly Button backButton = new Button();
 
         public override void SetupView()

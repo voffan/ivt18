@@ -1,4 +1,6 @@
 ﻿using Computers.Models;
+using Computers.Modules.Computer;
+using Computers.Modules.Device;
 using Computers.Modules.Home;
 using Computers.Modules.Login;
 using Computers.Modules.Welcome;
@@ -30,7 +32,10 @@ namespace Computers
             {
                 Router.Shared.CurrentForm = new WelcomeBuilder().Build();
             }
-            
+
+#if DEBUG
+            Router.Shared.CurrentForm = new DeviceBuilder().Build(Utils.DeviceType.PowerSupply);
+#endif
             Application.Run();
         }
     }

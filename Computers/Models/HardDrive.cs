@@ -8,13 +8,10 @@ namespace Computers.Models
 {
     public class HardDrive : Device
     {
-        public HardDrive()
-        {
-            this.Computers = new HashSet<Computer>();
-        }
+        public HardDrive() {}
         public int Id { get; set; }
         public int Capacity { get; set; }
         public int Price { get; set; }
-        public virtual ICollection<Computer> Computers { get; set; }
+        public Computer Computer { get; set; }
     }
 }
