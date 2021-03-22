@@ -6,25 +6,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Computers.Modules.Manufacturer
+namespace Computers.Modules.SingleFieldForm
 {
-    public interface IManufacturerView
+    public interface ISingleFieldFormView
     {
-        IManufacturerInteractor Interactor { get; set; }
+        ISingleFieldFormInteractor Interactor { get; set; }
         void Close();
+        void Configure(Utils.SingleFieldFormType FormType);
     }
 
-    class ManufacturerView : View, IManufacturerView
+    class SingleFieldFormView : View, ISingleFieldFormView
     {
-        public IManufacturerInteractor Interactor { get; set; }
+        public ISingleFieldFormInteractor Interactor { get; set; }
 
-        public ManufacturerView(IManufacturerInteractor Interactor) : base()
-        {
-            this.Interactor = Interactor;
-        }
         private readonly Panel panel = new Panel();
-        private readonly Label manufacturerLabel = new Label();
-        private readonly TextBox manufacturerTextBox = new TextBox();
+        private readonly Label label = new Label();
+        private readonly TextBox textBox = new TextBox();
         private readonly Button addButton = new Button();
         private readonly Button cancelButton = new Button();
 
@@ -32,7 +29,6 @@ namespace Computers.Modules.Manufacturer
         {
             base.SetupView();
             Size = new Size(320, 150);
-            Text = "Добавление производителя";
         }
 
         public override void ViewDidLoad(object sender, EventArgs e)
@@ -40,16 +36,15 @@ namespace Computers.Modules.Manufacturer
             base.ViewDidLoad(sender, e);
             
             panel.BorderStyle = BorderStyle.FixedSingle;
-            manufacturerLabel.Text = "Имя";
             addButton.Text = "Добавить";
             cancelButton.Text = "Отмена";
 
-            manufacturerTextBox.TextChanged += ManufacturerTextBoxChanged;
+            textBox.TextChanged += textBoxChanged;
             addButton.Click += AddButtonClicked;
             cancelButton.Click += CancelButtonClicked;
 
-            panel.Controls.Add(manufacturerLabel);
-            panel.Controls.Add(manufacturerTextBox);
+            panel.Controls.Add(label);
+            panel.Controls.Add(textBox);
             panel.Controls.Add(addButton);
             panel.Controls.Add(cancelButton);
 
@@ -62,11 +57,11 @@ namespace Computers.Modules.Manufacturer
             panel.Size = new Size(300, 105);
             panel.Location = new Point(ClientSize.Width / 2 - panel.Size.Width / 2, ClientSize.Height / 2 - panel.Size.Height / 2);
 
-            manufacturerLabel.Size = new Size(280, 20);
-            manufacturerLabel.Location = new Point(10, 10);
+            label.Size = new Size(280, 20);
+            label.Location = new Point(10, 10);
 
-            manufacturerTextBox.Size = new Size(280, 20);
-            manufacturerTextBox.Location = new Point(10, 30);
+            textBox.Size = new Size(280, 20);
+            textBox.Location = new Point(10, 30);
 
             addButton.Size = new Size(70, 25);
             addButton.Location = new Point(140, 70);
@@ -75,19 +70,40 @@ namespace Computers.Modules.Manufacturer
             cancelButton.Location = new Point(220, 70);
         }
 
-        private void ManufacturerTextBoxChanged(object sender, EventArgs e)
+        private void textBoxChanged(object sender, EventArgs e)
         {
-            Interactor.SetName(manufacturerTextBox.Text);
+            Interactor.SetText(textBox.Text);
         }
 
         private void AddButtonClicked(object sender, EventArgs e)
         {
-            Interactor.AddManufacturer();
+            Interactor.Submit();
         }
 
         private void CancelButtonClicked(object sender, EventArgs e)
         {
             Interactor.Cancel();
+        }
+
+        public void Configure(Utils.SingleFieldFormType FormType)
+        {
+            switch (FormType)
+            {
+                case Utils.SingleFieldFormType.Status:
+                    Text = "Новый статус";
+                    label.Text = "Название статуса";
+                    break;
+                case Utils.SingleFieldFormType.PeripheralType:
+                    Text = "Новый тип периферии";
+                    label.Text = "Название типа периферии";
+                    break;
+                case Utils.SingleFieldFormType.Manufacturer:
+                    Text = "Новый производитель";
+                    label.Text = "Название производителя";
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

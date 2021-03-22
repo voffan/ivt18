@@ -23,4 +23,11 @@ namespace Computers.Utils
         Memory,
         PowerSupply
     }
+
+    public enum SingleFieldFormType
+    {
+        Manufacturer,
+        Status,
+        PeripheralType
+    }
 }

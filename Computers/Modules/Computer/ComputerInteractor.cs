@@ -18,36 +18,37 @@ namespace Computers.Modules.Computer
         void AddGraphicCard();
     }
 
-    class ComputerInteractor : IComputerInteractor
+    class ComputerInteractor : IComputerInteractor, Utils.IFormOwner
     {
         public IComputerPresenter Presenter { get; set; }
         public Models.Computer Computer { get; set; }
+        public object Receiver { set => throw new NotImplementedException(); }
 
         public void AddGraphicCard()
         {
             new DeviceBuilder()
-                .Build(Utils.DeviceType.GraphicCard, Computer)
+                .Build(Utils.DeviceType.GraphicCard, this)
                 .ShowDialog(Presenter.View as Form);
         }
 
         public void AddHardDrive()
         {
             new DeviceBuilder()
-                .Build(Utils.DeviceType.HardDrive, Computer)
+                .Build(Utils.DeviceType.HardDrive, this)
                 .ShowDialog(Presenter.View as Form);
         }
 
         public void AddMemory()
         {
             new DeviceBuilder()
-                .Build(Utils.DeviceType.Memory, Computer)
+                .Build(Utils.DeviceType.Memory, this)
                 .ShowDialog(Presenter.View as Form);
         }
 
         public void AddPowerSupply()
         {
             new DeviceBuilder()
-                .Build(Utils.DeviceType.PowerSupply, Computer)
+                .Build(Utils.DeviceType.PowerSupply, this)
                 .ShowDialog(Presenter.View as Form);
         }
     }

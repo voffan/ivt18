@@ -8,7 +8,7 @@ namespace Computers.Utils
 {
     public interface IFormOwner
     {
-        object DelegateProperty { set; }
+        object Receiver { set; }
     }
 
     public interface IFormDelegate

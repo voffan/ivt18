@@ -3,7 +3,7 @@ using Computers.Modules.Computer;
 using Computers.Modules.Device;
 using Computers.Modules.Home;
 using Computers.Modules.Login;
-using Computers.Modules.Manufacturer;
+using Computers.Modules.SingleFieldForm;
 using Computers.Modules.Welcome;
 using System;
 using System.Collections.Generic;

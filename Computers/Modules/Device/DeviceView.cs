@@ -11,39 +11,14 @@ namespace Computers.Modules.Device
     public interface IDeviceView
     {
         IDeviceInteractor Interactor { get; set; }
+        void Configure(DeviceViewModel viewModel);
     }
 
     class DeviceView : View, IDeviceView
     {
         public IDeviceInteractor Interactor { get; set; }
 
-        private readonly Utils.DeviceType deviceType;      
-        private readonly Utils.WindowMode windowMode;
-        private readonly Models.Device device;
-        private readonly Models.Computer computer;
-
-        // Создание нового девайса указанного типа
-        public DeviceView(Utils.DeviceType deviceType) : base()
-        {
-            this.deviceType = deviceType;
-            this.windowMode = Utils.WindowMode.Create;
-        }
-
         // Создание нового девайса указанного типа с присвоением компьютеру
-        public DeviceView(Utils.DeviceType deviceType, Models.Computer computer) : base()
-        {
-            this.deviceType = deviceType;
-            this.computer = computer;
-            this.windowMode = Utils.WindowMode.CreateWithAssign;
-            SetupViewText();
-        }
-
-        // Редактирование девайса
-        public DeviceView(Models.Device device) : base()
-        {
-            this.device = device;
-            this.windowMode = Utils.WindowMode.Create;
-        }
 
         private readonly Panel panel = new Panel();
 
@@ -51,19 +26,24 @@ namespace Computers.Modules.Device
         private readonly Label manufacturerLabel = new Label();
         private readonly Label priceLabel = new Label();
         private readonly Label statusLabel = new Label();
+        private readonly Label optionalLabel = new Label();
 
         private readonly TextBox nameTextBox = new TextBox();
         private readonly ComboBox manufacturerComboBox = new ComboBox();
         private readonly Button addManufacturerButton = new Button();
         private readonly NumericUpDown priceNumericBox = new NumericUpDown();
         private readonly ComboBox statusComboBox = new ComboBox();
+        private readonly Button addStatusButton = new Button();
+        private readonly NumericUpDown optionalNumericField = new NumericUpDown();
+        private readonly TextBox optionalTextField = new TextBox();
 
-        private readonly Label uniqueFieldLabel = new Label();
-        
-        // Hard drive, memory, power supply
-        private readonly NumericUpDown uniqueNumericField = new NumericUpDown();
-        // Graphic card, Processor
-        private readonly TextBox uniqueTextField = new TextBox();
+        private readonly Button submitButton = new Button();
+        private readonly Button cancelButton = new Button();
+
+        private readonly Size panelSize = new Size(300, 300);
+        private readonly Size labelSize = new Size(280, 20);
+        private readonly Size rowLabelSize = new Size(200, 20);
+        private readonly Size rowButtonSize = new Size(70, 20);
 
         public override void SetupView()
         {
@@ -78,10 +58,14 @@ namespace Computers.Modules.Device
             manufacturerLabel.Text = "Производитель";
             priceLabel.Text = "Ценность";
             statusLabel.Text = "Статус";
+            submitButton.Text = "Добавить";
+            cancelButton.Text = "Отмена";
 
             panel.BorderStyle = BorderStyle.FixedSingle;
             addManufacturerButton.Text = "Добавить";
             addManufacturerButton.Click += AddManufacturerButtonClicked;
+            addStatusButton.Text = "Добавить";
+            addStatusButton.Click += AddStatusButtonClicked;
             priceNumericBox.Maximum = 3000000;
             priceNumericBox.Minimum = 0;
 
@@ -93,23 +77,19 @@ namespace Computers.Modules.Device
             panel.Controls.Add(priceLabel);
             panel.Controls.Add(priceNumericBox);
             panel.Controls.Add(statusLabel);
+            panel.Controls.Add(addStatusButton);
             panel.Controls.Add(statusComboBox);
+            panel.Controls.Add(submitButton);
+            panel.Controls.Add(cancelButton);
 
             Controls.Add(panel);
-
-            SetupUniqueFields();
-            SetupLayout(null, null);
         }
 
         public override void SetupLayout(object sender, EventArgs e)
         {
             base.SetupLayout(sender, e);
-            panel.Size = new Size(300, 300);
+            panel.Size = panelSize;
             panel.Location = new Point(ClientSize.Width / 2 - panel.Size.Width / 2, ClientSize.Height / 2 - panel.Size.Height / 2);
-
-            Size labelSize = new Size(280, 20);
-            Size rowLabelSize = new Size(200, 20);
-            Size rowButtonSize = new Size(70, 20);
 
             nameLabel.Size = labelSize;
             nameLabel.Location = new Point(10, 10);
@@ -132,13 +112,20 @@ namespace Computers.Modules.Device
             priceNumericBox.Size = labelSize;
             priceNumericBox.Location = new Point(10, 130);
 
-            statusLabel.Size = labelSize;
+            statusLabel.Size = rowLabelSize;
             statusLabel.Location = new Point(10, 160);
+
+            addStatusButton.Size = rowButtonSize;
+            addStatusButton.Location = new Point(220, 155);
 
             statusComboBox.Size = labelSize;
             statusComboBox.Location = new Point(10, 180);
 
-            SetupUniqueFieldsLayout(labelSize);
+            submitButton.Size = new Size(70, 25);
+            submitButton.Location = new Point(140, 265);
+
+            cancelButton.Size = new Size(70, 25);
+            cancelButton.Location = new Point(220, 265);
         }
 
         private void AddManufacturerButtonClicked(object sender, EventArgs e)
@@ -146,170 +133,93 @@ namespace Computers.Modules.Device
             Interactor.AddManufacturer();
         }
 
-        private void SetupUniqueFields()
+        private void AddStatusButtonClicked(object sender, EventArgs e)
         {
-            switch (deviceType)
+            Interactor.AddStatus();
+        }
+
+        private void AddButtonClicked(object sender, EventArgs e)
+        {
+            Interactor.SubmitDevice();
+        }
+
+        private void CancelButtonClicked(object sender, EventArgs e)
+        {
+            Interactor.Cancel();
+        }
+
+        public void Configure(DeviceViewModel viewModel)
+        {
+            manufacturerComboBox.DataSource = new BindingSource(viewModel.manufacturers, null);
+            manufacturerComboBox.DisplayMember = "Key";
+            manufacturerComboBox.ValueMember = "Value";
+            statusComboBox.DataSource = new BindingSource(viewModel.statuses, null);
+            statusComboBox.DisplayMember = "Key";
+            statusComboBox.ValueMember = "Value";
+
+            switch (viewModel.deviceType)
             {
                 case Utils.DeviceType.HardDrive:
-                    uniqueFieldLabel.Text = "Объем (ГБ)";
-                    uniqueNumericField.Minimum = 0;
-                    uniqueNumericField.Maximum = 10000;
-                    panel.Controls.Add(uniqueFieldLabel);
-                    panel.Controls.Add(uniqueNumericField);
+                    Text = "Добавление носителя данных";
+                    optionalLabel.Text = "Объем (ГБ)";
+                    optionalNumericField.Minimum = 0;
+                    optionalNumericField.Maximum = 10000;
+                    panel.Controls.Add(optionalLabel);
+                    panel.Controls.Add(optionalNumericField);
+                    optionalLabel.Size = labelSize;
+                    optionalLabel.Location = new Point(10, 210);
+                    optionalNumericField.Size = labelSize;
+                    optionalNumericField.Location = new Point(10, 230);
                     break;
                 case Utils.DeviceType.Memory:
-                    uniqueFieldLabel.Text = "Объем (ГБ)";
-                    uniqueNumericField.Minimum = 0;
-                    uniqueNumericField.Maximum = 10000;
-                    panel.Controls.Add(uniqueFieldLabel);
-                    panel.Controls.Add(uniqueNumericField);
+                    Text = "Добавление оперативной памяти";
+                    optionalLabel.Text = "Объем (ГБ)";
+                    optionalNumericField.Minimum = 0;
+                    optionalNumericField.Maximum = 10000;
+                    panel.Controls.Add(optionalLabel);
+                    panel.Controls.Add(optionalNumericField);
+                    optionalLabel.Size = labelSize;
+                    optionalLabel.Location = new Point(10, 210);
+                    optionalNumericField.Size = labelSize;
+                    optionalNumericField.Location = new Point(10, 230);
                     break;
                 case Utils.DeviceType.PowerSupply:
-                    uniqueFieldLabel.Text = "Мощность (Вт)";
-                    uniqueNumericField.Minimum = 0;
-                    uniqueNumericField.Maximum = 5000;
-                    panel.Controls.Add(uniqueFieldLabel);
-                    panel.Controls.Add(uniqueNumericField);
+                    Text = "Добавление источника питания";
+                    optionalLabel.Text = "Мощность (Вт)";
+                    optionalNumericField.Minimum = 0;
+                    optionalNumericField.Maximum = 5000;
+                    panel.Controls.Add(optionalLabel);
+                    panel.Controls.Add(optionalNumericField);
+                    optionalLabel.Size = labelSize;
+                    optionalLabel.Location = new Point(10, 210);
+                    optionalNumericField.Size = labelSize;
+                    optionalNumericField.Location = new Point(10, 230);
                     break;
                 case Utils.DeviceType.Processor:
-                    uniqueFieldLabel.Text = "Частота (ГГц)";
-                    panel.Controls.Add(uniqueFieldLabel);
-                    panel.Controls.Add(uniqueTextField);
+                    Text = "Добавление процессора";
+                    optionalLabel.Text = "Частота (ГГц)";
+                    panel.Controls.Add(optionalLabel);
+                    panel.Controls.Add(optionalTextField);
+                    optionalLabel.Size = labelSize;
+                    optionalLabel.Location = new Point(10, 210);
+                    optionalTextField.Size = labelSize;
+                    optionalTextField.Location = new Point(10, 230);
                     break;
                 case Utils.DeviceType.GraphicCard:
-                    uniqueFieldLabel.Text = "Value (неизвестно)";
-                    panel.Controls.Add(uniqueFieldLabel);
-                    panel.Controls.Add(uniqueTextField);
+                    Text = "Добавление видеокарты";
+                    optionalLabel.Text = "Value (неизвестно)";
+                    panel.Controls.Add(optionalLabel);
+                    panel.Controls.Add(optionalTextField);
+                    optionalLabel.Size = labelSize;
+                    optionalLabel.Location = new Point(10, 210);
+                    optionalTextField.Size = labelSize;
+                    optionalTextField.Location = new Point(10, 230);
+                    break;
+                case Utils.DeviceType.Motherboard:
+                    Text = "Добавление мат. платы";
                     break;
                 default:
                     break;
-            }
-        }
-
-        private void SetupUniqueFieldsLayout(Size labelSize)
-        {
-            switch (deviceType)
-            {
-                case Utils.DeviceType.HardDrive:
-                    uniqueFieldLabel.Size = labelSize;
-                    uniqueFieldLabel.Location = new Point(10, 210);
-                    uniqueNumericField.Size = labelSize;
-                    uniqueNumericField.Location = new Point(10, 230);
-                    break;
-                case Utils.DeviceType.Memory:
-                    uniqueFieldLabel.Size = labelSize;
-                    uniqueFieldLabel.Location = new Point(10, 210);
-                    uniqueNumericField.Size = labelSize;
-                    uniqueNumericField.Location = new Point(10, 230);
-                    break;
-                case Utils.DeviceType.PowerSupply:
-                    uniqueFieldLabel.Size = labelSize;
-                    uniqueFieldLabel.Location = new Point(10, 210);
-                    uniqueNumericField.Size = labelSize;
-                    uniqueNumericField.Location = new Point(10, 230);
-                    break;
-                case Utils.DeviceType.Processor:
-                    uniqueFieldLabel.Size = labelSize;
-                    uniqueFieldLabel.Location = new Point(10, 210);
-                    uniqueTextField.Size = labelSize;
-                    uniqueTextField.Location = new Point(10, 230);
-                    break;
-                case Utils.DeviceType.GraphicCard:
-                    uniqueFieldLabel.Size = labelSize;
-                    uniqueFieldLabel.Location = new Point(10, 210);
-                    uniqueTextField.Size = labelSize;
-                    uniqueTextField.Location = new Point(10, 230);
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        private void SetupViewText()
-        {
-            if (windowMode == Utils.WindowMode.Create)
-            {
-                switch (deviceType)
-                {
-                    case Utils.DeviceType.Processor:
-                        Text = "Создание процессора";
-                        break;
-                    case Utils.DeviceType.PowerSupply:
-                        Text = "Создание элемента питания";
-                        break;
-                    case Utils.DeviceType.Motherboard:
-                        Text = "Создание мат. платы";
-                        break;
-                    case Utils.DeviceType.Memory:
-                        Text = "Создание оперативной памяти";
-                        break;
-                    case Utils.DeviceType.HardDrive:
-                        Text = "Создание накопителя данных";
-                        break;
-                    case Utils.DeviceType.GraphicCard:
-                        Text = "Создание видеокарты";
-                        break;
-                    case Utils.DeviceType.None:
-                        Text = "Создание девайса";
-                        break;
-                    default: break;
-                }
-            }
-            if (windowMode == Utils.WindowMode.CreateWithAssign)
-            {
-                switch (deviceType)
-                {
-                    case Utils.DeviceType.Processor:
-                        Text = "Добавление процессора";
-                        break;
-                    case Utils.DeviceType.PowerSupply:
-                        Text = "Добавление элемента питания";
-                        break;
-                    case Utils.DeviceType.Motherboard:
-                        Text = "Добавление мат. платы";
-                        break;
-                    case Utils.DeviceType.Memory:
-                        Text = "Добавление оперативной памяти";
-                        break;
-                    case Utils.DeviceType.HardDrive:
-                        Text = "Добавление накопителя данных";
-                        break;
-                    case Utils.DeviceType.GraphicCard:
-                        Text = "Добавление видеокарты";
-                        break;
-                    case Utils.DeviceType.None:
-                        Text = "Добавление девайса";
-                        break;
-                    default: break;
-                }
-            }
-            if (windowMode == Utils.WindowMode.Edit)
-            {
-                switch (deviceType)
-                {
-                    case Utils.DeviceType.Processor:
-                        Text = "Изменение процессора";
-                        break;
-                    case Utils.DeviceType.PowerSupply:
-                        Text = "Изменение элемента питания";
-                        break;
-                    case Utils.DeviceType.Motherboard:
-                        Text = "Изменение мат. платы";
-                        break;
-                    case Utils.DeviceType.Memory:
-                        Text = "Изменение оперативной памяти";
-                        break;
-                    case Utils.DeviceType.HardDrive:
-                        Text = "Изменение накопителя данных";
-                        break;
-                    case Utils.DeviceType.GraphicCard:
-                        Text = "Изменение видеокарты";
-                        break;
-                    case Utils.DeviceType.None:
-                        Text = "Изменение девайса";
-                        break;
-                    default: break;
-                }
             }
         }
     }

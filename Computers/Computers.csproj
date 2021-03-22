@@ -136,6 +136,7 @@
     <Compile Include="Modules\Device\DeviceView.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modules\Device\DeviceViewModel.cs" />
     <Compile Include="Modules\Home\HomeBuilder.cs" />
     <Compile Include="Modules\Home\HomeInteractor.cs" />
     <Compile Include="Modules\Home\HomePresenter.cs" />
@@ -148,10 +149,10 @@
     <Compile Include="Modules\Login\LoginView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modules\Manufacturer\ManufacturerBuilder.cs" />
-    <Compile Include="Modules\Manufacturer\ManufacturerInteractor.cs" />
-    <Compile Include="Modules\Manufacturer\ManufacturerPresenter.cs" />
-    <Compile Include="Modules\Manufacturer\ManufacturerView.cs">
+    <Compile Include="Modules\SingleFieldForm\SingleFieldFormrBuilder.cs" />
+    <Compile Include="Modules\SingleFieldForm\SingleFieldFormInteractor.cs" />
+    <Compile Include="Modules\SingleFieldForm\SingleFieldFormPresenter.cs" />
+    <Compile Include="Modules\SingleFieldForm\SingleFieldFormView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modules\Register\RegisterBuilder.cs" />
