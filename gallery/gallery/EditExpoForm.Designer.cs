@@ -43,17 +43,19 @@ namespace gallery
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.cancelButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // editButton
             // 
             this.editButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.editButton.Location = new System.Drawing.Point(1045, 621);
+            this.editButton.Location = new System.Drawing.Point(1051, 621);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(129, 38);
             this.editButton.TabIndex = 0;
             this.editButton.Text = "Применить";
             this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // label1
             // 
@@ -179,11 +181,23 @@ namespace gallery
             this.label7.TabIndex = 13;
             this.label7.Text = ">>";
             // 
+            // cancelButton
+            // 
+            this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cancelButton.Location = new System.Drawing.Point(1051, 555);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(129, 38);
+            this.cancelButton.TabIndex = 14;
+            this.cancelButton.Text = "Отменить";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            // 
             // EditExpoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1220, 734);
+            this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -222,5 +236,6 @@ namespace gallery
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button cancelButton;
     }
 }

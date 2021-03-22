@@ -8,6 +8,7 @@ namespace gallery
 {
     class ExpoLogic
     {
+        static int[] oldExpoPictures;
         static public Expo ViewExpo(int id,Context C)
         {
             var expo = C.Expos.Where(c => c.ExpoId == id).FirstOrDefault();
@@ -44,8 +45,11 @@ namespace gallery
 
         static public Expo oldData(int id, Context C)
         {
-            return C.Expos.Where(c => c.ExpoId == id)
+            var oldData = C.Expos.Where(c => c.ExpoId == id)
                 .FirstOrDefault();
+            oldExpoPictures = C.ExpoPictures.Where(c => c.ExpoId == id).Select(c => c.PictureId).ToArray();
+            
+            return oldData;
         }
 
         static public string[] updateExpoPicturesList(int id, Context C)
@@ -71,7 +75,7 @@ namespace gallery
 
             if (ex == null)
             {
-                C.ExpoPictures.Add(new ExpoPicture // i dont know what to do
+                C.ExpoPictures.Add(new ExpoPicture 
                 {
                     ExpoId = id,
                     PictureId = pId
@@ -94,9 +98,31 @@ namespace gallery
 
         }
 
-        static void Apply(Context C)
+        static public void Apply(Context C)
         {
+            //
+        }
+        static public void Cancel(int id, Context C)
+        {
+            var ex = C.ExpoPictures.Where(c => c.ExpoId == id).ToArray();
+            C.ExpoPictures.RemoveRange(ex);
+
+            List<ExpoPicture> exp = new List<ExpoPicture>(oldExpoPictures.Count());
+
+            for (int i = 0; i < oldExpoPictures.Count(); i++)
+            {
+                exp.Add(new ExpoPicture
+                {
+                    ExpoId = id,
+                    PictureId = oldExpoPictures[i]
+                }
+                );
+
+            }
+
+            C.ExpoPictures.AddRange(exp);
             C.SaveChanges();
+
         }
     }
 }

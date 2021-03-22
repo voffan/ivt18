@@ -22,7 +22,7 @@ namespace gallery
         private void EditExpoForm_Load(object sender, EventArgs e)
         {
             var expo = ExpoLogic.oldData(id, C);
-
+                      
             nameBox.Text = expo.Name;
             placeBox.Text = expo.Place;
             startDatePicker.Value = expo.StartDate;
@@ -61,6 +61,19 @@ namespace gallery
             var upData = ExpoLogic.updateExpoPicturesList(id, C);
 
             expoPicturesBox.Items.AddRange(upData);
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            ExpoLogic.Cancel(id, C);
+            
+            updateExpoPicturesList();
+            //this.Close();
         }
     }
 }
