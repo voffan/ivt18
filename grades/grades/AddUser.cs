@@ -47,28 +47,32 @@ namespace grades
 
         private void applyAddingUser_Click(object sender, EventArgs e)
         {
-            // TO DO:
-            // Создавать либо ученика, либо учителя
-            // Вынести в класс логики все, что стоит ниже
-            if (_currentPerson == null)
-                _currentPerson = new Person();
+            string positionName = positionList.Items[positionList.SelectedIndex].ToString();
 
-            _currentPerson.FirstName = personFirstNameBox.Text.ToString().Trim();
-            _currentPerson.SurName = personSurNameBox.Text.ToString().Trim();
-            _currentPerson.MiddleName = personMiddleNameBox.Text.ToString().Trim();
-
-            string posName = positionList.Items[positionList.SelectedIndex].ToString();
-            if  (posName != null)
+            if (!_editingState)
             {
-                _currentPerson.PositionId = _context.Positions.Where(x => x.Name == posName).Select(x => x.PositionId).Single();
-                _currentPerson.Position = _context.Positions.Where(x => x.PositionId == _currentPerson.PositionId).Select(x => x).Single();
+                _logic.CreatePerson(positionName);
+            }
+            else
+            {
+                _logic.SetPerson(_currentPerson);
             }
 
-            _currentPerson.PhoneNumber = personPhoneNumberBox.Text.ToString().Trim();
+            _logic.SetPersonFullName(
+                personFirstNameBox.Text.ToString(),
+                personSurNameBox.Text.ToString(),
+                personMiddleNameBox.Text.ToString()
+                );
+            _logic.SetPersonPostition(_context, positionName);
+            _logic.SetPersonPhoneNumber(personPhoneNumberBox.Text.ToString());
+            _logic.SetPersonHomeAddress(personHomeAddressBox.Text.ToString());
+            _currentPerson = _logic.GetAddedPerson();
 
-            _currentPerson.HomeAddress = personHomeAddressBox.Text.ToString().Trim();
             if (!_editingState)
+            {
                 _context.Persons.Add(_currentPerson);
+            }
+
             _context.SaveChanges();
             this.Close();
         }

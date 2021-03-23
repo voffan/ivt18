@@ -18,6 +18,9 @@ namespace grades
         public String PhoneNumber { get; set; }
         public String HomeAddress { get; set; }
 
+        public String Login { get; set; }
+        public String Password { get; set; }
+
         public int PositionId { get; set; }
         [ForeignKey("PositionId")]
         public Position Position { get; set; }

@@ -9,10 +9,15 @@ namespace grades
 {
     class UserListLogic
     {
-        internal List<dynamic> GetPersonList(Context context)
+        internal List<dynamic> GetPersonList(Context context, string searchTerm)
         {
+            searchTerm = searchTerm.Trim();
+
             var personList = (from usr in context.Persons
-                               select new
+                              where usr.SurName.Contains(searchTerm) ||
+                                    usr.FirstName.Contains(searchTerm) ||
+                                    usr.MiddleName.Contains(searchTerm)
+                              select new
                                {
                                    usr.PersonId,
                                    usr.SurName,
@@ -24,11 +29,16 @@ namespace grades
             return personList;
         }
 
-        internal List<dynamic> GetStaffList(Context context)
+        internal List<dynamic> GetStaffList(Context context, string searchTerm)
         {
+            searchTerm = searchTerm.Trim();
+
             var staffList = (from usr in context.Persons
-                               where usr.Position.Name != "Student"
-                               select new
+                               where usr.Position.Name != "Student" &&
+                                    (usr.SurName.Contains(searchTerm) ||
+                                    usr.FirstName.Contains(searchTerm) ||
+                                    usr.MiddleName.Contains(searchTerm))
+                             select new
                                {
                                    usr.PersonId,
                                    usr.SurName,
@@ -40,11 +50,16 @@ namespace grades
             return staffList;
         }
 
-        internal List<dynamic> GetStudentList(Context context)
+        internal List<dynamic> GetStudentList(Context context, string searchTerm)
         {
+            searchTerm = searchTerm.Trim();
+
             var studentList = (from usr in context.Persons
-                             where usr.Position.Name == "Student"
-                             select new
+                             where usr.Position.Name == "Student" &&
+                                    (usr.SurName.Contains(searchTerm) ||
+                                    usr.FirstName.Contains(searchTerm) ||
+                                    usr.MiddleName.Contains(searchTerm))
+                               select new
                              {
                                  usr.PersonId,
                                  usr.SurName,

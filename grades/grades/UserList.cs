@@ -42,20 +42,23 @@ namespace grades
         {
             if (showStaff.Checked && showStudents.Checked)
             {
-                usersDGV.DataSource = _logic.GetPersonList(Context);
+                usersDGV.DataSource = _logic.GetPersonList(Context, searchBox.Text.ToString());
             }
             else if (showStaff.Checked)
             {
-                usersDGV.DataSource = _logic.GetStaffList(Context);
+                usersDGV.DataSource = _logic.GetStaffList(Context, searchBox.Text.ToString());
             }
             else if (showStudents.Checked)
             {
-                usersDGV.DataSource = _logic.GetStudentList(Context);
+                usersDGV.DataSource = _logic.GetStudentList(Context, searchBox.Text.ToString());
             }
             else
             {
                 usersDGV.DataSource = null;
             }
+
+            if (usersDGV.Columns["PersonId"] != null)
+                usersDGV.Columns["PersonId"].Visible = false;
         }
 
         private void editUser_Click(object sender, EventArgs e)
@@ -97,6 +100,11 @@ namespace grades
                 return Convert.ToInt32(selectedRow.Cells["PersonId"].Value.ToString());
             }
             return 0;
+        }
+
+        private void searchBox_TextChanged(object sender, EventArgs e)
+        {
+            UpdateList();
         }
     }
 }

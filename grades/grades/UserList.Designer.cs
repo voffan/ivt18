@@ -35,7 +35,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.showStaff = new System.Windows.Forms.CheckBox();
             this.showStudents = new System.Windows.Forms.CheckBox();
-            this.searchButton = new System.Windows.Forms.Button();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.searchLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.usersDGV)).BeginInit();
@@ -114,21 +113,13 @@
             this.showStudents.UseVisualStyleBackColor = true;
             this.showStudents.CheckedChanged += new System.EventHandler(this.showStudents_CheckedChanged);
             // 
-            // searchButton
-            // 
-            this.searchButton.Location = new System.Drawing.Point(713, 4);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(75, 23);
-            this.searchButton.TabIndex = 7;
-            this.searchButton.Text = "Найти";
-            this.searchButton.UseVisualStyleBackColor = true;
-            // 
             // searchBox
             // 
             this.searchBox.Location = new System.Drawing.Point(61, 7);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(646, 20);
+            this.searchBox.Size = new System.Drawing.Size(726, 20);
             this.searchBox.TabIndex = 8;
+            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             // 
             // searchLabel
             // 
@@ -146,7 +137,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.searchLabel);
             this.Controls.Add(this.searchBox);
-            this.Controls.Add(this.searchButton);
             this.Controls.Add(this.showStudents);
             this.Controls.Add(this.showStaff);
             this.Controls.Add(this.label1);
@@ -172,7 +162,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox showStaff;
         private System.Windows.Forms.CheckBox showStudents;
-        private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.Label searchLabel;
     }
