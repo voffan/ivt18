@@ -28,52 +28,43 @@ namespace gallery
             startDatePicker.Value = expo.StartDate;
             endDatePicker.Value = expo.EndDate;
 
-            updatePicturesList();
-            updateExpoPicturesList();
+            updatePicturesList(ExpoLogic.updatePicturesList(C));
+            updateExpoPicturesList(ExpoLogic.returnExpoPicturesList(id, C));
         }
 
         void picturesBox_DoubleClick(object sender, EventArgs e)
         {
             ExpoLogic.sendToExpo(picturesBox.SelectedItem.ToString(), id, C);
-            updatePicturesList();
-            updateExpoPicturesList();
-
+            updateExpoPicturesList(ExpoLogic.getExpoPicturesList(id, C));
         }
         void expoPicturesBox_DoubleClick(object sender, EventArgs e)
         {
             ExpoLogic.sendToStorage(expoPicturesBox.SelectedItem.ToString(), id, C);
-            updateExpoPicturesList();
-        }
-
-        void updatePicturesList()
-        {
-            picturesBox.Items.Clear();
-
-            var upData = ExpoLogic.updatePicturesList(C);
-
-            picturesBox.Items.AddRange(upData);
-        }
-
-        void updateExpoPicturesList()
-        {
-            expoPicturesBox.Items.Clear();
-
-            var upData = ExpoLogic.updateExpoPicturesList(id, C);
-
-            expoPicturesBox.Items.AddRange(upData);
+            updateExpoPicturesList(ExpoLogic.getExpoPicturesList(id, C));
         }
 
         private void editButton_Click(object sender, EventArgs e)
         {
+            ExpoLogic.Apply(id, C);
             this.Close();
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            ExpoLogic.Cancel(id, C);
-            
-            updateExpoPicturesList();
-            //this.Close();
+            updateExpoPicturesList(ExpoLogic.returnExpoPicturesList(id, C));
+        }
+
+        private void updatePicturesList(string[] upData)
+        {
+            picturesBox.Items.Clear();
+
+            picturesBox.Items.AddRange(upData);
+        }
+
+        private void updateExpoPicturesList(string[] upData)
+        {
+            expoPicturesBox.Items.Clear();
+            expoPicturesBox.Items.AddRange(upData);
         }
     }
 }

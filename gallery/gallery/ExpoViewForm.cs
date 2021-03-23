@@ -22,17 +22,12 @@ namespace gallery
         private void ExpoViewForm_Load(object sender, EventArgs e)
         {
             expoPicturesBox.Items.Clear();
-            var expo = ExpoLogic.ViewExpo(id, C);
+            var expo = ExpoLogic.oldData(id, C);
             expoInfoLabel1.Text += "\n" + expo.Name;
             expoInfoLabel2.Text += "\n" + expo.Place;
             expoInfoLabel3.Text += "\n" + expo.StartDate + "  -  " + expo.EndDate;
 
-            string[] str = new string[expo.ExpoPictures.Count()];  
-            for (int i = 0; i < expo.ExpoPictures.Count(); i++)
-            {
-                str[i] = expo.ExpoPictures[i].Picture.Name + ", автор - ";
-            }
-            expoPicturesBox.Items.AddRange(str);
+            expoPicturesBox.Items.AddRange(ExpoLogic.getExpoPicturesList(id, C));
         }
     }
 }
