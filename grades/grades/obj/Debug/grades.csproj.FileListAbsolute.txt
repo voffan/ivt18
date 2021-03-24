@@ -31,3 +31,22 @@ S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grad
 S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\obj\Debug\grades.Migrations.test.resources
 S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\obj\Debug\grades.Migrations.test2.resources
 S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\obj\Debug\grades.UserSignIn.resources
+D:\repository\ivt181\grades\grades\obj\Debug\grades.csprojAssemblyReference.cache
+D:\repository\ivt181\grades\grades\obj\Debug\grades.exe
+D:\repository\ivt181\grades\grades\obj\Debug\grades.pdb
+D:\repository\ivt181\grades\grades\bin\Debug\grades.exe.config
+D:\repository\ivt181\grades\grades\bin\Debug\grades.exe
+D:\repository\ivt181\grades\grades\bin\Debug\grades.pdb
+D:\repository\ivt181\grades\grades\bin\Debug\EntityFramework.dll
+D:\repository\ivt181\grades\grades\bin\Debug\EntityFramework.SqlServer.dll
+D:\repository\ivt181\grades\grades\bin\Debug\EntityFramework.xml
+D:\repository\ivt181\grades\grades\bin\Debug\EntityFramework.SqlServer.xml
+D:\repository\ivt181\grades\grades\obj\Debug\grades.AddUser.resources
+D:\repository\ivt181\grades\grades\obj\Debug\grades.Properties.Resources.resources
+D:\repository\ivt181\grades\grades\obj\Debug\grades.UserList.resources
+D:\repository\ivt181\grades\grades\obj\Debug\grades.UserSignIn.resources
+D:\repository\ivt181\grades\grades\obj\Debug\grades.csproj.GenerateResource.cache
+D:\repository\ivt181\grades\grades\obj\Debug\grades.csproj.CoreCompileInputs.cache
+D:\repository\ivt181\grades\grades\obj\Debug\grades.csproj.CopyComplete
+D:\repository\ivt181\grades\grades\obj\Debug\grades.Migrations.AddCompanyMigration.resources
+D:\repository\ivt181\grades\grades\obj\Debug\grades.ClassGeneretion.resources

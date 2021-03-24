@@ -78,6 +78,13 @@
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
     <Compile Include="AddUserLogic.cs" />
+    <Compile Include="ClassGeneretion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClassGeneretion.Designer.cs">
+      <DependentUpon>ClassGeneretion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClassGeneretionLogic.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="Course.cs" />
     <Compile Include="Form1.cs">
@@ -89,13 +96,9 @@
     <Compile Include="Grade.cs" />
     <Compile Include="GradingSystem.cs" />
     <Compile Include="Group.cs" />
-    <Compile Include="Migrations\202103171529115_test.cs" />
-    <Compile Include="Migrations\202103171529115_test.designer.cs">
-      <DependentUpon>202103171529115_test.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202103180421144_test2.cs" />
-    <Compile Include="Migrations\202103180421144_test2.designer.cs">
-      <DependentUpon>202103180421144_test2.cs</DependentUpon>
+    <Compile Include="Migrations\202103241453170_AddCompanyMigration.cs" />
+    <Compile Include="Migrations\202103241453170_AddCompanyMigration.designer.cs">
+      <DependentUpon>202103241453170_AddCompanyMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Person.cs" />
@@ -126,11 +129,11 @@
     <Compile Include="UserSignIn.Designer.cs">
       <DependentUpon>UserSignIn.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Migrations\202103171529115_test.resx">
-      <DependentUpon>202103171529115_test.cs</DependentUpon>
+    <EmbeddedResource Include="ClassGeneretion.resx">
+      <DependentUpon>ClassGeneretion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202103180421144_test2.resx">
-      <DependentUpon>202103180421144_test2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202103241453170_AddCompanyMigration.resx">
+      <DependentUpon>202103241453170_AddCompanyMigration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -173,6 +176,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
