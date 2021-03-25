@@ -61,7 +61,26 @@
     <Compile Include="Classes\DailyProd.cs" />
     <Compile Include="Classes\Department.cs" />
     <Compile Include="Classes\Employee.cs" />
-    <Compile Include="EmployeeLogic.cs" />
+    <Compile Include="DirectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DirectorForm.Designer.cs">
+      <DependentUpon>DirectorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EcoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EcoForm.Designer.cs">
+      <DependentUpon>EcoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CEPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CEPlan.Designer.cs">
+      <DependentUpon>CEPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logic\EmployeeLogic.cs" />
+    <Compile Include="Logic\PlanLogic.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +137,15 @@
     <Compile Include="UserManagement.Designer.cs">
       <DependentUpon>UserManagement.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CEPlan.resx">
+      <DependentUpon>CEPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DirectorForm.resx">
+      <DependentUpon>DirectorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EcoForm.resx">
+      <DependentUpon>EcoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>

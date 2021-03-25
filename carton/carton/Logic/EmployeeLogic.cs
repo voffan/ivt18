@@ -16,7 +16,11 @@ namespace carton
                 return 1;
             if (login.Equals("vasya") && password.Equals("123321"))
                 return 2;
-    		return -1;
+            if (login.Equals("dir") && password.Equals("0000"))
+                return 3;
+            if (login.Equals("eco") && password.Equals("0000"))
+                return 4;
+            return -1;
     	}
 
         //edit password

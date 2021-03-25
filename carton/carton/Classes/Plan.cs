@@ -10,7 +10,7 @@ using System.Data.Entity.Spatial;
 
 namespace carton
 {
-    public enum PlanStatus { New, Approved }
+    public enum PlanStatus { New, InProgress, Completed, Approved }
 
     public class Plan
     {

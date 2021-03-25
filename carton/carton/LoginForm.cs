@@ -37,6 +37,20 @@ namespace carton.Classes
                 StorageEmpForm f = new StorageEmpForm();
                 f.Show();
             }
+            //director
+            if (EmployeeLogic.LoginEmployee(context, this.loginEntry.Text, this.passwordEntry.Text) == 3)
+            {
+                DirectorForm f = new DirectorForm(context);
+                f.Show();
+            }
+            //economist
+            if (EmployeeLogic.LoginEmployee(context, this.loginEntry.Text, this.passwordEntry.Text) == 4)
+            {
+                EcoForm f = new EcoForm(context);
+                f.Show();
+            }
+            this.loginEntry.Text = "";
+            this.passwordEntry.Text = "";
         }
     }
 }
