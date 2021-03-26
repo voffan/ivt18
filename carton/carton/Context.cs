@@ -26,36 +26,34 @@ namespace carton
         public DbSet<Shift> Shifts { get; set; }
         public DbSet<Status> Statuses { get; set; }
         public DbSet<Storage> Storages { get; set; }
-        public DbSet<ProductPL> ProductPLs { get; set; }
-        public DbSet<StoragePO> StoragePOs { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
-            modelBuilder.Entity<ProductOperation>()
-            .HasOptional<Department>(s => s.Source)
-            .WithMany()
-            .HasForeignKey(s => s.SourceId)
-            .WillCascadeOnDelete(false);
+        //    modelBuilder.Entity<ProductOperation>()
+        //    .HasOptional<Department>(s => s.Source)
+        //    .WithMany()
+        //    .HasForeignKey(s => s.SourceId)
+        //    .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<ProductOperation>()
-            .HasOptional<Department>(s => s.Destination)
-            .WithMany()
-            .HasForeignKey(s => s.DestinationId)
-            .WillCascadeOnDelete(false);
+        //    modelBuilder.Entity<ProductOperation>()
+        //    .HasOptional<Department>(s => s.Destination)
+        //    .WithMany()
+        //    .HasForeignKey(s => s.DestinationId)
+        //    .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<ProductPL>()
-            .HasRequired(s => s.ProductOperation)
-            .WithMany()
-            .HasForeignKey(s => s.ProductOperationId)
-            .WillCascadeOnDelete(false);
+        //    modelBuilder.Entity<ProductPL>()
+        //    .HasRequired(s => s.ProductOperation)
+        //    .WithMany()
+        //    .HasForeignKey(s => s.ProductOperationId)
+        //    .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<StoragePO>()
-            .HasRequired(s => s.ProductOperation)
-            .WithMany()
-            .HasForeignKey(s => s.ProductOperationId)
-            .WillCascadeOnDelete(false);
-        }
+        //    modelBuilder.Entity<StoragePO>()
+        //    .HasRequired(s => s.ProductOperation)
+        //    .WithMany()
+        //    .HasForeignKey(s => s.ProductOperationId)
+        //    .WillCascadeOnDelete(false);
+        //}
     }
 }

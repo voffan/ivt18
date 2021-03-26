@@ -17,19 +17,15 @@ namespace carton
 
         public virtual List<Product> Products { get; set; }
         public int Amount { get; set; }
-        public int? SourceId { get; set; }
+        public int SourceId { get; set; }
         [ForeignKey("SourceId")]
-        public virtual Department Source { get; set; }
+        public Department Source { get; set; }
 
-        public int? DestinationId { get; set; }
+        public int DestinationId { get; set; }
         [ForeignKey("DestinationId")]
-        public virtual Department Destination { get; set; }
+        public Department Destination { get; set; }
 
         public DateTime Date { get; set; }
-
-        public virtual List<ProductPL> ProductionLines { get; set; }
-
-        public virtual List<StoragePO> Storages { get; set; }
 
         public int EmployeeId { get; set; }
         [ForeignKey("EmployeeId")]

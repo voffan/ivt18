@@ -14,6 +14,7 @@ namespace carton
     {
         readonly PlanLogic planLogic;
         readonly Context context;
+
         public DirectorForm(Context context)
         {
             InitializeComponent();

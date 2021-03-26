@@ -93,8 +93,6 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\ProductPL.cs" />
-    <Compile Include="Classes\StoragePO.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="Example.cs" />
     <Compile Include="Classes\Factory.cs" />
@@ -111,13 +109,9 @@
     <Compile Include="Classes\ProductionLine.cs" />
     <Compile Include="Classes\ProductOperation.cs" />
     <Compile Include="Classes\ProductRemain.cs" />
-    <Compile Include="Migrations\202103050344358_reboot.cs" />
-    <Compile Include="Migrations\202103050344358_reboot.designer.cs">
-      <DependentUpon>202103050344358_reboot.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202103220242262_UpdateEmployee.cs" />
-    <Compile Include="Migrations\202103220242262_UpdateEmployee.designer.cs">
-      <DependentUpon>202103220242262_UpdateEmployee.cs</DependentUpon>
+    <Compile Include="Migrations\202103260448129_reboot4.cs" />
+    <Compile Include="Migrations\202103260448129_reboot4.designer.cs">
+      <DependentUpon>202103260448129_reboot4.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -158,11 +152,8 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202103050344358_reboot.resx">
-      <DependentUpon>202103050344358_reboot.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202103220242262_UpdateEmployee.resx">
-      <DependentUpon>202103220242262_UpdateEmployee.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202103260448129_reboot4.resx">
+      <DependentUpon>202103260448129_reboot4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

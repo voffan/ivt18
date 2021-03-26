@@ -21,6 +21,10 @@ namespace carton
 
         public virtual List<DailyProd> DailyProds { get; set; }
 
+        public int ProductionLineId { get; set; }
+        [ForeignKey("ProductionLineId")]
+        public ProductionLine ProductionLine { get; set; }
+
         public int EmployeeId { get; set; }
         [ForeignKey("EmployeeId")]
         public Employee Foreman { get; set; }
