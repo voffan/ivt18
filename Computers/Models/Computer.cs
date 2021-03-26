@@ -31,7 +31,7 @@ namespace Computers.Models
         public virtual Processor Processor { get; set; }
         public virtual Motherboard Motherboard { get; set; }
         
-        // Many-to-many
+
         public virtual ICollection<PowerSupply> PowerSupplies { get; set; }
         public virtual ICollection<Memory> Memories { get; set; }
         public virtual ICollection<HardDrive> HardDrives { get; set; }

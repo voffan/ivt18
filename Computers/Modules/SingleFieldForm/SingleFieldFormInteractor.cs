@@ -35,19 +35,27 @@ namespace Computers.Modules.SingleFieldForm
         {
             if (FormOwner != null)
             {
-                switch (FormType)
+                using (var context = new DatabaseContext())
                 {
-                    case Utils.SingleFieldFormType.Manufacturer:
-                        FormOwner.Receiver = new Models.Manufacturer { Name = textFieldValue };
-                        break;
-                    case Utils.SingleFieldFormType.PeripheralType:
-                        FormOwner.Receiver = new Models.PeripheralType { Name = textFieldValue };
-                        break;
-                    case Utils.SingleFieldFormType.Status:
-                        FormOwner.Receiver = new Models.Status { Name = textFieldValue };
-                        break;
-                    default:
-                        break;
+                    switch (FormType)
+                    {
+                        case Utils.SingleFieldFormType.Manufacturer:
+                            Models.Manufacturer manufacturer = new Models.Manufacturer { Name = textFieldValue };
+                            context.Manufacturers.Add(manufacturer);
+                            break;
+                        case Utils.SingleFieldFormType.PeripheralType:
+                            Models.PeripheralType peripheralType = new Models.PeripheralType { Name = textFieldValue };
+                            context.PeripheralTypes.Add(peripheralType);
+                            break;
+                        case Utils.SingleFieldFormType.Status:
+                            Models.Status status = new Models.Status { Name = textFieldValue };
+                            context.Statuses.Add(status);
+                            break;
+                        default:
+                            break;
+                    }
+                    context.SaveChanges();
+                    FormOwner.Update();
                 }
             }
             Presenter.PresentClose();

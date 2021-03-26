@@ -18,10 +18,6 @@ namespace Computers
         [STAThread]
         static void Main()
         {
-            using (var context = new DatabaseContext())
-            {
-                context.SaveChanges();
-            }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             
@@ -35,7 +31,11 @@ namespace Computers
             }
 
 #if DEBUG
-            // Router.Shared.CurrentForm = new DeviceBuilder().Build(Utils.DeviceType.PowerSupply);
+            using (var context = new DatabaseContext())
+            {
+                var manufacturers = context.Manufacturers.FirstOrDefault();
+                context.SaveChanges();
+            }
             Router.Shared.CurrentForm = new ComputerBuilder().Build();
             // Router.Shared.CurrentForm = new ManufacturerBuilder().Build();
 #endif

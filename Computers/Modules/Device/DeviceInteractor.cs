@@ -11,39 +11,33 @@ namespace Computers.Modules.Device
     public interface IDeviceInteractor
     {
         IDevicePresenter Presenter { get; set; }
-        void Configure(Utils.DeviceType DeviceType);
+        DeviceType DeviceType { get; set; }
+        void Configure();
         void AddManufacturer();
         void AddStatus();
-        void SubmitDevice();
+        void SelectManufacturer(int index);
+        void SelectStatus(int index);
+        void Submit();
         void Cancel();
     }
 
-    class DeviceInteractor : IDeviceInteractor, Utils.IFormOwner
+    public class DeviceInteractor : IDeviceInteractor, Utils.IFormOwner
     {
         public IDevicePresenter Presenter { get; set; }
+        public DeviceType DeviceType { get; set; }
+
+        private Models.Device Device;
+        private List<Models.Manufacturer> Manufacturers;
+        private List<Models.Status> Statuses;
         private Utils.IFormOwner FormOwner;
-        public object Receiver 
-        {
-            set 
-            {
-                if (value is Models.Manufacturer newManufacturer)
-                {
-                    // TODO: Присвоить девайсу нового производителя
-                    Console.WriteLine(newManufacturer.Name);
-                }
-                if (value is Models.Status newStatus)
-                {
-                    // TODO: Присвоить девайсу новый статус
-                    Console.WriteLine(newStatus.Name);
-                }
-            } 
-        }
 
         public DeviceInteractor(IDevicePresenter Presenter, Utils.IFormOwner FormOwner, Utils.DeviceType DeviceType) : base()
         {
             this.Presenter = Presenter;
             this.FormOwner = FormOwner;
-            Configure(DeviceType);
+            this.DeviceType = DeviceType;
+            this.Device = new Models.Device();
+            Configure();
         }
 
         public void AddManufacturer()
@@ -65,30 +59,43 @@ namespace Computers.Modules.Device
             throw new NotImplementedException();
         }
 
-        public void SubmitDevice()
+        public void Submit()
         {
-            throw new NotImplementedException();
+            
         }
 
-        public void Configure(DeviceType deviceType)
+        public void Configure()
         {
-            List<Models.Manufacturer> manufacturers = new List<Models.Manufacturer>
+            using (var context = new DatabaseContext())
             {
-                new Models.Manufacturer { Id = 1, Name = "Производитель №1" },
-                new Models.Manufacturer { Id = 2, Name = "Производитель №2" },
-                new Models.Manufacturer { Id = 3, Name = "Производитель №3" },
-                new Models.Manufacturer { Id = 4, Name = "Производитель №4" },
-                new Models.Manufacturer { Id = 5, Name = "Производитель №5" },
-                new Models.Manufacturer { Id = 6, Name = "Производитель №6" }
-            };
+                Manufacturers = context.Manufacturers.ToList();
+                Statuses = context.Statuses.ToList();
+                Presenter.PresentConfigure(Manufacturers, Statuses, DeviceType);
+            }
+        }
 
-            List<Models.Status> statuses = new List<Models.Status>
+        public void Update()
+        {
+            using (var context = new DatabaseContext())
             {
-                new Models.Status { Id = 1, Name = "Работает" },
-                new Models.Status { Id = 2, Name = "На обслуживании" },
-                new Models.Status { Id = 3, Name = "Списан" }
-            };
-            Presenter.PresentConfigure(manufacturers, statuses, deviceType);
+                Manufacturers = context.Manufacturers.ToList();
+                Statuses = context.Statuses.ToList();
+                Presenter.PresentUpdate(Manufacturers, Statuses);
+            }
+        }
+
+        public void SelectManufacturer(int index)
+        {
+            Device.Manufacturer = Manufacturers.ElementAt(index);
+            Console.WriteLine("Manufacturer");
+            Console.WriteLine(Device.Manufacturer.Name);
+        }
+
+        public void SelectStatus(int index)
+        {
+            Device.Status = Statuses.ElementAt(index);
+            Console.WriteLine("Status");
+            Console.WriteLine(Device.Status.Name);
         }
     }
 }

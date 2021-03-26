@@ -10,8 +10,7 @@ namespace Computers
 {
     public class DatabaseContext : DbContext
     {
-        public DatabaseContext() : base("DbConnectionString Mikhailov")
-        {}
+        public DatabaseContext() : base("DbConnectionString Mikhailov") {}
         public DbSet<Status> Statuses { get; set; }
         public DbSet<DeviceType> DeviceTypes { get; set; }
         public DbSet<Manufacturer> Manufacturers { get; set; }

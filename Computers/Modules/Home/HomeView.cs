@@ -68,7 +68,7 @@ namespace Computers.Modules.Home
         public override void ViewDidShow(object sender, EventArgs e)
         {
             base.ViewDidShow(sender, e);
-            _ = Interactor.LoadPeripherals();
+            Interactor.LoadPeripherals();
         }
 
         public override void SetupLayout(object sender, EventArgs e)

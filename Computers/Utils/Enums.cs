@@ -9,7 +9,6 @@ namespace Computers.Utils
     public enum WindowMode
     {
         Create,
-        CreateWithAssign,
         Edit
     }
 

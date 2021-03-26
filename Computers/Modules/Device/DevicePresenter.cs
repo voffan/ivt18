@@ -11,6 +11,7 @@ namespace Computers.Modules.Device
     {
         IDeviceView View { get; set; }
         void PresentConfigure(List<Models.Manufacturer> manufacturers, List<Models.Status> statuses, Utils.DeviceType deviceType);
+        void PresentUpdate(List<Models.Manufacturer> manufacturers, List<Models.Status> statuses);
     }
 
     class DevicePresenter : IDevicePresenter
@@ -38,6 +39,20 @@ namespace Computers.Modules.Device
             }
 
             View.Configure(viewModel);
+        }
+
+        public void PresentUpdate(List<Manufacturer> manufacturers, List<Status> statuses)
+        {
+            DeviceViewModel viewModel = new DeviceViewModel();
+            foreach (var manufacturer in manufacturers)
+            {
+                viewModel.manufacturers.Add(manufacturer.Name, manufacturer);
+            }
+            foreach (var status in statuses)
+            {
+                viewModel.statuses.Add(status.Name, status);
+            }
+            View.Update(viewModel);
         }
     }
 }

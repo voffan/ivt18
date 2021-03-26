@@ -22,7 +22,6 @@ namespace Computers.Modules.Computer
     {
         public IComputerPresenter Presenter { get; set; }
         public Models.Computer Computer { get; set; }
-        public object Receiver { set => throw new NotImplementedException(); }
 
         public void AddGraphicCard()
         {
@@ -50,6 +49,11 @@ namespace Computers.Modules.Computer
             new DeviceBuilder()
                 .Build(Utils.DeviceType.PowerSupply, this)
                 .ShowDialog(Presenter.View as Form);
+        }
+
+        public void Update()
+        {
+            throw new NotImplementedException();
         }
     }
 }

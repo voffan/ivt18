@@ -9,7 +9,9 @@ namespace Computers.Modules.Device
     public class DeviceViewModel
     {
         public Utils.DeviceType deviceType = Utils.DeviceType.None;
+        
         public Dictionary<string, Models.Manufacturer> manufacturers = new Dictionary<string, Models.Manufacturer> {};
+        
         public Dictionary<string, Models.Status> statuses = new Dictionary<string, Models.Status>{};
     }
 }

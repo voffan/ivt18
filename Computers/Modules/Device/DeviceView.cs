@@ -12,6 +12,7 @@ namespace Computers.Modules.Device
     {
         IDeviceInteractor Interactor { get; set; }
         void Configure(DeviceViewModel viewModel);
+        void Update(DeviceViewModel viewModel);
     }
 
     class DeviceView : View, IDeviceView
@@ -64,8 +65,10 @@ namespace Computers.Modules.Device
             panel.BorderStyle = BorderStyle.FixedSingle;
             addManufacturerButton.Text = "Добавить";
             addManufacturerButton.Click += AddManufacturerButtonClicked;
+            manufacturerComboBox.SelectionChangeCommitted += ManufacturerComboBoxSelected;
             addStatusButton.Text = "Добавить";
             addStatusButton.Click += AddStatusButtonClicked;
+            statusComboBox.SelectionChangeCommitted += StatusComboBoxSelected;
             priceNumericBox.Maximum = 3000000;
             priceNumericBox.Minimum = 0;
 
@@ -140,7 +143,7 @@ namespace Computers.Modules.Device
 
         private void AddButtonClicked(object sender, EventArgs e)
         {
-            Interactor.SubmitDevice();
+            Interactor.Submit();
         }
 
         private void CancelButtonClicked(object sender, EventArgs e)
@@ -148,14 +151,19 @@ namespace Computers.Modules.Device
             Interactor.Cancel();
         }
 
+        private void ManufacturerComboBoxSelected(object sender, EventArgs e)
+        {
+            Interactor.SelectManufacturer(manufacturerComboBox.SelectedIndex);
+        }
+
+        private void StatusComboBoxSelected(object sender, EventArgs e)
+        {
+            Interactor.SelectStatus(statusComboBox.SelectedIndex);
+        }
+
         public void Configure(DeviceViewModel viewModel)
         {
-            manufacturerComboBox.DataSource = new BindingSource(viewModel.manufacturers, null);
-            manufacturerComboBox.DisplayMember = "Key";
-            manufacturerComboBox.ValueMember = "Value";
-            statusComboBox.DataSource = new BindingSource(viewModel.statuses, null);
-            statusComboBox.DisplayMember = "Key";
-            statusComboBox.ValueMember = "Value";
+            Update(viewModel);
 
             switch (viewModel.deviceType)
             {
@@ -220,6 +228,22 @@ namespace Computers.Modules.Device
                     break;
                 default:
                     break;
+            }
+        }
+
+        public void Update(DeviceViewModel viewModel)
+        {
+            if (viewModel.manufacturers.Count > 0)
+            {
+                manufacturerComboBox.DisplayMember = "Key";
+                manufacturerComboBox.ValueMember = "Value";
+                manufacturerComboBox.DataSource = new BindingSource(viewModel.manufacturers, null);
+            }
+            if (viewModel.statuses.Count > 0)
+            {
+                statusComboBox.DisplayMember = "Key";
+                statusComboBox.ValueMember = "Value";
+                statusComboBox.DataSource = new BindingSource(viewModel.statuses, null);
             }
         }
     }
