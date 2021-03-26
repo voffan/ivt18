@@ -39,6 +39,7 @@ namespace gallery
             this.label3 = new System.Windows.Forms.Label();
             this.picturesBox = new System.Windows.Forms.ListBox();
             this.expoPicturesBox = new System.Windows.Forms.ListBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -125,11 +126,22 @@ namespace gallery
             this.expoPicturesBox.Size = new System.Drawing.Size(254, 251);
             this.expoPicturesBox.TabIndex = 9;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(371, 405);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(28, 18);
+            this.label4.TabIndex = 10;
+            this.label4.Text = ">>";
+            // 
             // AddExpoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 604);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.expoPicturesBox);
             this.Controls.Add(this.picturesBox);
             this.Controls.Add(this.label3);
@@ -160,5 +172,6 @@ namespace gallery
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox picturesBox;
         private System.Windows.Forms.ListBox expoPicturesBox;
+        private System.Windows.Forms.Label label4;
     }
 }

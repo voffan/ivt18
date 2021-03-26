@@ -45,7 +45,7 @@ namespace gallery
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            ExpoLogic.Apply(id, C);
+            ExpoLogic.apply(id, C);
             this.Close();
         }
 
