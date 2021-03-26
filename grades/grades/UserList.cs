@@ -1,15 +1,17 @@
-﻿using System;
+﻿using CsvHelper;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//Debug
-using System.Diagnostics;
+
 
 namespace grades
 {
@@ -24,6 +26,36 @@ namespace grades
             InitializeComponent();
             Context = new Context();
             _logic = new UserListLogic();
+            //test();
+        }
+
+        public void test()
+        {
+            //@"S:\MOCK_DATA.csv"
+            using (var reader = new StreamReader(@"S:\MOCK_DATA.csv"))
+            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            {
+                csv.Read();
+                csv.ReadHeader();
+                while (csv.Read())
+                {
+                    var record = new Person
+                    {
+                        FirstName = csv.GetField<String>("FirstName"),
+                        SurName = csv.GetField<String>("SurName"),
+                        MiddleName = csv.GetField<String>("MidleName"),
+                        PhoneNumber = csv.GetField<String>("PhoneNumber"),
+                        HomeAddress = csv.GetField<String>("HomeAddress"),
+                        Login = csv.GetField<String>("Login"),
+                        Password = csv.GetField<String>("Password"),
+                        PositionId = csv.GetField<int>("PositionId"),
+                };
+                    record.Position = Context.Positions.Where(x => x.PositionId == record.PositionId).Select(x => x).Single();
+
+                    Context.Persons.Add(record);
+                }
+            }
+            Context.SaveChanges();
         }
 
         private void addUser_Click(object sender, EventArgs e)
@@ -68,7 +100,7 @@ namespace grades
 
             AddUser editUserForm = new AddUser(Context);
 
-            editUserForm.FillEditUserForm(personToEdit);
+            editUserForm.SetEditState(personToEdit);
             editUserForm.ShowDialog();
             UpdateList();
         }
@@ -105,6 +137,16 @@ namespace grades
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
             UpdateList();
+        }
+
+        private void viewUser_Click(object sender, EventArgs e)
+        {
+            int personId = getSelectedRowPersonId();
+            Person personToDisplay = _logic.getPersonById(Context, personId);
+
+            AddUser ViewUserForm = new AddUser(Context);
+            ViewUserForm.SetViewState(personToDisplay);
+            ViewUserForm.ShowDialog();
         }
     }
 }

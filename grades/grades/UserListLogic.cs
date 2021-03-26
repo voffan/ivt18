@@ -12,21 +12,30 @@ namespace grades
         internal List<dynamic> GetPersonList(Context context, string searchTerm)
         {
             searchTerm = searchTerm.Trim();
+            String[] searchTerms = searchTerm.Split(' ');
 
-            var personList = (from usr in context.Persons
-                              where usr.SurName.Contains(searchTerm) ||
-                                    usr.FirstName.Contains(searchTerm) ||
-                                    usr.MiddleName.Contains(searchTerm)
-                              select new
-                               {
-                                   usr.PersonId,
-                                   usr.SurName,
-                                   usr.FirstName,
-                                   usr.MiddleName,
-                                   usr.Position.Name
-                               }).ToList<dynamic>();
+            List<dynamic> personsList = new List<dynamic>();
 
-            return personList;
+            foreach (string term in searchTerms)
+            {
+                var personList = (from usr in context.Persons
+                                  where usr.SurName.Contains(term) ||
+                                        usr.FirstName.Contains(term) ||
+                                        usr.MiddleName.Contains(term)
+                                  select new
+                                  {
+                                      usr.PersonId,
+                                      Фамилия = usr.SurName,
+                                      Имя = usr.FirstName,
+                                      Отчество = usr.MiddleName,
+                                      Должность = usr.Position.Name
+                                  }).ToList<dynamic>();
+
+                personsList.AddRange(personList);
+            }
+            
+
+            return personsList.Distinct().ToList();
         }
 
         internal List<dynamic> GetStaffList(Context context, string searchTerm)

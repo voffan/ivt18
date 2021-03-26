@@ -18,7 +18,9 @@ namespace grades
         private Person _currentPerson;
 
         private bool _editingState = false;
-        
+
+        private List<TextBox> _textBoxes;
+
         public AddUser(Context context)
         {
             InitializeComponent();
@@ -29,20 +31,43 @@ namespace grades
                                        select pos.Name).ToList();
         }
 
-        public void FillEditUserForm(Person person)
+        internal void SetEditState(Person person)
         {
             _currentPerson = person;
             _editingState = true;
 
-            this.personFirstNameBox.Text = _currentPerson.FirstName.ToString();
-            this.personSurNameBox.Text = _currentPerson.SurName.ToString();
-            this.personMiddleNameBox.Text = _currentPerson.MiddleName.ToString();
+            personFirstNameBox.Text = _currentPerson.FirstName.ToString();
+            personSurNameBox.Text = _currentPerson.SurName.ToString();
+            personMiddleNameBox.Text = _currentPerson.MiddleName.ToString();
             
-            this.positionList.Text = _context.Positions.Where(x => x.PositionId == _currentPerson.PositionId).Select(x => x.Name).Single();
+            positionList.Text = _context.Positions.Where(x => x.PositionId == _currentPerson.PositionId).Select(x => x.Name).Single();
 
-            this.personPhoneNumberBox.Text = _currentPerson.PhoneNumber.ToString();
+            personPhoneNumberBox.Text = _currentPerson.PhoneNumber.ToString();
 
-            this.personHomeAddressBox.Text = _currentPerson.HomeAddress.ToString();
+            personHomeAddressBox.Text = _currentPerson.HomeAddress.ToString();
+        }
+
+        internal void SetViewState(Person person)
+        {
+            _currentPerson = person;
+            
+            guideText.Visible = false;
+            applyAddingUser.Visible = false;
+
+            cancelAddingUser.Text = "Закрыть";
+            SetReadOnly();
+
+            personFirstNameBox.Text = _currentPerson.FirstName.ToString();
+            personSurNameBox.Text = _currentPerson.SurName.ToString();
+            personMiddleNameBox.Text = _currentPerson.MiddleName.ToString();
+
+            positionList.Text = _context.Positions.Where(x => x.PositionId == _currentPerson.PositionId).Select(x => x.Name).Single();
+            positionList.Enabled = false;
+
+            personPhoneNumberBox.Text = _currentPerson.PhoneNumber.ToString();
+
+            personHomeAddressBox.Text = _currentPerson.HomeAddress.ToString();
+
         }
 
         private void applyAddingUser_Click(object sender, EventArgs e)
@@ -80,6 +105,31 @@ namespace grades
         private void cancelAddingUser_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void SetReadOnly()
+        {
+            if (_textBoxes == null)
+            {
+                _textBoxes = new List<TextBox>();
+
+                foreach (var control in Controls)
+                {
+                    TextBox textEdit = control as TextBox;
+                    if (textEdit != null)
+                    {
+                        textEdit.ReadOnly = true;
+                        _textBoxes.Add(textEdit);
+                    }
+                }
+            }
+            else
+            {
+                foreach (var control in _textBoxes)
+                {
+                    control.ReadOnly = true;
+                }
+            }
         }
     }
 }

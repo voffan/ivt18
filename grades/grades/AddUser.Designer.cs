@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.guideText = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,14 +45,14 @@
             this.positionList = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // label1
+            // guideText
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Введите следующие параметры:";
+            this.guideText.AutoSize = true;
+            this.guideText.Location = new System.Drawing.Point(13, 13);
+            this.guideText.Name = "guideText";
+            this.guideText.Size = new System.Drawing.Size(173, 13);
+            this.guideText.TabIndex = 0;
+            this.guideText.Text = "Введите следующие параметры:";
             // 
             // label2
             // 
@@ -191,7 +191,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.guideText);
             this.Name = "AddUser";
             this.Text = "AddUser";
             this.ResumeLayout(false);
@@ -201,7 +201,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label guideText;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

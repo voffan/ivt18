@@ -37,6 +37,7 @@
             this.showStudents = new System.Windows.Forms.CheckBox();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.searchLabel = new System.Windows.Forms.Label();
+            this.viewUser = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.usersDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,7 +71,7 @@
             // 
             // addUser
             // 
-            this.addUser.Location = new System.Drawing.Point(527, 415);
+            this.addUser.Location = new System.Drawing.Point(527, 413);
             this.addUser.Name = "addUser";
             this.addUser.Size = new System.Drawing.Size(75, 23);
             this.addUser.TabIndex = 3;
@@ -130,11 +131,22 @@
             this.searchLabel.TabIndex = 9;
             this.searchLabel.Text = "Поиск:";
             // 
+            // viewUser
+            // 
+            this.viewUser.Location = new System.Drawing.Point(446, 413);
+            this.viewUser.Name = "viewUser";
+            this.viewUser.Size = new System.Drawing.Size(75, 23);
+            this.viewUser.TabIndex = 10;
+            this.viewUser.Text = "Просмотр";
+            this.viewUser.UseVisualStyleBackColor = true;
+            this.viewUser.Click += new System.EventHandler(this.viewUser_Click);
+            // 
             // UserList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.viewUser);
             this.Controls.Add(this.searchLabel);
             this.Controls.Add(this.searchBox);
             this.Controls.Add(this.showStudents);
@@ -164,5 +176,6 @@
         private System.Windows.Forms.CheckBox showStudents;
         private System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.Label searchLabel;
+        private System.Windows.Forms.Button viewUser;
     }
 }
