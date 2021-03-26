@@ -81,6 +81,10 @@ namespace PE1
             {
                 try
                 {
+                    switch (Properties.Settings.Default["local"])
+                    {
+
+                    }
                     if (Convert.ToString(Properties.Settings.Default["login"]) != "")
                         checkBoxRemember.Checked = true;
                     textBoxLogin.Text = Convert.ToString(Properties.Settings.Default["login"]);
