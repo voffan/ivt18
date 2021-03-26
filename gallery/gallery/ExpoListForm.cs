@@ -30,15 +30,6 @@ namespace gallery
             id = ExpoLogic.getId(s, C);
         }
 
-        private void listExpoBox_DoubleClick(object sender, EventArgs e)
-        {
-            ExpoViewForm expoViewForm = new ExpoViewForm();
-            expoViewForm.C = C;
-            expoViewForm.id = id; 
-            expoViewForm.Show();
-            
-        }
-
         private void addExpoButton_Click(object sender, EventArgs e)
         {
             AddExpoForm addExpoForm = new AddExpoForm();

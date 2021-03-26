@@ -45,7 +45,7 @@ namespace gallery
             this.listExpoBox.Size = new System.Drawing.Size(693, 644);
             this.listExpoBox.TabIndex = 0;
             this.listExpoBox.SelectedIndexChanged += new System.EventHandler(this.listExpoBox_SelectedIndexChanged);
-            this.listExpoBox.DoubleClick += new System.EventHandler(this.listExpoBox_DoubleClick);
+            this.listExpoBox.DoubleClick += new System.EventHandler(this.editExpoButton_Click);
             // 
             // addExpoButton
             // 
