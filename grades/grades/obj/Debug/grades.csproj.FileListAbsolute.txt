@@ -28,8 +28,6 @@ S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grad
 S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\obj\Debug\grades.UserList.resources
 S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\obj\Debug\grades.AddUser.resources
 S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\obj\Debug\grades.csproj.CoreCompileInputs.cache
-S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\obj\Debug\grades.Migrations.test.resources
-S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\obj\Debug\grades.Migrations.test2.resources
 S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\obj\Debug\grades.UserSignIn.resources
 S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\obj\Debug\grades.Migrations.test3.resources
 S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\bin\Debug\CsvHelper.dll
@@ -48,3 +46,4 @@ S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grad
 S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\bin\Debug\System.Numerics.Vectors.xml
 S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\bin\Debug\System.Threading.Tasks.Extensions.xml
+S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\obj\Debug\grades.ClassGeneretion.resources
