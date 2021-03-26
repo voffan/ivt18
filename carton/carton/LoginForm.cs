@@ -49,6 +49,11 @@ namespace carton.Classes
                 EcoForm f = new EcoForm(context);
                 f.Show();
             }
+            if (EmployeeLogic.LoginEmployee(context, this.loginEntry.Text, this.passwordEntry.Text) == 5)
+            {
+                ForemanForm f = new ForemanForm();
+                f.Show();
+            }
             this.loginEntry.Text = "";
             this.passwordEntry.Text = "";
         }

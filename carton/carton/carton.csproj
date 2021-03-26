@@ -79,6 +79,12 @@
     <Compile Include="CEPlan.Designer.cs">
       <DependentUpon>CEPlan.cs</DependentUpon>
     </Compile>
+    <Compile Include="ForemanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForemanForm.Designer.cs">
+      <DependentUpon>ForemanForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logic\EmployeeLogic.cs" />
     <Compile Include="Logic\PlanLogic.cs" />
     <Compile Include="LoginForm.cs">
