@@ -152,6 +152,9 @@
     <EmbeddedResource Include="EcoForm.resx">
       <DependentUpon>EcoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ForemanForm.resx">
+      <DependentUpon>ForemanForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
