@@ -49,5 +49,11 @@ namespace gallery
             this.Close();
         }
 
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            /*DataGridViewComboBoxCell cell = dataGridView1[1, 1] as DataGridViewComboBoxCell;
+            string value = cell.Value.ToString();
+            label1.Text = value;*/
+        }
     }
 }

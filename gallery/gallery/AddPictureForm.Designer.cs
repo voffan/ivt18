@@ -60,6 +60,7 @@ namespace gallery
             this.button6.TabIndex = 44;
             this.button6.Text = "Список галерей";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -69,6 +70,7 @@ namespace gallery
             this.button5.TabIndex = 43;
             this.button5.Text = "Список местоположений";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -78,6 +80,7 @@ namespace gallery
             this.button4.TabIndex = 42;
             this.button4.Text = "Список жанров";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -87,6 +90,7 @@ namespace gallery
             this.button3.TabIndex = 41;
             this.button3.Text = "Список художников";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // comboBox4
             // 

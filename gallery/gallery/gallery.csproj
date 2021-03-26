@@ -158,6 +158,12 @@
       <DependentUpon>AddExpoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Artist.cs" />
+    <Compile Include="ArtistListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArtistListForm.Designer.cs">
+      <DependentUpon>ArtistListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Context.cs" />
     <Compile Include="EditExpoForm.cs">
       <SubType>Form</SubType>
@@ -180,6 +186,18 @@
     </Compile>
     <Compile Include="ExpoViewForm.Designer.cs">
       <DependentUpon>ExpoViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GalleryListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GalleryListForm.Designer.cs">
+      <DependentUpon>GalleryListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenreListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenreListForm.Designer.cs">
+      <DependentUpon>GenreListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -229,6 +247,12 @@
     </Compile>
     <Compile Include="PictureLogic.cs" />
     <Compile Include="Place.cs" />
+    <Compile Include="PlaceListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlaceListForm.Designer.cs">
+      <DependentUpon>PlaceListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Position.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -241,6 +265,9 @@
     <EmbeddedResource Include="AddExpoForm.resx">
       <DependentUpon>AddExpoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ArtistListForm.resx">
+      <DependentUpon>ArtistListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditExpoForm.resx">
       <DependentUpon>EditExpoForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,6 +279,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ExpoViewForm.resx">
       <DependentUpon>ExpoViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GalleryListForm.resx">
+      <DependentUpon>GalleryListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenreListForm.resx">
+      <DependentUpon>GenreListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -273,6 +306,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PictureListForm.resx">
       <DependentUpon>PictureListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlaceListForm.resx">
+      <DependentUpon>PlaceListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
