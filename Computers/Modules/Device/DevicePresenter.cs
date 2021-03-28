@@ -12,6 +12,7 @@ namespace Computers.Modules.Device
         IDeviceView View { get; set; }
         void PresentConfigure(List<Models.Manufacturer> manufacturers, List<Models.Status> statuses, Utils.DeviceType deviceType);
         void PresentUpdate(List<Models.Manufacturer> manufacturers, List<Models.Status> statuses);
+        void PresentClose();
     }
 
     class DevicePresenter : IDevicePresenter
@@ -53,6 +54,11 @@ namespace Computers.Modules.Device
                 viewModel.statuses.Add(status.Name, status);
             }
             View.Update(viewModel);
+        }
+
+        public void PresentClose()
+        {
+            View.Close();
         }
     }
 }

@@ -18,7 +18,6 @@ namespace Computers.Models
         public int Id { get; set; }
         public string IpAddress { get; set; }
         public string ItemNo { get; set; }
-        public int TotalPrice { get; set; }
 
         // One-to-one
         public virtual Employee Employee { get; set; }

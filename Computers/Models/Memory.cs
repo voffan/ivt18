@@ -11,7 +11,6 @@ namespace Computers.Models
         public Memory() {}
         public int Id { get; set; }
         public int Amount { get; set; }
-        public int Price { get; set; }
         public Computer Computer { get; set; }
     }
 }

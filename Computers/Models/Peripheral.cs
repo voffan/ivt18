@@ -11,7 +11,6 @@ namespace Computers.Models
         public Peripheral() {}
         public int Id { get; set; }
         public PeripheralType PeripheralType { get; set; }
-        public int Price { get; set; }
         public string ItemNo { get; set; }
         public Employee Employee { get; set; }
     }

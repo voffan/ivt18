@@ -13,13 +13,12 @@ namespace Computers.Modules.Device
         IDeviceInteractor Interactor { get; set; }
         void Configure(DeviceViewModel viewModel);
         void Update(DeviceViewModel viewModel);
+        void Close();
     }
 
     class DeviceView : View, IDeviceView
     {
         public IDeviceInteractor Interactor { get; set; }
-
-        // Создание нового девайса указанного типа с присвоением компьютеру
 
         private readonly Panel panel = new Panel();
 
@@ -35,8 +34,8 @@ namespace Computers.Modules.Device
         private readonly NumericUpDown priceNumericBox = new NumericUpDown();
         private readonly ComboBox statusComboBox = new ComboBox();
         private readonly Button addStatusButton = new Button();
-        private readonly NumericUpDown optionalNumericField = new NumericUpDown();
-        private readonly TextBox optionalTextField = new TextBox();
+        private readonly NumericUpDown optionalNumericBox = new NumericUpDown();
+        private readonly TextBox optionalTextBox = new TextBox();
 
         private readonly Button submitButton = new Button();
         private readonly Button cancelButton = new Button();
@@ -61,16 +60,22 @@ namespace Computers.Modules.Device
             statusLabel.Text = "Статус";
             submitButton.Text = "Добавить";
             cancelButton.Text = "Отмена";
-
-            panel.BorderStyle = BorderStyle.FixedSingle;
             addManufacturerButton.Text = "Добавить";
-            addManufacturerButton.Click += AddManufacturerButtonClicked;
-            manufacturerComboBox.SelectionChangeCommitted += ManufacturerComboBoxSelected;
             addStatusButton.Text = "Добавить";
+            panel.BorderStyle = BorderStyle.FixedSingle;
+            submitButton.Click += SubmitButtonClicked;
             addStatusButton.Click += AddStatusButtonClicked;
-            statusComboBox.SelectionChangeCommitted += StatusComboBoxSelected;
+            cancelButton.Click += CancelButtonClicked;
             priceNumericBox.Maximum = 3000000;
             priceNumericBox.Minimum = 0;
+
+            nameTextBox.TextChanged += NameTextBoxChanged;
+            addManufacturerButton.Click += AddManufacturerButtonClicked;
+            manufacturerComboBox.SelectionChangeCommitted += ManufacturerComboBoxSelected;
+            priceNumericBox.ValueChanged += PriceNumericBoxChanged;
+            statusComboBox.SelectionChangeCommitted += StatusComboBoxSelected;
+            optionalNumericBox.ValueChanged += OptionalNumericBoxChanged;
+            optionalTextBox.TextChanged += OptionalTextBoxChanged;
 
             panel.Controls.Add(nameLabel);
             panel.Controls.Add(nameTextBox);
@@ -131,36 +136,6 @@ namespace Computers.Modules.Device
             cancelButton.Location = new Point(220, 265);
         }
 
-        private void AddManufacturerButtonClicked(object sender, EventArgs e)
-        {
-            Interactor.AddManufacturer();
-        }
-
-        private void AddStatusButtonClicked(object sender, EventArgs e)
-        {
-            Interactor.AddStatus();
-        }
-
-        private void AddButtonClicked(object sender, EventArgs e)
-        {
-            Interactor.Submit();
-        }
-
-        private void CancelButtonClicked(object sender, EventArgs e)
-        {
-            Interactor.Cancel();
-        }
-
-        private void ManufacturerComboBoxSelected(object sender, EventArgs e)
-        {
-            Interactor.SelectManufacturer(manufacturerComboBox.SelectedIndex);
-        }
-
-        private void StatusComboBoxSelected(object sender, EventArgs e)
-        {
-            Interactor.SelectStatus(statusComboBox.SelectedIndex);
-        }
-
         public void Configure(DeviceViewModel viewModel)
         {
             Update(viewModel);
@@ -170,58 +145,58 @@ namespace Computers.Modules.Device
                 case Utils.DeviceType.HardDrive:
                     Text = "Добавление носителя данных";
                     optionalLabel.Text = "Объем (ГБ)";
-                    optionalNumericField.Minimum = 0;
-                    optionalNumericField.Maximum = 10000;
+                    optionalNumericBox.Minimum = 0;
+                    optionalNumericBox.Maximum = 10000;
                     panel.Controls.Add(optionalLabel);
-                    panel.Controls.Add(optionalNumericField);
+                    panel.Controls.Add(optionalNumericBox);
                     optionalLabel.Size = labelSize;
                     optionalLabel.Location = new Point(10, 210);
-                    optionalNumericField.Size = labelSize;
-                    optionalNumericField.Location = new Point(10, 230);
+                    optionalNumericBox.Size = labelSize;
+                    optionalNumericBox.Location = new Point(10, 230);
                     break;
                 case Utils.DeviceType.Memory:
                     Text = "Добавление оперативной памяти";
                     optionalLabel.Text = "Объем (ГБ)";
-                    optionalNumericField.Minimum = 0;
-                    optionalNumericField.Maximum = 10000;
+                    optionalNumericBox.Minimum = 0;
+                    optionalNumericBox.Maximum = 10000;
                     panel.Controls.Add(optionalLabel);
-                    panel.Controls.Add(optionalNumericField);
+                    panel.Controls.Add(optionalNumericBox);
                     optionalLabel.Size = labelSize;
                     optionalLabel.Location = new Point(10, 210);
-                    optionalNumericField.Size = labelSize;
-                    optionalNumericField.Location = new Point(10, 230);
+                    optionalNumericBox.Size = labelSize;
+                    optionalNumericBox.Location = new Point(10, 230);
                     break;
                 case Utils.DeviceType.PowerSupply:
                     Text = "Добавление источника питания";
                     optionalLabel.Text = "Мощность (Вт)";
-                    optionalNumericField.Minimum = 0;
-                    optionalNumericField.Maximum = 5000;
+                    optionalNumericBox.Minimum = 0;
+                    optionalNumericBox.Maximum = 5000;
                     panel.Controls.Add(optionalLabel);
-                    panel.Controls.Add(optionalNumericField);
+                    panel.Controls.Add(optionalNumericBox);
                     optionalLabel.Size = labelSize;
                     optionalLabel.Location = new Point(10, 210);
-                    optionalNumericField.Size = labelSize;
-                    optionalNumericField.Location = new Point(10, 230);
+                    optionalNumericBox.Size = labelSize;
+                    optionalNumericBox.Location = new Point(10, 230);
                     break;
                 case Utils.DeviceType.Processor:
                     Text = "Добавление процессора";
                     optionalLabel.Text = "Частота (ГГц)";
                     panel.Controls.Add(optionalLabel);
-                    panel.Controls.Add(optionalTextField);
+                    panel.Controls.Add(optionalTextBox);
                     optionalLabel.Size = labelSize;
                     optionalLabel.Location = new Point(10, 210);
-                    optionalTextField.Size = labelSize;
-                    optionalTextField.Location = new Point(10, 230);
+                    optionalTextBox.Size = labelSize;
+                    optionalTextBox.Location = new Point(10, 230);
                     break;
                 case Utils.DeviceType.GraphicCard:
                     Text = "Добавление видеокарты";
                     optionalLabel.Text = "Value (неизвестно)";
                     panel.Controls.Add(optionalLabel);
-                    panel.Controls.Add(optionalTextField);
+                    panel.Controls.Add(optionalTextBox);
                     optionalLabel.Size = labelSize;
                     optionalLabel.Location = new Point(10, 210);
-                    optionalTextField.Size = labelSize;
-                    optionalTextField.Location = new Point(10, 230);
+                    optionalTextBox.Size = labelSize;
+                    optionalTextBox.Location = new Point(10, 230);
                     break;
                 case Utils.DeviceType.Motherboard:
                     Text = "Добавление мат. платы";
@@ -246,5 +221,25 @@ namespace Computers.Modules.Device
                 statusComboBox.DataSource = new BindingSource(viewModel.statuses, null);
             }
         }
+
+        private void AddManufacturerButtonClicked(object sender, EventArgs e) { Interactor.AddManufacturer(); }
+
+        private void AddStatusButtonClicked(object sender, EventArgs e) { Interactor.AddStatus(); }
+
+        private void SubmitButtonClicked(object sender, EventArgs e) { Interactor.Submit(); }
+
+        private void CancelButtonClicked(object sender, EventArgs e) { Interactor.Cancel(); }
+
+        private void NameTextBoxChanged(object sender, EventArgs e) { Interactor.SetName(nameTextBox.Text); }
+
+        private void ManufacturerComboBoxSelected(object sender, EventArgs e) { Interactor.SelectManufacturer(manufacturerComboBox.SelectedIndex); }
+
+        private void StatusComboBoxSelected(object sender, EventArgs e) { Interactor.SelectStatus(statusComboBox.SelectedIndex); }
+
+        private void PriceNumericBoxChanged(object sender, EventArgs e) { Interactor.SetPrice((int)priceNumericBox.Value); }
+
+        private void OptionalNumericBoxChanged(object sender, EventArgs e) { Interactor.SetOptionalNumber((int)optionalNumericBox.Value); }
+
+        private void OptionalTextBoxChanged(object sender, EventArgs e) { Interactor.SetOptionalText(optionalTextBox.Text); }
     }
 }

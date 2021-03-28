@@ -15,8 +15,12 @@ namespace Computers.Modules.Device
         void Configure();
         void AddManufacturer();
         void AddStatus();
+        void SetName(string name);
         void SelectManufacturer(int index);
         void SelectStatus(int index);
+        void SetPrice(int price);
+        void SetOptionalNumber(int number);
+        void SetOptionalText(string text);
         void Submit();
         void Cancel();
     }
@@ -36,7 +40,30 @@ namespace Computers.Modules.Device
             this.Presenter = Presenter;
             this.FormOwner = FormOwner;
             this.DeviceType = DeviceType;
-            this.Device = new Models.Device();
+            switch (DeviceType)
+            {
+                case DeviceType.None:
+                    Device = new Models.Device();
+                    break;
+                case DeviceType.Processor:
+                    Device = new Models.Processor();
+                    break;
+                case DeviceType.GraphicCard:
+                    Device = new Models.GraphicCard();
+                    break;
+                case DeviceType.HardDrive:
+                    Device = new Models.HardDrive();
+                    break;
+                case DeviceType.Motherboard:
+                    Device = new Models.Motherboard();
+                    break;
+                case DeviceType.Memory:
+                    Device = new Models.Memory();
+                    break;
+                case DeviceType.PowerSupply:
+                    Device = new Models.PowerSupply();
+                    break;
+            }
             Configure();
         }
 
@@ -56,12 +83,45 @@ namespace Computers.Modules.Device
 
         public void Cancel()
         {
-            throw new NotImplementedException();
+            Presenter.PresentClose();
         }
 
         public void Submit()
         {
-            
+            if (FormOwner != null)
+            {
+                using (var context = new DatabaseContext())
+                {
+                    context.Manufacturers.Attach(Device.Manufacturer);
+                    context.Statuses.Attach(Device.Status);
+                    switch (DeviceType)
+                    {
+                        case DeviceType.None:
+                            break;
+                        case DeviceType.Processor:
+                            context.Processors.Add(Device as Models.Processor);
+                            break;
+                        case DeviceType.GraphicCard:
+                            context.GraphicCards.Add(Device as Models.GraphicCard);
+                            break;
+                        case DeviceType.HardDrive:
+                            context.HardDrives.Add(Device as Models.HardDrive);
+                            break;
+                        case DeviceType.Motherboard:
+                            context.Motherboards.Add(Device as Models.Motherboard);
+                            break;
+                        case DeviceType.Memory:
+                            context.Memories.Add(Device as Models.Memory);
+                            break;
+                        case DeviceType.PowerSupply:
+                            context.PowerSupplies.Add(Device as Models.PowerSupply);
+                            break;
+                    }
+                    context.SaveChanges();
+                }
+                FormOwner.Update();
+            }
+            Presenter.PresentClose();
         }
 
         public void Configure()
@@ -96,6 +156,52 @@ namespace Computers.Modules.Device
             Device.Status = Statuses.ElementAt(index);
             Console.WriteLine("Status");
             Console.WriteLine(Device.Status.Name);
+        }
+
+        public void SetName(string name)
+        {
+            // TODO: Валидация имени
+            Device.Name = name;
+        }
+
+        public void SetPrice(int price)
+        {
+            Device.Price = price;
+        }
+
+        public void SetOptionalNumber(int number)
+        {
+            // TODO: Валидация дополнительных полей
+            switch (DeviceType)
+            {
+                case DeviceType.HardDrive:
+                    (Device as Models.HardDrive).Capacity = number;
+                    break;
+                case DeviceType.Memory:
+                    (Device as Models.Memory).Amount = number;
+                    break;
+                case DeviceType.PowerSupply:
+                    (Device as Models.PowerSupply).Power = number;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        public void SetOptionalText(string text)
+        {
+            // TODO: Валидация дополнительных полей
+            switch (DeviceType)
+            {
+                case DeviceType.Processor:
+                    (Device as Models.Processor).Frequency = text;
+                    break;
+                case DeviceType.GraphicCard:
+                    (Device as Models.GraphicCard).Value = text;
+                    break;
+                default: 
+                    break;
+            }
         }
     }
 }

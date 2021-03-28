@@ -11,7 +11,6 @@ namespace Computers.Models
         public PowerSupply() {}
         public int Id { get; set; }
         public int Power { get; set; }
-        public int Price { get; set; }
         public Computer Computer { get; set; }
     }
 }

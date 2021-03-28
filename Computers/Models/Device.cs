@@ -11,6 +11,7 @@ namespace Computers.Models
         public string Name { get; set; }
         public DeviceType DeviceType { get; set; }
         public Manufacturer Manufacturer { get; set; }
+        public int Price { get; set; }
         public Status Status { get; set; }
     }
 }

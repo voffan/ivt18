@@ -11,8 +11,8 @@ namespace Computers.Modules.SingleFieldForm
     public interface ISingleFieldFormView
     {
         ISingleFieldFormInteractor Interactor { get; set; }
-        void Close();
         void Configure(Utils.SingleFieldFormType FormType);
+        void Close();
     }
 
     class SingleFieldFormView : View, ISingleFieldFormView
@@ -39,7 +39,7 @@ namespace Computers.Modules.SingleFieldForm
             addButton.Text = "Добавить";
             cancelButton.Text = "Отмена";
 
-            textBox.TextChanged += textBoxChanged;
+            textBox.TextChanged += TextBoxChanged;
             addButton.Click += AddButtonClicked;
             cancelButton.Click += CancelButtonClicked;
 
@@ -70,21 +70,6 @@ namespace Computers.Modules.SingleFieldForm
             cancelButton.Location = new Point(220, 70);
         }
 
-        private void textBoxChanged(object sender, EventArgs e)
-        {
-            Interactor.SetText(textBox.Text);
-        }
-
-        private void AddButtonClicked(object sender, EventArgs e)
-        {
-            Interactor.Submit();
-        }
-
-        private void CancelButtonClicked(object sender, EventArgs e)
-        {
-            Interactor.Cancel();
-        }
-
         public void Configure(Utils.SingleFieldFormType FormType)
         {
             switch (FormType)
@@ -105,5 +90,11 @@ namespace Computers.Modules.SingleFieldForm
                     break;
             }
         }
+
+        private void TextBoxChanged(object sender, EventArgs e) { Interactor.SetText(textBox.Text); }
+
+        private void AddButtonClicked(object sender, EventArgs e) { Interactor.Submit(); }
+
+        private void CancelButtonClicked(object sender, EventArgs e) { Interactor.Cancel(); }
     }
 }

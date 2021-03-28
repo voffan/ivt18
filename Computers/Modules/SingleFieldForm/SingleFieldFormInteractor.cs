@@ -55,8 +55,8 @@ namespace Computers.Modules.SingleFieldForm
                             break;
                     }
                     context.SaveChanges();
-                    FormOwner.Update();
                 }
+                FormOwner.Update();
             }
             Presenter.PresentClose();
         }

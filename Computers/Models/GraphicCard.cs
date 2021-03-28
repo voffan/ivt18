@@ -11,7 +11,6 @@ namespace Computers.Models
         public GraphicCard() {}
         public int Id { get; set; }
         public string Value { get; set; }
-        public int Price { get; set; }
         public Computer Computer { get; set; }
     }
 }

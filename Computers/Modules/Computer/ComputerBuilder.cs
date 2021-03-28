@@ -11,13 +11,11 @@ namespace Computers.Modules.Computer
     {
         public Form Build()
         {
-            var Presenter = new ComputerPresenter();
-            var Interactor = new ComputerInteractor();
-            var View = new ComputerView(Interactor);
+            var View = new ComputerView();
+            var Presenter = new ComputerPresenter(View);
+            var Interactor = new ComputerInteractor(Presenter);
 
-            Presenter.View = View;
-            Interactor.Presenter = Presenter;
-
+            View.Interactor = Interactor;
             return View;
         }
     }

@@ -15,7 +15,6 @@ namespace Computers.Models
         }
 
         public int Id { get; set; }
-        public int Price { get; set; }
         public virtual ICollection<Computer> Computers { get; set; }
     }
 }

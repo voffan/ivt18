@@ -11,27 +11,19 @@ namespace Computers.Modules.Computer
     public interface IComputerView
     {
         IComputerInteractor Interactor { get; set; }
+        void Configure(ComputerViewModel viewModel);
+        void Update(ComputerViewModel viewModel);
+        void Close();
     }
 
     class ComputerView : View, IComputerView
     {
         public IComputerInteractor Interactor { get; set; }
-
-        private Models.Computer computer;
         private Utils.WindowMode windowMode;
 
-        public ComputerView(IComputerInteractor Interactor) : base()
+        public ComputerView() : base()
         {
-            this.Interactor = Interactor;
-            Interactor.Computer = new Models.Computer();
             windowMode = Utils.WindowMode.Create;
-        }
-        public ComputerView(IComputerInteractor Interactor, Models.Computer computer) : base()
-        {
-            this.Interactor = Interactor;
-            this.computer = computer;
-            Interactor.Computer = computer;
-            windowMode = Utils.WindowMode.Edit;
         }
 
         private readonly Panel panel = new Panel();
@@ -60,6 +52,10 @@ namespace Computers.Modules.Computer
         private readonly ListBox hardDrivesListBox = new ListBox();
         private readonly ListBox graphicCardsListBox = new ListBox();
 
+        private readonly Button addEmployeeButton = new Button();
+        private readonly Button addProcessorButton = new Button();
+        private readonly Button addMotherboardButton = new Button();
+        private readonly Button addDiskDriveButton = new Button();
         private readonly Button addPowerSupplyButton = new Button();
         private readonly Button addMemoryButton = new Button();
         private readonly Button addHardDriveButton = new Button();
@@ -92,14 +88,43 @@ namespace Computers.Modules.Computer
             addMemoryButton.Text = "Добавить";
             addHardDriveButton.Text = "Добавить";
             addGraphicCardButton.Text = "Добавить";
+            addEmployeeButton.Text = "Добавить";
+            addProcessorButton.Text = "Добавить";
+            addMotherboardButton.Text = "Добавить";
+            addDiskDriveButton.Text = "Добавить";
 
-            totalPriceValueLabel.Text = "242394";
+            totalPriceValueLabel.Text = "0";
 
             panel.BorderStyle = BorderStyle.FixedSingle;
             addPowerSupplyButton.Click += AddPowerSupplyButtonClicked;
             addMemoryButton.Click += AddMemoryButtonClicked;
             addHardDriveButton.Click += AddHardDriveButtonClicked;
             addGraphicCardButton.Click += AddGraphicCardButtonClicked;
+            addEmployeeButton.Click += AddEmployeeButtonClicked;
+            addProcessorButton.Click += AddProcessorButtonClicked;
+            addMotherboardButton.Click += AddMotherboardButtonClicked;
+            addDiskDriveButton.Click += AddDiskDriveButtonClicked;
+
+            employeeComboBox.DisplayMember = "Key";
+            employeeComboBox.ValueMember = "Value";
+            processorComboBox.DisplayMember = "Key";
+            processorComboBox.ValueMember = "Value";
+            motherboardComboBox.DisplayMember = "Key";
+            motherboardComboBox.ValueMember = "Value";
+            diskDriveComboBox.DisplayMember = "Key";
+            diskDriveComboBox.ValueMember = "Value";
+            powerSuppliesListBox.DisplayMember = "Key";
+            powerSuppliesListBox.ValueMember = "Value";
+            powerSuppliesListBox.SelectionMode = SelectionMode.MultiSimple;
+            memoriesListBox.DisplayMember = "Key";
+            memoriesListBox.ValueMember = "Value";
+            memoriesListBox.SelectionMode = SelectionMode.MultiSimple;
+            hardDrivesListBox.DisplayMember = "Key";
+            hardDrivesListBox.ValueMember = "Value";
+            hardDrivesListBox.SelectionMode = SelectionMode.MultiSimple;
+            graphicCardsListBox.DisplayMember = "Key";
+            graphicCardsListBox.ValueMember = "Value";
+            graphicCardsListBox.SelectionMode = SelectionMode.MultiSimple;
 
             panel.Controls.Add(itemNoLabel);
             panel.Controls.Add(itemNoTextField);
@@ -221,24 +246,60 @@ namespace Computers.Modules.Computer
             graphicCardsListBox.Location = new Point(310, 300);
         }
 
-        private void AddPowerSupplyButtonClicked(object sender, EventArgs e)
+        public void Configure(ComputerViewModel viewModel)
         {
-            Interactor.AddPowerSupply();
+            if (viewModel.Employees.Count > 0) 
+                employeeComboBox.DataSource = new BindingSource(viewModel.Employees, null);
+            if (viewModel.Processors.Count > 0) 
+                processorComboBox.DataSource = new BindingSource(viewModel.Processors, null);
+            if (viewModel.Motherboards.Count > 0) 
+                motherboardComboBox.DataSource = new BindingSource(viewModel.Motherboards, null);
+            if (viewModel.DiskDrives.Count > 0) 
+                diskDriveComboBox.DataSource = new BindingSource(viewModel.DiskDrives, null);
+            if (viewModel.PowerSupplies.Count > 0) 
+                powerSuppliesListBox.DataSource = new BindingSource(viewModel.PowerSupplies, null);
+            if (viewModel.Memories.Count > 0) 
+                memoriesListBox.DataSource = new BindingSource(viewModel.Memories, null);
+            if (viewModel.HardDrives.Count > 0) 
+                hardDrivesListBox.DataSource = new BindingSource(viewModel.HardDrives, null);
+            if (viewModel.GraphicCards.Count > 0) 
+                graphicCardsListBox.DataSource = new BindingSource(viewModel.GraphicCards, null);
         }
 
-        private void AddHardDriveButtonClicked(object sender, EventArgs e)
+        public void Update(ComputerViewModel viewModel)
         {
-            Interactor.AddHardDrive();
+            if (viewModel.Employees.Count > 0)
+                employeeComboBox.DataSource = new BindingSource(viewModel.Employees, null);
+            if (viewModel.Processors.Count > 0)
+                processorComboBox.DataSource = new BindingSource(viewModel.Processors, null);
+            if (viewModel.Motherboards.Count > 0)
+                motherboardComboBox.DataSource = new BindingSource(viewModel.Motherboards, null);
+            if (viewModel.DiskDrives.Count > 0)
+                diskDriveComboBox.DataSource = new BindingSource(viewModel.DiskDrives, null);
+            if (viewModel.PowerSupplies.Count > 0)
+                powerSuppliesListBox.DataSource = new BindingSource(viewModel.PowerSupplies, null);
+            if (viewModel.Memories.Count > 0)
+                memoriesListBox.DataSource = new BindingSource(viewModel.Memories, null);
+            if (viewModel.HardDrives.Count > 0)
+                hardDrivesListBox.DataSource = new BindingSource(viewModel.HardDrives, null);
+            if (viewModel.GraphicCards.Count > 0)
+                graphicCardsListBox.DataSource = new BindingSource(viewModel.GraphicCards, null);
         }
 
-        private void AddMemoryButtonClicked(object sender, EventArgs e)
-        {
-            Interactor.AddMemory();
-        }
+        private void AddPowerSupplyButtonClicked(object sender, EventArgs e) { Interactor.AddPowerSupply(); }
 
-        private void AddGraphicCardButtonClicked(object sender, EventArgs e)
-        {
-            Interactor.AddGraphicCard();
-        }
+        private void AddHardDriveButtonClicked(object sender, EventArgs e) { Interactor.AddHardDrive(); }
+
+        private void AddMemoryButtonClicked(object sender, EventArgs e) { Interactor.AddMemory(); }
+
+        private void AddGraphicCardButtonClicked(object sender, EventArgs e) { Interactor.AddGraphicCard(); }
+
+        private void AddEmployeeButtonClicked(object sender, EventArgs e) { Interactor.AddEmployee(); }
+
+        private void AddProcessorButtonClicked(object sender, EventArgs e) { Interactor.AddProcessor(); }
+
+        private void AddMotherboardButtonClicked(object sender, EventArgs e) { Interactor.AddMotherboard(); }
+
+        private void AddDiskDriveButtonClicked(object sender, EventArgs e) { Interactor.AddDiskDrive(); }
     }
 }

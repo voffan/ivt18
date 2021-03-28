@@ -11,7 +11,6 @@ namespace Computers.Models
         public HardDrive() {}
         public int Id { get; set; }
         public int Capacity { get; set; }
-        public int Price { get; set; }
         public Computer Computer { get; set; }
     }
 }
