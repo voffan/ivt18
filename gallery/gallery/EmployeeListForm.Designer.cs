@@ -30,10 +30,6 @@ namespace gallery
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.galleryDBDataSet1 = new gallery.GalleryDBDataSet();
-            this.employeeTableAdapter1 = new gallery.GalleryDBDataSetTableAdapters.EmployeeTableAdapter();
-            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tableAdapterManager = new gallery.GalleryDBDataSetTableAdapters.TableAdapterManager();
             this.employeeDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,42 +38,16 @@ namespace gallery
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.galleryDBDataSet1 = new gallery.GalleryDBDataSet();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.galleryDBDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
+            this.employeeTableAdapter1 = new gallery.GalleryDBDataSetTableAdapters.EmployeeTableAdapter();
+            this.tableAdapterManager = new gallery.GalleryDBDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.employeeDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.galleryDBDataSet1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // galleryDBDataSet1
-            // 
-            this.galleryDBDataSet1.DataSetName = "GalleryDBDataSet";
-            this.galleryDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // employeeTableAdapter1
-            // 
-            this.employeeTableAdapter1.ClearBeforeFill = true;
-            // 
-            // employeeBindingSource
-            // 
-            this.employeeBindingSource.DataMember = "Employee";
-            this.employeeBindingSource.DataSource = this.galleryDBDataSet1;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.@__MigrationHistoryTableAdapter = null;
-            this.tableAdapterManager.ArtistTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.EmployeeTableAdapter = this.employeeTableAdapter1;
-            this.tableAdapterManager.ExpoPictureTableAdapter = null;
-            this.tableAdapterManager.ExpoTableAdapter = null;
-            this.tableAdapterManager.GalleryTableAdapter = null;
-            this.tableAdapterManager.GenreTableAdapter = null;
-            this.tableAdapterManager.JournalTableAdapter = null;
-            this.tableAdapterManager.PictureTableAdapter = null;
-            this.tableAdapterManager.PlaceTableAdapter = null;
-            this.tableAdapterManager.PositionTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = gallery.GalleryDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // employeeDataGridView
             // 
@@ -92,7 +62,7 @@ namespace gallery
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
             this.employeeDataGridView.DataSource = this.employeeBindingSource;
-            this.employeeDataGridView.Location = new System.Drawing.Point(12, 31);
+            this.employeeDataGridView.Location = new System.Drawing.Point(12, 32);
             this.employeeDataGridView.Name = "employeeDataGridView";
             this.employeeDataGridView.Size = new System.Drawing.Size(744, 205);
             this.employeeDataGridView.TabIndex = 1;
@@ -141,6 +111,16 @@ namespace gallery
             this.dataGridViewTextBoxColumn7.HeaderText = "GalleryId";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
+            // employeeBindingSource
+            // 
+            this.employeeBindingSource.DataMember = "Employee";
+            this.employeeBindingSource.DataSource = this.galleryDBDataSet1;
+            // 
+            // galleryDBDataSet1
+            // 
+            this.galleryDBDataSet1.DataSetName = "GalleryDBDataSet";
+            this.galleryDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(12, 266);
@@ -149,6 +129,7 @@ namespace gallery
             this.button1.TabIndex = 2;
             this.button1.Text = "Добавить пользователя";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -158,6 +139,26 @@ namespace gallery
             this.button2.TabIndex = 3;
             this.button2.Text = "Удалить пользователя";
             this.button2.UseVisualStyleBackColor = true;
+            // 
+            // employeeTableAdapter1
+            // 
+            this.employeeTableAdapter1.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.@__MigrationHistoryTableAdapter = null;
+            this.tableAdapterManager.ArtistTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.EmployeeTableAdapter = this.employeeTableAdapter1;
+            this.tableAdapterManager.ExpoPictureTableAdapter = null;
+            this.tableAdapterManager.ExpoTableAdapter = null;
+            this.tableAdapterManager.GalleryTableAdapter = null;
+            this.tableAdapterManager.GenreTableAdapter = null;
+            this.tableAdapterManager.JournalTableAdapter = null;
+            this.tableAdapterManager.PictureTableAdapter = null;
+            this.tableAdapterManager.PlaceTableAdapter = null;
+            this.tableAdapterManager.PositionTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = gallery.GalleryDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // EmployeeListForm
             // 
@@ -170,9 +171,9 @@ namespace gallery
             this.Name = "EmployeeListForm";
             this.Text = "EmployeeListForm";
             this.Load += new System.EventHandler(this.EmployeeListForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.galleryDBDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.galleryDBDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -52,6 +52,9 @@ namespace gallery
             
         }
 
+        private void expoPicturesBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }
