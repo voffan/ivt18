@@ -26,7 +26,6 @@ namespace grades
             InitializeComponent();
             Context = new Context();
             _logic = new UserListLogic();
-            //test();
 
             usersDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
@@ -44,6 +43,7 @@ namespace grades
         {
             searchLabel.Anchor = (AnchorStyles.Top | AnchorStyles.Left);
             searchBox.Anchor = (AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right);
+            clearButton.Anchor = (AnchorStyles.Top | AnchorStyles.Right);
 
             usersDGV.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right);
 
@@ -57,72 +57,14 @@ namespace grades
             deleteUser.Anchor = (AnchorStyles.Bottom | AnchorStyles.Right);
         }
 
-        public void test()
-        {
-            //@"S:\MOCK_DATA.csv"
-            using (var reader = new StreamReader(@"S:\MOCK_DATA.csv"))
-            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
-            {
-                csv.Read();
-                csv.ReadHeader();
-
-                while (csv.Read())
-                {
-                    string firstName = csv.GetField<String>("FirstName");
-                    string surName = csv.GetField<String>("SurName");
-                    string middleName = csv.GetField<String>("MidleName");
-                    string phoneNumber = csv.GetField<String>("PhoneNumber");
-                    string homeAddress = csv.GetField<String>("HomeAddress");
-                    string login = csv.GetField<String>("Login");
-                    string password = csv.GetField<String>("Password");
-                    int positionId = csv.GetField<int>("PositionId");
-                    string positionName = Context.Positions.Where(x => x.PositionId == positionId).Select(x => x.Name).Single();
-
-                    if (positionName == "Ученик")
-                    {
-                        Student record = new Student
-                        {
-                            FirstName = firstName,
-                            SurName = surName,
-                            MiddleName = middleName,
-                            PhoneNumber = phoneNumber,
-                            HomeAddress = homeAddress,
-                            Login = login,
-                            Password = password,
-                            PositionId = positionId
-                        };
-
-                        record.Position = Context.Positions.Where(x => x.PositionId == record.PositionId).Select(x => x).Single();
-                        Context.Persons.Add(record);
-                    }
-                    else
-                    {
-                        Staff record = new Staff
-                        {
-                            FirstName = firstName,
-                            SurName = surName,
-                            MiddleName = middleName,
-                            PhoneNumber = phoneNumber,
-                            HomeAddress = homeAddress,
-                            Login = login,
-                            Password = password,
-                            PositionId = positionId
-                        };
-
-                        record.Position = Context.Positions.Where(x => x.PositionId == record.PositionId).Select(x => x).Single();
-                        Context.Persons.Add(record);
-                    }
-
-                }
-            }
-
-            Context.SaveChanges();
-        }
-
         private void addUser_Click(object sender, EventArgs e)
         {
-            AddUser addUserForm = new AddUser(Context);
-            addUserForm.ShowDialog();
+            //AddUser addUserForm = new AddUser(Context);
+            //addUserForm.ShowDialog();
+            //UpdateList();
+
+            ChooseAddUserMethodForm chooseMethodForm = new ChooseAddUserMethodForm(Context);
+            chooseMethodForm.ShowDialog();
             UpdateList();
         }
 
@@ -232,6 +174,11 @@ namespace grades
             AddUser ViewUserForm = new AddUser(Context);
             ViewUserForm.SetViewState(personToDisplay);
             ViewUserForm.ShowDialog();
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            searchBox.Text = "";
         }
     }
 }

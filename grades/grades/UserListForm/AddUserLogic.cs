@@ -35,9 +35,9 @@ namespace grades
         {
             if (_person != null)
             {
-                firstName.Replace(" ", string.Empty);
-                surName.Replace(" ", string.Empty);
-                middleName.Replace(" ", string.Empty);
+                firstName = firstName.Replace(" ", string.Empty);
+                surName = surName.Replace(" ", string.Empty);
+                middleName = middleName.Replace(" ", string.Empty);
 
                 _person.FirstName = firstName;
                 _person.SurName = surName;
@@ -58,7 +58,7 @@ namespace grades
         {
             if (_person != null)
             {
-                phoneNumber.Replace(" ", string.Empty);
+                phoneNumber = phoneNumber.Replace(" ", string.Empty);
 
                 _person.PhoneNumber = phoneNumber;
             }
@@ -68,7 +68,7 @@ namespace grades
         {
             if (_person != null)
             {
-                homeAddress.Replace(" ", string.Empty);
+                homeAddress = homeAddress.Replace(" ", string.Empty);
 
                 _person.HomeAddress = homeAddress;
             }

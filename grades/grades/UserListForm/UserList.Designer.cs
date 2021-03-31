@@ -38,6 +38,7 @@
             this.searchBox = new System.Windows.Forms.TextBox();
             this.searchLabel = new System.Windows.Forms.Label();
             this.viewUser = new System.Windows.Forms.Button();
+            this.clearButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.usersDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,7 +120,7 @@
             // 
             this.searchBox.Location = new System.Drawing.Point(61, 7);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(726, 20);
+            this.searchBox.Size = new System.Drawing.Size(645, 20);
             this.searchBox.TabIndex = 8;
             this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             // 
@@ -142,11 +143,22 @@
             this.viewUser.UseVisualStyleBackColor = true;
             this.viewUser.Click += new System.EventHandler(this.viewUser_Click);
             // 
+            // clearButton
+            // 
+            this.clearButton.Location = new System.Drawing.Point(712, 5);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(75, 23);
+            this.clearButton.TabIndex = 11;
+            this.clearButton.Text = "Очистить";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
+            // 
             // UserList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.clearButton);
             this.Controls.Add(this.viewUser);
             this.Controls.Add(this.searchLabel);
             this.Controls.Add(this.searchBox);
@@ -178,5 +190,6 @@
         private System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.Label searchLabel;
         private System.Windows.Forms.Button viewUser;
+        private System.Windows.Forms.Button clearButton;
     }
 }

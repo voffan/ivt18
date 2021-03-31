@@ -29,6 +29,10 @@ namespace grades
 
             positionList.DataSource = (from pos in context.Positions
                                        select pos.Name).ToList();
+
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.StartPosition = FormStartPosition.CenterParent;
+            this.ControlBox = false;
         }
 
         internal void SetEditState(Person person)

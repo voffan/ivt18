@@ -99,13 +99,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddUser.cs">
+    <Compile Include="UserListForm\AddMultipleUsers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddUser.Designer.cs">
+    <Compile Include="UserListForm\AddMultipleUsers.Designer.cs">
+      <DependentUpon>AddMultipleUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserListForm\AddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserListForm\AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddUserLogic.cs" />
+    <Compile Include="UserListForm\AddUserLogic.cs" />
+    <Compile Include="UserListForm\ChooseAddUserMethodForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserListForm\ChooseAddUserMethodForm.Designer.cs">
+      <DependentUpon>ChooseAddUserMethodForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClassGeneretion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,14 +153,17 @@
     <Compile Include="StudyYear.cs" />
     <Compile Include="SubGroup.cs" />
     <Compile Include="Subject.cs" />
-    <Compile Include="UserList.cs">
+    <Compile Include="UserListForm\UserList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserList.Designer.cs">
+    <Compile Include="UserListForm\UserList.Designer.cs">
       <DependentUpon>UserList.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserListLogic.cs" />
-    <EmbeddedResource Include="AddUser.resx">
+    <Compile Include="UserListForm\UserListLogic.cs" />
+    <EmbeddedResource Include="UserListForm\AddMultipleUsers.resx">
+      <DependentUpon>AddMultipleUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserListForm\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="UserSignIn.cs">
@@ -157,6 +172,9 @@
     <Compile Include="UserSignIn.Designer.cs">
       <DependentUpon>UserSignIn.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserListForm\ChooseAddUserMethodForm.resx">
+      <DependentUpon>ChooseAddUserMethodForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClassGeneretion.resx">
       <DependentUpon>ClassGeneretion.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,7 +190,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserList.resx">
+    <EmbeddedResource Include="UserListForm\UserList.resx">
       <DependentUpon>UserList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserSignIn.resx">

@@ -47,3 +47,5 @@ S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grad
 S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\bin\Debug\System.Threading.Tasks.Extensions.xml
 S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\obj\Debug\grades.ClassGeneretion.resources
+S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\obj\Debug\grades.ChooseAddUserMethodForm.resources
+S:\ИВТ-18\Программная инженерия\Project\ivt18\grades\grades\obj\Debug\grades.AddMultipleUsers.resources
