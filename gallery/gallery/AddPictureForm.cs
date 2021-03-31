@@ -13,6 +13,7 @@ namespace gallery
     public partial class AddPictureForm : Form
     {
         public Context C { get; set; }
+        public int FormId = 0;//1-add new pic 2-update
 
         public AddPictureForm()
         {
@@ -21,27 +22,57 @@ namespace gallery
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            if (FormId == 1)
             {
-                PictureLogic.AddPicture(C, textBox1.Text, Convert.ToSingle(textBox2.Text), Convert.ToInt32(textBox3.Text), comboBox1.SelectedItem.ToString(), comboBox2.SelectedItem.ToString(), comboBox3.SelectedItem.ToString(), comboBox4.SelectedItem.ToString());
-                PictureListForm pictureListForm = new PictureListForm();
-                pictureListForm.C = C;
-                pictureListForm.Show();
-                this.Close();
+                try
+                {
+                    PictureLogic.AddPicture(C, textBox1.Text, Convert.ToSingle(textBox2.Text), Convert.ToInt32(textBox3.Text), comboBox1.SelectedItem.ToString(), comboBox2.SelectedItem.ToString(), comboBox3.SelectedItem.ToString(), comboBox4.SelectedItem.ToString());
+                    MessageBox.Show("Добавление...");
+                    this.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Ошибка в добавлении картины!");
+                }
             }
-            catch
+            else
             {
-                MessageBox.Show("Ошибка!");
+                if (FormId == 2)
+                {
+                    try
+                    {
+                        PictureLogic.UpdatePicture(C, textBox1.Text, Convert.ToSingle(textBox2.Text), Convert.ToInt32(textBox3.Text), comboBox1.SelectedItem.ToString(), comboBox2.SelectedItem.ToString(), comboBox3.SelectedItem.ToString(), comboBox4.SelectedItem.ToString());
+                        MessageBox.Show("Редактируется...");
+                        this.Close();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Ошибка при редактировании картины");
+                    }
+                }
             }
             
         }
 
         private void AddPictureForm_Load(object sender, EventArgs e)
         {
-            comboBox1.Items.AddRange(C.Artists.Select(c => c.FullName).ToArray());
-            comboBox2.Items.AddRange(C.Genres.Select(c => c.Name).ToArray());
-            comboBox3.Items.AddRange(C.Places.Select(c => c.Name).ToArray());
-            comboBox4.Items.AddRange(C.Galleries.Select(c => c.Name).ToArray());
+            if (FormId == 1)
+            {
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                comboBox1.Items.AddRange(C.Artists.Select(c => c.FullName).ToArray());
+                comboBox2.Items.AddRange(C.Genres.Select(c => c.Name).ToArray());
+                comboBox3.Items.AddRange(C.Places.Select(c => c.Name).ToArray());
+                comboBox4.Items.AddRange(C.Galleries.Select(c => c.Name).ToArray());
+            }
+            else
+            {
+                /*if (FormId==2)
+                {
+                    textBox1.Text=C.Pictures.Select()
+                }*/
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)

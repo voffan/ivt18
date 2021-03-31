@@ -13,15 +13,11 @@ namespace gallery
     public partial class PictureListForm : Form
     {
         public Context C { get; set; }
+        int selectedItemId = -1;
 
         public PictureListForm()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void PictureListForm_Load(object sender, EventArgs e)
@@ -36,24 +32,45 @@ namespace gallery
             expoListForm.Show();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             AddPictureForm addPictureForm = new AddPictureForm();
+            addPictureForm.FormId = 1;
             addPictureForm.C = C;
             addPictureForm.Show();
-            this.Close();
         }
 
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        private void dataGridView1_Click(object sender, EventArgs e)
         {
-            /*DataGridViewComboBoxCell cell = dataGridView1[1, 1] as DataGridViewComboBoxCell;
-            string value = cell.Value.ToString();
-            label1.Text = value;*/
+            if (dataGridView1.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
+                selectedItemId = Convert.ToInt32(selectedRow.Cells["PictureId"].Value);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PictureLogic.DeletePicture(C, selectedItemId);
+                MessageBox.Show("Удаление...");
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка при удалении картины");
+            }
+        }
+
+        private void PictureListForm_Activated(object sender, EventArgs e)
+        {
+            PictureListForm_Load(sender, e);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

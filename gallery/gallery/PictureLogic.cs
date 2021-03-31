@@ -49,5 +49,39 @@ namespace gallery
             c.Pictures.Add(p);
             c.SaveChanges();
         }
+
+        public static void DeletePicture(Context c, int id)
+        {
+            Picture p = c.Pictures
+            .Where(o => o.PictureId == id)
+            .FirstOrDefault();
+
+            c.Pictures.Remove(p);
+            c.SaveChanges();
+        }
+
+        public static void UpdatePicture(Context c, string name, Single price, int year, string artistName, string genreName, string placeName, string galleryName)
+        {
+            int artistId = getArtistId(artistName, c);
+            int genreId = getGenreId(genreName, c);
+            int placeId = getPlaceId(placeName, c);
+            int galleryId = getGalleryId(galleryName, c);
+
+            Picture p = c.Pictures
+            .Where(o => o.Name == name && o.ArtistId == artistId)
+            .FirstOrDefault();
+
+            if (p != null)
+            {
+                p.Name = name;
+                p.Price = price;
+                p.Year = year;
+                p.ArtistId = artistId;
+                p.GenreId = genreId;
+                p.PlaceId = placeId;
+                p.GalleryId = galleryId;
+                c.SaveChanges();
+            }
+        }
     }
 }
