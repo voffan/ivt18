@@ -15,7 +15,7 @@ namespace carton
         [Key]
         public int Id { get; set; }
 
-        public virtual List<Product> Products { get; set; }
+        public virtual List<ProductMovement> ProductMovements { get; set; }
         public int Amount { get; set; }
         public int SourceId { get; set; }
         [ForeignKey("SourceId")]
@@ -27,7 +27,7 @@ namespace carton
 
         public DateTime Date { get; set; }
 
-        public int EmployeeId { get; set; }
+        public int? EmployeeId { get; set; }
         [ForeignKey("EmployeeId")]
         public Employee Employee { get; set; }
     }

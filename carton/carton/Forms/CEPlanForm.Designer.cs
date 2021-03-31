@@ -1,7 +1,7 @@
 ﻿
 namespace carton
 {
-    partial class CEPlan
+    partial class CEPlanForm
     {
         /// <summary>
         /// Required designer variable.

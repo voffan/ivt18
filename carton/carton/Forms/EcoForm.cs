@@ -21,13 +21,13 @@ namespace carton
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CEPlan cePlan = new CEPlan(context, 0);
+            CEPlanForm cePlan = new CEPlanForm(context, 0);
             cePlan.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            CEPlan cePlan = new CEPlan(context, 1);
+            CEPlanForm cePlan = new CEPlanForm(context, 1);
             cePlan.Show();
         }
     }

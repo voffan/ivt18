@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace carton
 {
-    public partial class CEPlan : Form
+    public partial class CEPlanForm : Form
     {
         Context context;
         int type; //0 - create, 1 - edit
-        public CEPlan(Context context, int type)
+        public CEPlanForm(Context context, int type)
         {
             this.context = context;
             this.type = type;

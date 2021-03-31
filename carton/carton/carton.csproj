@@ -61,47 +61,41 @@
     <Compile Include="Classes\DailyProd.cs" />
     <Compile Include="Classes\Department.cs" />
     <Compile Include="Classes\Employee.cs" />
-    <Compile Include="DirectorForm.cs">
+    <Compile Include="Classes\ProductMovement.cs" />
+    <Compile Include="Forms\DirectorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DirectorForm.Designer.cs">
+    <Compile Include="Forms\DirectorForm.Designer.cs">
       <DependentUpon>DirectorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EcoForm.cs">
+    <Compile Include="Forms\EcoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EcoForm.Designer.cs">
+    <Compile Include="Forms\EcoForm.Designer.cs">
       <DependentUpon>EcoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CEPlan.cs">
+    <Compile Include="Forms\CEPlanForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CEPlan.Designer.cs">
-      <DependentUpon>CEPlan.cs</DependentUpon>
+    <Compile Include="Forms\CEPlanForm.Designer.cs">
+      <DependentUpon>CEPlanForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ForemanForm.cs">
+    <Compile Include="Forms\ForemanForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ForemanForm.Designer.cs">
+    <Compile Include="Forms\ForemanForm.Designer.cs">
       <DependentUpon>ForemanForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Logic\EmployeeLogic.cs" />
     <Compile Include="Logic\PlanLogic.cs" />
-    <Compile Include="LoginForm.cs">
+    <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Context.cs" />
-    <Compile Include="Example.cs" />
     <Compile Include="Classes\Factory.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Classes\Plan.cs" />
     <Compile Include="Classes\Planned.cs" />
     <Compile Include="Classes\Position.cs" />
@@ -109,9 +103,9 @@
     <Compile Include="Classes\ProductionLine.cs" />
     <Compile Include="Classes\ProductOperation.cs" />
     <Compile Include="Classes\ProductRemain.cs" />
-    <Compile Include="Migrations\202103260448129_reboot4.cs" />
-    <Compile Include="Migrations\202103260448129_reboot4.designer.cs">
-      <DependentUpon>202103260448129_reboot4.cs</DependentUpon>
+    <Compile Include="Migrations\202103311301352_reboot.cs" />
+    <Compile Include="Migrations\202103311301352_reboot.designer.cs">
+      <DependentUpon>202103311301352_reboot.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -119,41 +113,41 @@
     <Compile Include="Classes\Shift.cs" />
     <Compile Include="Classes\Status.cs" />
     <Compile Include="Classes\Storage.cs" />
-    <Compile Include="StorageEmpForm.cs">
+    <Compile Include="Forms\StorageEmpForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StorageEmpForm.Designer.cs">
+    <Compile Include="Forms\StorageEmpForm.Designer.cs">
       <DependentUpon>StorageEmpForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SysAdminForm.cs">
+    <Compile Include="Forms\SysAdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SysAdminForm.Designer.cs">
+    <Compile Include="Forms\SysAdminForm.Designer.cs">
       <DependentUpon>SysAdminForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserManagement.cs">
+    <Compile Include="Forms\UserManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserManagement.Designer.cs">
+    <Compile Include="Forms\UserManagement.Designer.cs">
       <DependentUpon>UserManagement.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CEPlan.resx">
-      <DependentUpon>CEPlan.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\CEPlanForm.resx">
+      <DependentUpon>CEPlanForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DirectorForm.resx">
+    <EmbeddedResource Include="Forms\DirectorForm.resx">
       <DependentUpon>DirectorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EcoForm.resx">
+    <EmbeddedResource Include="Forms\EcoForm.resx">
       <DependentUpon>EcoForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ForemanForm.resx">
+    <EmbeddedResource Include="Forms\ForemanForm.resx">
       <DependentUpon>ForemanForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202103260448129_reboot4.resx">
-      <DependentUpon>202103260448129_reboot4.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202103311301352_reboot.resx">
+      <DependentUpon>202103311301352_reboot.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -165,10 +159,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SysAdminForm.resx">
+    <EmbeddedResource Include="Forms\SysAdminForm.resx">
       <DependentUpon>SysAdminForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserManagement.resx">
+    <EmbeddedResource Include="Forms\UserManagement.resx">
       <DependentUpon>UserManagement.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

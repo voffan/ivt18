@@ -25,8 +25,8 @@ namespace carton
         [ForeignKey("ProductionLineId")]
         public ProductionLine ProductionLine { get; set; }
 
-        public int EmployeeId { get; set; }
-        [ForeignKey("EmployeeId")]
+        public int ForemanId { get; set; }
+        [ForeignKey("ForemanId")]
         public Employee Foreman { get; set; }
     }
 }

@@ -20,17 +20,13 @@ namespace carton
         public string INN { get; set; }
         public string ContactPhone { get; set; }
 
-        public virtual List<ProductionLine> ProductionLines { get; set; }
-
         public virtual List<Storage> Storages { get; set; }
 
         public virtual List<Employee> Employees { get; set; }
-
-        //2 links?
-        
-        public int DirectorId { get; set; }
+#nullable enable
+        public Nullable<int> DirectorId { get; set; }
         [ForeignKey("DirectorId")]
-        public Employee Director { get; set; }
-        
+        public Employee Director { get; set; } = null!;
+#nullable disable
     }
 }

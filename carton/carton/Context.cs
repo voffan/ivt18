@@ -26,34 +26,61 @@ namespace carton
         public DbSet<Shift> Shifts { get; set; }
         public DbSet<Status> Statuses { get; set; }
         public DbSet<Storage> Storages { get; set; }
+        public DbSet<ProductMovement> ProductMovements { get; set; }
 
-        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
-        //    modelBuilder.Entity<ProductOperation>()
-        //    .HasOptional<Department>(s => s.Source)
-        //    .WithMany()
-        //    .HasForeignKey(s => s.SourceId)
-        //    .WillCascadeOnDelete(false);
+            modelBuilder.Entity<ProductOperation>()
+                .HasRequired<Department>(p => p.Source)
+                .WithMany(d => d.Sources)
+                .HasForeignKey(p => p.SourceId)
+                .WillCascadeOnDelete(false);
 
-        //    modelBuilder.Entity<ProductOperation>()
-        //    .HasOptional<Department>(s => s.Destination)
-        //    .WithMany()
-        //    .HasForeignKey(s => s.DestinationId)
-        //    .WillCascadeOnDelete(false);
+            modelBuilder.Entity<ProductOperation>()
+                .HasRequired<Department>(p => p.Destination)
+                .WithMany(d => d.Destinations)
+                .HasForeignKey(p => p.DestinationId)
+                .WillCascadeOnDelete(false);
 
-        //    modelBuilder.Entity<ProductPL>()
-        //    .HasRequired(s => s.ProductOperation)
-        //    .WithMany()
-        //    .HasForeignKey(s => s.ProductOperationId)
-        //    .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Shift>()
+                .HasRequired<ProductionLine>(p => p.ProductionLine)
+                .WithMany(d => d.Shifts)
+                .HasForeignKey(p => p.ProductionLineId)
+                .WillCascadeOnDelete(false);
 
-        //    modelBuilder.Entity<StoragePO>()
-        //    .HasRequired(s => s.ProductOperation)
-        //    .WithMany()
-        //    .HasForeignKey(s => s.ProductOperationId)
-        //    .WillCascadeOnDelete(false);
-        //}
+            modelBuilder.Entity<Shift>()
+                .HasRequired<Employee>(s => s.Foreman)
+                .WithMany(e => e.Shifts)
+                .HasForeignKey(s => s.ForemanId);
+
+            modelBuilder.Entity<Factory>()
+                .HasOptional(f => f.Director)
+                .WithMany()
+                .HasForeignKey(f => f.DirectorId);
+
+            modelBuilder.Entity<Employee>()
+                .HasOptional(e => e.Factory)
+                .WithMany(f => f.Employees)
+                .HasForeignKey(e => e.FactoryId);
+
+            //modelBuilder.Entity<Employee>()
+            //    .HasOptional<Factory>(e => e.Factory)
+            //    .WithMany(f => f.Employees)
+            //    .HasForeignKey(e => e.FactoryId);
+
+            //modelBuilder.Entity<ProductOperation>()
+            //.HasOptional<Department>(s => s.Source)
+            //.WithMany()
+            //.HasForeignKey(s => s.SourceId)
+            //.WillCascadeOnDelete(false);
+
+            //modelBuilder.Entity<ProductOperation>()
+            //.HasOptional<Department>(s => s.Destination)
+            //.WithMany()
+            //.HasForeignKey(s => s.DestinationId)
+            //.WillCascadeOnDelete(false);
+        }
     }
 }

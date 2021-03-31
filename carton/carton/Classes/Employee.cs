@@ -32,21 +32,20 @@ namespace carton
 
         public string ContactPhone { get; set; }
         public string Address { get; set; }
+
         public int? StorageId { get; set; }
         [ForeignKey("StorageId")]
-        public Storage Storage { get; set; }
+        public Storage Storage { get; set; } = null!;
 
-        //2 links?
         public int? FactoryId { get; set; }
         [ForeignKey("FactoryId")]
-        public Factory Factory { get; set; }
+        public Factory Factory { get; set; } = null!;
 
-        //public virtual List<Factory> Factory { get; set; }
+        public int? FactoryDirectorId { get; set; }
+        [ForeignKey("FactoryDirectorId")]
+        public virtual Factory Director { get; set; } = null!;
 
-        // nullable reference type fix
-        public virtual List<ProductOperation> ProductOperations { get; set; }
-        public virtual List<Shift> Shifts { get; set; }
-
-
+        public virtual List<ProductOperation> ProductOperations { get; set; } = null!;
+        public virtual List<Shift> Shifts { get; set; } = null!;
     }
 }
