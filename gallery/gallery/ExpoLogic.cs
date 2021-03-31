@@ -8,8 +8,9 @@ namespace gallery
 {
     class ExpoLogic
     {
-        static List<int> oldExpoPictures;
-        static List<int> newExpoPictures;
+        static List<int> oldExpoPictures = new List<int>();
+        static List<int> newExpoPictures = new List<int>();
+        static List<string> oldInfo;
 
         static public void addExpo(string name, DateTime start, DateTime end, string place, Context C)
         {
@@ -29,12 +30,14 @@ namespace gallery
 
             C.Expos.Add(expo);
 
-            //for (int i = 0; i < expoPictures.Count(); i++)
-            // C.ExpoPictures.Add( new ExpoPicture 
-            //{ 
-            //  ExpoId = expo.ExpoId, PictureId = expoPictures[i]
-            //}
-            //);
+            for (int i = 0; i < newExpoPictures.Count(); i++)
+            {
+                C.ExpoPictures.Add(new ExpoPicture
+                {
+                    ExpoId = expo.ExpoId,
+                    PictureId = newExpoPictures[i]
+                });
+            }
 
             C.SaveChanges();
 
@@ -55,7 +58,7 @@ namespace gallery
                 .Select(c => c.ExpoId).FirstOrDefault();
         }
 
-        static public Expo oldData(int id, Context C)
+        static public List<string> oldData(int id, Context C)
         {
             var oldData = C.Expos.Where(c => c.ExpoId == id)
                 .FirstOrDefault();
@@ -63,7 +66,9 @@ namespace gallery
             oldExpoPictures = C.ExpoPictures.Where(c => c.ExpoId == id).Select(c => c.PictureId).ToList<int>();
             newExpoPictures = C.ExpoPictures.Where(c => c.ExpoId == id).Select(c => c.PictureId).ToList<int>();
 
-            return oldData;
+            oldInfo = new List<string>{oldData.Name, oldData.Place, oldData.StartDate.ToString(), oldData.EndDate.ToString()};
+
+            return oldInfo;
         }
 
         static public string[] returnExpoPicturesList(int id, Context C)
@@ -76,7 +81,7 @@ namespace gallery
             return expoPictures.ToArray();
         }
 
-        static public string[] getExpoPicturesList(int id, Context C)
+        static public string[] getExpoPicturesList(Context C)
         {
             string[] s = new string[newExpoPictures.Count()];
             for (int i = 0; i < newExpoPictures.Count(); i++)
@@ -96,7 +101,7 @@ namespace gallery
             return pictures.ToArray();
         }
 
-        static public void sendToExpo(string p1, int id, Context C)
+        static public void sendToExpo(string p1, Context C)
         {
             int pId = C.ExpoPictures.Where(c => c.Picture.Name + ", автор - " + c.Picture.Artist.FullName == p1).FirstOrDefault().PictureId;          
 
@@ -106,14 +111,14 @@ namespace gallery
             }     
         }
 
-        static public void sendToStorage(string p1, int id, Context C)
+        static public void sendToStorage(string p1, Context C)
         {
             int pId = C.Pictures.Where(c => c.Name + ", автор - " + c.Artist.FullName == p1)
                .Select(c => c.PictureId).FirstOrDefault();
             newExpoPictures.Remove(pId);
         }
 
-        static public void apply(int id, Context C)
+        static public void apply(string name, string place, DateTime start, DateTime end, int id, Context C)
         {
             var ex = C.ExpoPictures.Where(c => c.ExpoId == id).ToArray();
             C.ExpoPictures.RemoveRange(ex);
@@ -133,7 +138,12 @@ namespace gallery
 
             C.ExpoPictures.AddRange(exp);
 
-            // apply new info
+            var expo = C.Expos.Where(c => c.ExpoId == id)
+                .FirstOrDefault();
+            expo.Name = name;
+            expo.Place = place;
+            expo.StartDate = start;
+            expo.EndDate = end;
 
             C.SaveChanges();
         }

@@ -21,6 +21,7 @@ namespace gallery
 
         private void ExpoListForm_Load(object sender, EventArgs e)
         {
+            listExpoBox.Items.Clear();
             listExpoBox.Items.AddRange(C.Expos.Select(c => c.Name).ToArray());    
         }
 

@@ -23,13 +23,35 @@ namespace gallery
             picturesBox.Items.AddRange(ExpoLogic.updatePicturesList(C));
         }
 
+        void picturesBox_DoubleClick(object sender, EventArgs e)
+        {
+            ExpoLogic.sendToExpo(picturesBox.SelectedItem.ToString(), C);
+            updateExpoPicturesList(ExpoLogic.getExpoPicturesList(C));
+        }
+        void expoPicturesBox_DoubleClick(object sender, EventArgs e)
+        {
+            ExpoLogic.sendToStorage(expoPicturesBox.SelectedItem.ToString(), C);
+            updateExpoPicturesList(ExpoLogic.getExpoPicturesList(C));
+        }
+
+        private void updateExpoPicturesList(string[] upData)
+        {
+            expoPicturesBox.Items.Clear();
+            expoPicturesBox.Items.AddRange(upData);
+        }
+
         private void addButton_Click(object sender, EventArgs e)
         {
             try{
                 ExpoLogic.addExpo(nameBox.Text, startDatePicker.Value, endDatePicker.Value, placeBox.Text, C);
-            }catch(Exception ex){
+                this.Close();
+            }
+            catch(Exception ex){
                 MessageBox.Show(ex.Message.ToString());
             }
+            
         }
+
+
     }
 }

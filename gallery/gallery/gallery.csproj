@@ -181,12 +181,6 @@
     <Compile Include="EmployeeListForm.Designer.cs">
       <DependentUpon>EmployeeListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ExpoViewForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ExpoViewForm.Designer.cs">
-      <DependentUpon>ExpoViewForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="GalleryListForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,10 +227,6 @@
     <Compile Include="Migrations\202103041044370_renameplace.designer.cs">
       <DependentUpon>202103041044370_renameplace.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202103130522277_t4.cs" />
-    <Compile Include="Migrations\202103130522277_t4.designer.cs">
-      <DependentUpon>202103130522277_t4.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Picture.cs" />
     <Compile Include="PictureListForm.cs">
@@ -277,9 +267,6 @@
     <EmbeddedResource Include="ExpoListForm.resx">
       <DependentUpon>ExpoListForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ExpoViewForm.resx">
-      <DependentUpon>ExpoViewForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GalleryListForm.resx">
       <DependentUpon>GalleryListForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -300,9 +287,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103041044370_renameplace.resx">
       <DependentUpon>202103041044370_renameplace.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202103130522277_t4.resx">
-      <DependentUpon>202103130522277_t4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PictureListForm.resx">
       <DependentUpon>PictureListForm.cs</DependentUpon>

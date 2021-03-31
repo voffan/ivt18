@@ -49,9 +49,10 @@ namespace gallery
             // editButton
             // 
             this.editButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.editButton.Location = new System.Drawing.Point(1051, 621);
+            this.editButton.Location = new System.Drawing.Point(1351, 764);
+            this.editButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(129, 38);
+            this.editButton.Size = new System.Drawing.Size(172, 47);
             this.editButton.TabIndex = 0;
             this.editButton.Text = "Применить";
             this.editButton.UseVisualStyleBackColor = true;
@@ -61,51 +62,57 @@ namespace gallery
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(247, 41);
+            this.label1.Location = new System.Drawing.Point(124, 50);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(579, 24);
+            this.label1.Size = new System.Drawing.Size(360, 29);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Редактировать экспозицию (ред. инф. пока не работает)";
+            this.label1.Text = "Редактировать экспозицию";
             // 
             // startDatePicker
             // 
             this.startDatePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.startDatePicker.Location = new System.Drawing.Point(349, 220);
+            this.startDatePicker.Location = new System.Drawing.Point(129, 320);
+            this.startDatePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.startDatePicker.Name = "startDatePicker";
-            this.startDatePicker.Size = new System.Drawing.Size(200, 26);
+            this.startDatePicker.Size = new System.Drawing.Size(345, 30);
             this.startDatePicker.TabIndex = 2;
             // 
             // endDatePicker
             // 
             this.endDatePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.endDatePicker.Location = new System.Drawing.Point(602, 218);
+            this.endDatePicker.Location = new System.Drawing.Point(493, 320);
+            this.endDatePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.endDatePicker.Name = "endDatePicker";
-            this.endDatePicker.Size = new System.Drawing.Size(200, 26);
+            this.endDatePicker.Size = new System.Drawing.Size(347, 30);
             this.endDatePicker.TabIndex = 3;
             // 
             // nameBox
             // 
             this.nameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.nameBox.Location = new System.Drawing.Point(349, 119);
+            this.nameBox.Location = new System.Drawing.Point(129, 139);
+            this.nameBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(453, 26);
+            this.nameBox.Size = new System.Drawing.Size(711, 30);
             this.nameBox.TabIndex = 4;
             // 
             // placeBox
             // 
             this.placeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.placeBox.Location = new System.Drawing.Point(349, 167);
+            this.placeBox.Location = new System.Drawing.Point(129, 225);
+            this.placeBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.placeBox.Name = "placeBox";
-            this.placeBox.Size = new System.Drawing.Size(453, 26);
+            this.placeBox.Size = new System.Drawing.Size(711, 30);
             this.placeBox.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(93, 125);
+            this.label2.Location = new System.Drawing.Point(124, 110);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 20);
+            this.label2.Size = new System.Drawing.Size(99, 25);
             this.label2.TabIndex = 6;
             this.label2.Text = "Название";
             // 
@@ -113,9 +120,10 @@ namespace gallery
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(93, 173);
+            this.label3.Location = new System.Drawing.Point(124, 196);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 20);
+            this.label3.Size = new System.Drawing.Size(69, 25);
             this.label3.TabIndex = 7;
             this.label3.Text = "Город";
             // 
@@ -123,10 +131,11 @@ namespace gallery
             // 
             this.picturesBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.picturesBox.FormattingEnabled = true;
-            this.picturesBox.ItemHeight = 20;
-            this.picturesBox.Location = new System.Drawing.Point(130, 335);
+            this.picturesBox.ItemHeight = 25;
+            this.picturesBox.Location = new System.Drawing.Point(129, 432);
+            this.picturesBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picturesBox.Name = "picturesBox";
-            this.picturesBox.Size = new System.Drawing.Size(408, 324);
+            this.picturesBox.Size = new System.Drawing.Size(543, 379);
             this.picturesBox.TabIndex = 8;
             this.picturesBox.DoubleClick += new System.EventHandler(this.picturesBox_DoubleClick);
             // 
@@ -134,10 +143,11 @@ namespace gallery
             // 
             this.expoPicturesBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.expoPicturesBox.FormattingEnabled = true;
-            this.expoPicturesBox.ItemHeight = 20;
-            this.expoPicturesBox.Location = new System.Drawing.Point(639, 335);
+            this.expoPicturesBox.ItemHeight = 25;
+            this.expoPicturesBox.Location = new System.Drawing.Point(786, 432);
+            this.expoPicturesBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.expoPicturesBox.Name = "expoPicturesBox";
-            this.expoPicturesBox.Size = new System.Drawing.Size(381, 324);
+            this.expoPicturesBox.Size = new System.Drawing.Size(507, 379);
             this.expoPicturesBox.TabIndex = 9;
             this.expoPicturesBox.DoubleClick += new System.EventHandler(this.expoPicturesBox_DoubleClick);
             // 
@@ -145,9 +155,10 @@ namespace gallery
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(127, 306);
+            this.label4.Location = new System.Drawing.Point(124, 403);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 20);
+            this.label4.Size = new System.Drawing.Size(129, 25);
             this.label4.TabIndex = 10;
             this.label4.Text = "Все картины";
             // 
@@ -155,9 +166,10 @@ namespace gallery
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(636, 306);
+            this.label5.Location = new System.Drawing.Point(781, 403);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(188, 20);
+            this.label5.Size = new System.Drawing.Size(233, 25);
             this.label5.TabIndex = 11;
             this.label5.Text = "Картины на экспозиции";
             // 
@@ -165,9 +177,10 @@ namespace gallery
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(93, 225);
+            this.label6.Location = new System.Drawing.Point(124, 291);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(154, 20);
+            this.label6.Size = new System.Drawing.Size(189, 25);
             this.label6.TabIndex = 12;
             this.label6.Text = "Время проведения";
             // 
@@ -175,28 +188,30 @@ namespace gallery
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(569, 476);
+            this.label7.Location = new System.Drawing.Point(709, 589);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 29);
+            this.label7.Size = new System.Drawing.Size(51, 36);
             this.label7.TabIndex = 13;
             this.label7.Text = ">>";
             // 
             // cancelButton
             // 
             this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cancelButton.Location = new System.Drawing.Point(1051, 555);
+            this.cancelButton.Location = new System.Drawing.Point(1351, 683);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(129, 38);
+            this.cancelButton.Size = new System.Drawing.Size(172, 47);
             this.cancelButton.TabIndex = 14;
-            this.cancelButton.Text = "Отменить";
+            this.cancelButton.Text = "Сбросить";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // EditExpoForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1220, 734);
+            this.ClientSize = new System.Drawing.Size(1627, 903);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -212,9 +227,10 @@ namespace gallery
             this.Controls.Add(this.startDatePicker);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.editButton);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EditExpoForm";
             this.Text = "Редактировать экспозицию";
-            this.Load += new System.EventHandler(this.EditExpoForm_Load);
+            this.Load += new System.EventHandler(this.cancelButton_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 
