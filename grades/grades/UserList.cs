@@ -30,6 +30,31 @@ namespace grades
 
             usersDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
+            SetUpForm();
+            SetUpComponentAnchors();
+        }
+
+        private void SetUpForm()
+        {
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.StartPosition = FormStartPosition.CenterScreen;
+        }
+
+        private void SetUpComponentAnchors()
+        {
+            searchLabel.Anchor = (AnchorStyles.Top | AnchorStyles.Left);
+            searchBox.Anchor = (AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right);
+
+            usersDGV.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right);
+
+            displayLabel.Anchor = (AnchorStyles.Bottom | AnchorStyles.Left);
+            showStaff.Anchor = (AnchorStyles.Bottom | AnchorStyles.Left);
+            showStudents.Anchor = (AnchorStyles.Bottom | AnchorStyles.Left);
+
+            viewUser.Anchor = (AnchorStyles.Bottom | AnchorStyles.Right);
+            addUser.Anchor = (AnchorStyles.Bottom | AnchorStyles.Right);
+            editUser.Anchor = (AnchorStyles.Bottom | AnchorStyles.Right);
+            deleteUser.Anchor = (AnchorStyles.Bottom | AnchorStyles.Right);
         }
 
         public void test()
@@ -128,8 +153,11 @@ namespace grades
             if (usersDGV.Columns["PersonId"] != null)
                 usersDGV.Columns["PersonId"].Visible = false;
 
-            usersDGV.Columns["Должность"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            usersDGV.Columns["Должность"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            if (usersDGV.Columns["Должность"] != null)
+            {
+                usersDGV.Columns["Должность"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                usersDGV.Columns["Должность"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
         }
 
         private void editUser_Click(object sender, EventArgs e)

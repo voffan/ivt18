@@ -32,7 +32,7 @@
             this.deleteUser = new System.Windows.Forms.Button();
             this.editUser = new System.Windows.Forms.Button();
             this.addUser = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.displayLabel = new System.Windows.Forms.Label();
             this.showStaff = new System.Windows.Forms.CheckBox();
             this.showStudents = new System.Windows.Forms.CheckBox();
             this.searchBox = new System.Windows.Forms.TextBox();
@@ -80,14 +80,14 @@
             this.addUser.UseVisualStyleBackColor = true;
             this.addUser.Click += new System.EventHandler(this.addUser_Click);
             // 
-            // label1
+            // displayLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 423);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Отображать:";
+            this.displayLabel.AutoSize = true;
+            this.displayLabel.Location = new System.Drawing.Point(13, 423);
+            this.displayLabel.Name = "displayLabel";
+            this.displayLabel.Size = new System.Drawing.Size(72, 13);
+            this.displayLabel.TabIndex = 4;
+            this.displayLabel.Text = "Отображать:";
             // 
             // showStaff
             // 
@@ -152,7 +152,7 @@
             this.Controls.Add(this.searchBox);
             this.Controls.Add(this.showStudents);
             this.Controls.Add(this.showStaff);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.displayLabel);
             this.Controls.Add(this.addUser);
             this.Controls.Add(this.editUser);
             this.Controls.Add(this.deleteUser);
@@ -172,7 +172,7 @@
         private System.Windows.Forms.Button deleteUser;
         private System.Windows.Forms.Button editUser;
         private System.Windows.Forms.Button addUser;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label displayLabel;
         private System.Windows.Forms.CheckBox showStaff;
         private System.Windows.Forms.CheckBox showStudents;
         private System.Windows.Forms.TextBox searchBox;
