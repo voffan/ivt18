@@ -10,18 +10,13 @@ namespace gallery
     {
         static List<int> oldExpoPictures;
         static List<int> newExpoPictures;
-        static public Expo ViewExpo(int id,Context C)
-        {
-            var expo = C.Expos.Where(c => c.ExpoId == id).FirstOrDefault();
-            return expo;
-        }
 
-        static public void AddExpo(string name, DateTime start, DateTime end, string place, Context C)
+        static public void addExpo(string name, DateTime start, DateTime end, string place, Context C)
         {
-            var e = C.Expos.Where(c => c.Name == name).FirstOrDefault();
-            if (e != null)
+            var ex = C.Expos.Where(c => c.Name == name).FirstOrDefault();
+            if (ex != null)
             {
-                throw new InvalidOperationException("Exposition already exists!");
+                throw new Exception("Exposition already exists!");
             }
 
             Expo expo = new Expo
@@ -45,6 +40,15 @@ namespace gallery
 
         }
 
+        static public void deleteExpo(string name, Context C)
+        {
+            var ex = C.Expos.Where(c => c.Name == name).FirstOrDefault();
+
+            C.Expos.Remove(ex);
+            C.SaveChanges();
+
+        }
+
         static public int getId(string s, Context C)
         {
             return C.Expos.Where(c => c.Name == s)
@@ -55,6 +59,7 @@ namespace gallery
         {
             var oldData = C.Expos.Where(c => c.ExpoId == id)
                 .FirstOrDefault();
+
             oldExpoPictures = C.ExpoPictures.Where(c => c.ExpoId == id).Select(c => c.PictureId).ToList<int>();
             newExpoPictures = C.ExpoPictures.Where(c => c.ExpoId == id).Select(c => c.PictureId).ToList<int>();
 
@@ -108,7 +113,7 @@ namespace gallery
             newExpoPictures.Remove(pId);
         }
 
-        static public void Apply(int id, Context C)
+        static public void apply(int id, Context C)
         {
             var ex = C.ExpoPictures.Where(c => c.ExpoId == id).ToArray();
             C.ExpoPictures.RemoveRange(ex);
@@ -127,6 +132,9 @@ namespace gallery
             }
 
             C.ExpoPictures.AddRange(exp);
+
+            // apply new info
+
             C.SaveChanges();
         }
     }

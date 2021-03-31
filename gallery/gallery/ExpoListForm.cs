@@ -21,23 +21,13 @@ namespace gallery
 
         private void ExpoListForm_Load(object sender, EventArgs e)
         {
-            listExpoBox.Items.AddRange(C.Expos.Select(c => c.Name).ToArray());
-            
+            listExpoBox.Items.AddRange(C.Expos.Select(c => c.Name).ToArray());    
         }
 
         private void listExpoBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             var s = listExpoBox.SelectedItem.ToString();
             id = ExpoLogic.getId(s, C);
-        }
-
-        private void listExpoBox_DoubleClick(object sender, EventArgs e)
-        {
-            ExpoViewForm expoViewForm = new ExpoViewForm();
-            expoViewForm.C = C;
-            expoViewForm.id = id; 
-            expoViewForm.Show();
-            
         }
 
         private void addExpoButton_Click(object sender, EventArgs e)
@@ -57,10 +47,11 @@ namespace gallery
 
         private void deleteExpoButton_Click(object sender, EventArgs e)
         {
-            // ExpoDeleteForm expoDeleteForm = new ExpoDeleteForm();
-            // expoDeleteForm.C = C;
-            // expoDeleteForm.id = id;
-            // expoDeleteForm.Show(); <-- (ExpoLogic.deleteExpo(id, C);)
+            var s = listExpoBox.SelectedItem.ToString();
+            ExpoLogic.deleteExpo(s, C);
+
+            listExpoBox.Items.Clear();
+            listExpoBox.Items.AddRange(C.Expos.Select(c => c.Name).ToArray());
         }
     }
 }

@@ -20,15 +20,15 @@ namespace gallery
 
         private void AddExpoForm_Load(object sender, EventArgs e)
         {
-
+            picturesBox.Items.AddRange(ExpoLogic.updatePicturesList(C));
         }
 
         private void addButton_Click(object sender, EventArgs e)
         {
             try{
-                ExpoLogic.AddExpo(nameBox.Text, startDatePicker.Value, endDatePicker.Value, placeBox.Text, C);
+                ExpoLogic.addExpo(nameBox.Text, startDatePicker.Value, endDatePicker.Value, placeBox.Text, C);
             }catch(Exception ex){
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message.ToString());
             }
         }
     }
