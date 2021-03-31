@@ -49,7 +49,7 @@ namespace grades
                         Login = csv.GetField<String>("Login"),
                         Password = csv.GetField<String>("Password"),
                         PositionId = csv.GetField<int>("PositionId"),
-                };
+                    };
                     record.Position = Context.Positions.Where(x => x.PositionId == record.PositionId).Select(x => x).Single();
 
                     Context.Persons.Add(record);

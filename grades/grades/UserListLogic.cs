@@ -11,73 +11,112 @@ namespace grades
     {
         internal List<dynamic> GetPersonList(Context context, string searchTerm)
         {
-            searchTerm = searchTerm.Trim();
-            String[] searchTerms = searchTerm.Split(' ');
+            String[] searchTerms = searchTerm.Trim().Split(' ');
 
-            List<dynamic> personsList = new List<dynamic>();
+            var personsList = (from usr in context.Persons
+                                         select new
+                                         {
+                                             usr.PersonId,
+                                             Фамилия = usr.SurName,
+                                             Имя = usr.FirstName,
+                                             Отчество = usr.MiddleName,
+                                             Должность = usr.Position.Name
+                                         });
 
             foreach (string term in searchTerms)
             {
-                var personList = (from usr in context.Persons
-                                  where usr.SurName.Contains(term) ||
-                                        usr.FirstName.Contains(term) ||
-                                        usr.MiddleName.Contains(term)
+                var persons = (from usr in personsList
+                                  where usr.Фамилия.Contains(term) ||
+                                        usr.Имя.Contains(term) ||
+                                        usr.Отчество.Contains(term)
                                   select new
                                   {
                                       usr.PersonId,
-                                      Фамилия = usr.SurName,
-                                      Имя = usr.FirstName,
-                                      Отчество = usr.MiddleName,
-                                      Должность = usr.Position.Name
-                                  }).ToList<dynamic>();
+                                      Фамилия = usr.Фамилия,
+                                      Имя = usr.Имя,
+                                      Отчество = usr.Отчество,
+                                      Должность = usr.Должность
+                                  });
 
-                personsList.AddRange(personList);
+                personsList = persons;
             }
-            
 
-            return personsList.Distinct().ToList();
+
+            return personsList.ToList<dynamic>();
         }
 
         internal List<dynamic> GetStaffList(Context context, string searchTerm)
         {
             searchTerm = searchTerm.Trim();
+            String[] searchTerms = searchTerm.Split(' ');
 
             var staffList = (from usr in context.Persons
-                               where usr.Position.Name != "Student" &&
-                                    (usr.SurName.Contains(searchTerm) ||
-                                    usr.FirstName.Contains(searchTerm) ||
-                                    usr.MiddleName.Contains(searchTerm))
+                             where usr.Position.Name != "Ученик"
                              select new
                                {
                                    usr.PersonId,
-                                   usr.SurName,
-                                   usr.FirstName,
-                                   usr.MiddleName,
-                                   usr.Position.Name
-                               }).ToList<dynamic>();
+                                   Фамилия = usr.SurName,
+                                   Имя = usr.FirstName,
+                                   Отчество = usr.MiddleName,
+                                   Должность = usr.Position.Name
+                               });
 
-            return staffList;
+            foreach (string term in searchTerms)
+            {
+                var staff = (from usr in staffList
+                             where usr.Фамилия.Contains(term) ||
+                                      usr.Имя.Contains(term) ||
+                                      usr.Отчество.Contains(term)
+                             select new
+                             {
+                                 usr.PersonId,
+                                 Фамилия = usr.Фамилия,
+                                 Имя = usr.Имя,
+                                 Отчество = usr.Отчество,
+                                 Должность = usr.Должность
+                             });
+
+                staffList = staff;
+            }
+
+            return staffList.ToList<dynamic>();
         }
 
         internal List<dynamic> GetStudentList(Context context, string searchTerm)
         {
             searchTerm = searchTerm.Trim();
+            String[] searchTerms = searchTerm.Split(' ');
 
-            var studentList = (from usr in context.Persons
-                             where usr.Position.Name == "Student" &&
-                                    (usr.SurName.Contains(searchTerm) ||
-                                    usr.FirstName.Contains(searchTerm) ||
-                                    usr.MiddleName.Contains(searchTerm))
-                               select new
-                             {
-                                 usr.PersonId,
-                                 usr.SurName,
-                                 usr.FirstName,
-                                 usr.MiddleName,
-                                 usr.Position.Name
-                             }).ToList<dynamic>();
+            var studentsList = (from usr in context.Persons
+                                where usr.Position.Name == "Ученик"
+                                select new
+                                {
+                                    usr.PersonId,
+                                    Фамилия = usr.SurName,
+                                    Имя = usr.FirstName,
+                                    Отчество = usr.MiddleName,
+                                    Должность = usr.Position.Name
+                                });
 
-            return studentList;
+            foreach (string term in searchTerms)
+            {
+                var students = (from usr in studentsList
+                                where usr.Фамилия.Contains(term) ||
+                                        usr.Имя.Contains(term) ||
+                                        usr.Отчество.Contains(term)
+                                select new
+                                {
+                                    usr.PersonId,
+                                    Фамилия = usr.Фамилия,
+                                    Имя = usr.Имя,
+                                    Отчество = usr.Отчество,
+                                    Должность = usr.Должность
+                                });
+
+                studentsList = students;
+            }
+
+            return studentsList.ToList<dynamic>();
         }
 
         internal Person getPersonById(Context context, int personId)
