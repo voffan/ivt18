@@ -8,8 +8,8 @@ namespace grades
 {
     class ClassGeneretionLogic
     {
-        Context context;
-        internal void AddClass ( int n)
+        private Context context;
+        internal void AddClass ( Context context, int n)
         {
             for(int i = 0; i < n; i++)
             {
