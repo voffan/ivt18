@@ -15,7 +15,7 @@ namespace grades
     {
 
         private ClassGeneretionLogic _logic;
-  
+        private Context context;
 
         
         public ClassGeneretion()
@@ -30,7 +30,7 @@ namespace grades
 
             _logic = new ClassGeneretionLogic ();
 
-            _logic.AddClass(n);
+            _logic.AddClass(context, n);
 
         }
     }
