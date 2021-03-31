@@ -27,6 +27,9 @@ namespace grades
             Context = new Context();
             _logic = new UserListLogic();
             //test();
+
+            usersDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
         }
 
         public void test()
@@ -37,24 +40,57 @@ namespace grades
             {
                 csv.Read();
                 csv.ReadHeader();
+
                 while (csv.Read())
                 {
-                    var record = new Person
-                    {
-                        FirstName = csv.GetField<String>("FirstName"),
-                        SurName = csv.GetField<String>("SurName"),
-                        MiddleName = csv.GetField<String>("MidleName"),
-                        PhoneNumber = csv.GetField<String>("PhoneNumber"),
-                        HomeAddress = csv.GetField<String>("HomeAddress"),
-                        Login = csv.GetField<String>("Login"),
-                        Password = csv.GetField<String>("Password"),
-                        PositionId = csv.GetField<int>("PositionId"),
-                    };
-                    record.Position = Context.Positions.Where(x => x.PositionId == record.PositionId).Select(x => x).Single();
+                    string firstName = csv.GetField<String>("FirstName");
+                    string surName = csv.GetField<String>("SurName");
+                    string middleName = csv.GetField<String>("MidleName");
+                    string phoneNumber = csv.GetField<String>("PhoneNumber");
+                    string homeAddress = csv.GetField<String>("HomeAddress");
+                    string login = csv.GetField<String>("Login");
+                    string password = csv.GetField<String>("Password");
+                    int positionId = csv.GetField<int>("PositionId");
+                    string positionName = Context.Positions.Where(x => x.PositionId == positionId).Select(x => x.Name).Single();
 
-                    Context.Persons.Add(record);
+                    if (positionName == "Ученик")
+                    {
+                        Student record = new Student
+                        {
+                            FirstName = firstName,
+                            SurName = surName,
+                            MiddleName = middleName,
+                            PhoneNumber = phoneNumber,
+                            HomeAddress = homeAddress,
+                            Login = login,
+                            Password = password,
+                            PositionId = positionId
+                        };
+
+                        record.Position = Context.Positions.Where(x => x.PositionId == record.PositionId).Select(x => x).Single();
+                        Context.Persons.Add(record);
+                    }
+                    else
+                    {
+                        Staff record = new Staff
+                        {
+                            FirstName = firstName,
+                            SurName = surName,
+                            MiddleName = middleName,
+                            PhoneNumber = phoneNumber,
+                            HomeAddress = homeAddress,
+                            Login = login,
+                            Password = password,
+                            PositionId = positionId
+                        };
+
+                        record.Position = Context.Positions.Where(x => x.PositionId == record.PositionId).Select(x => x).Single();
+                        Context.Persons.Add(record);
+                    }
+
                 }
             }
+
             Context.SaveChanges();
         }
 
@@ -91,11 +127,14 @@ namespace grades
 
             if (usersDGV.Columns["PersonId"] != null)
                 usersDGV.Columns["PersonId"].Visible = false;
+
+            usersDGV.Columns["Должность"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            usersDGV.Columns["Должность"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
         private void editUser_Click(object sender, EventArgs e)
         {
-            int personId = getSelectedRowPersonId();
+            int personId = getSelectedRowPersonId().Last();
             Person personToEdit = _logic.getPersonById(Context, personId);
 
             AddUser editUserForm = new AddUser(Context);
@@ -107,9 +146,13 @@ namespace grades
 
         private void deleteUser_Click(object sender, EventArgs e)
         {
-            int personId = getSelectedRowPersonId();
-            _logic.DeleteUser(Context, personId);
-            UpdateList();
+            List<int> personsId = getSelectedRowPersonId();
+
+            for (int i = 0; i < personsId.Count; i++)
+            {
+                _logic.DeleteUser(Context, personsId[i]);
+                UpdateList();
+            }
         }
 
         private void showStaff_CheckedChanged(object sender, EventArgs e)
@@ -122,16 +165,30 @@ namespace grades
             UpdateList();
         }
 
-        private int getSelectedRowPersonId()
+        private List<int> getSelectedRowPersonId()
         {
-            if (usersDGV.SelectedCells.Count > 0)
+            List<int> selectedPersonsId = new List<int>();
+            if (usersDGV.SelectedRows.Count == 1)
             {
-                int selectedRowIndex = usersDGV.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = usersDGV.Rows[selectedRowIndex];
+                DataGridViewRow selectedRow = usersDGV.SelectedRows[0];
 
-                return Convert.ToInt32(selectedRow.Cells["PersonId"].Value.ToString());
+                selectedPersonsId.Add(Convert.ToInt32(selectedRow.Cells["PersonId"].Value.ToString()));
+                
+                return selectedPersonsId;
             }
-            return 0;
+            else if (usersDGV.SelectedRows.Count > 1)
+            {
+                for (int i = 0; i < usersDGV.SelectedRows.Count; i++)
+                {
+                    DataGridViewRow selectedRow = usersDGV.SelectedRows[i];
+
+                    selectedPersonsId.Add(Convert.ToInt32(selectedRow.Cells["PersonId"].Value.ToString()));
+                }
+
+                return selectedPersonsId.Distinct().ToList();
+            }
+
+            return null;
         }
 
         private void searchBox_TextChanged(object sender, EventArgs e)
@@ -141,7 +198,7 @@ namespace grades
 
         private void viewUser_Click(object sender, EventArgs e)
         {
-            int personId = getSelectedRowPersonId();
+            int personId = getSelectedRowPersonId().Last();
             Person personToDisplay = _logic.getPersonById(Context, personId);
 
             AddUser ViewUserForm = new AddUser(Context);
