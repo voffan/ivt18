@@ -17,11 +17,11 @@ namespace carton
         {
             Plan plan = new Plan();
 
-            plan.Name = ss[0];
-            plan.Date = ss[1];
-            plan.Status = PlanStatus.New;
-            plan.Planneds = null;
-            plan.ProdLineId = SomeProdLineId;
+            //plan.Name = ss[0];
+            //plan.Date = ss[1];
+            //plan.Status = PlanStatus.New;
+            //plan.Planneds = null;
+            //plan.ProdLineId = SomeProdLineId;
 
             context.Plans.Add(plan);
             context.SaveChanges();

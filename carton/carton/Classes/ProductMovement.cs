@@ -15,6 +15,8 @@ namespace carton
         [Key]
         public int Id { get; set; }
 
+        public int Amount { get; set; }
+
         public int ProductOperationId { get; set; }
         [ForeignKey("ProductOperationId")]
         public virtual ProductOperation ProductOperation { get; set; }

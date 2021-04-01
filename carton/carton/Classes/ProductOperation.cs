@@ -16,7 +16,6 @@ namespace carton
         public int Id { get; set; }
 
         public virtual List<ProductMovement> ProductMovements { get; set; }
-        public int Amount { get; set; }
         public int SourceId { get; set; }
         [ForeignKey("SourceId")]
         public Department Source { get; set; }

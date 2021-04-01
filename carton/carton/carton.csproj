@@ -112,6 +112,10 @@
     <Compile Include="Migrations\202103311301352_reboot.designer.cs">
       <DependentUpon>202103311301352_reboot.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104010747361_prod movement fix.cs" />
+    <Compile Include="Migrations\202104010747361_prod movement fix.designer.cs">
+      <DependentUpon>202104010747361_prod movement fix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -153,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103311301352_reboot.resx">
       <DependentUpon>202103311301352_reboot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104010747361_prod movement fix.resx">
+      <DependentUpon>202104010747361_prod movement fix.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -26,9 +26,9 @@ namespace carton
             if (type == 0)
             {
                 PlanLogic planLogic = new PlanLogic();
-                List<string> ss;
-                ss[0] = textBox1.Text;
-                planLogic.CreatePlan(context, ss);
+                //List<string> ss;
+                //ss[0] = textBox1.Text;
+                //planLogic.CreatePlan(context, ss);
             }
             else if (type == 1)
             {
