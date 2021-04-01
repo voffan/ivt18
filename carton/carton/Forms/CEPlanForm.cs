@@ -26,7 +26,9 @@ namespace carton
             if (type == 0)
             {
                 PlanLogic planLogic = new PlanLogic();
-                planLogic.CreatePlan(context);
+                List<string> ss;
+                ss[0] = textBox1.Text;
+                planLogic.CreatePlan(context, ss);
             }
             else if (type == 1)
             {
@@ -41,6 +43,18 @@ namespace carton
         private void returnButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void CEPlanForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'cartonDBDataSet.Plan' table. You can move, or remove it, as needed.
+            this.planTableAdapter.Fill(this.cartonDBDataSet.Plan);
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

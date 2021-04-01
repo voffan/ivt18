@@ -13,17 +13,18 @@ namespace carton
 
         }
 
-        public void CreatePlan(Context context)
+        public void CreatePlan(Context context, List<string> ss)
         {
             Plan plan = new Plan();
 
-            //plan.Id = nextID();
-            //plan.Name = nameBox.Text;
-            //plan.Date = dateBox.Text;
-            //plan.Status = PlanStatus.New;
-            //plan.Planneds = null;
-            //plan.ProdLineId = SomeProdLineId;
+            plan.Name = ss[0];
+            plan.Date = ss[1];
+            plan.Status = PlanStatus.New;
+            plan.Planneds = null;
+            plan.ProdLineId = SomeProdLineId;
+
             context.Plans.Add(plan);
+            context.SaveChanges();
         }
 
         public void EditPlan(Context context, Plan plan)
@@ -35,6 +36,7 @@ namespace carton
             //plan.Status = PlanStatus.New;
             //plan.Planneds = null;
             //plan.ProdLineId = SomeProdLineId;
+
             context.Plans.Add(plan);
         }
 
