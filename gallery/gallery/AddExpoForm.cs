@@ -10,9 +10,12 @@ using System.Windows.Forms;
 
 namespace gallery
 {
+    
     public partial class AddExpoForm : Form
     {
         public Context C { get; set; }
+        public int eId;
+
         public AddExpoForm()
         {
             InitializeComponent();
@@ -43,7 +46,7 @@ namespace gallery
         private void addButton_Click(object sender, EventArgs e)
         {
             try{
-                ExpoLogic.addExpo(nameBox.Text, startDatePicker.Value, endDatePicker.Value, placeBox.Text, C);
+                ExpoLogic.addExpo(nameBox.Text, startDatePicker.Value, endDatePicker.Value, placeBox.Text, eId, C);
                 this.Close();
             }
             catch(Exception ex){

@@ -12,7 +12,7 @@ namespace gallery
         static List<int> newExpoPictures = new List<int>();
         static List<string> oldInfo;
 
-        static public void addExpo(string name, DateTime start, DateTime end, string place, Context C)
+        static public void addExpo(string name, DateTime start, DateTime end, string place, int eId, Context C)
         {
             var ex = C.Expos.Where(c => c.Name == name).FirstOrDefault();
             if (ex != null)
@@ -37,17 +37,29 @@ namespace gallery
                     ExpoId = expo.ExpoId,
                     PictureId = newExpoPictures[i]
                 });
+
+                C.Journals.Add(new Journal
+                {
+                    EmployeeId = 1,  
+                    PlaceFromId = 1,
+                    PlaceToId = 1,
+                    PictureId = newExpoPictures[i],
+                    ExpoId = expo.ExpoId
+                });
             }
 
             C.SaveChanges();
 
         }
 
-        static public void deleteExpo(string name, Context C)
+        static public void deleteExpo(int id, Context C)
         {
-            var ex = C.Expos.Where(c => c.Name == name).FirstOrDefault();
+            var ex = C.Expos.Where(c => c.ExpoId == id).FirstOrDefault();
 
             C.Expos.Remove(ex);
+
+            var jour = C.Journals.Where(c => c.ExpoId == id);
+            C.Journals.RemoveRange(jour);
             C.SaveChanges();
 
         }
@@ -118,12 +130,16 @@ namespace gallery
             newExpoPictures.Remove(pId);
         }
 
-        static public void apply(string name, string place, DateTime start, DateTime end, int id, Context C)
+        static public void apply(string name, string place, DateTime start, DateTime end, int id, int eId, Context C)
         {
-            var ex = C.ExpoPictures.Where(c => c.ExpoId == id).ToArray();
+            var ex = C.ExpoPictures.Where(c => c.ExpoId == id);
             C.ExpoPictures.RemoveRange(ex);
 
+            var jour = C.Journals.Where(c => c.ExpoId == id);
+            C.Journals.RemoveRange(jour);
+
             List<ExpoPicture> exp = new List<ExpoPicture>(newExpoPictures.Count());
+            List<Journal> journ = new List<Journal>(newExpoPictures.Count());
 
             for (int i = 0; i < newExpoPictures.Count(); i++)
             {
@@ -134,9 +150,21 @@ namespace gallery
                 }
                 );
 
+                journ.Add(new Journal
+                {
+                    ExpoId = id,
+                    PictureId = newExpoPictures[i],
+                    PlaceFromId = 1,
+                    PlaceToId = 1,
+                    EmployeeId = 1
+                }
+                );
+
             }
 
             C.ExpoPictures.AddRange(exp);
+            C.Journals.AddRange(journ);
+
 
             var expo = C.Expos.Where(c => c.ExpoId == id)
                 .FirstOrDefault();
@@ -146,6 +174,11 @@ namespace gallery
             expo.EndDate = end;
 
             C.SaveChanges();
+        }
+
+        static public void updateJournal(Context C)
+        {
+            
         }
     }
 }

@@ -14,6 +14,8 @@ namespace gallery
     {
         public Context C { get; set; }
         public int id;
+        public int eId;
+
         public EditExpoForm()
         {
             InitializeComponent();
@@ -33,7 +35,7 @@ namespace gallery
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            ExpoLogic.apply(nameBox.Text, placeBox.Text, startDatePicker.Value, endDatePicker.Value, id, C);
+            ExpoLogic.apply(nameBox.Text, placeBox.Text, startDatePicker.Value, endDatePicker.Value, id, eId, C);
             this.Close();
         }
 

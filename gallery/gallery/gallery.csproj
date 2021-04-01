@@ -199,6 +199,13 @@
     <Compile Include="GenreListForm.Designer.cs">
       <DependentUpon>GenreListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="JournalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JournalForm.Designer.cs">
+      <DependentUpon>JournalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JournalLogic.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -281,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GenreListForm.resx">
       <DependentUpon>GenreListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JournalForm.resx">
+      <DependentUpon>JournalForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
