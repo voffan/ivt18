@@ -18,7 +18,7 @@ namespace gallery
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
 
-        public string Place { get; set; }
+        public string Address { get; set; }
 
         public virtual List<ExpoPicture> ExpoPictures { get; set; }
 

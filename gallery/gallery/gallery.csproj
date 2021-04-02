@@ -199,13 +199,17 @@
     <Compile Include="GenreListForm.Designer.cs">
       <DependentUpon>GenreListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="JournalForm.cs">
+    <Compile Include="Migrations\202104020406366_expoaddress.cs" />
+    <Compile Include="Migrations\202104020406366_expoaddress.designer.cs">
+      <DependentUpon>202104020406366_expoaddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="JournalForm.Designer.cs">
-      <DependentUpon>JournalForm.cs</DependentUpon>
+    <Compile Include="ReportsForm.Designer.cs">
+      <DependentUpon>ReportsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="JournalLogic.cs" />
+    <Compile Include="ReportLogic.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -289,8 +293,11 @@
     <EmbeddedResource Include="GenreListForm.resx">
       <DependentUpon>GenreListForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="JournalForm.resx">
-      <DependentUpon>JournalForm.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104020406366_expoaddress.resx">
+      <DependentUpon>202104020406366_expoaddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportsForm.resx">
+      <DependentUpon>ReportsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

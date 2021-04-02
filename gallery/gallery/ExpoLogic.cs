@@ -25,7 +25,7 @@ namespace gallery
                 Name = name,
                 StartDate = start,
                 EndDate = end,
-                Place = place
+                Address = place
             };
 
             C.Expos.Add(expo);
@@ -78,7 +78,7 @@ namespace gallery
             oldExpoPictures = C.ExpoPictures.Where(c => c.ExpoId == id).Select(c => c.PictureId).ToList<int>();
             newExpoPictures = C.ExpoPictures.Where(c => c.ExpoId == id).Select(c => c.PictureId).ToList<int>();
 
-            oldInfo = new List<string>{oldData.Name, oldData.Place, oldData.StartDate.ToString(), oldData.EndDate.ToString()};
+            oldInfo = new List<string>{oldData.Name, oldData.Address, oldData.StartDate.ToString(), oldData.EndDate.ToString()};
 
             return oldInfo;
         }
@@ -169,16 +169,12 @@ namespace gallery
             var expo = C.Expos.Where(c => c.ExpoId == id)
                 .FirstOrDefault();
             expo.Name = name;
-            expo.Place = place;
+            expo.Address = place;
             expo.StartDate = start;
             expo.EndDate = end;
 
             C.SaveChanges();
         }
 
-        static public void updateJournal(Context C)
-        {
-            
-        }
     }
 }
