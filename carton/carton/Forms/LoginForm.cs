@@ -15,7 +15,7 @@ namespace carton.Classes
         public Context context;
         public LoginForm()
         {
-            this.context = new Context();
+            context = new Context();
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;

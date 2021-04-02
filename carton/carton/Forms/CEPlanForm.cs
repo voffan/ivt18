@@ -48,7 +48,6 @@ namespace carton
         private void CEPlanForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'cartonDBDataSet.Plan' table. You can move, or remove it, as needed.
-            this.planTableAdapter.Fill(this.cartonDBDataSet.Plan);
 
         }
 

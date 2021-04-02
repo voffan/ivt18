@@ -58,11 +58,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CartonDBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CartonDBDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Classes\DailyProd.cs" />
     <Compile Include="Classes\Department.cs" />
     <Compile Include="Classes\Employee.cs" />
@@ -177,17 +172,6 @@
     <EmbeddedResource Include="Forms\UserManagement.resx">
       <DependentUpon>UserManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="CartonDBDataSet.xsc">
-      <DependentUpon>CartonDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="CartonDBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CartonDBDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CartonDBDataSet.xss">
-      <DependentUpon>CartonDBDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

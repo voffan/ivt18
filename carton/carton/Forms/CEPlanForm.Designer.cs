@@ -39,16 +39,13 @@ namespace carton
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cartonDBDataSet = new carton.CartonDBDataSet();
             this.planBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.planTableAdapter = new carton.CartonDBDataSetTableAdapters.PlanTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prodLineIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cartonDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.planBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,20 +134,6 @@ namespace carton
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // cartonDBDataSet
-            // 
-            this.cartonDBDataSet.DataSetName = "CartonDBDataSet";
-            this.cartonDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // planBindingSource
-            // 
-            this.planBindingSource.DataMember = "Plan";
-            this.planBindingSource.DataSource = this.cartonDBDataSet;
-            // 
-            // planTableAdapter
-            // 
-            this.planTableAdapter.ClearBeforeFill = true;
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -200,8 +183,6 @@ namespace carton
             this.Text = "CEPlan";
             this.Load += new System.EventHandler(this.CEPlanForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cartonDBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.planBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,9 +199,7 @@ namespace carton
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private CartonDBDataSet cartonDBDataSet;
         private System.Windows.Forms.BindingSource planBindingSource;
-        private CartonDBDataSetTableAdapters.PlanTableAdapter planTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
