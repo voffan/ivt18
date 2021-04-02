@@ -17,7 +17,7 @@ namespace grades
         public MainForm()
         {
             InitializeComponent();
-            
+            //test
         }
 
         private void MainForm_Load(object sender, EventArgs e)

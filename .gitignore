@@ -360,3 +360,14 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Entity Framework
+Migrations
+
+# VS packages
+packages
+
+obj
+
+.oob
+.rqb
