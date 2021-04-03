@@ -8,10 +8,7 @@ namespace Computers.Models
 {
     public class Peripheral : Device
     {
-        public Peripheral() {}
-        public int Id { get; set; }
-        public PeripheralType PeripheralType { get; set; }
         public string ItemNo { get; set; }
-        public Employee Employee { get; set; }
+        public string EmployeeId { get; set; }
     }
 }

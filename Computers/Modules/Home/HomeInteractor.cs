@@ -2,7 +2,6 @@
 using Computers.Modules.Computer;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,12 +21,12 @@ namespace Computers.Modules.Home
 
         public void LoadPeripherals()
         {
-            using (var context = new DatabaseContext())
+            /*using (var context = new DatabaseContext())
             {
                 List<Peripheral> peripherals = context.Peripherals.ToList();
                 Console.WriteLine("Context end");
                 Presenter.PresentPeripherals(peripherals);
-            }
+            }*/
         }
 
         public void AddComputer()

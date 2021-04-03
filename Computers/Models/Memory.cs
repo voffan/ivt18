@@ -8,9 +8,29 @@ namespace Computers.Models
 {
     public class Memory : Device
     {
-        public Memory() {}
-        public int Id { get; set; }
-        public int Amount { get; set; }
-        public Computer Computer { get; set; }
+        public Memory() { }
+        public Memory(Dictionary<string, object> dict) : base(dict)
+        {
+            if (dict.ContainsKey("computerId"))
+                ComputerId = dict["computerId"] as string;
+            if (dict.ContainsKey("capacity"))
+                Capacity = Convert.ToInt32(dict["capacity"]);
+        }
+        public override Dictionary<string, object> ToDict()
+        {
+            var deviceDict = base.ToDict();
+            var dict = new Dictionary<string, object>
+            {
+                { "computerId", ComputerId },
+                { "capacity", Capacity }
+            };
+            foreach (var deviceField in deviceDict)
+            {
+                dict.Add(deviceField.Key, deviceField.Value);
+            }
+            return dict;
+        }
+        public int Capacity { get; set; }
+        public string ComputerId { get; set; }
     }
 }

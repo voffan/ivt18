@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Google.Cloud.Firestore;
 
 namespace Computers.Modules.SingleFieldForm
 {
@@ -25,36 +26,27 @@ namespace Computers.Modules.SingleFieldForm
         {
             this.Presenter = Presenter;
             this.FormType = FormType;
-            this.FormOwner = FormOwner;
-
+            this.FormOwner = FormOwner;            
             Presenter.PresentConfigure(FormType);
         }
 
         // Create and pass object to owner form, close this
-        public void Submit()
+        public async void Submit()
         {
             if (FormOwner != null)
             {
-                using (var context = new DatabaseContext())
+                switch (FormType)
                 {
-                    switch (FormType)
-                    {
-                        case Utils.SingleFieldFormType.Manufacturer:
-                            Models.Manufacturer manufacturer = new Models.Manufacturer { Name = textFieldValue };
-                            context.Manufacturers.Add(manufacturer);
-                            break;
-                        case Utils.SingleFieldFormType.PeripheralType:
-                            Models.PeripheralType peripheralType = new Models.PeripheralType { Name = textFieldValue };
-                            context.PeripheralTypes.Add(peripheralType);
-                            break;
-                        case Utils.SingleFieldFormType.Status:
-                            Models.Status status = new Models.Status { Name = textFieldValue };
-                            context.Statuses.Add(status);
-                            break;
-                        default:
-                            break;
-                    }
-                    context.SaveChanges();
+                    case Utils.SingleFieldFormType.Manufacturer:
+                        var manufacturer = new Models.Manufacturer { Name = textFieldValue };
+                        await DatabaseContext.Shared.AddManufacturer(manufacturer);
+                        break;
+                    case Utils.SingleFieldFormType.Status:
+                        var status = new Models.Status { Name = textFieldValue };
+                        await DatabaseContext.Shared.AddStatus(status);
+                        break;
+                    default:
+                        break;
                 }
                 FormOwner.Update();
             }

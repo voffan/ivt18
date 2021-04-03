@@ -43,36 +43,30 @@ namespace Computers.Modules.Computer
             Configure();
         }
 
-        public void Configure()
+        public async void Configure()
         {
-            using (var context = new DatabaseContext())
-            {
-                Employees = context.Employees.ToList();
-                Processors = context.Processors.ToList();
-                Motherboards = context.Motherboards.ToList();
-                DiskDrives = context.DiskDrives.ToList();
-                PowerSupplies = context.PowerSupplies.ToList();
-                Memories = context.Memories.ToList();
-                HardDrives = context.HardDrives.ToList();
-                GraphicCards = context.GraphicCards.ToList();
-                Presenter.PresentConfigure(Employees, Processors, Motherboards, DiskDrives, PowerSupplies, Memories, HardDrives, GraphicCards);
-            }
+            Employees = await DatabaseContext.Shared.GetEmployees();
+            Processors = await DatabaseContext.Shared.GetProcessors();
+            Motherboards = await DatabaseContext.Shared.GetMotherboards();
+            DiskDrives = await DatabaseContext.Shared.GetDiskDrives();
+            PowerSupplies = await DatabaseContext.Shared.GetPowerSupplies();
+            Memories = await DatabaseContext.Shared.GetMemories();
+            HardDrives = await DatabaseContext.Shared.GetHardDrives();
+            GraphicCards = await DatabaseContext.Shared.GetGraphicCards();
+            Presenter.PresentConfigure(Employees, Processors, Motherboards, DiskDrives, PowerSupplies, Memories, HardDrives, GraphicCards);
         }
 
-        public void Update()
+        public async void Update()
         {
-            using (var context = new DatabaseContext())
-            {
-                Employees = context.Employees.ToList();
-                Processors = context.Processors.ToList();
-                Motherboards = context.Motherboards.ToList();
-                DiskDrives = context.DiskDrives.ToList();
-                PowerSupplies = context.PowerSupplies.ToList();
-                Memories = context.Memories.ToList();
-                HardDrives = context.HardDrives.ToList();
-                GraphicCards = context.GraphicCards.ToList();
-                Presenter.PresentUpdate(Employees, Processors, Motherboards, DiskDrives, PowerSupplies, Memories, HardDrives, GraphicCards);
-            }
+            Employees = await DatabaseContext.Shared.GetEmployees();
+            Processors = await DatabaseContext.Shared.GetProcessors();
+            Motherboards = await DatabaseContext.Shared.GetMotherboards();
+            DiskDrives = await DatabaseContext.Shared.GetDiskDrives();
+            PowerSupplies = await DatabaseContext.Shared.GetPowerSupplies();
+            Memories = await DatabaseContext.Shared.GetMemories();
+            HardDrives = await DatabaseContext.Shared.GetHardDrives();
+            GraphicCards = await DatabaseContext.Shared.GetGraphicCards();
+            Presenter.PresentUpdate(Employees, Processors, Motherboards, DiskDrives, PowerSupplies, Memories, HardDrives, GraphicCards);
         }
 
         public void AddEmployee()

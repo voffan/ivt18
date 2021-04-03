@@ -78,10 +78,10 @@ namespace Computers.Modules.SingleFieldForm
                     Text = "Новый статус";
                     label.Text = "Название статуса";
                     break;
-                case Utils.SingleFieldFormType.PeripheralType:
+                /*case Utils.SingleFieldFormType.PeripheralType:
                     Text = "Новый тип периферии";
                     label.Text = "Название типа периферии";
-                    break;
+                    break;*/
                 case Utils.SingleFieldFormType.Manufacturer:
                     Text = "Новый производитель";
                     label.Text = "Название производителя";

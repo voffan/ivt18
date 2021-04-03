@@ -8,33 +8,63 @@ namespace Computers.Models
 {
     public class Computer : Device
     {
-        public Computer()
+        public Computer() { }
+        public Computer(Dictionary<string, object> dict) : base(dict)
         {
-            this.PowerSupplies = new HashSet<PowerSupply>();
-            this.Memories = new HashSet<Memory>();
-            this.HardDrives = new HashSet<HardDrive>();
-            this.GraphicCards = new HashSet<GraphicCard>();
+            if (dict.ContainsKey("ip"))
+                Ip = dict["ip"] as string;
+            if (dict.ContainsKey("itemNo"))
+                ItemNo = dict["itemNo"] as string;
+            if (dict.ContainsKey("employeeId"))
+                EmployeeId = dict["employeeId"] as string;
+            if (dict.ContainsKey("diskDriveId"))
+                DiskDriveId = dict["diskDriveId"] as string;
+            if (dict.ContainsKey("processorId"))
+                ProcessorId = dict["processorId"] as string;
+            if (dict.ContainsKey("motherboardId"))
+                MotherboardId = dict["motherboardId"] as string;
+            if (dict.ContainsKey("powerSupplyIds"))
+                PowerSupplyIds = dict["powerSupplyIds"] as List<string>;
+            if (dict.ContainsKey("memoryIds"))
+                MemoryIds = dict["memoryIds"] as List<string>;
+            if (dict.ContainsKey("hardDriveIds"))
+                HardDriveIds = dict["hardDriveIds"] as List<string>;
+            if (dict.ContainsKey("graphicCardIds"))
+                GraphicCardIds = dict["graphicCardIds"] as List<string>;
         }
-        public int Id { get; set; }
-        public string IpAddress { get; set; }
+        public override Dictionary<string, object> ToDict()
+        {
+            var deviceDict = base.ToDict();
+            var dict = new Dictionary<string, object> 
+            {
+                { "ip", Ip },
+                { "itemNo", ItemNo },
+                { "employeeId", EmployeeId },
+                { "diskDriveId", DiskDriveId },
+                { "processorId", ProcessorId },
+                { "motherboardId", MotherboardId },
+                { "powerSupplyIds", PowerSupplyIds },
+                { "memoryIds", MemoryIds },
+                { "hardDriveIds", HardDriveIds },
+                { "graphicCardIds", GraphicCardIds }
+            };
+            foreach (var deviceField in deviceDict)
+            {
+                dict.Add(deviceField.Key, deviceField.Value);
+            }
+            return dict;
+        }
+        public string Ip { get; set; }
         public string ItemNo { get; set; }
 
-        // One-to-one
-        public virtual Employee Employee { get; set; }
-
-        // One-to-many
-        public int? DiskDriveId { get; set; }
-        public int? ProcessorId { get; set; }
-        public int? MotherboardId { get; set; }
-        public virtual DiskDrive DiskDrive { get; set; }
-        public virtual Processor Processor { get; set; }
-        public virtual Motherboard Motherboard { get; set; }
+        public string EmployeeId { get; set; }
+        public string DiskDriveId { get; set; }
+        public string ProcessorId { get; set; }
+        public string MotherboardId { get; set; }
         
-
-        public virtual ICollection<PowerSupply> PowerSupplies { get; set; }
-        public virtual ICollection<Memory> Memories { get; set; }
-        public virtual ICollection<HardDrive> HardDrives { get; set; }
-        public virtual ICollection<GraphicCard> GraphicCards { get; set; }
-
+        public List<String> PowerSupplyIds { get; set; }
+        public List<String> MemoryIds { get; set; }
+        public List<String> HardDriveIds { get; set; }
+        public List<String> GraphicCardIds { get; set; }
     }
 }

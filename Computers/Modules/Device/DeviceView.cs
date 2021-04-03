@@ -190,13 +190,15 @@ namespace Computers.Modules.Device
                     break;
                 case Utils.DeviceType.GraphicCard:
                     Text = "Добавление видеокарты";
-                    optionalLabel.Text = "Value (неизвестно)";
+                    optionalLabel.Text = "Объем памяти (Мб)";
+                    optionalNumericBox.Minimum = 0;
+                    optionalNumericBox.Maximum = 5000;
                     panel.Controls.Add(optionalLabel);
-                    panel.Controls.Add(optionalTextBox);
+                    panel.Controls.Add(optionalNumericBox);
                     optionalLabel.Size = labelSize;
                     optionalLabel.Location = new Point(10, 210);
-                    optionalTextBox.Size = labelSize;
-                    optionalTextBox.Location = new Point(10, 230);
+                    optionalNumericBox.Size = labelSize;
+                    optionalNumericBox.Location = new Point(10, 230);
                     break;
                 case Utils.DeviceType.Motherboard:
                     Text = "Добавление мат. платы";

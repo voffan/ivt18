@@ -26,7 +26,6 @@ namespace Computers.Utils
     public enum SingleFieldFormType
     {
         Manufacturer,
-        Status,
-        PeripheralType
+        Status
     }
 }

@@ -9,17 +9,28 @@ namespace Computers.Models
 {
     public class Employee
     {
-        public Employee()
+        public Employee() { }
+        public Employee(Dictionary<string, object> dict)
         {
-            this.Peripherals = new HashSet<Peripheral>();
+            if (dict.ContainsKey("surname"))
+                Surname = dict["surname"] as string;
+            if (dict.ContainsKey("name"))
+                Name = dict["name"] as string;
+            if (dict.ContainsKey("patronymicName"))
+                PatronymicName = dict["patronymicName"] as string;
+            if (dict.ContainsKey("room"))
+                Room = dict["room"] as string;
+            if (dict.ContainsKey("computerId"))
+                ComputerId = dict["computerId"] as string;
+            if (dict.ContainsKey("peripheralIds"))
+                PeripheralIds = dict["peripheralIds"] as List<string>;
         }
-
-        [ForeignKey("Computer")]
-        public int Id { get; set; }
+        public string Id { get; set; }
+        public string Surname { get; set; }
         public string Name { get; set; }
+        public string PatronymicName { get; set; }
         public string Room { get; set; }
-        public int? ComputerId { get; set; }
-        public Computer Computer { get; set; }
-        public virtual ICollection<Peripheral> Peripherals { get; set; }
+        public string ComputerId { get; set; }
+        public List<string> PeripheralIds { get; set; }
     }
 }

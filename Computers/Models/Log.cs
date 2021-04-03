@@ -9,11 +9,11 @@ namespace Computers.Models
 {
     public class Log
     {
-        public int Id { get; set; }
-        public int? OperationId { get; set; }
-        public virtual Operation Operation { get; set; }
+        public string Id { get; set; }
+        // public int? OperationId { get; set; }
+        // public virtual Operation Operation { get; set; }
 
-        [DateColumn]
-        public DateTime Date { get; set; }
+        // [DateColumn]
+        // public DateTime Date { get; set; }
     }
 }

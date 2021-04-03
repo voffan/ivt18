@@ -86,76 +86,38 @@ namespace Computers.Modules.Device
             Presenter.PresentClose();
         }
 
-        public void Submit()
+        public async void Submit()
         {
             if (FormOwner != null)
             {
-                using (var context = new DatabaseContext())
-                {
-                    context.Manufacturers.Attach(Device.Manufacturer);
-                    context.Statuses.Attach(Device.Status);
-                    switch (DeviceType)
-                    {
-                        case DeviceType.None:
-                            break;
-                        case DeviceType.Processor:
-                            context.Processors.Add(Device as Models.Processor);
-                            break;
-                        case DeviceType.GraphicCard:
-                            context.GraphicCards.Add(Device as Models.GraphicCard);
-                            break;
-                        case DeviceType.HardDrive:
-                            context.HardDrives.Add(Device as Models.HardDrive);
-                            break;
-                        case DeviceType.Motherboard:
-                            context.Motherboards.Add(Device as Models.Motherboard);
-                            break;
-                        case DeviceType.Memory:
-                            context.Memories.Add(Device as Models.Memory);
-                            break;
-                        case DeviceType.PowerSupply:
-                            context.PowerSupplies.Add(Device as Models.PowerSupply);
-                            break;
-                    }
-                    context.SaveChanges();
-                }
+                await DatabaseContext.Shared.AddDevice(Device, DeviceType);
                 FormOwner.Update();
             }
             Presenter.PresentClose();
         }
 
-        public void Configure()
+        public async void Configure()
         {
-            using (var context = new DatabaseContext())
-            {
-                Manufacturers = context.Manufacturers.ToList();
-                Statuses = context.Statuses.ToList();
-                Presenter.PresentConfigure(Manufacturers, Statuses, DeviceType);
-            }
+            Manufacturers = await DatabaseContext.Shared.GetManufacturers();
+            Statuses = await DatabaseContext.Shared.GetStatuses();
+            Presenter.PresentConfigure(Manufacturers, Statuses, DeviceType);
         }
 
-        public void Update()
+        public async void Update()
         {
-            using (var context = new DatabaseContext())
-            {
-                Manufacturers = context.Manufacturers.ToList();
-                Statuses = context.Statuses.ToList();
-                Presenter.PresentUpdate(Manufacturers, Statuses);
-            }
+            Manufacturers = await DatabaseContext.Shared.GetManufacturers();
+            Statuses = await DatabaseContext.Shared.GetStatuses();
+            Presenter.PresentUpdate(Manufacturers, Statuses);
         }
 
         public void SelectManufacturer(int index)
         {
-            Device.Manufacturer = Manufacturers.ElementAt(index);
-            Console.WriteLine("Manufacturer");
-            Console.WriteLine(Device.Manufacturer.Name);
+            Device.ManufacturerId = Manufacturers.ElementAt(index).Id;
         }
 
         public void SelectStatus(int index)
         {
-            Device.Status = Statuses.ElementAt(index);
-            Console.WriteLine("Status");
-            Console.WriteLine(Device.Status.Name);
+            Device.StatusId = Statuses.ElementAt(index).Id;
         }
 
         public void SetName(string name)
@@ -178,10 +140,13 @@ namespace Computers.Modules.Device
                     (Device as Models.HardDrive).Capacity = number;
                     break;
                 case DeviceType.Memory:
-                    (Device as Models.Memory).Amount = number;
+                    (Device as Models.Memory).Capacity = number;
                     break;
                 case DeviceType.PowerSupply:
                     (Device as Models.PowerSupply).Power = number;
+                    break;
+                case DeviceType.GraphicCard:
+                    (Device as Models.GraphicCard).Capacity = number;
                     break;
                 default:
                     break;
@@ -195,9 +160,6 @@ namespace Computers.Modules.Device
             {
                 case DeviceType.Processor:
                     (Device as Models.Processor).Frequency = text;
-                    break;
-                case DeviceType.GraphicCard:
-                    (Device as Models.GraphicCard).Value = text;
                     break;
                 default: 
                     break;

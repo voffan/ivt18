@@ -6,10 +6,10 @@ namespace Computers.Models
     {
         public Operation()
         {
-            this.Logs = new HashSet<Log>();
+            // this.Logs = new HashSet<Log>();
         }
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
-        public virtual ICollection<Log> Logs { get; set; }
+        // public virtual ICollection<Log> Logs { get; set; }
     }
 }

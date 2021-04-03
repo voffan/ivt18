@@ -67,7 +67,7 @@ namespace Computers.Modules.Computer
             }
             foreach (var diskDrive in diskDrives)
             {
-                viewModel.DiskDrives.Add($"{diskDrive.Name}, {diskDrive.Model}", diskDrive);
+                viewModel.DiskDrives.Add($"{diskDrive.Name}, {diskDrive.Name}", diskDrive);
             }
             foreach (var powerSupply in powerSupplies)
             {
@@ -75,7 +75,7 @@ namespace Computers.Modules.Computer
             }
             foreach (var memory in memories)
             {
-                viewModel.Memories.Add($"{memory.Name}, {memory.Amount} ГБ", memory);
+                viewModel.Memories.Add($"{memory.Name}, {memory.Capacity} ГБ", memory);
             }
             foreach (var hardDrive in hardDrives)
             {
@@ -83,7 +83,7 @@ namespace Computers.Modules.Computer
             }
             foreach (var graphicCard in graphicCards)
             {
-                viewModel.GraphicCards.Add($"{graphicCard.Name}, {graphicCard.Value} V", graphicCard);
+                viewModel.GraphicCards.Add($"{graphicCard.Name}, {graphicCard.Capacity} МБ", graphicCard);
             }
             View.Configure(viewModel);
         }
@@ -113,7 +113,7 @@ namespace Computers.Modules.Computer
             }
             foreach (var diskDrive in diskDrives)
             {
-                viewModel.DiskDrives.Add($"{diskDrive.Name}, {diskDrive.Model}", diskDrive);
+                viewModel.DiskDrives.Add($"{diskDrive.Name}, {diskDrive.Name}", diskDrive);
             }
             foreach (var powerSupply in powerSupplies)
             {
@@ -121,7 +121,7 @@ namespace Computers.Modules.Computer
             }
             foreach (var memory in memories)
             {
-                viewModel.Memories.Add($"{memory.Name}, {memory.Amount} ГБ", memory);
+                viewModel.Memories.Add($"{memory.Name}, {memory.Capacity} ГБ", memory);
             }
             foreach (var hardDrive in hardDrives)
             {
@@ -129,7 +129,7 @@ namespace Computers.Modules.Computer
             }
             foreach (var graphicCard in graphicCards)
             {
-                viewModel.GraphicCards.Add($"{graphicCard.Name}, {graphicCard.Value} V", graphicCard);
+                viewModel.GraphicCards.Add($"{graphicCard.Name}, {graphicCard.Capacity} МБ", graphicCard);
             }
             View.Update(viewModel);
         }

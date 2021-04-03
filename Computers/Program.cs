@@ -5,6 +5,7 @@ using Computers.Modules.Home;
 using Computers.Modules.Login;
 using Computers.Modules.SingleFieldForm;
 using Computers.Modules.Welcome;
+using Google.Cloud.Firestore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,15 +30,7 @@ namespace Computers
             {
                 Router.Shared.CurrentForm = new WelcomeBuilder().Build();
             }
-
 #if DEBUG
-            using (var context = new DatabaseContext())
-            {
-                var manufacturers = context.Manufacturers.FirstOrDefault();
-                context.SaveChanges();
-            }
-            Router.Shared.CurrentForm = new ComputerBuilder().Build();
-            // Router.Shared.CurrentForm = new ManufacturerBuilder().Build();
 #endif
             Application.Run();
         }
