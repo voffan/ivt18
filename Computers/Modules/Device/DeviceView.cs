@@ -29,10 +29,10 @@ namespace Computers.Modules.Device
         private readonly Label optionalLabel = new Label();
 
         private readonly TextBox nameTextBox = new TextBox();
-        private readonly ComboBox manufacturerComboBox = new ComboBox();
+        private readonly ListBox manufacturerListBox = new ListBox();
         private readonly Button addManufacturerButton = new Button();
         private readonly NumericUpDown priceNumericBox = new NumericUpDown();
-        private readonly ComboBox statusComboBox = new ComboBox();
+        private readonly ListBox statusListBox = new ListBox();
         private readonly Button addStatusButton = new Button();
         private readonly NumericUpDown optionalNumericBox = new NumericUpDown();
         private readonly TextBox optionalTextBox = new TextBox();
@@ -40,14 +40,16 @@ namespace Computers.Modules.Device
         private readonly Button submitButton = new Button();
         private readonly Button cancelButton = new Button();
 
-        private readonly Size panelSize = new Size(300, 300);
+        private readonly Size panelSize = new Size(600, 300);
         private readonly Size labelSize = new Size(280, 20);
+        private readonly Size listBoxSize = new Size(280, 60);
         private readonly Size rowLabelSize = new Size(200, 20);
         private readonly Size rowButtonSize = new Size(70, 20);
 
         public override void SetupView()
         {
             base.SetupView();
+            Size = new Size(620, 345);
         }
 
         public override void ViewDidLoad(object sender, EventArgs e)
@@ -69,11 +71,14 @@ namespace Computers.Modules.Device
             priceNumericBox.Maximum = 3000000;
             priceNumericBox.Minimum = 0;
 
+            manufacturerListBox.SelectionMode = SelectionMode.One;
+            statusListBox.SelectionMode = SelectionMode.One;
+
             nameTextBox.TextChanged += NameTextBoxChanged;
             addManufacturerButton.Click += AddManufacturerButtonClicked;
-            manufacturerComboBox.SelectionChangeCommitted += ManufacturerComboBoxSelected;
+            manufacturerListBox.SelectedIndexChanged += ManufacturerListBoxSelected;
             priceNumericBox.ValueChanged += PriceNumericBoxChanged;
-            statusComboBox.SelectionChangeCommitted += StatusComboBoxSelected;
+            statusListBox.SelectedIndexChanged += StatusListBoxSelected;
             optionalNumericBox.ValueChanged += OptionalNumericBoxChanged;
             optionalTextBox.TextChanged += OptionalTextBoxChanged;
 
@@ -81,12 +86,12 @@ namespace Computers.Modules.Device
             panel.Controls.Add(nameTextBox);
             panel.Controls.Add(manufacturerLabel);
             panel.Controls.Add(addManufacturerButton);
-            panel.Controls.Add(manufacturerComboBox);
+            panel.Controls.Add(manufacturerListBox);
             panel.Controls.Add(priceLabel);
             panel.Controls.Add(priceNumericBox);
             panel.Controls.Add(statusLabel);
             panel.Controls.Add(addStatusButton);
-            panel.Controls.Add(statusComboBox);
+            panel.Controls.Add(statusListBox);
             panel.Controls.Add(submitButton);
             panel.Controls.Add(cancelButton);
 
@@ -105,35 +110,35 @@ namespace Computers.Modules.Device
             nameTextBox.Size = labelSize;
             nameTextBox.Location = new Point(10, 30);
 
-            manufacturerLabel.Size = rowLabelSize;
-            manufacturerLabel.Location = new Point(10, 60);
-
-            addManufacturerButton.Size = rowButtonSize;
-            addManufacturerButton.Location = new Point(220, 55);
-
-            manufacturerComboBox.Size = labelSize;
-            manufacturerComboBox.Location = new Point(10, 80);
-
             priceLabel.Size = labelSize;
-            priceLabel.Location = new Point(10, 110);
+            priceLabel.Location = new Point(10, 60);
 
             priceNumericBox.Size = labelSize;
-            priceNumericBox.Location = new Point(10, 130);
+            priceNumericBox.Location = new Point(10, 80);
+
+            manufacturerLabel.Size = rowLabelSize;
+            manufacturerLabel.Location = new Point(310, 10);
+
+            addManufacturerButton.Size = rowButtonSize;
+            addManufacturerButton.Location = new Point(520, 5);
+
+            manufacturerListBox.Size = listBoxSize;
+            manufacturerListBox.Location = new Point(310, 30);
 
             statusLabel.Size = rowLabelSize;
-            statusLabel.Location = new Point(10, 160);
+            statusLabel.Location = new Point(310, 100);
 
             addStatusButton.Size = rowButtonSize;
-            addStatusButton.Location = new Point(220, 155);
+            addStatusButton.Location = new Point(520, 95);
 
-            statusComboBox.Size = labelSize;
-            statusComboBox.Location = new Point(10, 180);
+            statusListBox.Size = listBoxSize;
+            statusListBox.Location = new Point(310, 120);
 
             submitButton.Size = new Size(70, 25);
-            submitButton.Location = new Point(140, 265);
+            submitButton.Location = new Point(440, 265);
 
             cancelButton.Size = new Size(70, 25);
-            cancelButton.Location = new Point(220, 265);
+            cancelButton.Location = new Point(520, 265);
         }
 
         public void Configure(DeviceViewModel viewModel)
@@ -150,9 +155,9 @@ namespace Computers.Modules.Device
                     panel.Controls.Add(optionalLabel);
                     panel.Controls.Add(optionalNumericBox);
                     optionalLabel.Size = labelSize;
-                    optionalLabel.Location = new Point(10, 210);
+                    optionalLabel.Location = new Point(10, 115);
                     optionalNumericBox.Size = labelSize;
-                    optionalNumericBox.Location = new Point(10, 230);
+                    optionalNumericBox.Location = new Point(10, 135);
                     break;
                 case Utils.DeviceType.Memory:
                     Text = "Добавление оперативной памяти";
@@ -162,9 +167,9 @@ namespace Computers.Modules.Device
                     panel.Controls.Add(optionalLabel);
                     panel.Controls.Add(optionalNumericBox);
                     optionalLabel.Size = labelSize;
-                    optionalLabel.Location = new Point(10, 210);
+                    optionalLabel.Location = new Point(10, 115);
                     optionalNumericBox.Size = labelSize;
-                    optionalNumericBox.Location = new Point(10, 230);
+                    optionalNumericBox.Location = new Point(10, 135);
                     break;
                 case Utils.DeviceType.PowerSupply:
                     Text = "Добавление источника питания";
@@ -174,9 +179,9 @@ namespace Computers.Modules.Device
                     panel.Controls.Add(optionalLabel);
                     panel.Controls.Add(optionalNumericBox);
                     optionalLabel.Size = labelSize;
-                    optionalLabel.Location = new Point(10, 210);
+                    optionalLabel.Location = new Point(10, 115);
                     optionalNumericBox.Size = labelSize;
-                    optionalNumericBox.Location = new Point(10, 230);
+                    optionalNumericBox.Location = new Point(10, 135);
                     break;
                 case Utils.DeviceType.Processor:
                     Text = "Добавление процессора";
@@ -184,9 +189,9 @@ namespace Computers.Modules.Device
                     panel.Controls.Add(optionalLabel);
                     panel.Controls.Add(optionalTextBox);
                     optionalLabel.Size = labelSize;
-                    optionalLabel.Location = new Point(10, 210);
+                    optionalLabel.Location = new Point(10, 115);
                     optionalTextBox.Size = labelSize;
-                    optionalTextBox.Location = new Point(10, 230);
+                    optionalTextBox.Location = new Point(10, 135);
                     break;
                 case Utils.DeviceType.GraphicCard:
                     Text = "Добавление видеокарты";
@@ -196,12 +201,15 @@ namespace Computers.Modules.Device
                     panel.Controls.Add(optionalLabel);
                     panel.Controls.Add(optionalNumericBox);
                     optionalLabel.Size = labelSize;
-                    optionalLabel.Location = new Point(10, 210);
+                    optionalLabel.Location = new Point(10, 115);
                     optionalNumericBox.Size = labelSize;
-                    optionalNumericBox.Location = new Point(10, 230);
+                    optionalNumericBox.Location = new Point(10, 135);
                     break;
                 case Utils.DeviceType.Motherboard:
                     Text = "Добавление мат. платы";
+                    break;
+                case Utils.DeviceType.DiskDrive:
+                    Text = "Добавление дисковода";
                     break;
                 default:
                     break;
@@ -212,15 +220,15 @@ namespace Computers.Modules.Device
         {
             if (viewModel.manufacturers.Count > 0)
             {
-                manufacturerComboBox.DisplayMember = "Key";
-                manufacturerComboBox.ValueMember = "Value";
-                manufacturerComboBox.DataSource = new BindingSource(viewModel.manufacturers, null);
+                manufacturerListBox.DisplayMember = "Key";
+                manufacturerListBox.ValueMember = "Value";
+                manufacturerListBox.DataSource = new BindingSource(viewModel.manufacturers, null);
             }
             if (viewModel.statuses.Count > 0)
             {
-                statusComboBox.DisplayMember = "Key";
-                statusComboBox.ValueMember = "Value";
-                statusComboBox.DataSource = new BindingSource(viewModel.statuses, null);
+                statusListBox.DisplayMember = "Key";
+                statusListBox.ValueMember = "Value";
+                statusListBox.DataSource = new BindingSource(viewModel.statuses, null);
             }
         }
 
@@ -234,9 +242,9 @@ namespace Computers.Modules.Device
 
         private void NameTextBoxChanged(object sender, EventArgs e) { Interactor.SetName(nameTextBox.Text); }
 
-        private void ManufacturerComboBoxSelected(object sender, EventArgs e) { Interactor.SelectManufacturer(manufacturerComboBox.SelectedIndex); }
+        private void ManufacturerListBoxSelected(object sender, EventArgs e) { Interactor.SelectManufacturer(manufacturerListBox.SelectedIndex); }
 
-        private void StatusComboBoxSelected(object sender, EventArgs e) { Interactor.SelectStatus(statusComboBox.SelectedIndex); }
+        private void StatusListBoxSelected(object sender, EventArgs e) { Interactor.SelectStatus(statusListBox.SelectedIndex); }
 
         private void PriceNumericBoxChanged(object sender, EventArgs e) { Interactor.SetPrice((int)priceNumericBox.Value); }
 

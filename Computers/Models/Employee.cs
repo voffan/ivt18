@@ -25,6 +25,18 @@ namespace Computers.Models
             if (dict.ContainsKey("peripheralIds"))
                 PeripheralIds = dict["peripheralIds"] as List<string>;
         }
+        public Dictionary<string, object> ToDict()
+        {
+            return new Dictionary<string, object>
+            {
+                { "surname", Surname },
+                { "name", Name },
+                { "patronymicName", PatronymicName },
+                { "room", Room },
+                { "computerId", ComputerId },
+                { "peripheralIds", PeripheralIds }
+            };
+        }
         public string Id { get; set; }
         public string Surname { get; set; }
         public string Name { get; set; }

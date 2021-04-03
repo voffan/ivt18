@@ -25,7 +25,7 @@ namespace Computers.Modules.Device
         void Cancel();
     }
 
-    public class DeviceInteractor : IDeviceInteractor, Utils.IFormOwner
+    public class DeviceInteractor : IDeviceInteractor, Utils.IFormOwner, Utils.IFormDelegate
     {
         public IDevicePresenter Presenter { get; set; }
         public DeviceType DeviceType { get; set; }
@@ -33,7 +33,7 @@ namespace Computers.Modules.Device
         private Models.Device Device;
         private List<Models.Manufacturer> Manufacturers;
         private List<Models.Status> Statuses;
-        private Utils.IFormOwner FormOwner;
+        public IFormOwner FormOwner { get; set; }
 
         public DeviceInteractor(IDevicePresenter Presenter, Utils.IFormOwner FormOwner, Utils.DeviceType DeviceType) : base()
         {
@@ -56,6 +56,9 @@ namespace Computers.Modules.Device
                     break;
                 case DeviceType.Motherboard:
                     Device = new Models.Motherboard();
+                    break;
+                case DeviceType.DiskDrive:
+                    Device = new Models.DiskDrive();
                     break;
                 case DeviceType.Memory:
                     Device = new Models.Memory();

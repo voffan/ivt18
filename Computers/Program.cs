@@ -1,6 +1,7 @@
 ﻿using Computers.Models;
 using Computers.Modules.Computer;
 using Computers.Modules.Device;
+using Computers.Modules.Employee;
 using Computers.Modules.Home;
 using Computers.Modules.Login;
 using Computers.Modules.SingleFieldForm;
@@ -29,6 +30,7 @@ namespace Computers
             else
             {
                 Router.Shared.CurrentForm = new WelcomeBuilder().Build();
+                // Router.Shared.CurrentForm = new ComputerBuilder().Build(null);
             }
 #if DEBUG
 #endif

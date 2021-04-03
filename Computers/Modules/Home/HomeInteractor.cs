@@ -15,7 +15,7 @@ namespace Computers.Modules.Home
         void AddComputer();
     }
 
-    class HomeInteractor : IHomeInteractor
+    class HomeInteractor : IHomeInteractor, Utils.IFormOwner
     {
         public IHomePresenter Presenter { get; set; }
 
@@ -31,7 +31,12 @@ namespace Computers.Modules.Home
 
         public void AddComputer()
         {
-            Router.Shared.CurrentForm = new ComputerBuilder().Build();
+            Router.Shared.CurrentForm = new ComputerBuilder().Build(this);
+        }
+
+        public void Update()
+        {
+            throw new NotImplementedException();
         }
     }
 }

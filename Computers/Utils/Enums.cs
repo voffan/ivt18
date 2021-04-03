@@ -18,6 +18,7 @@ namespace Computers.Utils
         Processor,
         GraphicCard,
         HardDrive,
+        DiskDrive,
         Motherboard,
         Memory,
         PowerSupply

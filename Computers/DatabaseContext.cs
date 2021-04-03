@@ -57,33 +57,12 @@ namespace Computers
                 return instance;
             }
         }
-        /*
-         * context.Manufacturers.Attach(Device.Manufacturer);
-                    context.Statuses.Attach(Device.Status);
-                    switch (DeviceType)
-                    {
-                        case DeviceType.None:
-                            break;
-                        case DeviceType.Processor:
-                            context.Processors.Add(Device as Models.Processor);
-                            break;
-                        case DeviceType.GraphicCard:
-                            context.GraphicCards.Add(Device as Models.GraphicCard);
-                            break;
-                        case DeviceType.HardDrive:
-                            context.HardDrives.Add(Device as Models.HardDrive);
-                            break;
-                        case DeviceType.Motherboard:
-                            context.Motherboards.Add(Device as Models.Motherboard);
-                            break;
-                        case DeviceType.Memory:
-                            context.Memories.Add(Device as Models.Memory);
-                            break;
-                        case DeviceType.PowerSupply:
-                            context.PowerSupplies.Add(Device as Models.PowerSupply);
-                            break;
-                    }
-         */
+        public async Task<string> AddEmployee(Employee employee)
+        {
+            var id = employeesRef.Document().Id;
+            await employeesRef.Document(id).SetAsync(employee.ToDict());
+            return id;
+        }
         public async Task<string> AddStatus(Status status)
         {
             var id = statusesRef.Document().Id;
@@ -112,6 +91,9 @@ namespace Computers
                     break;
                 case Utils.DeviceType.Motherboard:
                     await motherboardsRef.Document(id).SetAsync((device as Motherboard).ToDict());
+                    break;
+                case Utils.DeviceType.DiskDrive:
+                    await diskDrivesRef.Document(id).SetAsync((device as DiskDrive).ToDict());
                     break;
                 case Utils.DeviceType.Memory:
                     await memoriesRef.Document(id).SetAsync((device as Memory).ToDict());

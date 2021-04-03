@@ -176,6 +176,12 @@
     <Compile Include="Modules\Computer\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Employee\EmployeeBuilder.cs" />
+    <Compile Include="Modules\Employee\EmployeeInteractor.cs" />
+    <Compile Include="Modules\Employee\EmployeePresenter.cs" />
+    <Compile Include="Modules\Employee\EmployeeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modules\Device\DeviceBuilder.cs" />
     <Compile Include="Modules\Device\DeviceInteractor.cs" />
     <Compile Include="Modules\Device\DevicePresenter.cs" />
