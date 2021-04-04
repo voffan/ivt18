@@ -144,11 +144,11 @@ namespace Computers.Modules.Computer
                 .ShowDialog(Presenter.View as Form);
         }
 
-        public void Submit()
+        public async void Submit()
         {
             if (FormOwner != null)
             {
-                // await DatabaseContext.Shared.AddDevice(Device, DeviceType);
+                await DatabaseContext.Shared.AddComputer(Computer);
                 FormOwner.Update();
             }
             Presenter.PresentClose();

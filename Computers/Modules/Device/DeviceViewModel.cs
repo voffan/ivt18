@@ -10,8 +10,8 @@ namespace Computers.Modules.Device
     {
         public Utils.DeviceType deviceType = Utils.DeviceType.None;
         
-        public Dictionary<string, Models.Manufacturer> manufacturers = new Dictionary<string, Models.Manufacturer> {};
+        public Dictionary<Models.Manufacturer, string> manufacturers = new Dictionary<Models.Manufacturer, string> {};
         
-        public Dictionary<string, Models.Status> statuses = new Dictionary<string, Models.Status>{};
+        public Dictionary<Models.Status, string> statuses = new Dictionary<Models.Status, string> {};
     }
 }

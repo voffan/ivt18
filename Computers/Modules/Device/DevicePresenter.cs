@@ -32,11 +32,11 @@ namespace Computers.Modules.Device
 
             foreach (var manufacturer in manufacturers)
             {
-                viewModel.manufacturers.Add(manufacturer.Name, manufacturer);
+                viewModel.manufacturers.Add(manufacturer, manufacturer.Name);
             }
             foreach (var status in statuses)
             {
-                viewModel.statuses.Add(status.Name, status);
+                viewModel.statuses.Add(status, status.Name);
             }
 
             View.Configure(viewModel);
@@ -47,11 +47,11 @@ namespace Computers.Modules.Device
             DeviceViewModel viewModel = new DeviceViewModel();
             foreach (var manufacturer in manufacturers)
             {
-                viewModel.manufacturers.Add(manufacturer.Name, manufacturer);
+                viewModel.manufacturers.Add(manufacturer, manufacturer.Name);
             }
             foreach (var status in statuses)
             {
-                viewModel.statuses.Add(status.Name, status);
+                viewModel.statuses.Add(status, status.Name);
             }
             View.Update(viewModel);
         }

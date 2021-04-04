@@ -12,10 +12,11 @@ namespace Computers.Modules.Home
     public interface IHomeView
     {
         IHomeInteractor Interactor { get; set; }
-        void ShowPeripherals(List<Peripheral> peripherals);
+        void Configure(HomeViewModel viewModel);
+        void Update(HomeViewModel viewModel);
     }
 
-    class HomeView : View, IHomeView
+    public class HomeView : View, IHomeView
     {
         public IHomeInteractor Interactor { get; set; }
 
@@ -46,7 +47,22 @@ namespace Computers.Modules.Home
             employeesTab.Text = "Сотрудники";
             cataloguesTab.Text = "Каталоги";
 
-            SetupListViews();
+            computersListView.Columns.Add("ItemNo", "Инвентарный номер", 120);
+            computersListView.Columns.Add("IpAddress", "IP адрес", 100);
+            computersListView.Columns.Add("TotalPrice", "Общая ценность", 100);
+            computersListView.Columns.Add("Employee", "Работник", 150);
+            computersListView.View = System.Windows.Forms.View.Details;
+
+            peripheralsListView.Columns.Add("ItemNo", "Инвентарный номер", 120);
+            peripheralsListView.Columns.Add("peripheralType", "Тип", 100);
+            peripheralsListView.Columns.Add("Price", "Ценность", 100);
+            peripheralsListView.View = System.Windows.Forms.View.Details;
+
+            employeesListView.Columns.Add("Surname", "Фамилия", 100);
+            employeesListView.Columns.Add("Name", "Имя", 100);
+            employeesListView.Columns.Add("Patronymic", "Отчество", 100);
+            employeesListView.Columns.Add("Room", "Кабинет", 100);
+            employeesListView.View = System.Windows.Forms.View.Details;
 
             addComputerButton.Text = "Добавить";
             addComputerButton.Click += AddComputerClicked;
@@ -63,12 +79,6 @@ namespace Computers.Modules.Home
             tabControl.TabPages.Add(cataloguesTab);
 
             Controls.Add(tabControl);
-        }
-
-        public override void ViewDidShow(object sender, EventArgs e)
-        {
-            base.ViewDidShow(sender, e);
-            Interactor.LoadPeripherals();
         }
 
         public override void SetupLayout(object sender, EventArgs e)
@@ -92,45 +102,26 @@ namespace Computers.Modules.Home
             addComputerButton.Location = new Point(0, computersTab.Size.Height - 50);
         }
 
-        public void ShowPeripherals(List<Peripheral> peripherals)
+        public void Configure(HomeViewModel viewModel)
         {
-            Console.WriteLine($"Peripherals count: {peripherals.Count}");
-            // TODO: Сделать общий метод и вывести
+            computersListView.Items.Clear();
+            foreach (var representableComputer in viewModel.representableComputers)
+            {
+                var item = new ListViewItem(representableComputer);
+                computersListView.Items.Add(item);
+            }
         }
 
-        private void AddComputerClicked(object sender, EventArgs args)
+        public void Update(HomeViewModel viewModel)
         {
-            Interactor.AddComputer();
+            computersListView.Items.Clear();
+            foreach (var representableComputer in viewModel.representableComputers)
+            {
+                var item = new ListViewItem(representableComputer);
+                computersListView.Items.Add(item);
+            }
         }
 
-
-        private void SetupListViews()
-        {
-            computersListView.Columns.Add("ItemNo", "Инвентарный номер", 120);
-            computersListView.Columns.Add("IpAddress", "IP адрес", 100);
-            computersListView.Columns.Add("TotalPrice", "Общая ценность", 100);
-            computersListView.Columns.Add("Employee", "Работник", 150);
-            computersListView.View = System.Windows.Forms.View.Details;
-
-            peripheralsListView.Columns.Add("ItemNo", "Инвентарный номер", 120);
-            peripheralsListView.Columns.Add("peripheralType", "Тип", 100);
-            peripheralsListView.Columns.Add("Price", "Ценность", 100);
-            peripheralsListView.View = System.Windows.Forms.View.Details;
-
-            employeesListView.Columns.Add("Surname", "Фамилия", 100);
-            employeesListView.Columns.Add("Name", "Имя", 100);
-            employeesListView.Columns.Add("Patronymic", "Отчество", 100);
-            employeesListView.Columns.Add("Room", "Кабинет", 100);
-            employeesListView.View = System.Windows.Forms.View.Details;
-
-            /*
-            var item = new ListViewItem();
-            item.Text = "16723:234234";
-            item.SubItems.Add("192.168.0.1");
-            item.SubItems.Add("43000");
-            item.SubItems.Add("Михаил");
-            computersListView.Items.Add(item);
-            */
-        }
+        private void AddComputerClicked(object sender, EventArgs args) { Interactor.AddComputer(); }
     }
 }

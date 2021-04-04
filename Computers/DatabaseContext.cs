@@ -75,6 +75,12 @@ namespace Computers
             await manufacturersRef.Document(id).SetAsync(manufacturer.ToDict());
             return id;
         }
+        public async Task<string> AddComputer(Computer computer)
+        {
+            var id = computersRef.Document().Id;
+            await computersRef.Document(id).SetAsync(computer.ToDict());
+            return id;
+        }
         public async Task<string> AddDevice(Device device, Utils.DeviceType deviceType)
         {
             var id = errorsRef.Document().Id;

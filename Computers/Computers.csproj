@@ -195,6 +195,7 @@
     <Compile Include="Modules\Home\HomeView.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modules\Home\HomeViewModel.cs" />
     <Compile Include="Modules\Login\LoginPresenter.cs" />
     <Compile Include="Modules\Login\LoginBuilder.cs" />
     <Compile Include="Modules\Login\LoginInteractor.cs" />

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Computers.Modules.Home
 {
@@ -18,6 +19,13 @@ namespace Computers.Modules.Home
     class HomeInteractor : IHomeInteractor, Utils.IFormOwner
     {
         public IHomePresenter Presenter { get; set; }
+        private List<Models.Computer> Computers;
+
+        public HomeInteractor(IHomePresenter Presenter)
+        {
+            this.Presenter = Presenter;
+            Configure();
+        }
 
         public void LoadPeripherals()
         {
@@ -31,12 +39,19 @@ namespace Computers.Modules.Home
 
         public void AddComputer()
         {
-            Router.Shared.CurrentForm = new ComputerBuilder().Build(this);
+            new ComputerBuilder()
+                .Build(this)
+                .ShowDialog(Presenter.View as Form);
         }
-
-        public void Update()
+        private async void Configure()
         {
-            throw new NotImplementedException();
+            Computers = await DatabaseContext.Shared.GetComputers();
+            Presenter.PresentConfigure(Computers);
+        }
+        public async void Update()
+        {
+            Computers = await DatabaseContext.Shared.GetComputers();
+            Presenter.PresentUpdate(Computers);
         }
     }
 }

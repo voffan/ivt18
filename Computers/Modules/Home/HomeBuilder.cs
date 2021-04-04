@@ -11,14 +11,11 @@ namespace Computers.Modules.Home
     {
         public Form Build()
         {
-            var Presenter = new HomePresenter();
-            var Interactor = new HomeInteractor();
             var View = new HomeView();
+            var Presenter = new HomePresenter(View);
+            var Interactor = new HomeInteractor(Presenter);
 
-            Presenter.View = View;
-            Interactor.Presenter = Presenter;
             View.Interactor = Interactor;
-
             return View;
         }
     }

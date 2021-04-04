@@ -220,14 +220,14 @@ namespace Computers.Modules.Device
         {
             if (viewModel.manufacturers.Count > 0)
             {
-                manufacturerListBox.DisplayMember = "Key";
-                manufacturerListBox.ValueMember = "Value";
+                manufacturerListBox.DisplayMember = "Value";
+                manufacturerListBox.ValueMember = "Key";
                 manufacturerListBox.DataSource = new BindingSource(viewModel.manufacturers, null);
             }
             if (viewModel.statuses.Count > 0)
             {
-                statusListBox.DisplayMember = "Key";
-                statusListBox.ValueMember = "Value";
+                statusListBox.DisplayMember = "Value";
+                statusListBox.ValueMember = "Key";
                 statusListBox.DataSource = new BindingSource(viewModel.statuses, null);
             }
         }

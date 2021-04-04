@@ -113,6 +113,8 @@ namespace Computers.Modules.Computer
             addProcessorButton.Click += AddProcessorButtonClicked;
             addMotherboardButton.Click += AddMotherboardButtonClicked;
             addDiskDriveButton.Click += AddDiskDriveButtonClicked;
+            submitButton.Click += SubmitButtonClicked;
+            cancelButton.Click += CancelButtonClicked;
 
             employeeListBox.DisplayMember = "Key";
             employeeListBox.ValueMember = "Value";
