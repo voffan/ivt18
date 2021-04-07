@@ -28,7 +28,7 @@ namespace gallery
 
         public DbSet<Expo> Expos { get; set; }
 
-        public DbSet<Place> Places { get; set; }
+        public DbSet<Department> Places { get; set; }
 
         public DbSet<ExpoPicture> ExpoPictures { get; set; }
 

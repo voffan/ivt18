@@ -253,7 +253,7 @@
       <DependentUpon>PictureListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PictureLogic.cs" />
-    <Compile Include="Place.cs" />
+    <Compile Include="Department.cs" />
     <Compile Include="PlaceListForm.cs">
       <SubType>Form</SubType>
     </Compile>
