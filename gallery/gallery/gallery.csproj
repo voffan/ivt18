@@ -203,6 +203,10 @@
     <Compile Include="Migrations\202104020406366_expoaddress.designer.cs">
       <DependentUpon>202104020406366_expoaddress.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104081431124_department.cs" />
+    <Compile Include="Migrations\202104081431124_department.designer.cs">
+      <DependentUpon>202104081431124_department.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -295,6 +299,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104020406366_expoaddress.resx">
       <DependentUpon>202104020406366_expoaddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104081431124_department.resx">
+      <DependentUpon>202104081431124_department.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportsForm.resx">
       <DependentUpon>ReportsForm.cs</DependentUpon>
