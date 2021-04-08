@@ -60,7 +60,7 @@ namespace gallery
             c.SaveChanges();
         }
 
-        public static void UpdatePicture(Context c, string name, Single price, int year, string artistName, string genreName, string placeName, string galleryName)
+        public static void UpdatePicture(Context c, int pictureId, string name, Single price, int year, string artistName, string genreName, string placeName, string galleryName)
         {
             int artistId = getArtistId(artistName, c);
             int genreId = getGenreId(genreName, c);
@@ -68,7 +68,7 @@ namespace gallery
             int galleryId = getGalleryId(galleryName, c);
 
             Picture p = c.Pictures
-            .Where(o => o.Name == name && o.ArtistId == artistId)
+            .Where(o => o.PictureId == pictureId)
             .FirstOrDefault();
 
             if (p != null)

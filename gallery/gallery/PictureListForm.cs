@@ -23,6 +23,11 @@ namespace gallery
         private void PictureListForm_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = C.Pictures.ToList();
+            dataGridView1.CurrentCell.Selected = true;
+            dataGridView1.Rows[0].Selected = true;
+            //dataGridView1.CurrentRow.Selected = true;
+            /*dataGridView1.Columns.Add("PictureId", "PictureId");
+            dataGridView1.Columns.Add("Name", "Name");*/
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -70,7 +75,41 @@ namespace gallery
 
         private void button4_Click(object sender, EventArgs e)
         {
+            AddPictureForm addPictureForm = new AddPictureForm();
+            addPictureForm.UpdatingItemId = selectedItemId;
+            addPictureForm.FormId = 2;
+            addPictureForm.C = C;
+            addPictureForm.Show();
+        }
 
+        private void artistToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ArtistListForm artistListForm = new ArtistListForm();
+            artistListForm.C = C;
+            artistListForm.Show();
+        }
+
+        private void genreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GenreListForm genreListForm = new GenreListForm();
+            genreListForm.C = C;
+            genreListForm.Show();
+        }
+
+        private void galleryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GalleryListForm galleryListForm = new GalleryListForm();
+            galleryListForm.C = C;
+            galleryListForm.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            AddPictureForm addPictureForm = new AddPictureForm();
+            addPictureForm.UpdatingItemId = selectedItemId;
+            addPictureForm.FormId = 3;
+            addPictureForm.C = C;
+            addPictureForm.Show();
         }
     }
 }
