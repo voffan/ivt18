@@ -33,14 +33,14 @@ namespace PE1
             table.Columns.Add("Employee", typeof(Employee));
 
 
-            table.Rows.Add(1, "Bug no 1", "Last A", 1);
-            table.Rows.Add(2, "First B", "Last B", 0);
-            table.Rows.Add(3, "First C", "Last C", 30);
-            table.Rows.Add(4, "First D", "Last D", 40);
-            table.Rows.Add(5, "First E", "Last E", 50);
-            table.Rows.Add(6, "First F", "Last F", 60);
-            table.Rows.Add(7, "First G", "Last G", 70);
-            table.Rows.Add(8, "First H", "Last H", 80);
+            table.Rows.Add(1);
+            table.Rows.Add(2);
+            table.Rows.Add(3);
+            table.Rows.Add(4);
+            table.Rows.Add(5);
+            table.Rows.Add(6);
+            table.Rows.Add(7);
+            table.Rows.Add(8);
 
             dataGridView1.DataSource = table;
         }
