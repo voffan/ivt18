@@ -11,6 +11,7 @@ namespace PE1
 {
     class PositionEmployee
     {
+        [Key]
         public int Id { get; set; }
         public string Name { get; set; }
     }

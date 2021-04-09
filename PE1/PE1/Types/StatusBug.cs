@@ -14,6 +14,7 @@ namespace PE1
     //idшки у types
     class StatusBug
     {
+        [Key]
         public int Id { get; set; }
         public string Status { get; set; }
     }
