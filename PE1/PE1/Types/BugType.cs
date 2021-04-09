@@ -8,6 +8,7 @@ namespace PE1
 {
     class BugType
     {
-        string bugType;
+        public int Id { get; set; }
+        public string bugType { get; set; }
     }
 }

@@ -15,6 +15,8 @@ namespace PE1
         public int EmployeeId { get; set; }
         public string Name { get; set; }
         public string Login { get; set; }
+        public int DivisionId { get; set; }
+        public Division Division { get; set; }
 
         public int PositionEmployeeId { get; set; }
         [ForeignKey("PositionEmployeeId")]
@@ -24,7 +26,6 @@ namespace PE1
         [ForeignKey("StatusEmployeeId")]
         public StatusEmployee StatusEmployee { get; set; }
 
-        public virtual ICollection<Log> Logs { get; set; }
         public virtual ICollection<Bug> Bugs { get; set; }
         public virtual ICollection<Fix> Fixes { get; set; }
     }
