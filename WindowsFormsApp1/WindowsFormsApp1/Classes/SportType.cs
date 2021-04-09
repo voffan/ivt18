@@ -11,9 +11,9 @@ namespace WindowsFormsApp1
 {
     public class SportType
     {	
-		[ForeignKey("SportTypeID")]
-		public int SportTypeID { get; set; }
+        [Key]
+		public int Id { get; set; }
 		[StringLength(250)]
-        public string SportType { get; set; }		
+        public string Name { get; set; }		
     }
 }

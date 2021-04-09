@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
 		[StringLength(250)]
         public string Login { get; set; }
 		[StringLength(250)]
-        public string Password { get; set }
+        public string Password { get; set; }
 		
     }
 }

@@ -12,7 +12,7 @@ namespace WindowsFormsApp1
 	public enum Sex { Male, Female }
     public class Athlete: Person
     {
-        public int SportTypeId { get; set; }
+        public int? SportTypeId { get; set; }
 		[ForeignKey("SportTypeId")]
 		public SportType Sport { get; set; } 
 		public DateTime Birthday { get; set; }

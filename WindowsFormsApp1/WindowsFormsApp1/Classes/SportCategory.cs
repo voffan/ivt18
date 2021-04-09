@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
 		public string Regulation { get; set; }
 		
 		public int SportTypeId { get; set; }
-        [ForeignKey("SortTypeId")]
+        [ForeignKey("SportTypeId")]
         public SportType SportType { get; set; }
     }
 }

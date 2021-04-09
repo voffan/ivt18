@@ -22,11 +22,11 @@ namespace WindowsFormsApp1
         [ForeignKey("AthleteId")]
         public Athlete Athlete { get; set; }
 
-        public int SportTypeId { get; set; }
-        [ForeignKey("SortTypeId")]
+        public int? SportTypeId { get; set; }
+        [ForeignKey("SportTypeId")]
         public SportType SportType { get; set; }
 
-    	public int SportCategoryId { get; set; }
+    	public int? SportCategoryId { get; set; }
         [ForeignKey("SportCategoryId")]
 		public SportCategory Category { get; set; }
 		

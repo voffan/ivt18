@@ -16,7 +16,12 @@ namespace WindowsFormsApp1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            MySQL.Main();
             Application.Run(new Form1());
+
         }
+
+        
     }
 }

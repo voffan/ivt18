@@ -22,8 +22,8 @@ namespace WindowsFormsApp1
 		public int Place { get; set; } 
 
 		//??????? подумать нужен ли????????
-		public int CompetitionId { get; set; }
-		[ForeignKey("CompetitionId")]
-		public Competition Competition { get; set; }
+		//public int CompetitionId { get; set; }
+		//[ForeignKey("CompetitionId")]
+		//public Competition Competition { get; set; }
     }
 }
