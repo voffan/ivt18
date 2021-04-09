@@ -32,6 +32,8 @@ namespace carton
             this.ApplyPlanButton = new System.Windows.Forms.Button();
             this.ApproveCompletionButton = new System.Windows.Forms.Button();
             this.planGridView = new System.Windows.Forms.DataGridView();
+            this.header = new System.Windows.Forms.Label();
+            this.ResetButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.planGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,17 +60,40 @@ namespace carton
             // planGridView
             // 
             this.planGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.planGridView.Location = new System.Drawing.Point(13, 13);
+            this.planGridView.Location = new System.Drawing.Point(15, 50);
+            this.planGridView.MultiSelect = false;
             this.planGridView.Name = "planGridView";
             this.planGridView.Size = new System.Drawing.Size(750, 414);
             this.planGridView.TabIndex = 3;
             this.planGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.planGridView_CellContentClick);
+            this.planGridView.SelectionChanged += new System.EventHandler(this.planGridView_SelectionChanged);
+            // 
+            // header
+            // 
+            this.header.AutoSize = true;
+            this.header.Location = new System.Drawing.Point(12, 13);
+            this.header.Name = "header";
+            this.header.Size = new System.Drawing.Size(37, 13);
+            this.header.TabIndex = 4;
+            this.header.Text = "debug";
+            // 
+            // ResetButton
+            // 
+            this.ResetButton.Location = new System.Drawing.Point(324, 526);
+            this.ResetButton.Name = "ResetButton";
+            this.ResetButton.Size = new System.Drawing.Size(75, 23);
+            this.ResetButton.TabIndex = 5;
+            this.ResetButton.Text = "Reset";
+            this.ResetButton.UseVisualStyleBackColor = true;
+            this.ResetButton.Click += new System.EventHandler(this.ResetButton_Click);
             // 
             // DirectorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.ResetButton);
+            this.Controls.Add(this.header);
             this.Controls.Add(this.planGridView);
             this.Controls.Add(this.ApproveCompletionButton);
             this.Controls.Add(this.ApplyPlanButton);
@@ -78,6 +103,7 @@ namespace carton
             this.Load += new System.EventHandler(this.DirectorForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.planGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -85,5 +111,7 @@ namespace carton
         private System.Windows.Forms.Button ApplyPlanButton;
         private System.Windows.Forms.Button ApproveCompletionButton;
         private System.Windows.Forms.DataGridView planGridView;
+        private System.Windows.Forms.Label header;
+        private System.Windows.Forms.Button ResetButton;
     }
 }

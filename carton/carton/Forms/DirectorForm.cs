@@ -13,29 +13,38 @@ namespace carton
     public partial class DirectorForm : Form
     {
         readonly PlanLogic planLogic;
-        readonly Context context;
+        Context context;
+
+        int planId;
 
         public DirectorForm(Context context)
         {
+            planId = 0;
             InitializeComponent();
             this.context = context;
             planLogic = new PlanLogic();
+            header.Text = "Список планов";
             planGridView.DataSource = context.Plans.ToList();
             planGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            planGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
 
         private void ApplyPlanButton_Click(object sender, EventArgs e)
-        { 
+        {
             //selected plan from the list
-            Plan plan = new Plan();
+            Plan plan = context.Plans.Find(planId);
+            
             planLogic.ApplyPlan(plan, context);
+            planGridView.DataSource = context.Plans.ToList();
         }
 
         private void ApproveCompletionButton_Click(object sender, EventArgs e)
         {
             //selected plan from the list
-            Plan plan = new Plan();
+            Plan plan = context.Plans.Find(planId);
+
             planLogic.ApproveCompletion(plan, context);
+            planGridView.DataSource = context.Plans.ToList();
         }
 
         private void DirectorForm_Load(object sender, EventArgs e)
@@ -49,12 +58,27 @@ namespace carton
         {
             //int row = e.RowIndex;
             //context.Plans.
-            //Control ss = planGridView.GetChildAtPoint(planGridView.GetRowDisplayRectangle(row, false).Location);
-            
-
+            //Control ss = planGridView.GetChildAtPoint(planGridView.GetRowDisplayRectangle(row, false).Location);    
 
 
         }
-    }
+        /*
+            get planId 
+        */
+        private void planGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            int rowindex = planGridView.CurrentCell.RowIndex;
+            int columnindex = 0;
 
+            planId = (int)planGridView.Rows[rowindex].Cells[columnindex].Value;
+        }
+
+        private void ResetButton_Click(object sender, EventArgs e)
+        {
+            Plan plan = context.Plans.Find(planId);
+
+            planLogic.resetToNew(plan, context);
+            planGridView.DataSource = context.Plans.ToList();
+        }
+    }
 }
