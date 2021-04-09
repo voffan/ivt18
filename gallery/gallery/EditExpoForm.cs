@@ -14,43 +14,41 @@ namespace gallery
     {
         public Context C { get; set; }
         public int id;
+        public int eId;
+
         public EditExpoForm()
         {
             InitializeComponent();
             
         }
-        private void EditExpoForm_Load(object sender, EventArgs e)
-        {
-            var expo = ExpoLogic.oldData(id, C);
-                      
-            nameBox.Text = expo.Name;
-            placeBox.Text = expo.Place;
-            startDatePicker.Value = expo.StartDate;
-            endDatePicker.Value = expo.EndDate;
-
-            updatePicturesList(ExpoLogic.updatePicturesList(C));
-            updateExpoPicturesList(ExpoLogic.returnExpoPicturesList(id, C));
-        }
 
         void picturesBox_DoubleClick(object sender, EventArgs e)
         {
-            ExpoLogic.sendToExpo(picturesBox.SelectedItem.ToString(), id, C);
-            updateExpoPicturesList(ExpoLogic.getExpoPicturesList(id, C));
+            ExpoLogic.sendToExpo(picturesBox.SelectedItem.ToString(), C);
+            updateExpoPicturesList(ExpoLogic.getExpoPicturesList(C));
         }
         void expoPicturesBox_DoubleClick(object sender, EventArgs e)
         {
-            ExpoLogic.sendToStorage(expoPicturesBox.SelectedItem.ToString(), id, C);
-            updateExpoPicturesList(ExpoLogic.getExpoPicturesList(id, C));
+            ExpoLogic.sendToStorage(expoPicturesBox.SelectedItem.ToString(), C);
+            updateExpoPicturesList(ExpoLogic.getExpoPicturesList(C));
         }
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            ExpoLogic.apply(id, C);
+            ExpoLogic.apply(nameBox.Text, placeBox.Text, startDatePicker.Value, endDatePicker.Value, id, eId, C);
             this.Close();
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
+            var info = ExpoLogic.oldData(id, C);
+
+            nameBox.Text = info[0];
+            placeBox.Text = info[1];
+            startDatePicker.Value = Convert.ToDateTime(info[2]);
+            endDatePicker.Value = Convert.ToDateTime(info[3]);
+
+            updatePicturesList(ExpoLogic.updatePicturesList(C));
             updateExpoPicturesList(ExpoLogic.returnExpoPicturesList(id, C));
         }
 

@@ -27,7 +27,7 @@ namespace gallery
 
         public int PlaceId { get; set; }
         [ForeignKey("PlaceId")]
-        public Place CurrentLocation { get; set; }
+        public Department CurrentLocation { get; set; }
 
         public int GalleryId { get; set; }
         [ForeignKey("GalleryId")]

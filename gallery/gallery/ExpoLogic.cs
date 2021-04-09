@@ -8,10 +8,11 @@ namespace gallery
 {
     class ExpoLogic
     {
-        static List<int> oldExpoPictures;
-        static List<int> newExpoPictures;
+        static List<int> oldExpoPictures = new List<int>();
+        static List<int> newExpoPictures = new List<int>();
+        static List<string> oldInfo;
 
-        static public void addExpo(string name, DateTime start, DateTime end, string place, Context C)
+        static public void addExpo(string name, DateTime start, DateTime end, string place, int eId, Context C)
         {
             var ex = C.Expos.Where(c => c.Name == name).FirstOrDefault();
             if (ex != null)
@@ -24,27 +25,41 @@ namespace gallery
                 Name = name,
                 StartDate = start,
                 EndDate = end,
-                Place = place
+                Address = place
             };
 
             C.Expos.Add(expo);
 
-            //for (int i = 0; i < expoPictures.Count(); i++)
-            // C.ExpoPictures.Add( new ExpoPicture 
-            //{ 
-            //  ExpoId = expo.ExpoId, PictureId = expoPictures[i]
-            //}
-            //);
+            for (int i = 0; i < newExpoPictures.Count(); i++)
+            {
+                C.ExpoPictures.Add(new ExpoPicture
+                {
+                    ExpoId = expo.ExpoId,
+                    PictureId = newExpoPictures[i]
+                });
+
+                C.Journals.Add(new Journal
+                {
+                    EmployeeId = 1,  
+                    PlaceFromId = 1,
+                    PlaceToId = 1,
+                    PictureId = newExpoPictures[i],
+                    ExpoId = expo.ExpoId
+                });
+            }
 
             C.SaveChanges();
 
         }
 
-        static public void deleteExpo(string name, Context C)
+        static public void deleteExpo(int id, Context C)
         {
-            var ex = C.Expos.Where(c => c.Name == name).FirstOrDefault();
+            var ex = C.Expos.Where(c => c.ExpoId == id).FirstOrDefault();
 
             C.Expos.Remove(ex);
+
+            var jour = C.Journals.Where(c => c.ExpoId == id);
+            C.Journals.RemoveRange(jour);
             C.SaveChanges();
 
         }
@@ -55,7 +70,7 @@ namespace gallery
                 .Select(c => c.ExpoId).FirstOrDefault();
         }
 
-        static public Expo oldData(int id, Context C)
+        static public List<string> oldData(int id, Context C)
         {
             var oldData = C.Expos.Where(c => c.ExpoId == id)
                 .FirstOrDefault();
@@ -63,7 +78,9 @@ namespace gallery
             oldExpoPictures = C.ExpoPictures.Where(c => c.ExpoId == id).Select(c => c.PictureId).ToList<int>();
             newExpoPictures = C.ExpoPictures.Where(c => c.ExpoId == id).Select(c => c.PictureId).ToList<int>();
 
-            return oldData;
+            oldInfo = new List<string>{oldData.Name, oldData.Address, oldData.StartDate.ToString(), oldData.EndDate.ToString()};
+
+            return oldInfo;
         }
 
         static public string[] returnExpoPicturesList(int id, Context C)
@@ -76,7 +93,7 @@ namespace gallery
             return expoPictures.ToArray();
         }
 
-        static public string[] getExpoPicturesList(int id, Context C)
+        static public string[] getExpoPicturesList(Context C)
         {
             string[] s = new string[newExpoPictures.Count()];
             for (int i = 0; i < newExpoPictures.Count(); i++)
@@ -96,7 +113,7 @@ namespace gallery
             return pictures.ToArray();
         }
 
-        static public void sendToExpo(string p1, int id, Context C)
+        static public void sendToExpo(string p1, Context C)
         {
             int pId = C.ExpoPictures.Where(c => c.Picture.Name + ", автор - " + c.Picture.Artist.FullName == p1).FirstOrDefault().PictureId;          
 
@@ -106,19 +123,23 @@ namespace gallery
             }     
         }
 
-        static public void sendToStorage(string p1, int id, Context C)
+        static public void sendToStorage(string p1, Context C)
         {
             int pId = C.Pictures.Where(c => c.Name + ", автор - " + c.Artist.FullName == p1)
                .Select(c => c.PictureId).FirstOrDefault();
             newExpoPictures.Remove(pId);
         }
 
-        static public void apply(int id, Context C)
+        static public void apply(string name, string place, DateTime start, DateTime end, int id, int eId, Context C)
         {
-            var ex = C.ExpoPictures.Where(c => c.ExpoId == id).ToArray();
+            var ex = C.ExpoPictures.Where(c => c.ExpoId == id);
             C.ExpoPictures.RemoveRange(ex);
 
+            var jour = C.Journals.Where(c => c.ExpoId == id);
+            C.Journals.RemoveRange(jour);
+
             List<ExpoPicture> exp = new List<ExpoPicture>(newExpoPictures.Count());
+            List<Journal> journ = new List<Journal>(newExpoPictures.Count());
 
             for (int i = 0; i < newExpoPictures.Count(); i++)
             {
@@ -129,13 +150,31 @@ namespace gallery
                 }
                 );
 
+                journ.Add(new Journal
+                {
+                    ExpoId = id,
+                    PictureId = newExpoPictures[i],
+                    PlaceFromId = 1,
+                    PlaceToId = 1,
+                    EmployeeId = 1
+                }
+                );
+
             }
 
             C.ExpoPictures.AddRange(exp);
+            C.Journals.AddRange(journ);
 
-            // apply new info
+
+            var expo = C.Expos.Where(c => c.ExpoId == id)
+                .FirstOrDefault();
+            expo.Name = name;
+            expo.Address = place;
+            expo.StartDate = start;
+            expo.EndDate = end;
 
             C.SaveChanges();
         }
+
     }
 }

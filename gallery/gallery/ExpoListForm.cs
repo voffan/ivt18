@@ -13,7 +13,9 @@ namespace gallery
     public partial class ExpoListForm : Form
     {
         public Context C { get; set; }
-        public int id = 1;
+        public int id = -1;
+        public int eId = -1;
+
         public ExpoListForm()
         {
             InitializeComponent();
@@ -21,7 +23,8 @@ namespace gallery
 
         private void ExpoListForm_Load(object sender, EventArgs e)
         {
-            listExpoBox.Items.AddRange(C.Expos.Select(c => c.Name).ToArray());    
+            listExpoBox.Items.Clear();
+            listExpoBox.Items.AddRange(C.Expos.Select(c => c.Name).ToArray());
         }
 
         private void listExpoBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -34,24 +37,30 @@ namespace gallery
         {
             AddExpoForm addExpoForm = new AddExpoForm();
             addExpoForm.C = C;
+            addExpoForm.eId = eId;
             addExpoForm.Show();
         }
 
         private void editExpoButton_Click(object sender, EventArgs e)
         {
-            EditExpoForm editExpoForm = new EditExpoForm();
-            editExpoForm.C = C;
-            editExpoForm.id = id;
-            editExpoForm.Show();
+            if (id > 0)
+            {
+                EditExpoForm editExpoForm = new EditExpoForm();
+                editExpoForm.C = C;
+                editExpoForm.id = id;
+                editExpoForm.Show();
+            }
         }
 
         private void deleteExpoButton_Click(object sender, EventArgs e)
         {
-            var s = listExpoBox.SelectedItem.ToString();
-            ExpoLogic.deleteExpo(s, C);
+            if (id > 0)
+            {
+                ExpoLogic.deleteExpo(id, C);
 
-            listExpoBox.Items.Clear();
-            listExpoBox.Items.AddRange(C.Expos.Select(c => c.Name).ToArray());
+                listExpoBox.Items.Clear();
+                listExpoBox.Items.AddRange(C.Expos.Select(c => c.Name).ToArray());
+            }
         }
     }
 }

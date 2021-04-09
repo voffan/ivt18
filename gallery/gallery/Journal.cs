@@ -17,11 +17,11 @@ namespace gallery
 
         public int? PlaceFromId { get; set; }  
         [ForeignKey("PlaceFromId")]
-        public Place From { get; set; }
+        public Department From { get; set; }
 
         public int? PlaceToId { get; set; }  
         [ForeignKey("PlaceToId")]
-        public Place To { get; set; }
+        public Department To { get; set; }
 
         public int PictureId { get; set; }
         [ForeignKey("PictureId")]

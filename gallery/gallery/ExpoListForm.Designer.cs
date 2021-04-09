@@ -39,10 +39,11 @@ namespace gallery
             // 
             this.listExpoBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.listExpoBox.FormattingEnabled = true;
-            this.listExpoBox.ItemHeight = 20;
-            this.listExpoBox.Location = new System.Drawing.Point(34, 36);
+            this.listExpoBox.ItemHeight = 25;
+            this.listExpoBox.Location = new System.Drawing.Point(45, 44);
+            this.listExpoBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listExpoBox.Name = "listExpoBox";
-            this.listExpoBox.Size = new System.Drawing.Size(693, 644);
+            this.listExpoBox.Size = new System.Drawing.Size(923, 429);
             this.listExpoBox.TabIndex = 0;
             this.listExpoBox.SelectedIndexChanged += new System.EventHandler(this.listExpoBox_SelectedIndexChanged);
             this.listExpoBox.DoubleClick += new System.EventHandler(this.editExpoButton_Click);
@@ -50,9 +51,10 @@ namespace gallery
             // addExpoButton
             // 
             this.addExpoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addExpoButton.Location = new System.Drawing.Point(673, 737);
+            this.addExpoButton.Location = new System.Drawing.Point(915, 508);
+            this.addExpoButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.addExpoButton.Name = "addExpoButton";
-            this.addExpoButton.Size = new System.Drawing.Size(40, 33);
+            this.addExpoButton.Size = new System.Drawing.Size(53, 41);
             this.addExpoButton.TabIndex = 1;
             this.addExpoButton.Text = "+";
             this.addExpoButton.UseVisualStyleBackColor = true;
@@ -61,9 +63,10 @@ namespace gallery
             // deleteExpoButton
             // 
             this.deleteExpoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.deleteExpoButton.Location = new System.Drawing.Point(34, 737);
+            this.deleteExpoButton.Location = new System.Drawing.Point(45, 508);
+            this.deleteExpoButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.deleteExpoButton.Name = "deleteExpoButton";
-            this.deleteExpoButton.Size = new System.Drawing.Size(117, 33);
+            this.deleteExpoButton.Size = new System.Drawing.Size(156, 41);
             this.deleteExpoButton.TabIndex = 2;
             this.deleteExpoButton.Text = "мусорка";
             this.deleteExpoButton.UseVisualStyleBackColor = true;
@@ -72,9 +75,10 @@ namespace gallery
             // editExpoButton
             // 
             this.editExpoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.editExpoButton.Location = new System.Drawing.Point(528, 737);
+            this.editExpoButton.Location = new System.Drawing.Point(697, 508);
+            this.editExpoButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.editExpoButton.Name = "editExpoButton";
-            this.editExpoButton.Size = new System.Drawing.Size(107, 33);
+            this.editExpoButton.Size = new System.Drawing.Size(143, 41);
             this.editExpoButton.TabIndex = 3;
             this.editExpoButton.Text = "карандаш";
             this.editExpoButton.UseVisualStyleBackColor = true;
@@ -82,16 +86,18 @@ namespace gallery
             // 
             // ExpoListForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 823);
+            this.ClientSize = new System.Drawing.Size(1067, 593);
             this.Controls.Add(this.editExpoButton);
             this.Controls.Add(this.deleteExpoButton);
             this.Controls.Add(this.addExpoButton);
             this.Controls.Add(this.listExpoBox);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ExpoListForm";
             this.Text = "Список экспозиций";
             this.Load += new System.EventHandler(this.ExpoListForm_Load);
+            this.Click += new System.EventHandler(this.ExpoListForm_Load);
             this.ResumeLayout(false);
 
         }
