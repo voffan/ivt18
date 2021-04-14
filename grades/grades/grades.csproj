@@ -99,9 +99,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202104010005193_test5.cs" />
-    <Compile Include="Migrations\202104010005193_test5.Designer.cs">
-      <DependentUpon>202104010005193_test5.cs</DependentUpon>
+    <Compile Include="GroupAndCourseGradesFrom\GroupAndCourseGrades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupAndCourseGradesFrom\GroupAndCourseGrades.Designer.cs">
+      <DependentUpon>GroupAndCourseGrades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupAndCourseGradesFrom\GroupAndCourseGradesLogic.cs" />
+    <Compile Include="Migrations\202104141118512_test3.cs" />
+    <Compile Include="Migrations\202104141118512_test3.designer.cs">
+      <DependentUpon>202104141118512_test3.cs</DependentUpon>
     </Compile>
     <Compile Include="SubjectListForm\AddSubjectcs.cs">
       <SubType>Form</SubType>
@@ -174,8 +181,11 @@
       <DependentUpon>UserList.cs</DependentUpon>
     </Compile>
     <Compile Include="UserListForm\UserListLogic.cs" />
-    <EmbeddedResource Include="Migrations\202104010005193_test5.resx">
-      <DependentUpon>202104010005193_test5.cs</DependentUpon>
+    <EmbeddedResource Include="GroupAndCourseGradesFrom\GroupAndCourseGrades.resx">
+      <DependentUpon>GroupAndCourseGrades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104141118512_test3.resx">
+      <DependentUpon>202104141118512_test3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubjectListForm\AddSubjectcs.resx">
       <DependentUpon>AddSubjectcs.cs</DependentUpon>

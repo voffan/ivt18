@@ -369,5 +369,5 @@ packages
 
 obj
 
-.oob
-.rqb
+*.oob
+*.rqb
