@@ -49,19 +49,41 @@ namespace carton
         public void ApproveCompletion(Plan plan, Context context)
         {
             plan.Status = PlanStatus.Completed;
+
+            setPlannedComplete(context, plan.Id, true);
+            
             context.SaveChanges();
         }
 
         public void ApplyPlan(Plan plan, Context context)
         {
             plan.Status = PlanStatus.InProgress;
+
+            setPlannedComplete(context, plan.Id, false);
+
             context.SaveChanges();
         }
 
         public void resetToNew(Plan plan, Context context)
         {
             plan.Status = PlanStatus.New;
+
+            setPlannedComplete(context, plan.Id, false);
+
             context.SaveChanges();
+        }
+
+        public void setPlannedComplete(Context context, int id, bool flag)
+        {
+            List<Planned> planneds = context.Planneds.ToList();
+
+            foreach (Planned p in planneds)
+            {
+                if (id == p.PlanId)
+                {
+                    p.Complete = flag;
+                }
+            }
         }
     }
 }

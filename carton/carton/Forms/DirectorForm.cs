@@ -14,6 +14,7 @@ namespace carton
     {
         readonly PlanLogic planLogic;
         Context context;
+        CurrencyManager currencyManager;
 
         int planId;
 
@@ -23,10 +24,36 @@ namespace carton
             InitializeComponent();
             this.context = context;
             planLogic = new PlanLogic();
-            header.Text = "Список планов";
+            //planGridView
             planGridView.DataSource = context.Plans.ToList();
             planGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             planGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
+            planGridView.Columns.GetFirstColumn(DataGridViewElementStates.Visible).Visible = false;
+            planGridView.RowHeadersVisible = false;
+            planGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            //plannedGridView
+            plannedGridView.DataSource = context.Planneds.ToList();
+            plannedGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            plannedGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
+            plannedGridView.Columns.GetFirstColumn(DataGridViewElementStates.Visible).Visible = false;
+            plannedGridView.RowHeadersVisible = false;
+            plannedGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            //currency manager
+            currencyManager = (CurrencyManager)BindingContext[plannedGridView.DataSource];
+
+            foreach (DataGridViewRow row in plannedGridView.Rows)
+            {
+                plannedGridView.Rows[row.Index].Visible = true;
+            }
+        }
+        private void ResetButton_Click(object sender, EventArgs e)
+        {
+            Plan plan = context.Plans.Find(planId);
+
+            planLogic.resetToNew(plan, context);
+            planGridView.DataSource = context.Plans.ToList();
+            plannedGridView.DataSource = context.Planneds.ToList();
+            HideUnnecessaryPlanneds(planId);
         }
 
         private void ApplyPlanButton_Click(object sender, EventArgs e)
@@ -36,6 +63,8 @@ namespace carton
             
             planLogic.ApplyPlan(plan, context);
             planGridView.DataSource = context.Plans.ToList();
+            plannedGridView.DataSource = context.Planneds.ToList();
+            HideUnnecessaryPlanneds(planId);
         }
 
         private void ApproveCompletionButton_Click(object sender, EventArgs e)
@@ -45,6 +74,8 @@ namespace carton
 
             planLogic.ApproveCompletion(plan, context);
             planGridView.DataSource = context.Plans.ToList();
+            plannedGridView.DataSource = context.Planneds.ToList();
+            HideUnnecessaryPlanneds(planId);
         }
 
         private void DirectorForm_Load(object sender, EventArgs e)
@@ -71,14 +102,33 @@ namespace carton
             int columnindex = 0;
 
             planId = (int)planGridView.Rows[rowindex].Cells[columnindex].Value;
+            
+
+            columnindex = 3;
+
+            HideUnnecessaryPlanneds(planId);
         }
 
-        private void ResetButton_Click(object sender, EventArgs e)
+        private void HideUnnecessaryPlanneds(int planId)
         {
-            Plan plan = context.Plans.Find(planId);
+            currencyManager.SuspendBinding();
+            foreach (DataGridViewRow row in plannedGridView.Rows)
+            {
+                if ((int)plannedGridView.Rows[row.Index].Cells[3].Value != planId)
+                {
+                    plannedGridView.Rows[row.Index].Visible = false;
+                }
+                else
+                {
+                    plannedGridView.Rows[row.Index].Visible = true;
+                }
+            }
+            currencyManager.ResumeBinding();
+        }
 
-            planLogic.resetToNew(plan, context);
-            planGridView.DataSource = context.Plans.ToList();
+        private void LogOutButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
