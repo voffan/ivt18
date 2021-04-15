@@ -19,7 +19,7 @@ namespace grades
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GroupAndCourseGrades());
+            Application.Run(new MainForm());
         }
     }
 }

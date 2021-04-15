@@ -17,13 +17,11 @@ namespace grades
 
         internal List<dynamic> GetGroupList(Context context, Staff user)
         {
-            return (from groups in context.Groups
-                    where groups.StaffId == user.PersonId
-                    select new
-                    {
-                        groups.Year
-                    }
-                    ).ToList<dynamic>();
+            var groups = context.Groups
+                .Where(g => g.StaffId == user.PersonId)
+                .Select(g => g.Year.ToString() + " " + g.Letter)
+                .ToList<dynamic>();
+            return groups;
         }
     }
 }
