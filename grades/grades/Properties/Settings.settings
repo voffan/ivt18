@@ -10,5 +10,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\GradesDB.mdf;Integrated Security=True;Connect Timeout=30</Value>
     </Setting>
+    <Setting Name="HighestClass" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">11</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

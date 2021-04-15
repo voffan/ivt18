@@ -15,12 +15,19 @@ namespace grades
     {
 
         private ClassGeneretionLogic _logic;
-        private Context context;
+        private Context _context;
 
         
         public ClassGeneretion()
         {
             InitializeComponent();
+          //  _context = context;
+            for (int i = 1; i <= Properties.Settings.Default.HighestClass; i++)
+            {
+                ClassList.Items.Add(i);
+            }
+
+            ClassList.Text = "1";
         }
 
         private void ApplyButton_Click(object sender, EventArgs e)
@@ -30,8 +37,12 @@ namespace grades
 
             _logic = new ClassGeneretionLogic ();
 
-            _logic.AddClass(context, n);
+            _logic.AddClass(_context, n);
 
+        }
+
+        private void ClassList_SelectedIndexChanged(object sender, EventArgs e)
+        {
         }
     }
 }

@@ -99,10 +99,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202104010005193_test5.cs" />
-    <Compile Include="Migrations\202104010005193_test5.Designer.cs">
-      <DependentUpon>202104010005193_test5.cs</DependentUpon>
-    </Compile>
     <Compile Include="SubjectListForm\AddSubjectcs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,13 +138,13 @@
     <Compile Include="UserListForm\ChooseAddUserMethodForm.Designer.cs">
       <DependentUpon>ChooseAddUserMethodForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClassGeneretion.cs">
+    <Compile Include="ClassGenerationForm\ClassGeneretion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ClassGeneretion.Designer.cs">
+    <Compile Include="ClassGenerationForm\ClassGeneretion.Designer.cs">
       <DependentUpon>ClassGeneretion.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClassGeneretionLogic.cs" />
+    <Compile Include="ClassGenerationForm\ClassGeneretionLogic.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="Source\Course.cs" />
     <Compile Include="Source\Grade.cs" />
@@ -174,8 +170,8 @@
       <DependentUpon>UserList.cs</DependentUpon>
     </Compile>
     <Compile Include="UserListForm\UserListLogic.cs" />
-    <EmbeddedResource Include="Migrations\202104010005193_test5.resx">
-      <DependentUpon>202104010005193_test5.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104020317464_test1.resx">
+      <DependentUpon>202104020317464_test1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubjectListForm\AddSubjectcs.resx">
       <DependentUpon>AddSubjectcs.cs</DependentUpon>
@@ -201,7 +197,7 @@
     <EmbeddedResource Include="UserListForm\ChooseAddUserMethodForm.resx">
       <DependentUpon>ChooseAddUserMethodForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClassGeneretion.resx">
+    <EmbeddedResource Include="ClassGenerationForm\ClassGeneretion.resx">
       <DependentUpon>ClassGeneretion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -231,7 +227,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
