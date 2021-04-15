@@ -199,6 +199,12 @@
     <Compile Include="GenreListForm.Designer.cs">
       <DependentUpon>GenreListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="JournalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JournalForm.Designer.cs">
+      <DependentUpon>JournalForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202104020406366_expoaddress.cs" />
     <Compile Include="Migrations\202104020406366_expoaddress.designer.cs">
       <DependentUpon>202104020406366_expoaddress.cs</DependentUpon>
@@ -206,6 +212,20 @@
     <Compile Include="Migrations\202104081431124_department.cs" />
     <Compile Include="Migrations\202104081431124_department.designer.cs">
       <DependentUpon>202104081431124_department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104141352057_dep.cs" />
+    <Compile Include="Migrations\202104141352057_dep.designer.cs">
+      <DependentUpon>202104141352057_dep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104141353442_dep1.cs" />
+    <Compile Include="Migrations\202104141353442_dep1.designer.cs">
+      <DependentUpon>202104141353442_dep1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportsForm.cs">
       <SubType>Form</SubType>
@@ -297,11 +317,23 @@
     <EmbeddedResource Include="GenreListForm.resx">
       <DependentUpon>GenreListForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="JournalForm.resx">
+      <DependentUpon>JournalForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104020406366_expoaddress.resx">
       <DependentUpon>202104020406366_expoaddress.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104081431124_department.resx">
       <DependentUpon>202104081431124_department.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104141352057_dep.resx">
+      <DependentUpon>202104141352057_dep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104141353442_dep1.resx">
+      <DependentUpon>202104141353442_dep1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportsForm.resx">
       <DependentUpon>ReportsForm.cs</DependentUpon>

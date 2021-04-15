@@ -22,8 +22,8 @@ namespace gallery
 
         static public int getPlaceId(string s, Context C)
         {
-            return C.Places.Where(c => c.Name == s)
-                .Select(c => c.PlaceId).FirstOrDefault();
+            return C.Departments.Where(c => c.Name == s)
+                .Select(c => c.DepartmentId).FirstOrDefault();
         }
 
         static public int getGalleryId(string s, Context C)
@@ -32,7 +32,7 @@ namespace gallery
                 .Select(c => c.GalleryId).FirstOrDefault();
         }
 
-        public static void AddPicture(Context c, string name, Single price, int year, string artistName, string genreName, string placeName, string galleryName)
+        public static void AddPicture(Context c, string name, Single price, int year, string artistName, string genreName, string departmentName, string galleryName)
         {
             Picture p = new Picture();
             p.Name = name;
@@ -40,11 +40,11 @@ namespace gallery
             p.Year = year;
             int artistId = getArtistId(artistName, c);
             int genreId = getGenreId(genreName, c);
-            int placeId = getPlaceId(placeName, c);
+            int departmentId = getPlaceId(departmentName, c);
             int galleryId = getGalleryId(galleryName, c);
             p.ArtistId = artistId;
             p.GenreId = genreId;
-            p.PlaceId = placeId;
+            p.DepartmentId = departmentId;
             p.GalleryId = galleryId;
             c.Pictures.Add(p);
             c.SaveChanges();
@@ -60,11 +60,11 @@ namespace gallery
             c.SaveChanges();
         }
 
-        public static void UpdatePicture(Context c, string name, Single price, int year, string artistName, string genreName, string placeName, string galleryName)
+        public static void UpdatePicture(Context c, string name, Single price, int year, string artistName, string genreName, string departmentName, string galleryName)
         {
             int artistId = getArtistId(artistName, c);
             int genreId = getGenreId(genreName, c);
-            int placeId = getPlaceId(placeName, c);
+            int departmentId = getPlaceId(departmentName, c);
             int galleryId = getGalleryId(galleryName, c);
 
             Picture p = c.Pictures
@@ -78,7 +78,7 @@ namespace gallery
                 p.Year = year;
                 p.ArtistId = artistId;
                 p.GenreId = genreId;
-                p.PlaceId = placeId;
+                p.DepartmentId = departmentId;
                 p.GalleryId = galleryId;
                 c.SaveChanges();
             }

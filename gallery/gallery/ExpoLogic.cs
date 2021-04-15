@@ -40,9 +40,8 @@ namespace gallery
 
                 C.Journals.Add(new Journal
                 {
-                    EmployeeId = 1,  
-                    PlaceFromId = 1,
-                    PlaceToId = 1,
+                    EmployeeId = 1,
+                   
                     PictureId = newExpoPictures[i],
                     ExpoId = expo.ExpoId
                 });
@@ -154,8 +153,7 @@ namespace gallery
                 {
                     ExpoId = id,
                     PictureId = newExpoPictures[i],
-                    PlaceFromId = 1,
-                    PlaceToId = 1,
+                    
                     EmployeeId = 1
                 }
                 );
