@@ -21,6 +21,12 @@ namespace carton.Classes
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.passwordEntry.PasswordChar = '*';
+            /*
+                Load data from datasource to prevent it in the future
+                ADD tables here
+            */
+            loadGridView.DataSource = context.Plans.ToList();
+            loadGridView.DataSource = context.Planneds.ToList();
         }
 
         private void buttonLoginProceed_Click(object sender, EventArgs e)
