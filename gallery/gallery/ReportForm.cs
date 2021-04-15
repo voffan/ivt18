@@ -21,7 +21,7 @@ namespace gallery
 
         private void ReportForm_Load(object sender, EventArgs e)
         {
-            reportDataGrid.DataSource = C.Journals.OrderBy(c => c.EmployeeId).ToList();
+            reportDataGrid.DataSource = C.Journals.Select(c => c.EmployeeId).ToList();
         }
 
         private void DownloadButton_Click(object sender, EventArgs e)
@@ -31,7 +31,9 @@ namespace gallery
 
         private void reportDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            id = reportDataGrid.SelectedRows[0].Index;
+            int selectedrowindex = reportDataGrid.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = reportDataGrid.Rows[selectedrowindex];
+            id = Convert.ToInt32(selectedRow.Cells["EmployeeId"].Value);
         }
     }
 }

@@ -221,6 +221,14 @@
     <Compile Include="Migrations\202104141353442_dep1.designer.cs">
       <DependentUpon>202104141353442_dep1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104150146348_dep2.cs" />
+    <Compile Include="Migrations\202104150146348_dep2.designer.cs">
+      <DependentUpon>202104150146348_dep2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104150151239_dep3.cs" />
+    <Compile Include="Migrations\202104150151239_dep3.designer.cs">
+      <DependentUpon>202104150151239_dep3.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -331,6 +339,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104141353442_dep1.resx">
       <DependentUpon>202104141353442_dep1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104150146348_dep2.resx">
+      <DependentUpon>202104150146348_dep2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104150151239_dep3.resx">
+      <DependentUpon>202104150151239_dep3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportForm.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>
