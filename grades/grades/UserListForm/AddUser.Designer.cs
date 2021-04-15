@@ -110,41 +110,53 @@
             // 
             // personFirstNameBox
             // 
+            this.personFirstNameBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.personFirstNameBox.Location = new System.Drawing.Point(132, 38);
+            this.personFirstNameBox.Multiline = true;
             this.personFirstNameBox.Name = "personFirstNameBox";
             this.personFirstNameBox.Size = new System.Drawing.Size(260, 20);
             this.personFirstNameBox.TabIndex = 7;
             // 
             // personSurNameBox
             // 
+            this.personSurNameBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.personSurNameBox.Location = new System.Drawing.Point(132, 65);
+            this.personSurNameBox.Multiline = true;
             this.personSurNameBox.Name = "personSurNameBox";
             this.personSurNameBox.Size = new System.Drawing.Size(260, 20);
             this.personSurNameBox.TabIndex = 8;
             // 
             // personMiddleNameBox
             // 
+            this.personMiddleNameBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.personMiddleNameBox.Location = new System.Drawing.Point(132, 92);
+            this.personMiddleNameBox.Multiline = true;
             this.personMiddleNameBox.Name = "personMiddleNameBox";
             this.personMiddleNameBox.Size = new System.Drawing.Size(260, 20);
             this.personMiddleNameBox.TabIndex = 9;
             // 
             // personPhoneNumberBox
             // 
+            this.personPhoneNumberBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.personPhoneNumberBox.Location = new System.Drawing.Point(132, 199);
+            this.personPhoneNumberBox.Multiline = true;
             this.personPhoneNumberBox.Name = "personPhoneNumberBox";
             this.personPhoneNumberBox.Size = new System.Drawing.Size(260, 20);
             this.personPhoneNumberBox.TabIndex = 10;
             // 
             // personHomeAddressBox
             // 
+            this.personHomeAddressBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.personHomeAddressBox.Location = new System.Drawing.Point(132, 256);
+            this.personHomeAddressBox.Multiline = true;
             this.personHomeAddressBox.Name = "personHomeAddressBox";
             this.personHomeAddressBox.Size = new System.Drawing.Size(260, 20);
             this.personHomeAddressBox.TabIndex = 11;
             // 
             // cancelAddingUser
             // 
+            this.cancelAddingUser.FlatAppearance.BorderSize = 0;
+            this.cancelAddingUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelAddingUser.Location = new System.Drawing.Point(316, 292);
             this.cancelAddingUser.Name = "cancelAddingUser";
             this.cancelAddingUser.Size = new System.Drawing.Size(75, 23);
@@ -155,6 +167,8 @@
             // 
             // applyAddingUser
             // 
+            this.applyAddingUser.FlatAppearance.BorderSize = 0;
+            this.applyAddingUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.applyAddingUser.Location = new System.Drawing.Point(235, 292);
             this.applyAddingUser.Name = "applyAddingUser";
             this.applyAddingUser.Size = new System.Drawing.Size(75, 23);
@@ -166,6 +180,7 @@
             // positionList
             // 
             this.positionList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.positionList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.positionList.FormattingEnabled = true;
             this.positionList.Location = new System.Drawing.Point(132, 143);
             this.positionList.Name = "positionList";

@@ -8,14 +8,14 @@ namespace grades
 {
     class GroupAndCourseGradesLogic
     {
-        internal List<dynamic> GetCoursesList(Context context, Staff user)
+        internal List<dynamic> GetCoursesList(Context context, Person user)
         {
             return (from courses in context.Courses
                     where courses.StaffId == user.PersonId
                     select courses.Subject.Name).Distinct().ToList<dynamic>();
         }
 
-        internal List<dynamic> GetGroupList(Context context, Staff user)
+        internal List<dynamic> GetGroupList(Context context, Person user)
         {
             var groups = context.Groups
                 .Where(g => g.StaffId == user.PersonId)

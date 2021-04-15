@@ -14,6 +14,9 @@ namespace grades
     {
         private Context _context;
 
+        private string _contentBackgroundColor;
+        private string _contentSelectedColor;
+
         public ChooseAddUserMethodForm(Context context)
         {
             InitializeComponent();
@@ -24,6 +27,28 @@ namespace grades
             this.StartPosition = FormStartPosition.CenterParent;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+
+            SetupColors();
+        }
+
+        private void SetupColors()
+        {
+            _contentBackgroundColor = "#212121";
+            _contentSelectedColor = "#535353";
+
+            this.BackColor = System.Drawing.ColorTranslator.FromHtml(_contentBackgroundColor);
+
+            foreach (Button b in this.Controls.OfType<Button>())
+            {
+                b.FlatAppearance.BorderSize = 1;
+                b.BackColor = System.Drawing.ColorTranslator.FromHtml(_contentBackgroundColor);
+                b.ForeColor = System.Drawing.ColorTranslator.FromHtml("#b3b3b3");
+            }
+
+            foreach (Label b in this.Controls.OfType<Label>())
+            {
+                b.ForeColor = System.Drawing.ColorTranslator.FromHtml("#b3b3b3");
+            }
         }
 
         private void ChooseAddUserMethodForm_Load(object sender, EventArgs e)
