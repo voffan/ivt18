@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace carton
 {
-    public partial class DirectorForm : Form
+    public partial class EcoEmplForm : Form
     {
         readonly PlanLogic planLogic;
         Context context;
@@ -18,7 +18,7 @@ namespace carton
 
         int planId;
 
-        public DirectorForm(Context context)
+        public EcoEmplForm(Context context)
         {
             planId = 0;
             InitializeComponent();
@@ -87,7 +87,7 @@ namespace carton
             HideUnnecessaryPlanneds(planId);
         }
 
-        private void DirectorForm_Load(object sender, EventArgs e)
+        private void EcoEmplForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'cartonDBDataSet.Plan' table. You can move, or remove it, as needed.
             //this.planTableAdapter.Fill(this.cartonDBDataSet.Plan);

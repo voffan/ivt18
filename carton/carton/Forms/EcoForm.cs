@@ -19,13 +19,13 @@ namespace carton
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void createPlanButton_Click(object sender, EventArgs e)
         {
             CEPlanForm cePlan = new CEPlanForm(context, 0);
             cePlan.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void editPlanButton_Click(object sender, EventArgs e)
         {
             CEPlanForm cePlan = new CEPlanForm(context, 1);
             cePlan.Show();

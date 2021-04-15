@@ -52,7 +52,7 @@ namespace carton.Classes
             //economist
             if (EmployeeLogic.LoginEmployee(context, this.loginEntry.Text, this.passwordEntry.Text) == 4)
             {
-                EcoForm f = new EcoForm(context);
+                EcoEmplForm f = new EcoEmplForm(context);
                 f.Show();
             }
             if (EmployeeLogic.LoginEmployee(context, this.loginEntry.Text, this.passwordEntry.Text) == 5)

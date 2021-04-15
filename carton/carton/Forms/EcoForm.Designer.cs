@@ -29,32 +29,32 @@ namespace carton
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.createPlanButton = new System.Windows.Forms.Button();
+            this.editPlanButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.planGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.planGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // createPlanButton
             // 
-            this.button1.Location = new System.Drawing.Point(12, 526);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(192, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Создать план";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.createPlanButton.Location = new System.Drawing.Point(12, 526);
+            this.createPlanButton.Name = "createPlanButton";
+            this.createPlanButton.Size = new System.Drawing.Size(192, 23);
+            this.createPlanButton.TabIndex = 0;
+            this.createPlanButton.Text = "Создать план";
+            this.createPlanButton.UseVisualStyleBackColor = true;
+            this.createPlanButton.Click += new System.EventHandler(this.createPlanButton_Click);
             // 
-            // button2
+            // editPlanButton
             // 
-            this.button2.Location = new System.Drawing.Point(579, 526);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(193, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Редактировать план";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.editPlanButton.Location = new System.Drawing.Point(579, 526);
+            this.editPlanButton.Name = "editPlanButton";
+            this.editPlanButton.Size = new System.Drawing.Size(193, 23);
+            this.editPlanButton.TabIndex = 1;
+            this.editPlanButton.Text = "Редактировать план";
+            this.editPlanButton.UseVisualStyleBackColor = true;
+            this.editPlanButton.Click += new System.EventHandler(this.editPlanButton_Click);
             // 
             // label1
             // 
@@ -65,26 +65,26 @@ namespace carton
             this.label1.TabIndex = 2;
             this.label1.Text = "Сотрудник экономического отдела";
             // 
-            // dataGridView1
+            // planGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 38);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(760, 463);
-            this.dataGridView1.TabIndex = 3;
+            this.planGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.planGridView.Location = new System.Drawing.Point(10, 38);
+            this.planGridView.Name = "planGridView";
+            this.planGridView.Size = new System.Drawing.Size(760, 463);
+            this.planGridView.TabIndex = 3;
             // 
             // EcoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.planGridView);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.editPlanButton);
+            this.Controls.Add(this.createPlanButton);
             this.Name = "EcoForm";
             this.Text = "EcoForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.planGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -92,9 +92,9 @@ namespace carton
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button createPlanButton;
+        private System.Windows.Forms.Button editPlanButton;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView planGridView;
     }
 }
