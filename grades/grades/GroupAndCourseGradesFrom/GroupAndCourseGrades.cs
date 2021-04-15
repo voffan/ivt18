@@ -24,7 +24,7 @@ namespace grades
             _context = new Context();
             _logic = new GroupAndCourseGradesLogic();
             _user = (from usr in _context.Staff
-                     where usr.PersonId == 17
+                     where usr.PersonId == 1
                      select usr).Single();
 
             LoadCoursesList();
@@ -39,6 +39,12 @@ namespace grades
         private void LoadGroupList()
         {
             groupComboBox.DataSource = _logic.GetGroupList(_context, _user);
+        }
+
+        private void GroupAndCourseGrades_Load(object sender, EventArgs e)
+        {
+            gradesDGV.DataSource = _context.Groups.ToList();
+            gradesDGV.Columns[1].ReadOnly = true;
         }
     }
 }

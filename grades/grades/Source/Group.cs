@@ -14,7 +14,8 @@ namespace grades
         [Key]
         public int GroupId { get; set; }
         public int Year { get; set; }
-        public char Letter { get; set; }
+        [StringLength(1)]
+        public string Letter { get; set; }
 
         public int SchoolId { get; set; }
         [ForeignKey("SchoolId")]

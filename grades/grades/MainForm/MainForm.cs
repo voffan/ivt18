@@ -18,16 +18,17 @@ namespace grades
         {
             InitializeComponent();
             //test
+            //test 2
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            //UserList userListForm = new UserList();
-            //userListForm.FormBorderStyle = FormBorderStyle.None;
-            //userListForm.IsMdiContainer = true;
-            //userListForm.MdiParent = this;
-            //this.panel2.Controls.Add(userListForm);
-            //userListForm.Show();
+            UserList userListForm = new UserList();
+            userListForm.FormBorderStyle = FormBorderStyle.None;
+            this.IsMdiContainer = true;
+            userListForm.MdiParent = this;
+            this.panel2.Controls.Add(userListForm);
+            userListForm.Show();
         }
     }
 }
