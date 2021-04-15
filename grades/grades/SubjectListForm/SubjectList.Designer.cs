@@ -50,6 +50,7 @@ namespace grades
             // 
             // clearButton
             // 
+            this.clearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clearButton.Location = new System.Drawing.Point(713, 8);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(75, 23);
@@ -60,23 +61,30 @@ namespace grades
             // 
             // searchBox
             // 
-            this.searchBox.Location = new System.Drawing.Point(55, 10);
+            this.searchBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.searchBox.Location = new System.Drawing.Point(55, 8);
+            this.searchBox.Multiline = true;
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(652, 20);
+            this.searchBox.Size = new System.Drawing.Size(652, 22);
             this.searchBox.TabIndex = 2;
             this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             // 
             // subjectDGV
             // 
             this.subjectDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.subjectDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.subjectDGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.subjectDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.subjectDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.subjectDGV.Location = new System.Drawing.Point(12, 37);
+            this.subjectDGV.Location = new System.Drawing.Point(12, 49);
             this.subjectDGV.Name = "subjectDGV";
-            this.subjectDGV.Size = new System.Drawing.Size(775, 371);
+            this.subjectDGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.subjectDGV.Size = new System.Drawing.Size(775, 359);
             this.subjectDGV.TabIndex = 3;
             // 
             // deleteButton
             // 
+            this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteButton.Location = new System.Drawing.Point(711, 415);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(75, 23);
@@ -87,6 +95,7 @@ namespace grades
             // 
             // editButton
             // 
+            this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editButton.Location = new System.Drawing.Point(605, 414);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(100, 23);
@@ -97,6 +106,7 @@ namespace grades
             // 
             // addButton
             // 
+            this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addButton.Location = new System.Drawing.Point(524, 414);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(75, 23);

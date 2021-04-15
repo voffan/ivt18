@@ -35,6 +35,8 @@ namespace grades
             // 
             // addMultipleutton
             // 
+            this.addMultipleutton.FlatAppearance.BorderSize = 0;
+            this.addMultipleutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addMultipleutton.Location = new System.Drawing.Point(12, 12);
             this.addMultipleutton.Name = "addMultipleutton";
             this.addMultipleutton.Size = new System.Drawing.Size(309, 23);
@@ -45,6 +47,8 @@ namespace grades
             // 
             // addSingleButton
             // 
+            this.addSingleButton.FlatAppearance.BorderSize = 0;
+            this.addSingleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addSingleButton.Location = new System.Drawing.Point(12, 45);
             this.addSingleButton.Name = "addSingleButton";
             this.addSingleButton.Size = new System.Drawing.Size(309, 23);

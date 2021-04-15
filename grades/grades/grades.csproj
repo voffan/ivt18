@@ -106,9 +106,9 @@
       <DependentUpon>GroupAndCourseGrades.cs</DependentUpon>
     </Compile>
     <Compile Include="GroupAndCourseGradesFrom\GroupAndCourseGradesLogic.cs" />
-    <Compile Include="Migrations\202104150135442_test4.cs" />
-    <Compile Include="Migrations\202104150135442_test4.designer.cs">
-      <DependentUpon>202104150135442_test4.cs</DependentUpon>
+    <Compile Include="Migrations\202104150437385_test4.cs" />
+    <Compile Include="Migrations\202104150437385_test4.designer.cs">
+      <DependentUpon>202104150437385_test4.cs</DependentUpon>
     </Compile>
     <Compile Include="SubjectListForm\AddSubjectcs.cs">
       <SubType>Form</SubType>
@@ -184,8 +184,8 @@
     <EmbeddedResource Include="GroupAndCourseGradesFrom\GroupAndCourseGrades.resx">
       <DependentUpon>GroupAndCourseGrades.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104150135442_test4.resx">
-      <DependentUpon>202104150135442_test4.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104150437385_test4.resx">
+      <DependentUpon>202104150437385_test4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubjectListForm\AddSubjectcs.resx">
       <DependentUpon>AddSubjectcs.cs</DependentUpon>
@@ -222,6 +222,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UserListForm\UserList.resx">
       <DependentUpon>UserList.cs</DependentUpon>
@@ -255,7 +256,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Icons\User_Icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

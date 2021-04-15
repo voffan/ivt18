@@ -14,21 +14,77 @@ namespace grades
     {
         private Context _context;
         private GroupAndCourseGradesLogic _logic;
-        private Staff _user;
+        private Person _user;
 
-        //public GroupAndCourseGrades(Context context)
-        public GroupAndCourseGrades()
+        private string _contentBackgroundColor;
+        private string _contentSelectedColor;
+
+        public GroupAndCourseGrades(Context context, Person user)
         {
             InitializeComponent();
 
-            _context = new Context();
-            _logic = new GroupAndCourseGradesLogic();
-            _user = (from usr in _context.Staff
-                     where usr.PersonId == 1
-                     select usr).Single();
+            _context = context;
+            _user = user;
 
+            _logic = new GroupAndCourseGradesLogic();
+            
             LoadCoursesList();
             LoadGroupList();
+
+            SetupColor();
+            SetUpComponentAnchors();
+        }
+
+        private void SetUpComponentAnchors()
+        {
+            courseLabel.Anchor = (AnchorStyles.Top | AnchorStyles.Left);
+            groupLabel.Anchor = (AnchorStyles.Top | AnchorStyles.Left);
+            courseComboBox.Anchor = (AnchorStyles.Top | AnchorStyles.Left);
+            groupComboBox.Anchor = (AnchorStyles.Top | AnchorStyles.Left);
+
+            gradesDGV.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right);
+
+            cancelButton.Anchor = (AnchorStyles.Bottom | AnchorStyles.Right);
+            saveButton.Anchor = (AnchorStyles.Bottom | AnchorStyles.Right);
+        }
+
+        private void SetupColor()
+        {
+            _contentBackgroundColor = "#212121";
+            _contentSelectedColor = "#535353";
+
+            this.BackColor = System.Drawing.ColorTranslator.FromHtml(_contentBackgroundColor);
+
+            gradesDGV.BackgroundColor = System.Drawing.ColorTranslator.FromHtml(_contentBackgroundColor);
+            gradesDGV.ForeColor = ColorTranslator.FromHtml("#b3b3b3");
+            gradesDGV.EnableHeadersVisualStyles = false;
+            gradesDGV.DefaultCellStyle.BackColor = ColorTranslator.FromHtml(_contentBackgroundColor);
+            gradesDGV.DefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml(_contentSelectedColor);
+            gradesDGV.RowsDefaultCellStyle.BackColor = ColorTranslator.FromHtml(_contentBackgroundColor);
+            gradesDGV.RowsDefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml(_contentSelectedColor);
+            gradesDGV.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml(_contentBackgroundColor);
+            gradesDGV.ColumnHeadersDefaultCellStyle.ForeColor = ColorTranslator.FromHtml(_contentSelectedColor);
+            gradesDGV.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.Transparent;
+            gradesDGV.RowHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml(_contentBackgroundColor);
+            gradesDGV.RowHeadersDefaultCellStyle.ForeColor = ColorTranslator.FromHtml(_contentBackgroundColor);
+            gradesDGV.RowHeadersDefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml(_contentSelectedColor);
+
+            foreach (Button b in this.Controls.OfType<Button>())
+            {
+                b.FlatAppearance.BorderSize = 1;
+                b.BackColor = System.Drawing.ColorTranslator.FromHtml(_contentBackgroundColor);
+                b.ForeColor = System.Drawing.ColorTranslator.FromHtml("#b3b3b3");
+            }
+
+            foreach (Label b in this.Controls.OfType<Label>())
+            {
+                b.ForeColor = System.Drawing.ColorTranslator.FromHtml("#b3b3b3");
+            }
+
+            foreach (CheckBox c in this.Controls.OfType<CheckBox>())
+            {
+                c.ForeColor = System.Drawing.ColorTranslator.FromHtml("#b3b3b3");
+            }
         }
 
         private void LoadCoursesList()
