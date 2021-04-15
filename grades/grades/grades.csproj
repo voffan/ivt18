@@ -99,6 +99,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GroupAndCourseGradesFrom\GroupAndCourseGrades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupAndCourseGradesFrom\GroupAndCourseGrades.Designer.cs">
+      <DependentUpon>GroupAndCourseGrades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupAndCourseGradesFrom\GroupAndCourseGradesLogic.cs" />
     <Compile Include="SubjectListForm\AddSubjectcs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,8 +177,8 @@
       <DependentUpon>UserList.cs</DependentUpon>
     </Compile>
     <Compile Include="UserListForm\UserListLogic.cs" />
-    <EmbeddedResource Include="Migrations\202104020317464_test1.resx">
-      <DependentUpon>202104020317464_test1.cs</DependentUpon>
+    <EmbeddedResource Include="GroupAndCourseGradesFrom\GroupAndCourseGrades.resx">
+      <DependentUpon>GroupAndCourseGrades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubjectListForm\AddSubjectcs.resx">
       <DependentUpon>AddSubjectcs.cs</DependentUpon>
