@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
             Application.SetCompatibleTextRenderingDefault(false);
 
             MySQL.Main();
-            Application.Run(new Form1());
+            Application.Run(new SignForm());
 
         }
 

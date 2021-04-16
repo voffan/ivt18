@@ -106,11 +106,17 @@
     <Compile Include="Classes\SportCategory.cs" />
     <Compile Include="Classes\SportType.cs" />
     <Compile Include="Context.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="SignForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="SignForm.Designer.cs">
+      <DependentUpon>SignForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202104090629180_sport.cs" />
     <Compile Include="Migrations\202104090629180_sport.designer.cs">
@@ -120,8 +126,8 @@
     <Compile Include="MySQL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="SignForm.resx">
+      <DependentUpon>SignForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104090629180_sport.resx">
       <DependentUpon>202104090629180_sport.cs</DependentUpon>
