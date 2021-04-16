@@ -56,13 +56,17 @@ namespace grades
             // 
             // nameBox
             // 
+            this.nameBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nameBox.Location = new System.Drawing.Point(79, 41);
+            this.nameBox.Multiline = true;
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(313, 20);
             this.nameBox.TabIndex = 2;
             // 
             // cancelButton
             // 
+            this.cancelButton.FlatAppearance.BorderSize = 0;
+            this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelButton.Location = new System.Drawing.Point(317, 67);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
@@ -73,6 +77,8 @@ namespace grades
             // 
             // applyButton
             // 
+            this.applyButton.FlatAppearance.BorderSize = 0;
+            this.applyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.applyButton.Location = new System.Drawing.Point(236, 67);
             this.applyButton.Name = "applyButton";
             this.applyButton.Size = new System.Drawing.Size(75, 23);

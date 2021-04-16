@@ -100,9 +100,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Migrations\202104090341397_test1234.cs" />
     <Compile Include="Migrations\202104090341397_test1234.designer.cs">
       <DependentUpon>202104090341397_test1234.cs</DependentUpon>
+=======
+    <Compile Include="GroupAndCourseGradesFrom\GroupAndCourseGrades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupAndCourseGradesFrom\GroupAndCourseGrades.Designer.cs">
+      <DependentUpon>GroupAndCourseGrades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupAndCourseGradesFrom\GroupAndCourseGradesLogic.cs" />
+    <Compile Include="Migrations\202104150437385_test4.cs" />
+    <Compile Include="Migrations\202104150437385_test4.designer.cs">
+      <DependentUpon>202104150437385_test4.cs</DependentUpon>
+>>>>>>> e426fc652a84c34437a426683a0730d3ca798991
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SubjectListForm\AddSubjectcs.cs">
@@ -175,9 +188,17 @@
       <DependentUpon>UserList.cs</DependentUpon>
     </Compile>
     <Compile Include="UserListForm\UserListLogic.cs" />
+<<<<<<< HEAD
     <Compile Include="UserListForm\UserSignInLogic.cs" />
     <EmbeddedResource Include="Migrations\202104090341397_test1234.resx">
       <DependentUpon>202104090341397_test1234.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="GroupAndCourseGradesFrom\GroupAndCourseGrades.resx">
+      <DependentUpon>GroupAndCourseGrades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104150437385_test4.resx">
+      <DependentUpon>202104150437385_test4.cs</DependentUpon>
+>>>>>>> e426fc652a84c34437a426683a0730d3ca798991
     </EmbeddedResource>
     <EmbeddedResource Include="SubjectListForm\AddSubjectcs.resx">
       <DependentUpon>AddSubjectcs.cs</DependentUpon>
@@ -248,7 +269,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Icons\User_Icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

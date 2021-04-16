@@ -13,20 +13,67 @@ namespace grades
     public partial class SubjectList : Form
     {
         Context _context;
-
+        Person _user;
         SubjectListLogic _logic;
 
-        public SubjectList()
+        private string _contentBackgroundColor;
+        private string _contentSelectedColor;
+
+        public SubjectList(Context context, Person user)
         {
             InitializeComponent();
 
-            _context = new Context();
+            _context = context;
+            _user = user;
+
             _logic = new SubjectListLogic();
 
             SetUpForm();
+            SetUpColors();
             SetUpComponentAnchors();
 
             subjectDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+
+        private void SetUpColors()
+        {
+            _contentBackgroundColor = "#212121";
+            _contentSelectedColor = "#535353";
+
+            this.BackColor = System.Drawing.ColorTranslator.FromHtml("#212121");
+
+            searchBox.BackColor = Color.White;
+
+            subjectDGV.BackgroundColor = System.Drawing.ColorTranslator.FromHtml(_contentBackgroundColor);
+            subjectDGV.ForeColor = ColorTranslator.FromHtml("#b3b3b3");
+            subjectDGV.EnableHeadersVisualStyles = false;
+            subjectDGV.DefaultCellStyle.BackColor = ColorTranslator.FromHtml(_contentBackgroundColor);
+            subjectDGV.DefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml(_contentSelectedColor);
+            subjectDGV.RowsDefaultCellStyle.BackColor = ColorTranslator.FromHtml(_contentBackgroundColor);
+            subjectDGV.RowsDefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml(_contentSelectedColor);
+            subjectDGV.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml(_contentBackgroundColor);
+            subjectDGV.ColumnHeadersDefaultCellStyle.ForeColor = ColorTranslator.FromHtml(_contentSelectedColor);
+            subjectDGV.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.Transparent;
+            subjectDGV.RowHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml(_contentBackgroundColor);
+            subjectDGV.RowHeadersDefaultCellStyle.ForeColor = ColorTranslator.FromHtml(_contentBackgroundColor);
+            subjectDGV.RowHeadersDefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml(_contentSelectedColor);
+
+            foreach (Button b in this.Controls.OfType<Button>())
+            {
+                b.FlatAppearance.BorderSize = 1;
+                b.BackColor = System.Drawing.ColorTranslator.FromHtml("#212121");
+                b.ForeColor = System.Drawing.ColorTranslator.FromHtml("#b3b3b3");
+            }
+
+            foreach (Label b in this.Controls.OfType<Label>())
+            {
+                b.ForeColor = System.Drawing.ColorTranslator.FromHtml("#b3b3b3");
+            }
+
+            foreach (CheckBox c in this.Controls.OfType<CheckBox>())
+            {
+                c.ForeColor = System.Drawing.ColorTranslator.FromHtml("#b3b3b3");
+            }
         }
 
         private void SubjectList_Load(object sender, EventArgs e)

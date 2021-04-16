@@ -17,19 +17,26 @@ namespace grades
 {
     public partial class UserList : Form
     {
-        public Context Context { get; set; }
-
+        private Context _context;
+        private Person _user;
         private UserListLogic _logic;
 
-        public UserList()
+        private string _contentBackgroundColor;
+        private string _contentSelectedColor;
+
+        public UserList(Context context, Person user)
         {
             InitializeComponent();
-            Context = new Context();
+
+            _context = context;
+            _user = user;
+
             _logic = new UserListLogic();
 
             usersDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             SetUpForm();
+            SetUpColors();
             SetUpComponentAnchors();
         }
 
@@ -37,6 +44,47 @@ namespace grades
         {
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.StartPosition = FormStartPosition.CenterScreen;
+        }
+
+        private void SetUpColors()
+        {
+            _contentBackgroundColor = "#212121";
+            _contentSelectedColor = "#535353";
+
+            this.BackColor = System.Drawing.ColorTranslator.FromHtml(_contentBackgroundColor);
+
+            searchBox.BackColor = Color.White;
+
+            usersDGV.BackgroundColor = System.Drawing.ColorTranslator.FromHtml(_contentBackgroundColor);
+            usersDGV.ForeColor = ColorTranslator.FromHtml("#b3b3b3");
+            usersDGV.EnableHeadersVisualStyles = false;
+            usersDGV.DefaultCellStyle.BackColor = ColorTranslator.FromHtml(_contentBackgroundColor);
+            usersDGV.DefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml(_contentSelectedColor);
+            usersDGV.RowsDefaultCellStyle.BackColor = ColorTranslator.FromHtml(_contentBackgroundColor);
+            usersDGV.RowsDefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml(_contentSelectedColor);
+            usersDGV.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml(_contentBackgroundColor);
+            usersDGV.ColumnHeadersDefaultCellStyle.ForeColor = ColorTranslator.FromHtml(_contentSelectedColor);
+            usersDGV.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.Transparent;
+            usersDGV.RowHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml(_contentBackgroundColor);
+            usersDGV.RowHeadersDefaultCellStyle.ForeColor = ColorTranslator.FromHtml(_contentBackgroundColor);
+            usersDGV.RowHeadersDefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml(_contentSelectedColor);
+
+            foreach (Button b in this.Controls.OfType<Button>())
+            {
+                b.FlatAppearance.BorderSize = 1;
+                b.BackColor = System.Drawing.ColorTranslator.FromHtml(_contentBackgroundColor);
+                b.ForeColor = System.Drawing.ColorTranslator.FromHtml("#b3b3b3");
+            }
+
+            foreach (Label b in this.Controls.OfType<Label>())
+            {
+                b.ForeColor = System.Drawing.ColorTranslator.FromHtml("#b3b3b3");
+            }
+
+            foreach (CheckBox c in this.Controls.OfType<CheckBox>())
+            {
+                c.ForeColor = System.Drawing.ColorTranslator.FromHtml("#b3b3b3");
+            }
         }
 
         private void SetUpComponentAnchors()
@@ -59,11 +107,7 @@ namespace grades
 
         private void addUser_Click(object sender, EventArgs e)
         {
-            //AddUser addUserForm = new AddUser(Context);
-            //addUserForm.ShowDialog();
-            //UpdateList();
-
-            ChooseAddUserMethodForm chooseMethodForm = new ChooseAddUserMethodForm(Context);
+            ChooseAddUserMethodForm chooseMethodForm = new ChooseAddUserMethodForm(_context);
             chooseMethodForm.ShowDialog();
             UpdateList();
         }
@@ -77,15 +121,15 @@ namespace grades
         {
             if (showStaff.Checked && showStudents.Checked)
             {
-                usersDGV.DataSource = _logic.GetPersonList(Context, searchBox.Text.ToString());
+                usersDGV.DataSource = _logic.GetPersonList(_context, searchBox.Text.ToString());
             }
             else if (showStaff.Checked)
             {
-                usersDGV.DataSource = _logic.GetStaffList(Context, searchBox.Text.ToString());
+                usersDGV.DataSource = _logic.GetStaffList(_context, searchBox.Text.ToString());
             }
             else if (showStudents.Checked)
             {
-                usersDGV.DataSource = _logic.GetStudentList(Context, searchBox.Text.ToString());
+                usersDGV.DataSource = _logic.GetStudentList(_context, searchBox.Text.ToString());
             }
             else
             {
@@ -105,9 +149,9 @@ namespace grades
         private void editUser_Click(object sender, EventArgs e)
         {
             int personId = getSelectedRowPersonId().Last();
-            Person personToEdit = _logic.getPersonById(Context, personId);
+            Person personToEdit = _logic.getPersonById(_context, personId);
 
-            AddUser editUserForm = new AddUser(Context);
+            AddUser editUserForm = new AddUser(_context);
 
             editUserForm.SetEditState(personToEdit);
             editUserForm.ShowDialog();
@@ -120,7 +164,7 @@ namespace grades
 
             for (int i = 0; i < personsId.Count; i++)
             {
-                _logic.DeleteUser(Context, personsId[i]);
+                _logic.DeleteUser(_context, personsId[i]);
                 UpdateList();
             }
         }
@@ -169,9 +213,9 @@ namespace grades
         private void viewUser_Click(object sender, EventArgs e)
         {
             int personId = getSelectedRowPersonId().Last();
-            Person personToDisplay = _logic.getPersonById(Context, personId);
+            Person personToDisplay = _logic.getPersonById(_context, personId);
 
-            AddUser ViewUserForm = new AddUser(Context);
+            AddUser ViewUserForm = new AddUser(_context);
             ViewUserForm.SetViewState(personToDisplay);
             ViewUserForm.ShowDialog();
         }

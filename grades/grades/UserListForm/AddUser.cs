@@ -21,6 +21,9 @@ namespace grades
 
         private List<TextBox> _textBoxes;
 
+        private string _contentBackgroundColor;
+        private string _contentSelectedColor;
+
         public AddUser(Context context)
         {
             InitializeComponent();
@@ -33,6 +36,33 @@ namespace grades
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.StartPosition = FormStartPosition.CenterParent;
             this.ControlBox = false;
+
+            SetupColors();
+        }
+
+        private void SetupColors()
+        {
+            _contentBackgroundColor = "#212121";
+            _contentSelectedColor = "#535353";
+
+            this.BackColor = System.Drawing.ColorTranslator.FromHtml(_contentBackgroundColor);
+
+            foreach (Button b in this.Controls.OfType<Button>())
+            {
+                b.FlatAppearance.BorderSize = 1;
+                b.BackColor = System.Drawing.ColorTranslator.FromHtml(_contentBackgroundColor);
+                b.ForeColor = System.Drawing.ColorTranslator.FromHtml("#b3b3b3");
+            }
+
+            foreach (Label b in this.Controls.OfType<Label>())
+            {
+                b.ForeColor = System.Drawing.ColorTranslator.FromHtml("#b3b3b3");
+            }
+
+            foreach (CheckBox c in this.Controls.OfType<CheckBox>())
+            {
+                c.ForeColor = System.Drawing.ColorTranslator.FromHtml("#b3b3b3");
+            }
         }
 
         internal void SetEditState(Person person)

@@ -19,7 +19,11 @@ namespace grades
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Application.Run(new UserSignIn());
+=======
+            Application.Run(new MainForm());
+>>>>>>> e426fc652a84c34437a426683a0730d3ca798991
         }
     }
 }

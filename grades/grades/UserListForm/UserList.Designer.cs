@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.usersDGV = new System.Windows.Forms.DataGridView();
             this.deleteUser = new System.Windows.Forms.Button();
             this.editUser = new System.Windows.Forms.Button();
@@ -45,40 +46,61 @@
             // usersDGV
             // 
             this.usersDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.usersDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.usersDGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.usersDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.usersDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.usersDGV.Location = new System.Drawing.Point(13, 32);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.usersDGV.DefaultCellStyle = dataGridViewCellStyle1;
+            this.usersDGV.Location = new System.Drawing.Point(13, 47);
             this.usersDGV.Name = "usersDGV";
-            this.usersDGV.Size = new System.Drawing.Size(775, 376);
+            this.usersDGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.usersDGV.Size = new System.Drawing.Size(775, 361);
             this.usersDGV.TabIndex = 0;
             // 
             // deleteUser
             // 
-            this.deleteUser.Location = new System.Drawing.Point(712, 415);
+            this.deleteUser.BackColor = System.Drawing.SystemColors.Highlight;
+            this.deleteUser.FlatAppearance.BorderSize = 0;
+            this.deleteUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteUser.Location = new System.Drawing.Point(712, 419);
             this.deleteUser.Name = "deleteUser";
             this.deleteUser.Size = new System.Drawing.Size(75, 23);
             this.deleteUser.TabIndex = 1;
             this.deleteUser.Text = "Удалить";
-            this.deleteUser.UseVisualStyleBackColor = true;
+            this.deleteUser.UseVisualStyleBackColor = false;
             this.deleteUser.Click += new System.EventHandler(this.deleteUser_Click);
             // 
             // editUser
             // 
-            this.editUser.Location = new System.Drawing.Point(608, 414);
+            this.editUser.BackColor = System.Drawing.SystemColors.Highlight;
+            this.editUser.FlatAppearance.BorderSize = 0;
+            this.editUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editUser.Location = new System.Drawing.Point(608, 419);
             this.editUser.Name = "editUser";
             this.editUser.Size = new System.Drawing.Size(98, 23);
             this.editUser.TabIndex = 2;
             this.editUser.Text = "Редактировать";
-            this.editUser.UseVisualStyleBackColor = true;
+            this.editUser.UseVisualStyleBackColor = false;
             this.editUser.Click += new System.EventHandler(this.editUser_Click);
             // 
             // addUser
             // 
-            this.addUser.Location = new System.Drawing.Point(527, 413);
+            this.addUser.BackColor = System.Drawing.SystemColors.Highlight;
+            this.addUser.FlatAppearance.BorderSize = 0;
+            this.addUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addUser.Location = new System.Drawing.Point(527, 419);
             this.addUser.Name = "addUser";
             this.addUser.Size = new System.Drawing.Size(75, 23);
             this.addUser.TabIndex = 3;
             this.addUser.Text = "Добавить";
-            this.addUser.UseVisualStyleBackColor = true;
+            this.addUser.UseVisualStyleBackColor = false;
             this.addUser.Click += new System.EventHandler(this.addUser_Click);
             // 
             // displayLabel
@@ -118,9 +140,12 @@
             // 
             // searchBox
             // 
-            this.searchBox.Location = new System.Drawing.Point(61, 7);
+            this.searchBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.searchBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.searchBox.Location = new System.Drawing.Point(61, 5);
+            this.searchBox.Multiline = true;
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(645, 20);
+            this.searchBox.Size = new System.Drawing.Size(645, 23);
             this.searchBox.TabIndex = 8;
             this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             // 
@@ -135,28 +160,35 @@
             // 
             // viewUser
             // 
-            this.viewUser.Location = new System.Drawing.Point(446, 413);
+            this.viewUser.BackColor = System.Drawing.SystemColors.Highlight;
+            this.viewUser.FlatAppearance.BorderSize = 0;
+            this.viewUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.viewUser.Location = new System.Drawing.Point(446, 419);
             this.viewUser.Name = "viewUser";
             this.viewUser.Size = new System.Drawing.Size(75, 23);
             this.viewUser.TabIndex = 10;
             this.viewUser.Text = "Просмотр";
-            this.viewUser.UseVisualStyleBackColor = true;
+            this.viewUser.UseVisualStyleBackColor = false;
             this.viewUser.Click += new System.EventHandler(this.viewUser_Click);
             // 
             // clearButton
             // 
+            this.clearButton.BackColor = System.Drawing.SystemColors.Highlight;
+            this.clearButton.FlatAppearance.BorderSize = 0;
+            this.clearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clearButton.Location = new System.Drawing.Point(712, 5);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(75, 23);
             this.clearButton.TabIndex = 11;
             this.clearButton.Text = "Очистить";
-            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.UseVisualStyleBackColor = false;
             this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // UserList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.viewUser);
