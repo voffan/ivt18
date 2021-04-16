@@ -7,13 +7,13 @@ namespace WindowsFormsApp1.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class Sport : IMigrationMetadata
+    public sealed partial class sport : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Sport));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(sport));
         
         string IMigrationMetadata.Id
         {
-            get { return "202104020424061_Sport"; }
+            get { return "202104090629180_sport"; }
         }
         
         string IMigrationMetadata.Source

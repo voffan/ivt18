@@ -15,10 +15,10 @@ namespace WindowsFormsApp1
         {
             var builder = new MySqlConnectionStringBuilder
             {
-                Server = "YOUR-SERVER.mysql.database.azure.com",
-                Database = "YOUR-DATABASE",
-                UserID = "USER@YOUR-SERVER",
-                Password = "PASSWORD",
+                Server = "85.10.205.173:3306",
+                Database = "user2144",
+                UserID = "db2144",
+                Password = "testtest",
                 SslMode = MySqlSslMode.Required,
             };
 

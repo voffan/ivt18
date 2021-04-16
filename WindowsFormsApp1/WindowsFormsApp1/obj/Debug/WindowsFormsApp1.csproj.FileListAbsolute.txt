@@ -80,4 +80,5 @@ C:\ИВТ-18\6 семестр\ПИ\ivt-18\ivt18\WindowsFormsApp1\WindowsFormsApp
 C:\ИВТ-18\6 семестр\ПИ\ivt-18\ivt18\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.dll
 C:\ИВТ-18\6 семестр\ПИ\ivt-18\ivt18\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.xml
 C:\ИВТ-18\6 семестр\ПИ\ivt-18\ivt18\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.xml
-C:\ИВТ-18\6 семестр\ПИ\ivt-18\ivt18\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Migrations.Sport.resources
+C:\ИВТ-18\6 семестр\ПИ\ivt-18\ivt18\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+C:\ИВТ-18\6 семестр\ПИ\ivt-18\ivt18\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Migrations.sport.resources
