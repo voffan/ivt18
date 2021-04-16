@@ -13,7 +13,7 @@ namespace carton
 
         }
 
-        public void CreatePlan(Context context, List<string> ss)
+        public void CreatePlan(Context context, Dictionary<int,int> data)
         {
             Plan plan = new Plan();
 
@@ -30,6 +30,7 @@ namespace carton
         public void EditPlan(Context context, Plan plan)
         {
             //some edits
+
             //plan.Id = nextID();
             //plan.Name = nameBox.Text;
             //plan.Date = dateBox.Text;
@@ -71,6 +72,26 @@ namespace carton
             setPlannedComplete(context, plan.Id, false);
 
             context.SaveChanges();
+        }
+
+        public void MarkToDelete(Plan plan, Context context)
+        {
+            plan.Status = PlanStatus.ToDelete;
+
+            setPlannedComplete(context, plan.Id, false);
+
+            context.SaveChanges();
+        }
+
+        public void DeleteMarkedPlans(Context context)
+        {
+            foreach (Plan p in context.Plans)
+            {
+                if (p.Status == PlanStatus.ToDelete)
+                {
+                    context.Plans.Remove(p);
+                }
+            }
         }
 
         public void setPlannedComplete(Context context, int id, bool flag)

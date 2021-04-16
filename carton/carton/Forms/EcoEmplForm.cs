@@ -46,46 +46,46 @@ namespace carton
                 plannedGridView.Rows[row.Index].Visible = true;
             }
         }
-        private void ResetButton_Click(object sender, EventArgs e)
-        {
-            Plan plan = context.Plans.Find(planId);
+        //private void ResetButton_Click(object sender, EventArgs e)
+        //{
+        //    Plan plan = context.Plans.Find(planId);
 
-            planLogic.resetToNew(plan, context);
+        //    planLogic.resetToNew(plan, context);
 
-            //update datagridviews
-            planGridView.DataSource = context.Plans.ToList();
-            plannedGridView.DataSource = context.Planneds.ToList();
+        //    //update datagridviews
+        //    planGridView.DataSource = context.Plans.ToList();
+        //    plannedGridView.DataSource = context.Planneds.ToList();
             
-            HideUnnecessaryPlanneds(planId);
-        }
+        //    HideUnnecessaryPlanneds(planId);
+        //}
 
-        private void ApplyPlanButton_Click(object sender, EventArgs e)
-        {
-            //selected plan from the list
-            Plan plan = context.Plans.Find(planId);
+        //private void ApplyPlanButton_Click(object sender, EventArgs e)
+        //{
+        //    //selected plan from the list
+        //    Plan plan = context.Plans.Find(planId);
             
-            planLogic.ApplyPlan(plan, context);
+        //    planLogic.ApplyPlan(plan, context);
 
-            //update datagridviews
-            planGridView.DataSource = context.Plans.ToList();
-            plannedGridView.DataSource = context.Planneds.ToList();
+        //    //update datagridviews
+        //    planGridView.DataSource = context.Plans.ToList();
+        //    plannedGridView.DataSource = context.Planneds.ToList();
             
-            HideUnnecessaryPlanneds(planId);
-        }
+        //    HideUnnecessaryPlanneds(planId);
+        //}
 
-        private void ApproveCompletionButton_Click(object sender, EventArgs e)
-        {
-            //selected plan from the list
-            Plan plan = context.Plans.Find(planId);
+        //private void ApproveCompletionButton_Click(object sender, EventArgs e)
+        //{
+        //    //selected plan from the list
+        //    Plan plan = context.Plans.Find(planId);
 
-            planLogic.ApproveCompletion(plan, context);
+        //    planLogic.ApproveCompletion(plan, context);
 
-            //update datagridviews
-            planGridView.DataSource = context.Plans.ToList();
-            plannedGridView.DataSource = context.Planneds.ToList();
+        //    //update datagridviews
+        //    planGridView.DataSource = context.Plans.ToList();
+        //    plannedGridView.DataSource = context.Planneds.ToList();
 
-            HideUnnecessaryPlanneds(planId);
-        }
+        //    HideUnnecessaryPlanneds(planId);
+        //}
 
         private void EcoEmplForm_Load(object sender, EventArgs e)
         {
@@ -135,6 +135,34 @@ namespace carton
         private void LogOutButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void editSavePlanButton_Click(object sender, EventArgs e)
+        {
+            CEPlanForm editForm = new CEPlanForm(context, 1);
+            editForm.Show();
+            HideUnnecessaryPlanneds(planId);
+        }
+
+        private void createPlanBbutton_Click(object sender, EventArgs e)
+        {
+            CEPlanForm createForm = new CEPlanForm(context, 0);
+            createForm.Show();
+            HideUnnecessaryPlanneds(planId);
+        }
+
+        private void deletePlan_Click(object sender, EventArgs e)
+        {
+            //selected plan from the list
+            Plan plan = context.Plans.Find(planId);
+
+            planLogic.MarkToDelete(plan, context);
+
+            //update datagridviews
+            planGridView.DataSource = context.Plans.ToList();
+            plannedGridView.DataSource = context.Planneds.ToList();
+
+            HideUnnecessaryPlanneds(planId);
         }
     }
 }
