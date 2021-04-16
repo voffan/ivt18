@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>grades</RootNamespace>
     <AssemblyName>grades</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -30,6 +30,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -99,10 +100,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202104010005193_test5.cs" />
-    <Compile Include="Migrations\202104010005193_test5.Designer.cs">
-      <DependentUpon>202104010005193_test5.cs</DependentUpon>
+    <Compile Include="Migrations\202104090341397_test1234.cs" />
+    <Compile Include="Migrations\202104090341397_test1234.designer.cs">
+      <DependentUpon>202104090341397_test1234.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SubjectListForm\AddSubjectcs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,7 +156,6 @@
     <Compile Include="Source\Grade.cs" />
     <Compile Include="Source\GradingSystem.cs" />
     <Compile Include="Source\Group.cs" />
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Source\Person.cs" />
     <Compile Include="Source\Position.cs" />
     <Compile Include="Program.cs" />
@@ -174,8 +175,9 @@
       <DependentUpon>UserList.cs</DependentUpon>
     </Compile>
     <Compile Include="UserListForm\UserListLogic.cs" />
-    <EmbeddedResource Include="Migrations\202104010005193_test5.resx">
-      <DependentUpon>202104010005193_test5.cs</DependentUpon>
+    <Compile Include="UserListForm\UserSignInLogic.cs" />
+    <EmbeddedResource Include="Migrations\202104090341397_test1234.resx">
+      <DependentUpon>202104090341397_test1234.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubjectListForm\AddSubjectcs.resx">
       <DependentUpon>AddSubjectcs.cs</DependentUpon>
@@ -192,10 +194,10 @@
     <EmbeddedResource Include="UserListForm\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="UserSignIn.cs">
+    <Compile Include="UserListForm\UserSignIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserSignIn.Designer.cs">
+    <Compile Include="UserListForm\UserSignIn.Designer.cs">
       <DependentUpon>UserSignIn.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="UserListForm\ChooseAddUserMethodForm.resx">
@@ -212,11 +214,12 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UserListForm\UserList.resx">
       <DependentUpon>UserList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserSignIn.resx">
+    <EmbeddedResource Include="UserListForm\UserSignIn.resx">
       <DependentUpon>UserSignIn.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

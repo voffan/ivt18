@@ -33,5 +33,10 @@ namespace grades
             _logic.AddClass(context, n);
 
         }
+
+        private void CountBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

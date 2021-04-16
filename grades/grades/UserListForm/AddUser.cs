@@ -135,5 +135,30 @@ namespace grades
                 }
             }
         }
+
+        private void personFirstNameBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void personSurNameBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void positionList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void personMiddleNameBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void personHomeAddressBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
