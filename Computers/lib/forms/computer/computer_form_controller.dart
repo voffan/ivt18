@@ -7,6 +7,7 @@ import 'package:computers/models/employee.dart';
 import 'package:computers/models/manufacturer.dart';
 import 'package:computers/models/motherboard.dart';
 import 'package:computers/models/processor.dart';
+import 'package:computers/models/status.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:uuid/uuid.dart';
@@ -20,6 +21,7 @@ class ComputerFormController extends GetxController {
   List<DiskDrive> diskDrives = [];
   List<Processor> processors = [];
   List<Motherboard> motherboards = [];
+  List<Status> statuses = [];
   
   String model;
   String itemNo;
@@ -29,6 +31,7 @@ class ComputerFormController extends GetxController {
   DiskDrive diskDrive;
   Processor processor;
   Motherboard motherboard;
+  Status status;
 
   bool editing = false;
 
@@ -45,8 +48,15 @@ class ComputerFormController extends GetxController {
       diskDrive = computer.diskDrive;
       processor = computer.processor;
       motherboard = computer.motherboard;
+      status = computer.status;
       editing = true;
     }
+  }
+
+  @override
+  void onReady() {
+    fetchData();
+    super.onReady();
   }
 
   void submit() async {
@@ -58,12 +68,27 @@ class ComputerFormController extends GetxController {
     computer.diskDriveId = diskDrive?.id;
     computer.processorId = processor?.id;
     computer.motherboardId = motherboard?.id;
+    computer.statusId = status?.id;
     if (!editing) {
       computer.id = Uuid().v4();
     }
     await Database.addComputer(computer);
+    if (employee != null) {
+      employee.computerId = computer.id;
+      await Database.addEmployee(employee);
+    }
     Get.find<ComputersPageController>().updateComputers();
     Get.back();
+  }
+
+  void fetchData() {
+    manufacturers = Database.getManufacturers();
+    employees = Database.getEmployees();
+    diskDrives = Database.getDiskDrives();
+    processors = Database.getProcessors();
+    motherboards = Database.getMotherboards();
+    statuses = Database.getStatuses();
+    update();
   }
 
   void modelTextChanged(String model) {
@@ -76,6 +101,31 @@ class ComputerFormController extends GetxController {
 
   void ipTextChanged(String ip) {
     this.ip = ip;
+  }
+
+
+  void createEmployee() {
+    Get.toNamed('/employee');
+  }
+
+  void createMotherboard() {
+    
+  }
+
+  void createProcessor() {
+    
+  }
+
+  void createDiskDrive() {
+    
+  }
+
+  void createManufacturer() {
+    Get.toNamed('/manufacturer');
+  }
+
+  void createStatus() {
+    Get.toNamed('/status');
   }
 
   void selectManufacturer(Manufacturer manufacturer) {
@@ -101,5 +151,32 @@ class ComputerFormController extends GetxController {
   void selectMotherboard(Motherboard motherboard) {
     this.motherboard = motherboard;
     update();
+  }
+
+  void selectStatus(Status status) {
+    this.status = status;
+    update();
+  }
+
+  void setNewEmployee(Employee employee) {
+    this.employee = employee;
+    employees.add(employee);
+    update();
+  }
+
+  void setNewManufacturer(Manufacturer manufacturer) {
+    this.manufacturer = manufacturer;
+    manufacturers.add(manufacturer);
+    update();
+  }
+
+  void setNewStatus(Status status) {
+    this.status = status;
+    statuses.add(status);
+    update();
+  }
+
+  void back() {
+    Get.back();
   }
 }

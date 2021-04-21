@@ -32,14 +32,14 @@ class SidebarButton extends StatelessWidget {
             Icon(
               iconData,
               size: 24.0,
-              color: Color(0xFF707C97),
+              // color: Color(0xFF707C97),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 16.0),
               child: Text(
                 title,
                 style: TextStyle(
-                  color: Color(0xFF707C97),
+                  // color: Color(0xFF707C97),
                   fontSize: 16.0,
                 ),
               ),

@@ -12,4 +12,6 @@ class Status {
   
   @HiveField(1)
   String name;
+
+  String toString() => name;
 }

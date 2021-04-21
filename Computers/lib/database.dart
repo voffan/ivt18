@@ -9,6 +9,7 @@ import 'package:computers/models/motherboard.dart';
 import 'package:computers/models/power_supply.dart';
 import 'package:computers/models/processor.dart';
 import 'package:computers/models/status.dart';
+import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -25,6 +26,7 @@ class Database {
   static Box<Processor> processorsBox;
   static Box<Status> statusesBox;
   static Box<DiskDrive> diskDrivesBox;
+  static Box statesBox;
 
   static Future<void> init() async {
     await Hive.initFlutter();
@@ -52,11 +54,11 @@ class Database {
     processorsBox = await Hive.openBox<Processor>(Processor.boxName);
     statusesBox = await Hive.openBox<Status>(Status.boxName);
     diskDrivesBox = await Hive.openBox<DiskDrive>(DiskDrive.boxName);
+    statesBox = await Hive.openBox('states');
   }
 
-  static List<Computer> getComputers() {
-    return computersBox.values.toList();
-  }
+  // MARK: Компьютеры
+  static List<Computer> getComputers() => computersBox.values.toList();
 
   static Future<void> addComputer(Computer computer) async {
     await computersBox.put(computer.id, computer);
@@ -97,23 +99,78 @@ class Database {
     await computersBox.delete(computer.id);
   }
 
-  static Manufacturer getManufacturer(String id) {
-    return manufacturersBox.get(id);
+  // MARK: Производители
+  static Manufacturer getManufacturer(String id) => manufacturersBox.get(id);
+  
+  static List<Manufacturer> getManufacturers() => manufacturersBox.values.toList();
+
+  static Future<void> addManufacturer(Manufacturer manufacturer) async {
+    await manufacturersBox.put(manufacturer.id, manufacturer);
   }
 
-  static Employee getEmployee(String id) {
-    return employeesBox.get(id);
+
+  // MARK: Сотрудники
+  static Employee getEmployee(String id) => employeesBox.get(id);
+  
+  static List<Employee> getEmployees() => employeesBox.values.toList();
+
+  static Future<void> addEmployee(Employee employee) async {
+    await employeesBox.put(employee.id, employee);
   }
 
-  static Processor getProcessor(String id) {
-    return processorsBox.get(id);
+
+  // MARK: Процессоры
+  static Processor getProcessor(String id) => processorsBox.get(id);
+  
+  static List<Processor> getProcessors() => processorsBox.values.toList();
+
+  static Future<void> addProcessor(Processor processor) async {
+    await processorsBox.put(processor.id, processor);
   }
 
-  static Motherboard getMotherboard(String id) {
-    return motherboardsBox.get(id);
+
+  // MARK: Материнские платы
+  static Motherboard getMotherboard(String id) => motherboardsBox.get(id);
+  
+  static List<Motherboard> getMotherboards() => motherboardsBox.values.toList();
+
+  static Future<void> addMotherboard(Motherboard motherboard) async {
+    await motherboardsBox.put(motherboard.id, motherboard);
+  }
+  
+
+  // MARK: Дисководы
+  static DiskDrive getDiskDrive(String id) => diskDrivesBox.get(id);
+  
+  static List<DiskDrive> getDiskDrives() => diskDrivesBox.values.toList();
+
+  static Future<void> addDiskDrive(DiskDrive diskDrive) async {
+    await diskDrivesBox.put(diskDrive.id, diskDrive);
   }
 
-  static DiskDrive getDiskDrive(String id) {
-    return diskDrivesBox.get(id);
+
+  // MARK: Статусы
+  static Status getStatus(String id) => statusesBox.get(id);
+
+  static List<Status> getStatuses() => statusesBox.values.toList();
+
+  static Future<void> addStatus(Status status) async {
+    await statusesBox.put(status.id, status);
+  }
+
+
+  // MARK: Тема
+  static ThemeMode getThemeMode() {
+    final isDarkMode = statesBox.get('darkMode') as bool;
+    if (isDarkMode == null) {
+      return ThemeMode.light;
+    } else {
+      return isDarkMode ? ThemeMode.dark : ThemeMode.light;
+    }
+  }
+
+  static Future<void> setThemeMode(ThemeMode themeMode) async {
+    final isDarkMode = themeMode == ThemeMode.dark;
+    await statesBox.put('darkMode', isDarkMode);
   }
 }

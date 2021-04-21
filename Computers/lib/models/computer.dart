@@ -4,6 +4,7 @@ import 'package:computers/models/employee.dart';
 import 'package:computers/models/manufacturer.dart';
 import 'package:computers/models/motherboard.dart';
 import 'package:computers/models/processor.dart';
+import 'package:computers/models/status.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 
@@ -64,4 +65,5 @@ class Computer {
   DiskDrive get diskDrive => Database.getDiskDrive(diskDriveId);
   Processor get processor => Database.getProcessor(processorId);
   Motherboard get motherboard => Database.getMotherboard(motherboardId);
+  Status get status => Database.getStatus(statusId);
 }

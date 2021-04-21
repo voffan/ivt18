@@ -7,21 +7,7 @@ class Sidebar extends StatelessWidget {
     return Container(
       width: 250.0,
       decoration: BoxDecoration(
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            color: Color.fromARGB(8, 86, 128, 248),
-            spreadRadius: 5.0,
-            blurRadius: 25.0,
-            offset: Offset(14.0, 0.0),
-          ),
-          BoxShadow(
-            color: Color.fromARGB(13, 86, 128, 248),
-            spreadRadius: 5.0,
-            blurRadius: 70.0,
-            offset: Offset(35.0, 0.0),
-          ),
-        ]
+        color: Theme.of(context).bottomAppBarColor,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

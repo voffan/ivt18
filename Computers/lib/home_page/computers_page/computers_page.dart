@@ -9,16 +9,6 @@ class ComputersPage extends GetView<ComputersPageController> {
   Widget build(BuildContext context) {
     return GetBuilder<ComputersPageController>(
       builder: (controller) => Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              Color(0xFFF3F3FB),
-              Color(0xFFFDFBFD),
-            ],
-          ),
-        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -31,7 +21,6 @@ class ComputersPage extends GetView<ComputersPageController> {
                   Text(
                     'Компьютеры',
                     style: TextStyle(
-                      color: Color(0xFF0D1C2E),
                       fontSize: 36.0
                     ),
                   ),
@@ -46,7 +35,7 @@ class ComputersPage extends GetView<ComputersPageController> {
               padding: const EdgeInsets.symmetric(horizontal: 60.0, vertical: 20.0),
               child: Container(
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Theme.of(context).dialogBackgroundColor,
                   borderRadius: BorderRadius.circular(6.0)
                 ),
                 padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 30.0),
