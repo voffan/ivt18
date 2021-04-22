@@ -39,5 +39,24 @@ namespace gallery
             comissionList.C = c;
             comissionList.Show();
         }
+
+        private void MainPageForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void journalButton_Click(object sender, EventArgs e)
+        {
+            JournalForm journalForm = new JournalForm();
+            journalForm.C = c;
+            journalForm.Show();
+        }
+
+        private void reportButton_Click(object sender, EventArgs e)
+        {
+            ReportForm reportForm = new ReportForm();
+            reportForm.C = c;
+            reportForm.Show();
+        }
     }
 }

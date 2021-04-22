@@ -79,7 +79,7 @@ namespace gallery
                 textBox7.Visible = false;
                 comboBox1.Items.AddRange(C.Artists.Select(c => c.FullName).ToArray());
                 comboBox2.Items.AddRange(C.Genres.Select(c => c.Name).ToArray());
-                comboBox3.Items.AddRange(C.Places.Select(c => c.Name).ToArray());
+                comboBox3.Items.AddRange(C.Departments.Select(c => c.Name).ToArray());
                 comboBox4.Items.AddRange(C.Galleries.Select(c => c.Name).ToArray());
                 label1.Text = "Добавление картины";
             }

@@ -110,6 +110,10 @@
     <Reference Include="Microsoft.Extensions.Primitives, Version=3.1.13.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Primitives.3.1.13\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System">
       <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.dll</HintPath>
     </Reference>
@@ -208,6 +212,41 @@
     <Compile Include="Migrations\202104090315047_tt.cs" />
     <Compile Include="Migrations\202104090315047_tt.designer.cs">
       <DependentUpon>202104090315047_tt.cs</DependentUpon>
+    <Compile Include="JournalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JournalForm.Designer.cs">
+      <DependentUpon>JournalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104020406366_expoaddress.cs" />
+    <Compile Include="Migrations\202104020406366_expoaddress.designer.cs">
+      <DependentUpon>202104020406366_expoaddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104081431124_department.cs" />
+    <Compile Include="Migrations\202104081431124_department.designer.cs">
+      <DependentUpon>202104081431124_department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104141352057_dep.cs" />
+    <Compile Include="Migrations\202104141352057_dep.designer.cs">
+      <DependentUpon>202104141352057_dep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104141353442_dep1.cs" />
+    <Compile Include="Migrations\202104141353442_dep1.designer.cs">
+      <DependentUpon>202104141353442_dep1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104150146348_dep2.cs" />
+    <Compile Include="Migrations\202104150146348_dep2.designer.cs">
+      <DependentUpon>202104150146348_dep2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104150151239_dep3.cs" />
+    <Compile Include="Migrations\202104150151239_dep3.designer.cs">
+      <DependentUpon>202104150151239_dep3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportsForm.cs">
       <SubType>Form</SubType>
@@ -310,6 +349,29 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104090315047_tt.resx">
       <DependentUpon>202104090315047_tt.cs</DependentUpon>
+    <EmbeddedResource Include="JournalForm.resx">
+      <DependentUpon>JournalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104020406366_expoaddress.resx">
+      <DependentUpon>202104020406366_expoaddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104081431124_department.resx">
+      <DependentUpon>202104081431124_department.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104141352057_dep.resx">
+      <DependentUpon>202104141352057_dep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104141353442_dep1.resx">
+      <DependentUpon>202104141353442_dep1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104150146348_dep2.resx">
+      <DependentUpon>202104150146348_dep2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104150151239_dep3.resx">
+      <DependentUpon>202104150151239_dep3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportsForm.resx">
       <DependentUpon>ReportsForm.cs</DependentUpon>

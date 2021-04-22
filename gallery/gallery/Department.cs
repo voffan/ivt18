@@ -12,7 +12,7 @@ namespace gallery
     public class Department
     {
         [Key]
-        public int PlaceId { get; set; }
+        public int DepartmentId { get; set; }
         public string Name { get; set; }
 
         public virtual List<Picture> Pictures { get; set; }
