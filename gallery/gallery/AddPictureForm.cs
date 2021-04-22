@@ -102,8 +102,8 @@ namespace gallery
                     textBox4.Text = C.Artists.Where(c => c.ArtistId == artistId).Select(c => c.FullName).FirstOrDefault();
                     int genreId = C.Pictures.Where(c => c.PictureId == UpdatingItemId).Select(c => c.GenreId).FirstOrDefault();
                     textBox5.Text = C.Genres.Where(c => c.GenreId == genreId).Select(c => c.Name).FirstOrDefault();
-                    int placeId = C.Pictures.Where(c => c.PictureId == UpdatingItemId).Select(c => c.PlaceId).FirstOrDefault();
-                    textBox6.Text = C.Places.Where(c => c.PlaceId == placeId).Select(c => c.Name).FirstOrDefault();
+                    int placeId = C.Pictures.Where(c => c.PictureId == UpdatingItemId).Select(c => c.DepartmentId).FirstOrDefault();
+                    textBox6.Text = C.Departments.Where(c => c.DepartmentId == placeId).Select(c => c.Name).FirstOrDefault();
                     int galleryId = C.Pictures.Where(c => c.PictureId == UpdatingItemId).Select(c => c.GalleryId).FirstOrDefault();
                     textBox7.Text = C.Galleries.Where(c => c.GalleryId == galleryId).Select(c => c.Name).FirstOrDefault();
                     label1.Text = "Редактирование картины";
@@ -134,8 +134,8 @@ namespace gallery
                         textBox4.Text = C.Artists.Where(c => c.ArtistId == artistId).Select(c => c.FullName).FirstOrDefault();
                         int genreId = C.Pictures.Where(c => c.PictureId == UpdatingItemId).Select(c => c.GenreId).FirstOrDefault();
                         textBox5.Text = C.Genres.Where(c => c.GenreId == genreId).Select(c => c.Name).FirstOrDefault();
-                        int placeId = C.Pictures.Where(c => c.PictureId == UpdatingItemId).Select(c => c.PlaceId).FirstOrDefault();
-                        textBox6.Text = C.Places.Where(c => c.PlaceId == placeId).Select(c => c.Name).FirstOrDefault();
+                        int placeId = C.Pictures.Where(c => c.PictureId == UpdatingItemId).Select(c => c.DepartmentId).FirstOrDefault();
+                        textBox6.Text = C.Departments.Where(c => c.DepartmentId == placeId).Select(c => c.Name).FirstOrDefault();
                         int galleryId = C.Pictures.Where(c => c.PictureId == UpdatingItemId).Select(c => c.GalleryId).FirstOrDefault();
                         textBox7.Text = C.Galleries.Where(c => c.GalleryId == galleryId).Select(c => c.Name).FirstOrDefault();
                         label1.Text = "Просмотр картины";

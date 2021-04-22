@@ -38,19 +38,19 @@ namespace gallery
             for (int i=0; i<dataGridView1.RowCount; i++)
             {
                 DataGridViewRow selectedRow = dataGridView1.Rows[i];
-                int selectedItemId = Convert.ToInt32(selectedRow.Cells["PlaceFromId"].Value);
-                int PlaceTo = Convert.ToInt32(selectedRow.Cells["PlaceToId"].Value);
+                int selectedItemId = Convert.ToInt32(selectedRow.Cells["DepartmentFromId"].Value);
+                int DepartmentTo = Convert.ToInt32(selectedRow.Cells["DepartmentToId"].Value);
                 int Pictue = Convert.ToInt32(selectedRow.Cells["PictureId"].Value);
                 int emp = Convert.ToInt32(selectedRow.Cells["EmployeeId"].Value);
                 int expo = Convert.ToInt32(selectedRow.Cells["ExpoId"].Value);
                 dataGridView1.Rows[i].Cells["From"].Value = PictureLogic.getJournalById(selectedItemId, C);
-                dataGridView1.Rows[i].Cells["To"].Value = PictureLogic.getJournalById(PlaceTo, C);
+                dataGridView1.Rows[i].Cells["To"].Value = PictureLogic.getJournalById(DepartmentTo, C);
                 dataGridView1.Rows[i].Cells["Pict"].Value = PictureLogic.getPictureById(Pictue, C);
                 dataGridView1.Rows[i].Cells["emppl"].Value = PictureLogic.getEmployeeById(emp, C);
                 dataGridView1.Rows[i].Cells["exp"].Value = PictureLogic.getExpoById(expo, C);
             }
-            dataGridView1.Columns.Remove("PlaceToId");
-            dataGridView1.Columns.Remove("PlaceFromId");
+            dataGridView1.Columns.Remove("DepartmentToId");
+            dataGridView1.Columns.Remove("DepartmentFromId");
             dataGridView1.Columns.Remove("PictureId");
             dataGridView1.Columns.Remove("Employee");
             dataGridView1.Columns.Remove("EmployeeId");

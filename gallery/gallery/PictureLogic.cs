@@ -32,7 +32,6 @@ namespace gallery
                 .Select(c => c.GalleryId).FirstOrDefault();
         }
 
-<<<<<<< HEAD
         static public string getPictureById(int PicId, Context C)
         {
             return C.Pictures.Where(c => c.PictureId == PicId)
@@ -41,7 +40,7 @@ namespace gallery
 
         static public string getJournalById(int JourId, Context C)
         {
-            return C.Places.Where(c => c.PlaceId == JourId)
+            return C.Departments.Where(c => c.DepartmentId == JourId)
                 .Select(c => c.Name).FirstOrDefault();
         }
 
@@ -85,7 +84,7 @@ namespace gallery
             c.SaveChanges();
         }
 
-        public static void UpdatePicture(Context c, string name, Single price, int year, string artistName, string genreName, string departmentName, string galleryName)
+        public static void UpdatePicture(Context c, int pictureId, string name, Single price, int year, string artistName, string genreName, string departmentName, string galleryName)
         {
             int artistId = getArtistId(artistName, c);
             int genreId = getGenreId(genreName, c);
@@ -93,7 +92,7 @@ namespace gallery
             int galleryId = getGalleryId(galleryName, c);
 
             Picture p = c.Pictures
-            .Where(o => o.PictureId == pictureId)
+            .Where(o => o.Name == name && o.ArtistId == artistId)
             .FirstOrDefault();
 
             if (p != null)
@@ -113,8 +112,8 @@ namespace gallery
         {
             Journal j = new Journal();
             j.Date = DateTime.Today;
-            j.PlaceFromId = 1;
-            j.PlaceToId = 2;
+            j.DepartmentFromId = 1;
+            j.DepartmentToId = 2;
             j.PictureId = pictureId1;
             j.EmployeeId = employeeId;
             c.Journals.Add(j);
