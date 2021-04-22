@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/computer',
           page: () => ComputerForm(),
-          binding: ComputerFormBinding()
+          binding: ComputerFormBinding(),
         ),
         GetPage(
           name: '/manufacturer',
@@ -59,12 +59,12 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/employee',
           page: () => EmployeeForm(),
-          binding: EmployeeFormBinding()
+          binding: EmployeeFormBinding(),
         ),
         GetPage(
           name: '/device',
           page: () => DeviceForm(),
-          binding: DeviceFormBinding()
+          binding: DeviceFormBinding(),
         ),
         GetPage(
           name: '/status', 

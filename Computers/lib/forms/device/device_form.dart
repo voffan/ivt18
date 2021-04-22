@@ -53,7 +53,7 @@ class DeviceForm extends GetView<DeviceFormController> {
                               width: fieldWidth,
                               child: TextFieldCustom(
                                 labelText: 'Модель', 
-                                initialValue: controller.name, 
+                                initialValue: controller.model, 
                                 onChanged: (text) => controller.nameTextChanged(text),
                               ),
                             ),

@@ -9,6 +9,7 @@ import 'package:computers/models/power_supply.dart';
 import 'package:computers/models/processor.dart';
 import 'package:computers/models/status.dart';
 import 'package:get/get.dart';
+import 'package:uuid/uuid.dart';
 
 enum DeviceType {
   processor,
@@ -29,7 +30,7 @@ class DeviceFormController extends GetxController {
   List<Manufacturer> manufacturers = [];
   List<Status> statuses = [];
 
-  String name;
+  String model;
   int price;
   Manufacturer manufacturer;
   Status status;
@@ -38,7 +39,7 @@ class DeviceFormController extends GetxController {
 
   @override
   void onInit() {
-    deviceType = (Get.arguments[0] as DeviceType) ?? DeviceType.none;
+    deviceType = (Get.arguments as DeviceType) ?? DeviceType.none;
     initDevice();
     super.onInit();
   }
@@ -56,15 +57,70 @@ class DeviceFormController extends GetxController {
   }
 
   Future<void> submit() async {
-
+    device.model = model;
+    device.price = price;
+    device.statusId = status?.id;
+    device.manufacturerId = manufacturer?.id;
+    if (!editing) {
+      device.id = Uuid().v4();
+    }
+    await addDevice();
+    Get.back();
+    // computer.model = model;
+    // computer.itemNo = itemNo;
+    // computer.ip = ip;
+    // computer.manufacturerId = manufacturer?.id;
+    // computer.employeeId = employee?.id;
+    // computer.diskDriveId = diskDrive?.id;
+    // computer.processorId = processor?.id;
+    // computer.motherboardId = motherboard?.id;
+    // computer.statusId = status?.id;
+    // if (!editing) {
+    //   computer.id = Uuid().v4();
+    // }
+    // await Database.addComputer(computer);
+    // if (employee != null) {
+    //   employee.computerId = computer.id;
+    //   await Database.addEmployee(employee);
+    // }
+    // Get.find<ComputersPageController>().updateComputers();
+    // Get.back();
   }
 
   void back() {
     Get.back();
   }
 
-  void nameTextChanged(String name) {
-    this.name = name;
+  Future<void> addDevice() async {
+    switch (deviceType) {
+      case DeviceType.processor:
+        await Database.addProcessor(device);
+        break;
+      case DeviceType.graphicCard:
+        await Database.addGraphicCard(device);
+        break;
+      case DeviceType.hardDrive:
+        await Database.addHardDrive(device);
+        break;
+      case DeviceType.motherboard:
+        await Database.addMotherboard(device);
+        break;
+      case DeviceType.memory:
+        await Database.addMemory(device);
+        break;
+      case DeviceType.powerSupply:
+        await Database.addPowerSupply(device);
+        break;
+      case DeviceType.diskDrive:
+        await Database.addDiskDrive(device);
+        break;
+      case DeviceType.none:
+        break;
+    }
+  }
+
+  void nameTextChanged(String model) {
+    this.model = model;
   }
 
   void priceTextChanged(String price) {

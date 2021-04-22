@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 class SidebarButton extends StatelessWidget {
   final String title;
   final IconData iconData;
+  final bool isSelected;
   final Function callback;
 
   const SidebarButton({
     Key key, 
     @required this.title, 
     @required this.iconData,
+    @required this.isSelected,
     @required this.callback
   }) : super(key: key);
 
@@ -32,14 +34,14 @@ class SidebarButton extends StatelessWidget {
             Icon(
               iconData,
               size: 24.0,
-              // color: Color(0xFF707C97),
+              color: isSelected ? Theme.of(context).buttonColor : Theme.of(context).textTheme.bodyText1.color,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 16.0),
               child: Text(
                 title,
                 style: TextStyle(
-                  // color: Color(0xFF707C97),
+                  color: isSelected ? Theme.of(context).buttonColor : Theme.of(context).textTheme.bodyText1.color,
                   fontSize: 16.0,
                 ),
               ),

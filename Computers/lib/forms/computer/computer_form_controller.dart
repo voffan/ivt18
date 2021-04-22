@@ -1,4 +1,5 @@
 import 'package:computers/database.dart';
+import 'package:computers/forms/device/device_form_controller.dart';
 import 'package:computers/home_page/computers_page/computers_page.dart';
 import 'package:computers/home_page/computers_page/computers_page_controller.dart';
 import 'package:computers/models/computer.dart';
@@ -109,15 +110,15 @@ class ComputerFormController extends GetxController {
   }
 
   void createMotherboard() {
-    
+    Get.toNamed('/device', arguments: DeviceType.motherboard);
   }
 
   void createProcessor() {
-    
+    Get.toNamed('/device', arguments: DeviceType.processor);
   }
 
   void createDiskDrive() {
-    
+    Get.toNamed('/device', arguments: DeviceType.diskDrive);
   }
 
   void createManufacturer() {

@@ -149,6 +149,45 @@ class Database {
   }
 
 
+  // MARK: Видеокарты
+  static GraphicCard getGraphicCard(String id) => graphicCardsBox.get(id);
+
+  static List<GraphicCard> getGraphicCards() => graphicCardsBox.values.toList();
+
+  static Future<void> addGraphicCard(GraphicCard graphicCard) async {
+    await graphicCardsBox.put(graphicCard.id, graphicCard);
+  }
+
+
+  // MARK: Источники питания
+  static PowerSupply getPowerSupply(String id) => powerSuppliesBox.get(id);
+  
+  static List<PowerSupply> getPowerSupplies() => powerSuppliesBox.values.toList();
+
+  static Future<void> addPowerSupply(PowerSupply powerSupply) async {
+    await powerSuppliesBox.put(powerSupply.id, powerSupply);
+  }
+
+
+  // MARK: Накопители данных
+  static HardDrive getHardDrive(String id) => hardDrivesBox.get(id);
+
+  static List<HardDrive> getHardDrives() => hardDrivesBox.values.toList();
+
+  static Future<void> addHardDrive(HardDrive hardDrive) async {
+    await hardDrivesBox.put(hardDrive.id, hardDrive);
+  }
+
+
+  // MARK: Оперативная память
+  static Memory getMemory(String id) => memoriesBox.get(id);
+
+  static List<Memory> getMemories() => memoriesBox.values.toList();
+
+  static Future<void> addMemory(Memory memory) async {
+    await memoriesBox.put(memory.id, memory);
+  }
+
   // MARK: Статусы
   static Status getStatus(String id) => statusesBox.get(id);
 
@@ -163,7 +202,7 @@ class Database {
   static ThemeMode getThemeMode() {
     final isDarkMode = statesBox.get('darkMode') as bool;
     if (isDarkMode == null) {
-      return ThemeMode.light;
+      return ThemeMode.dark;
     } else {
       return isDarkMode ? ThemeMode.dark : ThemeMode.light;
     }
