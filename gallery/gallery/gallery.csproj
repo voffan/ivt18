@@ -164,6 +164,12 @@
     <Compile Include="ArtistListForm.Designer.cs">
       <DependentUpon>ArtistListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ComissionList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComissionList.Designer.cs">
+      <DependentUpon>ComissionList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Context.cs" />
     <Compile Include="EditExpoForm.cs">
       <SubType>Form</SubType>
@@ -269,6 +275,12 @@
     <Compile Include="ExpoListForm.Designer.cs">
       <DependentUpon>ExpoListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search.Designer.cs">
+      <DependentUpon>Search.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddEmployeeForm.resx">
       <DependentUpon>AddEmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -277,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ArtistListForm.resx">
       <DependentUpon>ArtistListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComissionList.resx">
+      <DependentUpon>ComissionList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditExpoForm.resx">
       <DependentUpon>EditExpoForm.cs</DependentUpon>
@@ -330,6 +345,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Search.resx">
+      <DependentUpon>Search.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="GalleryDBDataSet.xsc">
       <DependentUpon>GalleryDBDataSet.xsd</DependentUpon>
     </None>

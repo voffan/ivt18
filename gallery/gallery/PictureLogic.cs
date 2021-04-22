@@ -32,6 +32,30 @@ namespace gallery
                 .Select(c => c.GalleryId).FirstOrDefault();
         }
 
+        static public string getPictureById(int PicId, Context C)
+        {
+            return C.Pictures.Where(c => c.PictureId == PicId)
+                .Select(c => c.Name).FirstOrDefault();
+        }
+
+        static public string getJournalById(int JourId, Context C)
+        {
+            return C.Places.Where(c => c.PlaceId == JourId)
+                .Select(c => c.Name).FirstOrDefault();
+        }
+
+        static public string getEmployeeById(int empId, Context C)
+        {
+            return C.Employees.Where(c => c.EmployeeId == empId)
+                .Select(c => c.FullName).FirstOrDefault();
+        }
+
+        static public string getExpoById(int empId, Context C)
+        {
+            return C.Expos.Where(c => c.ExpoId == empId)
+                .Select(c => c.Name).FirstOrDefault();
+        }
+
         public static void AddPicture(Context c, string name, Single price, int year, string artistName, string genreName, string placeName, string galleryName)
         {
             Picture p = new Picture();
@@ -82,6 +106,18 @@ namespace gallery
                 p.GalleryId = galleryId;
                 c.SaveChanges();
             }
+        }
+
+        public static void sendToResto(Context c, int pictureId1, int employeeId)
+        {
+            Journal j = new Journal();
+            j.Date = DateTime.Today;
+            j.PlaceFromId = 1;
+            j.PlaceToId = 2;
+            j.PictureId = pictureId1;
+            j.EmployeeId = employeeId;
+            c.Journals.Add(j);
+            c.SaveChanges();
         }
     }
 }

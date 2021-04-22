@@ -32,5 +32,12 @@ namespace gallery
             employeeListForm.C = c;
             employeeListForm.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ComissionList comissionList = new ComissionList();
+            comissionList.C = c;
+            comissionList.Show();
+        }
     }
 }

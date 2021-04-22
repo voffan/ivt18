@@ -14,6 +14,7 @@ namespace gallery
     {
         public Context C { get; set; }
         int selectedItemId = -1;
+        int employeeId = 1;
 
         public PictureListForm()
         {
@@ -22,12 +23,9 @@ namespace gallery
 
         private void PictureListForm_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = C.Pictures.ToList();
+            dataGridView1.DataSource = C.Pictures.ToList();//fix it, some bags
             dataGridView1.CurrentCell.Selected = true;
             dataGridView1.Rows[0].Selected = true;
-            //dataGridView1.CurrentRow.Selected = true;
-            /*dataGridView1.Columns.Add("PictureId", "PictureId");
-            dataGridView1.Columns.Add("Name", "Name");*/
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -110,6 +108,26 @@ namespace gallery
             addPictureForm.FormId = 3;
             addPictureForm.C = C;
             addPictureForm.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Search search = new Search();
+            search.C = C;
+            search.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PictureLogic.sendToResto(C, selectedItemId, employeeId);
+                MessageBox.Show("Добавляется...");
+            }
+            catch(Exception ee)
+            {
+                MessageBox.Show(ee.ToString());
+            }
         }
     }
 }
