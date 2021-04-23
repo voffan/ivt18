@@ -9,13 +9,6 @@
             The implementation of the caching_sha2_password authentication plugin.
             </summary>
         </member>
-        <member name="M:MySql.Data.MySqlClient.Authentication.CachingSha2AuthenticationPlugin.GeneratePassword">
-            <summary>
-            Generates a byte array set with the password of the user in the expected format based on the
-            SSL settings of the current connection.
-            </summary>
-            <returns>A byte array that contains the password of the user in the expected format.</returns>
-        </member>
         <member name="T:MySql.Data.MySqlClient.Authentication.AuthStage">
             <summary>
             Defines the stage of the authentication.
@@ -70,7 +63,7 @@
         </member>
         <member name="M:MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.AuthenticationFailed(System.Exception)">
             <summary>
-            Throws a <see cref="T:MySql.Data.MySqlClient.MySqlException"/> that encapsulates the original exception.
+            Throws a <c>MySqlException</c> that encapsulates the original exception.
             </summary>
             <param name="ex">The exception to encapsulate.</param>
         </member>
@@ -86,7 +79,6 @@
             </summary>
             <param name="data">The data returned by the server.</param>
             <returns>The data to return to the server.</returns>
-            <remarks>This method is intended to be overriden.</remarks>
         </member>
         <member name="P:MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.PluginName">
             <summary>
@@ -102,9 +94,9 @@
         <member name="M:MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.GetPassword">
             <summary>
             Gets the encoded, encrypted, or converted password based on the authentication plugin type defined during the creation of this object.
-            This method is intended to be overriden.
             </summary>
             <returns>An object containing the encoded, encrypted, or converted password.</returns>
+            <remarks>This method is intended to be overriden.</remarks>
         </member>
         <member name="T:MySql.Data.MySqlClient.Authentication.MySqlNativePasswordPlugin">
             <summary>
@@ -124,17 +116,6 @@
             <summary>
             The implementation of the sha256_password authentication plugin.
             </summary>
-        </member>
-        <member name="F:MySql.Data.MySqlClient.Authentication.Sha256AuthenticationPlugin.rawPubkey">
-            <summary>
-            The byte array representation of the public key provided by the server.
-            </summary>
-        </member>
-        <member name="M:MySql.Data.MySqlClient.Authentication.Sha256AuthenticationPlugin.GetXor(System.Byte[],System.Byte[])">
-            <summary>
-            Applies XOR to the byte arrays provided as input.
-            </summary>
-            <returns>A byte array that contains the results of the XOR operation.</returns>
         </member>
         <member name="T:MySql.Data.MySqlClient.Authentication.MySqlWindowsAuthenticationPlugin">
             <summary>
@@ -213,8 +194,7 @@
         </member>
         <member name="F:MySql.Data.MySqlClient.Authentication.SecPkgContext_Sizes.cbMaxSignature">
             <summary>
-            Specifies the maximum size of the signature created by the <b>MakeSignature</b> function.
-            This member must be zero if integrity services are not requested or available.
+            Specifies the maximum size of the signature created by the <c>MakeSignature</c> function. This member must be zero if integrity services are not requested or available.
             </summary>
         </member>
         <member name="F:MySql.Data.MySqlClient.Authentication.SecPkgContext_Sizes.cbBlockSize">
@@ -224,8 +204,7 @@
         </member>
         <member name="F:MySql.Data.MySqlClient.Authentication.SecPkgContext_Sizes.cbSecurityTrailer">
             <summary>
-            Size of the security trailer to be appended to messages.
-            This member should be zero if the relevant services are not requested or available.
+            Size of the security trailer to be appended to messages. This member should be zero if the relevant services are not requested or available.
             </summary>
         </member>
         <member name="T:MySql.Data.MySqlClient.MySqlBulkLoader">
@@ -340,13 +319,13 @@
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlBulkLoader.Load">
             <summary>
-            Executes the load operation.
+            Execute the load operation
             </summary>
             <returns>The number of rows inserted.</returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlBulkLoader.LoadAsync">
             <summary>
-            Asynchronous version of the load operation.
+            Async version of Load
             </summary>
             <returns>The number of rows inserted.</returns>
         </member>
@@ -832,7 +811,6 @@
             <summary>
             Gets the last inserted id.
             </summary>
-            <!-- No matching elements were found for the following include tag --><include file="docs/mysqlcommand.xml" path="docs/LastInseredId/*" />
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlCommand.CommandText">
             <summary>
@@ -914,7 +892,6 @@
             <summary>
             Gets a boolean value that indicates whether the Prepared method has been called.
             </summary>
-            <!-- No matching elements were found for the following include tag --><include file="docs/mysqlcommand.xml" path="docs/IsPrepared/*" />
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlCommand.Connection">
             <summary>
@@ -1379,10 +1356,10 @@
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlCommand.Clone">
             <summary>
-            Creates a clone of this <see cref="T:MySql.Data.MySqlClient.MySqlCommand"/> object.  CommandText, Connection, and Transaction properties
+            Creates a clone of this MySqlCommand object.  CommandText, Connection, and Transaction properties
             are included as well as the entire parameter list.
             </summary>
-            <returns>The cloned <see cref="T:MySql.Data.MySqlClient.MySqlCommand"/> object.</returns>
+            <returns>The cloned MySqlCommand object</returns>
         </member>
         <member name="T:MySql.Data.MySqlClient.Common.NamedPipeStream">
             <summary>
@@ -2448,9 +2425,9 @@
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlConnection.Ping">
             <summary>
-            Pings the server.
+            Ping
             </summary>
-            <returns><c>true</c> if the ping was successful; otherwise, <c>false</c>.</returns>
+            <returns></returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlConnection.Open">
             <summary>Opens a database connection with the property settings specified by the ConnectionString.</summary><exception cref="T:System.InvalidOperationException">Cannot open a connection without specifying a data source or server.</exception><exception cref="T:MySql.Data.MySqlClient.MySqlException">A connection-level error occurred while opening the connection.</exception><remarks>
@@ -2547,7 +2524,7 @@
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlConnection.GetSchemaCollection(System.String,System.String[])">
             <summary>
-            Gets a schema collection based on the provided restriction values.
+            Gets a schema collection based on the provided restriction values. 
             </summary>
             <param name="collectionName">The name of the collection.</param>
             <param name="restrictionValues">The values to restrict.</param>
@@ -2588,7 +2565,7 @@
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlConnection.BeginTransactionAsync(System.Data.IsolationLevel)">
             <summary>
-            Asynchronous version of BeginTransaction.
+            Async version of BeginTransaction
             </summary>
             <param name="iso">The isolation level under which the transaction should run. </param>
             <returns>An object representing the new transaction.</returns>
@@ -2597,7 +2574,7 @@
             <summary>
             Asynchronous version of BeginTransaction.
             </summary>
-            <param name="iso">The isolation level under which the transaction should run. </param>
+            <param name="iso">The isolation level under which the transaction should run.</param>
             <param name="cancellationToken">The cancellation token.</param>
             <returns>An object representing the new transaction.</returns>
         </member>
@@ -2613,25 +2590,28 @@
             Asynchronous version of the ChangeDataBase method.
             </summary>
             <param name="databaseName">The name of the database to use.</param>
-            <param name="cancellationToken">The cancellation token.</param>
+            <param name="cancellationToken">The cancellation Token.</param>
             <returns></returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlConnection.CloseAsync">
             <summary>
             Asynchronous version of the Close method.
             </summary>
+            <returns></returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlConnection.CloseAsync(System.Threading.CancellationToken)">
             <summary>
             Asynchronous version of the Close method.
             </summary>
             <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlConnection.ClearPoolAsync(MySql.Data.MySqlClient.MySqlConnection)">
             <summary>
             Asynchronous version of the ClearPool method.
             </summary>
             <param name="connection">The connection associated with the pool to be cleared.</param>
+            <returns></returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlConnection.ClearPoolAsync(MySql.Data.MySqlClient.MySqlConnection,System.Threading.CancellationToken)">
             <summary>
@@ -2639,21 +2619,24 @@
             </summary>
             <param name="connection">The connection associated with the pool to be cleared.</param>
             <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlConnection.ClearAllPoolsAsync">
             <summary>
-            Asynchronous version of the ClearAllPools method.
+            Async version of ClearAllPools
             </summary>
+            <returns></returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlConnection.ClearAllPoolsAsync(System.Threading.CancellationToken)">
             <summary>
             Asynchronous version of the ClearAllPools method.
             </summary>
             <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlConnection.GetSchemaCollectionAsync(System.String,System.String[])">
             <summary>
-            Asynchronous version of the GetSchemaCollection method.
+            Asynchronous version of the GetSchemaCollection method. 
             </summary>
             <param name="collectionName">The name of the collection.</param>
             <param name="restrictionValues">The values to restrict.</param>
@@ -2719,12 +2702,13 @@
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlInfoMessageEventArgs.errors">
             <summary>
-            Gets or sets an array of <see cref="T:MySql.Data.MySqlClient.MySqlError"/> objects set with the errors found.
+            Gets or sets an array of <c>MySqlError</c> objects set with the errors found.
             </summary>
         </member>
         <member name="T:MySql.Data.MySqlClient.CommandTimer">
             <summary>
-            IDisposable wrapper around SetCommandTimeout and ClearCommandTimeout functionality.
+            IDisposable wrapper around SetCommandTimeout and ClearCommandTimeout
+            functionality
             </summary>
         </member>
         <member name="T:MySql.Data.MySqlClient.Crypt">
@@ -3046,29 +3030,24 @@
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlDataReader.GetMySqlDecimal(System.String)">
             <summary>
-            Gets the value of the specified column as a <see cref="T:MySql.Data.Types.MySqlDecimal"/>.
+            Gets the value of the specified column as a <c>MySqlDecimal</c>.
             </summary>
             <param name="column">The name of the colum.</param>
-            <returns>The value of the specified column as a <see cref="T:MySql.Data.Types.MySqlDecimal"/>.</returns>
+            <returns>The value of the specified column as a <c>MySqlDecimal</c>.</returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlDataReader.GetMySqlDecimal(System.Int32)">
             <summary>
-            Gets the value of the specified column as a <see cref="T:MySql.Data.Types.MySqlDecimal"/>.
+            Gets the value of the specified column as a <c>MySqlDecimal</c>.
             </summary>
             <param name="i">The index of the colum.</param>
-            <returns>The value of the specified column as a <see cref="T:MySql.Data.Types.MySqlDecimal"/>.</returns>
+            <returns>The value of the specified column as a <c>MySqlDecimal</c>.</returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlDataReader.GetDecimal(System.String)">
             <summary>
-      Gets the value of the specified column as a <see cref="T:System.Decimal" /> object.
-    </summary><remarks>
-      <para>
-        No conversions are performed; therefore, the data retrieved must already be a <b>Decimal</b> object.
-      </para>
-      <para>
-        Call IsDBNull to check for null values before calling this method.
-      </para>
-    </remarks><param name="column">The column name</param><returns>The value of the specified column.</returns>
+            Gets the value of the specified column as a <c>MySqlDecimal</c>.
+            </summary>
+            <param name="column">The name of the colum.</param>
+            <returns>The value of the specified column as a <c>MySqlDecimal</c>.</returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlDataReader.GetDecimal(System.Int32)">
             <summary>
@@ -3101,6 +3080,13 @@
         Call IsDBNull to check for null values before calling this method.
       </para>
     </remarks><param name="i">The zero-based column ordinal.</param><returns>The value of the specified column.</returns>
+        </member>
+        <member name="M:MySql.Data.MySqlClient.MySqlDataReader.GetFieldType(System.String)">
+            <summary>
+            Gets the type of the field at the specified column.
+            </summary>
+            <param name="column">The column name.</param>
+            <returns>The data type of the item.</returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlDataReader.GetFieldType(System.Int32)">
             <summary>
@@ -3137,7 +3123,7 @@
             <summary>
             Gets the value of the specified column as a globally-unique identifier(GUID).
             </summary>
-            <param name="column">The name of the column.</param>
+            <param name="column"></param>
             <returns></returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlDataReader.GetGuid(System.Int32)">
@@ -3360,17 +3346,17 @@
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlDataReader.GetMySqlGeometry(System.Int32)">
             <summary>
-            Gets the value of the specified column as a <see cref="T:MySql.Data.Types.MySqlGeometry"/>.
+            Gets the value of the specified column as a <c>MySqlGeometry</c>.
             </summary>
             <param name="i">The index of the colum.</param>
-            <returns>The value of the specified column as a <see cref="T:MySql.Data.Types.MySqlGeometry"/>.</returns>
+            <returns>The value of the specified column as a <c>MySqlGeometry</c>.</returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlDataReader.GetMySqlGeometry(System.String)">
             <summary>
-            Gets the value of the specified column as a <see cref="T:MySql.Data.Types.MySqlGeometry"/>.
+            Gets the value of the specified column as a <c>MySqlGeometry</c>.
             </summary>
-            <param name="column">The name of the colum.</param>
-            <returns>The value of the specified column as a <see cref="T:MySql.Data.Types.MySqlGeometry"/>.</returns>
+            <param name="column">The name of the column.</param>
+            <returns>The value of the specified column as a <c>MySqlGeometry</c>.</returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlDataReader.GetEnumerator">
             <summary>
@@ -3474,13 +3460,33 @@
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlException.Code">
             <summary>
-            Gets an integer that representes the MySQL error code.
+            Gets the numeric code of the exception.
             </summary>
         </member>
         <member name="T:MySql.Data.MySqlClient.MySqlField">
             <summary>
             Summary description for Field.
             </summary>
+        </member>
+        <member name="T:MySql.Data.MySqlClient.CustomInstaller">
+            <summary>
+            We are adding a custom installer class to our assembly so our installer
+            can make proper changes to the machine.config file.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.MySqlClient.CustomInstaller.Install(System.Collections.IDictionary)">
+            <summary>
+            We override Install so we can add our assembly to the proper
+            machine.config files.
+            </summary>
+            <param name="stateSaver"></param>
+        </member>
+        <member name="M:MySql.Data.MySqlClient.CustomInstaller.Uninstall(System.Collections.IDictionary)">
+            <summary>
+            We override Uninstall so we can remove out assembly from the
+            machine.config files.
+            </summary>
+            <param name="savedState"></param>
         </member>
         <member name="T:MySql.Data.MySqlClient.MySqlCommandBuilder">
             <summary>
@@ -4494,197 +4500,95 @@
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(System.Data.DataSet)">
             <summary>
-            Asynchronous version of the Fill method.
+            Async version of Fill
             </summary>
-            <param name="dataSet">The <see cref="T:System.Data.DataSet"/> to fill records with.</param>
-            <returns>The number of rows successfully added to or refreshed in the <see cref="T:System.Data.DataSet"/>.</returns>
-        </member>
-        <member name="M:MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(System.Data.DataSet,System.Threading.CancellationToken)">
-            <summary>
-            Asynchronous version of the Fill method.
-            </summary>
-            <param name="dataSet">The <see cref="T:System.Data.DataSet"/> to fill records with.</param>
-            <param name="cancellationToken">The cancellation token.</param>
-            <returns>The number of rows successfully added to or refreshed in the <see cref="T:System.Data.DataSet"/>.</returns>
+            <param name="dataSet">Dataset to use</param>
+            <returns>int</returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(System.Data.DataTable)">
             <summary>
-            Asynchronous version of the Fill method.
+            Async version of Fill
             </summary>
-            <param name="dataTable">The name of the <see cref="T:System.Data.DataTable"/> to use for table mapping.</param>
-            <returns>The number of rows successfully added to or refreshed in the <see cref="T:System.Data.DataTable"/>.</returns>
-        </member>
-        <member name="M:MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(System.Data.DataTable,System.Threading.CancellationToken)">
-            <summary>
-            Asynchronous version of the Fill method.
-            </summary>
-            <param name="dataTable">The name of the <see cref="T:System.Data.DataTable"/> to use for table mapping.</param>
-            <param name="cancellationToken">The cancellation token.</param>
-            <returns>The number of rows successfully added to or refreshed in the <see cref="T:System.Data.DataTable"/>.</returns>
+            <param name="dataTable">Datatable to use</param>
+            <returns>int</returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(System.Data.DataSet,System.String)">
             <summary>
-            Asynchronous version of the Fill method.
+            Async version of Fill
             </summary>
-            <param name="dataSet">The <see cref="T:System.Data.DataSet"/> to fill with records.</param>
-            <param name="srcTable">The name of the source table to use for table mapping.</param>
-            <returns>The number of rows successfully added to or refreshed in the <see cref="T:System.Data.DataSet"/>.</returns>
-        </member>
-        <member name="M:MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(System.Data.DataSet,System.String,System.Threading.CancellationToken)">
-            <summary>
-            Asynchronous version of the Fill method.
-            </summary>
-            <param name="dataSet">The <see cref="T:System.Data.DataSet"/> to fill with records.</param>
-            <param name="srcTable">The name of the source table to use for table mapping.</param>
-            <param name="cancellationToken">The cancellation token.</param>
-            <returns>The number of rows successfully added to or refreshed in the <see cref="T:System.Data.DataSet"/>.</returns>
+            <param name="dataSet">DataSet to use</param>
+            <param name="srcTable">Source table</param>
+            <returns>int</returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(System.Data.DataTable,System.Data.IDataReader)">
             <summary>
-            Asynchronous version of the Fill method.
+            Async version of Fill
             </summary>
-            <param name="dataTable">The <see cref="T:System.Data.DataTable"/> to fill with records.</param>
-            <param name="dataReader">An instance of <see cref="T:System.Data.IDataReader"/>.</param>
-            <returns>The number of rows successfully added to or refreshed in the <see cref="T:System.Data.DataTable"/>.</returns>
-        </member>
-        <member name="M:MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(System.Data.DataTable,System.Data.IDataReader,System.Threading.CancellationToken)">
-            <summary>
-            Asynchronous version of the Fill method.
-            </summary>
-            <param name="dataTable">The <see cref="T:System.Data.DataTable"/> to fill with records.</param>
-            <param name="dataReader">An instance of <see cref="T:System.Data.IDataReader"/>.</param>
-            <param name="cancellationToken">The cancellation token.</param>
-            <returns>The number of rows successfully added to or refreshed in the <see cref="T:System.Data.DataTable"/>.</returns>
+            <param name="dataTable">Datatable to use</param>
+            <param name="dataReader">DataReader to use</param>
+            <returns>int</returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(System.Data.DataTable,System.Data.IDbCommand,System.Data.CommandBehavior)">
             <summary>
-            Asynchronous version of the Fill method.
+            Async version of Fill
             </summary>
-            <param name="dataTable">The <see cref="T:System.Data.DataTable"/> to fill with records.</param>
-            <param name="command">The SQL SELECT statement used to retrieve rows from the data source.</param>
-            <param name="behavior">One of the <see cref="T:System.Data.CommandBehavior"/> values.</param>
-            <returns>The number of rows successfully added to or refreshed in the <see cref="T:System.Data.DataTable"/>.</returns>
-        </member>
-        <member name="M:MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(System.Data.DataTable,System.Data.IDbCommand,System.Data.CommandBehavior,System.Threading.CancellationToken)">
-            <summary>
-            Asynchronous version of the Fill method.
-            </summary>
-            <param name="dataTable">The <see cref="T:System.Data.DataTable"/> to fill with records.</param>
-            <param name="command">The SQL SELECT statement used to retrieve rows from the data source.</param>
-            <param name="behavior">One of the <see cref="T:System.Data.CommandBehavior"/> values.</param>
-            <param name="cancellationToken">The cancellation token.</param>
-            <returns>The number of rows successfully added to or refreshed in the <see cref="T:System.Data.DataTable"/>.</returns>
+            <param name="dataTable">DataTable to use</param>
+            <param name="command">DbCommand to use</param>
+            <param name="behavior">Command Behavior</param>
+            <returns>int</returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(System.Int32,System.Int32,System.Data.DataTable[])">
             <summary>
-            Asynchronous version of the Fill method.
+            Async version of Fill
             </summary>
-            <param name="startRecord">The start record.</param>
-            <param name="maxRecords">The max number of affected records.</param>
-            <param name="dataTables">The <see cref="T:System.Data.DataTable"/>s to fill with records.</param>
-            <returns>The number of rows successfully added to or refreshed in the <see cref="T:System.Data.DataTable"/>.</returns>
-        </member>
-        <member name="M:MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(System.Int32,System.Int32,System.Threading.CancellationToken,System.Data.DataTable[])">
-            <summary>
-            Asynchronous version of the Fill method.
-            </summary>
-            <param name="startRecord">The start record.</param>
-            <param name="maxRecords">The max number of affected records.</param>
-            <param name="cancellationToken">The cancellation token.</param>
-            <param name="dataTables">The <see cref="T:System.Data.DataTable"/>s to fill with records.</param>
-            <returns>The number of rows successfully added to or refreshed in the <see cref="T:System.Data.DataTable"/>.</returns>
+            <param name="startRecord">Start record</param>
+            <param name="maxRecords">Max records</param>
+            <param name="dataTables">DataTable[] to use</param>
+            <returns>int</returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(System.Data.DataSet,System.Int32,System.Int32,System.String)">
             <summary>
-            Asynchronous version of the Fill method.
+            Async version of Fill
             </summary>
-            <param name="dataSet">The <see cref="T:System.Data.DataSet"/> to fill with records.</param>
-            <param name="startRecord">The start record.</param>
-            <param name="maxRecords">The max number of affected records.</param>
-            <param name="srcTable">The name of the source table to use for table mapping.</param>
-            <returns>The number of rows successfully added to or refreshed in the <see cref="T:System.Data.DataSet"/>.</returns>
-        </member>
-        <member name="M:MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(System.Data.DataSet,System.Int32,System.Int32,System.String,System.Threading.CancellationToken)">
-            <summary>
-            Asynchronous version of the Fill method.
-            </summary>
-            <param name="dataSet">The <see cref="T:System.Data.DataSet"/> to fill with records.</param>
-            <param name="startRecord">The start record.</param>
-            <param name="maxRecords">The max number of affected records.</param>
-            <param name="srcTable">The name of the source table to use for table mapping.</param>
-            <param name="cancellationToken">The cancellation token.</param>
-            <returns>The number of rows successfully added to or refreshed in the <see cref="T:System.Data.DataSet"/>.</returns>
+            <param name="dataSet">DataSet to use</param>
+            <param name="startRecord">Start record</param>
+            <param name="maxRecords">Max records</param>
+            <param name="srcTable">Source table</param>
+            <returns>int</returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(System.Data.DataSet,System.String,System.Data.IDataReader,System.Int32,System.Int32)">
             <summary>
-            Asynchronous version of the Fill method.
+            Async version of Fill
             </summary>
-            <param name="dataSet">The <see cref="T:System.Data.DataSet"/> to fill with records.</param>
-            <param name="srcTable">The name of the source table to use for table mapping.</param>
-            <param name="dataReader">An instance of <see cref="T:System.Data.IDataReader"/>.</param>
-            <param name="startRecord">The start record.</param>
-            <param name="maxRecords">The max number of affected records.</param>
-            <returns>The number of rows successfully added to or refreshed in the <see cref="T:System.Data.DataSet"/>.</returns>
-        </member>
-        <member name="M:MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(System.Data.DataSet,System.String,System.Data.IDataReader,System.Int32,System.Int32,System.Threading.CancellationToken)">
-            <summary>
-            Asynchronous version of the Fill method.
-            </summary>
-            <param name="dataSet">The <see cref="T:System.Data.DataSet"/> to fill with records.</param>
-            <param name="srcTable">The name of the source table to use for table mapping.</param>
-            <param name="dataReader">An instance of <see cref="T:System.Data.IDataReader"/>.</param>
-            <param name="startRecord">The start record.</param>
-            <param name="maxRecords">The max number of affected records.</param>
-            <param name="cancellationToken">The cancellation token.</param>
-            <returns>The number of rows successfully added to or refreshed in the <see cref="T:System.Data.DataSet"/>.</returns>
+            <param name="dataSet">DataSet to use</param>
+            <param name="srcTable">Source table</param>
+            <param name="dataReader">DataReader to use</param>
+            <param name="startRecord">Start record</param>
+            <param name="maxRecords">Max records</param>
+            <returns></returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(System.Data.DataTable[],System.Int32,System.Int32,System.Data.IDbCommand,System.Data.CommandBehavior)">
             <summary>
-            Asynchronous version of the Fill method.
+            Async version of Fill
             </summary>
-            <param name="dataTables">The <see cref="T:System.Data.DataTable"/>s to fill with records.</param>
-            <param name="startRecord">The start record.</param>
-            <param name="maxRecords">The max number of affected records.</param>
-            <param name="command">The SQL SELECT statement used to retrieve rows from the data source.</param>
-            <param name="behavior">One of the <see cref="T:System.Data.CommandBehavior"/> values.</param>
-            <returns>The number of rows successfully added to or refreshed in the <see cref="T:System.Data.DataTable"/>s.</returns>
-        </member>
-        <member name="M:MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(System.Data.DataTable[],System.Int32,System.Int32,System.Data.IDbCommand,System.Data.CommandBehavior,System.Threading.CancellationToken)">
-            <summary>
-            Asynchronous version of the Fill method.
-            </summary>
-            <param name="dataTables">The <see cref="T:System.Data.DataTable"/>s to fill with records.</param>
-            <param name="startRecord">The start record.</param>
-            <param name="maxRecords">The max number of affected records.</param>
-            <param name="command">The SQL SELECT statement used to retrieve rows from the data source.</param>
-            <param name="behavior">One of the <see cref="T:System.Data.CommandBehavior"/> values.</param>
-            <param name="cancellationToken">The cancellation token.</param>
-            <returns>The number of rows successfully added to or refreshed in the <see cref="T:System.Data.DataTable"/>s.</returns>
+            <param name="dataTables">DataTable[] to use</param>
+            <param name="startRecord">Start record</param>
+            <param name="maxRecords">Max records</param>
+            <param name="command">DbCommand to use</param>
+            <param name="behavior">Command Behavior</param>
+            <returns></returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(System.Data.DataSet,System.Int32,System.Int32,System.String,System.Data.IDbCommand,System.Data.CommandBehavior)">
             <summary>
-            Asynchronous version of the Fill method.
+            Async version of Fill
             </summary>
-            <param name="dataSet">The <see cref="T:System.Data.DataSet"/> to fill with records.</param>
-            <param name="startRecord">The start record.</param>
-            <param name="maxRecords">The max number of affected records.</param>
-            <param name="srcTable">The name of the source table to use for table mapping.</param>
-            <param name="command">The SQL SELECT statement used to retrieve rows from the data source.</param>
-            <param name="behavior">One of the <see cref="T:System.Data.CommandBehavior"/> values.</param>
-            <returns>The number of rows successfully added to or refreshed in the <see cref="T:System.Data.DataTable"/>.</returns>
-        </member>
-        <member name="M:MySql.Data.MySqlClient.MySqlDataAdapter.FillAsync(System.Data.DataSet,System.Int32,System.Int32,System.String,System.Data.IDbCommand,System.Data.CommandBehavior,System.Threading.CancellationToken)">
-            <summary>
-            Asynchronous version of the Fill method.
-            </summary>
-            <param name="dataSet">The <see cref="T:System.Data.DataSet"/> to fill with records.</param>
-            <param name="startRecord">The start record.</param>
-            <param name="maxRecords">The max number of affected records.</param>
-            <param name="srcTable">The name of the source table to use for table mapping.</param>
-            <param name="command">The SQL SELECT statement used to retrieve rows from the data source.</param>
-            <param name="behavior">One of the <see cref="T:System.Data.CommandBehavior"/> values.</param>
-            <param name="cancellationToken">The cancellation token.</param>
-            <returns>The number of rows successfully added to or refreshed in the <see cref="T:System.Data.DataTable"/>.</returns>
+            <param name="dataSet">DataSet to use</param>
+            <param name="startRecord">Start record</param>
+            <param name="maxRecords">Max records</param>
+            <param name="srcTable">Source table</param>
+            <param name="command">DbCommand to use</param>
+            <param name="behavior">Command Behavior</param>
+            <returns></returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlDataAdapter.FillSchemaAsync(System.Data.DataSet,System.Data.SchemaType)">
             <summary>
@@ -4940,22 +4844,12 @@
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlHelper.ExecuteDataRowAsync(System.String,System.String,MySql.Data.MySqlClient.MySqlParameter[])">
             <summary>
-            Asynchronous version of ExecuteDataRow.
+            Async version of ExecuteDataRow
             </summary>
-            <param name="connectionString">The settings to be used for the connection.</param>
-            <param name="commandText">The command to execute.</param>
-            <param name="parms">The parameters to use for the command.</param>
-            <returns>The DataRow containing the first row of the resultset.</returns>
-        </member>
-        <member name="M:MySql.Data.MySqlClient.MySqlHelper.ExecuteDataRowAsync(System.String,System.String,System.Threading.CancellationToken,MySql.Data.MySqlClient.MySqlParameter[])">
-            <summary>
-            Asynchronous version of ExecuteDataRow.
-            </summary>
-            <param name="connectionString">The settings to be used for the connection.</param>
-            <param name="commandText">The command to execute.</param>
-            <param name="cancellationToken">The cancellation token.</param>
-            <param name="parms">The parameters to use for the command.</param>
-            <returns>The DataRow containing the first row of the resultset.</returns>
+            <param name="connectionString">Settings to be used for the connection</param>
+            <param name="commandText">Command to execute</param>
+            <param name="parms">Parameters to use for the command</param>
+            <returns>DataRow containing the first row of the resultset</returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlHelper.ExecuteDataRow(System.String,System.String,MySql.Data.MySqlClient.MySqlParameter[])">
             <summary>
@@ -5064,20 +4958,20 @@
             Executes a single command against a MySQL database.  The <see cref="T:MySql.Data.MySqlClient.MySqlConnection"/> is assumed to be
             open when the method is called and remains open after the method completes.
             </summary>
-            <param name="connection">The <see cref="T:MySql.Data.MySqlClient.MySqlConnection"/> object to use</param>
-            <param name="commandText">The SQL command to be executed.</param>
-            <param name="commandParameters">An array of <see cref="T:MySql.Data.MySqlClient.MySqlParameter"/> objects to use with the command.</param>
-            <returns>The number of affected records.</returns>
+            <param name="connection"><see cref="T:MySql.Data.MySqlClient.MySqlConnection"/> object to use</param>
+            <param name="commandText">SQL command to be executed</param>
+            <param name="commandParameters">Array of <see cref="T:MySql.Data.MySqlClient.MySqlParameter"/> objects to use with the command.</param>
+            <returns></returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlHelper.ExecuteNonQuery(System.String,System.String,MySql.Data.MySqlClient.MySqlParameter[])">
             <summary>
-            Executes a single command against a MySQL database.
+            Executes a single command against a MySQL database.  A new <see cref="T:MySql.Data.MySqlClient.MySqlConnection"/> is created
+            using the <see cref="P:MySql.Data.MySqlClient.MySqlConnection.ConnectionString"/> given.
             </summary>
-            <param name="connectionString"><see cref="P:MySql.Data.MySqlClient.MySqlConnection.ConnectionString"/> to use.</param>
-            <param name="commandText">The SQL command to be executed.</param>
-            <param name="parms">An rray of <see cref="T:MySql.Data.MySqlClient.MySqlParameter"/> objects to use with the command.</param>
-            <returns>The number of affected records.</returns>
-            <remarks>A new <see cref="T:MySql.Data.MySqlClient.MySqlConnection"/> is created using the <see cref="P:MySql.Data.MySqlClient.MySqlConnection.ConnectionString"/> given.</remarks>
+            <param name="connectionString"><see cref="P:MySql.Data.MySqlClient.MySqlConnection.ConnectionString"/> to use</param>
+            <param name="commandText">SQL command to be executed</param>
+            <param name="parms">Array of <see cref="T:MySql.Data.MySqlClient.MySqlParameter"/> objects to use with the command.</param>
+            <returns></returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlHelper.ExecuteReader(MySql.Data.MySqlClient.MySqlConnection,MySql.Data.MySqlClient.MySqlTransaction,System.String,MySql.Data.MySqlClient.MySqlParameter[],System.Boolean)">
             <summary>
@@ -5162,15 +5056,8 @@
             <summary>
             Escapes the string.
             </summary>
-            <param name="value">The string to escape.</param>
+            <param name="value">The string to escape</param>
             <returns>The string with all quotes escaped.</returns>
-        </member>
-        <member name="M:MySql.Data.MySqlClient.MySqlHelper.DoubleQuoteString(System.String)">
-            <summary>
-            Replaces quotes with double quotes.
-            </summary>
-            <param name="value">The string to modidify.</param>
-            <returns>A string containing double quotes instead of single quotes.</returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlHelper.ExecuteNonQueryAsync(MySql.Data.MySqlClient.MySqlConnection,System.String,MySql.Data.MySqlClient.MySqlParameter[])">
             <summary>
@@ -5183,22 +5070,12 @@
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlHelper.ExecuteNonQueryAsync(System.String,System.String,MySql.Data.MySqlClient.MySqlParameter[])">
             <summary>
-            Asynchronous version of the ExecuteNonQuery method.
+            Async version of ExecuteNonQuery
             </summary>
-            <param name="connectionString"><see cref="P:MySql.Data.MySqlClient.MySqlConnection.ConnectionString"/> to use.</param>
-            <param name="commandText">The SQL command to be executed.</param>
-            <param name="commandParameters">An array of <see cref="T:MySql.Data.MySqlClient.MySqlParameter"/> objects to use with the command.</param>
-            <returns>The number of rows affected.</returns>
-        </member>
-        <member name="M:MySql.Data.MySqlClient.MySqlHelper.ExecuteNonQueryAsync(System.String,System.String,System.Threading.CancellationToken,MySql.Data.MySqlClient.MySqlParameter[])">
-            <summary>
-            Asynchronous version of the ExecuteNonQuery method.
-            </summary>
-            <param name="connectionString"><see cref="P:MySql.Data.MySqlClient.MySqlConnection.ConnectionString"/> to use.</param>
-            <param name="commandText">The SQL command to be executed.</param>
-            <param name="cancellationToken">The cancellation token.</param>
-            <param name="commandParameters">An array of <see cref="T:MySql.Data.MySqlClient.MySqlParameter"/> objects to use with the command.</param>
-            <returns>The number of rows affected.</returns>
+            <param name="connectionString"><see cref="P:MySql.Data.MySqlClient.MySqlConnection.ConnectionString"/> to use</param>
+            <param name="commandText">SQL command to be executed</param>
+            <param name="commandParameters">Array of <see cref="T:MySql.Data.MySqlClient.MySqlParameter"/> objects to use with the command.</param>
+            <returns>Rows affected</returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlHelper.ExecuteReaderAsync(MySql.Data.MySqlClient.MySqlConnection,MySql.Data.MySqlClient.MySqlTransaction,System.String,MySql.Data.MySqlClient.MySqlParameter[],System.Boolean)">
             <summary>
@@ -5288,12 +5165,6 @@
             <summary>
             Gets or sets the <see cref="T:System.Data.DataRowVersion"/> to use when loading <see cref="P:MySql.Data.MySqlClient.MySqlParameter.Value"/>.
             </summary>
-        </member>
-        <member name="M:MySql.Data.MySqlClient.MySqlParameter.Clone">
-            <summary>
-            CLoses this object.
-            </summary>
-            <returns>An object that is a clone of this object.</returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlParameter.#ctor(System.String,MySql.Data.MySqlClient.MySqlDbType,System.Int32,System.String)">
             <summary>
@@ -5518,7 +5389,7 @@
             </summary>
             <param name="parameterName">The name of the parameter.</param>
             <param name="value">The value of the parameter.</param>
-            <returns>A <see cref="T:MySql.Data.MySqlClient.MySqlParameter"/> object representing the provided values.</returns>
+            <returns>A <c>MySqlParameter</c> object representing the provided values.</returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.MySqlParameterCollection.Add(System.String,MySql.Data.MySqlClient.MySqlDbType)">
             <summary>
@@ -5660,7 +5531,7 @@
             Creates a set of permissions.
             </summary>
             <param name="includeReflectionPermission">A flag indicating if the reflection permission should be included.</param>
-            <returns>A <see cref="T:System.Security.PermissionSet"/> object representing a collection of permissions.</returns>
+            <returns>A <c>PermissionSet</c> object representing a collection of permissions.</returns>
         </member>
         <member name="T:MySql.Data.MySqlClient.BaseCommandInterceptor">
             <summary>
@@ -5679,7 +5550,7 @@
             </summary>
             <param name="sql">The SQL statement to execute.</param>
             <param name="returnValue">A scalar value that represents the result returned by the execution of the SQL statement.</param>
-            <returns><c>false</c>.</returns>
+            <returns><c>false.</c></returns>
             <remarks>This method is intended to be overriden.</remarks>
         </member>
         <member name="M:MySql.Data.MySqlClient.BaseCommandInterceptor.ExecuteNonQuery(System.String,System.Int32@)">
@@ -5689,7 +5560,6 @@
             <param name="sql">The SQL statement to execute.</param>
             <param name="returnValue">The number of affected rows.</param>
             <returns><c>false</c>.</returns>
-            <remarks>This method is intended to be overriden.</remarks>
         </member>
         <member name="M:MySql.Data.MySqlClient.BaseCommandInterceptor.ExecuteReader(System.String,System.Data.CommandBehavior,MySql.Data.MySqlClient.MySqlDataReader@)">
             <summary>
@@ -5697,9 +5567,8 @@
             </summary>
             <param name="sql">The SQL statement to execute.</param>
             <param name="behavior">A value that describes the results of the query and its effect on the database.</param>
-            <param name="returnValue">A <see cref="T:MySql.Data.MySqlClient.MySqlDataReader"/> object containing the result of the statement execution.</param>
-            <returns><c>false</c>.</returns>
-            <remarks>This method is intended to be overriden.</remarks>
+            <param name="returnValue">A <c>MySqlDataReader</c> object containing the result of the statement execution.</param>
+            <returns></returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.BaseCommandInterceptor.Init(MySql.Data.MySqlClient.MySqlConnection)">
             <summary>
@@ -5716,7 +5585,7 @@
         <member name="T:MySql.Data.MySqlClient.Interceptors.BaseExceptionInterceptor">
             <summary>
             BaseExceptionInterceptor is the base class that should be used for all userland 
-            exception interceptors.
+            exception interceptors
             </summary>
         </member>
         <member name="M:MySql.Data.MySqlClient.Interceptors.BaseExceptionInterceptor.InterceptException(System.Exception)">
@@ -5739,16 +5608,9 @@
         </member>
         <member name="T:MySql.Data.MySqlClient.Interceptors.StandardExceptionInterceptor">
             <summary>
-            StandardExceptionInterceptor is the standard interceptor that simply returns the exception.
+            StandardExceptionInterceptor is the standard interceptor that simply throws the exception.
             It is the default action.
             </summary>
-        </member>
-        <member name="M:MySql.Data.MySqlClient.Interceptors.StandardExceptionInterceptor.InterceptException(System.Exception)">
-            <summary>
-            Returns the received exception, which is the default action
-            </summary>
-            <param name="exception">The exception to be returned.</param>
-            <returns>The exception originally received.</returns>
         </member>
         <member name="T:MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor">
             <summary>
@@ -6087,6 +5949,11 @@
             protocol is being used.
             </summary>
         </member>
+        <member name="P:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.ConnectionTimeout">
+            <summary>
+            Gets or sets the connection timeout.
+            </summary>
+        </member>
         <member name="P:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.UserID">
             <summary>
             Gets or sets the user ID that should be used to connect with.
@@ -6097,9 +5964,34 @@
             Gets or sets the password that should be used to make a connection.
             </summary>
         </member>
+        <member name="P:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.CertificateFile">
+            <summary>
+            Gets or sets the path to a certificate in PKCS#12 format (.pfx).
+            </summary>
+        </member>
+        <member name="P:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.CertificatePassword">
+            <summary>
+            Gets or sets the password associated to the certificate file.
+            </summary>
+        </member>
+        <member name="P:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.CertificateStoreLocation">
+            <summary>
+            Gets or sets the certificate store location for client certificates.
+            </summary>
+        </member>
+        <member name="P:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.CertificateThumbprint">
+            <summary>
+            Gets or sets a certificate thumbprint that can be used together with a certificate to ensure correct identification.
+            </summary>
+        </member>
         <member name="P:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.SslMode">
             <summary>
             Indicates whether to use SSL connections and how to handle server certificate errors.
+            </summary>
+        </member>
+        <member name="P:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.Keepalive">
+            <summary>
+            Gets or sets the idle connection time measured in seconds.
             </summary>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.CharacterSet">
@@ -6107,7 +5999,29 @@
             Gets or sets the character set that should be used for sending queries to the server.
             </summary>
         </member>
-        <member name="M:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.AnalyzeConnectionString(System.String,System.Boolean)">
+        <member name="P:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.Auth">
+            <summary>
+            Gets or sets the authentication mechanism to use with X Protocol connections.
+            </summary>
+        </member>
+        <member name="P:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.SslCa">
+            <summary>
+            Gets or sets the path to a local file that contains a list of trusted Certificate Authorities.
+            </summary>
+        </member>
+        <member name="P:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.SslCrl">
+            <summary>
+            Gets or sets the path to a local file that contains certificate revocation lists.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.GetConnectionString(System.Boolean)">
+            <summary>
+            Gets the connection string with or without the password.
+            </summary>
+            <param name="includePass">Flag to indicate if the password should be included in the connection string.</param>
+            <returns>The connection string associated to this object.</returns>
+        </member>
+        <member name="M:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.AnalyzeConnectionString(System.String)">
             <summary>
             Analyzes the connection string for potential duplicated or invalid connection options.
             </summary>
@@ -6147,18 +6061,6 @@
             Returns a strongly typed <see cref="T:System.Data.Common.DbConnectionStringBuilder"/> instance. 
             </summary>
             <returns>A new strongly typed instance of <b>DbConnectionStringBuilder</b>.</returns>
-        </member>
-        <member name="M:MySql.Data.MySqlClient.MySqlClientFactory.CreateCommandBuilder">
-            <summary>
-            Returns a strongly typed <see cref="T:System.Data.Common.DbCommandBuilder"/> instance. 
-            </summary>
-            <returns>A new strongly typed instance of <b>DbCommandBuilder</b>.</returns>
-        </member>
-        <member name="M:MySql.Data.MySqlClient.MySqlClientFactory.CreateDataAdapter">
-            <summary>
-            Returns a strongly typed <see cref="T:System.Data.Common.DbDataAdapter"/> instance. 
-            </summary>
-            <returns>A new strongly typed instance of <b>DbDataAdapter</b>.</returns>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlClientFactory.DbServicesType">
             <summary>
@@ -6205,11 +6107,6 @@
             Gets or sets the default command timeout.
             </summary>
         </member>
-        <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.ConnectionTimeout">
-            <summary>
-            Gets or sets the connection timeout.
-            </summary>
-        </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.PersistSecurityInfo">
             <summary>
             Gets or sets a boolean value that indicates if the password should be persisted
@@ -6218,139 +6115,114 @@
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.IntegratedSecurity">
             <summary>
-            Gets or sets a boolean value that indicates if the connection should be encrypted.
+            Gets or sets a boolean value that indicates if Windows authentication should be used.
             </summary>
-            <remarks>Obsolte. Use <see cref="!:SslMode"/> instead.</remarks>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.AllowPublicKeyRetrieval">
             <summary>
-            Gets or sets the authentication mechanism to use with X Protocol connections.
+            Gets or sets a boolean value that indicates whether the RSA public key should be retrieved from the server.
             </summary>
-            <remarks>This option is specific to X Protocol connections. Default value is <see cref="F:MySql.Data.MySqlClient.MySqlAuthenticationMode.Default"/>.</remarks>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.AllowZeroDateTime">
             <summary>
             Gets or sets a boolean value that indicates if zero date time values are supported.
             </summary>
-            <remarks>Default value is <c>false</c>.</remarks>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.ConvertZeroDateTime">
             <summary>
-            Gets or sets a boolean value that indicates if zero datetime values should be
+            Gets or sets a boolean value indicating if zero datetime values should be 
             converted to DateTime.MinValue.
             </summary>
-            <remarks>Default value is <c>false</c>.</remarks>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.UseUsageAdvisor">
             <summary>
-            Gets or sets a boolean value that indicates if the Usage Advisor should be enabled.
+            Gets or sets a boolean value indicating if the Usage Advisor should be enabled.
             </summary>
-            <remarks>Default value is <c>false</c>.</remarks>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.ProcedureCacheSize">
             <summary>
             Gets or sets the size of the stored procedure cache.
             </summary>
-            <remarks>Default value is 25.</remarks>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.UsePerformanceMonitor">
             <summary>
-            Gets or sets a boolean value that indicates if the performance monitor hooks should be enabled.
+            Gets or sets a boolean value indicating if the permon hooks should be enabled.
             </summary>
-            <remarks>Default value is <c>false</c>.</remarks>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.IgnorePrepare">
             <summary>
-            Gets or sets a boolean value that indicates if calls to the Prepare method should be ignored.
+            Gets or sets a boolean value indicating if calls to Prepare() should be ignored.
             </summary>
-            <remarks>Default value is <c>false</c>.</remarks>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.AutoEnlist">
             <summary>
             Gets or sets a boolean value that indicates if an opened connection should particiapte in the current scope.
             </summary>
-            <remarks>Default value is <c>true</c>.</remarks>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.IncludeSecurityAsserts">
             <summary>
             Gets or sets a boolean value that indicates if security asserts must be included.
             </summary>
-            <remarks>Must be set to <c>true</c> when using the <see cref="T:MySql.Data.MySqlClient.MySqlClientPermission"/> class in a partial trust environment,
-            with the library installed in the GAC of the hosting environment. Not supported in .NET Core.
-            Default value is <c>false</c>.</remarks>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.RespectBinaryFlags">
             <summary>
             Gets or sets a boolean value that indicates if column binary flags set by the server are ignored.
             </summary>
-            <remarks>Default value is <c>true</c>.</remarks>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.TreatTinyAsBoolean">
             <summary>
-            Gets or sets a boolean value that indicates if <b>TINYINT(1)</b> shound be treated as a <b>BOOLEAN</b>.
+            Gets or sets a boolean value that indicates if TINYINT(1) shound be treated as a BOOLEAN.
             </summary>
-            <remarks>Default value is <c>true</c>.</remarks>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.AllowUserVariables">
             <summary>
             Gets or sets a boolean value that indicates if the provider expects user variables in the SQL.
             </summary>
-            <remarks>Default value is <c>false</c>.</remarks>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.InteractiveSession">
             <summary>
             Gets or sets a boolean value that indicates if the session should be interactive.
             </summary>
-            <remarks>Default value is <c>false</c>.</remarks>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.FunctionsReturnString">
             <summary>
             Gets or sets a boolean value that indicates if server functions should be treated as returning a string.
             </summary>
-            <remarks>Default value is <c>false</c>.</remarks>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.UseAffectedRows">
             <summary>
             Gets or sets a boolean value that indicates if the server should report affected rows instead of found rows.
             </summary>
-            <remarks>Default value is <c>false</c>.</remarks>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.OldGuids">
             <summary>
-            Gets or sets a boolean value that indicates if items of data type <b>BINARY(16)</b> should be treated as guids.
+            
             </summary>
-            <remarks>Default value is <c>false</c>.</remarks>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.SqlServerMode">
             <summary>
-            Gets or sets a boolean value that indicates if SQL Server syntax should be allowed by supporting square brackets
-            around symbols instead of backticks.
+            Gets or sets a boolean value that indicates if items of data type BINARY(16) should be treated as guids.
             </summary>
-            <remarks>Default value is <c>false</c>.</remarks>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.TableCaching">
             <summary>
             Gets or sets a boolean value that indicates if caching of TableDirect commands is enabled.
             </summary>
-            <remarks>Default value is <c>false</c>.</remarks>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.DefaultTableCacheAge">
             <summary>
             Gets or sets the seconds for how long a TableDirect result should be cached.
             </summary>
-            <remarks>Default value is 0.</remarks>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.CheckParameters">
             <summary>
             Gets or sets a boolean value that indicates if stored routine parameters should be checked against the server.
             </summary>
-            <remarks>Default value is <c>true</c>.</remarks>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.Replication">
             <summary>
             Gets or sets a boolean value that indicates if this connection will use replication.
             </summary>
-            <remarks>Default value is <c>false</c>.</remarks>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.ExceptionInterceptors">
             <summary>
@@ -6366,54 +6238,51 @@
             <summary>
             Gets or sets the lifetime of a pooled connection.
             </summary>
-            <remarks>Default value is 0.</remarks>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.Pooling">
             <summary>
             Gets or sets a boolean value indicating if connection pooling is enabled.
             </summary>
-            <remarks>Default value is <c>true</c>.</remarks>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.MinimumPoolSize">
             <summary>
             Gets the minimum connection pool size.
             </summary>
-            <remarks>Default value is 0.</remarks>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.MaximumPoolSize">
             <summary>
             Gets or sets the maximum connection pool setting.
             </summary>
-            <remarks>Default value is 100.</remarks>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.ConnectionReset">
             <summary>
-            Gets or sets a boolean value that indicates if the connection should be reset when retrieved
+            Gets or sets a boolean value indicating if the connection should be reset when retrieved
             from the pool.
             </summary>
-            <remarks>Default value is <c>false</c>.</remarks>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.CacheServerProperties">
             <summary>
-            Gets or sets a boolean value that indicates whether the server variable settings are updated by a
-            SHOW VARIABLES command each time a pooled connection is returned.
+            Gets or sets a boolean value that indicates whether the server variable settings are updated by a SHOW VARIABLES command each time a pooled connection is returned.
             </summary>
-            <remarks>Default value is <c>false</c>.</remarks>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.TreatBlobsAsUTF8">
             <summary>
-            Indicates whether the driver should treat binary BLOBs as UTF8.
+            Indicates whether the driver should treat binary blobs as UTF8
             </summary>
-            <remarks>Default value is <c>false</c>.</remarks>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.BlobAsUTF8IncludePattern">
             <summary>
-            Gets or sets the pattern to match for the columns that should be treated as UTF8.
+            Gets or sets the pattern that matches the columns that should be treated as UTF8
             </summary>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.BlobAsUTF8ExcludePattern">
             <summary>
-            Gets or sets the pattern to match for the columns that should not be treated as UTF8.
+            Gets or sets the pattern that matches the columns that should not be treated as UTF8
+            </summary>
+        </member>
+        <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.UseDefaultCommandTimeoutForEF">
+            <summary>
+            Gets or sets a boolean value that indicates if the command timeout of EFMySqlCommand should be enforced to the value provided in the DefaultCommandTimeout property.
             </summary>
         </member>
         <member name="T:MySql.Data.MySqlClient.ClientFlags">
@@ -6650,7 +6519,7 @@
         </member>
         <member name="F:MySql.Data.MySqlClient.MySqlDbType.Guid">
             <summary>
-            A guid column.
+            A guid column
             </summary>
         </member>
         <member name="T:MySql.Data.MySqlClient.MySqlConnectionProtocol">
@@ -6661,47 +6530,22 @@
         </member>
         <member name="F:MySql.Data.MySqlClient.MySqlConnectionProtocol.Sockets">
             <summary>
-            TCP/IP style connection. Works everywhere.
-            </summary>
-        </member>
-        <member name="F:MySql.Data.MySqlClient.MySqlConnectionProtocol.Socket">
-            <summary>
-            TCP/IP style connection. Works everywhere.
-            </summary>
-        </member>
-        <member name="F:MySql.Data.MySqlClient.MySqlConnectionProtocol.Tcp">
-            <summary>
-            TCP/IP style connection. Works everywhere.
+            TCP/IP style connection.  Works everywhere.
             </summary>
         </member>
         <member name="F:MySql.Data.MySqlClient.MySqlConnectionProtocol.Pipe">
             <summary>
-            Named pipe connection. Works only on Windows systems.
-            </summary>
-        </member>
-        <member name="F:MySql.Data.MySqlClient.MySqlConnectionProtocol.NamedPipe">
-            <summary>
-            Named pipe connection. Works only on Windows systems.
+            Named pipe connection.  Works only on Windows systems.
             </summary>
         </member>
         <member name="F:MySql.Data.MySqlClient.MySqlConnectionProtocol.UnixSocket">
             <summary>
-            Unix domain socket connection. Works only with Unix systems.
-            </summary>
-        </member>
-        <member name="F:MySql.Data.MySqlClient.MySqlConnectionProtocol.Unix">
-            <summary>
-            Unix domain socket connection. Works only with Unix systems.
+            Unix domain socket connection.  Works only with Unix systems.
             </summary>
         </member>
         <member name="F:MySql.Data.MySqlClient.MySqlConnectionProtocol.SharedMemory">
             <summary>
-            Shared memory connection. Currently works only with Windows systems.
-            </summary>
-        </member>
-        <member name="F:MySql.Data.MySqlClient.MySqlConnectionProtocol.Memory">
-            <summary>
-            Shared memory connection. Currently works only with Windows systems.
+            Shared memory connection.  Currently works only with Windows systems.
             </summary>
         </member>
         <member name="T:MySql.Data.MySqlClient.MySqlSslMode">
@@ -6712,11 +6556,6 @@
         <member name="F:MySql.Data.MySqlClient.MySqlSslMode.None">
             <summary>
             Do not use SSL.
-            </summary>
-        </member>
-        <member name="F:MySql.Data.MySqlClient.MySqlSslMode.Preferred">
-            <summary>
-            Use SSL, if server supports it. This option is only available for the classic protocol.
             </summary>
         </member>
         <member name="F:MySql.Data.MySqlClient.MySqlSslMode.Required">
@@ -9604,7 +9443,7 @@
         </member>
         <member name="T:MySql.Data.MySqlClient.MySqlScriptErrorEventHandler">
             <summary>
-            Represents the method that will handle errors when executing MySQL scripts.
+            Represents the method that will handle errors when executing MySQL scripts. 
             </summary>
         </member>
         <member name="T:MySql.Data.MySqlClient.MySqlScriptEventArgs">
@@ -9649,7 +9488,7 @@
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlScriptErrorEventArgs.Ignore">
             <summary>
-            Gets or sets a value indicating whether this <see cref="T:MySql.Data.MySqlClient.MySqlScriptErrorEventArgs"/> is ignored.
+            Gets or sets a value indicating whether this <see cref="T:MySql.Data.MySqlClient.MySqlScriptErrorEventArgs"/> is ignore.
             </summary>
             <value><c>true</c> if ignore; otherwise, <c>false</c>.</value>
         </member>
@@ -9879,17 +9718,17 @@
         </member>
         <member name="T:MySql.Data.MySqlClient.ReplicationConfigurationElement">
             <summary>
-            Defines a replication configurarion element in the configuration file.
+            Used to define a Replication configurarion element in configuration file.
             </summary>
         </member>
         <member name="P:MySql.Data.MySqlClient.ReplicationConfigurationElement.ServerGroups">
             <summary>
-            Gets a collection of <see cref="T:MySql.Data.MySqlClient.ReplicationServerGroupConfigurationElement"/> objects representing the server groups.
+            Gets a collection of <c>ReplicationServerGroupConfigurationElement</c> objects representing the server groups.
             </summary>
         </member>
         <member name="T:MySql.Data.MySqlClient.ReplicationServerGroupConfigurationElement">
             <summary>
-            Defines a replication server group in the configuration file.
+            Used to define a Replication server group in configuration file.
             </summary>
         </member>
         <member name="P:MySql.Data.MySqlClient.ReplicationServerGroupConfigurationElement.Name">
@@ -9909,18 +9748,17 @@
         </member>
         <member name="P:MySql.Data.MySqlClient.ReplicationServerGroupConfigurationElement.Servers">
             <summary>
-            Gets a collection of <see cref="T:MySql.Data.MySqlClient.ReplicationServerConfigurationElement"/> objects representing the
-            server configurations associated to this group configuration.
+            Gets a collection of <c>ReplicationServerConfigurationElement</c> objects representing the server configurations associated to this group configuration.
             </summary>
         </member>
         <member name="T:MySql.Data.MySqlClient.ReplicationServerConfigurationElement">
             <summary>
-            Defines a replication server in configuration file.
+            Defines a Replication server in configuration file.
             </summary>
         </member>
         <member name="P:MySql.Data.MySqlClient.ReplicationServerConfigurationElement.Name">
             <summary>
-            Gets or sets the name of the replication server configuration. 
+            Gets or sets the name of the replication server configuration.
             </summary>
         </member>
         <member name="P:MySql.Data.MySqlClient.ReplicationServerConfigurationElement.IsMaster">
@@ -9980,7 +9818,7 @@
             Validates if the replication group name exists
             </summary>
             <param name="groupName">Group name to validate</param>
-            <returns><c>true</c> if the replication group name is found; otherwise, <c>false</c></returns>
+            <returns>True if replication group name is found, otherwise false</returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.Replication.ReplicationManager.GetNewConnection(System.String,System.Boolean,MySql.Data.MySqlClient.MySqlConnection)">
             <summary>
@@ -9992,39 +9830,39 @@
         </member>
         <member name="T:MySql.Data.MySqlClient.Replication.ReplicationRoundRobinServerGroup">
             <summary>
-            Class that implements Round Robing Load Balancing technique.
+            Class that implements Round Robing Load Balancing technique
             </summary>
         </member>
         <member name="M:MySql.Data.MySqlClient.Replication.ReplicationRoundRobinServerGroup.GetServer(System.Boolean)">
             <summary>
-            Gets an available server based on Round Robin load balancing.
+            Gets an available server based on Round Robin load balancing
             </summary>
-            <param name="isMaster">Flag indicating if the server to return must be a master.</param>
-            <returns>A <see cref="T:MySql.Data.MySqlClient.Replication.ReplicationServer"/> object representing the next available server.</returns>
+            <param name="isMaster">True if the server to return must be a master</param>
+            <returns>Next available server</returns>
         </member>
         <member name="T:MySql.Data.MySqlClient.Replication.ReplicationServer">
             <summary>
-            Represents a server in a Replication environment.
+            Represents a server in Replication environment
             </summary>
         </member>
         <member name="P:MySql.Data.MySqlClient.Replication.ReplicationServer.Name">
             <summary>
-            Gets the server name.
+            Server name
             </summary>
         </member>
         <member name="P:MySql.Data.MySqlClient.Replication.ReplicationServer.IsMaster">
             <summary>
-            Gets a value indicating whether the server is master or slave.
+            Defines if the server is master (True) or slave
             </summary>
         </member>
         <member name="P:MySql.Data.MySqlClient.Replication.ReplicationServer.ConnectionString">
             <summary>
-            Gets the connection string used to connect to the server.
+            Connection string used to connect to the server
             </summary>
         </member>
         <member name="P:MySql.Data.MySqlClient.Replication.ReplicationServer.IsAvailable">
             <summary>
-            Gets a flag indicating if the server is available to be considered in load balancing.
+            Defines if the server is available to be considered in load balancing
             </summary>
         </member>
         <member name="T:MySql.Data.MySqlClient.Replication.ReplicationServerGroup">
@@ -10038,22 +9876,22 @@
             </summary>
         </member>
         <member name="M:MySql.Data.MySqlClient.Replication.ReplicationServerGroup.#ctor(System.String,System.Int32)">
-            <param name="name">The group name.</param>
-            <param name="retryTime">The number of seconds to perform a retry.</param>
+            <param name="name">Group name</param>
+            <param name="retryTime"></param>
         </member>
         <member name="P:MySql.Data.MySqlClient.Replication.ReplicationServerGroup.Name">
             <summary>
-            Gets the group name.
+            The name of the group.
             </summary>
         </member>
         <member name="P:MySql.Data.MySqlClient.Replication.ReplicationServerGroup.RetryTime">
             <summary>
-            Gets the retry time between connections to failed servers.
+            The retry time between connections to failed servers.
             </summary>
         </member>
         <member name="P:MySql.Data.MySqlClient.Replication.ReplicationServerGroup.Servers">
             <summary>
-            Gets the server list in the group.
+            The server list in the group.
             </summary>
         </member>
         <member name="M:MySql.Data.MySqlClient.Replication.ReplicationServerGroup.AddServer(System.String,System.Boolean,System.String)">
@@ -10061,13 +9899,13 @@
             Adds a server into the group.
             </summary>
             <param name="name">The server name.</param>
-            <param name="isMaster">A flag indicating if the server to add is master or slave.</param>
+            <param name="isMaster"><c>true</c> if the server to add is master; otherwise <c>false</c> for slave server.</param>
             <param name="connectionString">The connection string used by this server.</param>
-            <returns>A <see cref="T:MySql.Data.MySqlClient.Replication.ReplicationServer"/> object representing the recently added object.</returns>
+            <returns></returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.Replication.ReplicationServerGroup.RemoveServer(System.String)">
             <summary>
-            Removes a server from the group.
+            Removes a server from a group.
             </summary>
             <param name="name">The server name.</param>
         </member>
@@ -10075,16 +9913,16 @@
             <summary>
             Gets a server by name.
             </summary>
-            <param name="name">The server name.</param>
-            <returns>The replication server.</returns>
+            <param name="name">The server name</param>
+            <returns>A replication server.</returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.Replication.ReplicationServerGroup.GetServer(System.Boolean)">
             <summary>
             Must be implemented. Defines the next server for a custom load balancing implementation.
             </summary>
             <param name="isMaster">Defines if the server to return is a master or any.</param>
-            <returns>The next server based on the load balancing implementation.
-            Null if no available server is found.
+            <returns>Next server based on the load balancing implementation.
+            <c>null</c> if no available server is found.
             </returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.Replication.ReplicationServerGroup.GetServer(System.Boolean,MySql.Data.MySqlClient.MySqlConnectionStringBuilder)">
@@ -10093,16 +9931,14 @@
             </summary>
             <param name="isMaster">Defines if the server to return is a master or any.</param>
             <param name="settings">Currently not being used.</param>
-            <returns>The next server based on the load balancing implementation.
-            Null if no available server is found.
-            </returns>
+            <returns>The next server based on the load balancing implementation. Null if no available server is found.</returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.Replication.ReplicationServerGroup.HandleFailover(MySql.Data.MySqlClient.Replication.ReplicationServer)">
             <summary>
             Handles a failed connection to a server.
+            This method can be overriden to implement a custom failover handling
             </summary>
             <param name="server">The failed server.</param>
-            <remarks>This method can be overrided to implement a custom failover handling.</remarks>
         </member>
         <member name="M:MySql.Data.MySqlClient.Replication.ReplicationServerGroup.HandleFailover(MySql.Data.MySqlClient.Replication.ReplicationServer,System.Exception)">
             <summary>
@@ -10211,7 +10047,7 @@
         </member>
         <member name="F:MySql.Data.MySqlClient.BaseTableCache.MaxCacheAge">
             <summary>
-            The maximum age allowed for cache entries.
+            The max allowed age for the cache entry.
             </summary>
         </member>
         <member name="M:MySql.Data.MySqlClient.BaseTableCache.AddToCache(System.String,System.Object)">
@@ -10242,7 +10078,7 @@
         </member>
         <member name="M:MySql.Data.MySqlClient.BaseTableCache.CleanCache">
             <summary>
-            Removes cache entries older than the value defined by <see cref="F:MySql.Data.MySqlClient.BaseTableCache.MaxCacheAge"/>.
+            Removes cache entries older than the value defined by <c>MaxCacheAge</c>.
             </summary>
         </member>
         <member name="T:MySql.Data.MySqlClient.TimedStream">
@@ -10616,6 +10452,11 @@
       </code>
     </example>
         </member>
+        <member name="T:MySql.Data.MySqlClient.X.XDevAPI.Common.ColumnType">
+            <summary>
+            Defines the data type associated with a column.
+            </summary>
+        </member>
         <member name="T:MySql.Data.Common.LowResolutionStopwatch">
             <summary>
             This class is modeled after .NET Stopwatch. It provides better
@@ -10957,11 +10798,6 @@
         <member name="P:MySql.Data.Resources.InvalidProcName">
             <summary>
               Looks up a localized string similar to Procedure or function &apos;{0}&apos; cannot be found in database &apos;{1}&apos;..
-            </summary>
-        </member>
-        <member name="P:MySql.Data.Resources.InvalidSslMode">
-            <summary>
-              Looks up a localized string similar to Value &apos;{0}&apos; is not of the correct type..
             </summary>
         </member>
         <member name="P:MySql.Data.Resources.InvalidValueForBoolean">
@@ -11546,21 +11382,6 @@
               Looks up a localized string similar to Authentication failed using MYSQL41 and SHA256_MEMORY. Check the user name and password or try using a secure connection..
             </summary>
         </member>
-        <member name="P:MySql.Data.ResourcesX.ClientIsClosed">
-            <summary>
-              Looks up a localized string similar to You can&apos;t get more sessions because Client is closed..
-            </summary>
-        </member>
-        <member name="P:MySql.Data.ResourcesX.ClientOptionInvalidValue">
-            <summary>
-              Looks up a localized string similar to Client option &apos;{0}&apos; does not support value &apos;{1}&apos;..
-            </summary>
-        </member>
-        <member name="P:MySql.Data.ResourcesX.ClientOptionNotValid">
-            <summary>
-              Looks up a localized string similar to Client option &apos;{0}&apos; is not recognized as valid..
-            </summary>
-        </member>
         <member name="P:MySql.Data.ResourcesX.FeatureNotSupported">
             <summary>
               Looks up a localized string similar to This feature is currently not supported..
@@ -11591,11 +11412,6 @@
               Looks up a localized string similar to &apos;{0}&apos; is not a valid connection string attribute..
             </summary>
         </member>
-        <member name="P:MySql.Data.ResourcesX.InvalidConnectionTimeoutValue">
-            <summary>
-              Looks up a localized string similar to The connection timeout value must be a positive integer (including 0)..
-            </summary>
-        </member>
         <member name="P:MySql.Data.ResourcesX.InvalidDecimalFormat">
             <summary>
               Looks up a localized string similar to Decimal (BCD) format is invalid..
@@ -11611,11 +11427,6 @@
               Looks up a localized string similar to Index type with name &apos;{0}&apos; not found..
             </summary>
         </member>
-        <member name="P:MySql.Data.ResourcesX.InvalidJsonDocument">
-            <summary>
-              Looks up a localized string similar to The value provided is not a valid JSON document. {0}.
-            </summary>
-        </member>
         <member name="P:MySql.Data.ResourcesX.InvalidNameIndex">
             <summary>
               Looks up a localized string similar to {0} is not a valid column name in the row..
@@ -11624,11 +11435,6 @@
         <member name="P:MySql.Data.ResourcesX.InvalidRowIndex">
             <summary>
               Looks up a localized string similar to {0} is not a valid index for the row..
-            </summary>
-        </member>
-        <member name="P:MySql.Data.ResourcesX.InvalidSession">
-            <summary>
-              Looks up a localized string similar to Session state is not valid..
             </summary>
         </member>
         <member name="P:MySql.Data.ResourcesX.InvalidUriData">
@@ -11701,11 +11507,6 @@
               Looks up a localized string similar to Path not found &apos;{0}&apos;..
             </summary>
         </member>
-        <member name="P:MySql.Data.ResourcesX.PoolingQueueTimeout">
-            <summary>
-              Looks up a localized string similar to Queue timeout expired. The timeout period elapsed prior to getting a session from the pool..
-            </summary>
-        </member>
         <member name="P:MySql.Data.ResourcesX.PortNotSupported">
             <summary>
               Looks up a localized string similar to Providing a port number as part of the host address isn&apos;t supported when using connection strings in basic format or anonymous objects. Use URI format instead..
@@ -11736,26 +11537,6 @@
               Looks up a localized string similar to The process of closing the resultset and resulted in results being lost..
             </summary>
         </member>
-        <member name="P:MySql.Data.ResourcesX.TimeOutMultipleHost">
-            <summary>
-              Looks up a localized string similar to All server connection attempts were aborted. Timeout of {0} milliseconds was exceeded for each selected server..
-            </summary>
-        </member>
-        <member name="P:MySql.Data.ResourcesX.TimeOutMultipleHost0ms">
-            <summary>
-              Looks up a localized string similar to All server connection attempts were aborted. Timeout was exceeded for each selected server..
-            </summary>
-        </member>
-        <member name="P:MySql.Data.ResourcesX.TimeOutSingleHost">
-            <summary>
-              Looks up a localized string similar to Connection attempt to the server was aborted. Timeout of {0} milliseconds was exceeded..
-            </summary>
-        </member>
-        <member name="P:MySql.Data.ResourcesX.TimeOutSingleHost0ms">
-            <summary>
-              Looks up a localized string similar to Connection attempt to the server was aborted. Timeout was exceeded..
-            </summary>
-        </member>
         <member name="P:MySql.Data.ResourcesX.UnableToConnect">
             <summary>
               Looks up a localized string similar to Unable to connect to any specified host..
@@ -11764,11 +11545,6 @@
         <member name="P:MySql.Data.ResourcesX.UnableToDecodeDataValue">
             <summary>
               Looks up a localized string similar to Unable to read or decode data value..
-            </summary>
-        </member>
-        <member name="P:MySql.Data.ResourcesX.UnableToOpenSession">
-            <summary>
-              Looks up a localized string similar to Unable to open a session..
             </summary>
         </member>
         <member name="P:MySql.Data.ResourcesX.UnexpectedEndOfPacketFound">
@@ -11812,7 +11588,7 @@
         </member>
         <member name="F:MySql.Data.Types.MySqlDateTime.TimezoneOffset">
             <summary>
-            Defines whether the UTF or local timezone will be used. 
+            Defines whether the UTF or local timezone will be used.
             </summary>
         </member>
         <member name="M:MySql.Data.Types.MySqlDateTime.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
@@ -11956,11 +11732,6 @@
             Gets a boolean value that signals if the type is <c>null</c>.
             </summary>
         </member>
-        <member name="P:MySql.Data.Types.MySqlGeometry.MySql#Data#Types#IMySqlValue#Value">
-            <summary>
-            Gets the value associated to this type.
-            </summary>
-        </member>
         <member name="P:MySql.Data.Types.MySqlGeometry.Value">
             <summary>
             Gets the value associated to this type.
@@ -11990,6 +11761,7 @@
             <summary>
             Sets the DSInfo when GetSchema is called for the DataSourceInformation collection.
             </summary>
+            <param name="dsTable">The schema collection.</param>
         </member>
         <member name="M:MySql.Data.Types.MySqlGeometry.GetWKT">
             <summary>
@@ -12146,6 +11918,39 @@
             Abstract class for the protocol base operations in client/server communication.
             </summary>  
             
+        </member>
+        <member name="M:MySqlX.Protocol.ProtocolBase.ReadRow(MySqlX.XDevAPI.Common.BaseResult)">
+            <summary>
+            Reads a row from the base result.
+            </summary>
+            <param name="rs">The base result to be queried.</param>
+            <returns>A list containing a byte representation of the value for each field found in the row.</returns>
+        </member>
+        <member name="M:MySqlX.Protocol.ProtocolBase.SendSQL(System.String,System.Object[])">
+            <summary>
+            Executes an SQL statement.
+            </summary>
+            <param name="sql">The statement to be executed.</param>
+            <param name="args">The arguments associated to the SQL statement.</param>
+        </member>
+        <member name="M:MySqlX.Protocol.ProtocolBase.HasData(MySqlX.XDevAPI.Common.BaseResult)">
+            <summary>
+            Determines if the base result contains retrievable items.
+            </summary>
+            <param name="rs">The base result to be queried.</param>
+            <returns><c>true</c> if the base result contains data; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:MySqlX.Protocol.ProtocolBase.LoadColumnMetadata">
+            <summary>
+            Loads metadata associated to the retrieved columns.
+            </summary>
+            <returns>A list of <c>Column</c> objects containing metadata for each column.</returns>
+        </member>
+        <member name="M:MySqlX.Protocol.ProtocolBase.CloseResult(MySqlX.XDevAPI.Common.BaseResult)">
+            <summary>
+            Closes the base result preventing the retrieval of data.
+            </summary>
+            <param name="rs">The base result to close.</param>
         </member>
         <member name="T:MySqlX.Protocol.X.ExprParser">
             Expression parser for MySQL-X protocol.
@@ -12454,7 +12259,7 @@
             Gets the connection uri representation of the connection options provided during the creation of the session.
             </summary>
         </member>
-        <member name="M:MySqlX.XDevAPI.BaseSession.#ctor(System.String,MySqlX.XDevAPI.Client)">
+        <member name="M:MySqlX.XDevAPI.BaseSession.#ctor(System.String)">
             <summary>
             Initializes a new instance of the BaseSession class based on the specified connection string.
             </summary>
@@ -12469,9 +12274,9 @@
             <c>protocol=unix</c> and <c>protocol=unixsocket</c> are synonyms.</para>
             <para>&#160;</para>
             <para>Multiple hosts can be specified as part of the <paramref name="connectionString"/>,
-            which enables client-side failover when trying to establish a connection.</para>
+            which will enable client side failover when trying to establish a connection.</para>
             <para>&#160;</para>
-            <para>Connection URI examples:
+            <para>Connection string examples (in URI format):
             <para />- mysqlx://test:test@[192.1.10.10,localhost]
             <para />- mysqlx://test:test@[192.1.10.10,127.0.0.1]
             <para />- mysqlx://root:@[../tmp/mysqlx.sock,/tmp/mysqld.sock]?protocol=unix&#38;sslmode=none
@@ -12481,7 +12286,7 @@
             <para />- mysqlx://test:test@[(address=server.example,priority=100),(address=127.0.0.1,priority=75),(address=192.0.10.56,priority=25)]
             </para>
             <para>&#160;</para>
-            <para>Connection string examples:
+            <para>Connection string examples (in basic format):
             <para />- server=10.10.10.10,localhost;port=33060;uid=test;password=test;
             <para />- host=10.10.10.10,192.101.10.2,localhost;port=5202;uid=test;password=test;
             <para />- host=./tmp/mysqld.sock,/var/run/mysqldx.sock;port=5202;uid=root;protocol=unix;sslmode=none;
@@ -12499,18 +12304,18 @@
             </para>
             </remarks>
         </member>
-        <member name="M:MySqlX.XDevAPI.BaseSession.#ctor(System.Object,MySqlX.XDevAPI.Client)">
+        <member name="M:MySqlX.XDevAPI.BaseSession.#ctor(System.Object)">
             <summary>
             Initializes a new instance of the BaseSession class based on the specified anonymous type object.
             </summary>
             <param name="connectionData">The connection data as an anonymous type used to create the session.</param>
             <exception cref="T:System.ArgumentNullException"><paramref name="connectionData"/> is null.</exception>
             <remarks>
-            <para>Multiple hosts can be specified as part of the <paramref name="connectionData"/>, which enables client-side failover when trying to
+            <para>Multiple hosts can be specified as part of the <paramref name="connectionData"/>, which will enable client-side failover when trying to
             establish a connection.</para>
             <para>&#160;</para>
-            <para>To assign multiple hosts, create a property similar to the connection string examples shown in
-            <see cref="!:BaseSession(string)"/>. Note that the value of the property must be a string.
+            <para>To assign multiple hosts create a property similar to the connection string examples (in basic format) shown in
+            <see cref="M:MySqlX.XDevAPI.BaseSession.#ctor(System.String)"/>. Note that the value of the property must be a string.
             </para>
             </remarks>
         </member>
@@ -12537,9 +12342,9 @@
         </member>
         <member name="M:MySqlX.XDevAPI.BaseSession.GetSchemas">
             <summary>
-            Gets a list of schemas (or databases) in this session.
+            Gets a list of schemas/databases in this session.
             </summary>
-            <returns>A <see cref="P:MySqlX.XDevAPI.BaseSession.Schema"/> list containing all existing schemas (or databases).</returns>
+            <returns>A <see cref="P:MySqlX.XDevAPI.BaseSession.Schema"/> list containing all existing schemas/databases.</returns>
         </member>
         <member name="M:MySqlX.XDevAPI.BaseSession.StartTransaction">
             <summary>
@@ -12550,7 +12355,7 @@
             <summary>
             Commits the current transaction.
             </summary>
-            <returns>A <see cref="!:Result"/> object containing the results of the commit operation.</returns>
+            <returns>A <see cref="T:MySqlX.XDevAPI.Common.Result"/> object containing the results of the commit operation.</returns>
         </member>
         <member name="M:MySqlX.XDevAPI.BaseSession.Rollback">
             <summary>
@@ -12559,12 +12364,7 @@
         </member>
         <member name="M:MySqlX.XDevAPI.BaseSession.Close">
             <summary>
-            Closes this session or releases it to the pool.
-            </summary>
-        </member>
-        <member name="M:MySqlX.XDevAPI.BaseSession.CloseFully">
-            <summary>
-            Closes this session
+            Closes this session.
             </summary>
         </member>
         <member name="M:MySqlX.XDevAPI.BaseSession.SetSavepoint">
@@ -12592,39 +12392,41 @@
             </summary>
             <param name="name">The name of the transaction savepoint.</param>
         </member>
-        <member name="M:MySqlX.XDevAPI.BaseSession.ParseConnectionData(System.String)">
+        <member name="M:MySqlX.XDevAPI.BaseSession.ParseConnectionString(System.String)">
             <summary>
-            Parses the connection data.
+            Parses the connection string.
             </summary>
-            <param name="connectionData">The connection string or connection URI.</param>
-            <returns>An updated connection string representation of the provided connection string or connection URI.</returns>
+            <param name="connectionString">The connection string in basic or URI format.</param>
+            <returns>An updated connection string in basic format.</returns>
+            <remarks>The format (basic or URI) of the connection string is determined as well as the
+            prescence of multiple hosts.</remarks>
         </member>
-        <member name="M:MySqlX.XDevAPI.BaseSession.ParseConnectionUri(System.String)">
+        <member name="M:MySqlX.XDevAPI.BaseSession.ParseUriConnectionString(System.String)">
             <summary>
-            Parses a connection URI.
+            Parses a connection string in URI format.
             </summary>
-            <param name="connectionUri">The connection URI to parse.</param>
-            <returns>The connection string representation of the provided <paramref name="connectionUri"/>.</returns>
+            <param name="connectionString">The connection string to parse.</param>
+            <returns>A connection string in basic format.</returns>
         </member>
         <member name="M:MySqlX.XDevAPI.BaseSession.IsUnixSocket(System.String)">
             <summary>
-            Validates if the string provided is a Unix socket file.
+            Validates if the string provided is a Unix socket.
             </summary>
             <param name="unixSocket">The Unix socket to evaluate.</param>
             <returns><c>true</c> if <paramref name="unixSocket"/> is a valid Unix socket; otherwise, <c>false</c>.</returns>
         </member>
-        <member name="M:MySqlX.XDevAPI.BaseSession.ConvertToConnectionString(System.Uri,System.String,System.Boolean)">
+        <member name="M:MySqlX.XDevAPI.BaseSession.ConvertToBasicConnectionString(System.Uri,System.String,System.Boolean)">
             <summary>
-            Converts the URI object into a connection string.
+            Converts the URI object into a connection string in basic format.
             </summary>
             <param name="uri">An <see cref="P:MySqlX.XDevAPI.BaseSession.Uri"/> instance with the values for the provided connection options.</param>
-            <param name="unixSocketPath">The path of the Unix socket file.</param>
-            <param name="parseServerAsUnixSocket">If <c>true</c> the <paramref name="unixSocketPath"/> replaces the value for the server connection option; otherwise, <c>false</c></param>
-            <returns>A connection string.</returns>
+            <param name="unixSocketPath">The path of the Unix socket.</param>
+            <param name="parseServerAsUnixSocket">if <c>true</c> the <paramref name="unixSocketPath"/> will replace the value for the server connection option; otherwise, <c>false</c></param>
+            <returns>A connection string in basic format.</returns>
         </member>
-        <member name="M:MySqlX.XDevAPI.BaseSession.ParseConnectionString(System.String)">
+        <member name="M:MySqlX.XDevAPI.BaseSession.ParseBasicConnectionString(System.String)">
             <summary>
-            Parses a connection string.
+            Parses a connection string in basic format.
             </summary>
             <param name="connectionString">The connection string to parse.</param>
             <returns>The parsed connection string.</returns>
@@ -12633,8 +12435,8 @@
             <summary>
             Initializes the <see cref="T:MySqlX.Failover.FailoverManager"/> if more than one host is found.
             </summary>
-            <param name="hierPart">A string containing an unparsed list of hosts.</param>
-            <param name="connectionDataIsUri"><c>true</c> if the connection data is a URI; otherwise <c>false</c>.</param>
+            <param name="hierPart">A string containing an unparsed host list.</param>
+            <param name="connectionStringIsInUriFormat">True if the connection string is in URI format, false otherwise.</param>
             <returns>The number of hosts found, -1 if an error was raised during parsing.</returns>
         </member>
         <member name="M:MySqlX.XDevAPI.BaseSession.ConvertToXServer(System.String,System.Boolean,System.Int32,System.Int32)">
@@ -12642,7 +12444,7 @@
             Creates a <see cref="T:MySqlX.Failover.XServer"/> object based on the provided parameters.
             </summary>
             <param name="host">The host string which can be a simple host name or a host name and port.</param>
-            <param name="connectionDataIsUri"><c>true</c> if the connection data is a URI; otherwise <c>false</c>.</param>
+            <param name="connectionStringIsInUriFormat">True if the connection string is in URI format, false otherwise.</param>
             <param name="priority">The priority of the host.</param>
             <param name="port">The port number of the host.</param>
             <returns></returns>
@@ -12962,7 +12764,7 @@
             Gets the page size set for this buffered result.
             </summary>
         </member>
-        <member name="M:MySqlX.XDevAPI.Common.BufferingResult`1.LoadColumnData">
+        <member name="M:MySqlX.XDevAPI.Common.BufferingResult`1.LoadCoumnData">
             <summary>
             Loads the column data into the <see cref="F:MySqlX.XDevAPI.Common.BufferingResult`1._nameMap"/> field.
             </summary>
@@ -13514,6 +13316,16 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException">Exception is always thrown since the body of the method is not yet implemented.</exception>
         </member>
+        <member name="T:MySqlX.XDevAPI.MySqlExpression">
+            <summary>
+            Encapsulates a string that is meant to be a MySQL expression.
+            </summary>
+        </member>
+        <member name="F:MySqlX.XDevAPI.MySqlExpression.Value">
+            <summary>
+            Gets the string representation of the MySQL expression.
+            </summary>
+        </member>
         <member name="T:MySqlX.XDevAPI.MySQLX">
             <summary>
             Main class for session operations related to Connector/NET implementation of the X DevAPI.
@@ -13523,11 +13335,11 @@
             <summary>
             Opens a session to the server given or to the first available server if multiple servers were specified.
             </summary>
-            <param name="connectionString">The connection string or URI string format.</param>
+            <param name="connectionString">The connection string in basic or URI format.</param>
             <returns>A <see cref="T:MySqlX.XDevAPI.Session"/> object representing the established session.</returns>
             <remarks>Multiple hosts can be specified as part of the <paramref name="connectionString"/> which
             will enable client side failover when trying to establish a connection. For additional details and syntax 
-            examples refer to the <see cref="!:BaseSession.BaseSession(string)"/> remarks section.</remarks>
+            examples refer to the <see cref="M:MySqlX.XDevAPI.BaseSession.#ctor(System.String)"/> remarks section.</remarks>
         </member>
         <member name="M:MySqlX.XDevAPI.MySQLX.GetSession(System.Object)">
             <summary>
@@ -13536,73 +13348,25 @@
             <param name="connectionData">The connection data for the server.</param>
             <returns>A <see cref="T:MySqlX.XDevAPI.Session"/> object representing the established session.</returns>
         </member>
-        <member name="M:MySqlX.XDevAPI.MySQLX.GetClient(System.String,System.String)">
-            <summary>
-            Creates a new <see cref="T:MySqlX.XDevAPI.Client"/> instance.
-            </summary>
-            <param name="connectionString">The connection string or URI string format.</param>
-            <param name="connectionOptions">The connection options in JSON string format.</param>
-            <returns>A <see cref="T:MySqlX.XDevAPI.Client"/> object representing a session pool.</returns>
-        </member>
-        <member name="M:MySqlX.XDevAPI.MySQLX.GetClient(System.String,System.Object)">
-            <summary>
-            Creates a new <see cref="T:MySqlX.XDevAPI.Client"/> instance.
-            </summary>
-            <param name="connectionString">The connection string or URI string format.</param>
-            <param name="connectionOptions">The connection options in object format.
-            <example>
-            <code>
-            new { pooling = new
-              {
-                enabled = true,
-                maxSize = 25,
-                maxIdleTime = 60000,
-                queueTimeout = 60000
-              }
-            }
-            </code>
-            </example>
-            </param>
-            <returns>A <see cref="T:MySqlX.XDevAPI.Client"/> object representing a session pool.</returns>
-        </member>
-        <member name="M:MySqlX.XDevAPI.MySQLX.GetClient(System.Object,System.String)">
-            <summary>
-            Creates a new <see cref="T:MySqlX.XDevAPI.Client"/> instance.
-            </summary>
-            <param name="connectionData">The connection data.</param>
-            <param name="connectionOptions">The connection options in JSON string format.</param>
-            <returns>A <see cref="T:MySqlX.XDevAPI.Client"/> object representing a session pool.</returns>
-        </member>
-        <member name="M:MySqlX.XDevAPI.MySQLX.GetClient(System.Object,System.Object)">
-            <summary>
-            Creates a new <see cref="T:MySqlX.XDevAPI.Client"/> instance.
-            </summary>
-            <param name="connectionData">The connection data.</param>
-            <param name="connectionOptions">The connection options in object format.
-            <example>
-            <code>
-            new { pooling = new
-              {
-                enabled = true,
-                maxSize = 25,
-                maxIdleTime = 60000,
-                queueTimeout = 60000
-              }
-            }
-            </code>
-            </example>
-            </param>
-            <returns>A <see cref="T:MySqlX.XDevAPI.Client"/> object representing a session pool.</returns>
-        </member>
         <member name="T:MySqlX.XDevAPI.MySqlXConnectionStringBuilder">
             <summary>
             Enables the creation of connection strings by exposing the connection options as properties.
             Contains connection options specific to the X protocol.
             </summary>
         </member>
-        <member name="P:MySqlX.XDevAPI.MySqlXConnectionStringBuilder.ConnectionTimeout">
+        <member name="P:MySqlX.XDevAPI.MySqlXConnectionStringBuilder.Auth">
             <summary>
-            Gets or sets the connection timeout.
+            Gets or sets the authentication mechanism to use with X Protocol connections.
+            </summary>
+        </member>
+        <member name="P:MySqlX.XDevAPI.MySqlXConnectionStringBuilder.SslCa">
+            <summary>
+            Gets or sets the path to a local file that contains a list of trusted Certificate Authorities.
+            </summary>
+        </member>
+        <member name="P:MySqlX.XDevAPI.MySqlXConnectionStringBuilder.SslCrl">
+            <summary>
+            Gets or sets the path to a local file that contains certificate revocation lists.
             </summary>
         </member>
         <member name="T:MySqlX.XDevAPI.Relational.Column">
