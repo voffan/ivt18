@@ -15,10 +15,10 @@ namespace WindowsFormsApp1
         {
             var builder = new MySqlConnectionStringBuilder
             {
-                Server = "85.10.205.173:3306",
-                Database = "user2144",
-                UserID = "db2144",
-                Password = "testtest",
+                Server = "0.tcp.ngrok.io:14160",
+                Database = "web",
+                UserID = "root",
+                Password = "root",
                 SslMode = MySqlSslMode.Required,
             };
 

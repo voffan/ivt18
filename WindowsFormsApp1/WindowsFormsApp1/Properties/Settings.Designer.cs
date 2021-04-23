@@ -22,5 +22,16 @@ namespace WindowsFormsApp1.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=0.tcp.ngrok.io;user id=root;password=root;database=web;persistsecurityinfo" +
+            "=True;port=14160;pipe=2223")]
+        public string webConnectionString {
+            get {
+                return ((string)(this["webConnectionString"]));
+            }
+        }
     }
 }

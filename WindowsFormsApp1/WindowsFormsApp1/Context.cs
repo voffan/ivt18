@@ -1,16 +1,15 @@
 ﻿//using WindowsFormsApp1.Classes;
 using System;
-
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MySql.Data.Entity;
+
 
 namespace WindowsFormsApp1
 {
+    [DbConfigurationType(typeof(MySqlEFConfiguration))]
     public class Context : DbContext
     {
+        
         public Context() : base("SampleContext") { }
         public DbSet<Athlete> Athletes { get; set; }
         public DbSet<City> Cities { get; set; }
