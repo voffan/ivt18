@@ -12,6 +12,12 @@ namespace grades
 {
     public partial class UserSignIn : Form
     {
+        private UserSignInLogic _logic;
+        private Context _context;
+        private Person _currentPerson;
+        private bool Hello = false;
+
+
         public UserSignIn()
         {
             InitializeComponent();
@@ -30,6 +36,14 @@ namespace grades
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MainForm f = new MainForm();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
         }
     }
 }

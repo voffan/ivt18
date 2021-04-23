@@ -39,6 +39,7 @@
             this.CountBox.Size = new System.Drawing.Size(100, 22);
             this.CountBox.TabIndex = 0;
             this.CountBox.Text = "0";
+            this.CountBox.TextChanged += new System.EventHandler(this.CountBox_TextChanged);
             // 
             // ApplyButton
             // 
