@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -30,6 +30,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -106,10 +107,7 @@
       <DependentUpon>GroupAndCourseGrades.cs</DependentUpon>
     </Compile>
     <Compile Include="GroupAndCourseGradesFrom\GroupAndCourseGradesLogic.cs" />
-    <Compile Include="Migrations\202104150437385_test4.cs" />
-    <Compile Include="Migrations\202104150437385_test4.designer.cs">
-      <DependentUpon>202104150437385_test4.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SubjectListForm\AddSubjectcs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,7 +159,6 @@
     <Compile Include="Source\Grade.cs" />
     <Compile Include="Source\GradingSystem.cs" />
     <Compile Include="Source\Group.cs" />
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Source\Person.cs" />
     <Compile Include="Source\Position.cs" />
     <Compile Include="Program.cs" />
@@ -181,11 +178,9 @@
       <DependentUpon>UserList.cs</DependentUpon>
     </Compile>
     <Compile Include="UserListForm\UserListLogic.cs" />
+    <Compile Include="UserListForm\UserSignInLogic.cs" />
     <EmbeddedResource Include="GroupAndCourseGradesFrom\GroupAndCourseGrades.resx">
       <DependentUpon>GroupAndCourseGrades.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104150437385_test4.resx">
-      <DependentUpon>202104150437385_test4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubjectListForm\AddSubjectcs.resx">
       <DependentUpon>AddSubjectcs.cs</DependentUpon>
@@ -202,10 +197,10 @@
     <EmbeddedResource Include="UserListForm\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="UserSignIn.cs">
+    <Compile Include="UserListForm\UserSignIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserSignIn.Designer.cs">
+    <Compile Include="UserListForm\UserSignIn.Designer.cs">
       <DependentUpon>UserSignIn.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="UserListForm\ChooseAddUserMethodForm.resx">
@@ -227,7 +222,7 @@
     <EmbeddedResource Include="UserListForm\UserList.resx">
       <DependentUpon>UserList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserSignIn.resx">
+    <EmbeddedResource Include="UserListForm\UserSignIn.resx">
       <DependentUpon>UserSignIn.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

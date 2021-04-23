@@ -44,5 +44,10 @@ namespace grades
         private void ClassList_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
+
+        private void CountBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
