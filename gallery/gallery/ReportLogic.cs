@@ -42,15 +42,7 @@ namespace gallery
 
         }
 
-        static public IQueryable loadData(DateTime d1, DateTime d2, Context C)
-        {
-            var query = from c in C.Journals
-                        where c.Date > d1 && c.Date < d2
-                        select new { ID = c.EmployeeId, ФИО = c.Employee.FullName, Должность = c.Employee.Position.Name, Дата = c.Date, Картина = c.Picture.Name, Автор = c.Picture.Artist.FullName, c.DepartmentFromId, c.DepartmentToId };
-
-
-            return query;
-        }
+        
 
     }
 }

@@ -20,7 +20,10 @@ namespace gallery
 
         private void JournalForm_Load(object sender, EventArgs e)
         {
-            journalDataGrid.DataSource = C.Journals.ToList();
+            var query = from c in C.Journals                       
+                        select new { ID = c.EmployeeId, ФИО = c.Employee.FullName, Должность = c.Employee.Position.Name, Дата = c.Date, Картина = c.Picture.Name, Автор = c.Picture.Artist.FullName, c.DepartmentFromId, c.DepartmentToId }
+                        ;
+            journalDataGrid.DataSource = query.ToList();
         }
     }
 }

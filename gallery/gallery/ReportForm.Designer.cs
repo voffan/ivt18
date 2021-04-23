@@ -34,6 +34,7 @@ namespace gallery
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.journalButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.reportDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,17 +75,28 @@ namespace gallery
             this.dateTimePicker2.TabIndex = 3;
             this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
+            // journalButton
+            // 
+            this.journalButton.Location = new System.Drawing.Point(24, 10);
+            this.journalButton.Name = "journalButton";
+            this.journalButton.Size = new System.Drawing.Size(123, 23);
+            this.journalButton.TabIndex = 4;
+            this.journalButton.Text = "Журнал";
+            this.journalButton.UseVisualStyleBackColor = true;
+            this.journalButton.Click += new System.EventHandler(this.journalButton_Click);
+            // 
             // ReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 502);
+            this.Controls.Add(this.journalButton);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.DownloadButton);
             this.Controls.Add(this.reportDataGrid);
             this.Name = "ReportForm";
-            this.Text = "ReportForm";
+            this.Text = "Отчеты";
             this.Load += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             ((System.ComponentModel.ISupportInitialize)(this.reportDataGrid)).EndInit();
             this.ResumeLayout(false);
@@ -98,5 +110,6 @@ namespace gallery
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Button journalButton;
     }
 }

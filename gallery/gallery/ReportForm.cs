@@ -61,9 +61,20 @@ namespace gallery
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            var results = ReportLogic.loadData(dateTimePicker1.Value, dateTimePicker2.Value, C);
+            var d1 = dateTimePicker1.Value;
+            var d2 = dateTimePicker2.Value;
+            var query = from c in C.Journals
+                        where c.Date > d1 && c.Date < d2
+                        select new { ID = c.EmployeeId, ФИО = c.Employee.FullName, Должность = c.Employee.Position.Name, Дата = c.Date, Картина = c.Picture.Name, Автор = c.Picture.Artist.FullName, c.DepartmentFromId, c.DepartmentToId };
 
-            reportDataGrid.DataSource = results;
+
+        }
+
+        private void journalButton_Click(object sender, EventArgs e)
+        {
+            JournalForm journalForm = new JournalForm();
+            journalForm.C = C;
+            journalForm.Show();
         }
     }
 }

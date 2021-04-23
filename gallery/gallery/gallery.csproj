@@ -249,12 +249,6 @@
     <Compile Include="ReportForm.Designer.cs">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReportsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReportsForm.Designer.cs">
-      <DependentUpon>ReportsForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="ReportLogic.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -374,9 +368,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportForm.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ReportsForm.resx">
-      <DependentUpon>ReportsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

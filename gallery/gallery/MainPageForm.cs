@@ -19,40 +19,33 @@ namespace gallery
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void списокКартинToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureListMenu_Click(object sender, EventArgs e)
         {
             PictureListForm pictureListForm = new PictureListForm();
             pictureListForm.C = c;
             pictureListForm.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void employeeListMenu_Click(object sender, EventArgs e)
         {
             EmployeeListForm employeeListForm = new EmployeeListForm();
             employeeListForm.C = c;
             employeeListForm.Show();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void restorationListMenu_Click(object sender, EventArgs e)
         {
             ComissionList comissionList = new ComissionList();
             comissionList.C = c;
             comissionList.Show();
         }
 
-        private void MainPageForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void journalButton_Click(object sender, EventArgs e)
-        {
-            JournalForm journalForm = new JournalForm();
-            journalForm.C = c;
-            journalForm.Show();
-        }
-
-        private void reportButton_Click(object sender, EventArgs e)
+        private void reportListMenu_Click(object sender, EventArgs e)
         {
             ReportForm reportForm = new ReportForm();
             reportForm.C = c;
