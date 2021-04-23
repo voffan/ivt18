@@ -1,0 +1,16 @@
+font serif 10px
+
+form:	BackColor	224;224;224
+	FormBorderStyle	none
+
+button:	BackColor	gray
+	FontStyle	Popup
+	ForeColor	white
+	Size		x;25
+
+textbox:BackColor	gray
+	BorderStyle	FixedSingle
+	ForeColor	white
+	Size		x;22
+
+panel:	BorderStyle	FixedSingle
