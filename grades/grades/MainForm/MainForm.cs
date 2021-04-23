@@ -33,7 +33,7 @@ namespace grades
         {
             _context = new Context();
 
-            _user = (from usr in _context.Staff
+            _user = (from usr in _context.Persons
                      where usr.PersonId == 17
                      select usr).Single();
 

@@ -64,7 +64,7 @@ namespace grades
             usersDGV.RowsDefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml(_contentSelectedColor);
             usersDGV.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml(_contentBackgroundColor);
             usersDGV.ColumnHeadersDefaultCellStyle.ForeColor = ColorTranslator.FromHtml(_contentSelectedColor);
-            usersDGV.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.Transparent;
+            usersDGV.ColumnHeadersDefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml(_contentBackgroundColor); ;
             usersDGV.RowHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml(_contentBackgroundColor);
             usersDGV.RowHeadersDefaultCellStyle.ForeColor = ColorTranslator.FromHtml(_contentBackgroundColor);
             usersDGV.RowHeadersDefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml(_contentSelectedColor);
@@ -223,6 +223,12 @@ namespace grades
         private void clearButton_Click(object sender, EventArgs e)
         {
             searchBox.Text = "";
+        }
+
+        private void UserList_Resize(object sender, EventArgs e)
+        {
+            this.Update();
+            
         }
     }
 }

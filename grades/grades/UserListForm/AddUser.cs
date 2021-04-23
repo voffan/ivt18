@@ -165,5 +165,14 @@ namespace grades
                 }
             }
         }
+
+        private void AddUser_Load(object sender, EventArgs e)
+        {
+            foreach (TextBox t in this.Controls.OfType<TextBox>())
+            {
+                t.AutoSize = false;
+                t.Height = 25;
+            }
+        }
     }
 }
