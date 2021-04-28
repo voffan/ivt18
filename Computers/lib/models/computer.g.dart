@@ -29,9 +29,9 @@ class ComputerAdapter extends TypeAdapter<Computer> {
       ..processorId = fields[9] as String
       ..motherboardId = fields[10] as String
       ..powerSupplyIds = (fields[11] as List)?.cast<String>()
-      ..memoryIds = fields[12] as String
-      ..hardDriveIds = fields[13] as String
-      ..graphicCardIds = fields[14] as String;
+      ..memoryIds = (fields[12] as List)?.cast<String>()
+      ..hardDriveIds = (fields[13] as List)?.cast<String>()
+      ..graphicCardIds = (fields[14] as List)?.cast<String>();
   }
 
   @override

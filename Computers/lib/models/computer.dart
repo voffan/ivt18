@@ -1,8 +1,12 @@
 import 'package:computers/database.dart';
 import 'package:computers/models/disk_drive.dart';
 import 'package:computers/models/employee.dart';
+import 'package:computers/models/graphic_card.dart';
+import 'package:computers/models/hard_drive.dart';
 import 'package:computers/models/manufacturer.dart';
+import 'package:computers/models/memory.dart';
 import 'package:computers/models/motherboard.dart';
+import 'package:computers/models/power_supply.dart';
 import 'package:computers/models/processor.dart';
 import 'package:computers/models/status.dart';
 import 'package:get/get.dart';
@@ -52,18 +56,26 @@ class Computer {
   List<String> powerSupplyIds;
 
   @HiveField(12)
-  String memoryIds;
+  List<String> memoryIds;
 
   @HiveField(13)
-  String hardDriveIds;
+  List<String> hardDriveIds;
 
   @HiveField(14)
-  String graphicCardIds;
+  List<String> graphicCardIds;
 
   Manufacturer get manufactuer => Database.getManufacturer(manufacturerId);
   Employee get employee => Database.getEmployee(employeeId);
   DiskDrive get diskDrive => Database.getDiskDrive(diskDriveId);
   Processor get processor => Database.getProcessor(processorId);
   Motherboard get motherboard => Database.getMotherboard(motherboardId);
+
+  List<HardDrive> get hardDrives => Database.getComputerHardDrives(id);
+  List<GraphicCard> get graphicCards => Database.getComputerGraphicCards(id);
+  List<Memory> get memories => Database.getComputerMemories(id);
+  List<PowerSupply> get powerSupplies => Database.getComputerPowerSupplies(id);
+
   Status get status => Database.getStatus(statusId);
+
+  String toString() => (manufactuer?.name ?? '') + ' ' + (model ?? '');
 }

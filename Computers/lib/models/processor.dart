@@ -1,3 +1,7 @@
+import 'package:computers/database.dart';
+import 'package:computers/models/computer.dart';
+import 'package:computers/models/manufacturer.dart';
+import 'package:computers/models/status.dart';
 import 'package:hive/hive.dart';
 
 part 'processor.g.dart';
@@ -33,4 +37,10 @@ class Processor {
 
   @HiveField(8)
   String computerId;
+
+  Manufacturer get manufactuer => Database.getManufacturer(manufacturerId);
+  Computer get computer => Database.getComputer(computerId);
+  Status get status => Database.getStatus(statusId);
+
+  String toString() => manufactuer.name + ' ' + model;
 }

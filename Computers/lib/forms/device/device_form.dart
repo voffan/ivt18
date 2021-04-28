@@ -65,6 +65,7 @@ class DeviceForm extends GetView<DeviceFormController> {
                                 onChanged: (text) => controller.priceTextChanged(text),
                               ),
                             ),
+                            uniqueField()
                           ],
                         ),
                         SizedBox(height: 25.0,),
@@ -93,6 +94,8 @@ class DeviceForm extends GetView<DeviceFormController> {
                                   ),
                                   DropdownButton(
                                     hint: Text('Не выбрано'),
+                                    isExpanded: true,
+                                    isDense: true,
                                     value: controller.manufacturer,
                                     onChanged: (manufacturer) => controller.selectManufacturer(manufacturer),
                                     items: controller.manufacturers
@@ -123,6 +126,8 @@ class DeviceForm extends GetView<DeviceFormController> {
                                   ),
                                   DropdownButton(
                                     hint: Text('Не выбрано'),
+                                    isExpanded: true,
+                                    isDense: true,
                                     value: controller.status,
                                     onChanged: (status) => controller.selectStatus(status),
                                     items: controller.statuses
@@ -204,5 +209,56 @@ class DeviceForm extends GetView<DeviceFormController> {
         return '';
         break;
     }
+  }
+
+  Widget uniqueField() {
+    String labelText;
+    String initialValue;
+    Function(String) onChanged;
+    
+    switch (controller.deviceType) {
+      case DeviceType.processor:
+        labelText = 'Частота';
+        initialValue = controller.frequency;
+        onChanged = controller.frequencyTextChanged;
+        break;
+      case DeviceType.graphicCard:
+        labelText = 'Объем памяти';
+        initialValue = controller.capacity;
+        onChanged = controller.capacityTextChanged;
+        break;
+      case DeviceType.hardDrive:
+        labelText = 'Объем памяти';
+        initialValue = controller.capacity;
+        onChanged = controller.capacityTextChanged;
+        break;
+      case DeviceType.motherboard:
+        return Container();
+        break;
+      case DeviceType.memory:
+        labelText = 'Объем памяти';
+        initialValue = controller.capacity;
+        onChanged = controller.capacityTextChanged;
+        break;
+      case DeviceType.powerSupply:
+        labelText = 'Мощность';
+        initialValue = controller.power;
+        onChanged = controller.powerTextChanged;
+        break;
+      case DeviceType.diskDrive:
+        return Container();
+        break;
+      case DeviceType.none:
+        return Container();
+        break;
+    }
+    return Container(
+      width: fieldWidth,
+      child: TextFieldCustom(
+        labelText: labelText, 
+        initialValue: initialValue, 
+        onChanged: onChanged,
+      ),
+    );
   }
 }

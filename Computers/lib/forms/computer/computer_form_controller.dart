@@ -5,8 +5,12 @@ import 'package:computers/home_page/computers_page/computers_page_controller.dar
 import 'package:computers/models/computer.dart';
 import 'package:computers/models/disk_drive.dart';
 import 'package:computers/models/employee.dart';
+import 'package:computers/models/graphic_card.dart';
+import 'package:computers/models/hard_drive.dart';
 import 'package:computers/models/manufacturer.dart';
+import 'package:computers/models/memory.dart';
 import 'package:computers/models/motherboard.dart';
+import 'package:computers/models/power_supply.dart';
 import 'package:computers/models/processor.dart';
 import 'package:computers/models/status.dart';
 import 'package:flutter/material.dart';
@@ -23,6 +27,11 @@ class ComputerFormController extends GetxController {
   List<Processor> processors = [];
   List<Motherboard> motherboards = [];
   List<Status> statuses = [];
+
+  List<HardDrive> hardDrives = [];
+  List<Memory> memories = [];
+  List<PowerSupply> powerSupplies = [];
+  List<GraphicCard> graphicCards = [];
   
   String model;
   String itemNo;
@@ -32,6 +41,10 @@ class ComputerFormController extends GetxController {
   DiskDrive diskDrive;
   Processor processor;
   Motherboard motherboard;
+  List<HardDrive> hardDrive;
+  List<Memory> memory;
+  List<PowerSupply> powerSupply;
+  List<GraphicCard> graphicCard;
   Status status;
 
   bool editing = false;
@@ -49,6 +62,10 @@ class ComputerFormController extends GetxController {
       diskDrive = computer.diskDrive;
       processor = computer.processor;
       motherboard = computer.motherboard;
+      hardDrive = computer.hardDrives;
+      memory = computer.memories;
+      powerSupply = computer.powerSupplies;
+      graphicCard = computer.graphicCards;
       status = computer.status;
       editing = true;
     }
@@ -69,6 +86,10 @@ class ComputerFormController extends GetxController {
     computer.diskDriveId = diskDrive?.id;
     computer.processorId = processor?.id;
     computer.motherboardId = motherboard?.id;
+    computer.hardDriveIds = hardDrive.map((e) => e.id).toList();
+    computer.graphicCardIds = graphicCard.map((e) => e.id).toList();
+    computer.memoryIds = memory.map((e) => e.id).toList();
+    computer.powerSupplyIds = powerSupply.map((e) => e.id).toList();
     computer.statusId = status?.id;
     if (!editing) {
       computer.id = Uuid().v4();
@@ -88,6 +109,10 @@ class ComputerFormController extends GetxController {
     diskDrives = Database.getDiskDrives();
     processors = Database.getProcessors();
     motherboards = Database.getMotherboards();
+    hardDrives = Database.getHardDrives();
+    graphicCards = Database.getGraphicCards();
+    memories = Database.getMemories();
+    powerSupplies = Database.getPowerSupplies();
     statuses = Database.getStatuses();
     update();
   }

@@ -41,9 +41,47 @@ class ComputersPageController extends GetxController {
   }
 
   void selectComputer(Computer computer) {
+    final double spacing = 10.0;
     Get.dialog(AlertDialog(
-      title: Text(computer.itemNo ?? 'Компьютер без инвентарного номера'),
-      // content: Text(computer.model ?? '' + ' с инвентарным номером ' + computer.itemNo ?? ''),
+      title: Text(computer.toString()),
+      content: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('Инвентарный номер:'),
+              SizedBox(width: spacing),
+              Text(computer.itemNo ?? ''),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('Модель:'),
+              SizedBox(width: spacing),
+              Text(computer.model ?? ''),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('Производитель:'),
+              SizedBox(width: spacing),
+              Text(computer.manufactuer?.name ?? ''),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('Сотрудник:'),
+              SizedBox(width: spacing),
+              Text(computer.employee?.toString() ?? ''),
+            ],
+          ),
+        ],
+      ),
       actions: [
         TextButton.icon(
           onPressed: () => editComputer(computer),

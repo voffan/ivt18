@@ -101,6 +101,8 @@ class ComputerForm extends GetView<ComputerFormController> {
                                   ),
                                   DropdownButton(
                                     hint: Text('Не выбрано'),
+                                    isDense: true,
+                                    isExpanded: true,
                                     value: controller.employee,
                                     onChanged: (employee) => controller.selectEmployee(employee),
                                     items: controller.employees
@@ -131,6 +133,8 @@ class ComputerForm extends GetView<ComputerFormController> {
                                   ),
                                   DropdownButton(
                                     hint: Text('Не выбрано'),
+                                    isDense: true,
+                                    isExpanded: true,
                                     value: controller.motherboard,
                                     onChanged: (motherboard) => controller.selectMotherboard(motherboard),
                                     items: controller.motherboards
@@ -161,6 +165,8 @@ class ComputerForm extends GetView<ComputerFormController> {
                                   ),
                                   DropdownButton(
                                     hint: Text('Не выбрано'),
+                                    isDense: true,
+                                    isExpanded: true,
                                     value: controller.processor,
                                     onChanged: (processor) => controller.selectProcessor(processor),
                                     items: controller.processors
@@ -191,6 +197,8 @@ class ComputerForm extends GetView<ComputerFormController> {
                                   ),
                                   DropdownButton(
                                     hint: Text('Не выбрано'),
+                                    isDense: true,
+                                    isExpanded: true,
                                     value: controller.diskDrive,
                                     onChanged: (diskDrive) => controller.selectDiskDrive(diskDrive),
                                     items: controller.diskDrives
@@ -221,6 +229,8 @@ class ComputerForm extends GetView<ComputerFormController> {
                                   ),
                                   DropdownButton(
                                     hint: Text('Не выбрано'),
+                                    isDense: true,
+                                    isExpanded: true,
                                     value: controller.manufacturer,
                                     onChanged: (manufacturer) => controller.selectManufacturer(manufacturer),
                                     items: controller.manufacturers
@@ -251,11 +261,50 @@ class ComputerForm extends GetView<ComputerFormController> {
                                   ),
                                   DropdownButton(
                                     hint: Text('Не выбрано'),
+                                    isDense: true,
+                                    isExpanded: true,
                                     value: controller.status,
                                     onChanged: (status) => controller.selectStatus(status),
                                     items: controller.statuses
                                       .map((item) => DropdownMenuItem(child: Text(item.toString()), value: item,))
                                       .toList(),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 25.0),
+                        Wrap(
+                          spacing: wrapSpacing,
+                          runSpacing: wrapRunSpacing,
+                          children: [
+                            Container(
+                              width: fieldWidth,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text('Накопители данных'),
+                                      SizedBox(width: 5.0),
+                                      IconButton(
+                                        icon: Icon(
+                                          Icons.add_circle_outline, 
+                                          size: iconSize, 
+                                          color: Theme.of(context).buttonColor,
+                                        ), 
+                                        onPressed: controller.createDiskDrive,
+                                      ),
+                                    ],
+                                  ),
+                                  ExpansionPanelList(
+                                    children: [
+                                      ExpansionPanel(
+                                        headerBuilder: (context, expanded) => Text(expanded ? 'Expanded' : 'Minimized'), 
+                                        body: Text('Tralalala')
+                                      ),
+                                    ],
                                   ),
                                 ],
                               ),

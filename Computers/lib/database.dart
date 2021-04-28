@@ -58,6 +58,8 @@ class Database {
   }
 
   // MARK: Компьютеры
+  static Computer getComputer(String id) => computersBox.get(id);
+   
   static List<Computer> getComputers() => computersBox.values.toList();
 
   static Future<void> addComputer(Computer computer) async {
@@ -154,6 +156,10 @@ class Database {
 
   static List<GraphicCard> getGraphicCards() => graphicCardsBox.values.toList();
 
+  static List<GraphicCard> getComputerGraphicCards(String computerId) => graphicCardsBox.values
+    .where((element) => element.computerId == computerId)
+    .toList();
+
   static Future<void> addGraphicCard(GraphicCard graphicCard) async {
     await graphicCardsBox.put(graphicCard.id, graphicCard);
   }
@@ -163,6 +169,10 @@ class Database {
   static PowerSupply getPowerSupply(String id) => powerSuppliesBox.get(id);
   
   static List<PowerSupply> getPowerSupplies() => powerSuppliesBox.values.toList();
+
+  static List<PowerSupply> getComputerPowerSupplies(String computerId) => powerSuppliesBox.values
+    .where((element) => element.computerId == computerId)
+    .toList();
 
   static Future<void> addPowerSupply(PowerSupply powerSupply) async {
     await powerSuppliesBox.put(powerSupply.id, powerSupply);
@@ -174,6 +184,10 @@ class Database {
 
   static List<HardDrive> getHardDrives() => hardDrivesBox.values.toList();
 
+  static List<HardDrive> getComputerHardDrives(String computerId) => hardDrivesBox.values
+    .where((element) => element.computerId == computerId)
+    .toList();
+
   static Future<void> addHardDrive(HardDrive hardDrive) async {
     await hardDrivesBox.put(hardDrive.id, hardDrive);
   }
@@ -183,6 +197,10 @@ class Database {
   static Memory getMemory(String id) => memoriesBox.get(id);
 
   static List<Memory> getMemories() => memoriesBox.values.toList();
+
+  static List<Memory> getComputerMemories(String computerId) => memoriesBox.values
+    .where((element) => element.computerId == computerId)
+    .toList();
 
   static Future<void> addMemory(Memory memory) async {
     await memoriesBox.put(memory.id, memory);
@@ -211,5 +229,20 @@ class Database {
   static Future<void> setThemeMode(ThemeMode themeMode) async {
     final isDarkMode = themeMode == ThemeMode.dark;
     await statesBox.put('darkMode', isDarkMode);
+  }
+
+  static Future<void> clear() async {
+    await computersBox.clear();
+    await employeesBox.clear();
+    await graphicCardsBox.clear();
+    await hardDrivesBox.clear();
+    await manufacturersBox.clear();
+    await memoriesBox.clear();
+    await motherboardsBox.clear();
+    await powerSuppliesBox.clear();
+    await processorsBox.clear();
+    await statusesBox.clear();
+    await diskDrivesBox.clear();
+    await statesBox.clear();
   }
 }

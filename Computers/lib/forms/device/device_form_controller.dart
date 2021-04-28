@@ -1,4 +1,6 @@
 import 'package:computers/database.dart';
+import 'package:computers/forms/computer/computer_form_controller.dart';
+import 'package:computers/home_page/computers_page/computers_page_controller.dart';
 import 'package:computers/models/disk_drive.dart';
 import 'package:computers/models/graphic_card.dart';
 import 'package:computers/models/hard_drive.dart';
@@ -35,6 +37,10 @@ class DeviceFormController extends GetxController {
   Manufacturer manufacturer;
   Status status;
 
+  String frequency;
+  String capacity;
+  String power;
+
   bool editing = false;
 
   @override
@@ -61,58 +67,93 @@ class DeviceFormController extends GetxController {
     device.price = price;
     device.statusId = status?.id;
     device.manufacturerId = manufacturer?.id;
+    writeUniqueFields();
     if (!editing) {
       device.id = Uuid().v4();
     }
-    await addDevice();
+    await saveDevice();
+    Get.find<ComputerFormController>().fetchData();
     Get.back();
-    // computer.model = model;
-    // computer.itemNo = itemNo;
-    // computer.ip = ip;
-    // computer.manufacturerId = manufacturer?.id;
-    // computer.employeeId = employee?.id;
-    // computer.diskDriveId = diskDrive?.id;
-    // computer.processorId = processor?.id;
-    // computer.motherboardId = motherboard?.id;
-    // computer.statusId = status?.id;
-    // if (!editing) {
-    //   computer.id = Uuid().v4();
-    // }
-    // await Database.addComputer(computer);
-    // if (employee != null) {
-    //   employee.computerId = computer.id;
-    //   await Database.addEmployee(employee);
-    // }
-    // Get.find<ComputersPageController>().updateComputers();
-    // Get.back();
   }
 
   void back() {
     Get.back();
   }
 
-  Future<void> addDevice() async {
+  Future<void> saveDevice() async {
     switch (deviceType) {
-      case DeviceType.processor:
+      case DeviceType.processor: // Частота (frequency) Гц
         await Database.addProcessor(device);
         break;
-      case DeviceType.graphicCard:
+      case DeviceType.graphicCard: // Объем памяти (capacity) Мб Гб
         await Database.addGraphicCard(device);
         break;
-      case DeviceType.hardDrive:
+      case DeviceType.hardDrive: // Объем памяти (capacity) Мб Гб
         await Database.addHardDrive(device);
         break;
-      case DeviceType.motherboard:
+      case DeviceType.motherboard: // Ничего нет
         await Database.addMotherboard(device);
         break;
-      case DeviceType.memory:
+      case DeviceType.memory: // Объем памяти (capacity) Мб Гб
         await Database.addMemory(device);
         break;
-      case DeviceType.powerSupply:
+      case DeviceType.powerSupply: // Мощность (power) Вт
         await Database.addPowerSupply(device);
         break;
-      case DeviceType.diskDrive:
+      case DeviceType.diskDrive: // Ничего нет
         await Database.addDiskDrive(device);
+        break;
+      case DeviceType.none:
+        break;
+    }
+  }
+
+  void writeUniqueFields() {
+    switch (deviceType) {
+      case DeviceType.processor:
+        device.frequency = frequency;
+        break;
+      case DeviceType.graphicCard:
+        device.capacity = capacity;
+        break;
+      case DeviceType.hardDrive:
+        device.capacity = capacity;
+        break;
+      case DeviceType.motherboard:
+        break;
+      case DeviceType.memory:
+        device.capacity = capacity;
+        break;
+      case DeviceType.powerSupply:
+        device.power = power;
+        break;
+      case DeviceType.diskDrive:
+        break;
+      case DeviceType.none:
+        break;
+    }
+  }
+
+  void readUniqueFields(dynamic device) {
+    switch (deviceType) {
+      case DeviceType.processor:
+        frequency = device.frequency;
+        break;
+      case DeviceType.graphicCard:
+        capacity = device.capacity;
+        break;
+      case DeviceType.hardDrive:
+        capacity = device.capacity;
+        break;
+      case DeviceType.motherboard:
+        break;
+      case DeviceType.memory:
+        capacity = device.capacity;
+        break;
+      case DeviceType.powerSupply:
+        power = device.power;
+        break;
+      case DeviceType.diskDrive:
         break;
       case DeviceType.none:
         break;
@@ -130,6 +171,18 @@ class DeviceFormController extends GetxController {
     } else {
       // TODO: Текст в стоимости
     }
+  }
+
+  void capacityTextChanged(String capacity) {
+    this.capacity = capacity;
+  }
+
+  void frequencyTextChanged(String frequency) {
+    this.frequency = frequency;
+  }
+
+  void powerTextChanged(String power) {
+    this.power = power;
   }
 
   void selectManufacturer(Manufacturer manufacturer) {
