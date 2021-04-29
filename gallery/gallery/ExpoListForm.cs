@@ -13,7 +13,7 @@ namespace gallery
     public partial class ExpoListForm : Form
     {
         public Context C { get; set; }
-        public int id = -1;
+        public int id;
         public int eId = -1;
 
         public ExpoListForm()
@@ -23,15 +23,15 @@ namespace gallery
 
         private void ExpoListForm_Load(object sender, EventArgs e)
         {
-            listExpoBox.Items.Clear();
-            listExpoBox.Items.AddRange(C.Expos.Select(c => c.Name).ToArray());
+            var query = from c in C.Expos
+                        select new { ID = c.ExpoId, Название = c.Name, Адрес = c.Address, Начало = c.StartDate, Конец = c.EndDate }
+                        ;
+            expoDataGrid.DataSource = query.ToList();
+            expoDataGrid.Rows[0].Selected = true;
+            id = Convert.ToInt32(expoDataGrid.CurrentRow.Cells["ID"].Value);
+
         }
 
-        private void listExpoBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var s = listExpoBox.SelectedItem.ToString();
-            id = ExpoLogic.getId(s, C);
-        }
 
         private void addExpoButton_Click(object sender, EventArgs e)
         {
@@ -57,10 +57,22 @@ namespace gallery
             if (id > 0)
             {
                 ExpoLogic.deleteExpo(id, C);
+                ExpoListForm_Load(sender, e);
 
-                listExpoBox.Items.Clear();
-                listExpoBox.Items.AddRange(C.Expos.Select(c => c.Name).ToArray());
+                //listExpoBox.Items.Clear();
+                //listExpoBox.Items.AddRange(C.Expos.Select(c => c.Name).ToArray());
             }
+        }
+
+        private void expoDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            id = Convert.ToInt32(expoDataGrid.CurrentRow.Cells["ID"].Value);
+            //MessageBox.Show(id.ToString());
+        }
+
+        private void expoDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            editExpoButton_Click(sender, e);
         }
     }
 }

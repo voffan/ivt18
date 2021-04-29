@@ -35,6 +35,7 @@ namespace gallery
 
         private void editButton_Click(object sender, EventArgs e)
         {
+
             ExpoLogic.apply(nameBox.Text, placeBox.Text, startDatePicker.Value, endDatePicker.Value, id, eId, C);
             this.Close();
         }

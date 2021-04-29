@@ -114,12 +114,15 @@ namespace gallery
 
         static public void sendToExpo(string p1, Context C)
         {
-            int pId = C.ExpoPictures.Where(c => c.Picture.Name + ", автор - " + c.Picture.Artist.FullName == p1).FirstOrDefault().PictureId;          
+            
+            int pId = C.Pictures.Where(c => c.Name + ", автор - " + c.Artist.FullName == p1).FirstOrDefault().PictureId;          
 
-            if (!newExpoPictures.Contains(pId))
-            {
-                newExpoPictures.Add(pId);
-            }     
+                if (!newExpoPictures.Contains(pId))
+                {
+                    newExpoPictures.Add(pId);
+                }
+            
+                
         }
 
         static public void sendToStorage(string p1, Context C)
