@@ -14,34 +14,53 @@ namespace carton
     {
         Context context;
         int type; //0 - create, 1 - edit
-        public CEPlanForm(Context context, int type)
+        int planId;
+        public CEPlanForm(Context context, int type, int planId)
         {
             InitializeComponent();
             this.context = context;
             this.type = type;
+            this.planId = planId;
+
+            List<Product> products = context.Products.ToList();
+            List<Planned> planneds = context.Planneds.ToList();
+
+            List<String> productNames = new List<string>();
+            List<int> productAmount = new List<int>();
+
+            foreach (Product p in products)
+            {
+                productNames.Add(p.Name);
+            }
+            //foreach (Planned p in planneds)
+            //{
+            //    if (p.PlanId == planId)
+            //    {
+
+            //    }
+            //}
 
             if (type == 1)
             {
                 header.Text = "Изменение плана";
-                planNameTextBox.ReadOnly = false;
-                planDateTimePicker.Enabled = true;
+                Plan plan = context.Plans.Find(planId);
+                planNameTextBox.Text = plan.Name;
+                planDateTimePicker.Value = plan.Date;
+                statusTextBox.Text = plan.Status.ToString();
             }
             else if (type == 0)
             {
                 header.Text = "Создание плана";
-                planNameTextBox.ReadOnly = true;
-                planDateTimePicker.Enabled = false;
             }
             statusTextBox.ReadOnly = true;
 
-            List<Product> products = context.Products.ToList();
-            List<String> productNames = new List<string>();
-            foreach (Product p in products)
-            {
-                productNames.Add(p.Name); 
-            }
+            
             productListBox.DataSource = productNames;
             productListBox.SelectionMode = SelectionMode.One;
+
+            //variant 2
+            
+
         }
 
         private int selectedProduct(string productName)

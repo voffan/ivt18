@@ -139,14 +139,14 @@ namespace carton
 
         private void editSavePlanButton_Click(object sender, EventArgs e)
         {
-            CEPlanForm editForm = new CEPlanForm(context, 1);
+            CEPlanForm editForm = new CEPlanForm(context, 1, planId);
             editForm.Show();
             HideUnnecessaryPlanneds(planId);
         }
 
         private void createPlanBbutton_Click(object sender, EventArgs e)
         {
-            CEPlanForm createForm = new CEPlanForm(context, 0);
+            CEPlanForm createForm = new CEPlanForm(context, 0, planId);
             createForm.Show();
             HideUnnecessaryPlanneds(planId);
         }
@@ -161,7 +161,19 @@ namespace carton
             //update datagridviews
             planGridView.DataSource = context.Plans.ToList();
             plannedGridView.DataSource = context.Planneds.ToList();
+            HideUnnecessaryPlanneds(planId);
+        }
 
+        private void exportButton_Click(object sender, EventArgs e)
+        {
+            //selected plan from the list
+            Plan plan = context.Plans.Find(planId);
+
+            planLogic.ExportPlan(plan, context);
+
+            //update datagridviews
+            planGridView.DataSource = context.Plans.ToList();
+            plannedGridView.DataSource = context.Planneds.ToList();
             HideUnnecessaryPlanneds(planId);
         }
     }

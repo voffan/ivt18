@@ -12,3 +12,5 @@ Report.NET.0.9.8
 *.oob
 *.suo
 .vs/
+
+carton/packages/*
