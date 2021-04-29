@@ -6161,16 +6161,10 @@
             protocol is being used.
             </summary>
         </member>
-<<<<<<< HEAD:WindowsFormsApp1/packages/MySql.Data.8.0.24/lib/net5.0/MySql.Data.xml
         <member name="P:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.DnsSrv">
             <summary>
             Gets or sets a boolean value that indicates whether this connection
             should resolve DNS SRV records.
-=======
-        <member name="P:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.ConnectionTimeout">
-            <summary>
-            Gets or sets the connection timeout.
->>>>>>> e9ef7a6bf0b4e0299c610a1fb1d1ce79a1cd103b:WindowsFormsApp1/WindowsFormsApp1/bin/Debug/MySql.Data.xml
             </summary>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.UserID">
@@ -6185,38 +6179,22 @@
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.CertificateFile">
             <summary>
-<<<<<<< HEAD:WindowsFormsApp1/packages/MySql.Data.8.0.24/lib/net5.0/MySql.Data.xml
              Gets or sets the path to the certificate file to be used.
-=======
-            Gets or sets the path to a certificate in PKCS#12 format (.pfx).
->>>>>>> e9ef7a6bf0b4e0299c610a1fb1d1ce79a1cd103b:WindowsFormsApp1/WindowsFormsApp1/bin/Debug/MySql.Data.xml
             </summary>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.CertificatePassword">
             <summary>
-<<<<<<< HEAD:WindowsFormsApp1/packages/MySql.Data.8.0.24/lib/net5.0/MySql.Data.xml
-            Gets or sets the password to be used in conjunction with the certificate file.
-=======
-            Gets or sets the password associated to the certificate file.
->>>>>>> e9ef7a6bf0b4e0299c610a1fb1d1ce79a1cd103b:WindowsFormsApp1/WindowsFormsApp1/bin/Debug/MySql.Data.xml
+            Gets or sets the password to be used in conjunction with the certificate file
             </summary>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.CertificateStoreLocation">
             <summary>
-<<<<<<< HEAD:WindowsFormsApp1/packages/MySql.Data.8.0.24/lib/net5.0/MySql.Data.xml
             Gets or sets the location to a personal store where a certificate is held.
-=======
-            Gets or sets the certificate store location for client certificates.
->>>>>>> e9ef7a6bf0b4e0299c610a1fb1d1ce79a1cd103b:WindowsFormsApp1/WindowsFormsApp1/bin/Debug/MySql.Data.xml
             </summary>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.CertificateThumbprint">
             <summary>
-<<<<<<< HEAD:WindowsFormsApp1/packages/MySql.Data.8.0.24/lib/net5.0/MySql.Data.xml
             Gets or sets a certificate thumbprint to ensure correct identification of a certificate contained within a personal store.
-=======
-            Gets or sets a certificate thumbprint that can be used together with a certificate to ensure correct identification.
->>>>>>> e9ef7a6bf0b4e0299c610a1fb1d1ce79a1cd103b:WindowsFormsApp1/WindowsFormsApp1/bin/Debug/MySql.Data.xml
             </summary>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.SslMode">
@@ -6224,7 +6202,6 @@
             Indicates whether to use SSL connections and how to handle server certificate errors.
             </summary>
         </member>
-<<<<<<< HEAD:WindowsFormsApp1/packages/MySql.Data.8.0.24/lib/net5.0/MySql.Data.xml
         <member name="P:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.TlsVersion">
             <summary>
             Sets the TLS versions to use in a <see cref="P:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.SslMode">SSL connection</see> to the server.
@@ -6246,11 +6223,6 @@
         <member name="P:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.Keepalive">
             <summary>
             Gets or sets the idle connection time(seconds) for TCP connections.
-=======
-        <member name="P:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.Keepalive">
-            <summary>
-            Gets or sets the idle connection time measured in seconds.
->>>>>>> e9ef7a6bf0b4e0299c610a1fb1d1ce79a1cd103b:WindowsFormsApp1/WindowsFormsApp1/bin/Debug/MySql.Data.xml
             </summary>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.CharacterSet">
@@ -6258,33 +6230,7 @@
             Gets or sets the character set that should be used for sending queries to the server.
             </summary>
         </member>
-<<<<<<< HEAD:WindowsFormsApp1/packages/MySql.Data.8.0.24/lib/net5.0/MySql.Data.xml
         <member name="M:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.AnalyzeConnectionString(System.String,System.Boolean,System.Boolean)">
-=======
-        <member name="P:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.Auth">
-            <summary>
-            Gets or sets the authentication mechanism to use with X Protocol connections.
-            </summary>
-        </member>
-        <member name="P:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.SslCa">
-            <summary>
-            Gets or sets the path to a local file that contains a list of trusted Certificate Authorities.
-            </summary>
-        </member>
-        <member name="P:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.SslCrl">
-            <summary>
-            Gets or sets the path to a local file that contains certificate revocation lists.
-            </summary>
-        </member>
-        <member name="M:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.GetConnectionString(System.Boolean)">
-            <summary>
-            Gets the connection string with or without the password.
-            </summary>
-            <param name="includePass">Flag to indicate if the password should be included in the connection string.</param>
-            <returns>The connection string associated to this object.</returns>
-        </member>
-        <member name="M:MySql.Data.MySqlClient.MySqlBaseConnectionStringBuilder.AnalyzeConnectionString(System.String)">
->>>>>>> e9ef7a6bf0b4e0299c610a1fb1d1ce79a1cd103b:WindowsFormsApp1/WindowsFormsApp1/bin/Debug/MySql.Data.xml
             <summary>
             Analyzes the connection string for potential duplicated or invalid connection options.
             </summary>
@@ -6388,7 +6334,6 @@
             Gets or sets the default command timeout.
             </summary>
         </member>
-<<<<<<< HEAD:WindowsFormsApp1/packages/MySql.Data.8.0.24/lib/net5.0/MySql.Data.xml
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.ConnectionTimeout">
             <summary>
             Gets or sets the connection timeout.
@@ -6405,8 +6350,6 @@
             Gets or sets the safe path where files can be read and uploaded to the server.
             </summary>
         </member>
-=======
->>>>>>> e9ef7a6bf0b4e0299c610a1fb1d1ce79a1cd103b:WindowsFormsApp1/WindowsFormsApp1/bin/Debug/MySql.Data.xml
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.PersistSecurityInfo">
             <summary>
             Gets or sets a boolean value that indicates if the password should be persisted
@@ -6420,17 +6363,12 @@
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.AllowPublicKeyRetrieval">
             <summary>
-<<<<<<< HEAD:WindowsFormsApp1/packages/MySql.Data.8.0.24/lib/net5.0/MySql.Data.xml
             Gets or sets a boolean value that indicates if RSA public keys should be retrieved from the server.
             </summary>
             <remarks>This option is only relevant when SSL is disabled. Setting this option to <c>true</c> in
             8.0 servers that have the caching_sha2_password authentication plugin as the default plugin will
             cause the connection attempt to fail if the user hasn't successfully connected to the server on a
             previous occasion.</remarks>
-=======
-            Gets or sets a boolean value that indicates whether the RSA public key should be retrieved from the server.
-            </summary>
->>>>>>> e9ef7a6bf0b4e0299c610a1fb1d1ce79a1cd103b:WindowsFormsApp1/WindowsFormsApp1/bin/Debug/MySql.Data.xml
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.AllowZeroDateTime">
             <summary>
@@ -6458,14 +6396,6 @@
             Gets or sets a boolean value indicating if the permon hooks should be enabled.
             </summary>
         </member>
-<<<<<<< HEAD:WindowsFormsApp1/packages/MySql.Data.8.0.24/lib/net5.0/MySql.Data.xml
-=======
-        <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.IgnorePrepare">
-            <summary>
-            Gets or sets a boolean value indicating if calls to Prepare() should be ignored.
-            </summary>
-        </member>
->>>>>>> e9ef7a6bf0b4e0299c610a1fb1d1ce79a1cd103b:WindowsFormsApp1/WindowsFormsApp1/bin/Debug/MySql.Data.xml
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.AutoEnlist">
             <summary>
             Gets or sets a boolean value that indicates if an opened connection should particiapte in the current scope.
@@ -10224,13 +10154,8 @@
             <summary>
             Gets an available server based on Round Robin load balancing
             </summary>
-<<<<<<< HEAD:WindowsFormsApp1/packages/MySql.Data.8.0.24/lib/net5.0/MySql.Data.xml
             <param name="isSource">Flag indicating if the server to return must be a source.</param>
             <returns>A <see cref="T:MySql.Data.MySqlClient.Replication.ReplicationServer"/> object representing the next available server.</returns>
-=======
-            <param name="isMaster">True if the server to return must be a master</param>
-            <returns>Next available server</returns>
->>>>>>> e9ef7a6bf0b4e0299c610a1fb1d1ce79a1cd103b:WindowsFormsApp1/WindowsFormsApp1/bin/Debug/MySql.Data.xml
         </member>
         <member name="T:MySql.Data.MySqlClient.Replication.ReplicationServer">
             <summary>
@@ -10244,16 +10169,12 @@
         </member>
         <member name="P:MySql.Data.MySqlClient.Replication.ReplicationServer.IsMaster">
             <summary>
-<<<<<<< HEAD:WindowsFormsApp1/packages/MySql.Data.8.0.24/lib/net5.0/MySql.Data.xml
             Gets a value indicating whether the server is source or replica.
             </summary>
         </member>
         <member name="P:MySql.Data.MySqlClient.Replication.ReplicationServer.IsSource">
             <summary>
             Gets a value indicating whether the server is source or replica.
-=======
-            Defines if the server is master (True) or slave
->>>>>>> e9ef7a6bf0b4e0299c610a1fb1d1ce79a1cd103b:WindowsFormsApp1/WindowsFormsApp1/bin/Debug/MySql.Data.xml
             </summary>
         </member>
         <member name="P:MySql.Data.MySqlClient.Replication.ReplicationServer.ConnectionString">
@@ -10300,11 +10221,7 @@
             Adds a server into the group.
             </summary>
             <param name="name">The server name.</param>
-<<<<<<< HEAD:WindowsFormsApp1/packages/MySql.Data.8.0.24/lib/net5.0/MySql.Data.xml
             <param name="isSource">A flag indicating if the server to add is source or replica.</param>
-=======
-            <param name="isMaster"><c>true</c> if the server to add is master; otherwise <c>false</c> for slave server.</param>
->>>>>>> e9ef7a6bf0b4e0299c610a1fb1d1ce79a1cd103b:WindowsFormsApp1/WindowsFormsApp1/bin/Debug/MySql.Data.xml
             <param name="connectionString">The connection string used by this server.</param>
             <returns></returns>
         </member>
@@ -10325,15 +10242,9 @@
             <summary>
             Must be implemented. Defines the next server for a custom load balancing implementation.
             </summary>
-<<<<<<< HEAD:WindowsFormsApp1/packages/MySql.Data.8.0.24/lib/net5.0/MySql.Data.xml
             <param name="isSource">Defines if the server to return is a source or any.</param>
             <returns>The next server based on the load balancing implementation.
             Null if no available server is found.
-=======
-            <param name="isMaster">Defines if the server to return is a master or any.</param>
-            <returns>Next server based on the load balancing implementation.
-            <c>null</c> if no available server is found.
->>>>>>> e9ef7a6bf0b4e0299c610a1fb1d1ce79a1cd103b:WindowsFormsApp1/WindowsFormsApp1/bin/Debug/MySql.Data.xml
             </returns>
         </member>
         <member name="M:MySql.Data.MySqlClient.Replication.ReplicationServerGroup.GetServer(System.Boolean,MySql.Data.MySqlClient.MySqlConnectionStringBuilder)">
@@ -10863,16 +10774,7 @@
       </code>
     </example>
         </member>
-<<<<<<< HEAD:WindowsFormsApp1/packages/MySql.Data.8.0.24/lib/net5.0/MySql.Data.xml
         <member name="T:MySql.Data.Authentication.GSSAPI.Const">
-=======
-        <member name="T:MySql.Data.MySqlClient.X.XDevAPI.Common.ColumnType">
-            <summary>
-            Defines the data type associated with a column.
-            </summary>
-        </member>
-        <member name="T:MySql.Data.Common.LowResolutionStopwatch">
->>>>>>> e9ef7a6bf0b4e0299c610a1fb1d1ce79a1cd103b:WindowsFormsApp1/WindowsFormsApp1/bin/Debug/MySql.Data.xml
             <summary>
             GSS API constants
             </summary>
@@ -12256,7 +12158,6 @@
               Looks up a localized string similar to Procedure or function &apos;{0}&apos; cannot be found in database &apos;{1}&apos;..
             </summary>
         </member>
-<<<<<<< HEAD:WindowsFormsApp1/packages/MySql.Data.8.0.24/lib/net5.0/MySql.Data.xml
         <member name="P:MySql.Data.Resources.InvalidSslCertificate">
             <summary>
               Looks up a localized string similar to The certificate is invalid..
@@ -12287,8 +12188,6 @@
               Looks up a localized string similar to &apos;{0}&apos; not recognized as a valid TLS protocol version (should be one of TLSv1, TLSv1.1, TLSv1.2{1})..
             </summary>
         </member>
-=======
->>>>>>> e9ef7a6bf0b4e0299c610a1fb1d1ce79a1cd103b:WindowsFormsApp1/WindowsFormsApp1/bin/Debug/MySql.Data.xml
         <member name="P:MySql.Data.Resources.InvalidValueForBoolean">
             <summary>
               Looks up a localized string similar to &apos;{0}&apos; is an illegal value for a boolean option..
@@ -12855,7 +12754,6 @@
               Looks up a localized string similar to Authentication failed using MYSQL41 and SHA256_MEMORY. Check the user name and password or try using a secure connection..
             </summary>
         </member>
-<<<<<<< HEAD:WindowsFormsApp1/packages/MySql.Data.8.0.24/lib/net5.0/MySql.Data.xml
         <member name="P:MySql.Data.ResourcesX.ClientIsClosed">
             <summary>
               Looks up a localized string similar to You can&apos;t get more sessions because Client is closed..
@@ -12941,8 +12839,6 @@
               Looks up a localized string similar to At least one option must be specified..
             </summary>
         </member>
-=======
->>>>>>> e9ef7a6bf0b4e0299c610a1fb1d1ce79a1cd103b:WindowsFormsApp1/WindowsFormsApp1/bin/Debug/MySql.Data.xml
         <member name="P:MySql.Data.ResourcesX.FeatureNotSupported">
             <summary>
               Looks up a localized string similar to This feature is currently not supported..
@@ -13492,16 +13388,12 @@
             Default value for the maximum number of combined compressed messages contained in a compression message.
             </summary>
         </member>
-<<<<<<< HEAD:WindowsFormsApp1/packages/MySql.Data.8.0.24/lib/net5.0/MySql.Data.xml
         <member name="F:MySqlX.Communication.XCompressionController.SERVER_COMBINE_MIXED_MESSAGES_SUBKEY">
             <summary>
             The capabilities sub-key used to specify if combining compressed messages is permitted.
             </summary>
         </member>
         <member name="F:MySqlX.Communication.XCompressionController.SERVER_MAX_COMBINE_MESSAGES_SUBKEY">
-=======
-        <member name="P:MySql.Data.Types.MySqlGeometry.Value">
->>>>>>> e9ef7a6bf0b4e0299c610a1fb1d1ce79a1cd103b:WindowsFormsApp1/WindowsFormsApp1/bin/Debug/MySql.Data.xml
             <summary>
             The capabilities sub-key used to specify the maximum number of compressed messages contained in a compression message.
             </summary>
@@ -14253,24 +14145,13 @@
             </summary>
             <param name="name">The name of the transaction savepoint.</param>
         </member>
-<<<<<<< HEAD:WindowsFormsApp1/packages/MySql.Data.8.0.24/lib/net5.0/MySql.Data.xml
         <member name="M:MySqlX.XDevAPI.BaseSession.ParseConnectionData(System.String,MySqlX.XDevAPI.Client)">
-=======
-        <member name="M:MySqlX.XDevAPI.BaseSession.ParseConnectionString(System.String)">
->>>>>>> e9ef7a6bf0b4e0299c610a1fb1d1ce79a1cd103b:WindowsFormsApp1/WindowsFormsApp1/bin/Debug/MySql.Data.xml
             <summary>
             Parses the connection string.
             </summary>
-<<<<<<< HEAD:WindowsFormsApp1/packages/MySql.Data.8.0.24/lib/net5.0/MySql.Data.xml
             <param name="connectionData">The connection string or connection URI.</param>
             <param name="client">A <see cref="T:MySqlX.XDevAPI.Client"/> object.</param>
             <returns>An updated connection string representation of the provided connection string or connection URI.</returns>
-=======
-            <param name="connectionString">The connection string in basic or URI format.</param>
-            <returns>An updated connection string in basic format.</returns>
-            <remarks>The format (basic or URI) of the connection string is determined as well as the
-            prescence of multiple hosts.</remarks>
->>>>>>> e9ef7a6bf0b4e0299c610a1fb1d1ce79a1cd103b:WindowsFormsApp1/WindowsFormsApp1/bin/Debug/MySql.Data.xml
         </member>
         <member name="M:MySqlX.XDevAPI.BaseSession.ParseUriConnectionString(System.String)">
             <summary>
@@ -14286,25 +14167,15 @@
             <param name="unixSocket">The Unix socket to evaluate.</param>
             <returns><c>true</c> if <paramref name="unixSocket"/> is a valid Unix socket; otherwise, <c>false</c>.</returns>
         </member>
-<<<<<<< HEAD:WindowsFormsApp1/packages/MySql.Data.8.0.24/lib/net5.0/MySql.Data.xml
         <member name="M:MySqlX.XDevAPI.BaseSession.ConvertToConnectionString(System.Uri,System.String,System.Boolean,System.Boolean)">
-=======
-        <member name="M:MySqlX.XDevAPI.BaseSession.ConvertToBasicConnectionString(System.Uri,System.String,System.Boolean)">
->>>>>>> e9ef7a6bf0b4e0299c610a1fb1d1ce79a1cd103b:WindowsFormsApp1/WindowsFormsApp1/bin/Debug/MySql.Data.xml
             <summary>
             Converts the URI object into a connection string in basic format.
             </summary>
             <param name="uri">An <see cref="P:MySqlX.XDevAPI.BaseSession.Uri"/> instance with the values for the provided connection options.</param>
-<<<<<<< HEAD:WindowsFormsApp1/packages/MySql.Data.8.0.24/lib/net5.0/MySql.Data.xml
             <param name="unixSocketPath">The path of the Unix socket file.</param>
             <param name="parseServerAsUnixSocket">If <c>true</c> the <paramref name="unixSocketPath"/> replaces the value for the server connection option; otherwise, <c>false</c></param>
             <param name="isDnsSrvScheme">Flag indicating if this is a connection using DNS SRV.</param>
             <returns>A connection string.</returns>
-=======
-            <param name="unixSocketPath">The path of the Unix socket.</param>
-            <param name="parseServerAsUnixSocket">if <c>true</c> the <paramref name="unixSocketPath"/> will replace the value for the server connection option; otherwise, <c>false</c></param>
-            <returns>A connection string in basic format.</returns>
->>>>>>> e9ef7a6bf0b4e0299c610a1fb1d1ce79a1cd103b:WindowsFormsApp1/WindowsFormsApp1/bin/Debug/MySql.Data.xml
         </member>
         <member name="M:MySqlX.XDevAPI.BaseSession.ParseBasicConnectionString(System.String)">
             <summary>
@@ -14313,27 +14184,6 @@
             <param name="connectionString">The connection string to parse.</param>
             <returns>The parsed connection string.</returns>
         </member>
-<<<<<<< HEAD:WindowsFormsApp1/packages/MySql.Data.8.0.24/lib/net5.0/MySql.Data.xml
-=======
-        <member name="M:MySqlX.XDevAPI.BaseSession.ParseHostList(System.String,System.Boolean)">
-            <summary>
-            Initializes the <see cref="T:MySqlX.Failover.FailoverManager"/> if more than one host is found.
-            </summary>
-            <param name="hierPart">A string containing an unparsed host list.</param>
-            <param name="connectionStringIsInUriFormat">True if the connection string is in URI format, false otherwise.</param>
-            <returns>The number of hosts found, -1 if an error was raised during parsing.</returns>
-        </member>
-        <member name="M:MySqlX.XDevAPI.BaseSession.ConvertToXServer(System.String,System.Boolean,System.Int32,System.Int32)">
-            <summary>
-            Creates a <see cref="T:MySqlX.Failover.XServer"/> object based on the provided parameters.
-            </summary>
-            <param name="host">The host string which can be a simple host name or a host name and port.</param>
-            <param name="connectionStringIsInUriFormat">True if the connection string is in URI format, false otherwise.</param>
-            <param name="priority">The priority of the host.</param>
-            <param name="port">The port number of the host.</param>
-            <returns></returns>
-        </member>
->>>>>>> e9ef7a6bf0b4e0299c610a1fb1d1ce79a1cd103b:WindowsFormsApp1/WindowsFormsApp1/bin/Debug/MySql.Data.xml
         <member name="M:MySqlX.XDevAPI.BaseSession.NormalizeUnixSocket(System.String)">
             <summary>
             Normalizes the Unix socket by removing leading and ending parenthesis as well as removing special characters.
@@ -15303,12 +15153,8 @@
             <summary>
             Opens a session to the server given or to the first available server if multiple servers were specified.
             </summary>
-<<<<<<< HEAD:WindowsFormsApp1/packages/MySql.Data.8.0.24/lib/net5.0/MySql.Data.xml
             <param name="connectionString">The connection string or URI string format.
             </param>
-=======
-            <param name="connectionString">The connection string in basic or URI format.</param>
->>>>>>> e9ef7a6bf0b4e0299c610a1fb1d1ce79a1cd103b:WindowsFormsApp1/WindowsFormsApp1/bin/Debug/MySql.Data.xml
             <returns>A <see cref="T:MySqlX.XDevAPI.Session"/> object representing the established session.</returns>
             <remarks>Multiple hosts can be specified as part of the <paramref name="connectionString"/> which
             will enable client side failover when trying to establish a connection. For additional details and syntax 
@@ -15327,19 +15173,15 @@
             Enables the creation of connection strings by exposing the connection options as properties.
             Contains connection options specific to the X protocol.
             </summary>
-<<<<<<< HEAD:WindowsFormsApp1/packages/MySql.Data.8.0.24/lib/net5.0/MySql.Data.xml
             <param name="connectionString">The connection string or URI string format.
             </param>
             <param name="connectionOptions">The connection options in JSON string format.</param>
             <returns>A <see cref="T:MySqlX.XDevAPI.Client"/> object representing a session pool.</returns>
-=======
->>>>>>> e9ef7a6bf0b4e0299c610a1fb1d1ce79a1cd103b:WindowsFormsApp1/WindowsFormsApp1/bin/Debug/MySql.Data.xml
         </member>
         <member name="P:MySqlX.XDevAPI.MySqlXConnectionStringBuilder.Auth">
             <summary>
             Gets or sets the authentication mechanism to use with X Protocol connections.
             </summary>
-<<<<<<< HEAD:WindowsFormsApp1/packages/MySql.Data.8.0.24/lib/net5.0/MySql.Data.xml
             <param name="connectionString">The connection string or URI string format.
             </param>
             <param name="connectionOptions">The connection options in object format.
@@ -15440,17 +15282,6 @@
         <member name="P:MySqlX.XDevAPI.MySqlXConnectionStringBuilder.Item(System.String)">
             <summary>
             Gets or sets a connection option.
-=======
-        </member>
-        <member name="P:MySqlX.XDevAPI.MySqlXConnectionStringBuilder.SslCa">
-            <summary>
-            Gets or sets the path to a local file that contains a list of trusted Certificate Authorities.
-            </summary>
-        </member>
-        <member name="P:MySqlX.XDevAPI.MySqlXConnectionStringBuilder.SslCrl">
-            <summary>
-            Gets or sets the path to a local file that contains certificate revocation lists.
->>>>>>> e9ef7a6bf0b4e0299c610a1fb1d1ce79a1cd103b:WindowsFormsApp1/WindowsFormsApp1/bin/Debug/MySql.Data.xml
             </summary>
             <param name="keyword">The keyword that identifies the connection option to modify.</param>
         </member>
