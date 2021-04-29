@@ -51,26 +51,36 @@ namespace carton
             //get list of ids of new plans
             IQueryable<int> idList = context.Plans.Where(x => x.Status == PlanStatus.New).Select(x => x.Id);
         }
-
+        //Export plan to project directory
         public void ExportPlan(Plan plan, Context context)
         {
-            String filename = plan.Id.ToString() + "-" + plan.Name + "-" + plan.Date.ToString("dd.MM.yyyy") + ".xlsx";
+            String filename = "../../../" + plan.Id.ToString() + "-" + plan.Name + "-" + plan.Date.ToString("dd.MM.yyyy") + ".xlsx";
             FileInfo fileinfo = new FileInfo(filename);
-            ExcelPackage excel = new ExcelPackage(fileinfo);
+            ExcelPackage excel;
+            if (!fileinfo.Exists)
+            {
+                excel = new ExcelPackage(fileinfo);
+            }
+            else
+            {
+                Random rand = new Random();
+                filename = "../../../" + plan.Id.ToString() + "-" + plan.Name + "-" + plan.Date.ToString("dd.MM.yyyy") + "fileExists-" + rand.Next() +".xlsx";
+                fileinfo = new FileInfo(filename);
+                excel = new ExcelPackage(fileinfo);
+            }
             ExcelWorksheet workSheet = excel.Workbook.Worksheets.Add("Plan");
 
             //Set column width
-            workSheet.Column(1).Width = 40 / 7.5;
-            workSheet.Column(2).Width = 120 / 7.5;
-            workSheet.Column(3).Width = 80 / 7.5;
-            workSheet.Column(4).Width = 80 / 7.5;
-            workSheet.Column(5).Width = 19.29;
-            workSheet.Column(6).Width = 20 / 7.5;
-            workSheet.Column(7).Width = 120 / 7.5;
-            workSheet.Column(8).Width = 85 / 7.5;
-            workSheet.Column(9).Width = 110 / 7.5;
-            workSheet.Column(10).Width = 130 / 7.5;
-            workSheet.Column(11).Width = 80 / 7.5;
+            workSheet.Column(1).Width = 5;
+            workSheet.Column(2).Width = 17;
+            workSheet.Column(3).Width = 11;
+            workSheet.Column(4).Width = 11;
+            workSheet.Column(5).Width = 20;
+            workSheet.Column(6).Width = 3;
+            workSheet.Column(7).Width = 13;
+            workSheet.Column(8).Width = 15;
+            workSheet.Column(9).Width = 18;
+            workSheet.Column(10).Width = 12;
 
             //Headers
             workSheet.Cells["A1"].Value = "ID";
@@ -107,15 +117,6 @@ namespace carton
                     i++;
                 }
             }
-
-            // set some core property values
-            excel.Workbook.Properties.Title = "Plan export table";
-            excel.Workbook.Properties.Author = "tribute to John Tunnicliffe";
-            excel.Workbook.Properties.Subject = "ExcelPackage Samples";
-            excel.Workbook.Properties.Keywords = "Office Open XML";
-            excel.Workbook.Properties.Category = "ExcelPackage Samples";
-            excel.Workbook.Properties.Comments = "This sample demonstrates how to create an Excel 2007 file from scratch using the Packaging API and Office Open XML";
-
             
             excel.Save();
         }
