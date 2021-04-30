@@ -99,8 +99,11 @@ namespace grades
 
         private void GroupAndCourseGrades_Load(object sender, EventArgs e)
         {
-            gradesDGV.DataSource = _context.Groups.ToList();
-            gradesDGV.Columns[1].ReadOnly = true;
+            string subjectName = courseComboBox.SelectedItem.ToString();
+            var group = groupComboBox.SelectedItem.ToString().Split(' ');
+            gradesDGV.DataSource = _logic.GetGroup(_context, subjectName, Convert.ToInt32(group[0]), group[1], _user);
+            //gradesDGV.DataSource = _context.Groups.ToList();
+            //gradesDGV.Columns[1].ReadOnly = true;
         }
     }
 }
