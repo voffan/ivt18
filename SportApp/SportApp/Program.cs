@@ -16,7 +16,7 @@ namespace SportApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SignForm());
+            Application.Run(new SignInForm());
         }
     }
 }
