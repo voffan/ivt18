@@ -44,6 +44,8 @@ namespace SportApp
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,6 +101,7 @@ namespace SportApp
             this.button1.TabIndex = 12;
             this.button1.Text = "x";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1
             // 
@@ -193,7 +196,7 @@ namespace SportApp
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox6.Cursor = System.Windows.Forms.Cursors.Default;
             this.textBox6.ForeColor = System.Drawing.Color.White;
-            this.textBox6.Location = new System.Drawing.Point(40, 353);
+            this.textBox6.Location = new System.Drawing.Point(40, 302);
             this.textBox6.Name = "textBox6";
             this.textBox6.PasswordChar = 'о';
             this.textBox6.Size = new System.Drawing.Size(340, 22);
@@ -233,13 +236,40 @@ namespace SportApp
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(405, 350);
+            this.button2.Location = new System.Drawing.Point(40, 350);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(340, 25);
+            this.button2.Size = new System.Drawing.Size(705, 25);
             this.button2.TabIndex = 36;
             this.button2.Text = "Регистрация";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // textBox7
+            // 
+            this.textBox7.BackColor = System.Drawing.Color.Gray;
+            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox7.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBox7.ForeColor = System.Drawing.Color.White;
+            this.textBox7.Location = new System.Drawing.Point(40, 200);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(340, 22);
+            this.textBox7.TabIndex = 37;
+            this.textBox7.Text = "логин";
+            // 
+            // textBox9
+            // 
+            this.textBox9.AllowDrop = true;
+            this.textBox9.BackColor = System.Drawing.Color.Gray;
+            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox9.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBox9.ForeColor = System.Drawing.Color.White;
+            this.textBox9.Location = new System.Drawing.Point(40, 250);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.PasswordChar = 'о';
+            this.textBox9.Size = new System.Drawing.Size(340, 22);
+            this.textBox9.TabIndex = 38;
+            this.textBox9.Text = "пароль";
             // 
             // SignOnForm
             // 
@@ -247,6 +277,8 @@ namespace SportApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(779, 446);
+            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.textBox7);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
@@ -291,5 +323,7 @@ namespace SportApp
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox9;
     }
 }

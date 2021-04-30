@@ -52,7 +52,8 @@ namespace SportApp
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            SignOnForm Registration = new SignOnForm();
+            Registration.Show();
         }
 
         private void button6_Click(object sender, EventArgs e)
