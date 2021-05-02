@@ -76,6 +76,12 @@
     <Compile Include="Classes\Department.cs" />
     <Compile Include="Classes\Employee.cs" />
     <Compile Include="Classes\ProductMovement.cs" />
+    <Compile Include="Forms\ShiftRepForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ShiftRepForm.Designer.cs">
+      <DependentUpon>ShiftRepForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EcoEmplForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,7 @@
     <Compile Include="Classes\ProductionLine.cs" />
     <Compile Include="Classes\ProductOperation.cs" />
     <Compile Include="Classes\ProductRemain.cs" />
+    <Compile Include="Logic\ShiftLogic.cs" />
     <Compile Include="Migrations\202103311301352_reboot.cs" />
     <Compile Include="Migrations\202103311301352_reboot.designer.cs">
       <DependentUpon>202103311301352_reboot.cs</DependentUpon>
@@ -151,6 +158,9 @@
     </Compile>
     <EmbeddedResource Include="Forms\CEPlanForm.resx">
       <DependentUpon>CEPlanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ShiftRepForm.resx">
+      <DependentUpon>ShiftRepForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EcoEmplForm.resx">
       <DependentUpon>EcoEmplForm.cs</DependentUpon>

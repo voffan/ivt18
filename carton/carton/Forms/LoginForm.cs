@@ -57,7 +57,7 @@ namespace carton.Classes
             }
             if (EmployeeLogic.LoginEmployee(context, this.loginEntry.Text, this.passwordEntry.Text) == 5)
             {
-                ForemanForm f = new ForemanForm();
+                ForemanForm f = new ForemanForm(context);
                 f.Show();
             }
             this.loginEntry.Text = "";

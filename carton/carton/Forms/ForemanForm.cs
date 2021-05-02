@@ -12,14 +12,23 @@ namespace carton
 {
     public partial class ForemanForm : Form
     {
-        public ForemanForm()
+        Context context;
+        public ForemanForm(Context context)
         {
+            this.context = context;
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void GetPlanButton_Click(object sender, EventArgs e)
         {
+            //EcoEmplForm f = new EcoEmplForm(context);
+            //f.Show();
+        }
 
+        private void ShiftRepButton_Click(object sender, EventArgs e)
+        {
+            ShiftRepForm f = new ShiftRepForm(context);
+            f.Show();
         }
     }
 }
