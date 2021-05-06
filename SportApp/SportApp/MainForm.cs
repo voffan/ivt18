@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using SportApp.Classes;
 namespace SportApp
 {
+    
+    
     public partial class MainForm : Form
     {
+        
         public MainForm()
         {
             InitializeComponent();
@@ -30,6 +33,8 @@ namespace SportApp
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelresultats.Visible = true;
+            this.panelusers.Visible = false;
+            this.panelusers2.Visible = false;
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
@@ -49,6 +54,9 @@ namespace SportApp
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelresultats.Visible = false;
+            this.panelusers.Visible = false;
+            this.panelusers2.Visible = false;
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -58,6 +66,9 @@ namespace SportApp
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelresultats.Visible = false;
+            this.panelusers.Visible = false;
+            this.panelusers2.Visible = false;
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -67,15 +78,33 @@ namespace SportApp
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelresultats.Visible = false;
+            this.panelusers.Visible = false;
+            this.panelusers2.Visible = false;
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
+            Context connect = new Context();
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelresultats.Visible = false;
+            this.panelusers.Visible = true;
+            this.panelusers2.Visible = true;
+
+            string name = (from customer in connect.Persons
+                           where customer.Login == Program.logining
+                           select customer.Name)
+               .FirstOrDefault();
+            label7.Text = name;
+        }
+        
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -37,3 +37,22 @@ C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\obj\Debug\SportApp.ex
 C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\obj\Debug\SportApp.pdb
 C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\obj\Debug\SportApp.resetPassword.resources
 C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\obj\Debug\SportApp.Migrations.sport.resources
+D:\stud\pi\ivt18\SportApp\SportApp\bin\Debug\SportApp.exe.config
+D:\stud\pi\ivt18\SportApp\SportApp\bin\Debug\SportApp.exe
+D:\stud\pi\ivt18\SportApp\SportApp\bin\Debug\SportApp.pdb
+D:\stud\pi\ivt18\SportApp\SportApp\bin\Debug\EntityFramework.dll
+D:\stud\pi\ivt18\SportApp\SportApp\bin\Debug\EntityFramework.SqlServer.dll
+D:\stud\pi\ivt18\SportApp\SportApp\bin\Debug\MySql.Data.dll
+D:\stud\pi\ivt18\SportApp\SportApp\bin\Debug\MySql.Data.Entity.EF6.dll
+D:\stud\pi\ivt18\SportApp\SportApp\bin\Debug\EntityFramework.xml
+D:\stud\pi\ivt18\SportApp\SportApp\bin\Debug\EntityFramework.SqlServer.xml
+D:\stud\pi\ivt18\SportApp\SportApp\obj\Debug\SportApp.csprojAssemblyReference.cache
+D:\stud\pi\ivt18\SportApp\SportApp\obj\Debug\SportApp.MainForm.resources
+D:\stud\pi\ivt18\SportApp\SportApp\obj\Debug\SportApp.Properties.Resources.resources
+D:\stud\pi\ivt18\SportApp\SportApp\obj\Debug\SportApp.SignInForm.resources
+D:\stud\pi\ivt18\SportApp\SportApp\obj\Debug\SportApp.SignOnForm.resources
+D:\stud\pi\ivt18\SportApp\SportApp\obj\Debug\SportApp.csproj.GenerateResource.cache
+D:\stud\pi\ivt18\SportApp\SportApp\obj\Debug\SportApp.csproj.CoreCompileInputs.cache
+D:\stud\pi\ivt18\SportApp\SportApp\obj\Debug\SportApp.csproj.CopyComplete
+D:\stud\pi\ivt18\SportApp\SportApp\obj\Debug\SportApp.exe
+D:\stud\pi\ivt18\SportApp\SportApp\obj\Debug\SportApp.pdb

@@ -29,6 +29,18 @@ namespace SportApp
             this.Close();
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            SignOnForm Registration = new SignOnForm();
+            Registration.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            resetPassword q = new resetPassword();
+            q.Show();
+        }
+        
         private void button5_Click(object sender, EventArgs e)
         {
             Context connect = new Context();
@@ -60,25 +72,14 @@ namespace SportApp
                     }
                     else
                     {
-                        MainForm q = new MainForm();
-                        q.Show();
+                        MainForm LoginForm = new MainForm();
+                        Program.logining = textBox1.Text;
+                        LoginForm.Show();
                     }
                 }
 
             }
-            
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            SignOnForm Registration = new SignOnForm();
-            Registration.Show();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            resetPassword q = new resetPassword();
-            q.Show();
-        }
     }
 }

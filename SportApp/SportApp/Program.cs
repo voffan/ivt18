@@ -8,6 +8,7 @@ namespace SportApp
 {
     static class Program
     {
+        public static string logining = null;
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
