@@ -30,6 +30,8 @@ namespace SportApp
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelresultats.Visible = true;
+            this.panelusers.Visible = false;
+            this.panelusers2.Visible = false;
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
@@ -49,6 +51,9 @@ namespace SportApp
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelresultats.Visible = false;
+            this.panelusers.Visible = false;
+            this.panelusers2.Visible = false;
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -58,6 +63,9 @@ namespace SportApp
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelresultats.Visible = false;
+            this.panelusers.Visible = false;
+            this.panelusers2.Visible = false;
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -67,6 +75,9 @@ namespace SportApp
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelresultats.Visible = false;
+            this.panelusers.Visible = false;
+            this.panelusers2.Visible = false;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -76,6 +87,9 @@ namespace SportApp
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelresultats.Visible = false;
+            this.panelusers.Visible = true;
+            this.panelusers2.Visible = true;
         }
     }
 }

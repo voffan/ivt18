@@ -29,13 +29,13 @@ namespace SportApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelup = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelmain = new System.Windows.Forms.Panel();
             this.panelresultats = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.panelresultatssearch = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
@@ -49,25 +49,41 @@ namespace SportApp
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panelusers2 = new System.Windows.Forms.Panel();
+            this.panelusers = new System.Windows.Forms.Panel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelup.SuspendLayout();
+            this.panelmain.SuspendLayout();
             this.panelresultats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel4.SuspendLayout();
+            this.panelresultatssearch.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panelusers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel2
+            // panelup
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1300, 25);
-            this.panel2.TabIndex = 1;
+            this.panelup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelup.Controls.Add(this.label1);
+            this.panelup.Controls.Add(this.button4);
+            this.panelup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.panelup.Location = new System.Drawing.Point(0, 0);
+            this.panelup.Name = "panelup";
+            this.panelup.Size = new System.Drawing.Size(1140, 25);
+            this.panelup.TabIndex = 1;
             // 
             // label1
             // 
@@ -84,7 +100,7 @@ namespace SportApp
             this.button4.BackColor = System.Drawing.Color.Gray;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(1273, 0);
+            this.button4.Location = new System.Drawing.Point(1113, 0);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(25, 25);
             this.button4.TabIndex = 13;
@@ -92,29 +108,29 @@ namespace SportApp
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // panel1
+            // panelmain
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panelmain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.panelresultats);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.panel1.Location = new System.Drawing.Point(0, 25);
-            this.panel1.Name = "panel1";
-            this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.panel1.Size = new System.Drawing.Size(1300, 975);
-            this.panel1.TabIndex = 2;
+            this.panelmain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelmain.Controls.Add(this.panelresultats);
+            this.panelmain.Controls.Add(this.panel3);
+            this.panelmain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.panelmain.Location = new System.Drawing.Point(0, 25);
+            this.panelmain.Name = "panelmain";
+            this.panelmain.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.panelmain.Size = new System.Drawing.Size(1300, 975);
+            this.panelmain.TabIndex = 2;
             // 
             // panelresultats
             // 
             this.panelresultats.Controls.Add(this.dataGridView1);
-            this.panelresultats.Controls.Add(this.panel4);
+            this.panelresultats.Controls.Add(this.panelresultatssearch);
             this.panelresultats.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelresultats.Location = new System.Drawing.Point(128, 0);
+            this.panelresultats.Location = new System.Drawing.Point(130, 0);
             this.panelresultats.Name = "panelresultats";
-            this.panelresultats.Size = new System.Drawing.Size(1170, 973);
+            this.panelresultats.Size = new System.Drawing.Size(1168, 973);
             this.panelresultats.TabIndex = 1;
             this.panelresultats.Visible = false;
             // 
@@ -128,25 +144,26 @@ namespace SportApp
             this.dataGridView1.Size = new System.Drawing.Size(240, 150);
             this.dataGridView1.TabIndex = 2;
             // 
-            // panel4
+            // panelresultatssearch
             // 
-            this.panel4.AccessibleDescription = "Мероприятия";
-            this.panel4.BackColor = System.Drawing.Color.Silver;
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.button1);
-            this.panel4.Controls.Add(this.comboBox6);
-            this.panel4.Controls.Add(this.comboBox5);
-            this.panel4.Controls.Add(this.comboBox4);
-            this.panel4.Controls.Add(this.comboBox3);
-            this.panel4.Controls.Add(this.comboBox2);
-            this.panel4.Controls.Add(this.comboBox1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.panel4.Location = new System.Drawing.Point(970, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(200, 973);
-            this.panel4.TabIndex = 1;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            this.panelresultatssearch.AccessibleDescription = "Мероприятия";
+            this.panelresultatssearch.BackColor = System.Drawing.Color.Silver;
+            this.panelresultatssearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelresultatssearch.Controls.Add(this.panelusers2);
+            this.panelresultatssearch.Controls.Add(this.button1);
+            this.panelresultatssearch.Controls.Add(this.comboBox6);
+            this.panelresultatssearch.Controls.Add(this.comboBox5);
+            this.panelresultatssearch.Controls.Add(this.comboBox4);
+            this.panelresultatssearch.Controls.Add(this.comboBox3);
+            this.panelresultatssearch.Controls.Add(this.comboBox2);
+            this.panelresultatssearch.Controls.Add(this.comboBox1);
+            this.panelresultatssearch.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelresultatssearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.panelresultatssearch.Location = new System.Drawing.Point(968, 0);
+            this.panelresultatssearch.Name = "panelresultatssearch";
+            this.panelresultatssearch.Size = new System.Drawing.Size(200, 973);
+            this.panelresultatssearch.TabIndex = 1;
+            this.panelresultatssearch.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // button1
             // 
@@ -252,7 +269,7 @@ namespace SportApp
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(128, 973);
+            this.panel3.Size = new System.Drawing.Size(130, 973);
             this.panel3.TabIndex = 0;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -322,9 +339,168 @@ namespace SportApp
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(117, 30);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Пользователи";
+            this.label2.Text = "Личный кабинет";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // panelusers2
+            // 
+            this.panelusers2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelusers2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelusers2.Location = new System.Drawing.Point(-2, 0);
+            this.panelusers2.Name = "panelusers2";
+            this.panelusers2.Size = new System.Drawing.Size(200, 971);
+            this.panelusers2.TabIndex = 15;
+            this.panelusers2.Visible = false;
+            // 
+            // panelusers
+            // 
+            this.panelusers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelusers.BackColor = System.Drawing.Color.Gray;
+            this.panelusers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelusers.Controls.Add(this.groupBox3);
+            this.panelusers.Controls.Add(this.groupBox2);
+            this.panelusers.Controls.Add(this.button2);
+            this.panelusers.Controls.Add(this.groupBox1);
+            this.panelusers.Controls.Add(this.label13);
+            this.panelusers.Controls.Add(this.label12);
+            this.panelusers.Controls.Add(this.label11);
+            this.panelusers.Controls.Add(this.pictureBox2);
+            this.panelusers.Controls.Add(this.label9);
+            this.panelusers.Controls.Add(this.label8);
+            this.panelusers.Controls.Add(this.label7);
+            this.panelusers.Controls.Add(this.pictureBox1);
+            this.panelusers.Location = new System.Drawing.Point(131, 25);
+            this.panelusers.Name = "panelusers";
+            this.panelusers.Size = new System.Drawing.Size(1168, 975);
+            this.panelusers.TabIndex = 5;
+            this.panelusers.Visible = false;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.Silver;
+            this.groupBox3.Location = new System.Drawing.Point(40, 520);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(810, 200);
+            this.groupBox3.TabIndex = 10;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Недавняя активность";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.Silver;
+            this.groupBox2.Location = new System.Drawing.Point(890, 280);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(230, 440);
+            this.groupBox2.TabIndex = 11;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "groupBox2";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Gray;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(890, 215);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(185, 25);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Редактировать профиль";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Silver;
+            this.groupBox1.Location = new System.Drawing.Point(40, 280);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(810, 200);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Витрина достижений";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(887, 60);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(108, 24);
+            this.label13.TabIndex = 8;
+            this.label13.Text = "спортсмен";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(360, 140);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(40, 13);
+            this.label12.TabIndex = 7;
+            this.label12.Text = "о себе";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(887, 100);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(36, 13);
+            this.label11.TabIndex = 6;
+            this.label11.Text = "спорт";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Location = new System.Drawing.Point(1001, 70);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(10, 10);
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(360, 100);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(94, 24);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "отчество";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(360, 80);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(44, 24);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "имя";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(360, 60);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(89, 24);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "фамилия";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(130, 40);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 200);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // MainForm
             // 
@@ -334,28 +510,33 @@ namespace SportApp
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1300, 1000);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelusers);
+            this.Controls.Add(this.panelmain);
+            this.Controls.Add(this.panelup);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
+            this.panelup.ResumeLayout(false);
+            this.panelup.PerformLayout();
+            this.panelmain.ResumeLayout(false);
             this.panelresultats.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel4.ResumeLayout(false);
+            this.panelresultatssearch.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panelusers.ResumeLayout(false);
+            this.panelusers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelup;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelmain;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label6;
@@ -364,7 +545,7 @@ namespace SportApp
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panelresultats;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panelresultatssearch;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
@@ -373,5 +554,19 @@ namespace SportApp
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Panel panelusers2;
+        private System.Windows.Forms.Panel panelusers;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
