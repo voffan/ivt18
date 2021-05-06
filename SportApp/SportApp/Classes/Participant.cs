@@ -16,7 +16,7 @@ namespace SportApp.Classes
 
         public int AthleteId { get; set; }
         [ForeignKey("AthleteId")]
-        public Athlete Athlete { get; set; }
+        public Person Name { get; set; }
 
         public int? SportTypeId { get; set; }
         [ForeignKey("SportTypeId")]

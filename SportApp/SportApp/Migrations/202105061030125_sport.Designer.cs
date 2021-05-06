@@ -13,7 +13,7 @@ namespace SportApp.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202104300314156_sport"; }
+            get { return "202105061030125_sport"; }
         }
         
         string IMigrationMetadata.Source

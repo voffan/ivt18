@@ -50,8 +50,19 @@ namespace SportApp
                 }
                 else
                 {
-                    MainForm q = new MainForm();
-                    q.Show();
+                    string password = (from customer in connect.Persons
+                                       where customer.Password == textBox2.Text
+                                       select customer.Password)
+                     .FirstOrDefault();
+                    if (password == null)
+                    {
+                        MessageBox.Show("Извините, но ваш пароль не совподает");
+                    }
+                    else
+                    {
+                        MainForm q = new MainForm();
+                        q.Show();
+                    }
                 }
 
             }
@@ -66,7 +77,7 @@ namespace SportApp
 
         private void button6_Click(object sender, EventArgs e)
         {
-            MainForm q = new MainForm();
+            resetPassword q = new resetPassword();
             q.Show();
         }
     }

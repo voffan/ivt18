@@ -11,10 +11,8 @@ namespace SportApp
 		{
 			Database.SetInitializer<Context>(new DbInitializer());
 		}
-		public virtual DbSet<Athlete> Athletes { get; set; }
 		public virtual DbSet<City> Cities { get; set; }
 		public virtual DbSet<Competition> Competitions { get; set; }
-		public virtual DbSet<Employee> Employees { get; set; }
 		public virtual DbSet<News> Newss { get; set; }
 		public virtual DbSet<Participant> Participants { get; set; }
 		public virtual DbSet<Person> Persons { get; set; }

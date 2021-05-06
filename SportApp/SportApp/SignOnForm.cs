@@ -32,15 +32,25 @@ namespace SportApp
                 newUserEmail=textBox4.Text,
                 newUserLogin=textBox7.Text,
                 newUserPassword=textBox9.Text,
-                RePassword=textBox6.Text;
+                RePassword = textBox6.Text,
+                newUserPhone = textBox8.Text,
+                newUserBirthday = textBox5.Text,
+                newUserCity = Convert.ToString(comboBox1.SelectedItem),
+                newUserSex = Convert.ToString(comboBox3.SelectedItem);
 
             if (newUserPassword == RePassword)
             {
+
                 Person newUser = new Person {
                     Name = newUserSurname + " " + newUserName + " " + newUserFatherName,
                     Email = newUserEmail,
                     Login = newUserLogin,
-                    Password = RePassword
+                    Password = RePassword,
+                    Phone = newUserPhone,
+                    CityName = newUserCity,
+                    Birthday = Convert.ToDateTime(newUserBirthday),
+                    //Sex = Convert.ToString(newUserSex)
+                    //Type = 12
                 };
                 string databaseLogin = (from customer in connect.Persons
                                where customer.Login == newUserLogin 
@@ -62,7 +72,7 @@ namespace SportApp
                
             }
             else {
-                MessageBox.Show("Ваши пароли не совподают!");
+                MessageBox.Show("Ваши пароли не совподают!"+ newUserCity);
             }
 
 
@@ -218,6 +228,13 @@ namespace SportApp
             {
                 comboBox1.Items.Add(name);
             }
+
+            Person model = new Person();
+            model.Sex = new Sex();
+            foreach (Sex employeeGroup in Enum.GetValues(typeof(Sex)))
+            {
+                comboBox3.Items.Add(employeeGroup);
+            }
         }
 
         private void textBox8_Enter(object sender, EventArgs e)
@@ -295,6 +312,16 @@ namespace SportApp
             textBox5.Text = e.Start.ToLongDateString();
             monthCalendar1.Visible = false;
             textBox5.ForeColor = Color.White;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+
         }
     }
 }
