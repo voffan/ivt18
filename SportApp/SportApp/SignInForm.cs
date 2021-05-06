@@ -31,6 +31,7 @@ namespace SportApp
 
         private void button5_Click(object sender, EventArgs e)
         {
+            Context connect = new Context();
             if (textBox1.Text == "")
             {
                 MessageBox.Show("Введите Ваш логин!");
@@ -40,11 +41,18 @@ namespace SportApp
                 MessageBox.Show("Введите Ваш пароль!");
             }
             else {
-                Context connect = new Context();
-                string name = (from customer in connect.Employees where customer.Name==textBox1.Text
+                string name = (from customer in connect.Persons where customer.Login==textBox1.Text
                                select customer.Name)
                .FirstOrDefault();
-                MessageBox.Show(Convert.ToString(name));
+                if (name == null)
+                {
+                    MessageBox.Show(Convert.ToString("Пользователь с таким логином не найден!"));
+                }
+                else
+                {
+                    MainForm q = new MainForm();
+                    q.Show();
+                }
 
             }
             

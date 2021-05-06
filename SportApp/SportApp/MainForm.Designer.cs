@@ -33,28 +33,28 @@ namespace SportApp
             this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panelresultats = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.panelresultats = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panelresultats.SuspendLayout();
-            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -106,6 +106,138 @@ namespace SportApp
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.panel1.Size = new System.Drawing.Size(1300, 975);
             this.panel1.TabIndex = 2;
+            // 
+            // panelresultats
+            // 
+            this.panelresultats.Controls.Add(this.dataGridView1);
+            this.panelresultats.Controls.Add(this.panel4);
+            this.panelresultats.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelresultats.Location = new System.Drawing.Point(128, 0);
+            this.panelresultats.Name = "panelresultats";
+            this.panelresultats.Size = new System.Drawing.Size(1170, 973);
+            this.panelresultats.TabIndex = 1;
+            this.panelresultats.Visible = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(130, 219);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 2;
+            // 
+            // panel4
+            // 
+            this.panel4.AccessibleDescription = "Мероприятия";
+            this.panel4.BackColor = System.Drawing.Color.Silver;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.button1);
+            this.panel4.Controls.Add(this.comboBox6);
+            this.panel4.Controls.Add(this.comboBox5);
+            this.panel4.Controls.Add(this.comboBox4);
+            this.panel4.Controls.Add(this.comboBox3);
+            this.panel4.Controls.Add(this.comboBox2);
+            this.panel4.Controls.Add(this.comboBox1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.panel4.Location = new System.Drawing.Point(970, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(200, 973);
+            this.panel4.TabIndex = 1;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.Gray;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(37, 310);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(130, 25);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Поиск";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.AccessibleDescription = "";
+            this.comboBox6.BackColor = System.Drawing.Color.Gray;
+            this.comboBox6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox6.ForeColor = System.Drawing.Color.White;
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Location = new System.Drawing.Point(5, 60);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(190, 24);
+            this.comboBox6.TabIndex = 5;
+            this.comboBox6.Text = "Вид спорта";
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.AccessibleDescription = "";
+            this.comboBox5.BackColor = System.Drawing.Color.Gray;
+            this.comboBox5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox5.ForeColor = System.Drawing.Color.White;
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(5, 110);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(190, 24);
+            this.comboBox5.TabIndex = 4;
+            this.comboBox5.Text = "Категория";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.AccessibleDescription = "";
+            this.comboBox4.BackColor = System.Drawing.Color.Gray;
+            this.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox4.ForeColor = System.Drawing.Color.White;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(5, 160);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(190, 24);
+            this.comboBox4.TabIndex = 3;
+            this.comboBox4.Text = "Участник";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.AccessibleDescription = "";
+            this.comboBox3.BackColor = System.Drawing.Color.Gray;
+            this.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox3.ForeColor = System.Drawing.Color.White;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(5, 210);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(190, 24);
+            this.comboBox3.TabIndex = 2;
+            this.comboBox3.Text = "Результат";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.AccessibleDescription = "";
+            this.comboBox2.BackColor = System.Drawing.Color.Gray;
+            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox2.ForeColor = System.Drawing.Color.White;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(5, 260);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(190, 24);
+            this.comboBox2.TabIndex = 1;
+            this.comboBox2.Text = "Место";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.AccessibleDescription = "";
+            this.comboBox1.BackColor = System.Drawing.Color.Gray;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox1.ForeColor = System.Drawing.Color.White;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(5, 10);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(190, 24);
+            this.comboBox1.TabIndex = 0;
+            this.comboBox1.Text = "Мероприятие";
             // 
             // panel3
             // 
@@ -194,138 +326,6 @@ namespace SportApp
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // panelresultats
-            // 
-            this.panelresultats.Controls.Add(this.dataGridView1);
-            this.panelresultats.Controls.Add(this.panel4);
-            this.panelresultats.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelresultats.Location = new System.Drawing.Point(128, 0);
-            this.panelresultats.Name = "panelresultats";
-            this.panelresultats.Size = new System.Drawing.Size(1170, 973);
-            this.panelresultats.TabIndex = 1;
-            this.panelresultats.Visible = false;
-            // 
-            // panel4
-            // 
-            this.panel4.AccessibleDescription = "Мероприятия";
-            this.panel4.BackColor = System.Drawing.Color.Silver;
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.button1);
-            this.panel4.Controls.Add(this.comboBox6);
-            this.panel4.Controls.Add(this.comboBox5);
-            this.panel4.Controls.Add(this.comboBox4);
-            this.panel4.Controls.Add(this.comboBox3);
-            this.panel4.Controls.Add(this.comboBox2);
-            this.panel4.Controls.Add(this.comboBox1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.panel4.Location = new System.Drawing.Point(970, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(200, 973);
-            this.panel4.TabIndex = 1;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.AccessibleDescription = "";
-            this.comboBox1.BackColor = System.Drawing.Color.Gray;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox1.ForeColor = System.Drawing.Color.White;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(5, 10);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(190, 24);
-            this.comboBox1.TabIndex = 0;
-            this.comboBox1.Text = "Мероприятие";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.AccessibleDescription = "";
-            this.comboBox2.BackColor = System.Drawing.Color.Gray;
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox2.ForeColor = System.Drawing.Color.White;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(5, 260);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(190, 24);
-            this.comboBox2.TabIndex = 1;
-            this.comboBox2.Text = "Место";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.AccessibleDescription = "";
-            this.comboBox3.BackColor = System.Drawing.Color.Gray;
-            this.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox3.ForeColor = System.Drawing.Color.White;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(5, 210);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(190, 24);
-            this.comboBox3.TabIndex = 2;
-            this.comboBox3.Text = "Результат";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.AccessibleDescription = "";
-            this.comboBox4.BackColor = System.Drawing.Color.Gray;
-            this.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox4.ForeColor = System.Drawing.Color.White;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(5, 160);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(190, 24);
-            this.comboBox4.TabIndex = 3;
-            this.comboBox4.Text = "Участник";
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.AccessibleDescription = "";
-            this.comboBox5.BackColor = System.Drawing.Color.Gray;
-            this.comboBox5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox5.ForeColor = System.Drawing.Color.White;
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(5, 110);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(190, 24);
-            this.comboBox5.TabIndex = 4;
-            this.comboBox5.Text = "Категория";
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.AccessibleDescription = "";
-            this.comboBox6.BackColor = System.Drawing.Color.Gray;
-            this.comboBox6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox6.ForeColor = System.Drawing.Color.White;
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(5, 60);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(190, 24);
-            this.comboBox6.TabIndex = 5;
-            this.comboBox6.Text = "Вид спорта";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(130, 219);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Gray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(37, 310);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 25);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Поиск";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -343,10 +343,10 @@ namespace SportApp
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.panelresultats.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
