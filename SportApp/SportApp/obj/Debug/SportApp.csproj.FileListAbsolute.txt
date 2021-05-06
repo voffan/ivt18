@@ -35,3 +35,5 @@ C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\obj\Debug\SportApp.cs
 C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\obj\Debug\SportApp.csproj.CopyComplete
 C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\obj\Debug\SportApp.exe
 C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\obj\Debug\SportApp.pdb
+C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\obj\Debug\SportApp.resetPassword.resources
+C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\obj\Debug\SportApp.Migrations.sport.resources
