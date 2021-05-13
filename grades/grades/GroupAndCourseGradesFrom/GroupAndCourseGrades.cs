@@ -90,20 +90,33 @@ namespace grades
         private void LoadCoursesList()
         {
             courseComboBox.DataSource = _logic.GetCoursesList(_context, _user);
+            courseComboBox.SelectedIndex = -1;
         }
 
         private void LoadGroupList()
         {
             groupComboBox.DataSource = _logic.GetGroupList(_context, _user);
+            groupComboBox.SelectedIndex = -1;
         }
 
         private void GroupAndCourseGrades_Load(object sender, EventArgs e)
         {
-            string subjectName = courseComboBox.SelectedItem.ToString();
-            var group = groupComboBox.SelectedItem.ToString().Split(' ');
-            gradesDGV.DataSource = _logic.GetGroup(_context, subjectName, Convert.ToInt32(group[0]), group[1], _user);
-            //gradesDGV.DataSource = _context.Groups.ToList();
-            //gradesDGV.Columns[1].ReadOnly = true;
+
+            updateGradingList();
+        }
+
+        private void updateGradingList()
+        {
+            if (courseComboBox.SelectedIndex != -1 && groupComboBox.SelectedIndex != -1)
+            {
+                string subjectName = courseComboBox.SelectedItem.ToString();
+                var group = groupComboBox.SelectedItem.ToString().Split(' ');
+                gradesDGV.DataSource = _logic.GetGroup(_context, subjectName, Convert.ToInt32(group[0]), group[1], _user)
+                    .Select(s => new { Value = s }).ToList();
+                gradesDGV.Refresh();
+                //gradesDGV.DataSource = _context.Groups.ToList();
+                //gradesDGV.Columns[1].ReadOnly = true;
+            }
         }
     }
 }

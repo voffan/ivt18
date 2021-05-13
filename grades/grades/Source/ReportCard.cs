@@ -10,8 +10,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace grades
 {
     public enum CheckPoint{
-        quarter,
-        halfYear,
+        firstQuarter,
+        secondQuarter,
+        firstHalfYear,
+        thirdQuarter,
+        fourthQuarter,
+        secondHalfYear,
         year
     }
     public class ReportCard

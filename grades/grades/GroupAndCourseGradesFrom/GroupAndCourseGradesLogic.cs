@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace grades
 {
@@ -32,16 +33,34 @@ namespace grades
                 .Where(g => g.Year == year && g.Letter == letter)
                 .Select(g => g.GroupId).Single();
 
-            int courseId = context.Courses
-                .Where(c => c.StaffId == user.PersonId && c.Subject.Name == subjectName && c.GroupId == groupId)
-                .Select(c => c.CourseId).Single();
+            int courseId = 0;
+            try
+            {
+                courseId = context.Courses
+                    .Where(c => c.StaffId == user.PersonId && c.Subject.Name == subjectName && c.GroupId == groupId)
+                    .Select(c => c.CourseId).Single();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                return null;
+            }
 
             var students = context.Students
                 .Where(s => s.GroupId == groupId)
-                .Select(s => s.FirstName + " " + s.SurName + " " + s.MiddleName)
-                .ToList<dynamic>();
+                .Select(s => s)
+                .ToList<Student>();
 
-            return students;
+            List<ReportCard> groupCards;
+            foreach (var student in students)
+            {
+                groupCards = context.ReportCards
+                    .Where(c => c.StudentId == student.PersonId && c.CourseId == courseId)
+                    .Select(c => c)
+                    .ToList<ReportCard>();
+            }
+
+            return null;
         }
     }
 }
