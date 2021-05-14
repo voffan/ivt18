@@ -1,4 +1,5 @@
 # ivt18
+https://github.com/NikolaevEM/BA-IVT-18-buctrack-SODA
 
 Команда "Ооо" Николаев Еркен, Петров Михаил, Тимофеева Айыына
 
