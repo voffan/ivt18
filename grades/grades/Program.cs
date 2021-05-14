@@ -20,7 +20,7 @@ namespace grades
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new ClassGeneretion());
+            Application.Run(new MainForm());
         }
     }
 }
