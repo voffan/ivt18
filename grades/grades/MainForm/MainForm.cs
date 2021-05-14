@@ -34,7 +34,7 @@ namespace grades
             _context = new Context();
 
             _user = (from usr in _context.Persons
-                     where usr.PersonId == 17
+                     where usr.PersonId == 3
                      select usr).Single();
 
             _userListForm = new UserList(_context, _user);
