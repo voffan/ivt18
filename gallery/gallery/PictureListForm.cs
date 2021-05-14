@@ -24,8 +24,11 @@ namespace gallery
         private void PictureListForm_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = C.Pictures.ToList();//fix it, some bags
-            dataGridView1.CurrentCell.Selected = true;
-            dataGridView1.Rows[0].Selected = true;
+            if (dataGridView1.Rows.Count > 0)
+            {
+                dataGridView1.CurrentCell.Selected = true;
+                dataGridView1.Rows[0].Selected = true;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

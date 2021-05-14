@@ -15,9 +15,10 @@ namespace gallery
         public int ExpoId { get; set; }
         
         public string Name { get; set; }
+        [Column(TypeName="datetime")]
         public DateTime StartDate { get; set; }
+        [Column(TypeName = "datetime")]
         public DateTime EndDate { get; set; }
-
         public string Address { get; set; }
 
         public virtual List<ExpoPicture> ExpoPictures { get; set; }

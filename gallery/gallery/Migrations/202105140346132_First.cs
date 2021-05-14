@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class test1 : DbMigration
+    public partial class First : DbMigration
     {
         public override void Up()
         {
@@ -28,18 +28,27 @@
                         Year = c.Int(nullable: false),
                         ArtistId = c.Int(nullable: false),
                         GenreId = c.Int(nullable: false),
-                        PlaceId = c.Int(nullable: false),
-                        GalleryId = c.Int(nullable: false),
+                        DepartmentId = c.Int(nullable: false),
+                        GalleryId = c.Int(),
                     })
                 .PrimaryKey(t => t.PictureId)
                 .ForeignKey("dbo.Artist", t => t.ArtistId, cascadeDelete: true)
-                .ForeignKey("dbo.Gallery", t => t.GalleryId, cascadeDelete: false)
+                .ForeignKey("dbo.Department", t => t.DepartmentId, cascadeDelete: true)
+                .ForeignKey("dbo.Gallery", t => t.GalleryId)
                 .ForeignKey("dbo.Genre", t => t.GenreId, cascadeDelete: true)
-                .ForeignKey("dbo.Place", t => t.PlaceId, cascadeDelete: true)
                 .Index(t => t.ArtistId)
                 .Index(t => t.GenreId)
-                .Index(t => t.PlaceId)
+                .Index(t => t.DepartmentId)
                 .Index(t => t.GalleryId);
+            
+            CreateTable(
+                "dbo.Department",
+                c => new
+                    {
+                        DepartmentId = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                    })
+                .PrimaryKey(t => t.DepartmentId);
             
             CreateTable(
                 "dbo.ExpoPicture",
@@ -63,7 +72,7 @@
                         Name = c.String(),
                         StartDate = c.DateTime(nullable: false),
                         EndDate = c.DateTime(nullable: false),
-                        Place = c.String(),
+                        Address = c.String(),
                     })
                 .PrimaryKey(t => t.ExpoId);
             
@@ -120,8 +129,8 @@
                     {
                         JournalId = c.Int(nullable: false, identity: true),
                         Date = c.DateTime(nullable: false),
-                        PlaceFromId = c.Int(),
-                        PlaceToId = c.Int(),
+                        DepartmentFromId = c.Int(),
+                        DepartmentToId = c.Int(),
                         PictureId = c.Int(nullable: false),
                         ExpoId = c.Int(),
                         EmployeeId = c.Int(nullable: false),
@@ -129,32 +138,22 @@
                 .PrimaryKey(t => t.JournalId)
                 .ForeignKey("dbo.Employee", t => t.EmployeeId, cascadeDelete: true)
                 .ForeignKey("dbo.Expo", t => t.ExpoId)
-                .ForeignKey("dbo.Place", t => t.PlaceFromId)
+                .ForeignKey("dbo.Department", t => t.DepartmentFromId)
                 .ForeignKey("dbo.Picture", t => t.PictureId, cascadeDelete: true)
-                .ForeignKey("dbo.Place", t => t.PlaceToId)
-                .Index(t => t.PlaceFromId)
-                .Index(t => t.PlaceToId)
+                .ForeignKey("dbo.Department", t => t.DepartmentToId)
+                .Index(t => t.DepartmentFromId)
+                .Index(t => t.DepartmentToId)
                 .Index(t => t.PictureId)
                 .Index(t => t.ExpoId)
                 .Index(t => t.EmployeeId);
-            
-            CreateTable(
-                "dbo.Place",
-                c => new
-                    {
-                        PlaceId = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                    })
-                .PrimaryKey(t => t.PlaceId);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Journal", "PlaceToId", "dbo.Place");
+            DropForeignKey("dbo.Journal", "DepartmentToId", "dbo.Department");
             DropForeignKey("dbo.Journal", "PictureId", "dbo.Picture");
-            DropForeignKey("dbo.Journal", "PlaceFromId", "dbo.Place");
-            DropForeignKey("dbo.Picture", "PlaceId", "dbo.Place");
+            DropForeignKey("dbo.Journal", "DepartmentFromId", "dbo.Department");
             DropForeignKey("dbo.Journal", "ExpoId", "dbo.Expo");
             DropForeignKey("dbo.Journal", "EmployeeId", "dbo.Employee");
             DropForeignKey("dbo.Picture", "GenreId", "dbo.Genre");
@@ -163,21 +162,21 @@
             DropForeignKey("dbo.Employee", "GalleryId", "dbo.Gallery");
             DropForeignKey("dbo.ExpoPicture", "PictureId", "dbo.Picture");
             DropForeignKey("dbo.ExpoPicture", "ExpoId", "dbo.Expo");
+            DropForeignKey("dbo.Picture", "DepartmentId", "dbo.Department");
             DropForeignKey("dbo.Picture", "ArtistId", "dbo.Artist");
             DropIndex("dbo.Journal", new[] { "EmployeeId" });
             DropIndex("dbo.Journal", new[] { "ExpoId" });
             DropIndex("dbo.Journal", new[] { "PictureId" });
-            DropIndex("dbo.Journal", new[] { "PlaceToId" });
-            DropIndex("dbo.Journal", new[] { "PlaceFromId" });
+            DropIndex("dbo.Journal", new[] { "DepartmentToId" });
+            DropIndex("dbo.Journal", new[] { "DepartmentFromId" });
             DropIndex("dbo.Employee", new[] { "GalleryId" });
             DropIndex("dbo.Employee", new[] { "PositionId" });
             DropIndex("dbo.ExpoPicture", new[] { "ExpoId" });
             DropIndex("dbo.ExpoPicture", new[] { "PictureId" });
             DropIndex("dbo.Picture", new[] { "GalleryId" });
-            DropIndex("dbo.Picture", new[] { "PlaceId" });
+            DropIndex("dbo.Picture", new[] { "DepartmentId" });
             DropIndex("dbo.Picture", new[] { "GenreId" });
             DropIndex("dbo.Picture", new[] { "ArtistId" });
-            DropTable("dbo.Place");
             DropTable("dbo.Journal");
             DropTable("dbo.Genre");
             DropTable("dbo.Position");
@@ -185,6 +184,7 @@
             DropTable("dbo.Gallery");
             DropTable("dbo.Expo");
             DropTable("dbo.ExpoPicture");
+            DropTable("dbo.Department");
             DropTable("dbo.Picture");
             DropTable("dbo.Artist");
         }
