@@ -51,16 +51,50 @@ namespace grades
                 .Select(s => s)
                 .ToList<Student>();
 
-            List<ReportCard> groupCards;
+            List<List<ReportCard>> groupCards = new List<List<ReportCard>>();
             foreach (var student in students)
             {
-                groupCards = context.ReportCards
-                    .Where(c => c.StudentId == student.PersonId && c.CourseId == courseId)
+                for (var i = 0; i < 7; i++)
+                {
+                    List<ReportCard> studentCard = context.ReportCards
+                    .Where(c => c.StudentId == student.PersonId && c.CourseId == courseId && c.CheckPoint == (CheckPoint)i)
                     .Select(c => c)
                     .ToList<ReportCard>();
+
+                    groupCards.Add(studentCard);
+                }
+            }
+            List<dynamic> test = new List<dynamic>();
+            for (var i = 0; i < groupCards.Count; i++)
+            {
+                List<ReportCard> reportCards = groupCards[i];
+
+                List<Object> allS = (from x in students select (Object)x).ToList();
+                allS.AddRange((from x in reportCards select (Object)x).ToList());
+
+                List<object> objectList = students.Cast<object>()
+                    .Concat(from rp in reportCards
+                            select rp)
+                    .ToList();
+
+                test.Add(objectList);
+
+                //for (var j = 0; j < 7; j++)
+                //{
+                //    test.Add((from st in students
+                //            join rp in reportCards on st.PersonId equals rp.StudentId
+                //            where rp.CheckPoint == (CheckPoint)j
+                //            select new
+                //            {
+                //                Имя = st.FirstName,
+                //                Фамилия = st.SurName,
+                //                Отчество = st.MiddleName,
+                //                CheckPoint = (from gr in context.Grades where rp.GradeId == gr.GradeId select Convert.ToInt32(gr.Value))
+                //            }).ToList<dynamic>());
+                //}
             }
 
-            return null;
+            return test;
         }
     }
 }
