@@ -57,17 +57,11 @@ namespace carton
             String filename = "../../../" + plan.Id.ToString() + "-" + plan.Name + "-" + plan.Date.ToString("dd.MM.yyyy") + ".xlsx";
             FileInfo fileinfo = new FileInfo(filename);
             ExcelPackage excel;
-            if (!fileinfo.Exists)
+            if (fileinfo.Exists)
             {
-                excel = new ExcelPackage(fileinfo);
+                File.Delete(filename);
             }
-            else
-            {
-                Random rand = new Random();
-                filename = "../../../" + plan.Id.ToString() + "-" + plan.Name + "-" + plan.Date.ToString("dd.MM.yyyy") + "fileExists-" + rand.Next() +".xlsx";
-                fileinfo = new FileInfo(filename);
-                excel = new ExcelPackage(fileinfo);
-            }
+            excel = new ExcelPackage(fileinfo);
             ExcelWorksheet workSheet = excel.Workbook.Worksheets.Add("Plan");
 
             //Set column width
