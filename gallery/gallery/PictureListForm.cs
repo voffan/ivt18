@@ -24,11 +24,14 @@ namespace gallery
         private void PictureListForm_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = C.Pictures.ToList();
-            dataGridView1.CurrentCell.Selected = true;
-            dataGridView1.Rows[0].Selected = true;
-            int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
-            DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
-            selectedItemId = Convert.ToInt32(selectedRow.Cells["PictureId"].Value);
+            if (dataGridView1.Rows.Count > 0)
+            {
+                dataGridView1.CurrentCell.Selected = true;
+                dataGridView1.Rows[0].Selected = true;
+                int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
+                selectedItemId = Convert.ToInt32(selectedRow.Cells["PictureId"].Value);
+            }
         }
 
         private void dataGridView1_Click(object sender, EventArgs e)

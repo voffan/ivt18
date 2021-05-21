@@ -59,11 +59,14 @@ namespace gallery
             dataGridView1.Columns["EmployeeId"].Visible = false;
             dataGridView1.Columns["Expo"].Visible = false;
             dataGridView1.Columns["ExpoId"].Visible = false;
-            dataGridView1.CurrentCell.Selected = true;
-            dataGridView1.Rows[0].Selected = true;
-            int selectedrowid = dataGridView1.SelectedCells[0].RowIndex;
-            DataGridViewRow selectedRoww = dataGridView1.Rows[selectedrowid];
-            selectedItemId = Convert.ToInt32(selectedRoww.Cells["JournalId"].Value);
+            if (dataGridView1.Rows.Count > 0)
+            {
+                dataGridView1.CurrentCell.Selected = true;
+                dataGridView1.Rows[0].Selected = true;
+                int selectedrowid = dataGridView1.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRoww = dataGridView1.Rows[selectedrowid];
+                selectedItemId = Convert.ToInt32(selectedRoww.Cells["JournalId"].Value);
+            }
         }
 
         private void deletePictureFromResto(object sender, EventArgs e)
