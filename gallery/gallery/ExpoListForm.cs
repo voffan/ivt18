@@ -27,9 +27,11 @@ namespace gallery
                         select new { ID = c.ExpoId, Название = c.Name, Адрес = c.Address, Начало = c.StartDate, Конец = c.EndDate }
                         ;
             expoDataGrid.DataSource = query.ToList();
-            expoDataGrid.Rows[0].Selected = true;
-            id = Convert.ToInt32(expoDataGrid.CurrentRow.Cells["ID"].Value);
-
+            if (expoDataGrid.Rows.Count > 0)
+            {
+                expoDataGrid.Rows[0].Selected = true;
+                id = Convert.ToInt32(expoDataGrid.CurrentRow.Cells["ID"].Value);
+            }
         }
 
 
@@ -58,16 +60,16 @@ namespace gallery
             {
                 ExpoLogic.deleteExpo(id, C);
                 ExpoListForm_Load(sender, e);
-
-                //listExpoBox.Items.Clear();
-                //listExpoBox.Items.AddRange(C.Expos.Select(c => c.Name).ToArray());
             }
         }
 
         private void expoDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            id = Convert.ToInt32(expoDataGrid.CurrentRow.Cells["ID"].Value);
-            //MessageBox.Show(id.ToString());
+            ExpoListForm_Load(sender, e);
+            if (expoDataGrid.Rows.Count > 0)
+            {
+                id = Convert.ToInt32(expoDataGrid.CurrentRow.Cells["ID"].Value);
+            }
         }
 
         private void expoDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
