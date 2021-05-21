@@ -13,6 +13,7 @@ namespace gallery
     public partial class ComissionList : Form
     {
         public Context C { get; set; }
+        int selectedItemId = -1;
         public ComissionList()
         {
             InitializeComponent();
@@ -20,21 +21,24 @@ namespace gallery
 
         private void ComissionList_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = C.Journals.ToList();//fix it, some bags
+            //dataGridView1.DataSource = "";
+            dataGridView1.DataSource = C.Journals.ToList();
             dataGridView1.ReadOnly = true;
             if (dataGridView1.RowCount!=0)
             {
                 dataGridView1.CurrentCell.Selected = true;
                 dataGridView1.Rows[0].Selected = true;
             }
-            dataGridView1.Columns.Remove("Picture");
-            dataGridView1.Columns.Remove("From");
-            dataGridView1.Columns.Remove("To");
-            dataGridView1.Columns.Add("From", "Откуда");
-            dataGridView1.Columns.Add("To", "Куда");
+            dataGridView1.Columns["Picture"].Visible = false;
+            dataGridView1.Columns["DepartmentFromId"].Visible = false;
+            dataGridView1.Columns["DepartmentToId"].Visible = false;
+            dataGridView1.Columns["From"].Visible = false;
+            dataGridView1.Columns["To"].Visible = false;
+            //dataGridView1.Columns["Department"].Visible = false;
+            dataGridView1.Columns.Add("Fromm", "Откуда");
+            dataGridView1.Columns.Add("Too", "Куда");
             dataGridView1.Columns.Add("Pict", "Картина");
             dataGridView1.Columns.Add("emppl", "Сотрудник");
-            dataGridView1.Columns.Add("exp", "Экспозиция");
             for (int i=0; i<dataGridView1.RowCount; i++)
             {
                 DataGridViewRow selectedRow = dataGridView1.Rows[i];
@@ -43,19 +47,51 @@ namespace gallery
                 int Pictue = Convert.ToInt32(selectedRow.Cells["PictureId"].Value);
                 int emp = Convert.ToInt32(selectedRow.Cells["EmployeeId"].Value);
                 int expo = Convert.ToInt32(selectedRow.Cells["ExpoId"].Value);
-                dataGridView1.Rows[i].Cells["From"].Value = PictureLogic.getJournalById(selectedItemId, C);
-                dataGridView1.Rows[i].Cells["To"].Value = PictureLogic.getJournalById(DepartmentTo, C);
+                dataGridView1.Rows[i].Cells["Fromm"].Value = PictureLogic.getJournalById(selectedItemId, C);
+                dataGridView1.Rows[i].Cells["Too"].Value = PictureLogic.getJournalById(DepartmentTo, C);
                 dataGridView1.Rows[i].Cells["Pict"].Value = PictureLogic.getPictureById(Pictue, C);
                 dataGridView1.Rows[i].Cells["emppl"].Value = PictureLogic.getEmployeeById(emp, C);
-                dataGridView1.Rows[i].Cells["exp"].Value = PictureLogic.getExpoById(expo, C);
             }
-            dataGridView1.Columns.Remove("DepartmentToId");
-            dataGridView1.Columns.Remove("DepartmentFromId");
-            dataGridView1.Columns.Remove("PictureId");
-            dataGridView1.Columns.Remove("Employee");
-            dataGridView1.Columns.Remove("EmployeeId");
-            dataGridView1.Columns.Remove("Expo");
-            dataGridView1.Columns.Remove("ExpoId");
+            dataGridView1.Columns["DepartmentToId"].Visible = false;
+            dataGridView1.Columns["DepartmentFromId"].Visible = false;
+            dataGridView1.Columns["PictureId"].Visible = false;
+            dataGridView1.Columns["Employee"].Visible = false;
+            dataGridView1.Columns["EmployeeId"].Visible = false;
+            dataGridView1.Columns["Expo"].Visible = false;
+            dataGridView1.Columns["ExpoId"].Visible = false;
+            dataGridView1.CurrentCell.Selected = true;
+            dataGridView1.Rows[0].Selected = true;
+            int selectedrowid = dataGridView1.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRoww = dataGridView1.Rows[selectedrowid];
+            selectedItemId = Convert.ToInt32(selectedRoww.Cells["JournalId"].Value);
+        }
+
+        private void deletePictureFromResto(object sender, EventArgs e)
+        {
+            try
+            {
+                PictureLogic.deleteFromResto(C, selectedItemId);
+                MessageBox.Show("Удаление...");
+            }
+            catch(Exception ee)
+            {
+                MessageBox.Show(ee.ToString());
+            }
+        }
+
+        private void ComissionList_Activated(object sender, EventArgs e)
+        {
+            ComissionList_Load(sender, e);
+        }
+
+        private void dataGridView1_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedCells.Count > 0)
+            {
+                int selectedrowid = dataGridView1.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRoww = dataGridView1.Rows[selectedrowid];
+                selectedItemId = Convert.ToInt32(selectedRoww.Cells["JournalId"].Value);
+            }
         }
     }
 }

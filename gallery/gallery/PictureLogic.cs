@@ -119,5 +119,15 @@ namespace gallery
             c.Journals.Add(j);
             c.SaveChanges();
         }
+
+        public static void deleteFromResto(Context c, int journalId2)
+        {
+            Journal hh = c.Journals
+            .Where(l => l.JournalId == journalId2)
+            .FirstOrDefault();
+
+            c.Journals.Remove(hh);
+            c.SaveChanges();
+        }
     }
 }

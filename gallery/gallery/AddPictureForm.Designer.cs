@@ -264,7 +264,6 @@ namespace gallery
 
         #endregion
 
-        private GalleryDBDataSet galleryDBDataSet1;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBox3;

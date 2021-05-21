@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.EntityFrameworkCore.Design.3.1.13\build\net461\Microsoft.EntityFrameworkCore.Design.props" Condition="Exists('..\packages\Microsoft.EntityFrameworkCore.Design.3.1.13\build\net461\Microsoft.EntityFrameworkCore.Design.props')" />
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -209,40 +209,17 @@
     <Compile Include="GenreListForm.Designer.cs">
       <DependentUpon>GenreListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202104090315047_tt.cs" />
-    <Compile Include="Migrations\202104090315047_tt.designer.cs">
-      <DependentUpon>202104090315047_tt.cs</DependentUpon>
-    </Compile>
     <Compile Include="JournalForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="JournalForm.Designer.cs">
       <DependentUpon>JournalForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202104020406366_expoaddress.cs" />
-    <Compile Include="Migrations\202104020406366_expoaddress.designer.cs">
-      <DependentUpon>202104020406366_expoaddress.cs</DependentUpon>
+    <Compile Include="Migrations\202105210222497_First.cs" />
+    <Compile Include="Migrations\202105210222497_First.designer.cs">
+      <DependentUpon>202105210222497_First.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202104081431124_department.cs" />
-    <Compile Include="Migrations\202104081431124_department.designer.cs">
-      <DependentUpon>202104081431124_department.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104141352057_dep.cs" />
-    <Compile Include="Migrations\202104141352057_dep.designer.cs">
-      <DependentUpon>202104141352057_dep.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104141353442_dep1.cs" />
-    <Compile Include="Migrations\202104141353442_dep1.designer.cs">
-      <DependentUpon>202104141353442_dep1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104150146348_dep2.cs" />
-    <Compile Include="Migrations\202104150146348_dep2.designer.cs">
-      <DependentUpon>202104150146348_dep2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104150151239_dep3.cs" />
-    <Compile Include="Migrations\202104150151239_dep3.designer.cs">
-      <DependentUpon>202104150151239_dep3.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -276,15 +253,6 @@
     </Compile>
     <Compile Include="Genre.cs" />
     <Compile Include="Journal.cs" />
-    <Compile Include="Migrations\202102260039576_test1.cs" />
-    <Compile Include="Migrations\202102260039576_test1.designer.cs">
-      <DependentUpon>202102260039576_test1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202103041044370_renameplace.cs" />
-    <Compile Include="Migrations\202103041044370_renameplace.designer.cs">
-      <DependentUpon>202103041044370_renameplace.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Picture.cs" />
     <Compile Include="PictureListForm.cs">
       <SubType>Form</SubType>
@@ -342,29 +310,11 @@
     <EmbeddedResource Include="GenreListForm.resx">
       <DependentUpon>GenreListForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104090315047_tt.resx">
-      <DependentUpon>202104090315047_tt.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="JournalForm.resx">
       <DependentUpon>JournalForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104020406366_expoaddress.resx">
-      <DependentUpon>202104020406366_expoaddress.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104081431124_department.resx">
-      <DependentUpon>202104081431124_department.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104141352057_dep.resx">
-      <DependentUpon>202104141352057_dep.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104141353442_dep1.resx">
-      <DependentUpon>202104141353442_dep1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104150146348_dep2.resx">
-      <DependentUpon>202104150146348_dep2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104150151239_dep3.resx">
-      <DependentUpon>202104150151239_dep3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105210222497_First.resx">
+      <DependentUpon>202105210222497_First.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportForm.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>
@@ -377,12 +327,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddPictureForm.resx">
       <DependentUpon>AddPictureForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102260039576_test1.resx">
-      <DependentUpon>202102260039576_test1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202103041044370_renameplace.resx">
-      <DependentUpon>202103041044370_renameplace.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PictureListForm.resx">
       <DependentUpon>PictureListForm.cs</DependentUpon>
@@ -445,9 +389,9 @@
     <PropertyGroup>
       <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.EntityFrameworkCore.Design.3.1.13\build\net461\Microsoft.EntityFrameworkCore.Design.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.EntityFrameworkCore.Design.3.1.13\build\net461\Microsoft.EntityFrameworkCore.Design.props'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.EntityFrameworkCore.Design.3.1.13\build\net461\Microsoft.EntityFrameworkCore.Design.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.EntityFrameworkCore.Design.3.1.13\build\net461\Microsoft.EntityFrameworkCore.Design.props'))" />
   </Target>
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
 </Project>
