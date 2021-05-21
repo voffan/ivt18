@@ -50,7 +50,7 @@ namespace gallery
             // 
             this.editButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.editButton.Location = new System.Drawing.Point(1351, 764);
-            this.editButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.editButton.Margin = new System.Windows.Forms.Padding(4);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(172, 47);
             this.editButton.TabIndex = 0;
@@ -71,18 +71,20 @@ namespace gallery
             // 
             // startDatePicker
             // 
+            this.startDatePicker.CustomFormat = "dd.mm.yyyy hh:mm:ss";
             this.startDatePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.startDatePicker.Location = new System.Drawing.Point(129, 320);
-            this.startDatePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.startDatePicker.Margin = new System.Windows.Forms.Padding(4);
             this.startDatePicker.Name = "startDatePicker";
             this.startDatePicker.Size = new System.Drawing.Size(345, 30);
             this.startDatePicker.TabIndex = 2;
             // 
             // endDatePicker
             // 
+            this.endDatePicker.CustomFormat = "dd.mm.yyyy hh:mm:ss";
             this.endDatePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.endDatePicker.Location = new System.Drawing.Point(493, 320);
-            this.endDatePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.endDatePicker.Margin = new System.Windows.Forms.Padding(4);
             this.endDatePicker.Name = "endDatePicker";
             this.endDatePicker.Size = new System.Drawing.Size(347, 30);
             this.endDatePicker.TabIndex = 3;
@@ -91,7 +93,7 @@ namespace gallery
             // 
             this.nameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nameBox.Location = new System.Drawing.Point(129, 139);
-            this.nameBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nameBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(711, 30);
             this.nameBox.TabIndex = 4;
@@ -100,7 +102,7 @@ namespace gallery
             // 
             this.placeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.placeBox.Location = new System.Drawing.Point(129, 225);
-            this.placeBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.placeBox.Margin = new System.Windows.Forms.Padding(4);
             this.placeBox.Name = "placeBox";
             this.placeBox.Size = new System.Drawing.Size(711, 30);
             this.placeBox.TabIndex = 5;
@@ -133,7 +135,7 @@ namespace gallery
             this.picturesBox.FormattingEnabled = true;
             this.picturesBox.ItemHeight = 25;
             this.picturesBox.Location = new System.Drawing.Point(129, 432);
-            this.picturesBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picturesBox.Margin = new System.Windows.Forms.Padding(4);
             this.picturesBox.Name = "picturesBox";
             this.picturesBox.Size = new System.Drawing.Size(543, 379);
             this.picturesBox.TabIndex = 8;
@@ -145,7 +147,7 @@ namespace gallery
             this.expoPicturesBox.FormattingEnabled = true;
             this.expoPicturesBox.ItemHeight = 25;
             this.expoPicturesBox.Location = new System.Drawing.Point(786, 432);
-            this.expoPicturesBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.expoPicturesBox.Margin = new System.Windows.Forms.Padding(4);
             this.expoPicturesBox.Name = "expoPicturesBox";
             this.expoPicturesBox.Size = new System.Drawing.Size(507, 379);
             this.expoPicturesBox.TabIndex = 9;
@@ -199,7 +201,7 @@ namespace gallery
             // 
             this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cancelButton.Location = new System.Drawing.Point(1351, 683);
-            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(172, 47);
             this.cancelButton.TabIndex = 14;
@@ -227,7 +229,7 @@ namespace gallery
             this.Controls.Add(this.startDatePicker);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.editButton);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EditExpoForm";
             this.Text = "Редактировать экспозицию";
             this.Load += new System.EventHandler(this.cancelButton_Click);

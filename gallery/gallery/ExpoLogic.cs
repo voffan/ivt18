@@ -171,8 +171,11 @@ namespace gallery
                 .FirstOrDefault();
             expo.Name = name;
             expo.Address = place;
+
             expo.StartDate = start;
             expo.EndDate = end;
+
+            C.Entry(expo).State = System.Data.Entity.EntityState.Modified;
 
             C.SaveChanges();
         }

@@ -35,8 +35,9 @@ namespace gallery
 
         private void editButton_Click(object sender, EventArgs e)
         {
-
-            ExpoLogic.apply(nameBox.Text, placeBox.Text, startDatePicker.Value, endDatePicker.Value, id, eId, C);
+            var startDate = new DateTime(startDatePicker.Value.Year, startDatePicker.Value.Month, startDatePicker.Value.Day);
+            var endDate = endDatePicker.Value.AddMilliseconds(-endDatePicker.Value.Millisecond);
+            ExpoLogic.apply(nameBox.Text, placeBox.Text, startDate, endDate, id, eId, C);
             this.Close();
         }
 
