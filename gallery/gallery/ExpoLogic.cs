@@ -172,14 +172,10 @@ namespace gallery
             expo.Name = name;
             expo.Address = place;
 
-            //expo.StartDate = new DateTime(2021,1,1);
             expo.StartDate = start;
-
             expo.EndDate = end;
 
-            //expo.EndDate = new DateTime(2021, 1, 1);
             C.Entry(expo).State = System.Data.Entity.EntityState.Modified;
-            //C.Expos.Add(expo);
 
             C.SaveChanges();
         }

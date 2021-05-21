@@ -215,9 +215,9 @@
     <Compile Include="JournalForm.Designer.cs">
       <DependentUpon>JournalForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202105140346132_First.cs" />
-    <Compile Include="Migrations\202105140346132_First.designer.cs">
-      <DependentUpon>202105140346132_First.cs</DependentUpon>
+    <Compile Include="Migrations\202105210052417_first.cs" />
+    <Compile Include="Migrations\202105210052417_first.designer.cs">
+      <DependentUpon>202105210052417_first.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ReportForm.cs">
@@ -313,8 +313,8 @@
     <EmbeddedResource Include="JournalForm.resx">
       <DependentUpon>JournalForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105140346132_First.resx">
-      <DependentUpon>202105140346132_First.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105210052417_first.resx">
+      <DependentUpon>202105210052417_first.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportForm.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>
