@@ -17,6 +17,8 @@ namespace carton
         public int Production { get; set; }
 
         public int ProductId { get; set; }
+
+        public DateTime Date { get; set; }
         [ForeignKey("ProductId")]
         public Product Product { get; set; }
 

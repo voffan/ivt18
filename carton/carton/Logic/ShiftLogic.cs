@@ -48,13 +48,17 @@ namespace carton
             context.SaveChanges();
         }
 
-        public void Change(Context context, DailyProd dailyprod, string boxA)
+        public void Change(Context context, string boxA, int columnRow)
         {
             int a = 0;
             for (int i = 0; i < boxA.Length; i++)
             {
                 a = a * 10 + boxA[i] - '0';
             }
+
+            DailyProd dailyProdA = new DailyProd();
+            dailyProdA.Production = a;
+            context.SaveChanges();
         }
     }
 }

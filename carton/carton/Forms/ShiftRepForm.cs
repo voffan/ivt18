@@ -80,7 +80,19 @@ namespace carton
 
         private void editReportButton_Click(object sender, EventArgs e)
         {
+            int rowindex = planGridView.CurrentCell.RowIndex;
+            int columnindex = 0;
+
             string BoxA = textBoxA.Text;
+            if (rowindex > 2)
+            {
+                MessageBox.Show("123");
+            }
+            if (rowindex < 2)
+            {
+                MessageBox.Show("456");
+            }
+            shiftId = (int)planGridView.Rows[rowindex].Cells[columnindex].Value;
         }
     }
 }
