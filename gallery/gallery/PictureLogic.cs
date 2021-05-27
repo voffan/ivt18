@@ -38,6 +38,30 @@ namespace gallery
                 .Select(c => c.Name).FirstOrDefault();
         }
 
+        static public string getArtistById(int ArtId, Context C)
+        {
+            return C.Artists.Where(c => c.ArtistId == ArtId)
+                .Select(c => c.FullName).FirstOrDefault();
+        }
+
+        static public string getGenreById(int GenId, Context C)
+        {
+            return C.Genres.Where(c => c.GenreId == GenId)
+                .Select(c => c.Name).FirstOrDefault();
+        }
+
+        static public string getDepartmentById(int DepId, Context C)
+        {
+            return C.Departments.Where(c => c.DepartmentId == DepId)
+                .Select(c => c.Name).FirstOrDefault();
+        }
+
+        static public string getGalleryById(int? GalId, Context C)
+        {
+            return C.Galleries.Where(c => c.GalleryId == GalId)
+                .Select(c => c.Name).FirstOrDefault();
+        }
+
         static public string getJournalById(int JourId, Context C)
         {
             return C.Departments.Where(c => c.DepartmentId == JourId)
@@ -108,14 +132,14 @@ namespace gallery
             }
         }
 
-        public static void sendToResto(Context c, int pictureId1, int employeeId)
+        public static void sendToResto(Context c, int pictureId1, int employeeId1)
         {
             Journal j = new Journal();
             j.Date = DateTime.Today;
             j.DepartmentFromId = 1;
             j.DepartmentToId = 2;
             j.PictureId = pictureId1;
-            j.EmployeeId = employeeId;
+            j.EmployeeId = employeeId1;
             c.Journals.Add(j);
             c.SaveChanges();
         }
