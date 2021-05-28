@@ -30,6 +30,7 @@
         {
             this.CountBox = new System.Windows.Forms.TextBox();
             this.ApplyButton = new System.Windows.Forms.Button();
+            this.ClassList = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // CountBox
@@ -51,11 +52,21 @@
             this.ApplyButton.UseVisualStyleBackColor = true;
             this.ApplyButton.Click += new System.EventHandler(this.ApplyButton_Click);
             // 
+            // ClassList
+            // 
+            this.ClassList.FormattingEnabled = true;
+            this.ClassList.Location = new System.Drawing.Point(30, 80);
+            this.ClassList.Name = "ClassList";
+            this.ClassList.Size = new System.Drawing.Size(121, 24);
+            this.ClassList.TabIndex = 2;
+            this.ClassList.SelectedIndexChanged += new System.EventHandler(this.ClassList_SelectedIndexChanged);
+            // 
             // ClassGeneretion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(308, 143);
+            this.Controls.Add(this.ClassList);
             this.Controls.Add(this.ApplyButton);
             this.Controls.Add(this.CountBox);
             this.Name = "ClassGeneretion";
@@ -69,5 +80,6 @@
 
         private System.Windows.Forms.TextBox CountBox;
         private System.Windows.Forms.Button ApplyButton;
+        private System.Windows.Forms.ComboBox ClassList;
     }
 }

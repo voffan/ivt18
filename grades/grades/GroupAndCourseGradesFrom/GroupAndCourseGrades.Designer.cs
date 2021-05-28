@@ -42,18 +42,20 @@ namespace grades
             // courseLabel
             // 
             this.courseLabel.AutoSize = true;
-            this.courseLabel.Location = new System.Drawing.Point(12, 16);
+            this.courseLabel.Location = new System.Drawing.Point(16, 20);
+            this.courseLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.courseLabel.Name = "courseLabel";
-            this.courseLabel.Size = new System.Drawing.Size(34, 13);
+            this.courseLabel.Size = new System.Drawing.Size(43, 17);
             this.courseLabel.TabIndex = 0;
             this.courseLabel.Text = "Курс:";
             // 
             // groupLabel
             // 
             this.groupLabel.AutoSize = true;
-            this.groupLabel.Location = new System.Drawing.Point(12, 49);
+            this.groupLabel.Location = new System.Drawing.Point(16, 60);
+            this.groupLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.groupLabel.Name = "groupLabel";
-            this.groupLabel.Size = new System.Drawing.Size(41, 13);
+            this.groupLabel.Size = new System.Drawing.Size(51, 17);
             this.groupLabel.TabIndex = 1;
             this.groupLabel.Text = "Класс:";
             // 
@@ -62,22 +64,26 @@ namespace grades
             this.courseComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.courseComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.courseComboBox.FormattingEnabled = true;
-            this.courseComboBox.Location = new System.Drawing.Point(70, 13);
+            this.courseComboBox.Location = new System.Drawing.Point(93, 16);
+            this.courseComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.courseComboBox.Name = "courseComboBox";
-            this.courseComboBox.Size = new System.Drawing.Size(398, 21);
+            this.courseComboBox.Size = new System.Drawing.Size(529, 24);
             this.courseComboBox.Sorted = true;
             this.courseComboBox.TabIndex = 2;
+            this.courseComboBox.SelectedIndexChanged += new System.EventHandler(this.GroupAndCourseGrades_Load);
             // 
             // groupComboBox
             // 
             this.groupComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.groupComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupComboBox.FormattingEnabled = true;
-            this.groupComboBox.Location = new System.Drawing.Point(70, 46);
+            this.groupComboBox.Location = new System.Drawing.Point(93, 57);
+            this.groupComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupComboBox.Name = "groupComboBox";
-            this.groupComboBox.Size = new System.Drawing.Size(398, 21);
+            this.groupComboBox.Size = new System.Drawing.Size(529, 24);
             this.groupComboBox.Sorted = true;
             this.groupComboBox.TabIndex = 3;
+            this.groupComboBox.SelectedIndexChanged += new System.EventHandler(this.GroupAndCourseGrades_Load);
             // 
             // gradesDGV
             // 
@@ -85,20 +91,22 @@ namespace grades
             this.gradesDGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.gradesDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.gradesDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gradesDGV.Location = new System.Drawing.Point(13, 80);
+            this.gradesDGV.Location = new System.Drawing.Point(17, 98);
+            this.gradesDGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gradesDGV.Name = "gradesDGV";
             this.gradesDGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.gradesDGV.RowHeadersWidth = 51;
-            this.gradesDGV.Size = new System.Drawing.Size(775, 358);
+            this.gradesDGV.Size = new System.Drawing.Size(1033, 441);
             this.gradesDGV.TabIndex = 4;
             // 
             // saveButton
             // 
             this.saveButton.FlatAppearance.BorderSize = 0;
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveButton.Location = new System.Drawing.Point(713, 445);
+            this.saveButton.Location = new System.Drawing.Point(951, 548);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(75, 23);
+            this.saveButton.Size = new System.Drawing.Size(100, 28);
             this.saveButton.TabIndex = 5;
             this.saveButton.Text = "Сохранить";
             this.saveButton.UseVisualStyleBackColor = true;
@@ -107,18 +115,19 @@ namespace grades
             // 
             this.cancelButton.FlatAppearance.BorderSize = 0;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancelButton.Location = new System.Drawing.Point(632, 444);
+            this.cancelButton.Location = new System.Drawing.Point(843, 546);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.Size = new System.Drawing.Size(100, 28);
             this.cancelButton.TabIndex = 6;
             this.cancelButton.Text = "Отмена";
             this.cancelButton.UseVisualStyleBackColor = true;
             // 
             // GroupAndCourseGrades
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 477);
+            this.ClientSize = new System.Drawing.Size(1067, 587);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.gradesDGV);
@@ -126,6 +135,7 @@ namespace grades
             this.Controls.Add(this.courseComboBox);
             this.Controls.Add(this.groupLabel);
             this.Controls.Add(this.courseLabel);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "GroupAndCourseGrades";
             this.Text = "GroupAndCourseGrades";
             this.Load += new System.EventHandler(this.GroupAndCourseGrades_Load);
