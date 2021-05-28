@@ -85,17 +85,9 @@ namespace carton
             int dailyProdId = (int)planGridView.Rows[rowindex].Cells[columnindex].Value;
 
             string BoxA = textBoxA.Text;
-
-            if (rowindex > 2)
-            {
-                MessageBox.Show(dailyProdId.ToString());
-            }
-            if (rowindex < 2)
-            {
-                MessageBox.Show(dailyProdId.ToString());
-            }
             DailyProd dailyprod = context.DailyProds.Find(dailyProdId);
             shiftLogic.Change(context, dailyprod, BoxA);
+            planGridView.DataSource = context.DailyProds.ToList();
         }
     }
 }
