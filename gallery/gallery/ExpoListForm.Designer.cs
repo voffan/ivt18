@@ -83,6 +83,7 @@ namespace gallery
             this.expoDataGrid.TabIndex = 4;
             this.expoDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.expoDataGrid_CellContentClick);
             this.expoDataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.expoDataGrid_CellDoubleClick);
+            this.expoDataGrid.Click += new System.EventHandler(this.ExpoListForm_Load);
             // 
             // ExpoListForm
             // 

@@ -127,7 +127,7 @@ namespace gallery
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 25);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Город";
+            this.label3.Text = "Адрес";
             // 
             // picturesBox
             // 

@@ -52,6 +52,8 @@ namespace gallery
                 editExpoForm.id = id;
                 editExpoForm.Show();
             }
+            ExpoListForm_Load(sender, e);
+
         }
 
         private void deleteExpoButton_Click(object sender, EventArgs e)
@@ -59,13 +61,13 @@ namespace gallery
             if (id > 0)
             {
                 ExpoLogic.deleteExpo(id, C);
-                ExpoListForm_Load(sender, e);
             }
+
+            ExpoListForm_Load(sender, e);
         }
 
         private void expoDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            ExpoListForm_Load(sender, e);
             if (expoDataGrid.Rows.Count > 0)
             {
                 id = Convert.ToInt32(expoDataGrid.CurrentRow.Cells["ID"].Value);
@@ -75,6 +77,8 @@ namespace gallery
         private void expoDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             editExpoButton_Click(sender, e);
+
+
         }
     }
 }

@@ -113,8 +113,7 @@ namespace gallery
         }
 
         static public void sendToExpo(string p1, Context C)
-        {
-            
+        {           
             int pId = C.Pictures.Where(c => c.Name + ", автор - " + c.Artist.FullName == p1).FirstOrDefault().PictureId;          
 
                 if (!newExpoPictures.Contains(pId))
@@ -156,10 +155,10 @@ namespace gallery
                 {
                     ExpoId = id,
                     PictureId = newExpoPictures[i],
-                    
+                    Date = DateTime.Now,
                     EmployeeId = 1
                 }
-                );
+                ) ;
 
             }
 

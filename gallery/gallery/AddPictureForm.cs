@@ -33,7 +33,7 @@ namespace gallery
                 }
                 catch
                 {
-                    MessageBox.Show("Ошибка в добавлении картины!");
+                    MessageBox.Show("Ошибка в добавлении картины!"); // проверить на null combobox
                 }
             }
             else

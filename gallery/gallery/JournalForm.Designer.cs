@@ -50,7 +50,7 @@ namespace gallery
             this.ClientSize = new System.Drawing.Size(800, 468);
             this.Controls.Add(this.journalDataGrid);
             this.Name = "JournalForm";
-            this.Text = "JournalForm";
+            this.Text = "Журнал";
             this.Load += new System.EventHandler(this.JournalForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.journalDataGrid)).EndInit();
             this.ResumeLayout(false);

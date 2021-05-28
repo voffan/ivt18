@@ -35,10 +35,17 @@ namespace gallery
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            var startDate = new DateTime(startDatePicker.Value.Year, startDatePicker.Value.Month, startDatePicker.Value.Day);
-            var endDate = endDatePicker.Value.AddMilliseconds(-endDatePicker.Value.Millisecond);
-            ExpoLogic.apply(nameBox.Text, placeBox.Text, startDate, endDate, id, eId, C);
-            this.Close();
+            if (nameBox.Text != "" && placeBox.Text != "")
+            {
+                var startDate = new DateTime(startDatePicker.Value.Year, startDatePicker.Value.Month, startDatePicker.Value.Day);
+                var endDate = endDatePicker.Value.AddMilliseconds(-endDatePicker.Value.Millisecond);
+                ExpoLogic.apply(nameBox.Text, placeBox.Text, startDate, endDate, id, eId, C);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Заполните поля!");
+            }
         }
 
         private void cancelButton_Click(object sender, EventArgs e)

@@ -51,11 +51,11 @@ namespace gallery
             // 
             // DownloadButton
             // 
-            this.DownloadButton.Location = new System.Drawing.Point(641, 466);
+            this.DownloadButton.Location = new System.Drawing.Point(601, 466);
             this.DownloadButton.Name = "DownloadButton";
-            this.DownloadButton.Size = new System.Drawing.Size(123, 23);
+            this.DownloadButton.Size = new System.Drawing.Size(163, 23);
             this.DownloadButton.TabIndex = 1;
-            this.DownloadButton.Text = "Download";
+            this.DownloadButton.Text = "Загрузить отчет";
             this.DownloadButton.UseVisualStyleBackColor = true;
             this.DownloadButton.Click += new System.EventHandler(this.DownloadButton_Click);
             // 
