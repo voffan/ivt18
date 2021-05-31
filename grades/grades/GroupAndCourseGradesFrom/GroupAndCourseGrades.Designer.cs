@@ -65,7 +65,7 @@ namespace grades
             this.courseComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.courseComboBox.FormattingEnabled = true;
             this.courseComboBox.Location = new System.Drawing.Point(93, 16);
-            this.courseComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.courseComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.courseComboBox.Name = "courseComboBox";
             this.courseComboBox.Size = new System.Drawing.Size(529, 24);
             this.courseComboBox.Sorted = true;
@@ -78,10 +78,9 @@ namespace grades
             this.groupComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupComboBox.FormattingEnabled = true;
             this.groupComboBox.Location = new System.Drawing.Point(93, 57);
-            this.groupComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.groupComboBox.Name = "groupComboBox";
             this.groupComboBox.Size = new System.Drawing.Size(529, 24);
-            this.groupComboBox.Sorted = true;
             this.groupComboBox.TabIndex = 3;
             this.groupComboBox.SelectedIndexChanged += new System.EventHandler(this.GroupAndCourseGrades_Load);
             // 
@@ -92,19 +91,20 @@ namespace grades
             this.gradesDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.gradesDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gradesDGV.Location = new System.Drawing.Point(17, 98);
-            this.gradesDGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gradesDGV.Margin = new System.Windows.Forms.Padding(4);
             this.gradesDGV.Name = "gradesDGV";
             this.gradesDGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.gradesDGV.RowHeadersWidth = 51;
             this.gradesDGV.Size = new System.Drawing.Size(1033, 441);
             this.gradesDGV.TabIndex = 4;
+            this.gradesDGV.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.gradesDGV_CellEndEdit);
             // 
             // saveButton
             // 
             this.saveButton.FlatAppearance.BorderSize = 0;
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveButton.Location = new System.Drawing.Point(951, 548);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(4);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(100, 28);
             this.saveButton.TabIndex = 5;
@@ -116,7 +116,7 @@ namespace grades
             this.cancelButton.FlatAppearance.BorderSize = 0;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelButton.Location = new System.Drawing.Point(843, 546);
-            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(100, 28);
             this.cancelButton.TabIndex = 6;
@@ -135,7 +135,7 @@ namespace grades
             this.Controls.Add(this.courseComboBox);
             this.Controls.Add(this.groupLabel);
             this.Controls.Add(this.courseLabel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GroupAndCourseGrades";
             this.Text = "GroupAndCourseGrades";
             this.Load += new System.EventHandler(this.GroupAndCourseGrades_Load);

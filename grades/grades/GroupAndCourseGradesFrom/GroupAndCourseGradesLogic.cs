@@ -9,25 +9,27 @@ namespace grades
 {
     class GroupAndCourseGradesLogic
     {
-        private int checkPointsNum = 4;
-
+        private int checkPointsNum = 7;
+        
         internal List<dynamic> GetCoursesList(Context context, Person user)
         {
-            return (from courses in context.Courses
-                    where courses.StaffId == user.PersonId
-                    select courses.Subject.Name).Distinct().ToList<dynamic>();
+            var courses = context.Courses
+                .Where(c => c.StaffId == user.PersonId)
+                .Select(c => new { Id = c.CourseId, CourseName = c.Subject.Name })
+                .OrderBy(g => g.Id).ToList<dynamic>();
+            return courses;
         }
 
         internal List<dynamic> GetGroupList(Context context, Person user)
         {
             var groups = context.Groups
                 .Where(g => g.StaffId == user.PersonId)
-                .Select(g => g.Year.ToString() + " " + g.Letter)
-                .ToList<dynamic>();
+                .Select(g => new { Id = g.GroupId, ClassName = g.Year + " " + g.Letter })
+                .OrderBy(g => g.Id).ToList<dynamic>();
             return groups;
         }
 
-        internal List<dynamic> GetGroup(Context context, string subjectName, int year, string letter, Person user)
+        internal List<List<string>> GetGroup(Context context, string subjectName, int year, string letter, Person user)
         {
             int groupId = context.Groups
                 .Where(g => g.Year == year && g.Letter == letter)
@@ -52,49 +54,30 @@ namespace grades
                 .ToList<Student>();
 
             List<List<ReportCard>> groupCards = new List<List<ReportCard>>();
+            List<List<string>> groupCard = new List<List<string>>();
             foreach (var student in students)
             {
-                for (var i = 0; i < 7; i++)
+                List<string> line = new List<string>();
+                line.Add(student.PersonId.ToString());
+                line.Add(student.FirstName + " " + student.MiddleName + " " + student.SurName);
+                for (var i = 0; i < checkPointsNum; i++)
                 {
-                    List<ReportCard> studentCard = context.ReportCards
+                    ReportCard studentCard = context.ReportCards
                     .Where(c => c.StudentId == student.PersonId && c.CourseId == courseId && c.CheckPoint == (CheckPoint)i)
-                    .Select(c => c)
-                    .ToList<ReportCard>();
-
-                    groupCards.Add(studentCard);
+                    .Select(c => c).SingleOrDefault();
+                    if (studentCard != null)
+                    {
+                        line.Add(studentCard.Grade.Value);
+                    }
+                    else
+                    {
+                        line.Add("");
+                    }
                 }
-            }
-            List<dynamic> test = new List<dynamic>();
-            for (var i = 0; i < groupCards.Count; i++)
-            {
-                List<ReportCard> reportCards = groupCards[i];
-
-                List<Object> allS = (from x in students select (Object)x).ToList();
-                allS.AddRange((from x in reportCards select (Object)x).ToList());
-
-                List<object> objectList = students.Cast<object>()
-                    .Concat(from rp in reportCards
-                            select rp)
-                    .ToList();
-
-                test.Add(objectList);
-
-                //for (var j = 0; j < 7; j++)
-                //{
-                //    test.Add((from st in students
-                //            join rp in reportCards on st.PersonId equals rp.StudentId
-                //            where rp.CheckPoint == (CheckPoint)j
-                //            select new
-                //            {
-                //                Имя = st.FirstName,
-                //                Фамилия = st.SurName,
-                //                Отчество = st.MiddleName,
-                //                CheckPoint = (from gr in context.Grades where rp.GradeId == gr.GradeId select Convert.ToInt32(gr.Value))
-                //            }).ToList<dynamic>());
-                //}
+                groupCard.Add(line);
             }
 
-            return test;
+            return groupCard;
         }
     }
 }

@@ -44,7 +44,6 @@ namespace grades
                 personsList = persons;
             }
 
-
             return personsList.ToList<dynamic>();
         }
     }
