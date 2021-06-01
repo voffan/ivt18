@@ -16,5 +16,11 @@ namespace carton
         {
             InitializeComponent();
         }
+
+        private void buttonOpenUserManagementForm_Click(object sender, EventArgs e)
+        {
+            UserManagement f = new UserManagement();
+            f.Show();
+        }
     }
 }

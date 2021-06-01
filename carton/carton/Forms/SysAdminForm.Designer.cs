@@ -42,6 +42,7 @@ namespace carton
             this.buttonOpenUserManagementForm.TabIndex = 0;
             this.buttonOpenUserManagementForm.Text = "Управление Пользователями";
             this.buttonOpenUserManagementForm.UseVisualStyleBackColor = true;
+            this.buttonOpenUserManagementForm.Click += new System.EventHandler(this.buttonOpenUserManagementForm_Click);
             // 
             // buttonOpenDepartmentManagementForm
             // 
