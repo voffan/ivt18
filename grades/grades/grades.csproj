@@ -107,6 +107,14 @@
       <DependentUpon>GroupAndCourseGrades.cs</DependentUpon>
     </Compile>
     <Compile Include="GroupAndCourseGradesFrom\GroupAndCourseGradesLogic.cs" />
+    <Compile Include="Migrations\202105311135297_test5.cs" />
+    <Compile Include="Migrations\202105311135297_test5.designer.cs">
+      <DependentUpon>202105311135297_test5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106011100258_test6.cs" />
+    <Compile Include="Migrations\202106011100258_test6.designer.cs">
+      <DependentUpon>202106011100258_test6.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SubjectListForm\AddSubjectcs.cs">
       <SubType>Form</SubType>
@@ -181,6 +189,12 @@
     <Compile Include="UserListForm\UserSignInLogic.cs" />
     <EmbeddedResource Include="GroupAndCourseGradesFrom\GroupAndCourseGrades.resx">
       <DependentUpon>GroupAndCourseGrades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105311135297_test5.resx">
+      <DependentUpon>202105311135297_test5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106011100258_test6.resx">
+      <DependentUpon>202106011100258_test6.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubjectListForm\AddSubjectcs.resx">
       <DependentUpon>AddSubjectcs.cs</DependentUpon>

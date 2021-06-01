@@ -11,43 +11,26 @@ namespace grades
     {
         private int checkPointsNum = 7;
         
-        internal List<dynamic> GetCoursesList(Context context, Person user)
+        internal List<dynamic> GetSubjectsList(Context context, Person user)
         {
             var courses = context.Courses
                 .Where(c => c.StaffId == user.PersonId)
-                .Select(c => new { Id = c.CourseId, CourseName = c.Subject.Name })
-                .OrderBy(g => g.Id).ToList<dynamic>();
+                .Select(c => new { Id = c.Subject.SubjectId, SubjectName = c.Subject.Name })
+                .Distinct().ToList<dynamic>();
             return courses;
         }
 
-        internal List<dynamic> GetGroupList(Context context, Person user)
+        internal List<dynamic> GetGroupList(Context context, int subjectId, Person user)
         {
             var groups = context.Groups
-                .Where(g => g.StaffId == user.PersonId)
+                .Where(g => (context.Courses.Where(c => c.SubjectId == subjectId && c.StaffId == user.PersonId).Select(c => c.GroupId)).Contains(g.GroupId))
                 .Select(g => new { Id = g.GroupId, ClassName = g.Year + " " + g.Letter })
                 .OrderBy(g => g.Id).ToList<dynamic>();
             return groups;
         }
 
-        internal List<List<string>> GetGroup(Context context, string subjectName, int year, string letter, Person user)
+        internal List<List<string>> GetGroup(Context context, int courseId, int groupId, Person user)
         {
-            int groupId = context.Groups
-                .Where(g => g.Year == year && g.Letter == letter)
-                .Select(g => g.GroupId).Single();
-
-            int courseId = 0;
-            try
-            {
-                courseId = context.Courses
-                    .Where(c => c.StaffId == user.PersonId && c.Subject.Name == subjectName && c.GroupId == groupId)
-                    .Select(c => c.CourseId).Single();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-                return null;
-            }
-
             var students = context.Students
                 .Where(s => s.GroupId == groupId)
                 .Select(s => s)
@@ -78,6 +61,33 @@ namespace grades
             }
 
             return groupCard;
+        }
+
+        internal int GetCourseId(Context context, int subjectId, int groupId, Person user)
+        {
+            var courseId = context.Courses
+                    .Where(
+                            c => c.StaffId == user.PersonId &&
+                            c.Subject.SubjectId == subjectId &&
+                            c.GroupId == groupId)
+                    .Select(c => c.CourseId).Single();
+            return courseId;
+        }
+
+        internal void SaveGrade(Context context, int studentId, int courseId, CheckPoint checkPoint, string grade)
+        {
+            var reportCard = context.ReportCards
+                    .Where(
+                            rp => rp.StudentId == studentId &&
+                            rp.CourseId == courseId &&
+                            rp.CheckPoint == checkPoint)
+                    .Select(rp => rp).Single();
+
+            var gradeId = context.Grades
+                    .Where(gr => gr.Value == grade)
+                    .Select(gr => gr.GradeId).Single();
+
+            reportCard.GradeId = gradeId;
         }
     }
 }
