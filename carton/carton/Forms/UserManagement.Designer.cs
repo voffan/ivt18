@@ -131,6 +131,7 @@ namespace carton
             this.deleteUserButton.TabIndex = 3;
             this.deleteUserButton.Text = "Удалить";
             this.deleteUserButton.UseVisualStyleBackColor = true;
+            this.deleteUserButton.Click += new System.EventHandler(this.deleteUserButton_Click);
             // 
             // label12
             // 

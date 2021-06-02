@@ -136,14 +136,16 @@ namespace carton
             }
 
             context.Employees.AddOrUpdate(entity);
-
             context.SaveChanges();
 
         }
 
-        public void deleteUser(Context context, String[] userArray)
+        public void deleteUser(Context context, int userId)
         {
-
+            var entity = context.Employees.Find(userId);
+            context.Employees.Attach(entity);
+            context.Employees.Remove(entity);
+            context.SaveChanges();
         }
 
         //edit login

@@ -100,6 +100,15 @@ namespace carton
 
             usersGridView.DataSource = context.Employees.ToList();
         }
+
+        private void deleteUserButton_Click(object sender, EventArgs e)
+        {
+            int userId = Int32.Parse(deleteUserIdField.Text);
+            employeeLogic.deleteUser(context, userId);
+            deleteUserIdField.Text = "";
+            usersGridView.DataSource = context.Employees.ToList();
+        }
+
         private void UserManagement_Load(object sender, EventArgs e)
         {
 
@@ -109,7 +118,6 @@ namespace carton
         {
 
         }
-
 
     }
 }
