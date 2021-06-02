@@ -26,7 +26,21 @@ namespace carton
     	}
 
         //edit password
+        public void addUser(Employee employee, Context context)
+        {
+
+        }
+
+        public void editUser(Employee employee, Context context)
+        {
+
+        }
+
+        public void deleteUser(Employee employee, Context context)
+        {
+
+        }
 
         //edit login
-	}
+    }
 }

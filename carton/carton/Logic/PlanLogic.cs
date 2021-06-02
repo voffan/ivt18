@@ -115,14 +115,14 @@ namespace carton
             excel.Save();
         }
         
-        public void ApproveCompletion(Plan plan, Context context)
-        {
-            plan.Status = PlanStatus.Completed;
+            public void ApproveCompletion(Plan plan, Context context)
+            {
+                plan.Status = PlanStatus.Completed;
 
-            setPlannedComplete(context, plan.Id, true);
+                setPlannedComplete(context, plan.Id, true);
             
-            context.SaveChanges();
-        }
+                context.SaveChanges();
+            }
 
         public void ApplyPlan(Plan plan, Context context)
         {

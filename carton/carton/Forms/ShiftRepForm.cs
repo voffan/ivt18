@@ -26,6 +26,7 @@ namespace carton
             shiftLogic = new ShiftLogic();
             //planGridView
             planGridView.DataSource = context.DailyProds.ToList();
+            Console.WriteLine(context.DailyProds);
             planGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             planGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
             planGridView.Columns.GetFirstColumn(DataGridViewElementStates.Visible).Visible = false;
