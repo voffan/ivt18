@@ -27,14 +27,15 @@ namespace carton.Classes
             */
             loadGridView.DataSource = context.Plans.ToList();
             loadGridView.DataSource = context.Planneds.ToList();
+            loadGridView.DataSource = context.Employees.ToList();
         }
 
         private void buttonLoginProceed_Click(object sender, EventArgs e)
         {
             //system administator
-            if (EmployeeLogic.LoginEmployee(context,this.loginEntry.Text,this.passwordEntry.Text) == 1)
+            if (EmployeeLogic.LoginEmployee(context, this.loginEntry.Text,this.passwordEntry.Text) == 1)
             {
-                SysAdminForm f = new SysAdminForm();
+                SysAdminForm f = new SysAdminForm(context);
                 f.Show();
             }
             //storage employee

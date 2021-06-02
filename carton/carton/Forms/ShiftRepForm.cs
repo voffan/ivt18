@@ -37,8 +37,8 @@ namespace carton
         private void ShiftRepForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'cartonDBDataSet.Plan' table. You can move, or remove it, as needed.
-            //this.planTableAdapter.Fill(this.cartonDBDataSet.Plan);
-            //this.planGridView.DataSource = context.Plans;
+           //this.planTableAdapter.Fill(this.cartonDBDataSet.Plan);
+           // this.planGridView.DataSource = context.Plans;
         }
 
         private void planGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -88,6 +88,11 @@ namespace carton
             DailyProd dailyprod = context.DailyProds.Find(dailyProdId);
             shiftLogic.Change(context, dailyprod, BoxA);
             planGridView.DataSource = context.DailyProds.ToList();
+        }
+
+        private void textBoxA_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

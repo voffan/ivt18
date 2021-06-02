@@ -29,23 +29,24 @@ namespace carton
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.usersGridView = new System.Windows.Forms.DataGridView();
             this.buttonAddUser = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // usersGridView
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.usersGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 43);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(652, 346);
-            this.dataGridView1.TabIndex = 0;
+            this.usersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.usersGridView.Location = new System.Drawing.Point(12, 43);
+            this.usersGridView.Name = "usersGridView";
+            this.usersGridView.Size = new System.Drawing.Size(652, 346);
+            this.usersGridView.TabIndex = 0;
+            this.usersGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usersGridView_CellContentClick);
             // 
             // buttonAddUser
             // 
@@ -56,6 +57,7 @@ namespace carton
             this.buttonAddUser.TabIndex = 1;
             this.buttonAddUser.Text = "Добавить";
             this.buttonAddUser.UseVisualStyleBackColor = true;
+            this.buttonAddUser.Click += new System.EventHandler(this.buttonAddUser_Click);
             // 
             // button2
             // 
@@ -85,17 +87,18 @@ namespace carton
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.buttonAddUser);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.usersGridView);
             this.Name = "UserManagement";
             this.Text = "UserManagement";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.UserManagement_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.usersGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView usersGridView;
         private System.Windows.Forms.Button buttonAddUser;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;

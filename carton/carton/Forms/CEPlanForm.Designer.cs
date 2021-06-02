@@ -131,6 +131,7 @@ namespace carton
             this.planNameTextBox.Name = "planNameTextBox";
             this.planNameTextBox.Size = new System.Drawing.Size(200, 20);
             this.planNameTextBox.TabIndex = 1;
+            this.planNameTextBox.TextChanged += new System.EventHandler(this.planNameTextBox_TextChanged);
             // 
             // planDateLabel
             // 

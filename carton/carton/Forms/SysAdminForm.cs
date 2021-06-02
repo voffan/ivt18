@@ -12,14 +12,16 @@ namespace carton
 {
     public partial class SysAdminForm : Form
     {
-        public SysAdminForm()
+        Context context;
+        public SysAdminForm(Context context)
         {
+            this.context = context;
             InitializeComponent();
         }
 
         private void buttonOpenUserManagementForm_Click(object sender, EventArgs e)
         {
-            UserManagement f = new UserManagement();
+            UserManagement f = new UserManagement(context);
             f.Show();
         }
     }
