@@ -65,6 +65,41 @@ namespace carton
             usersGridView.DataSource = context.Employees.ToList();
         }
 
+        private void editUserButton_Click(object sender, EventArgs e)
+        {
+            string[] userArray = new String[13];
+
+            userArray[0] = editUserIdField.Text;
+            userArray[1] = editSurnameField.Text;
+            userArray[2] = editNameField.Text;
+            userArray[3] = editFathernameField.Text;
+            userArray[4] = editLoginField.Text;
+            userArray[5] = editPasswordField.Text;
+            userArray[6] = editPositionIdField.Text;
+            userArray[7] = editStatusIdField.Text;
+            userArray[8] = editContactPhoneField.Text;
+            userArray[9] = editAddressField.Text;
+            userArray[10] = editStorageIdField.Text;
+            userArray[11] = editFactoryIdField.Text;
+            userArray[12] = editFactoryDirectorIdField.Text;
+
+            employeeLogic.editUser(context, userArray);
+
+            editSurnameField.Text = "";
+            editNameField.Text = "";
+            editFathernameField.Text = "";
+            editLoginField.Text = "";
+            editPasswordField.Text = "";
+            editPositionIdField.Text = "";
+            editStatusIdField.Text = "";
+            editContactPhoneField.Text = "";
+            editAddressField.Text = "";
+            editStorageIdField.Text = "";
+            editFactoryIdField.Text = "";
+            editFactoryDirectorIdField.Text = "";
+
+            usersGridView.DataSource = context.Employees.ToList();
+        }
         private void UserManagement_Load(object sender, EventArgs e)
         {
 
@@ -74,5 +109,7 @@ namespace carton
         {
 
         }
+
+
     }
 }
