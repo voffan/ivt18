@@ -32,7 +32,37 @@ namespace carton
 
         private void buttonAddUser_Click(object sender, EventArgs e)
         {
+            string[] userArray = new String[12];
 
+            userArray[0] = addSurnameField.Text;
+            userArray[1] = addNameField.Text;
+            userArray[2] = addFathernameField.Text;
+            userArray[3] = addLoginField.Text;
+            userArray[4] = addPasswordField.Text;
+            userArray[5] = addPositionIdField.Text;
+            userArray[6] = addStatusIdField.Text;
+            userArray[7] = addContactPhoneField.Text;
+            userArray[8] = addAddressField.Text;
+            userArray[9] = addStorageIdField.Text;
+            userArray[10] = addFactoryIdField.Text;
+            userArray[11] = addFactoryDirectorIdField.Text;
+            
+            employeeLogic.addUser(context, userArray);
+
+            addSurnameField.Text = "";
+            addNameField.Text = "";
+            addFathernameField.Text = "";
+            addLoginField.Text = "";
+            addPasswordField.Text = "";
+            addPositionIdField.Text = "";
+            addStatusIdField.Text = "";
+            addContactPhoneField.Text = "";
+            addAddressField.Text = "";
+            addStorageIdField.Text = "";
+            addFactoryIdField.Text = "";
+            addFactoryDirectorIdField.Text = "";
+
+            usersGridView.DataSource = context.Employees.ToList();
         }
 
         private void UserManagement_Load(object sender, EventArgs e)

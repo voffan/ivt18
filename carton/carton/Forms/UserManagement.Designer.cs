@@ -30,9 +30,9 @@ namespace carton
         private void InitializeComponent()
         {
             this.usersGridView = new System.Windows.Forms.DataGridView();
-            this.buttonAddUser = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.addUserButton = new System.Windows.Forms.Button();
+            this.editUserButton = new System.Windows.Forms.Button();
+            this.deleteUserButton = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -45,18 +45,18 @@ namespace carton
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.addFactoryDirectorIdField = new System.Windows.Forms.TextBox();
+            this.addFactoryIdField = new System.Windows.Forms.TextBox();
+            this.addStorageIdField = new System.Windows.Forms.TextBox();
+            this.addAddressField = new System.Windows.Forms.TextBox();
+            this.addContactPhoneField = new System.Windows.Forms.TextBox();
+            this.addStatusIdField = new System.Windows.Forms.TextBox();
+            this.addPositionIdField = new System.Windows.Forms.TextBox();
+            this.addPasswordField = new System.Windows.Forms.TextBox();
+            this.addLoginField = new System.Windows.Forms.TextBox();
+            this.addFathernameField = new System.Windows.Forms.TextBox();
+            this.addNameField = new System.Windows.Forms.TextBox();
+            this.addSurnameField = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -69,21 +69,21 @@ namespace carton
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.editFactoryDirectorIdField = new System.Windows.Forms.TextBox();
+            this.editFactoryIdField = new System.Windows.Forms.TextBox();
+            this.editStorageIdField = new System.Windows.Forms.TextBox();
+            this.editAddressField = new System.Windows.Forms.TextBox();
+            this.editContactPhoneField = new System.Windows.Forms.TextBox();
+            this.editStatusIdField = new System.Windows.Forms.TextBox();
+            this.editPositionIdField = new System.Windows.Forms.TextBox();
+            this.editPasswordField = new System.Windows.Forms.TextBox();
+            this.editLoginField = new System.Windows.Forms.TextBox();
+            this.editFathernameField = new System.Windows.Forms.TextBox();
+            this.editNameField = new System.Windows.Forms.TextBox();
+            this.editSurnameField = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.textBox26 = new System.Windows.Forms.TextBox();
+            this.editUserIdField = new System.Windows.Forms.TextBox();
+            this.deleteUserIdField = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.usersGridView)).BeginInit();
             this.SuspendLayout();
@@ -100,36 +100,36 @@ namespace carton
             this.usersGridView.TabIndex = 0;
             this.usersGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usersGridView_CellContentClick);
             // 
-            // buttonAddUser
+            // addUserButton
             // 
-            this.buttonAddUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonAddUser.Location = new System.Drawing.Point(49, 710);
-            this.buttonAddUser.Name = "buttonAddUser";
-            this.buttonAddUser.Size = new System.Drawing.Size(84, 30);
-            this.buttonAddUser.TabIndex = 1;
-            this.buttonAddUser.Text = "Добавить";
-            this.buttonAddUser.UseVisualStyleBackColor = true;
-            this.buttonAddUser.Click += new System.EventHandler(this.buttonAddUser_Click);
+            this.addUserButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.addUserButton.Location = new System.Drawing.Point(49, 710);
+            this.addUserButton.Name = "addUserButton";
+            this.addUserButton.Size = new System.Drawing.Size(84, 30);
+            this.addUserButton.TabIndex = 1;
+            this.addUserButton.Text = "Добавить";
+            this.addUserButton.UseVisualStyleBackColor = true;
+            this.addUserButton.Click += new System.EventHandler(this.buttonAddUser_Click);
             // 
-            // button2
+            // editUserButton
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button2.Location = new System.Drawing.Point(345, 736);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 30);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Изменить";
-            this.button2.UseVisualStyleBackColor = true;
+            this.editUserButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.editUserButton.Location = new System.Drawing.Point(345, 736);
+            this.editUserButton.Name = "editUserButton";
+            this.editUserButton.Size = new System.Drawing.Size(84, 30);
+            this.editUserButton.TabIndex = 2;
+            this.editUserButton.Text = "Изменить";
+            this.editUserButton.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // deleteUserButton
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(677, 424);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 29);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Удалить";
-            this.button1.UseVisualStyleBackColor = true;
+            this.deleteUserButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.deleteUserButton.Location = new System.Drawing.Point(677, 424);
+            this.deleteUserButton.Name = "deleteUserButton";
+            this.deleteUserButton.Size = new System.Drawing.Size(84, 29);
+            this.deleteUserButton.TabIndex = 3;
+            this.deleteUserButton.Text = "Удалить";
+            this.deleteUserButton.UseVisualStyleBackColor = true;
             // 
             // label12
             // 
@@ -239,89 +239,89 @@ namespace carton
             this.label1.TabIndex = 37;
             this.label1.Text = "Фамилия";
             // 
-            // textBox12
+            // addFactoryDirectorIdField
             // 
-            this.textBox12.Location = new System.Drawing.Point(12, 684);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(155, 20);
-            this.textBox12.TabIndex = 36;
+            this.addFactoryDirectorIdField.Location = new System.Drawing.Point(12, 684);
+            this.addFactoryDirectorIdField.Name = "addFactoryDirectorIdField";
+            this.addFactoryDirectorIdField.Size = new System.Drawing.Size(155, 20);
+            this.addFactoryDirectorIdField.TabIndex = 36;
             // 
-            // textBox11
+            // addFactoryIdField
             // 
-            this.textBox11.Location = new System.Drawing.Point(12, 658);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(155, 20);
-            this.textBox11.TabIndex = 35;
+            this.addFactoryIdField.Location = new System.Drawing.Point(12, 658);
+            this.addFactoryIdField.Name = "addFactoryIdField";
+            this.addFactoryIdField.Size = new System.Drawing.Size(155, 20);
+            this.addFactoryIdField.TabIndex = 35;
             // 
-            // textBox10
+            // addStorageIdField
             // 
-            this.textBox10.Location = new System.Drawing.Point(12, 632);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(155, 20);
-            this.textBox10.TabIndex = 34;
+            this.addStorageIdField.Location = new System.Drawing.Point(12, 632);
+            this.addStorageIdField.Name = "addStorageIdField";
+            this.addStorageIdField.Size = new System.Drawing.Size(155, 20);
+            this.addStorageIdField.TabIndex = 34;
             // 
-            // textBox9
+            // addAddressField
             // 
-            this.textBox9.Location = new System.Drawing.Point(12, 606);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(155, 20);
-            this.textBox9.TabIndex = 33;
+            this.addAddressField.Location = new System.Drawing.Point(12, 606);
+            this.addAddressField.Name = "addAddressField";
+            this.addAddressField.Size = new System.Drawing.Size(155, 20);
+            this.addAddressField.TabIndex = 33;
             // 
-            // textBox8
+            // addContactPhoneField
             // 
-            this.textBox8.Location = new System.Drawing.Point(12, 580);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(155, 20);
-            this.textBox8.TabIndex = 32;
+            this.addContactPhoneField.Location = new System.Drawing.Point(12, 580);
+            this.addContactPhoneField.Name = "addContactPhoneField";
+            this.addContactPhoneField.Size = new System.Drawing.Size(155, 20);
+            this.addContactPhoneField.TabIndex = 32;
             // 
-            // textBox7
+            // addStatusIdField
             // 
-            this.textBox7.Location = new System.Drawing.Point(12, 554);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(155, 20);
-            this.textBox7.TabIndex = 31;
+            this.addStatusIdField.Location = new System.Drawing.Point(12, 554);
+            this.addStatusIdField.Name = "addStatusIdField";
+            this.addStatusIdField.Size = new System.Drawing.Size(155, 20);
+            this.addStatusIdField.TabIndex = 31;
             // 
-            // textBox6
+            // addPositionIdField
             // 
-            this.textBox6.Location = new System.Drawing.Point(12, 528);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(155, 20);
-            this.textBox6.TabIndex = 30;
+            this.addPositionIdField.Location = new System.Drawing.Point(12, 528);
+            this.addPositionIdField.Name = "addPositionIdField";
+            this.addPositionIdField.Size = new System.Drawing.Size(155, 20);
+            this.addPositionIdField.TabIndex = 30;
             // 
-            // textBox5
+            // addPasswordField
             // 
-            this.textBox5.Location = new System.Drawing.Point(12, 502);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(155, 20);
-            this.textBox5.TabIndex = 29;
+            this.addPasswordField.Location = new System.Drawing.Point(12, 502);
+            this.addPasswordField.Name = "addPasswordField";
+            this.addPasswordField.Size = new System.Drawing.Size(155, 20);
+            this.addPasswordField.TabIndex = 29;
             // 
-            // textBox4
+            // addLoginField
             // 
-            this.textBox4.Location = new System.Drawing.Point(12, 476);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(155, 20);
-            this.textBox4.TabIndex = 28;
+            this.addLoginField.Location = new System.Drawing.Point(12, 476);
+            this.addLoginField.Name = "addLoginField";
+            this.addLoginField.Size = new System.Drawing.Size(155, 20);
+            this.addLoginField.TabIndex = 28;
             // 
-            // textBox3
+            // addFathernameField
             // 
-            this.textBox3.Location = new System.Drawing.Point(12, 450);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(155, 20);
-            this.textBox3.TabIndex = 27;
+            this.addFathernameField.Location = new System.Drawing.Point(12, 450);
+            this.addFathernameField.Name = "addFathernameField";
+            this.addFathernameField.Size = new System.Drawing.Size(155, 20);
+            this.addFathernameField.TabIndex = 27;
             // 
-            // textBox2
+            // addNameField
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 424);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(155, 20);
-            this.textBox2.TabIndex = 26;
+            this.addNameField.Location = new System.Drawing.Point(12, 424);
+            this.addNameField.Name = "addNameField";
+            this.addNameField.Size = new System.Drawing.Size(155, 20);
+            this.addNameField.TabIndex = 26;
             // 
-            // textBox1
+            // addSurnameField
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 398);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(155, 20);
-            this.textBox1.TabIndex = 25;
+            this.addSurnameField.Location = new System.Drawing.Point(12, 398);
+            this.addSurnameField.Name = "addSurnameField";
+            this.addSurnameField.Size = new System.Drawing.Size(155, 20);
+            this.addSurnameField.TabIndex = 25;
             // 
             // label13
             // 
@@ -431,112 +431,112 @@ namespace carton
             this.label24.TabIndex = 61;
             this.label24.Text = "Фамилия";
             // 
-            // textBox13
+            // editFactoryDirectorIdField
             // 
-            this.textBox13.Location = new System.Drawing.Point(310, 710);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(155, 20);
-            this.textBox13.TabIndex = 60;
+            this.editFactoryDirectorIdField.Location = new System.Drawing.Point(310, 710);
+            this.editFactoryDirectorIdField.Name = "editFactoryDirectorIdField";
+            this.editFactoryDirectorIdField.Size = new System.Drawing.Size(155, 20);
+            this.editFactoryDirectorIdField.TabIndex = 60;
             // 
-            // textBox14
+            // editFactoryIdField
             // 
-            this.textBox14.Location = new System.Drawing.Point(310, 684);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(155, 20);
-            this.textBox14.TabIndex = 59;
+            this.editFactoryIdField.Location = new System.Drawing.Point(310, 684);
+            this.editFactoryIdField.Name = "editFactoryIdField";
+            this.editFactoryIdField.Size = new System.Drawing.Size(155, 20);
+            this.editFactoryIdField.TabIndex = 59;
             // 
-            // textBox15
+            // editStorageIdField
             // 
-            this.textBox15.Location = new System.Drawing.Point(310, 658);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(155, 20);
-            this.textBox15.TabIndex = 58;
+            this.editStorageIdField.Location = new System.Drawing.Point(310, 658);
+            this.editStorageIdField.Name = "editStorageIdField";
+            this.editStorageIdField.Size = new System.Drawing.Size(155, 20);
+            this.editStorageIdField.TabIndex = 58;
             // 
-            // textBox16
+            // editAddressField
             // 
-            this.textBox16.Location = new System.Drawing.Point(310, 632);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(155, 20);
-            this.textBox16.TabIndex = 57;
+            this.editAddressField.Location = new System.Drawing.Point(310, 632);
+            this.editAddressField.Name = "editAddressField";
+            this.editAddressField.Size = new System.Drawing.Size(155, 20);
+            this.editAddressField.TabIndex = 57;
             // 
-            // textBox17
+            // editContactPhoneField
             // 
-            this.textBox17.Location = new System.Drawing.Point(310, 606);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(155, 20);
-            this.textBox17.TabIndex = 56;
+            this.editContactPhoneField.Location = new System.Drawing.Point(310, 606);
+            this.editContactPhoneField.Name = "editContactPhoneField";
+            this.editContactPhoneField.Size = new System.Drawing.Size(155, 20);
+            this.editContactPhoneField.TabIndex = 56;
             // 
-            // textBox18
+            // editStatusIdField
             // 
-            this.textBox18.Location = new System.Drawing.Point(310, 580);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(155, 20);
-            this.textBox18.TabIndex = 55;
+            this.editStatusIdField.Location = new System.Drawing.Point(310, 580);
+            this.editStatusIdField.Name = "editStatusIdField";
+            this.editStatusIdField.Size = new System.Drawing.Size(155, 20);
+            this.editStatusIdField.TabIndex = 55;
             // 
-            // textBox19
+            // editPositionIdField
             // 
-            this.textBox19.Location = new System.Drawing.Point(310, 554);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(155, 20);
-            this.textBox19.TabIndex = 54;
+            this.editPositionIdField.Location = new System.Drawing.Point(310, 554);
+            this.editPositionIdField.Name = "editPositionIdField";
+            this.editPositionIdField.Size = new System.Drawing.Size(155, 20);
+            this.editPositionIdField.TabIndex = 54;
             // 
-            // textBox20
+            // editPasswordField
             // 
-            this.textBox20.Location = new System.Drawing.Point(310, 528);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(155, 20);
-            this.textBox20.TabIndex = 53;
+            this.editPasswordField.Location = new System.Drawing.Point(310, 528);
+            this.editPasswordField.Name = "editPasswordField";
+            this.editPasswordField.Size = new System.Drawing.Size(155, 20);
+            this.editPasswordField.TabIndex = 53;
             // 
-            // textBox21
+            // editLoginField
             // 
-            this.textBox21.Location = new System.Drawing.Point(310, 502);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(155, 20);
-            this.textBox21.TabIndex = 52;
+            this.editLoginField.Location = new System.Drawing.Point(310, 502);
+            this.editLoginField.Name = "editLoginField";
+            this.editLoginField.Size = new System.Drawing.Size(155, 20);
+            this.editLoginField.TabIndex = 52;
             // 
-            // textBox22
+            // editFathernameField
             // 
-            this.textBox22.Location = new System.Drawing.Point(310, 476);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(155, 20);
-            this.textBox22.TabIndex = 51;
+            this.editFathernameField.Location = new System.Drawing.Point(310, 476);
+            this.editFathernameField.Name = "editFathernameField";
+            this.editFathernameField.Size = new System.Drawing.Size(155, 20);
+            this.editFathernameField.TabIndex = 51;
             // 
-            // textBox23
+            // editNameField
             // 
-            this.textBox23.Location = new System.Drawing.Point(310, 450);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(155, 20);
-            this.textBox23.TabIndex = 50;
+            this.editNameField.Location = new System.Drawing.Point(310, 450);
+            this.editNameField.Name = "editNameField";
+            this.editNameField.Size = new System.Drawing.Size(155, 20);
+            this.editNameField.TabIndex = 50;
             // 
-            // textBox24
+            // editSurnameField
             // 
-            this.textBox24.Location = new System.Drawing.Point(310, 424);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(155, 20);
-            this.textBox24.TabIndex = 49;
+            this.editSurnameField.Location = new System.Drawing.Point(310, 424);
+            this.editSurnameField.Name = "editSurnameField";
+            this.editSurnameField.Size = new System.Drawing.Size(155, 20);
+            this.editSurnameField.TabIndex = 49;
             // 
             // label25
             // 
             this.label25.AutoSize = true;
             this.label25.Location = new System.Drawing.Point(471, 401);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(18, 13);
+            this.label25.Size = new System.Drawing.Size(92, 13);
             this.label25.TabIndex = 74;
-            this.label25.Text = "ID";
+            this.label25.Text = "ID пользователя";
             // 
-            // textBox25
+            // editUserIdField
             // 
-            this.textBox25.Location = new System.Drawing.Point(310, 398);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(155, 20);
-            this.textBox25.TabIndex = 73;
+            this.editUserIdField.Location = new System.Drawing.Point(310, 398);
+            this.editUserIdField.Name = "editUserIdField";
+            this.editUserIdField.Size = new System.Drawing.Size(155, 20);
+            this.editUserIdField.TabIndex = 73;
             // 
-            // textBox26
+            // deleteUserIdField
             // 
-            this.textBox26.Location = new System.Drawing.Point(630, 398);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(155, 20);
-            this.textBox26.TabIndex = 75;
+            this.deleteUserIdField.Location = new System.Drawing.Point(630, 398);
+            this.deleteUserIdField.Name = "deleteUserIdField";
+            this.deleteUserIdField.Size = new System.Drawing.Size(155, 20);
+            this.deleteUserIdField.TabIndex = 75;
             // 
             // label26
             // 
@@ -553,9 +553,9 @@ namespace carton
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(830, 782);
             this.Controls.Add(this.label26);
-            this.Controls.Add(this.textBox26);
+            this.Controls.Add(this.deleteUserIdField);
             this.Controls.Add(this.label25);
-            this.Controls.Add(this.textBox25);
+            this.Controls.Add(this.editUserIdField);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label15);
@@ -568,18 +568,18 @@ namespace carton
             this.Controls.Add(this.label22);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.label24);
-            this.Controls.Add(this.textBox13);
-            this.Controls.Add(this.textBox14);
-            this.Controls.Add(this.textBox15);
-            this.Controls.Add(this.textBox16);
-            this.Controls.Add(this.textBox17);
-            this.Controls.Add(this.textBox18);
-            this.Controls.Add(this.textBox19);
-            this.Controls.Add(this.textBox20);
-            this.Controls.Add(this.textBox21);
-            this.Controls.Add(this.textBox22);
-            this.Controls.Add(this.textBox23);
-            this.Controls.Add(this.textBox24);
+            this.Controls.Add(this.editFactoryDirectorIdField);
+            this.Controls.Add(this.editFactoryIdField);
+            this.Controls.Add(this.editStorageIdField);
+            this.Controls.Add(this.editAddressField);
+            this.Controls.Add(this.editContactPhoneField);
+            this.Controls.Add(this.editStatusIdField);
+            this.Controls.Add(this.editPositionIdField);
+            this.Controls.Add(this.editPasswordField);
+            this.Controls.Add(this.editLoginField);
+            this.Controls.Add(this.editFathernameField);
+            this.Controls.Add(this.editNameField);
+            this.Controls.Add(this.editSurnameField);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -592,21 +592,21 @@ namespace carton
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.buttonAddUser);
+            this.Controls.Add(this.addFactoryDirectorIdField);
+            this.Controls.Add(this.addFactoryIdField);
+            this.Controls.Add(this.addStorageIdField);
+            this.Controls.Add(this.addAddressField);
+            this.Controls.Add(this.addContactPhoneField);
+            this.Controls.Add(this.addStatusIdField);
+            this.Controls.Add(this.addPositionIdField);
+            this.Controls.Add(this.addPasswordField);
+            this.Controls.Add(this.addLoginField);
+            this.Controls.Add(this.addFathernameField);
+            this.Controls.Add(this.addNameField);
+            this.Controls.Add(this.addSurnameField);
+            this.Controls.Add(this.deleteUserButton);
+            this.Controls.Add(this.editUserButton);
+            this.Controls.Add(this.addUserButton);
             this.Controls.Add(this.usersGridView);
             this.Name = "UserManagement";
             this.Text = "UserManagement";
@@ -620,9 +620,9 @@ namespace carton
         #endregion
 
         private System.Windows.Forms.DataGridView usersGridView;
-        private System.Windows.Forms.Button buttonAddUser;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button addUserButton;
+        private System.Windows.Forms.Button editUserButton;
+        private System.Windows.Forms.Button deleteUserButton;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
@@ -635,18 +635,18 @@ namespace carton
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox addFactoryDirectorIdField;
+        private System.Windows.Forms.TextBox addFactoryIdField;
+        private System.Windows.Forms.TextBox addStorageIdField;
+        private System.Windows.Forms.TextBox addAddressField;
+        private System.Windows.Forms.TextBox addContactPhoneField;
+        private System.Windows.Forms.TextBox addStatusIdField;
+        private System.Windows.Forms.TextBox addPositionIdField;
+        private System.Windows.Forms.TextBox addPasswordField;
+        private System.Windows.Forms.TextBox addLoginField;
+        private System.Windows.Forms.TextBox addFathernameField;
+        private System.Windows.Forms.TextBox addNameField;
+        private System.Windows.Forms.TextBox addSurnameField;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
@@ -659,21 +659,21 @@ namespace carton
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.TextBox textBox22;
-        private System.Windows.Forms.TextBox textBox23;
-        private System.Windows.Forms.TextBox textBox24;
+        private System.Windows.Forms.TextBox editFactoryDirectorIdField;
+        private System.Windows.Forms.TextBox editFactoryIdField;
+        private System.Windows.Forms.TextBox editStorageIdField;
+        private System.Windows.Forms.TextBox editAddressField;
+        private System.Windows.Forms.TextBox editContactPhoneField;
+        private System.Windows.Forms.TextBox editStatusIdField;
+        private System.Windows.Forms.TextBox editPositionIdField;
+        private System.Windows.Forms.TextBox editPasswordField;
+        private System.Windows.Forms.TextBox editLoginField;
+        private System.Windows.Forms.TextBox editFathernameField;
+        private System.Windows.Forms.TextBox editNameField;
+        private System.Windows.Forms.TextBox editSurnameField;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox textBox25;
-        private System.Windows.Forms.TextBox textBox26;
+        private System.Windows.Forms.TextBox editUserIdField;
+        private System.Windows.Forms.TextBox deleteUserIdField;
         private System.Windows.Forms.Label label26;
     }
 }
