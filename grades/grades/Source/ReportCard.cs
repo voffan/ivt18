@@ -25,20 +25,20 @@ namespace grades
 
         public int GradeId { get; set; }
         [ForeignKey("GradeId")]
-        public Grade Grade { get; set; }
+        public virtual Grade Grade { get; set; }
 
         public int StudentId { get; set; }
         [ForeignKey("StudentId")]
-        public Student Student { get; set; }
+        public virtual Student Student { get; set; }
 
         public int CourseId { get; set; }
         [ForeignKey("CourseId")]
-        public Course Course { get; set; }
+        public virtual Course Course { get; set; }
 
         public CheckPoint CheckPoint { get; set; }
 
         public int StudyYearId { get; set; }
         [ForeignKey("StudyYearId")]
-        public StudyYear StudyYear { get; set; }
+        public virtual StudyYear StudyYear { get; set; }
     }
 }

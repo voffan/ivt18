@@ -13,8 +13,10 @@ namespace grades
     {
         [ForeignKey("School")]
         public int GradingSystemId { get; set; }
-        public int MaxGrade { get; set; }
-        public int MinGrade { get; set; }
+        [StringLength(1)]
+        public String MaxGrade { get; set; }
+        [StringLength(1)]
+        public String MinGrade { get; set; }
 
         public virtual School School { get; set; }
     }
