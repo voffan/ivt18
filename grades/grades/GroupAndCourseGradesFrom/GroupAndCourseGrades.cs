@@ -214,8 +214,12 @@ namespace grades
             if (_currentSubjectId == Convert.ToInt32(courseComboBox.SelectedValue)) return;
 
             _currentSubjectId = Convert.ToInt32(courseComboBox.SelectedValue);
+            _currentGroupId = -1;
 
             LoadGroupList();
+
+            gradesDGV.Rows.Clear();
+            gradesDGV.Refresh();
         }
 
         private void groupComboBox_DropDownClosed(object sender, EventArgs e)
