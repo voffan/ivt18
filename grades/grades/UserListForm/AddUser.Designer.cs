@@ -119,16 +119,17 @@
             // 
             this.personFirstNameBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.personFirstNameBox.Location = new System.Drawing.Point(176, 47);
-            this.personFirstNameBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.personFirstNameBox.Margin = new System.Windows.Forms.Padding(4);
             this.personFirstNameBox.Name = "personFirstNameBox";
             this.personFirstNameBox.Size = new System.Drawing.Size(347, 15);
             this.personFirstNameBox.TabIndex = 7;
+            this.personFirstNameBox.TextChanged += new System.EventHandler(this.personFirstNameBox_TextChanged);
             // 
             // personSurNameBox
             // 
             this.personSurNameBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.personSurNameBox.Location = new System.Drawing.Point(176, 80);
-            this.personSurNameBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.personSurNameBox.Margin = new System.Windows.Forms.Padding(4);
             this.personSurNameBox.Name = "personSurNameBox";
             this.personSurNameBox.Size = new System.Drawing.Size(347, 15);
             this.personSurNameBox.TabIndex = 8;
@@ -137,7 +138,7 @@
             // 
             this.personMiddleNameBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.personMiddleNameBox.Location = new System.Drawing.Point(176, 113);
-            this.personMiddleNameBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.personMiddleNameBox.Margin = new System.Windows.Forms.Padding(4);
             this.personMiddleNameBox.Name = "personMiddleNameBox";
             this.personMiddleNameBox.Size = new System.Drawing.Size(347, 15);
             this.personMiddleNameBox.TabIndex = 9;
@@ -146,7 +147,7 @@
             // 
             this.personPhoneNumberBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.personPhoneNumberBox.Location = new System.Drawing.Point(176, 245);
-            this.personPhoneNumberBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.personPhoneNumberBox.Margin = new System.Windows.Forms.Padding(4);
             this.personPhoneNumberBox.Name = "personPhoneNumberBox";
             this.personPhoneNumberBox.Size = new System.Drawing.Size(347, 15);
             this.personPhoneNumberBox.TabIndex = 10;
@@ -155,7 +156,7 @@
             // 
             this.personHomeAddressBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.personHomeAddressBox.Location = new System.Drawing.Point(176, 315);
-            this.personHomeAddressBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.personHomeAddressBox.Margin = new System.Windows.Forms.Padding(4);
             this.personHomeAddressBox.Name = "personHomeAddressBox";
             this.personHomeAddressBox.Size = new System.Drawing.Size(347, 15);
             this.personHomeAddressBox.TabIndex = 11;
@@ -165,7 +166,7 @@
             this.cancelAddingUser.FlatAppearance.BorderSize = 0;
             this.cancelAddingUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelAddingUser.Location = new System.Drawing.Point(421, 359);
-            this.cancelAddingUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cancelAddingUser.Margin = new System.Windows.Forms.Padding(4);
             this.cancelAddingUser.Name = "cancelAddingUser";
             this.cancelAddingUser.Size = new System.Drawing.Size(100, 28);
             this.cancelAddingUser.TabIndex = 13;
@@ -178,7 +179,7 @@
             this.applyAddingUser.FlatAppearance.BorderSize = 0;
             this.applyAddingUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.applyAddingUser.Location = new System.Drawing.Point(313, 359);
-            this.applyAddingUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.applyAddingUser.Margin = new System.Windows.Forms.Padding(4);
             this.applyAddingUser.Name = "applyAddingUser";
             this.applyAddingUser.Size = new System.Drawing.Size(100, 28);
             this.applyAddingUser.TabIndex = 14;
@@ -192,7 +193,7 @@
             this.positionList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.positionList.FormattingEnabled = true;
             this.positionList.Location = new System.Drawing.Point(176, 176);
-            this.positionList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.positionList.Margin = new System.Windows.Forms.Padding(4);
             this.positionList.Name = "positionList";
             this.positionList.Size = new System.Drawing.Size(344, 24);
             this.positionList.TabIndex = 15;
@@ -217,7 +218,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.guideText);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddUser";
             this.Text = "AddUser";
             this.Load += new System.EventHandler(this.AddUser_Load);

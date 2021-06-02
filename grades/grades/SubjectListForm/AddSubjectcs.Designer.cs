@@ -39,37 +39,42 @@ namespace grades
             // guideLabel
             // 
             this.guideLabel.AutoSize = true;
-            this.guideLabel.Location = new System.Drawing.Point(13, 13);
+            this.guideLabel.Location = new System.Drawing.Point(17, 16);
+            this.guideLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.guideLabel.Name = "guideLabel";
-            this.guideLabel.Size = new System.Drawing.Size(173, 13);
+            this.guideLabel.Size = new System.Drawing.Size(224, 17);
             this.guideLabel.TabIndex = 0;
             this.guideLabel.Text = "Введите следующие параметры:";
             // 
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(13, 41);
+            this.nameLabel.Location = new System.Drawing.Point(17, 50);
+            this.nameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(60, 13);
+            this.nameLabel.Size = new System.Drawing.Size(76, 17);
             this.nameLabel.TabIndex = 1;
             this.nameLabel.Text = "Название:";
             // 
             // nameBox
             // 
             this.nameBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.nameBox.Location = new System.Drawing.Point(79, 41);
+            this.nameBox.Location = new System.Drawing.Point(105, 50);
+            this.nameBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nameBox.Multiline = true;
             this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(313, 20);
+            this.nameBox.Size = new System.Drawing.Size(417, 25);
             this.nameBox.TabIndex = 2;
+            this.nameBox.TextChanged += new System.EventHandler(this.nameBox_TextChanged);
             // 
             // cancelButton
             // 
             this.cancelButton.FlatAppearance.BorderSize = 0;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancelButton.Location = new System.Drawing.Point(317, 67);
+            this.cancelButton.Location = new System.Drawing.Point(423, 82);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.Size = new System.Drawing.Size(100, 28);
             this.cancelButton.TabIndex = 3;
             this.cancelButton.Text = "Отмена";
             this.cancelButton.UseVisualStyleBackColor = true;
@@ -79,9 +84,10 @@ namespace grades
             // 
             this.applyButton.FlatAppearance.BorderSize = 0;
             this.applyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.applyButton.Location = new System.Drawing.Point(236, 67);
+            this.applyButton.Location = new System.Drawing.Point(315, 82);
+            this.applyButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.applyButton.Name = "applyButton";
-            this.applyButton.Size = new System.Drawing.Size(75, 23);
+            this.applyButton.Size = new System.Drawing.Size(100, 28);
             this.applyButton.TabIndex = 4;
             this.applyButton.Text = "Применить";
             this.applyButton.UseVisualStyleBackColor = true;
@@ -89,14 +95,15 @@ namespace grades
             // 
             // AddSubjectcs
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 98);
+            this.ClientSize = new System.Drawing.Size(539, 121);
             this.Controls.Add(this.applyButton);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.nameBox);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.guideLabel);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AddSubjectcs";
             this.Text = "AddSubjectcs";
             this.Load += new System.EventHandler(this.AddSubjectcs_Load);

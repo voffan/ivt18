@@ -24,14 +24,15 @@ namespace grades
         private Color _defauldBackColor;
         private Color _selectedBtnTxtColor;
 
-        public MainForm()
+        public MainForm(Context _context)
         {
             InitializeComponent();
+            this._context = _context;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            _context = new Context();
+            //_context = new Context();
 
             _user = (from usr in _context.Persons
                      where usr.PersonId == 17
@@ -40,6 +41,7 @@ namespace grades
             _userListForm = new UserList(_context, _user);
             _subjectListForm = new SubjectList(_context, _user);
             _gradingForm = new GroupAndCourseGrades(_context, _user);
+
 
             SetupUserInfo();
             SetupColors();
@@ -149,6 +151,11 @@ namespace grades
             btnGrading.ForeColor = _defauldBackColor;
             btnSubjectList.ForeColor = _defauldBackColor;
             btnUserList.ForeColor = _defauldBackColor;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

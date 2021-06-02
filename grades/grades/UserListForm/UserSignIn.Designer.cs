@@ -29,7 +29,7 @@ namespace grades
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Password = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,14 +39,14 @@ namespace grades
             this.Login = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // textBox2
+            // Password
             // 
-            this.textBox2.Location = new System.Drawing.Point(145, 182);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(207, 22);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.Password.Location = new System.Drawing.Point(145, 182);
+            this.Password.Margin = new System.Windows.Forms.Padding(4);
+            this.Password.Name = "Password";
+            this.Password.Size = new System.Drawing.Size(207, 22);
+            this.Password.TabIndex = 1;
+            this.Password.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // comboBox1
             // 
@@ -135,7 +135,7 @@ namespace grades
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.Password);
             this.Controls.Add(this.Login);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserSignIn";
@@ -146,7 +146,7 @@ namespace grades
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox Password;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;

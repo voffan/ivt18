@@ -174,5 +174,10 @@ namespace grades
                 t.Height = 25;
             }
         }
+
+        private void personFirstNameBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
