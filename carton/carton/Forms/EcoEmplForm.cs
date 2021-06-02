@@ -46,6 +46,8 @@ namespace carton
                 plannedGridView.Rows[row.Index].Visible = true;
             }
         }
+
+        
         //private void ResetButton_Click(object sender, EventArgs e)
         //{
         //    Plan plan = context.Plans.Find(planId);
@@ -92,6 +94,7 @@ namespace carton
             // TODO: This line of code loads data into the 'cartonDBDataSet.Plan' table. You can move, or remove it, as needed.
             //this.planTableAdapter.Fill(this.cartonDBDataSet.Plan);
             //this.planGridView.DataSource = context.Plans;
+            
         }
 
         private void planGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -142,6 +145,7 @@ namespace carton
             CEPlanForm editForm = new CEPlanForm(context, 1, planId);
             editForm.Show();
             HideUnnecessaryPlanneds(planId);
+            
         }
 
         private void createPlanBbutton_Click(object sender, EventArgs e)
@@ -175,6 +179,11 @@ namespace carton
             planGridView.DataSource = context.Plans.ToList();
             plannedGridView.DataSource = context.Planneds.ToList();
             HideUnnecessaryPlanneds(planId);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            planGridView.DataSource = context.Plans.ToList();
         }
     }
 }

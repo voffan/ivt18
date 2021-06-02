@@ -8,6 +8,7 @@ using OfficeOpenXml.Style;
 using System.Xml;
 using System.Drawing;
 using System.IO;
+using System.Data.Entity.Migrations;
 
 namespace carton
 {
@@ -18,16 +19,37 @@ namespace carton
 
         }
 
-        public void CreatePlan(Context context, Dictionary<int,int> data)
+        public void CreatePlan(Context context, string name, string data, int status, int prodLineId)
         {
             Plan plan = new Plan();
 
-            //plan.Name = ss[0];
-            //plan.Date = ss[1];
-            //plan.Status = PlanStatus.New;
-            //plan.Planneds = null;
-            //plan.ProdLineId = SomeProdLineId;
+            plan.Name = name;
+            plan.Date = DateTime.Parse(data);
+            
+            if (status == 0)
+            {
+                plan.Status = PlanStatus.New;
+            }
+            else if (status == 1)
+            {
+                plan.Status = PlanStatus.InProgress;
+            }
+            else if (status == 2)
+            {
+                plan.Status = PlanStatus.Completed;
+            }
+            else if (status == 3)
+            {
+                plan.Status = PlanStatus.Approved;
+            }
+            else if (status == 4)
+            {
+                plan.Status = PlanStatus.ToDelete;
+            }
 
+            //plan.Planneds = null;
+            plan.ProdLineId = prodLineId;
+            
             context.Plans.Add(plan);
             context.SaveChanges();
         }
@@ -43,7 +65,7 @@ namespace carton
             //plan.Planneds = null;
             //plan.ProdLineId = SomeProdLineId;
 
-            context.Plans.Add(plan);
+            context.Plans.AddOrUpdate(plan);
         }
 
         public void GetPlansList(Context context)

@@ -125,7 +125,7 @@ namespace carton
             // deleteUserButton
             // 
             this.deleteUserButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.deleteUserButton.Location = new System.Drawing.Point(677, 424);
+            this.deleteUserButton.Location = new System.Drawing.Point(674, 424);
             this.deleteUserButton.Name = "deleteUserButton";
             this.deleteUserButton.Size = new System.Drawing.Size(84, 29);
             this.deleteUserButton.TabIndex = 3;

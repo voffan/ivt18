@@ -38,6 +38,7 @@ namespace carton
             this.createPlanBbutton = new System.Windows.Forms.Button();
             this.deletePlan = new System.Windows.Forms.Button();
             this.exportButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.planGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plannedGridView)).BeginInit();
             this.SuspendLayout();
@@ -129,11 +130,22 @@ namespace carton
             this.exportButton.UseVisualStyleBackColor = true;
             this.exportButton.Click += new System.EventHandler(this.exportButton_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(689, 13);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Refresh";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // EcoEmplForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.exportButton);
             this.Controls.Add(this.deletePlan);
             this.Controls.Add(this.createPlanBbutton);
@@ -164,5 +176,6 @@ namespace carton
         private System.Windows.Forms.Button createPlanBbutton;
         private System.Windows.Forms.Button deletePlan;
         private System.Windows.Forms.Button exportButton;
+        private System.Windows.Forms.Button button1;
     }
 }
