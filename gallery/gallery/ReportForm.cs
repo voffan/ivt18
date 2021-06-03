@@ -21,7 +21,14 @@ namespace gallery
 
         private void ReportForm_Load(object sender, EventArgs e)
         {
+            var d1 = dateTimePicker1.Value;
+            var d2 = dateTimePicker2.Value;
 
+            var query = from c in C.Journals
+                where c.Date > d1 && c.Date < d2
+                select new { ID = c.EmployeeId, ФИО = c.Employee.FullName, Должность = c.Employee.Position.Name, Дата = c.Date, Картина = c.Picture.Name, Автор = c.Picture.Artist.FullName, Откуда = c.DepartmentFromId, Куда = c.DepartmentToId };
+            reportDataGrid.DataSource = query.ToList();
+            
         }
 
         private void DownloadButton_Click(object sender, EventArgs e)
