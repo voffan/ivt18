@@ -92,10 +92,6 @@
     <Compile Include="Migrations\202105061030125_sport.Designer.cs">
       <DependentUpon>202105061030125_sport.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202105210403023_ss.cs" />
-    <Compile Include="Migrations\202105210403023_ss.Designer.cs">
-      <DependentUpon>202105210403023_ss.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Profile.cs">
       <SubType>UserControl</SubType>
@@ -110,6 +106,12 @@
     </Compile>
     <Compile Include="resetPassword.Designer.cs">
       <DependentUpon>resetPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Results.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Results.Designer.cs">
+      <DependentUpon>Results.cs</DependentUpon>
     </Compile>
     <Compile Include="SignInForm.cs">
       <SubType>Form</SubType>
@@ -138,9 +140,6 @@
     <EmbeddedResource Include="Migrations\202105061030125_sport.resx">
       <DependentUpon>202105061030125_sport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105210403023_ss.resx">
-      <DependentUpon>202105210403023_ss.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,6 +154,9 @@
     </Compile>
     <EmbeddedResource Include="resetPassword.resx">
       <DependentUpon>resetPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Results.resx">
+      <DependentUpon>Results.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignInForm.resx">
       <DependentUpon>SignInForm.cs</DependentUpon>
