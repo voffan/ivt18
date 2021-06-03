@@ -31,6 +31,8 @@ namespace gallery
         {
             this.components = new System.ComponentModel.Container();
             this.employeeDataGridView = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,8 +42,6 @@ namespace gallery
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.galleryDBDataSet1 = new gallery.GalleryDBDataSet();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.employeeTableAdapter1 = new gallery.GalleryDBDataSetTableAdapters.EmployeeTableAdapter();
             this.tableAdapterManager = new gallery.GalleryDBDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.employeeDataGridView)).BeginInit();
@@ -62,11 +62,30 @@ namespace gallery
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
             this.employeeDataGridView.DataSource = this.employeeBindingSource;
-            this.employeeDataGridView.Location = new System.Drawing.Point(12, 32);
+            this.employeeDataGridView.Location = new System.Drawing.Point(12, 29);
             this.employeeDataGridView.Name = "employeeDataGridView";
             this.employeeDataGridView.Size = new System.Drawing.Size(744, 205);
             this.employeeDataGridView.TabIndex = 1;
             this.employeeDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeeDataGridView_CellContentClick);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 266);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(185, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Добавить пользователя";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(12, 295);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(185, 23);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Удалить пользователя";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -120,25 +139,6 @@ namespace gallery
             // 
             this.galleryDBDataSet1.DataSetName = "GalleryDBDataSet";
             this.galleryDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(12, 266);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(185, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Добавить пользователя";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(12, 295);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(185, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Удалить пользователя";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // employeeTableAdapter1
             // 
