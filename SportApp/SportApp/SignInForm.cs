@@ -72,7 +72,7 @@ namespace SportApp
                     }
                     else
                     {
-                        MainForm LoginForm = new MainForm();
+                        MainMainForm LoginForm = new MainMainForm();
                         Program.logining = textBox1.Text;
                         LoginForm.Show();
                     }

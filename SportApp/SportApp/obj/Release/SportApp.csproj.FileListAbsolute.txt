@@ -1,0 +1,14 @@
+C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\obj\Release\SportApp.csprojAssemblyReference.cache
+C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\obj\Release\SportApp.Doings.resources
+C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\obj\Release\SportApp.Panel.EditProfile.resources
+C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\obj\Release\SportApp.MainForm.resources
+C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\obj\Release\SportApp.MainMainForm.resources
+C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\obj\Release\SportApp.Migrations.sport.resources
+C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\obj\Release\SportApp.Profile.resources
+C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\obj\Release\SportApp.Properties.Resources.resources
+C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\obj\Release\SportApp.resetPassword.resources
+C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\obj\Release\SportApp.Results.resources
+C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\obj\Release\SportApp.SignInForm.resources
+C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\obj\Release\SportApp.SignOnForm.resources
+C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\obj\Release\SportApp.UserControlMeropr.resources
+C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\obj\Release\SportApp.csproj.GenerateResource.cache

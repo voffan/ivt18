@@ -65,9 +65,9 @@
             this.panelresultatssearch.Controls.Add(this.comboBox1);
             this.panelresultatssearch.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelresultatssearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.panelresultatssearch.Location = new System.Drawing.Point(1110, 0);
+            this.panelresultatssearch.Location = new System.Drawing.Point(1000, 0);
             this.panelresultatssearch.Name = "panelresultatssearch";
-            this.panelresultatssearch.Size = new System.Drawing.Size(200, 626);
+            this.panelresultatssearch.Size = new System.Drawing.Size(200, 1040);
             this.panelresultatssearch.TabIndex = 3;
             // 
             // button1
@@ -168,7 +168,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panelresultatssearch);
             this.Name = "Results";
-            this.Size = new System.Drawing.Size(1310, 626);
+            this.Size = new System.Drawing.Size(1200, 1040);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panelresultatssearch.ResumeLayout(false);
             this.ResumeLayout(false);

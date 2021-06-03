@@ -70,6 +70,18 @@
     <Compile Include="Classes\SportType.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="DbInitializer.cs" />
+    <Compile Include="Doings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doings.Designer.cs">
+      <DependentUpon>Doings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditProfile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditProfile.Designer.cs">
+      <DependentUpon>EditProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,12 +137,18 @@
     <Compile Include="SignOnForm.Designer.cs">
       <DependentUpon>SignOnForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Events.cs">
+    <Compile Include="AllEvents.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Events.Designer.cs">
-      <DependentUpon>Events.cs</DependentUpon>
+    <Compile Include="AllEvents.Designer.cs">
+      <DependentUpon>AllEvents.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Doings.resx">
+      <DependentUpon>Doings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditProfile.resx">
+      <DependentUpon>EditProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,8 +182,8 @@
     <EmbeddedResource Include="SignOnForm.resx">
       <DependentUpon>SignOnForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Events.resx">
-      <DependentUpon>Events.cs</DependentUpon>
+    <EmbeddedResource Include="AllEvents.resx">
+      <DependentUpon>AllEvents.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

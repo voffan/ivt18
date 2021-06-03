@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SportApp;
 
 namespace SportApp
 {
@@ -28,11 +29,11 @@ namespace SportApp
                 return _obj;
             }
         }
-
+        
         public Panel PnlContainer
         {
-            get { return PanelContainer; }
-            set { PanelContainer = value; }
+            get { return PnelContrl; }
+            set { PnelContrl = value; }
         }
         private void label2_Click(object sender, EventArgs e)
         {
@@ -49,7 +50,24 @@ namespace SportApp
         {
             Profile uc = new Profile();
             uc.Dock = DockStyle.Fill;
-            PanelContainer.Controls.Add(uc);
+            PnelContrl.Controls.Add(uc);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            if (!PnlContainer.Controls.ContainsKey("Doings"))
+            {
+
+                Doings uEvents = new Doings();
+                uEvents.Dock = DockStyle.Fill;
+                PnlContainer.Controls.Add(uEvents);
+            }
+            PnlContainer.Controls["Doings"].BringToFront();
         }
     }
 }

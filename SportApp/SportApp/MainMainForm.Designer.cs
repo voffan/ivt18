@@ -38,7 +38,7 @@ namespace SportApp
             this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panelup = new System.Windows.Forms.Panel();
-            this.PanelContainer = new System.Windows.Forms.Panel();
+            this.PnelContrl = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             this.panelup.SuspendLayout();
             this.SuspendLayout();
@@ -69,6 +69,7 @@ namespace SportApp
             this.label3.TabIndex = 1;
             this.label3.Text = "Мероприятия";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -118,7 +119,6 @@ namespace SportApp
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.panel3.Location = new System.Drawing.Point(0, 25);
             this.panel3.Name = "panel3";
@@ -137,6 +137,7 @@ namespace SportApp
             this.button4.TabIndex = 13;
             this.button4.Text = "x";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label1
             // 
@@ -153,23 +154,20 @@ namespace SportApp
             this.panelup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelup.Controls.Add(this.label1);
             this.panelup.Controls.Add(this.button4);
-            this.panelup.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelup.Font = new System.Drawing.Font("Consolas", 9.75F);
             this.panelup.Location = new System.Drawing.Point(0, 0);
             this.panelup.Name = "panelup";
             this.panelup.Size = new System.Drawing.Size(1200, 25);
             this.panelup.TabIndex = 2;
             // 
-            // PanelContainer
+            // PnelContrl
             // 
-            this.PanelContainer.BackColor = System.Drawing.Color.Gray;
-            this.PanelContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PanelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelContainer.Location = new System.Drawing.Point(0, 60);
-            this.PanelContainer.Name = "PanelContainer";
-            this.PanelContainer.Size = new System.Drawing.Size(1200, 1040);
-            this.PanelContainer.TabIndex = 8;
-            this.PanelContainer.Visible = false;
+            this.PnelContrl.BackColor = System.Drawing.Color.Gray;
+            this.PnelContrl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PnelContrl.Location = new System.Drawing.Point(0, 60);
+            this.PnelContrl.Name = "PnelContrl";
+            this.PnelContrl.Size = new System.Drawing.Size(1200, 1040);
+            this.PnelContrl.TabIndex = 8;
             // 
             // MainMainForm
             // 
@@ -179,7 +177,7 @@ namespace SportApp
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1200, 1100);
-            this.Controls.Add(this.PanelContainer);
+            this.Controls.Add(this.PnelContrl);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panelup);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -205,6 +203,6 @@ namespace SportApp
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelup;
-        private System.Windows.Forms.Panel PanelContainer;
+        private System.Windows.Forms.Panel PnelContrl;
     }
 }

@@ -1,29 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SportApp.Classes;
-using SportApp;
 
 namespace SportApp
 {
-    
-    
-    public partial class MainForm : Form
+    public partial class Doings : UserControl
     {
-        
-        public MainForm()
+        public Doings()
         {
             InitializeComponent();
-        }
-        private void label2_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }
