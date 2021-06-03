@@ -209,12 +209,6 @@
     <Compile Include="GenreListForm.Designer.cs">
       <DependentUpon>GenreListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="JournalForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="JournalForm.Designer.cs">
-      <DependentUpon>JournalForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\202105210222497_First.cs" />
     <Compile Include="Migrations\202105210222497_First.designer.cs">
       <DependentUpon>202105210222497_First.cs</DependentUpon>
@@ -262,12 +256,6 @@
     </Compile>
     <Compile Include="PictureLogic.cs" />
     <Compile Include="Department.cs" />
-    <Compile Include="PlaceListForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PlaceListForm.Designer.cs">
-      <DependentUpon>PlaceListForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Position.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -276,12 +264,6 @@
     </Compile>
     <Compile Include="ExpoListForm.Designer.cs">
       <DependentUpon>ExpoListForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Search.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Search.Designer.cs">
-      <DependentUpon>Search.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AddEmployeeForm.resx">
       <DependentUpon>AddEmployeeForm.cs</DependentUpon>
@@ -310,9 +292,6 @@
     <EmbeddedResource Include="GenreListForm.resx">
       <DependentUpon>GenreListForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="JournalForm.resx">
-      <DependentUpon>JournalForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105210222497_First.resx">
       <DependentUpon>202105210222497_First.cs</DependentUpon>
     </EmbeddedResource>
@@ -331,9 +310,6 @@
     <EmbeddedResource Include="PictureListForm.resx">
       <DependentUpon>PictureListForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PlaceListForm.resx">
-      <DependentUpon>PlaceListForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -344,9 +320,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Search.resx">
-      <DependentUpon>Search.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="GalleryDBDataSet.xsc">
       <DependentUpon>GalleryDBDataSet.xsd</DependentUpon>
     </None>

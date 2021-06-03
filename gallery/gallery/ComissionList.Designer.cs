@@ -36,10 +36,11 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(16, 11);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(16, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1035, 21);
+            this.label1.Size = new System.Drawing.Size(1035, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Список картин на реставрации:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -53,7 +54,6 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(1035, 444);
             this.dataGridView1.TabIndex = 1;
-
             this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
             // 
             // button1
@@ -77,7 +77,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ComissionList";
-            this.Text = "ComissionList";
+            this.Text = "Картины на реставрации";
             this.Activated += new System.EventHandler(this.ComissionList_Activated);
             this.Load += new System.EventHandler(this.ComissionList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

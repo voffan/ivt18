@@ -43,7 +43,6 @@ namespace gallery
             this.изменитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отправитьНаРеставрациюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -62,11 +61,11 @@ namespace gallery
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(16, 42);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(19, 34);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1283, 18);
+            this.label1.Size = new System.Drawing.Size(1280, 28);
             this.label1.TabIndex = 6;
             this.label1.Text = "Список картин:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -169,30 +168,18 @@ namespace gallery
             this.отправитьНаРеставрациюToolStripMenuItem.Text = "Отправить на реставрацию";
             this.отправитьНаРеставрациюToolStripMenuItem.Click += new System.EventHandler(this.pictureSendToResto_Click);
             // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(1179, 38);
-            this.button6.Margin = new System.Windows.Forms.Padding(4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(120, 28);
-            this.button6.TabIndex = 11;
-            this.button6.Text = "Найти";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.buttonSearch_Click);
-            // 
             // PictureListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1315, 496);
-            this.Controls.Add(this.button6);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PictureListForm";
-            this.Text = "PictureListForm";
+            this.Text = "Список картин";
             this.Activated += new System.EventHandler(this.PictureListForm_Activated);
             this.Load += new System.EventHandler(this.PictureListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -212,7 +199,6 @@ namespace gallery
         private System.Windows.Forms.ToolStripMenuItem artistToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem genreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem galleryToolStripMenuItem;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.ToolStripMenuItem картинаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem добавитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem просмотрToolStripMenuItem;

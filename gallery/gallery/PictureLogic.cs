@@ -116,7 +116,7 @@ namespace gallery
             int galleryId = getGalleryId(galleryName, c);
 
             Picture p = c.Pictures
-            .Where(o => o.Name == name && o.ArtistId == artistId)
+            .Where(o => o.PictureId == pictureId)
             .FirstOrDefault();
 
             if (p != null)
@@ -134,14 +134,21 @@ namespace gallery
 
         public static void sendToResto(Context c, int pictureId1, int employeeId1)
         {
-            Journal j = new Journal();
-            j.Date = DateTime.Today;
-            j.DepartmentFromId = 1;
-            j.DepartmentToId = 2;
-            j.PictureId = pictureId1;
-            j.EmployeeId = employeeId1;
-            c.Journals.Add(j);
-            c.SaveChanges();
+            Picture p = c.Pictures
+            .Where(o => o.PictureId == pictureId1)
+            .FirstOrDefault();
+            if (p.DepartmentId == 1)
+            {
+                Journal j = new Journal();
+                j.Date = DateTime.Today;
+                j.DepartmentFromId = 1;
+                j.DepartmentToId = 2;
+                j.PictureId = pictureId1;
+                j.EmployeeId = employeeId1;
+                c.Journals.Add(j);
+                p.DepartmentId = 2;
+                c.SaveChanges();
+            }
         }
 
         public static void deleteFromResto(Context c, int journalId2)
@@ -149,6 +156,13 @@ namespace gallery
             Journal hh = c.Journals
             .Where(l => l.JournalId == journalId2)
             .FirstOrDefault();
+
+            int pictureId2 = hh.PictureId;
+
+            Picture p = c.Pictures
+            .Where(o => o.PictureId == pictureId2)
+            .FirstOrDefault();
+            p.DepartmentId = 1;
 
             c.Journals.Remove(hh);
             c.SaveChanges();

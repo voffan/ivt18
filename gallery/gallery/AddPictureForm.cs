@@ -25,30 +25,49 @@ namespace gallery
         {
             if (FormId == 1)
             {
-                try
+                if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" && comboBox1.SelectedIndex > -1 && comboBox2.SelectedIndex > -1 && comboBox3.SelectedIndex > -1 && comboBox4.SelectedIndex > -1)
                 {
-                    PictureLogic.AddPicture(C, textBox1.Text, Convert.ToSingle(textBox2.Text), Convert.ToInt32(textBox3.Text), comboBox1.SelectedItem.ToString(), comboBox2.SelectedItem.ToString(), comboBox3.SelectedItem.ToString(), comboBox4.SelectedItem.ToString());
-                    MessageBox.Show("Добавление...");
-                    this.Close();
+                    if (Convert.ToSingle(textBox2.Text) > 0 && Convert.ToInt32(textBox3.Text) > 0)
+                    {
+                        try
+                        {
+                            PictureLogic.AddPicture(C, textBox1.Text, Convert.ToSingle(textBox2.Text), Convert.ToInt32(textBox3.Text), comboBox1.SelectedItem.ToString(), comboBox2.SelectedItem.ToString(), comboBox3.SelectedItem.ToString(), comboBox4.SelectedItem.ToString());
+                            this.Close();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Ошибка в добавлении картины!");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Неправильные данные");
+                    }
                 }
-                catch
+                else
                 {
-                    MessageBox.Show("Ошибка в добавлении картины!"); // проверить на null combobox
+                    MessageBox.Show("Введите все данные");
                 }
             }
             else
             {
                 if (FormId == 2)
                 {
-                    try
+                    if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" && comboBox1.SelectedIndex>-1 && comboBox2.SelectedIndex>-1 && comboBox3.SelectedIndex>-1 && comboBox4.SelectedIndex>-1)
                     {
-                        PictureLogic.UpdatePicture(C, UpdatingItemId, textBox1.Text, Convert.ToSingle(textBox2.Text), Convert.ToInt32(textBox3.Text), textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text);
-                        MessageBox.Show("Редактируется...");
-                        this.Close();
+                        try
+                        {
+                            PictureLogic.UpdatePicture(C, UpdatingItemId, textBox1.Text, Convert.ToSingle(textBox2.Text), Convert.ToInt32(textBox3.Text), comboBox1.SelectedItem.ToString(), comboBox2.SelectedItem.ToString(), comboBox3.SelectedItem.ToString(), comboBox4.SelectedItem.ToString());
+                            this.Close();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Ошибка при редактировании картины");
+                        }
                     }
-                    catch
+                    else
                     {
-                        MessageBox.Show("Ошибка при редактировании картины");
+                        MessageBox.Show("Введите все данные");
                     }
                 }
                 else
@@ -87,25 +106,29 @@ namespace gallery
             {
                 if (FormId==2)
                 {
-                    comboBox1.Visible = false;
-                    comboBox2.Visible = false;
-                    comboBox3.Visible = false;
-                    comboBox4.Visible = false;
-                    textBox4.Visible = true;
-                    textBox5.Visible = true;
-                    textBox6.Visible = true;
-                    textBox7.Visible = true;
+                    comboBox1.Visible = true;
+                    comboBox2.Visible = true;
+                    comboBox3.Visible = true;
+                    comboBox4.Visible = true;
+                    textBox4.Visible = false;
+                    textBox5.Visible = false;
+                    textBox6.Visible = false;
+                    textBox7.Visible = false;
                     textBox1.Text=C.Pictures.Where(c => c.PictureId == UpdatingItemId).Select(c => c.Name).FirstOrDefault();
                     textBox2.Text = Convert.ToString(C.Pictures.Where(c => c.PictureId == UpdatingItemId).Select(c => c.Price).FirstOrDefault());
                     textBox3.Text = Convert.ToString(C.Pictures.Where(c => c.PictureId == UpdatingItemId).Select(c => c.Year).FirstOrDefault());
                     int artistId = C.Pictures.Where(c => c.PictureId == UpdatingItemId).Select(c => c.ArtistId).FirstOrDefault();
-                    textBox4.Text = C.Artists.Where(c => c.ArtistId == artistId).Select(c => c.FullName).FirstOrDefault();
+                    comboBox1.Items.AddRange(C.Artists.Select(c => c.FullName).ToArray());
+                    comboBox1.SelectedItem = C.Artists.Where(c => c.ArtistId == artistId).Select(c => c.FullName).FirstOrDefault();
                     int genreId = C.Pictures.Where(c => c.PictureId == UpdatingItemId).Select(c => c.GenreId).FirstOrDefault();
-                    textBox5.Text = C.Genres.Where(c => c.GenreId == genreId).Select(c => c.Name).FirstOrDefault();
-                    int placeId = C.Pictures.Where(c => c.PictureId == UpdatingItemId).Select(c => c.DepartmentId).FirstOrDefault();
-                    textBox6.Text = C.Departments.Where(c => c.DepartmentId == placeId).Select(c => c.Name).FirstOrDefault();
+                    comboBox2.Items.AddRange(C.Genres.Select(c => c.Name).ToArray());
+                    comboBox2.SelectedItem = C.Genres.Where(c => c.GenreId == genreId).Select(c => c.Name).FirstOrDefault();
+                    int depId = C.Pictures.Where(c => c.PictureId == UpdatingItemId).Select(c => c.DepartmentId).FirstOrDefault();
+                    comboBox3.Items.AddRange(C.Departments.Select(c => c.Name).ToArray());
+                    comboBox3.SelectedItem = C.Departments.Where(c => c.DepartmentId == depId).Select(c => c.Name).FirstOrDefault();
                     int galleryId = C.Pictures.Where(c => c.PictureId == UpdatingItemId).Select(c => c.GalleryId).FirstOrDefault().Value;
-                    textBox7.Text = C.Galleries.Where(c => c.GalleryId == galleryId).Select(c => c.Name).FirstOrDefault();
+                    comboBox4.Items.AddRange(C.Galleries.Select(c => c.Name).ToArray());
+                    comboBox4.SelectedItem = C.Galleries.Where(c => c.GalleryId == galleryId).Select(c => c.Name).FirstOrDefault();
                     label1.Text = "Редактирование картины";
                 }
                 else
@@ -173,7 +196,7 @@ namespace gallery
             galleryListForm.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }

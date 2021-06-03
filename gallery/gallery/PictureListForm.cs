@@ -24,41 +24,18 @@ namespace gallery
         private void PictureListForm_Load(object sender, EventArgs e)
         {
             var query = from c in C.Pictures
-                        select new { ID = c.PictureId, Название = c.Name, Цена = c.Price, Год = c.Year, c.ArtistId, c.GenreId, c.DepartmentId, c.GalleryId}
+                        select new { ID = c.PictureId, Название = c.Name, Цена = c.Price, Год = c.Year, Художник = c.Artist.FullName, Жанр = c.Genre.Name, Местонахождение = c.CurrentLocation.Name, Галерея = c.Gallery.Name }
                         ;
             dataGridView1.DataSource = query.ToList();
-            dataGridView1.Columns.Add("Artist", "Художник");
-            dataGridView1.Columns.Add("Genre", "Жанр");
-            dataGridView1.Columns.Add("Department", "Отдел");
-            dataGridView1.Columns.Add("Gallery", "Галерея");
-            dataGridView1.Columns["ArtistId"].Visible = false;
-            dataGridView1.Columns["GenreId"].Visible = false;
-            dataGridView1.Columns["DepartmentId"].Visible = false;
-            dataGridView1.Columns["GalleryId"].Visible = false;
-            getPicture();
-        }
-
-        private void getPicture()
-        {
-            for (int i = 0; i < dataGridView1.RowCount; i++)
+            if (dataGridView1.RowCount > 0)
             {
-                DataGridViewRow selectedRow = dataGridView1.Rows[i];
-                int artId = Convert.ToInt32(selectedRow.Cells["ArtistId"].Value);
-                int genId = Convert.ToInt32(selectedRow.Cells["GenreId"].Value);
-                int depId = Convert.ToInt32(selectedRow.Cells["DepartmentId"].Value);
-                int galId = Convert.ToInt32(selectedRow.Cells["GalleryId"].Value);
-                dataGridView1.Rows[i].Cells["Artist"].Value = PictureLogic.getArtistById(artId, C);
-                dataGridView1.Rows[i].Cells["Genre"].Value = PictureLogic.getGenreById(genId, C);
-                dataGridView1.Rows[i].Cells["Department"].Value = PictureLogic.getDepartmentById(depId, C);
-                dataGridView1.Rows[i].Cells["Gallery"].Value = PictureLogic.getGalleryById(galId, C);
+                int selectedrowid = dataGridView1.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRoww = dataGridView1.Rows[selectedrowid];
+                selectedItemId = Convert.ToInt32(selectedRoww.Cells["ID"].Value);
             }
-            if (dataGridView1.Rows.Count > 0)
+            else
             {
-                dataGridView1.CurrentCell.Selected = true;
-                dataGridView1.Rows[0].Selected = true;
-                int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
-                selectedItemId = Convert.ToInt32(selectedRow.Cells["ID"].Value);
+                selectedItemId = -1;
             }
         }
 
@@ -74,7 +51,7 @@ namespace gallery
 
         private void PictureListForm_Activated(object sender, EventArgs e)
         {
-            getPicture();
+            PictureListForm_Load(sender, e);
         }
 
         private void artistListView_Click(object sender, EventArgs e)
@@ -115,20 +92,34 @@ namespace gallery
 
         private void pictureView_Click(object sender, EventArgs e)
         {
-            AddPictureForm addPictureForm = new AddPictureForm();
-            addPictureForm.UpdatingItemId = selectedItemId;
-            addPictureForm.FormId = 3;
-            addPictureForm.C = C;
-            addPictureForm.Show();
+            if (selectedItemId > -1)
+            {
+                AddPictureForm addPictureForm = new AddPictureForm();
+                addPictureForm.UpdatingItemId = selectedItemId;
+                addPictureForm.FormId = 3;
+                addPictureForm.C = C;
+                addPictureForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Пусто...");
+            }
         }
 
         private void pictureEdit_Click(object sender, EventArgs e)
         {
-            AddPictureForm addPictureForm = new AddPictureForm();
-            addPictureForm.UpdatingItemId = selectedItemId;
-            addPictureForm.FormId = 2;
-            addPictureForm.C = C;
-            addPictureForm.Show();
+            if (selectedItemId > -1)
+            {
+                AddPictureForm addPictureForm = new AddPictureForm();
+                addPictureForm.UpdatingItemId = selectedItemId;
+                addPictureForm.FormId = 2;
+                addPictureForm.C = C;
+                addPictureForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Пусто...");
+            }
         }
 
         private void expoListView(object sender, EventArgs e)
@@ -140,27 +131,41 @@ namespace gallery
 
         private void pictureDelete_Click(object sender, EventArgs e)
         {
-            try
+            if (selectedItemId > -1)
             {
-                PictureLogic.DeletePicture(C, selectedItemId);
-                MessageBox.Show("Удаление...");
+                try
+                {
+                    PictureLogic.DeletePicture(C, selectedItemId);
+                    PictureListForm_Activated(sender, e);
+                }
+                catch
+                {
+                    MessageBox.Show("Ошибка при удалении картины");
+                }
             }
-            catch
+            else
             {
-                MessageBox.Show("Ошибка при удалении картины");
+                MessageBox.Show("Пусто...");
             }
         }
 
         private void pictureSendToResto_Click(object sender, EventArgs e)
         {
-            try
+            if (selectedItemId > -1)
             {
-                PictureLogic.sendToResto(C, selectedItemId, empId);
-                MessageBox.Show("Добавляется...");
+                try
+                {
+                    PictureLogic.sendToResto(C, selectedItemId, empId);
+                    PictureListForm_Activated(sender, e);
+                }
+                catch (Exception ee)
+                {
+                    MessageBox.Show(ee.ToString());
+                }
             }
-            catch (Exception ee)
+            else
             {
-                MessageBox.Show(ee.ToString());
+                MessageBox.Show("Пусто...");
             }
         }
     }
