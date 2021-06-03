@@ -94,7 +94,6 @@ namespace carton
             int rowindex = planGridView.CurrentCell.RowIndex;
             int columnindex = 5;
             int shiftId = (int)planGridView.Rows[rowindex].Cells[columnindex].Value;
-            MessageBox.Show(shiftId.ToString());
             ShiftExpForm f = new ShiftExpForm(context, shiftId);
             f.Show();
         }
