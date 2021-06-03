@@ -26,7 +26,6 @@ C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\bin\Debug\MySql.Data.
 C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\bin\Debug\MySql.Data.Entity.EF6.dll
 C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\bin\Debug\EntityFramework.xml
 C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\bin\Debug\EntityFramework.SqlServer.xml
-C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\obj\Debug\SportApp.csprojAssemblyReference.cache
 C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\obj\Debug\SportApp.MainForm.resources
 C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\obj\Debug\SportApp.Properties.Resources.resources
 C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\obj\Debug\SportApp.SignInForm.resources
@@ -56,3 +55,6 @@ D:\stud\pi\ivt18\SportApp\SportApp\obj\Debug\SportApp.csproj.CoreCompileInputs.c
 D:\stud\pi\ivt18\SportApp\SportApp\obj\Debug\SportApp.csproj.CopyComplete
 D:\stud\pi\ivt18\SportApp\SportApp\obj\Debug\SportApp.exe
 D:\stud\pi\ivt18\SportApp\SportApp\obj\Debug\SportApp.pdb
+C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\obj\Debug\SportApp.csprojAssemblyReference.cache
+C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\obj\Debug\SportApp.Migrations.ss.resources
+C:\ИВТ-18\6 семестр\ПИ\ivt18\SportApp\SportApp\obj\Debug\SportApp.Profile.resources

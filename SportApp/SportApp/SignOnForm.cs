@@ -22,7 +22,7 @@ namespace SportApp
         {
             this.Close();
         }
-
+        string TestSEX;
         private void button2_Click(object sender, EventArgs e)
         {
             Context connect = new Context();
@@ -37,6 +37,7 @@ namespace SportApp
                 newUserBirthday = textBox5.Text,
                 newUserCity = Convert.ToString(comboBox1.SelectedItem),
                 newUserSex = Convert.ToString(comboBox3.SelectedItem);
+                 TestSEX = Convert.ToString(newUserSex);
 
             if (newUserPassword == RePassword)
             {
@@ -48,6 +49,7 @@ namespace SportApp
                     Password = RePassword,
                     Phone = newUserPhone,
                     CityName = newUserCity,
+                    Photo="default.png",
                     Birthday = Convert.ToDateTime(newUserBirthday),
                     //Sex = Convert.ToString(newUserSex)
                     //Type = 12
@@ -222,8 +224,7 @@ namespace SportApp
         private void SignOnForm_Load(object sender, EventArgs e)
         {
             Context connect = new Context();
-            List<string> names = connect.Cities
-                .Select(c => c.Name).ToList();
+            List<string> names = connect.Cities.Select(c => c.Name).ToList();
             foreach (string name in names)
             {
                 comboBox1.Items.Add(name);
@@ -322,6 +323,11 @@ namespace SportApp
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(Convert.ToString(comboBox3.SelectedIndex));
         }
     }
 }

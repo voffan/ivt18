@@ -82,6 +82,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(465, 22);
             this.textBox1.TabIndex = 2;
+            this.textBox1.Text = "ivanovv";
             // 
             // textBox2
             // 
@@ -95,6 +96,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(465, 22);
             this.textBox2.TabIndex = 3;
+            this.textBox2.Text = "123";
             // 
             // button1
             // 

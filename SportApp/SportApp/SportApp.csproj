@@ -86,7 +86,17 @@
     <Compile Include="Migrations\202105061030125_sport.Designer.cs">
       <DependentUpon>202105061030125_sport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105210403023_ss.cs" />
+    <Compile Include="Migrations\202105210403023_ss.Designer.cs">
+      <DependentUpon>202105210403023_ss.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Profile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="resetPassword.cs">
@@ -112,6 +122,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105061030125_sport.resx">
       <DependentUpon>202105061030125_sport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105210403023_ss.resx">
+      <DependentUpon>202105210403023_ss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

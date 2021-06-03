@@ -85,26 +85,48 @@ namespace SportApp
 
         private void label2_Click(object sender, EventArgs e)
         {
-            Context connect = new Context();
+            
+            if (!Instance.PnlContainer.Controls.ContainsKey("Profile"))
+            {
+                Profile ProfileGUI = new Profile();
+                ProfileGUI.Dock = DockStyle.Fill;
+                panelusers.Controls.Add(ProfileGUI);
+
+               
+            }
+            panelusers.Controls["Profile"].BringToFront();
+
+
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelresultats.Visible = false;
-            this.panelusers.Visible = true;
-            this.panelusers2.Visible = true;
 
-            string name = (from customer in connect.Persons
-                           where customer.Login == Program.logining
-                           select customer.Name)
-               .FirstOrDefault();
-            label7.Text = name;
+           
         }
         
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+        static MainForm _obj;
+        public static MainForm Instance 
+        {
+            get
+            {
+                if (_obj == null)
+                {
+                    _obj = new MainForm();
+                }
+                return _obj;
+            }
+        }
+
+        public Panel PnlContainer
+        {
+            get { return panelusers; }
+            set { panelusers = value; }
         }
     }
 }
