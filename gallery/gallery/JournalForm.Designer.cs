@@ -36,18 +36,18 @@ namespace gallery
             // journalDataGrid
             // 
             this.journalDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.journalDataGrid.Location = new System.Drawing.Point(12, 52);
+            this.journalDataGrid.Location = new System.Drawing.Point(12, 67);
             this.journalDataGrid.Name = "journalDataGrid";
             this.journalDataGrid.RowHeadersWidth = 51;
             this.journalDataGrid.RowTemplate.Height = 24;
-            this.journalDataGrid.Size = new System.Drawing.Size(776, 386);
+            this.journalDataGrid.Size = new System.Drawing.Size(1017, 371);
             this.journalDataGrid.TabIndex = 0;
             // 
             // JournalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 468);
+            this.ClientSize = new System.Drawing.Size(1041, 450);
             this.Controls.Add(this.journalDataGrid);
             this.Name = "JournalForm";
             this.Text = "Журнал";

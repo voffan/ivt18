@@ -24,17 +24,32 @@ namespace gallery
         private void AddExpoForm_Load(object sender, EventArgs e)
         {
             picturesBox.Items.AddRange(ExpoLogic.updatePicturesList(C));
+            eId = C.Employees.Select(c => c.EmployeeId).FirstOrDefault();
         }
 
         void picturesBox_DoubleClick(object sender, EventArgs e)
         {
-            ExpoLogic.sendToExpo(picturesBox.SelectedItem.ToString(), C);
-            updateExpoPicturesList(ExpoLogic.getExpoPicturesList(C));
+            try
+            {
+                ExpoLogic.sendToExpo(picturesBox.SelectedItem.ToString(), C);
+                updateExpoPicturesList(ExpoLogic.getExpoPicturesList(C));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
         void expoPicturesBox_DoubleClick(object sender, EventArgs e)
         {
-            ExpoLogic.sendToStorage(expoPicturesBox.SelectedItem.ToString(), C);
-            updateExpoPicturesList(ExpoLogic.getExpoPicturesList(C));
+            try
+            {
+                ExpoLogic.sendToStorage(expoPicturesBox.SelectedItem.ToString(), C);
+                updateExpoPicturesList(ExpoLogic.getExpoPicturesList(C));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
 
         private void updateExpoPicturesList(string[] upData)
@@ -45,12 +60,27 @@ namespace gallery
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            try{
-                ExpoLogic.addExpo(nameBox.Text, startDatePicker.Value, endDatePicker.Value, placeBox.Text, eId, C);
-                this.Close();
+            if (startDatePicker.Value > endDatePicker.Value)
+            {
+                MessageBox.Show("Укажите правильные даты!");
             }
-            catch(Exception ex){
-                MessageBox.Show(ex.Message.ToString());
+            else if (nameBox.Text != "" && placeBox.Text != "")
+            {
+                try
+                {
+                var startDate = new DateTime(startDatePicker.Value.Year, startDatePicker.Value.Month, startDatePicker.Value.Day);
+                var endDate = endDatePicker.Value.AddMilliseconds(-endDatePicker.Value.Millisecond);
+                ExpoLogic.addExpo(nameBox.Text, startDate, endDate, placeBox.Text, eId, C);
+                this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }           
+            else
+            {
+                MessageBox.Show("Заполните поля!");
             }
             
         }
