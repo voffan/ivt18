@@ -67,7 +67,7 @@ namespace SportApp
             // 
             // panel1
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -92,14 +92,19 @@ namespace SportApp
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.Gray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(753, -1);
+            this.button1.Location = new System.Drawing.Point(755, -1);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(25, 25);
-            this.button1.TabIndex = 12;
+            this.button1.TabIndex = 120;
             this.button1.Text = "x";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -108,14 +113,14 @@ namespace SportApp
             // 
             this.textBox1.AccessibleDescription = "Фамилия";
             this.textBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.textBox1.BackColor = System.Drawing.Color.Gray;
+            this.textBox1.BackColor = System.Drawing.Color.DarkGray;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox1.ForeColor = System.Drawing.Color.DarkGray;
+            this.textBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox1.ForeColor = System.Drawing.Color.White;
             this.textBox1.Location = new System.Drawing.Point(40, 50);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(340, 22);
-            this.textBox1.TabIndex = 18;
+            this.textBox1.TabIndex = 1;
             this.textBox1.Tag = "";
             this.textBox1.Text = "Фамилия";
             this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
@@ -123,85 +128,85 @@ namespace SportApp
             // 
             // comboBox1
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.Gray;
-            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.comboBox1.BackColor = System.Drawing.Color.DarkGray;
+            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox1.ForeColor = System.Drawing.Color.DarkGray;
+            this.comboBox1.ForeColor = System.Drawing.Color.White;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(405, 200);
+            this.comboBox1.Location = new System.Drawing.Point(401, 50);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(340, 24);
-            this.comboBox1.TabIndex = 21;
+            this.comboBox1.TabIndex = 7;
             this.comboBox1.Enter += new System.EventHandler(this.comboBox1_Enter);
             // 
             // textBox2
             // 
-            this.textBox2.BackColor = System.Drawing.Color.Gray;
+            this.textBox2.BackColor = System.Drawing.Color.DarkGray;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox2.ForeColor = System.Drawing.Color.DarkGray;
+            this.textBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox2.ForeColor = System.Drawing.Color.White;
             this.textBox2.Location = new System.Drawing.Point(40, 100);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(340, 22);
-            this.textBox2.TabIndex = 28;
+            this.textBox2.TabIndex = 2;
             this.textBox2.Text = "Имя";
             this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);
             this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave);
             // 
             // textBox3
             // 
-            this.textBox3.BackColor = System.Drawing.Color.Gray;
+            this.textBox3.BackColor = System.Drawing.Color.DarkGray;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox3.ForeColor = System.Drawing.Color.DarkGray;
+            this.textBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox3.ForeColor = System.Drawing.Color.White;
             this.textBox3.Location = new System.Drawing.Point(40, 150);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(340, 22);
-            this.textBox3.TabIndex = 29;
+            this.textBox3.TabIndex = 3;
             this.textBox3.Text = "Отчество";
             this.textBox3.Enter += new System.EventHandler(this.textBox3_Enter);
             this.textBox3.Leave += new System.EventHandler(this.textBox3_Leave);
             // 
             // textBox8
             // 
-            this.textBox8.BackColor = System.Drawing.Color.Gray;
+            this.textBox8.BackColor = System.Drawing.Color.DarkGray;
             this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox8.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox8.ForeColor = System.Drawing.Color.DarkGray;
-            this.textBox8.Location = new System.Drawing.Point(405, 50);
+            this.textBox8.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox8.ForeColor = System.Drawing.Color.White;
+            this.textBox8.Location = new System.Drawing.Point(40, 200);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(340, 22);
-            this.textBox8.TabIndex = 30;
+            this.textBox8.TabIndex = 4;
             this.textBox8.Text = "Телефон";
             this.textBox8.Enter += new System.EventHandler(this.textBox8_Enter);
             this.textBox8.Leave += new System.EventHandler(this.textBox8_Leave);
             // 
             // textBox4
             // 
-            this.textBox4.BackColor = System.Drawing.Color.Gray;
+            this.textBox4.BackColor = System.Drawing.Color.DarkGray;
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox4.ForeColor = System.Drawing.Color.DarkGray;
-            this.textBox4.Location = new System.Drawing.Point(405, 100);
+            this.textBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox4.ForeColor = System.Drawing.Color.White;
+            this.textBox4.Location = new System.Drawing.Point(40, 250);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(340, 22);
-            this.textBox4.TabIndex = 31;
+            this.textBox4.TabIndex = 5;
             this.textBox4.Text = "Почта";
             this.textBox4.Enter += new System.EventHandler(this.textBox4_Enter);
             this.textBox4.Leave += new System.EventHandler(this.textBox4_Leave);
             // 
             // textBox5
             // 
-            this.textBox5.BackColor = System.Drawing.Color.Gray;
+            this.textBox5.BackColor = System.Drawing.Color.DarkGray;
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox5.ForeColor = System.Drawing.Color.DarkGray;
-            this.textBox5.Location = new System.Drawing.Point(405, 150);
+            this.textBox5.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox5.ForeColor = System.Drawing.Color.White;
+            this.textBox5.Location = new System.Drawing.Point(40, 300);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(340, 22);
-            this.textBox5.TabIndex = 32;
+            this.textBox5.TabIndex = 6;
             this.textBox5.Text = "Дата рождения";
             this.textBox5.Enter += new System.EventHandler(this.textBox5_Enter);
             this.textBox5.Leave += new System.EventHandler(this.textBox5_Leave);
@@ -209,57 +214,62 @@ namespace SportApp
             // textBox6
             // 
             this.textBox6.AllowDrop = true;
-            this.textBox6.BackColor = System.Drawing.Color.Gray;
+            this.textBox6.BackColor = System.Drawing.Color.DarkGray;
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox6.ForeColor = System.Drawing.Color.DarkGray;
-            this.textBox6.Location = new System.Drawing.Point(40, 302);
+            this.textBox6.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox6.ForeColor = System.Drawing.Color.White;
+            this.textBox6.Location = new System.Drawing.Point(401, 250);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(340, 22);
-            this.textBox6.TabIndex = 33;
+            this.textBox6.TabIndex = 11;
             this.textBox6.Text = "Подтвержение пароля";
             this.textBox6.Enter += new System.EventHandler(this.textBox6_Enter);
             this.textBox6.Leave += new System.EventHandler(this.textBox6_Leave);
             // 
             // comboBox3
             // 
-            this.comboBox3.BackColor = System.Drawing.Color.Gray;
-            this.comboBox3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.comboBox3.BackColor = System.Drawing.Color.DarkGray;
+            this.comboBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox3.ForeColor = System.Drawing.Color.DarkGray;
+            this.comboBox3.ForeColor = System.Drawing.Color.White;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(405, 250);
+            this.comboBox3.Location = new System.Drawing.Point(401, 100);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(340, 24);
-            this.comboBox3.TabIndex = 35;
+            this.comboBox3.TabIndex = 8;
             // 
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.BackColor = System.Drawing.Color.Gray;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(405, 302);
+            this.button2.Location = new System.Drawing.Point(401, 367);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(340, 25);
-            this.button2.TabIndex = 36;
+            this.button2.TabIndex = 12;
             this.button2.Text = "Регистрация";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox7
             // 
-            this.textBox7.BackColor = System.Drawing.Color.Gray;
+            this.textBox7.BackColor = System.Drawing.Color.DarkGray;
             this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox7.ForeColor = System.Drawing.Color.DarkGray;
-            this.textBox7.Location = new System.Drawing.Point(40, 200);
+            this.textBox7.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox7.ForeColor = System.Drawing.Color.White;
+            this.textBox7.Location = new System.Drawing.Point(401, 150);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(340, 22);
-            this.textBox7.TabIndex = 37;
+            this.textBox7.TabIndex = 9;
             this.textBox7.Text = "Логин";
             this.textBox7.Enter += new System.EventHandler(this.textBox7_Enter);
             this.textBox7.Leave += new System.EventHandler(this.textBox7_Leave);
@@ -267,23 +277,27 @@ namespace SportApp
             // textBox9
             // 
             this.textBox9.AllowDrop = true;
-            this.textBox9.BackColor = System.Drawing.Color.Gray;
+            this.textBox9.BackColor = System.Drawing.Color.DarkGray;
             this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox9.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox9.ForeColor = System.Drawing.Color.DarkGray;
-            this.textBox9.Location = new System.Drawing.Point(40, 250);
+            this.textBox9.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox9.ForeColor = System.Drawing.Color.White;
+            this.textBox9.Location = new System.Drawing.Point(401, 200);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(340, 22);
-            this.textBox9.TabIndex = 38;
+            this.textBox9.TabIndex = 10;
             this.textBox9.Text = "Пароль";
             this.textBox9.Enter += new System.EventHandler(this.textBox9_Enter);
             this.textBox9.Leave += new System.EventHandler(this.textBox9_Leave);
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(503, 236);
+            this.monthCalendar1.BackColor = System.Drawing.Color.DarkGray;
+            this.monthCalendar1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.monthCalendar1.ForeColor = System.Drawing.Color.White;
+            this.monthCalendar1.Location = new System.Drawing.Point(40, 134);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 39;
+            this.monthCalendar1.TitleBackColor = System.Drawing.Color.Gray;
             this.monthCalendar1.Visible = false;
             this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
@@ -292,7 +306,7 @@ namespace SportApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(779, 446);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.textBox9);

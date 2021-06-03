@@ -82,6 +82,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMainForm.Designer.cs">
+      <DependentUpon>MainMainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202105061030125_sport.cs" />
     <Compile Include="Migrations\202105061030125_sport.Designer.cs">
       <DependentUpon>202105061030125_sport.cs</DependentUpon>
@@ -107,8 +113,17 @@
     <Compile Include="SignOnForm.Designer.cs">
       <DependentUpon>SignOnForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Events.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Events.Designer.cs">
+      <DependentUpon>Events.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMainForm.resx">
+      <DependentUpon>MainMainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105061030125_sport.resx">
       <DependentUpon>202105061030125_sport.cs</DependentUpon>
@@ -130,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SignOnForm.resx">
       <DependentUpon>SignOnForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Events.resx">
+      <DependentUpon>Events.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
