@@ -43,7 +43,7 @@ namespace gallery
             textBox4.Text = "";
 
             textBox5.Text = "";
-            
+          
 
         }
 

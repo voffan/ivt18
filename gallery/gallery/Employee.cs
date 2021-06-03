@@ -20,11 +20,11 @@ namespace gallery
        
         public int PositionId { get; set; }
         [ForeignKey("PositionId")]
-        public Position Position { get; set; } = null ;
+        public Position Position { get; set; } 
 
         public int GalleryId { get; set; }
        [ ForeignKey("GalleryId")]
-        public Gallery Gallery { get; set; } = null;
+        public Gallery Gallery { get; set; }
     }
 
 }
