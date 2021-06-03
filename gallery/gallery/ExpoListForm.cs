@@ -27,11 +27,16 @@ namespace gallery
                         select new { ID = c.ExpoId, Название = c.Name, Адрес = c.Address, Начало = c.StartDate, Конец = c.EndDate }
                         ;
             expoDataGrid.DataSource = query.ToList();
-            if (expoDataGrid.Rows.Count > 0)
-            {
-                expoDataGrid.Rows[0].Selected = true;
-                id = Convert.ToInt32(expoDataGrid.CurrentRow.Cells["ID"].Value);
-            }
+            eId = C.Employees.Select(c => c.EmployeeId).FirstOrDefault();
+
+            ToolTip t = new ToolTip();
+            t.SetToolTip(addExpoButton, "Добавить выставку");
+
+            ToolTip t1 = new ToolTip();
+            t1.SetToolTip(editExpoButton, "Редактировать выставку");
+
+            ToolTip t2 = new ToolTip();
+            t2.SetToolTip(deleteExpoButton, "Удалить выставку");
         }
 
 
@@ -50,9 +55,9 @@ namespace gallery
                 EditExpoForm editExpoForm = new EditExpoForm();
                 editExpoForm.C = C;
                 editExpoForm.id = id;
+                editExpoForm.eId = eId;
                 editExpoForm.Show();
             }
-            ExpoListForm_Load(sender, e);
 
         }
 
@@ -72,13 +77,15 @@ namespace gallery
             {
                 id = Convert.ToInt32(expoDataGrid.CurrentRow.Cells["ID"].Value);
             }
+            else
+            {
+                id = -1;
+            }
         }
 
         private void expoDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             editExpoButton_Click(sender, e);
-
-
         }
     }
 }

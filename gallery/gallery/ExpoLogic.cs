@@ -17,7 +17,7 @@ namespace gallery
             var ex = C.Expos.Where(c => c.Name == name).FirstOrDefault();
             if (ex != null)
             {
-                throw new Exception("Exposition already exists!");
+                throw new Exception("Выставка уже существует!");
             }
 
             Expo expo = new Expo
@@ -40,7 +40,7 @@ namespace gallery
 
                 C.Journals.Add(new Journal
                 {
-                    EmployeeId = 1,
+                    EmployeeId = eId,
                    
                     PictureId = newExpoPictures[i],
                     ExpoId = expo.ExpoId
@@ -156,7 +156,7 @@ namespace gallery
                     ExpoId = id,
                     PictureId = newExpoPictures[i],
                     Date = DateTime.Now,
-                    EmployeeId = 1
+                    EmployeeId = eId
                 }
                 ) ;
 
