@@ -125,7 +125,7 @@ namespace gallery
             this.Controls.Add(this.reportDataGrid);
             this.Name = "ReportForm";
             this.Text = "Отчеты";
-            this.Load += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.Load += new System.EventHandler(this.ReportForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.reportDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
