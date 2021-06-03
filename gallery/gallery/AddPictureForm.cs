@@ -27,21 +27,32 @@ namespace gallery
             {
                 if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" && comboBox1.SelectedIndex > -1 && comboBox2.SelectedIndex > -1 && comboBox3.SelectedIndex > -1 && comboBox4.SelectedIndex > -1)
                 {
-                    if (Convert.ToSingle(textBox2.Text) > 0 && Convert.ToInt32(textBox3.Text) > 0)
+                    try
                     {
-                        try
+                        Convert.ToInt32(textBox3.Text);
+                        if (Convert.ToInt32(textBox3.Text) > 1000 && Convert.ToInt32(textBox3.Text) < 2022)
                         {
-                            PictureLogic.AddPicture(C, textBox1.Text, Convert.ToSingle(textBox2.Text), Convert.ToInt32(textBox3.Text), comboBox1.SelectedItem.ToString(), comboBox2.SelectedItem.ToString(), comboBox3.SelectedItem.ToString(), comboBox4.SelectedItem.ToString());
-                            this.Close();
+                            if (Convert.ToSingle(textBox2.Text) > 0 && Convert.ToInt32(textBox3.Text) > 0)
+                            {
+                                try
+                                {
+                                    PictureLogic.AddPicture(C, textBox1.Text, Convert.ToSingle(textBox2.Text), Convert.ToInt32(textBox3.Text), comboBox1.SelectedItem.ToString(), comboBox2.SelectedItem.ToString(), comboBox3.SelectedItem.ToString(), comboBox4.SelectedItem.ToString());
+                                    this.Close();
+                                }
+                                catch
+                                {
+                                    MessageBox.Show("Ошибка в добавлении картины!");
+                                }
+                            }
                         }
-                        catch
+                        else
                         {
-                            MessageBox.Show("Ошибка в добавлении картины!");
+                            MessageBox.Show("Неправильно указаны данные...");
                         }
                     }
-                    else
+                    catch(Exception ee)
                     {
-                        MessageBox.Show("Неправильные данные");
+                        MessageBox.Show(ee.ToString());
                     }
                 }
                 else
@@ -180,13 +191,6 @@ namespace gallery
             GenreListForm genreListForm = new GenreListForm();
             genreListForm.C = C;
             genreListForm.Show();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            PlaceListForm placeListForm = new PlaceListForm();
-            placeListForm.C = C;
-            placeListForm.Show();
         }
 
         private void button6_Click(object sender, EventArgs e)

@@ -75,13 +75,6 @@ namespace gallery
             galleryListForm.Show();
         }
 
-        private void buttonSearch_Click(object sender, EventArgs e)
-        {
-            Search search = new Search();
-            search.C = C;
-            search.Show();
-        }
-
         private void pictureAdd_Click(object sender, EventArgs e)
         {
             AddPictureForm addPictureForm = new AddPictureForm();

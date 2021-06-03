@@ -209,6 +209,10 @@
     <Compile Include="GenreListForm.Designer.cs">
       <DependentUpon>GenreListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="JournalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JournalForm.Designer.cs" />
     <Compile Include="Migrations\202105210222497_First.cs" />
     <Compile Include="Migrations\202105210222497_First.designer.cs">
       <DependentUpon>202105210222497_First.cs</DependentUpon>
@@ -292,6 +296,7 @@
     <EmbeddedResource Include="GenreListForm.resx">
       <DependentUpon>GenreListForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="JournalForm.resx" />
     <EmbeddedResource Include="Migrations\202105210222497_First.resx">
       <DependentUpon>202105210222497_First.cs</DependentUpon>
     </EmbeddedResource>
