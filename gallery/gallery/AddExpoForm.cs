@@ -66,17 +66,17 @@ namespace gallery
             }
             else if (nameBox.Text != "" && placeBox.Text != "")
             {
-                try
-                {
+                //try
+                //{
                 var startDate = new DateTime(startDatePicker.Value.Year, startDatePicker.Value.Month, startDatePicker.Value.Day);
                 var endDate = endDatePicker.Value.AddMilliseconds(-endDatePicker.Value.Millisecond);
                 ExpoLogic.addExpo(nameBox.Text, startDate, endDate, placeBox.Text, eId, C);
                 this.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message.ToString());
-                }
+                //}
+                //catch (Exception ex)
+                //{
+               //     MessageBox.Show(ex.Message.ToString());
+               // }
             }           
             else
             {

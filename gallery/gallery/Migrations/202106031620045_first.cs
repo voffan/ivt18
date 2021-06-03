@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class First : DbMigration
+    public partial class first : DbMigration
     {
         public override void Up()
         {
@@ -29,12 +29,12 @@
                         ArtistId = c.Int(nullable: false),
                         GenreId = c.Int(nullable: false),
                         DepartmentId = c.Int(nullable: false),
-                        GalleryId = c.Int(nullable: false),
+                        GalleryId = c.Int(),
                     })
                 .PrimaryKey(t => t.PictureId)
                 .ForeignKey("dbo.Artist", t => t.ArtistId, cascadeDelete: true)
                 .ForeignKey("dbo.Department", t => t.DepartmentId, cascadeDelete: true)
-                .ForeignKey("dbo.Gallery", t => t.GalleryId, cascadeDelete: true)
+                .ForeignKey("dbo.Gallery", t => t.GalleryId)
                 .ForeignKey("dbo.Genre", t => t.GenreId, cascadeDelete: true)
                 .Index(t => t.ArtistId)
                 .Index(t => t.GenreId)
