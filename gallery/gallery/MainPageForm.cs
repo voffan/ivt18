@@ -51,5 +51,10 @@ namespace gallery
             reportForm.C = c;
             reportForm.Show();
         }
+
+        private void MainPageForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

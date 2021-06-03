@@ -49,28 +49,7 @@ namespace gallery
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            if (startDatePicker.Value > endDatePicker.Value)
-            {
-                MessageBox.Show("Укажите правильные даты!");
-            }
-            else if(nameBox.Text != "" && placeBox.Text != "")
-            {
-                try
-                {
-                    var startDate = new DateTime(startDatePicker.Value.Year, startDatePicker.Value.Month, startDatePicker.Value.Day);
-                    var endDate = endDatePicker.Value.AddMilliseconds(-endDatePicker.Value.Millisecond);
-                    ExpoLogic.apply(nameBox.Text, placeBox.Text, startDate, endDate, id, eId, C);
-                    this.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message.ToString());
-                }
-            }               
-            else
-            {
-                MessageBox.Show("Заполните поля!");
-            }
+            
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -96,6 +75,32 @@ namespace gallery
         {
             expoPicturesBox.Items.Clear();
             expoPicturesBox.Items.AddRange(upData);
+        }
+
+        private void submitButton_Click(object sender, EventArgs e)
+        {
+            if (startDatePicker.Value > endDatePicker.Value)
+            {
+                MessageBox.Show("Укажите правильные даты!");
+            }
+            else if (nameBox.Text != "" && placeBox.Text != "")
+            {
+                try
+                {
+                    var startDate = new DateTime(startDatePicker.Value.Year, startDatePicker.Value.Month, startDatePicker.Value.Day);
+                    var endDate = endDatePicker.Value.AddMilliseconds(-endDatePicker.Value.Millisecond);
+                    ExpoLogic.apply(nameBox.Text, placeBox.Text, startDate, endDate, id, eId, C);
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
+            else
+            {
+                MessageBox.Show("Заполните поля!");
+            }
         }
     }
 }

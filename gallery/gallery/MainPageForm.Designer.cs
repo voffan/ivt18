@@ -99,6 +99,7 @@ namespace gallery
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainPageForm";
             this.Text = "Главная";
+            this.Load += new System.EventHandler(this.MainPageForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

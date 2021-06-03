@@ -57,7 +57,7 @@ namespace gallery
             this.comboBox4.DisplayMember = "GalleryId";
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(464, 422);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(231, 24);
             this.comboBox4.TabIndex = 40;
@@ -77,7 +77,7 @@ namespace gallery
             // 
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(464, 366);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(231, 24);
             this.comboBox3.TabIndex = 38;
@@ -96,7 +96,7 @@ namespace gallery
             // 
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(464, 303);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(231, 24);
             this.comboBox2.TabIndex = 36;
@@ -115,7 +115,7 @@ namespace gallery
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(464, 246);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(231, 24);
             this.comboBox1.TabIndex = 34;
@@ -176,7 +176,7 @@ namespace gallery
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(464, 486);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 27;
@@ -187,7 +187,7 @@ namespace gallery
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(464, 188);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(231, 22);
             this.textBox3.TabIndex = 26;
@@ -195,7 +195,7 @@ namespace gallery
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(464, 130);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(231, 22);
             this.textBox2.TabIndex = 25;
@@ -203,7 +203,7 @@ namespace gallery
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(464, 73);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(231, 22);
             this.textBox1.TabIndex = 24;
@@ -211,7 +211,7 @@ namespace gallery
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(464, 247);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(231, 22);
             this.textBox4.TabIndex = 41;
@@ -219,7 +219,7 @@ namespace gallery
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(464, 304);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(231, 22);
             this.textBox5.TabIndex = 42;
@@ -227,7 +227,7 @@ namespace gallery
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(464, 366);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(231, 22);
             this.textBox6.TabIndex = 43;
@@ -235,7 +235,7 @@ namespace gallery
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(464, 422);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(231, 22);
             this.textBox7.TabIndex = 44;
@@ -276,7 +276,7 @@ namespace gallery
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddPictureForm";
             this.Text = "Добавить картину";
             this.Load += new System.EventHandler(this.AddPictureForm_Load);

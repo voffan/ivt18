@@ -184,9 +184,7 @@ namespace gallery
 
         private void button5_Click(object sender, EventArgs e)
         {
-            PlaceListForm placeListForm = new PlaceListForm();
-            placeListForm.C = C;
-            placeListForm.Show();
+
         }
 
         private void button6_Click(object sender, EventArgs e)
