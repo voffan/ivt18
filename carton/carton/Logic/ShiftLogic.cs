@@ -8,6 +8,7 @@ namespace carton
 {
     public class ShiftLogic
     {
+        Context context;
         public void Add(Context context, Shift shift, string boxA, string boxB, string boxC)
         {
             int a = 0;
@@ -30,16 +31,19 @@ namespace carton
             dailyProdA.Production = a;
             dailyProdA.ProductId = 1;
             dailyProdA.ShiftId = shift.Id;
+            dailyProdA.Date = DateTime.Now;
 
             DailyProd dailyProdB = new DailyProd();
             dailyProdB.Production = b;
             dailyProdB.ProductId = 2;
             dailyProdB.ShiftId = shift.Id;
+            dailyProdB.Date = DateTime.Now;
 
             DailyProd dailyProdC = new DailyProd();
             dailyProdC.Production = c;
             dailyProdC.ProductId = 3;
             dailyProdC.ShiftId = shift.Id;
+            dailyProdC.Date = DateTime.Now;
 
             context.DailyProds.Add(dailyProdA);
             context.DailyProds.Add(dailyProdB);
@@ -55,9 +59,13 @@ namespace carton
             {
                 a = a * 10 + boxA[i] - '0';
             }
-
             dailyProd.Production = a;
             
+            context.SaveChanges();
+        }
+        public void Save(Context context, Shift exp,string boxA)
+        {
+            exp.Explaining = boxA.ToString();
             context.SaveChanges();
         }
     }

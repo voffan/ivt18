@@ -14,7 +14,6 @@ namespace carton
     {
         readonly ShiftLogic shiftLogic;
         Context context;
-        CurrencyManager currencyManager;
 
         int shiftId;
 
@@ -37,8 +36,8 @@ namespace carton
         private void ShiftRepForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'cartonDBDataSet.Plan' table. You can move, or remove it, as needed.
-           //this.planTableAdapter.Fill(this.cartonDBDataSet.Plan);
-           // this.planGridView.DataSource = context.Plans;
+            //this.planTableAdapter.Fill(this.cartonDBDataSet.Plan);
+            //this.planGridView.DataSource = context.Plans;
         }
 
         private void planGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -90,9 +89,14 @@ namespace carton
             planGridView.DataSource = context.DailyProds.ToList();
         }
 
-        private void textBoxA_TextChanged(object sender, EventArgs e)
+        private void explanatoryButton_Click(object sender, EventArgs e)
         {
-
+            int rowindex = planGridView.CurrentCell.RowIndex;
+            int columnindex = 5;
+            int shiftId = (int)planGridView.Rows[rowindex].Cells[columnindex].Value;
+            MessageBox.Show(shiftId.ToString());
+            ShiftExpForm f = new ShiftExpForm(context, shiftId);
+            f.Show();
         }
     }
 }
