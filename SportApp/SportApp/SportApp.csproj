@@ -70,17 +70,11 @@
     <Compile Include="Classes\SportType.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="DbInitializer.cs" />
-    <Compile Include="Doings.cs">
+    <Compile Include="OtherWindow\Doings.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Doings.Designer.cs">
+    <Compile Include="OtherWindow\Doings.Designer.cs">
       <DependentUpon>Doings.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EditProfile.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="EditProfile.Designer.cs">
-      <DependentUpon>EditProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -105,10 +99,16 @@
       <DependentUpon>202105061030125_sport.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Profile.cs">
+    <Compile Include="OtherWindow\EditingAcc.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Profile.Designer.cs">
+    <Compile Include="OtherWindow\EditingAcc.Designer.cs">
+      <DependentUpon>EditingAcc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherWindow\Profile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OtherWindow\Profile.Designer.cs">
       <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -137,17 +137,14 @@
     <Compile Include="SignOnForm.Designer.cs">
       <DependentUpon>SignOnForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AllEvents.cs">
+    <Compile Include="OtherWindow\AllEvents.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AllEvents.Designer.cs">
+    <Compile Include="OtherWindow\AllEvents.Designer.cs">
       <DependentUpon>AllEvents.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Doings.resx">
+    <EmbeddedResource Include="OtherWindow\Doings.resx">
       <DependentUpon>Doings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EditProfile.resx">
-      <DependentUpon>EditProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -158,7 +155,10 @@
     <EmbeddedResource Include="Migrations\202105061030125_sport.resx">
       <DependentUpon>202105061030125_sport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Profile.resx">
+    <EmbeddedResource Include="OtherWindow\EditingAcc.resx">
+      <DependentUpon>EditingAcc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherWindow\Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -182,7 +182,7 @@
     <EmbeddedResource Include="SignOnForm.resx">
       <DependentUpon>SignOnForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AllEvents.resx">
+    <EmbeddedResource Include="OtherWindow\AllEvents.resx">
       <DependentUpon>AllEvents.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

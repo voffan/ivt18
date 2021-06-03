@@ -30,10 +30,20 @@ namespace SportApp
             }
         }
         
-        public Panel PnlContainer
+        public System.Windows.Forms.Panel PnlContainer
         {
             get { return PnelContrl; }
             set { PnelContrl = value; }
+        }
+        public void openEditBox()
+        {
+            if (!PnlContainer.Controls.ContainsKey("EditingAcc"))
+            {
+                OtherWindow.EditingAcc uEvents = new OtherWindow.EditingAcc();
+                uEvents.Dock = DockStyle.Fill;
+                PnlContainer.Controls.Add(uEvents);
+            }
+            PnlContainer.Controls["EditingAcc"].BringToFront();
         }
         private void label2_Click(object sender, EventArgs e)
         {
