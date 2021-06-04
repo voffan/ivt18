@@ -10,25 +10,27 @@ using System.Windows.Forms;
 
 namespace grades
 {
-    public partial class UserSignIn : Form
+    public partial class RoleAdd : Form
     {
-        private UserSignInLogic _logic;
         private Context _context;
-        private Person _currentPerson;
-        private string _login;
-        private string _password;
-        private int _role;
-        private Person _user;
-        private int Id;
+        private Position _curentPosition;
+        private RoleAddLogic _logic;
+        private List<TextBox> textBoxes;
+        private bool _editingState;
+
         private string _contentBackgroundColor;
         private string _contentSelectedColor;
 
-
-        public UserSignIn(Context _context)
+        public RoleAdd(Context context)
         {
             InitializeComponent();
-            _logic = new UserSignInLogic();
-            this._context = _context;
+            _context = context;
+            _logic = new RoleAddLogic();
+            _editingState = false;
+
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.StartPosition = FormStartPosition.CenterParent;
+            this.ControlBox = false;
 
             SetupColors();
         }
@@ -58,34 +60,49 @@ namespace grades
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        public void SetEditState(Position position)
         {
-            _login = Login.Text;
+            _curentPosition = position;
+            _editingState = true;
+
+            nameBox.Text = _curentPosition.Name;
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void cancelButton_Click(object sender, EventArgs e)
         {
-            _password = Password.Text;
+            this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void nameBox_TextChanged(object sender, EventArgs e)
         {
 
-            if (_logic.GetPeopleList(_context, _login, _password).Count != 0)
+        }
+
+        private void applyButton_Click(object sender, EventArgs e)
+        {
+            if (!_editingState)
             {
-                Id = _logic.GetPeopleList(_context, _login, _password)[0].Id;
-                MainForm f = new MainForm(_context, Id);
-                this.Hide();
-                f.ShowDialog();
-                this.Show();
+                _logic.createPosition();
             }
             else
             {
-                UserError f = new UserError();
-                this.Hide();
-                f.ShowDialog();
-                this.Show();
+                _logic.setPosition(_curentPosition);
             }
+
+            _logic.setPositionName(_context, nameBox.Text);
+
+            if (!_editingState)
+            {
+                _context.Positions.Add(_logic.GetPosition());
+            }
+            _context.SaveChanges();
+
+            this.Close();
+        }
+
+        private void cancelButton_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

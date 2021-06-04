@@ -15,7 +15,7 @@ namespace grades
 
             var groups = context.Persons 
                 .Where(g => g.Login == login && g.Password == password)
-                .Select(g => new { Id = g.Login, Name = g.Password})
+                .Select(g => new { Id = g.PersonId, Name = g.Login})
                 .ToList<dynamic>();
 
             if (groups == null)

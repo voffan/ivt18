@@ -142,6 +142,7 @@
             this.personMiddleNameBox.Name = "personMiddleNameBox";
             this.personMiddleNameBox.Size = new System.Drawing.Size(347, 15);
             this.personMiddleNameBox.TabIndex = 9;
+            this.personMiddleNameBox.TextChanged += new System.EventHandler(this.personMiddleNameBox_TextChanged);
             // 
             // personPhoneNumberBox
             // 
@@ -151,6 +152,7 @@
             this.personPhoneNumberBox.Name = "personPhoneNumberBox";
             this.personPhoneNumberBox.Size = new System.Drawing.Size(347, 15);
             this.personPhoneNumberBox.TabIndex = 10;
+            this.personPhoneNumberBox.TextChanged += new System.EventHandler(this.personPhoneNumberBox_TextChanged);
             // 
             // personHomeAddressBox
             // 

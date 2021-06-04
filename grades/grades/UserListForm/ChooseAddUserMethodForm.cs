@@ -13,6 +13,7 @@ namespace grades
     public partial class ChooseAddUserMethodForm : Form
     {
         private Context _context;
+        Position _user;
 
         private string _contentBackgroundColor;
         private string _contentSelectedColor;

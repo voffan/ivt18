@@ -175,5 +175,10 @@ namespace grades
 
             updateList();
         }
+
+        private void subjectDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

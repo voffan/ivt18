@@ -10,9 +10,10 @@ using System.Windows.Forms;
 
 namespace grades
 {
-    public partial class AddUser : Form
+    public partial class StudentInfo : Form
     {
-        private AddUserLogic _logic;
+        Person _user;
+        private StudentInfoLogic _logic;
         private Context _context;
 
         private Person _currentPerson;
@@ -23,15 +24,12 @@ namespace grades
 
         private string _contentBackgroundColor;
         private string _contentSelectedColor;
-
-        public AddUser(Context context)
+        public StudentInfo(Context context, Person user)
         {
             InitializeComponent();
-            _logic = new AddUserLogic();
+            _logic = new StudentInfoLogic();
             _context = context;
-
-            positionList.DataSource = (from pos in context.Positions
-                                       select pos.Name).ToList();
+            _user = user;
 
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.StartPosition = FormStartPosition.CenterParent;
@@ -70,11 +68,9 @@ namespace grades
             _currentPerson = person;
             _editingState = true;
 
-            personFirstNameBox.Text = _currentPerson.FirstName.ToString();
-            personSurNameBox.Text = _currentPerson.SurName.ToString();
-            personMiddleNameBox.Text = _currentPerson.MiddleName.ToString();
-            
-            positionList.Text = _context.Positions.Where(x => x.PositionId == _currentPerson.PositionId).Select(x => x.Name).Single();
+            textBox1.Text = _currentPerson.FirstName.ToString();
+            textBox2.Text = _currentPerson.SurName.ToString();
+            textBox3.Text = _currentPerson.MiddleName.ToString();
 
             personPhoneNumberBox.Text = _currentPerson.PhoneNumber.ToString();
 
@@ -84,61 +80,16 @@ namespace grades
         internal void SetViewState(Person person)
         {
             _currentPerson = person;
-            
-            guideText.Visible = false;
-            applyAddingUser.Visible = false;
-
-            cancelAddingUser.Text = "Закрыть";
             SetReadOnly();
 
-            personFirstNameBox.Text = _currentPerson.FirstName.ToString();
-            personSurNameBox.Text = _currentPerson.SurName.ToString();
-            personMiddleNameBox.Text = _currentPerson.MiddleName.ToString();
-
-            positionList.Text = _context.Positions.Where(x => x.PositionId == _currentPerson.PositionId).Select(x => x.Name).Single();
-            positionList.Enabled = false;
+            textBox1.Text = _currentPerson.FirstName.ToString();
+            textBox2.Text = _currentPerson.SurName.ToString();
+            textBox3.Text = _currentPerson.MiddleName.ToString();
 
             personPhoneNumberBox.Text = _currentPerson.PhoneNumber.ToString();
 
             personHomeAddressBox.Text = _currentPerson.HomeAddress.ToString();
 
-        }
-
-        private void applyAddingUser_Click(object sender, EventArgs e)
-        {
-            string positionName = positionList.Items[positionList.SelectedIndex].ToString();
-
-            if (!_editingState)
-            {
-                _logic.CreatePerson(positionName);
-            }
-            else
-            {
-                _logic.SetPerson(_currentPerson);
-            }
-
-            _logic.SetPersonFullName(
-                personFirstNameBox.Text.ToString(),
-                personSurNameBox.Text.ToString(),
-                personMiddleNameBox.Text.ToString()
-                );
-            _logic.SetPersonPostition(_context, positionName);
-            _logic.SetPersonPhoneNumber(personPhoneNumberBox.Text.ToString());
-            _logic.SetPersonHomeAddress(personHomeAddressBox.Text.ToString());
-            _currentPerson = _logic.GetAddedPerson();
-
-            if (!_editingState)
-            {
-                _context.Persons.Add(_currentPerson);
-            }
-
-            _context.SaveChanges();
-            this.Close();
-        }
-
-        private void cancelAddingUser_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void SetReadOnly()
@@ -166,16 +117,7 @@ namespace grades
             }
         }
 
-        private void AddUser_Load(object sender, EventArgs e)
-        {
-            foreach (TextBox t in this.Controls.OfType<TextBox>())
-            {
-                t.AutoSize = false;
-                t.Height = 25;
-            }
-        }
-
-        private void personFirstNameBox_TextChanged(object sender, EventArgs e)
+        private void personHomeAddressBox_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -185,7 +127,22 @@ namespace grades
 
         }
 
-        private void personMiddleNameBox_TextChanged(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -230,5 +230,10 @@ namespace grades
             this.Update();
             
         }
+
+        private void usersDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

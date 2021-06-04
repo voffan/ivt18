@@ -17,11 +17,11 @@ namespace grades
         [STAThread]
         static void Main()
         {
-            Context context = new Context();
+            Context _context = new Context();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new UserSignIn(context));
+            Application.Run(new UserSignIn(_context));
         }
     }
 }

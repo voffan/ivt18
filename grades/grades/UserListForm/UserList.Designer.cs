@@ -59,12 +59,13 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.usersDGV.DefaultCellStyle = dataGridViewCellStyle1;
             this.usersDGV.Location = new System.Drawing.Point(17, 58);
-            this.usersDGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.usersDGV.Margin = new System.Windows.Forms.Padding(4);
             this.usersDGV.Name = "usersDGV";
             this.usersDGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.usersDGV.RowHeadersWidth = 51;
             this.usersDGV.Size = new System.Drawing.Size(1033, 444);
             this.usersDGV.TabIndex = 0;
+            this.usersDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usersDGV_CellContentClick);
             // 
             // deleteUser
             // 
@@ -72,7 +73,7 @@
             this.deleteUser.FlatAppearance.BorderSize = 0;
             this.deleteUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteUser.Location = new System.Drawing.Point(949, 516);
-            this.deleteUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.deleteUser.Margin = new System.Windows.Forms.Padding(4);
             this.deleteUser.Name = "deleteUser";
             this.deleteUser.Size = new System.Drawing.Size(100, 28);
             this.deleteUser.TabIndex = 1;
@@ -86,7 +87,7 @@
             this.editUser.FlatAppearance.BorderSize = 0;
             this.editUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editUser.Location = new System.Drawing.Point(811, 516);
-            this.editUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.editUser.Margin = new System.Windows.Forms.Padding(4);
             this.editUser.Name = "editUser";
             this.editUser.Size = new System.Drawing.Size(131, 28);
             this.editUser.TabIndex = 2;
@@ -100,7 +101,7 @@
             this.addUser.FlatAppearance.BorderSize = 0;
             this.addUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addUser.Location = new System.Drawing.Point(703, 516);
-            this.addUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addUser.Margin = new System.Windows.Forms.Padding(4);
             this.addUser.Name = "addUser";
             this.addUser.Size = new System.Drawing.Size(100, 28);
             this.addUser.TabIndex = 3;
@@ -124,7 +125,7 @@
             this.showStaff.Checked = true;
             this.showStaff.CheckState = System.Windows.Forms.CheckState.Checked;
             this.showStaff.Location = new System.Drawing.Point(123, 521);
-            this.showStaff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.showStaff.Margin = new System.Windows.Forms.Padding(4);
             this.showStaff.Name = "showStaff";
             this.showStaff.Size = new System.Drawing.Size(95, 21);
             this.showStaff.TabIndex = 5;
@@ -138,7 +139,7 @@
             this.showStudents.Checked = true;
             this.showStudents.CheckState = System.Windows.Forms.CheckState.Checked;
             this.showStudents.Location = new System.Drawing.Point(233, 521);
-            this.showStudents.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.showStudents.Margin = new System.Windows.Forms.Padding(4);
             this.showStudents.Name = "showStudents";
             this.showStudents.Size = new System.Drawing.Size(93, 21);
             this.showStudents.TabIndex = 6;
@@ -151,7 +152,7 @@
             this.searchBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.searchBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.searchBox.Location = new System.Drawing.Point(81, 6);
-            this.searchBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(4);
             this.searchBox.Multiline = true;
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(860, 28);
@@ -174,7 +175,7 @@
             this.viewUser.FlatAppearance.BorderSize = 0;
             this.viewUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.viewUser.Location = new System.Drawing.Point(595, 516);
-            this.viewUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.viewUser.Margin = new System.Windows.Forms.Padding(4);
             this.viewUser.Name = "viewUser";
             this.viewUser.Size = new System.Drawing.Size(100, 28);
             this.viewUser.TabIndex = 10;
@@ -188,7 +189,7 @@
             this.clearButton.FlatAppearance.BorderSize = 0;
             this.clearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clearButton.Location = new System.Drawing.Point(949, 6);
-            this.clearButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.clearButton.Margin = new System.Windows.Forms.Padding(4);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(100, 28);
             this.clearButton.TabIndex = 11;
@@ -213,7 +214,7 @@
             this.Controls.Add(this.editUser);
             this.Controls.Add(this.deleteUser);
             this.Controls.Add(this.usersDGV);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserList";
             this.Text = "UserList";
             this.Load += new System.EventHandler(this.UserList_Load);

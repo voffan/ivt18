@@ -37,9 +37,10 @@ namespace grades
             // 
             this.addMultipleutton.FlatAppearance.BorderSize = 0;
             this.addMultipleutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addMultipleutton.Location = new System.Drawing.Point(12, 12);
+            this.addMultipleutton.Location = new System.Drawing.Point(16, 15);
+            this.addMultipleutton.Margin = new System.Windows.Forms.Padding(4);
             this.addMultipleutton.Name = "addMultipleutton";
-            this.addMultipleutton.Size = new System.Drawing.Size(309, 23);
+            this.addMultipleutton.Size = new System.Drawing.Size(412, 28);
             this.addMultipleutton.TabIndex = 0;
             this.addMultipleutton.Text = "Добавление пользователей из фалйа";
             this.addMultipleutton.UseVisualStyleBackColor = true;
@@ -49,9 +50,10 @@ namespace grades
             // 
             this.addSingleButton.FlatAppearance.BorderSize = 0;
             this.addSingleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addSingleButton.Location = new System.Drawing.Point(12, 45);
+            this.addSingleButton.Location = new System.Drawing.Point(16, 55);
+            this.addSingleButton.Margin = new System.Windows.Forms.Padding(4);
             this.addSingleButton.Name = "addSingleButton";
-            this.addSingleButton.Size = new System.Drawing.Size(309, 23);
+            this.addSingleButton.Size = new System.Drawing.Size(412, 28);
             this.addSingleButton.TabIndex = 1;
             this.addSingleButton.Text = "Добавление одного пользователя";
             this.addSingleButton.UseVisualStyleBackColor = true;
@@ -59,11 +61,12 @@ namespace grades
             // 
             // ChooseAddUserMethodForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(333, 80);
+            this.ClientSize = new System.Drawing.Size(444, 90);
             this.Controls.Add(this.addSingleButton);
             this.Controls.Add(this.addMultipleutton);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ChooseAddUserMethodForm";
             this.Text = "Способа добавления";
             this.Load += new System.EventHandler(this.ChooseAddUserMethodForm_Load);

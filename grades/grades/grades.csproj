@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -100,6 +100,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRole.Designer.cs">
+      <DependentUpon>AddRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddRoleLogic.cs" />
     <Compile Include="GroupAndCourseGradesFrom\GroupAndCourseGrades.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,11 +114,25 @@
       <DependentUpon>GroupAndCourseGrades.cs</DependentUpon>
     </Compile>
     <Compile Include="GroupAndCourseGradesFrom\GroupAndCourseGradesLogic.cs" />
-    <Compile Include="Migrations\202105280305161_test1234.cs" />
-    <Compile Include="Migrations\202105280305161_test1234.designer.cs">
-      <DependentUpon>202105280305161_test1234.cs</DependentUpon>
+    <Compile Include="Migrations\202106031226104_test1234.cs" />
+    <Compile Include="Migrations\202106031226104_test1234.designer.cs">
+      <DependentUpon>202106031226104_test1234.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="RoleAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoleAdd.Designer.cs">
+      <DependentUpon>RoleAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoleAddLogic.cs" />
+    <Compile Include="StudentInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentInfo.Designer.cs">
+      <DependentUpon>StudentInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentInfoLogic.cs" />
     <Compile Include="SubjectListForm\AddSubjectcs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +153,12 @@
       <DependentUpon>SubjectList.cs</DependentUpon>
     </Compile>
     <Compile Include="SubjectListForm\SubjectListLogic.cs" />
+    <Compile Include="UserListForm\UserError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserListForm\UserError.Designer.cs">
+      <DependentUpon>UserError.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserListForm\AddMultipleUsers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,11 +210,20 @@
     </Compile>
     <Compile Include="UserListForm\UserListLogic.cs" />
     <Compile Include="UserListForm\UserSignInLogic.cs" />
+    <EmbeddedResource Include="AddRole.resx">
+      <DependentUpon>AddRole.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GroupAndCourseGradesFrom\GroupAndCourseGrades.resx">
       <DependentUpon>GroupAndCourseGrades.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105280305161_test1234.resx">
-      <DependentUpon>202105280305161_test1234.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106031226104_test1234.resx">
+      <DependentUpon>202106031226104_test1234.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoleAdd.resx">
+      <DependentUpon>RoleAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentInfo.resx">
+      <DependentUpon>StudentInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubjectListForm\AddSubjectcs.resx">
       <DependentUpon>AddSubjectcs.cs</DependentUpon>
@@ -197,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SubjectListForm\SubjectList.resx">
       <DependentUpon>SubjectList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserListForm\UserError.resx">
+      <DependentUpon>UserError.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserListForm\AddMultipleUsers.resx">
       <DependentUpon>AddMultipleUsers.cs</DependentUpon>

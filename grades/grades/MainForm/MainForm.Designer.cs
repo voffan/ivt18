@@ -31,6 +31,8 @@ namespace grades
         {
             this.panelNavigation = new System.Windows.Forms.Panel();
             this.panelActivities = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnUserList = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btnGrading = new System.Windows.Forms.Button();
@@ -56,7 +58,7 @@ namespace grades
             this.panelNavigation.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelNavigation.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panelNavigation.Location = new System.Drawing.Point(0, 0);
-            this.panelNavigation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelNavigation.Margin = new System.Windows.Forms.Padding(4);
             this.panelNavigation.Name = "panelNavigation";
             this.panelNavigation.Size = new System.Drawing.Size(265, 567);
             this.panelNavigation.TabIndex = 0;
@@ -64,16 +66,50 @@ namespace grades
             // panelActivities
             // 
             this.panelActivities.AutoScroll = true;
+            this.panelActivities.Controls.Add(this.button2);
+            this.panelActivities.Controls.Add(this.button1);
             this.panelActivities.Controls.Add(this.btnUserList);
             this.panelActivities.Controls.Add(this.button4);
             this.panelActivities.Controls.Add(this.btnGrading);
             this.panelActivities.Controls.Add(this.btnSubjectList);
             this.panelActivities.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelActivities.Location = new System.Drawing.Point(0, 234);
-            this.panelActivities.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelActivities.Margin = new System.Windows.Forms.Padding(4);
             this.panelActivities.Name = "panelActivities";
             this.panelActivities.Size = new System.Drawing.Size(265, 295);
             this.panelActivities.TabIndex = 2;
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(0, 191);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(265, 38);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Список ролей";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(0, 152);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(265, 39);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Профиль";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnUserList
             // 
@@ -82,7 +118,7 @@ namespace grades
             this.btnUserList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUserList.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnUserList.Location = new System.Drawing.Point(0, 114);
-            this.btnUserList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUserList.Margin = new System.Windows.Forms.Padding(4);
             this.btnUserList.Name = "btnUserList";
             this.btnUserList.Size = new System.Drawing.Size(265, 38);
             this.btnUserList.TabIndex = 1;
@@ -98,7 +134,7 @@ namespace grades
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button4.Location = new System.Drawing.Point(0, 76);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(265, 38);
             this.button4.TabIndex = 1;
@@ -113,7 +149,7 @@ namespace grades
             this.btnGrading.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrading.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnGrading.Location = new System.Drawing.Point(0, 38);
-            this.btnGrading.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGrading.Margin = new System.Windows.Forms.Padding(4);
             this.btnGrading.Name = "btnGrading";
             this.btnGrading.Size = new System.Drawing.Size(265, 38);
             this.btnGrading.TabIndex = 1;
@@ -129,7 +165,7 @@ namespace grades
             this.btnSubjectList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubjectList.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnSubjectList.Location = new System.Drawing.Point(0, 0);
-            this.btnSubjectList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSubjectList.Margin = new System.Windows.Forms.Padding(4);
             this.btnSubjectList.Name = "btnSubjectList";
             this.btnSubjectList.Size = new System.Drawing.Size(265, 38);
             this.btnSubjectList.TabIndex = 1;
@@ -145,7 +181,7 @@ namespace grades
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnSettings.Location = new System.Drawing.Point(0, 529);
-            this.btnSettings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSettings.Margin = new System.Windows.Forms.Padding(4);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(265, 38);
             this.btnSettings.TabIndex = 1;
@@ -160,7 +196,7 @@ namespace grades
             this.panelUserInfo.Controls.Add(this.pictureBox1);
             this.panelUserInfo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelUserInfo.Location = new System.Drawing.Point(0, 0);
-            this.panelUserInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelUserInfo.Margin = new System.Windows.Forms.Padding(4);
             this.panelUserInfo.Name = "panelUserInfo";
             this.panelUserInfo.Size = new System.Drawing.Size(265, 234);
             this.panelUserInfo.TabIndex = 0;
@@ -176,6 +212,7 @@ namespace grades
             this.lblUserPosition.Size = new System.Drawing.Size(46, 17);
             this.lblUserPosition.TabIndex = 2;
             this.lblUserPosition.Text = "label2";
+            this.lblUserPosition.Click += new System.EventHandler(this.lblUserPosition_Click);
             // 
             // lblUserName
             // 
@@ -191,7 +228,7 @@ namespace grades
             // 
             this.pictureBox1.Image = global::grades.Properties.Resources.User_Icon;
             this.pictureBox1.Location = new System.Drawing.Point(67, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(133, 123);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -204,7 +241,7 @@ namespace grades
             this.panelMainContent.BackColor = System.Drawing.Color.White;
             this.panelMainContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMainContent.Location = new System.Drawing.Point(265, 0);
-            this.panelMainContent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelMainContent.Margin = new System.Windows.Forms.Padding(4);
             this.panelMainContent.Name = "panelMainContent";
             this.panelMainContent.Size = new System.Drawing.Size(1047, 567);
             this.panelMainContent.TabIndex = 1;
@@ -217,7 +254,7 @@ namespace grades
             this.Controls.Add(this.panelMainContent);
             this.Controls.Add(this.panelNavigation);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -244,5 +281,7 @@ namespace grades
         private System.Windows.Forms.Label lblUserPosition;
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Panel panelActivities;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

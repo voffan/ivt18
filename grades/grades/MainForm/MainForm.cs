@@ -13,38 +13,58 @@ namespace grades
 {
     public partial class MainForm : Form
     {
-        private Person _user;
 
+        private Person _user;
+        private int Id;
         private Context _context;
 
         private UserList _userListForm;
         private SubjectList _subjectListForm;
         private GroupAndCourseGrades _gradingForm;
+        private StudentInfo _studentInfo;
+        private AddRole _addRole;
 
         private Color _defauldBackColor;
         private Color _selectedBtnTxtColor;
 
-        public MainForm(Context _context)
+        public MainForm(Context _context, int _id)
         {
             InitializeComponent();
             this._context = _context;
+            Id = _id;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            //_context = new Context();
+            _context = new Context();
 
             _user = (from usr in _context.Persons
-                     where usr.PersonId == 17
+                     where usr.PersonId == Id
                      select usr).Single();
 
-            _userListForm = new UserList(_context, _user);
-            _subjectListForm = new SubjectList(_context, _user);
-            _gradingForm = new GroupAndCourseGrades(_context, _user);
+
+            //_userListForm = new UserList(_context, _user);
+            //_subjectListForm = new SubjectList(_context, _user);
+            //_gradingForm = new GroupAndCourseGrades(_context, _user);
+            _studentInfo = new StudentInfo(_context, _user);
+            _addRole = new AddRole(_context, _user);
 
 
             SetupUserInfo();
             SetupColors();
+            Enter();
+        }
+
+        private void Enter()
+        {
+            if (lblUserPosition.Text == "Директор")
+            {
+                button2.Visible = true;
+            }
+            else
+            {
+                button2.Visible = false;
+            }
         }
 
         private void SetupColors()
@@ -141,9 +161,11 @@ namespace grades
 
         private void hideAllForm()
         {
-            _subjectListForm.Hide();
-            _userListForm.Hide();
-            _gradingForm.Hide();
+            //_subjectListForm.Hide();
+            //_userListForm.Hide();
+            //_gradingForm.Hide();
+            _studentInfo.Hide();
+            _addRole.Hide();
         }
 
         private void clearButtonsColor()
@@ -151,9 +173,48 @@ namespace grades
             btnGrading.ForeColor = _defauldBackColor;
             btnSubjectList.ForeColor = _defauldBackColor;
             btnUserList.ForeColor = _defauldBackColor;
+            button1.ForeColor = _defauldBackColor;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            hideAllForm();
+            clearButtonsColor();
+            
+
+            btnGrading.ForeColor = _selectedBtnTxtColor;
+
+            _studentInfo.FormBorderStyle = FormBorderStyle.None;
+            this.IsMdiContainer = true;
+            _studentInfo.MdiParent = this;
+            this.panelMainContent.Controls.Add(_studentInfo);
+            _studentInfo.Dock = DockStyle.Fill;
+            _studentInfo.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+            hideAllForm();
+            clearButtonsColor();
+
+
+            btnGrading.ForeColor = _selectedBtnTxtColor;
+
+            _addRole.FormBorderStyle = FormBorderStyle.None;
+            this.IsMdiContainer = true;
+            _addRole.MdiParent = this;
+            this.panelMainContent.Controls.Add(_addRole);
+            _addRole.Dock = DockStyle.Fill;
+            _addRole.Show();
+        }
+
+        private void lblUserPosition_Click(object sender, EventArgs e)
         {
 
         }
