@@ -121,6 +121,7 @@ namespace SportApp
             this.panel3.Controls.Add(this.label2);
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.panel3.Location = new System.Drawing.Point(0, 25);
+            this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1200, 35);
             this.panel3.TabIndex = 7;
@@ -156,6 +157,7 @@ namespace SportApp
             this.panelup.Controls.Add(this.button4);
             this.panelup.Font = new System.Drawing.Font("Consolas", 9.75F);
             this.panelup.Location = new System.Drawing.Point(0, 0);
+            this.panelup.Margin = new System.Windows.Forms.Padding(0);
             this.panelup.Name = "panelup";
             this.panelup.Size = new System.Drawing.Size(1200, 25);
             this.panelup.TabIndex = 2;
@@ -165,8 +167,9 @@ namespace SportApp
             this.PnelContrl.BackColor = System.Drawing.Color.Gray;
             this.PnelContrl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PnelContrl.Location = new System.Drawing.Point(0, 60);
+            this.PnelContrl.Margin = new System.Windows.Forms.Padding(0);
             this.PnelContrl.Name = "PnelContrl";
-            this.PnelContrl.Size = new System.Drawing.Size(1200, 1040);
+            this.PnelContrl.Size = new System.Drawing.Size(1200, 700);
             this.PnelContrl.TabIndex = 8;
             // 
             // MainMainForm
@@ -176,7 +179,7 @@ namespace SportApp
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(1200, 1100);
+            this.ClientSize = new System.Drawing.Size(1200, 760);
             this.Controls.Add(this.PnelContrl);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panelup);

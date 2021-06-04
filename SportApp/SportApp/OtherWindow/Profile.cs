@@ -40,8 +40,15 @@ namespace SportApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MainMainForm openEdit = new MainMainForm();
-            openEdit.openEditBox();
+            if (!MainMainForm.Instance.PnlContainer.Controls.ContainsKey("EditingAcc"))
+            {
+                OtherWindow.EditingAcc un = new OtherWindow.EditingAcc();
+                un.Dock = DockStyle.Fill;
+                MainMainForm.Instance.PnlContainer.Controls.Add(un);
+            }
+            MainMainForm.Instance.PnlContainer.Controls["EditingAcc"].BringToFront();
+
+
         }
     }
 }

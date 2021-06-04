@@ -17,14 +17,14 @@ namespace SportApp
         {
             InitializeComponent();
         }
-        static Form1 _obj;
-        public static Form1 Instance
+        static MainMainForm _obj;
+        public static MainMainForm Instance
         {
             get
             {
                 if (_obj == null)
                 {
-                    _obj = new Form1();
+                    _obj = new MainMainForm();
                 }
                 return _obj;
             }
@@ -34,16 +34,6 @@ namespace SportApp
         {
             get { return PnelContrl; }
             set { PnelContrl = value; }
-        }
-        public void openEditBox()
-        {
-            if (!PnlContainer.Controls.ContainsKey("EditingAcc"))
-            {
-                OtherWindow.EditingAcc uEvents = new OtherWindow.EditingAcc();
-                uEvents.Dock = DockStyle.Fill;
-                PnlContainer.Controls.Add(uEvents);
-            }
-            PnlContainer.Controls["EditingAcc"].BringToFront();
         }
         private void label2_Click(object sender, EventArgs e)
         {
@@ -58,6 +48,7 @@ namespace SportApp
 
         private void MainMainForm_Load(object sender, EventArgs e)
         {
+            _obj = this;
             Profile uc = new Profile();
             uc.Dock = DockStyle.Fill;
             PnelContrl.Controls.Add(uc);

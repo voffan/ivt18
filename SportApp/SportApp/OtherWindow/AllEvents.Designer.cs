@@ -41,18 +41,10 @@ namespace SportApp
             this.VidSportaSoon1 = new System.Windows.Forms.Label();
             this.EventSoon1 = new System.Windows.Forms.Label();
             this.groupBoxToday = new System.Windows.Forms.GroupBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.CityToday3 = new System.Windows.Forms.Label();
-            this.VidSportaToday3 = new System.Windows.Forms.Label();
-            this.EventToday3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.CityToday2 = new System.Windows.Forms.Label();
             this.VidSportaToday2 = new System.Windows.Forms.Label();
             this.EventToday2 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.CityToday1 = new System.Windows.Forms.Label();
-            this.VidSportaToday1 = new System.Windows.Forms.Label();
-            this.EventToday1 = new System.Windows.Forms.Label();
             this.groupBoxYesterday = new System.Windows.Forms.GroupBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.CityYesterday2 = new System.Windows.Forms.Label();
@@ -66,9 +58,7 @@ namespace SportApp
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBoxToday.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.groupBoxYesterday.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -192,57 +182,16 @@ namespace SportApp
             // groupBoxToday
             // 
             this.groupBoxToday.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBoxToday.Controls.Add(this.panel5);
             this.groupBoxToday.Controls.Add(this.panel4);
-            this.groupBoxToday.Controls.Add(this.panel3);
             this.groupBoxToday.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxToday.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBoxToday.ForeColor = System.Drawing.Color.White;
             this.groupBoxToday.Location = new System.Drawing.Point(0, 200);
             this.groupBoxToday.Name = "groupBoxToday";
-            this.groupBoxToday.Size = new System.Drawing.Size(1300, 740);
+            this.groupBoxToday.Size = new System.Drawing.Size(1300, 500);
             this.groupBoxToday.TabIndex = 1;
             this.groupBoxToday.TabStop = false;
             this.groupBoxToday.Text = "Сегодня";
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.DimGray;
-            this.panel5.Controls.Add(this.CityToday3);
-            this.panel5.Controls.Add(this.VidSportaToday3);
-            this.panel5.Controls.Add(this.EventToday3);
-            this.panel5.Location = new System.Drawing.Point(295, 375);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(710, 150);
-            this.panel5.TabIndex = 6;
-            // 
-            // CityToday3
-            // 
-            this.CityToday3.AutoSize = true;
-            this.CityToday3.Location = new System.Drawing.Point(32, 105);
-            this.CityToday3.Name = "CityToday3";
-            this.CityToday3.Size = new System.Drawing.Size(130, 16);
-            this.CityToday3.TabIndex = 5;
-            this.CityToday3.Text = "МестоПроведения";
-            // 
-            // VidSportaToday3
-            // 
-            this.VidSportaToday3.AutoSize = true;
-            this.VidSportaToday3.Location = new System.Drawing.Point(32, 27);
-            this.VidSportaToday3.Name = "VidSportaToday3";
-            this.VidSportaToday3.Size = new System.Drawing.Size(81, 16);
-            this.VidSportaToday3.TabIndex = 4;
-            this.VidSportaToday3.Text = "ВидСпорта";
-            // 
-            // EventToday3
-            // 
-            this.EventToday3.AutoSize = true;
-            this.EventToday3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.EventToday3.Location = new System.Drawing.Point(32, 53);
-            this.EventToday3.Name = "EventToday3";
-            this.EventToday3.Size = new System.Drawing.Size(181, 16);
-            this.EventToday3.TabIndex = 3;
-            this.EventToday3.Text = "НазваниеМероприятия";
             // 
             // panel4
             // 
@@ -250,7 +199,7 @@ namespace SportApp
             this.panel4.Controls.Add(this.CityToday2);
             this.panel4.Controls.Add(this.VidSportaToday2);
             this.panel4.Controls.Add(this.EventToday2);
-            this.panel4.Location = new System.Drawing.Point(295, 200);
+            this.panel4.Location = new System.Drawing.Point(295, 71);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(710, 150);
             this.panel4.TabIndex = 1;
@@ -283,45 +232,6 @@ namespace SportApp
             this.EventToday2.TabIndex = 3;
             this.EventToday2.Text = "НазваниеМероприятия";
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.DimGray;
-            this.panel3.Controls.Add(this.CityToday1);
-            this.panel3.Controls.Add(this.VidSportaToday1);
-            this.panel3.Controls.Add(this.EventToday1);
-            this.panel3.Location = new System.Drawing.Point(295, 25);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(710, 150);
-            this.panel3.TabIndex = 0;
-            // 
-            // CityToday1
-            // 
-            this.CityToday1.AutoSize = true;
-            this.CityToday1.Location = new System.Drawing.Point(32, 105);
-            this.CityToday1.Name = "CityToday1";
-            this.CityToday1.Size = new System.Drawing.Size(130, 16);
-            this.CityToday1.TabIndex = 5;
-            this.CityToday1.Text = "МестоПроведения";
-            // 
-            // VidSportaToday1
-            // 
-            this.VidSportaToday1.AutoSize = true;
-            this.VidSportaToday1.Location = new System.Drawing.Point(32, 27);
-            this.VidSportaToday1.Name = "VidSportaToday1";
-            this.VidSportaToday1.Size = new System.Drawing.Size(81, 16);
-            this.VidSportaToday1.TabIndex = 4;
-            this.VidSportaToday1.Text = "ВидСпорта";
-            // 
-            // EventToday1
-            // 
-            this.EventToday1.AutoSize = true;
-            this.EventToday1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.EventToday1.Location = new System.Drawing.Point(32, 53);
-            this.EventToday1.Name = "EventToday1";
-            this.EventToday1.Size = new System.Drawing.Size(181, 16);
-            this.EventToday1.TabIndex = 3;
-            this.EventToday1.Text = "НазваниеМероприятия";
-            // 
             // groupBoxYesterday
             // 
             this.groupBoxYesterday.BackColor = System.Drawing.Color.DimGray;
@@ -330,9 +240,9 @@ namespace SportApp
             this.groupBoxYesterday.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBoxYesterday.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBoxYesterday.ForeColor = System.Drawing.Color.White;
-            this.groupBoxYesterday.Location = new System.Drawing.Point(0, 740);
+            this.groupBoxYesterday.Location = new System.Drawing.Point(0, 512);
             this.groupBoxYesterday.Name = "groupBoxYesterday";
-            this.groupBoxYesterday.Size = new System.Drawing.Size(1300, 200);
+            this.groupBoxYesterday.Size = new System.Drawing.Size(1300, 188);
             this.groupBoxYesterday.TabIndex = 2;
             this.groupBoxYesterday.TabStop = false;
             this.groupBoxYesterday.Text = "Вчера";
@@ -424,19 +334,15 @@ namespace SportApp
             this.Controls.Add(this.groupBoxToday);
             this.Controls.Add(this.groupBoxSoon);
             this.Name = "UserControlMeropr";
-            this.Size = new System.Drawing.Size(1300, 940);
+            this.Size = new System.Drawing.Size(1300, 700);
             this.groupBoxSoon.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBoxToday.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.groupBoxYesterday.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
@@ -459,18 +365,10 @@ namespace SportApp
         private System.Windows.Forms.Label DateTimeSoon1;
         private System.Windows.Forms.Label VidSportaSoon1;
         private System.Windows.Forms.Label EventSoon1;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label CityToday3;
-        private System.Windows.Forms.Label VidSportaToday3;
-        private System.Windows.Forms.Label EventToday3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label CityToday2;
         private System.Windows.Forms.Label VidSportaToday2;
         private System.Windows.Forms.Label EventToday2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label CityToday1;
-        private System.Windows.Forms.Label VidSportaToday1;
-        private System.Windows.Forms.Label EventToday1;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label VidSportaYesterday2;
         private System.Windows.Forms.Label EventYesterday2;

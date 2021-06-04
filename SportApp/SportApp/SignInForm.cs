@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace SportApp
 {
@@ -74,6 +75,12 @@ namespace SportApp
                     {
                         MainMainForm LoginForm = new MainMainForm();
                         Program.logining = textBox1.Text;
+
+                        Context context = new Context();
+                        context.Configuration.UseDatabaseNullSemantics = true;
+                        var query = from line in context.Persons select line;
+                        // query.S
+                        Program.userType = 0;
                         LoginForm.Show();
                     }
                 }

@@ -47,7 +47,7 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Silver;
-            this.groupBox3.Location = new System.Drawing.Point(40, 504);
+            this.groupBox3.Location = new System.Drawing.Point(40, 469);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(810, 200);
             this.groupBox3.TabIndex = 21;
@@ -57,9 +57,9 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Silver;
-            this.groupBox2.Location = new System.Drawing.Point(890, 264);
+            this.groupBox2.Location = new System.Drawing.Point(890, 243);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(230, 440);
+            this.groupBox2.Size = new System.Drawing.Size(230, 426);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
@@ -80,7 +80,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Silver;
-            this.groupBox1.Location = new System.Drawing.Point(40, 264);
+            this.groupBox1.Location = new System.Drawing.Point(40, 243);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(810, 200);
             this.groupBox1.TabIndex = 20;
@@ -186,7 +186,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Profile";
-            this.Size = new System.Drawing.Size(1200, 1040);
+            this.Size = new System.Drawing.Size(1200, 700);
             this.Load += new System.EventHandler(this.Profile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

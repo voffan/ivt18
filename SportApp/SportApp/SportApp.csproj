@@ -76,18 +76,6 @@
     <Compile Include="OtherWindow\Doings.Designer.cs">
       <DependentUpon>Doings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +93,12 @@
     <Compile Include="OtherWindow\EditingAcc.Designer.cs">
       <DependentUpon>EditingAcc.cs</DependentUpon>
     </Compile>
+    <Compile Include="OtherWindow\EditingPanel\Photo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OtherWindow\EditingPanel\Photo.Designer.cs">
+      <DependentUpon>Photo.cs</DependentUpon>
+    </Compile>
     <Compile Include="OtherWindow\Profile.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -119,10 +113,10 @@
     <Compile Include="resetPassword.Designer.cs">
       <DependentUpon>resetPassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="Results.cs">
+    <Compile Include="OtherWindow\Results.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Results.Designer.cs">
+    <Compile Include="OtherWindow\Results.Designer.cs">
       <DependentUpon>Results.cs</DependentUpon>
     </Compile>
     <Compile Include="SignInForm.cs">
@@ -146,9 +140,6 @@
     <EmbeddedResource Include="OtherWindow\Doings.resx">
       <DependentUpon>Doings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainMainForm.resx">
       <DependentUpon>MainMainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OtherWindow\EditingAcc.resx">
       <DependentUpon>EditingAcc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherWindow\EditingPanel\Photo.resx">
+      <DependentUpon>Photo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OtherWindow\Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
@@ -173,7 +167,7 @@
     <EmbeddedResource Include="resetPassword.resx">
       <DependentUpon>resetPassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Results.resx">
+    <EmbeddedResource Include="OtherWindow\Results.resx">
       <DependentUpon>Results.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignInForm.resx">
