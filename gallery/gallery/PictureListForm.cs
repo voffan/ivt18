@@ -14,7 +14,7 @@ namespace gallery
     {
         public Context C { get; set; }
         int selectedItemId = -1;
-        int empId = 6;
+        int empId = 3;
 
         public PictureListForm()
         {

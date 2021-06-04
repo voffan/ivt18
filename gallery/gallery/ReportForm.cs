@@ -74,7 +74,7 @@ namespace gallery
             var d1 = dateTimePicker1.Value;
             var d2 = dateTimePicker2.Value;
 
-            if (d1 > d2)
+            if (d1 > d2.AddMilliseconds(10000))
             {
                 MessageBox.Show("Укажите правильные даты!");
             }

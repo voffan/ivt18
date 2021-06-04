@@ -60,7 +60,7 @@ namespace gallery
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            if (startDatePicker.Value > endDatePicker.Value)
+            if (startDatePicker.Value > endDatePicker.Value.AddMilliseconds(10000))
             {
                 MessageBox.Show("Укажите правильные даты!");
             }
