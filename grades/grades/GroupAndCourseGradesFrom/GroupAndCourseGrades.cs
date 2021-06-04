@@ -224,7 +224,9 @@ namespace grades
 
         private void groupComboBox_DropDownClosed(object sender, EventArgs e)
         {
-            if (_currentGroupId == Convert.ToInt32(groupComboBox.SelectedValue)) return;
+            if (_currentGroupId == Convert.ToInt32(groupComboBox.SelectedValue) ||
+                groupComboBox.SelectedValue == null) 
+                return;
 
             _currentGroupId = Convert.ToInt32(groupComboBox.SelectedValue);
             _currentCourseId = _logic.GetCourseId(_context, _currentSubjectId, _currentGroupId, _user);

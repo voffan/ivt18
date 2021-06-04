@@ -273,7 +273,7 @@ namespace grades
         private System.Windows.Forms.Panel panelMainContent;
         private System.Windows.Forms.Panel panelUserInfo;
         private System.Windows.Forms.Button btnSettings;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnTransitions;
         private System.Windows.Forms.Button btnGrading;
         private System.Windows.Forms.Button btnSubjectList;
         private System.Windows.Forms.Button btnUserList;
