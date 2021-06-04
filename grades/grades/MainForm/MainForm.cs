@@ -20,6 +20,7 @@ namespace grades
         private UserList _userListForm;
         private SubjectList _subjectListForm;
         private GroupAndCourseGrades _gradingForm;
+        private TransitionManagement _transitionsForm;
 
         private Color _defauldBackColor;
         private Color _selectedBtnTxtColor;
@@ -40,6 +41,7 @@ namespace grades
             _userListForm = new UserList(_context, _user);
             _subjectListForm = new SubjectList(_context, _user);
             _gradingForm = new GroupAndCourseGrades(_context, _user);
+            _transitionsForm = new TransitionManagement(_context, _user);
 
             SetupUserInfo();
             SetupColors();
@@ -142,6 +144,7 @@ namespace grades
             _subjectListForm.Hide();
             _userListForm.Hide();
             _gradingForm.Hide();
+            _transitionsForm.Hide();
         }
 
         private void clearButtonsColor()
@@ -149,6 +152,22 @@ namespace grades
             btnGrading.ForeColor = _defauldBackColor;
             btnSubjectList.ForeColor = _defauldBackColor;
             btnUserList.ForeColor = _defauldBackColor;
+            btnTransitions.ForeColor = _defauldBackColor;
+        }
+
+        private void transitionsButton_Click(object sender, EventArgs e)
+        {
+            hideAllForm();
+            clearButtonsColor();
+
+            btnTransitions.ForeColor = _selectedBtnTxtColor;
+
+            _transitionsForm.FormBorderStyle = FormBorderStyle.None;
+            this.IsMdiContainer = true;
+            _transitionsForm.MdiParent = this;
+            this.panelMainContent.Controls.Add(_transitionsForm);
+            _transitionsForm.Dock = DockStyle.Fill;
+            _transitionsForm.Show();
         }
     }
 }

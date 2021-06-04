@@ -86,6 +86,8 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
@@ -115,6 +117,14 @@
     <Compile Include="Migrations\202106011100258_test6.designer.cs">
       <DependentUpon>202106011100258_test6.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106021050327_test7.cs" />
+    <Compile Include="Migrations\202106021050327_test7.designer.cs">
+      <DependentUpon>202106021050327_test7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106040144573_test8.cs" />
+    <Compile Include="Migrations\202106040144573_test8.designer.cs">
+      <DependentUpon>202106040144573_test8.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SubjectListForm\AddSubjectcs.cs">
       <SubType>Form</SubType>
@@ -136,6 +146,13 @@
       <DependentUpon>SubjectList.cs</DependentUpon>
     </Compile>
     <Compile Include="SubjectListForm\SubjectListLogic.cs" />
+    <Compile Include="StudentTransition\TransitionManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentTransition\TransitionManagement.Designer.cs">
+      <DependentUpon>TransitionManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentTransition\TransitionManagementLogic.cs" />
     <Compile Include="UserListForm\AddMultipleUsers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +212,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106011100258_test6.resx">
       <DependentUpon>202106011100258_test6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106021050327_test7.resx">
+      <DependentUpon>202106021050327_test7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106040144573_test8.resx">
+      <DependentUpon>202106040144573_test8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentTransition\TransitionManagement.resx">
+      <DependentUpon>TransitionManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubjectListForm\AddSubjectcs.resx">
       <DependentUpon>AddSubjectcs.cs</DependentUpon>
