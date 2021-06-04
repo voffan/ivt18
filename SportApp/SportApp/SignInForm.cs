@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace SportApp
 {
@@ -43,7 +44,6 @@ namespace SportApp
         
         private void button5_Click(object sender, EventArgs e)
         {
-            Context connect = new Context();
             if (textBox1.Text == "")
             {
                 MessageBox.Show("Введите Ваш логин!");
@@ -53,6 +53,8 @@ namespace SportApp
                 MessageBox.Show("Введите Ваш пароль!");
             }
             else {
+
+                Context connect = new Context();
                 string name = (from customer in connect.Persons where customer.Login==textBox1.Text
                                select customer.Name)
                .FirstOrDefault();
@@ -72,8 +74,14 @@ namespace SportApp
                     }
                     else
                     {
-                        MainForm LoginForm = new MainForm();
+                        MainMainForm LoginForm = new MainMainForm();
                         Program.logining = textBox1.Text;
+
+                        Context context = new Context();
+                        context.Configuration.UseDatabaseNullSemantics = true;
+                        var query = from line in context.Persons select line;
+                        // query.S
+                        Program.userType = 0;
                         LoginForm.Show();
                     }
                 }

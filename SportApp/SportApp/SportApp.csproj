@@ -70,29 +70,47 @@
     <Compile Include="Classes\SportType.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="DbInitializer.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainMainForm.Designer.cs">
       <DependentUpon>MainMainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OtherWindow\Doings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OtherWindow\Doings.Designer.cs">
+      <DependentUpon>Doings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202105061030125_sport.cs" />
     <Compile Include="Migrations\202105061030125_sport.Designer.cs">
       <DependentUpon>202105061030125_sport.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="OtherWindow\EditingAcc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OtherWindow\EditingAcc.Designer.cs">
+      <DependentUpon>EditingAcc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherWindow\EditingPanel\Photo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OtherWindow\EditingPanel\Photo.Designer.cs">
+      <DependentUpon>Photo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherWindow\Profile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OtherWindow\Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherWindow\ViewNews.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OtherWindow\ViewNews.Designer.cs">
+      <DependentUpon>ViewNews.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="resetPassword.cs">
@@ -101,32 +119,50 @@
     <Compile Include="resetPassword.Designer.cs">
       <DependentUpon>resetPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="OtherWindow\Results.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OtherWindow\Results.Designer.cs">
+      <DependentUpon>Results.cs</DependentUpon>
+    </Compile>
     <Compile Include="SignInForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SignInForm.Designer.cs">
       <DependentUpon>SignInForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OtherWindow\AllEvents.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OtherWindow\AllEvents.Designer.cs">
+      <DependentUpon>AllEvents.cs</DependentUpon>
+    </Compile>
     <Compile Include="SignOnForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SignOnForm.Designer.cs">
+    <Compile Include="SignOnForm.designer.cs">
       <DependentUpon>SignOnForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Events.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Events.Designer.cs">
-      <DependentUpon>Events.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainMainForm.resx">
       <DependentUpon>MainMainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OtherWindow\Doings.resx">
+      <DependentUpon>Doings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105061030125_sport.resx">
       <DependentUpon>202105061030125_sport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherWindow\EditingAcc.resx">
+      <DependentUpon>EditingAcc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherWindow\EditingPanel\Photo.resx">
+      <DependentUpon>Photo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherWindow\Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherWindow\ViewNews.resx">
+      <DependentUpon>ViewNews.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -140,14 +176,17 @@
     <EmbeddedResource Include="resetPassword.resx">
       <DependentUpon>resetPassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OtherWindow\Results.resx">
+      <DependentUpon>Results.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SignInForm.resx">
       <DependentUpon>SignInForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OtherWindow\AllEvents.resx">
+      <DependentUpon>AllEvents.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SignOnForm.resx">
       <DependentUpon>SignOnForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Events.resx">
-      <DependentUpon>Events.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

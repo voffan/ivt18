@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SportApp.Classes;
+using MySql.Data.MySqlClient;
 
 namespace SportApp
 {
@@ -22,54 +23,69 @@ namespace SportApp
         {
             this.Close();
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             Context connect = new Context();
-            string newUserSurname=textBox1.Text, 
-                newUserName=textBox2.Text,
-                newUserFatherName=textBox3.Text,
-                newUserEmail=textBox4.Text,
-                newUserLogin=textBox7.Text,
-                newUserPassword=textBox9.Text,
+            string newUserSurname = textBox1.Text,
+                newUserName = textBox2.Text,
+                newUserFatherName = textBox3.Text,
+                newUserEmail = textBox4.Text,
+                newUserLogin = textBox7.Text,
+                newUserPassword = textBox9.Text,
                 RePassword = textBox6.Text,
                 newUserPhone = textBox8.Text,
                 newUserBirthday = textBox5.Text,
-                newUserCity = Convert.ToString(comboBox1.SelectedItem),
-                newUserSex = Convert.ToString(comboBox3.SelectedItem);
+                newUserCity = Convert.ToString(comboBox1.SelectedItem);
+                int newUserSex = comboBox3.SelectedIndex;
+            string newUserPhoto;
+            if (comboBox3.SelectedIndex == 0)
+            {
+                newUserPhoto = "defaultm.png";
+            }
+            else
+            {
+                newUserPhoto = "defaultf.png";
+            }
 
             if (newUserPassword == RePassword)
             {
-
-                Person newUser = new Person {
-                    Name = newUserSurname + " " + newUserName + " " + newUserFatherName,
-                    Email = newUserEmail,
-                    Login = newUserLogin,
-                    Password = RePassword,
-                    Phone = newUserPhone,
-                    CityName = newUserCity,
-                    Birthday = Convert.ToDateTime(newUserBirthday),
-                    //Sex = Convert.ToString(newUserSex)
-                    //Type = 12
-                };
-                string databaseLogin = (from customer in connect.Persons
-                               where customer.Login == newUserLogin 
-                               select customer.Name).FirstOrDefault();
-                string databaseEmail = (from customer in connect.Persons
-                                        where customer.Email == newUserEmail
-                                        select customer.Name).FirstOrDefault();
-                if (databaseLogin == null || databaseEmail == null)
+                if (comboBox1.SelectedIndex == -1 || comboBox3.SelectedIndex == -1)
                 {
-                    connect.Persons.Add(newUser);
-                    connect.SaveChanges();
-                    MessageBox.Show("Регистрация прошла успешно. Спасибо за регистрацию!");
-                    this.Close();
+                    MessageBox.Show(("Нужно заполнить все поля, для прохожднния регистрации!"));
                 }
                 else
                 {
-                    MessageBox.Show(Convert.ToString("Извените, но пользователь с таким логином или почтовым ящиком уже существует. Попробуйте еще раз!"));
+                    Person newUser = new Person
+                    {
+                        Name = newUserSurname + " " + newUserName + " " + newUserFatherName,
+                        Email = newUserEmail,
+                        Login = newUserLogin,
+                        Password = RePassword,
+                        Phone = newUserPhone,
+                        CityName = newUserCity,
+                        Photo = newUserPhoto,
+                        Birthday = Convert.ToDateTime(newUserBirthday),
+                        // Sex = newUserSex
+                        //Type = 12
+                    };
+                    string databaseLogin = (from customer in connect.Persons
+                                            where customer.Login == newUserLogin
+                                            select customer.Name).FirstOrDefault();
+                    string databaseEmail = (from customer in connect.Persons
+                                            where customer.Email == newUserEmail
+                                            select customer.Name).FirstOrDefault();
+                    if (databaseLogin == null || databaseEmail == null)
+                    {
+                        connect.Persons.Add(newUser);
+                        connect.SaveChanges();
+                        MessageBox.Show("Регистрация прошла успешно. Спасибо за регистрацию!");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show(Convert.ToString("Извените, но пользователь с таким логином или почтовым ящиком уже существует. Попробуйте еще раз!"));
+                    }
                 }
-               
             }
             else {
                 MessageBox.Show("Ваши пароли не совподают!"+ newUserCity);
@@ -221,9 +237,8 @@ namespace SportApp
 
         private void SignOnForm_Load(object sender, EventArgs e)
         {
-            Context connect = new Context();
-            List<string> names = connect.Cities
-                .Select(c => c.Name).ToList();
+            Context connect2 = new Context();
+            List<string> names = connect2.Cities.Select(c => c.Name).ToList();
             foreach (string name in names)
             {
                 comboBox1.Items.Add(name);
