@@ -39,7 +39,7 @@ namespace gallery
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AddEmployeeForm addEmployeeForm = new AddEmployeeForm();
+            AddEmployeeForm addEmployeeForm = new AddEmployeeForm(C);
             addEmployeeForm.Show();
         }
     }
