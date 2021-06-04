@@ -14,9 +14,11 @@ namespace gallery
     {
         readonly EmployeeLogic employeeLogic;
         public Context C { get; set; }
+        Context context;
         public int FormId = 0;
-        public AddEmployeeForm()
+        public AddEmployeeForm(Context context)
         {
+            this.context = context;
             InitializeComponent();
             employeeLogic = new EmployeeLogic();
         }
@@ -25,7 +27,7 @@ namespace gallery
         {
 
 
-            string[] emparr = new String[7];
+            string[] emparr = new String[6];
 
             emparr[0] = textBox1.Text;
             emparr[1] = textBox2.Text;
@@ -33,17 +35,17 @@ namespace gallery
             emparr[3] = textBox4.Text;
             emparr[4] = textBox5.Text;
             emparr[5] = textBox6.Text;
-            emparr[6] = textBox7.Text;
+            
 
-            EmployeeLogic.addEmoployee(C, emparr);
+            EmployeeLogic.addEmoployee(context, emparr);
 
             textBox1.Text = "";
             textBox2.Text = "";
             textBox3.Text = "";
             textBox4.Text = "";
-
             textBox5.Text = "";
-          
+            textBox6.Text = "";
+            textBox7.Text = "";
 
         }
 

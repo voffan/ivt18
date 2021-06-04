@@ -10,7 +10,7 @@ namespace gallery
     {
      
 
-        public static void addEmoployee(Context C, String[] emparr)
+        public static void addEmoployee(Context context, String[] emparr)
         {
             Employee emp = new Employee();
             //emp.EmployeeId = id;
@@ -39,24 +39,21 @@ namespace gallery
             {
                 emp.PositionId = Int32.Parse(emparr[5]);
             }
-            if (emparr[6].Length != 0)
-            {
-                emp.GalleryId = Int32.Parse(emparr[6]);
-            }
+          
       
 
             //int employeeId = getEmployeeById(fullname, C);
 
-            C.Employees.Add(emp);
-            C.SaveChanges();
+            context.Employees.Add(emp);
+            context.SaveChanges();
         }
 
-        public static void deleteEmployee(Context C, int id)
+        public static void deleteEmployee(Context context, int id)
         {
        
-            C.Employees.Attach(C.Employees.Find(id));
-            C.Employees.Remove(C.Employees.Find(id));
-            C.SaveChanges();
+            context.Employees.Attach(context.Employees.Find(id));
+            context.Employees.Remove(context.Employees.Find(id));
+            context.SaveChanges();
         }
 
         public static void updateEmployee(Context C, String[] emparr)
@@ -90,10 +87,7 @@ namespace gallery
             {
                 emp.PositionId = Int32.Parse(emparr[5]);
             }
-            if (emparr[6].Length != 0)
-            {
-                emp.GalleryId = Int32.Parse(emparr[6]);
-            }
+            
            
             C.SaveChanges();
 
