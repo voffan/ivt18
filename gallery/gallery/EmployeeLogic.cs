@@ -12,6 +12,7 @@ namespace gallery
 
         public static void addEmoployee(Context context, String[] emparr)
         {
+          
             Employee emp = new Employee();
             //emp.EmployeeId = id;
             if (emparr[0].Length != 0)
@@ -32,7 +33,7 @@ namespace gallery
             }
             if (emparr[4].Length != 0)
             {
-                emp.EmployeeId = Int32.Parse(emparr[4]);
+                emp.GalleryId = Int32.Parse(emparr[4]);
             }
 
             if (emparr[5].Length != 0)
@@ -50,9 +51,17 @@ namespace gallery
 
         public static void deleteEmployee(Context context, int id)
         {
-       
-            context.Employees.Attach(context.Employees.Find(id));
-            context.Employees.Remove(context.Employees.Find(id));
+            
+            
+                //Employee p = context.Employees
+                //.Where(o => o.EmployeeId == id)
+                //.FirstOrDefault();
+
+                // context.Employees.Remove(p);
+                // context.SaveChanges();
+            
+                context.Employees.Attach(context.Employees.Find(id));
+           context.Employees.Remove(context.Employees.Find(id));
             context.SaveChanges();
         }
 
@@ -80,7 +89,7 @@ namespace gallery
             }
             if (emparr[4].Length != 0)
             {
-                emp.EmployeeId = Int32.Parse(emparr[4]);
+                emp.GalleryId = Int32.Parse(emparr[4]);
             }
 
             if (emparr[5].Length != 0)

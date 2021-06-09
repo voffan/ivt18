@@ -21,6 +21,9 @@ namespace gallery
             this.context = context;
             InitializeComponent();
             employeeLogic = new EmployeeLogic();
+        
+
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -33,7 +36,7 @@ namespace gallery
             emparr[1] = textBox2.Text;
             emparr[2] = textBox3.Text;
             emparr[3] = textBox4.Text;
-            emparr[4] = textBox5.Text;
+            emparr[4] = textBox7.Text;
             emparr[5] = textBox6.Text;
             
 
@@ -43,16 +46,19 @@ namespace gallery
             textBox2.Text = "";
             textBox3.Text = "";
             textBox4.Text = "";
-            textBox5.Text = "";
             textBox6.Text = "";
             textBox7.Text = "";
+           
+
+            this.Close();
 
         }
 
+   
+            
 
-  
 
-            private void textBox1_TextChanged(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

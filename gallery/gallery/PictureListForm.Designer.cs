@@ -50,25 +50,25 @@ namespace gallery
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 78);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 63);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1283, 409);
+            this.dataGridView1.Size = new System.Drawing.Size(962, 332);
             this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(19, 34);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(14, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1280, 28);
+            this.label1.Size = new System.Drawing.Size(960, 23);
             this.label1.TabIndex = 6;
             this.label1.Text = "Список картин:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // menuStrip1
             // 
@@ -78,7 +78,8 @@ namespace gallery
             this.картинаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1315, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(986, 24);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -90,34 +91,34 @@ namespace gallery
             this.galleryToolStripMenuItem,
             this.экспозицийToolStripMenuItem});
             this.списокХудожниковToolStripMenuItem.Name = "списокХудожниковToolStripMenuItem";
-            this.списокХудожниковToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
+            this.списокХудожниковToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.списокХудожниковToolStripMenuItem.Text = "Список:";
             // 
             // artistToolStripMenuItem
             // 
             this.artistToolStripMenuItem.Name = "artistToolStripMenuItem";
-            this.artistToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
+            this.artistToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.artistToolStripMenuItem.Text = "Художников";
             this.artistToolStripMenuItem.Click += new System.EventHandler(this.artistListView_Click);
             // 
             // genreToolStripMenuItem
             // 
             this.genreToolStripMenuItem.Name = "genreToolStripMenuItem";
-            this.genreToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
+            this.genreToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.genreToolStripMenuItem.Text = "Жанров";
             this.genreToolStripMenuItem.Click += new System.EventHandler(this.genreListView_Click);
             // 
             // galleryToolStripMenuItem
             // 
             this.galleryToolStripMenuItem.Name = "galleryToolStripMenuItem";
-            this.galleryToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
+            this.galleryToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.galleryToolStripMenuItem.Text = "Галерей";
             this.galleryToolStripMenuItem.Click += new System.EventHandler(this.galleryListView_Click);
             // 
             // экспозицийToolStripMenuItem
             // 
             this.экспозицийToolStripMenuItem.Name = "экспозицийToolStripMenuItem";
-            this.экспозицийToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
+            this.экспозицийToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.экспозицийToolStripMenuItem.Text = "Экспозиций";
             this.экспозицийToolStripMenuItem.Click += new System.EventHandler(this.expoListView);
             // 
@@ -130,54 +131,53 @@ namespace gallery
             this.удалитьToolStripMenuItem,
             this.отправитьНаРеставрациюToolStripMenuItem});
             this.картинаToolStripMenuItem.Name = "картинаToolStripMenuItem";
-            this.картинаToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
+            this.картинаToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.картинаToolStripMenuItem.Text = "Картина:";
             // 
             // добавитьToolStripMenuItem
             // 
             this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
-            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(284, 26);
+            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.добавитьToolStripMenuItem.Text = "Добавить";
             this.добавитьToolStripMenuItem.Click += new System.EventHandler(this.pictureAdd_Click);
             // 
             // просмотрToolStripMenuItem
             // 
             this.просмотрToolStripMenuItem.Name = "просмотрToolStripMenuItem";
-            this.просмотрToolStripMenuItem.Size = new System.Drawing.Size(284, 26);
+            this.просмотрToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.просмотрToolStripMenuItem.Text = "Просмотр";
             this.просмотрToolStripMenuItem.Click += new System.EventHandler(this.pictureView_Click);
             // 
             // изменитьToolStripMenuItem
             // 
             this.изменитьToolStripMenuItem.Name = "изменитьToolStripMenuItem";
-            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(284, 26);
+            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.изменитьToolStripMenuItem.Text = "Изменить";
             this.изменитьToolStripMenuItem.Click += new System.EventHandler(this.pictureEdit_Click);
             // 
             // удалитьToolStripMenuItem
             // 
             this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(284, 26);
+            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.удалитьToolStripMenuItem.Text = "Удалить";
             this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.pictureDelete_Click);
             // 
             // отправитьНаРеставрациюToolStripMenuItem
             // 
             this.отправитьНаРеставрациюToolStripMenuItem.Name = "отправитьНаРеставрациюToolStripMenuItem";
-            this.отправитьНаРеставрациюToolStripMenuItem.Size = new System.Drawing.Size(284, 26);
+            this.отправитьНаРеставрациюToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.отправитьНаРеставрациюToolStripMenuItem.Text = "Отправить на реставрацию";
             this.отправитьНаРеставрациюToolStripMenuItem.Click += new System.EventHandler(this.pictureSendToResto_Click);
             // 
             // PictureListForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1315, 496);
+            this.ClientSize = new System.Drawing.Size(986, 403);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PictureListForm";
             this.Text = "Список картин";
             this.Activated += new System.EventHandler(this.PictureListForm_Activated);

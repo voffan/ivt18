@@ -22,5 +22,10 @@ namespace gallery
         {
             dataGridView1.DataSource = C.Artists.ToList();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

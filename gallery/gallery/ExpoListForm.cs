@@ -87,5 +87,10 @@ namespace gallery
         {
             editExpoButton_Click(sender, e);
         }
+
+        private void expoDataGrid_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
