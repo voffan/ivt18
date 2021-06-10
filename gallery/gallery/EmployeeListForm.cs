@@ -69,12 +69,12 @@ namespace gallery
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (id > 0)
-            {
+            int deleteId = Int32.Parse(textBox1.Text);
 
-                EmployeeLogic.deleteEmployee(C, selectedItemId);
+
+            EmployeeLogic.deleteEmployee(C, deleteId);
                 //EmployeeListForm_Activated(sender, e);
-            }
+            
                 EmployeeListForm_Load(sender, e);
 
 
@@ -105,6 +105,11 @@ namespace gallery
             {
                 
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            int deleteId = Int32.Parse(textBox1.Text);
         }
     }
 }
