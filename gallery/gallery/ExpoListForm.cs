@@ -81,6 +81,7 @@ namespace gallery
             {
                 id = -1;
             }
+            ExpoListForm_Load(sender, e);
         }
 
         private void expoDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

@@ -13,6 +13,7 @@ namespace gallery
     public partial class AddEmployeeForm : Form
     {
         readonly EmployeeLogic employeeLogic;
+       
         public Context C { get; set; }
         Context context;
         public int FormId = 0;
@@ -21,7 +22,7 @@ namespace gallery
             this.context = context;
             InitializeComponent();
             employeeLogic = new EmployeeLogic();
-        
+            
 
 
         }
@@ -52,10 +53,18 @@ namespace gallery
 
             this.Close();
 
+          
+
+
         }
 
-   
-            
+        private void AddEmployeeForm_Load(object sender, EventArgs e)
+        {
+           // picturesBox.Items.AddRange(ExpoLogic.updatePicturesList(C));
+            //eId = C.Employees.Select(c => c.EmployeeId).FirstOrDefault();
+        }
+
+
 
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -68,9 +77,6 @@ namespace gallery
 
         }
 
-        private void AddEmployeeForm_Load(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

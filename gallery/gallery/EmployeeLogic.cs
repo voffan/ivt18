@@ -51,18 +51,27 @@ namespace gallery
 
         public static void deleteEmployee(Context context, int id)
         {
-            
-            
-                //Employee p = context.Employees
-                //.Where(o => o.EmployeeId == id)
-                //.FirstOrDefault();
+            //Employee emp = new Employee();
+            //id = emp.EmployeeId;
+           
+           // var ex = context.Employees.Where(c => c.EmployeeId==id).FirstOrDefault();
 
-                // context.Employees.Remove(p);
-                // context.SaveChanges();
+           // context.Employees.Remove(ex);
+
+            Employee p = context.Employees.Where(o => o.EmployeeId == id).FirstOrDefault();
+            context.Employees.Remove(p);
+                 context.SaveChanges();
             
-                context.Employees.Attach(context.Employees.Find(id));
-           context.Employees.Remove(context.Employees.Find(id));
-            context.SaveChanges();
+               // context.Employees.Attach(context.Employees.Find(id));
+          // context.Employees.Remove(context.Employees.Find(id));
+           // context.SaveChanges();
+        }
+
+
+        static public int getId(string s, Context C)
+        {
+            return C.Employees.Where(c => c.FullName == s)
+                .Select(c => c.EmployeeId).FirstOrDefault();
         }
 
         public static void updateEmployee(Context C, String[] emparr)
