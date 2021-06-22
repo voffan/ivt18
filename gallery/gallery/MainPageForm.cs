@@ -14,7 +14,7 @@ namespace gallery
     {
         private Context c = new Context();
 
-        public MainPageForm()
+        public MainPageForm(Context context)
         {
             InitializeComponent();
         }

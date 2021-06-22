@@ -52,8 +52,9 @@ namespace gallery
            
 
             this.Close();
+            //EmployeeListForm.dataGridView1.DataSource = context.Employees.ToList();
 
-          
+
 
 
         }

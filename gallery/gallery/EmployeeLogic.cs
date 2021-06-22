@@ -8,9 +8,15 @@ namespace gallery
 {
     class EmployeeLogic
     {
-     
+        public static int LoginEmployee(Context С, string login, string password)
+        {
+            if (login.Equals("123") && password.Equals("123"))
+                return 1;
+            return -1;
+        }
 
-        public static void addEmoployee(Context context, String[] emparr)
+
+            public static void addEmoployee(Context context, String[] emparr)
         {
           
             Employee emp = new Employee();
@@ -74,11 +80,9 @@ namespace gallery
                 .Select(c => c.EmployeeId).FirstOrDefault();
         }
 
-        public static void updateEmployee(Context C, String[] emparr)
+        public static void editEmployee(Context C, String[] emparr)
         {
             Employee emp = new Employee();
-
-
             var fmd = C.Employees.Find(Int32.Parse(emparr[0]));
             if (emparr[0].Length != 0)
             {
@@ -105,8 +109,8 @@ namespace gallery
             {
                 emp.PositionId = Int32.Parse(emparr[5]);
             }
-            
-           
+
+         
             C.SaveChanges();
 
         }

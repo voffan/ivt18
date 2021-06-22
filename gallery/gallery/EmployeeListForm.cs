@@ -101,10 +101,15 @@ namespace gallery
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (id > 0)
-            {
-                
-            }
+            int deleteId = Int32.Parse(textBox1.Text);
+           
+              
+                EditEmployeeForm editEmployeeForm = new EditEmployeeForm();
+                editEmployeeForm.C = C;
+                editEmployeeForm.deleteId = deleteId;
+                editEmployeeForm.eId = eId;
+                editEmployeeForm.Show();
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

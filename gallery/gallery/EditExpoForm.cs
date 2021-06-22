@@ -102,5 +102,15 @@ namespace gallery
                 MessageBox.Show("Заполните поля!");
             }
         }
+
+        private void placeBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void expoPicturesBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

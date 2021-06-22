@@ -17,6 +17,8 @@ namespace gallery
             InitializeComponent();
         }
 
+        Context context;
+
         private void LoginForm_Load(object sender, EventArgs e)
         {
 
@@ -40,6 +42,17 @@ namespace gallery
         private void button1_Click(object sender, EventArgs e)
         {
 
+
+            //system administator
+            if (EmployeeLogic.LoginEmployee(context, this.textBox1.Text, this.textBox2.Text) == 1)
+            {
+                MainPageForm f = new MainPageForm(context);
+                f.Show();
+
+                this.textBox1.Text = "";
+                this.textBox2.Text = "";
+
+            }
         }
     }
 }

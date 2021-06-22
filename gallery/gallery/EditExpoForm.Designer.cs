@@ -43,8 +43,8 @@ namespace gallery
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
             this.submitButton = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // editButton
@@ -66,7 +66,7 @@ namespace gallery
             this.label1.Location = new System.Drawing.Point(48, 45);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(196, 23);
+            this.label1.Size = new System.Drawing.Size(160, 19);
             this.label1.TabIndex = 1;
             this.label1.Text = "Введите новые данные";
             // 
@@ -77,7 +77,7 @@ namespace gallery
             this.startDatePicker.Location = new System.Drawing.Point(53, 299);
             this.startDatePicker.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.startDatePicker.Name = "startDatePicker";
-            this.startDatePicker.Size = new System.Drawing.Size(300, 27);
+            this.startDatePicker.Size = new System.Drawing.Size(300, 23);
             this.startDatePicker.TabIndex = 2;
             // 
             // endDatePicker
@@ -87,7 +87,7 @@ namespace gallery
             this.endDatePicker.Location = new System.Drawing.Point(406, 299);
             this.endDatePicker.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.endDatePicker.Name = "endDatePicker";
-            this.endDatePicker.Size = new System.Drawing.Size(300, 27);
+            this.endDatePicker.Size = new System.Drawing.Size(300, 23);
             this.endDatePicker.TabIndex = 3;
             // 
             // nameBox
@@ -96,7 +96,7 @@ namespace gallery
             this.nameBox.Location = new System.Drawing.Point(56, 128);
             this.nameBox.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(650, 27);
+            this.nameBox.Size = new System.Drawing.Size(650, 23);
             this.nameBox.TabIndex = 4;
             // 
             // placeBox
@@ -105,8 +105,9 @@ namespace gallery
             this.placeBox.Location = new System.Drawing.Point(53, 212);
             this.placeBox.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.placeBox.Name = "placeBox";
-            this.placeBox.Size = new System.Drawing.Size(650, 27);
+            this.placeBox.Size = new System.Drawing.Size(650, 23);
             this.placeBox.TabIndex = 5;
+            this.placeBox.TextChanged += new System.EventHandler(this.placeBox_TextChanged);
             // 
             // label2
             // 
@@ -115,7 +116,7 @@ namespace gallery
             this.label2.Location = new System.Drawing.Point(49, 99);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 20);
+            this.label2.Size = new System.Drawing.Size(59, 15);
             this.label2.TabIndex = 6;
             this.label2.Text = "Название";
             // 
@@ -126,7 +127,7 @@ namespace gallery
             this.label3.Location = new System.Drawing.Point(50, 183);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 20);
+            this.label3.Size = new System.Drawing.Size(40, 15);
             this.label3.TabIndex = 7;
             this.label3.Text = "Адрес";
             // 
@@ -134,7 +135,7 @@ namespace gallery
             // 
             this.picturesBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.picturesBox.FormattingEnabled = true;
-            this.picturesBox.ItemHeight = 28;
+            this.picturesBox.ItemHeight = 21;
             this.picturesBox.Location = new System.Drawing.Point(51, 381);
             this.picturesBox.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.picturesBox.Name = "picturesBox";
@@ -146,12 +147,13 @@ namespace gallery
             // 
             this.expoPicturesBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.expoPicturesBox.FormattingEnabled = true;
-            this.expoPicturesBox.ItemHeight = 28;
+            this.expoPicturesBox.ItemHeight = 21;
             this.expoPicturesBox.Location = new System.Drawing.Point(597, 381);
             this.expoPicturesBox.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.expoPicturesBox.Name = "expoPicturesBox";
             this.expoPicturesBox.Size = new System.Drawing.Size(450, 340);
             this.expoPicturesBox.TabIndex = 9;
+            this.expoPicturesBox.SelectedIndexChanged += new System.EventHandler(this.expoPicturesBox_SelectedIndexChanged);
             this.expoPicturesBox.DoubleClick += new System.EventHandler(this.expoPicturesBox_DoubleClick);
             // 
             // label4
@@ -161,7 +163,7 @@ namespace gallery
             this.label4.Location = new System.Drawing.Point(47, 352);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 20);
+            this.label4.Size = new System.Drawing.Size(76, 15);
             this.label4.TabIndex = 10;
             this.label4.Text = "Все картины";
             // 
@@ -172,7 +174,7 @@ namespace gallery
             this.label5.Location = new System.Drawing.Point(593, 352);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(158, 20);
+            this.label5.Size = new System.Drawing.Size(124, 15);
             this.label5.TabIndex = 11;
             this.label5.Text = "Картины на выставке";
             // 
@@ -183,7 +185,7 @@ namespace gallery
             this.label6.Location = new System.Drawing.Point(49, 270);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(143, 20);
+            this.label6.Size = new System.Drawing.Size(110, 15);
             this.label6.TabIndex = 12;
             this.label6.Text = "Время проведения";
             // 
@@ -199,18 +201,6 @@ namespace gallery
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Image = global::gallery.Properties.Resources.fast_forward;
-            this.label7.Location = new System.Drawing.Point(535, 566);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(32, 28);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "    ";
-            // 
             // submitButton
             // 
             this.submitButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -223,9 +213,21 @@ namespace gallery
             this.submitButton.UseVisualStyleBackColor = true;
             this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Image = global::gallery.Properties.Resources.fast_forward;
+            this.label7.Location = new System.Drawing.Point(535, 566);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(26, 21);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "    ";
+            // 
             // EditExpoForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1404, 744);
             this.Controls.Add(this.submitButton);
