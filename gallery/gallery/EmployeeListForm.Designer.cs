@@ -80,7 +80,7 @@ namespace gallery
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(581, 295);
+            this.button4.Location = new System.Drawing.Point(12, 374);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(185, 23);
             this.button4.TabIndex = 6;
@@ -101,9 +101,9 @@ namespace gallery
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(294, 409);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(300, 13);
+            this.label1.Size = new System.Drawing.Size(411, 13);
             this.label1.TabIndex = 8;
-            this.label1.Text = "укажите номер id пользователя, которого хотите удалить";
+            this.label1.Text = "укажите номер id пользователя, которого хотите удалить или отредактировать\r\n";
             // 
             // EmployeeListForm
             // 

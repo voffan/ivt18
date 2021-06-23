@@ -89,5 +89,10 @@ namespace gallery
         {
 
         }
+
+        private void nameBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

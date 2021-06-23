@@ -32,14 +32,14 @@ namespace gallery
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string[] emparr = new String[6];
-
-            emparr[0] = textBox1.Text;
-            emparr[1] = textBox2.Text;
-            emparr[2] = textBox3.Text;
-            emparr[3] = textBox4.Text;
-            emparr[4] = textBox6.Text;
-            emparr[5] = textBox5.Text;
+            string[] emparr = new String[7];
+            emparr[0] = textBox7.Text;
+            emparr[1] = textBox1.Text;
+            emparr[2] = textBox2.Text;
+            emparr[3] = textBox3.Text;
+            emparr[4] = textBox4.Text;
+            emparr[5] = textBox6.Text;
+            emparr[6] = textBox5.Text;
 
 
             EmployeeLogic.editEmployee(C, emparr);
@@ -50,12 +50,28 @@ namespace gallery
             textBox4.Text = "";
             textBox6.Text = "";
             textBox5.Text = "";
+            textBox7.Text = "";
 
 
             this.Close();
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditEmployeeForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
