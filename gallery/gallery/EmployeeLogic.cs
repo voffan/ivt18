@@ -74,13 +74,13 @@ namespace gallery
             //Employee emp = new Employee();
             //id = emp.EmployeeId;
            
-           // var ex = context.Employees.Where(c => c.EmployeeId==id).FirstOrDefault();
+            var ex = context.Employees.Where(c => c.EmployeeId == id).FirstOrDefault();
 
-           // context.Employees.Remove(ex);
+            context.Employees.Remove(ex);
 
-            Employee p = context.Employees.Where(o => o.EmployeeId == id).FirstOrDefault();
-            context.Employees.Remove(p);
-                 context.SaveChanges();
+            //Employee p = context.Employees.Where(o => o.EmployeeId == id).FirstOrDefault();
+            //context.Employees.Remove(p);
+                context.SaveChanges();
             
                // context.Employees.Attach(context.Employees.Find(id));
           // context.Employees.Remove(context.Employees.Find(id));
