@@ -12,7 +12,7 @@ namespace gallery
 {
     public partial class EmployeeListForm : Form
     {
-       //public int id;
+       
         public int id;
         public int id2=-1;
         public int eId = -1;
@@ -26,9 +26,6 @@ namespace gallery
 
         private void employeeBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            /*this.Validate();
-            this.employeeBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.galleryDBDataSet1);*/
             
         }
 
@@ -43,15 +40,7 @@ namespace gallery
                         select new { ID = c.EmployeeId, Имя = c.FullName, Логин = c.Login, Пароль = c.Password, Телефон = c.Phone, PositionId = c.PositionId, GalleryId = c.GalleryId};
                 
             dataGridView1.DataSource = query.ToList();
-            //dataGridView1.DataSource = C.Employees.ToList();
             eId = C.Employees.Select(c => c.EmployeeId).FirstOrDefault();
-
-            //dataGridView1.DataSource = C.Employees.ToList();
-        
-            
-              
-            
-
         }
 
 
@@ -75,15 +64,8 @@ namespace gallery
 
         private void button2_Click(object sender, EventArgs e)
         {
-            // int deleteId = Int32.Parse(textBox1.Text);
-
-           
                 EmployeeLogic.deleteEmployee(C, id);
-                //EmployeeListForm_Activated(sender, e);
-            
                 EmployeeListForm_Load(sender, e);
-
-
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -107,15 +89,11 @@ namespace gallery
 
         private void button4_Click(object sender, EventArgs e)
         {
-            //int deleteId = Int32.Parse(textBox1.Text);
-           
-              
                 EditEmployeeForm editEmployeeForm = new EditEmployeeForm();
                 editEmployeeForm.C = C;
                 editEmployeeForm.deleteId = id;
                 editEmployeeForm.eId = eId;
                 editEmployeeForm.Show();
-            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

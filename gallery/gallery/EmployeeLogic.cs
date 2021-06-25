@@ -34,7 +34,7 @@ namespace gallery
         {
           
             Employee emp = new Employee();
-            //emp.EmployeeId = id;
+     
             if (emparr[0].Length != 0)
             {
                 emp.FullName = emparr[0];
@@ -60,31 +60,15 @@ namespace gallery
             {
                 emp.PositionId = Int32.Parse(emparr[5]);
             }
-          
-      
-
-            //int employeeId = getEmployeeById(fullname, C);
-
             context.Employees.Add(emp);
             context.SaveChanges();
         }
 
         public static void deleteEmployee(Context context, int id)
         {
-            //Employee emp = new Employee();
-            //id = emp.EmployeeId;
-           
             var ex = context.Employees.Where(c => c.EmployeeId == id).FirstOrDefault();
-
             context.Employees.Remove(ex);
-
-            //Employee p = context.Employees.Where(o => o.EmployeeId == id).FirstOrDefault();
-            //context.Employees.Remove(p);
-                context.SaveChanges();
-            
-               // context.Employees.Attach(context.Employees.Find(id));
-          // context.Employees.Remove(context.Employees.Find(id));
-           // context.SaveChanges();
+            context.SaveChanges();
         }
 
 

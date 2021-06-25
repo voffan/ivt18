@@ -52,7 +52,7 @@ namespace gallery
            
 
             this.Close();
-            //EmployeeListForm.dataGridView1.DataSource = context.Employees.ToList();
+          
 
 
 
@@ -61,8 +61,7 @@ namespace gallery
 
         private void AddEmployeeForm_Load(object sender, EventArgs e)
         {
-           // picturesBox.Items.AddRange(ExpoLogic.updatePicturesList(C));
-            //eId = C.Employees.Select(c => c.EmployeeId).FirstOrDefault();
+          
         }
 
 
